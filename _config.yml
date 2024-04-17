@@ -2,14 +2,15 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: # the website title (if blank, full name will be used instead)
+title: Subhadip Mitra # the website title (if blank, full name will be used instead)
 first_name: Subhadip
-middle_name: T.
+middle_name: 
 last_name: Mitra
 email: contact@subhadipmitra.com
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 footer_text: > 
+  Rights Reserved.
   
 keywords: subhadip, subhadip mitra, subhadip google, google, dikku, personal website # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
@@ -106,7 +107,7 @@ youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
 zotero_username: # your zotero username
 
 contact_note: >
-  You can even add a little note about which of these is the best way to reach you.
+  Far far away, behind the word mountains, far from the countries.
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
@@ -125,7 +126,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: subhadip' thoughts # blog_name will be displayed in your blog page
+blog_name: the blog # blog_name will be displayed in your blog page
 blog_description: a simple whitespace theme for academics
 permalink: /blog/:year/:title/
 
