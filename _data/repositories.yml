@@ -1,12 +1,12 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - bassrehab
+  - truckaurbus
 
 github_repos:
-  - alshedivat/al-folio
-  - twbs/bootstrap
-  - jekyll/jekyll
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - jpswalsh/academicons
-  - mathjax/MathJax
+  - bassrehab/ISO8583-Simulator
+  - bassrehab/smpp-kafka-producer
+  - bassrehab/blockchain-loyalty-fabric
+  - bassrehab/credit_risk
+  - GoogleCloudPlatform/generative-ai
+  - bassrehab/olp
+  - GoogleCloudPlatform/professional-services
