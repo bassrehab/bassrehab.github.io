@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+subtitle: Google, BITS Pilani, IIT Madras
 
 profile:
   align: right
@@ -10,16 +10,13 @@ profile:
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>+65 65 212 183</p>
-    <p>31 Nathan Road</p>
-    <p>Singapore 248749</p>
+    <p>Singapore</p>
 
 news: true # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I have been working as an architect and a software engineer for over 12 years, engaging with clients around the world (ranging from Big Techs, Fortune 500s to contending startups), helping them challenge the status-quo and realizing their Data, AI and Cloud technology led business transformations.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
-
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+When I am not working you would find me either stargazing, drifting cars, conceptualizing the next startup, [9gag-ing](https://9gag.com/), binge watching [Family Guy](https://youtu.be/isS5K9nOhd8) or out on late night walks with Astro. I am an entrepreneur at heart, and it all started with [truckaurbus.com](https://truckaurbus.com). I love everything open source.
