@@ -1,12 +1,13 @@
 github_users:
   - bassrehab
-  - truckaurbus
 
 github_repos:
   - bassrehab/ISO8583-Simulator
   - bassrehab/smpp-kafka-producer
   - bassrehab/blockchain-loyalty-fabric
   - bassrehab/credit_risk
-  - GoogleCloudPlatform/generative-ai
+  - bassrehab/adventribe-nft
   - bassrehab/olp
-  - GoogleCloudPlatform/professional-services
+  - bassrehab/reinforcement-learning-stock-trading
+  - bassrehab/blockchain_exchange
+  - bassrehab/unified-socket 
