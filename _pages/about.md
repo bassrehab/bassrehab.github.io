@@ -10,7 +10,7 @@ profile:
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>+65 65 212 183</p>
-    <br />
+    <p>contact@subhadipmitra.com</p>
     <p>Singapore</p>
 
 news: true # includes a list of news items
