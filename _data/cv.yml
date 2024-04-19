@@ -105,13 +105,13 @@
   contents:
     - year: 2022
       items:
-        - Google Cloud Certified Professional Cloud Architect
-        - Google Cloud Certified Professional Data Engineer
-        - Google Cloud Certified Professional Machine Learning Engineer
+        - <a href="https://www.credential.net/358f644a-44bd-46d8-8ecf-d459eb76bfc8?key=94b8b8a7f674475de7a78dc4d8078f6659da7ab8be9a54958f12632dd3eb3864">Google Cloud Certified Professional Cloud Architect </a>
+        - <a href="https://www.credential.net/ae4b2086-f607-4057-98f4-ad2e7c0106e6">Google Cloud Certified Professional Data Engineer </a>
+        - <a href="https://www.credential.net/d65574ec-81ed-410b-b5f2-6512a0757f84">Google Cloud Certified Professional Machine Learning Engineer </a>
     - year: 2018
       items:
-        - Blockchain Hyperledger, The Linux Foundation
-        - Deep Learning Specialization, Coursera
+        - <a href="https://courses.edx.org/certificates/05066b7560b849a0957c2b82e3bc13ee">Blockchain Hyperledger, The Linux Foundation </a>
+        - <a href="https://courses.edx.org/certificates/05066b7560b849a0957c2b82e3bc13ee">Deep Learning Specialization, Coursera </a>
 
 - title: Academic Interests
   type: nested_list
