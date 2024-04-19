@@ -5,9 +5,7 @@ title: cv
 nav: true
 nav_order: 5
 cv_pdf: subhadipmitra_cv.pdf
-description:
+description: Interested in connecting? Let's schedule a one-on-one discussion to explore opportunities. Setup meeting, visit - https://calendly.com/contact-x9nm/30min
 toc:
   sidebar: left
 ---
-
-## <p> Interested in connecting? Let's schedule a one-on-one discussion to explore opportunities. <b> <a href="https://calendly.com/contact-x9nm/30min" target="_blank"> Setup meeting </a> </b> </p>
