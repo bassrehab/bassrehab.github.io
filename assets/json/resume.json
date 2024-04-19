@@ -1,37 +1,112 @@
 {
   "basics": {
-    "name": "Albert Einstein",
-    "label": "Scientist",
+    "name": "Subhadip Mitra",
+    "label": "Engineering Manager",
     "image": "",
-    "email": "albert@einstein.de",
-    "phone": "(912) 123-4567",
-    "url": "https://alshedivat.github.io/al-folio/",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+    "email": "contact@subhadipmitra.com",
+    "phone": "(65) 6521 2183",
+    "url": "https://subhadipmitra.com",
+    "summary": "Product-minded architect and hands-on software engineer with 13 yrs. experience building and delivering large scale distributed Data and Machine Learning Systems across Finance, Telecom & Technology sectors - I help organizations innovate, accelerate growth, manage risk better, reduce cost and achieve competitive strategic differentiation.",
     "location": {
-      "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
-      "countryCode": "US",
-      "region": "California"
+      "address": "Nathan Road",
+      "postalCode": "SG  248744",
+      "city": "Singapore",
+      "countryCode": "SG",
+      "region": "Singapore"
     },
     "profiles": [
       {
         "network": "Twitter",
-        "username": "AlbertEinstein",
-        "url": "https://twitter.com/AlbertEinstein"
+        "username": "bassrehab",
+        "url": "https://twitter.com/bassrehab"
       }
     ]
   },
   "work": [
     {
-      "name": "Institute for Advanced Study, Princeton University",
-      "position": "Professor of Theoretical Physics",
-      "url": "https://example.com",
-      "startDate": "1933-01-01",
-      "endDate": "1955-01-01",
-      "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
-      "highlights": ["Relativity"]
+      "name": "Google, Singapore",
+      "position": "Data & Analytics Lead and Site Lead, South East Asia",
+      "url": "https://google.com",
+      "startDate": "2021",
+      "endDate": "-",
+      "summary": "Professional Services Organization (PSO)",
+      "highlights": [
+          "Led Google Cloud's data analytics in South East Asia",
+          "For SE Asia, Data and Analytics - owned and delivered high stakes projects (100% CSAT), defined the regional GTM Strategy (> $7m in presales, 7+ new offerings), Practice and Innovation Strategy",
+          "Delivery Governance oversight across multiple practices - AI/ML, Data Analytics, Infrastructure, Security, etc. ( > $15m)"
+      ]
+    },
+
+    {
+      "name": "Standard Chartered Bank, Singapore",
+      "position": "Principal Engineer",
+      "url": "https://sc.com",
+      "startDate": "2019",
+      "endDate": "2021",
+      "summary": "Data Platform Development and Strategy",
+      "highlights": [
+        "Conceptualized and built Retail Bank's data platform across 11 markets and 1200 users, significantly reduced ML model deployment time.",
+        "Created credit downgrade & default prediction models based on news trends and social influencers for over 15,000 named entities.",
+        "Formulated risk scoring models based on customer's social media profile attributes, photos, videos, and neighborhood metrics.",
+        "Defined technology strategy and roadmaps for Bank's External/3rd party data management, Data Partnership & Ecosystems, Data Monetization, Marketing Automation (Martech), Customer Experience, Data Privacy, Explainable AI (XAI), Data Sovereignty and Cloud adoption"
+      ]
+    },
+
+    {
+      "name": "Teradata / Think Big Analytics, Singapore",
+      "position": "Principal Data Engineer",
+      "url": "https://www.teradata.com",
+      "startDate": "2017",
+      "endDate": "2019",
+      "summary": "Global Data Infrastructure and Analytics",
+      "highlights": [
+        "Designed and developed 5 global Data Lakes with scalable ETL pipelines, handling up to 1.2 PB per hour and 40K daily files.",
+        "Engineered a low latency real-time in-memory platform, processing over 2.5 million events per second.",
+        "Built a real-time fraud detection ML system for a leading bank, reducing false positives by 60% and increasing detection rates by 70%.",
+        "Successfully built and upgraded multiple Hadoop clusters on Cloud/On-prem, ranging between 150-250 nodes."
+      ]
+    },    
+
+    {
+      "name": "UTU, Singapore",
+      "position": "Technical Lead",
+      "url": "https://utu.io",
+      "startDate": "2016",
+      "endDate": "2017",
+      "summary": "Foundational Services Development and Integration",
+      "highlights": [
+        "Built foundational services and partner integrations for the maiden launch of UTU in Thailand.",
+        "Developed a low latency (<25 μs) transaction processing module for bank mainframe integration."
+      ]
+    },
+
+
+    {
+      "name": "Truckaurbus Marketplace, India",
+      "position": "Founder",
+      "url": "https://truckaurbus.com",
+      "startDate": "2014",
+      "endDate": "2016",
+      "summary": "Startup Growth and Platform Development",
+      "highlights": [
+        "Scaled Truckaurbus from inception to operation across 15 cities, securing partnerships with over 25 OEMs, Banks, and NBFCs, achieving 240K unique visitors per day.",
+        "Architected the core marketplace and auctioning platform, alongside developing a dealers' lead generation network and ad-serving platform."
+      ]
+    },
+
+    {
+      "name": "Microsoft, India",
+      "position": "Senior Software Development Engineer",
+      "url": "https://microsoft.com",
+      "startDate": "2010",
+      "endDate": "2014",
+      "summary": "Core System Development and Early AI Implementation",
+      "highlights": [
+        "Contributed to the Windows Kernel Platform Group for Windows 7/8 and Windows Server 2012 R2 / Hyper-V, and MS Lync.",
+        "Developed early machine learning modules on Azure and enhanced the Azure Content Delivery Network."
+      ]
     }
+
   ],
   "volunteer": [
     {
@@ -46,15 +121,48 @@
   ],
   "education": [
     {
-      "institution": "University of Zurich, Zurich, Switzerland",
-      "location": "Zurich, Switzerland",
-      "url": "https://www.uzh.ch/",
-      "area": "Software Development",
-      "studyType": "PhD",
-      "startDate": "1905-01-01",
-      "endDate": "1905-01-01",
-      "score": "10",
-      "courses": ["Theory of Relativity"]
+      "institution": "Birla Institute of Technology and Science, Pilani, IN",
+      "location": "Pilani, India",
+      "url": "https://bits-pilani.ac.in",
+      "area": "Business Analytics",
+      "studyType": "MBA, Business Analytics",
+      "startDate": "2021",
+      "endDate": "2023",
+      "courses": [
+        "Financial Risk Analytics",
+        "Marketing Models",
+        "Financial Management",
+        "Strategic Management",
+        "Operations Management",
+        "Financial and Management Accounting",
+        "Predictive Analytics"
+      ]
+    },
+    {
+      "institution": "Birla Institute of Technology and Science, Pilani, IN",
+      "location": "Pilani, India",
+      "url": "https://bits-pilani.ac.in",
+      "area": "Software Systems",
+      "studyType": "Master of Technology, Software Systems",
+      "startDate": "2017",
+      "endDate": "2020",
+      "courses": [
+        "Algorithms",
+        "Distributed Systems",
+        "Deep Learning",
+        "Natural Language Processing",
+        "Machine Learning",
+        "Artificial Intelligence (AI)"
+      ]
+    },
+    {
+      "institution": "Indian Institute of Technology, Madras",
+      "location": "Madras, India",
+      "url": "https://iitm.ac.in",
+      "area": "Science",
+      "studyType": "Bachelor of Science",
+      "startDate": "",
+      "endDate": ""
     }
   ],
   "awards": [
@@ -134,19 +242,97 @@
     }
   ],
   "skills": [
-    {
-      "name": "Physics",
-      "level": "Master",
-      "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
-      ]
-    }
+     {
+    "name": "Languages",
+    "level": "Advanced",
+    "icon": "fa-solid fa-code",
+    "keywords": [
+      "Java",
+      "Python",
+      "C/C++",
+      "JavaScript",
+      "SQL",
+      "bash"
+    ]
+  },
+
+  {
+    "name": "Data and Software Engineering Technologies",
+    "level": "Expert",
+    "icon": "fa-solid fa-microchip",
+    "keywords": [
+      "Hadoop",
+      "Apache Spark",
+      "Apache Flink",
+      "Apache Kafka",
+      "Apache Ignite",
+      "Apache HBase",
+      "Apache Arrow",
+      "Apache Iceberg",
+      "Quarkus",
+      "AWS",
+      "Google Cloud Platform (GCP)",
+      "REST APIs",
+      "Microservices",
+      "ETL Design & Development",
+      "Data Privacy",
+      "Object Oriented Design",
+    ]
+  },
+
+  {
+    "name": "AI and Machine Learning Technologies",
+    "level": "Advanced",
+    "icon": "fa-solid fa-brain",
+    "keywords": [
+      "Generative AI",
+      "Large Language Models (LLM)",
+      "Machine Learning",
+      "Machine Learning Operations (MLOps)",
+      "Recommender Systems",
+      "Anomaly Detection",
+      "Risk Modeling (Market, Credit and Operations)",
+      "Retrieval-augmented Generation (RAG)",
+      "LangChain",
+      "LlamaIndex",
+      "Graph Neural Networks"
+    ]
+  },
+
+  {
+  "name": "Technology Consulting",
+  "level": "Expert",
+  "icon": "fa-solid fa-briefcase",
+  "keywords": [
+    "Solution Architecture",
+    "Strategy Consulting",
+    "Product Design & Management",
+    "C-suite Advisory",
+    "GTM Strategy",
+    "Cloud Migration",
+    "Stakeholder Engagement"
+  ]
+},
+
+{
+  "name": "Engineering Management and Leadership",
+  "level": "Expert",
+  "icon": "fa-solid fa-users-cog",
+  "keywords": [
+    "Team Leadership",
+    "Program Management",
+    "Technical Hiring",
+    "Cross-functional Collaboration",
+    "Strategic Planning",
+    "Budget Management",
+    "Resource Allocation",
+    "Performance Metrics",
+    "Mentoring and Coaching"
+  ]
+}
+
+
+
   ],
   "languages": [
     {
