@@ -2,7 +2,7 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: Subhadip Mitra # the website title (if blank, full name will be used instead)
+title: subhadip mitra # the website title (if blank, full name will be used instead)
 first_name: Subhadip
 middle_name: 
 last_name: Mitra
@@ -49,7 +49,7 @@ navbar_fixed: true
 footer_fixed: true
 
 # Dimensions
-max_width: 800px
+max_width: 960px
 
 # TODO: add layout settings (single page vs. multi-page)
 
