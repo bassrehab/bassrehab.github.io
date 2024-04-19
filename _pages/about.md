@@ -20,7 +20,7 @@ social: true # includes social icons at the bottom of the page
 
 I have been working as an architect and a software engineer for over 12 years, engaging with clients around the world (ranging from Big Techs, Fortune 500s to contending startups), helping them challenge the status-quo and realizing their Data, AI and Cloud technology led business transformations.
 
-When I am not working you would find me either stargazing, drifting cars, conceptualizing the next startup, [9gag-ing](https://9gag.com/), binge watching [Family Guy](https://youtu.be/isS5K9nOhd8) or out on late night walks with [Astro](assets/img/astro.jpg). I am an entrepreneur at heart, and it all started with [truckaurbus.com](https://truckaurbus.com). 
+When I am not working you would find me either stargazing, drifting cars, conceptualizing the next startup, [9gag-ing](https://9gag.com/), binge watching [Family Guy](https://youtu.be/y1CotE1_Q4M?si=-PbJel0rtajfQPAW&t=68) or out on late night walks with [Astro](assets/img/astro.jpg). I am an entrepreneur at heart, and it all started with [truckaurbus.com](https://truckaurbus.com). 
 
 I love everything open source.
 <br />
@@ -47,7 +47,7 @@ Algorithms, Distributed Systems and Parallel Computing, Machine Intelligence, La
   
 #### fun facts
 - Languages spoken: 7
-- [Drifts](https://www.youtube.com/watch?v=w7mgEp_zMXQ) performed: 339
+- [Drifts](https://www.youtube.com/watch?v=_bkX5VkZg8U) performed: 339
 - Cities lived: 15
 - Coffee consumed: 23,747 and growing
 <br />
