@@ -25,22 +25,28 @@ When I am not working you would find me either stargazing, drifting cars, concep
 I love everything open source.
 
 
-#### What I Do
+#### what I do
 
 **Software Engineering**
+
 I love designing and building internet scale, service-oriented, distributed applications with specialisation in low latency real time data processing, systems programming and ML engineering.
 
+
 **Technical Leadership**
+
 I believe in empathetic and servant leadership embedded in strong engineering principles to build and lead - successful and high performing teams in fast-paced, competitive work environments
 
+
 **Strategy Consulting**
+
 With over a dozen years of industry knowledge spanning banking, telecom, technology and public sectors - I help organizations innovate, accelerate growth, manage risk better, reduce cost and achieve competitive strategic differentiation.
 
 **Research Interests**
+
 Algorithms, Distributed Systems and Parallel Computing, Machine Intelligence, Large Language Models (LLM), Privacy Engineering, Risk Analytics, Engineering Management and Quantum Computing.
 
 
-#### Fun Facts
+#### fun facts
 - Languages spoken: 7
 - [Drifts](https://www.youtube.com/watch?v=w7mgEp_zMXQ) performed: 339
 - Cities lived: 15
