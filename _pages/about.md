@@ -12,6 +12,7 @@ profile:
     <p>(65) 6521 2183</p>
     <p>contact@subhadipmitra.com</p>
     <p>Singapore</p>
+    <p>[Setup meeting](https://calendly.com/contact-x9nm/30min)</p>
 
 news: false # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
