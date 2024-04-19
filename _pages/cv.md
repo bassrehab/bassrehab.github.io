@@ -4,8 +4,8 @@ permalink: /cv/
 title: cv
 nav: true
 nav_order: 5
-cv_pdf: example_pdf.pdf
-description: This is a description of the page. You can modify it in '_pages/cv.md'. You can also change or remove the top pdf download button.
+cv_pdf: subhadipmitra_cv.pdf
+description: Interested in connecting? Let's schedule a one-on-one discussion to explore opportunities. <a href="https://calendly.com/contact-x9nm/30min" target="_blank">Setup meeting slot.</a>
 toc:
   sidebar: left
 ---
