@@ -28,12 +28,12 @@ I love everything open source.
 
 #### what I do
 
-**Engineering**
+**Software Engineering**
 
 I love designing and building internet scale, service-oriented, distributed applications specializing in low latency RT data processing and ML engineering.
 <br />
 
-**Strategy Consulting**
+**Technology Consulting**
 
 With over a dozen years of industry knowledge spanning banking, telecom, technology and public sectors - I help organizations innovate, accelerate growth, manage risk better, reduce cost and achieve competitive strategic differentiation.
 <br />
