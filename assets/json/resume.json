@@ -230,12 +230,6 @@
   ],
   "skills": [
     {
-      "name": "Languages",
-      "level": "Advanced",
-      "icon": "fa-solid fa-code",
-      "keywords": ["Java", "Python", "C/C++", "JavaScript", "SQL", "bash"]
-    },
-    {
       "name": "Data and Software Engineering Technologies",
       "level": "Expert",
       "icon": "fa-solid fa-microchip",
@@ -305,6 +299,12 @@
         "Performance Metrics",
         "Mentoring and Coaching"
       ]
+    },
+    {
+      "name": "Languages",
+      "level": "Advanced",
+      "icon": "fa-solid fa-code",
+      "keywords": ["Java", "Python", "C/C++", "JavaScript", "SQL", "bash"]
     }
   ],
   "interests": [
