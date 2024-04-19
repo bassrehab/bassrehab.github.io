@@ -28,8 +28,6 @@ I love everything open source.
 
 #### what I do
 
-<br />
-
 **Engineering**
 
 I love designing and building internet scale, service-oriented, distributed applications specializing in low latency RT data processing and ML engineering.
