@@ -233,14 +233,7 @@
       "name": "Languages",
       "level": "Advanced",
       "icon": "fa-solid fa-code",
-      "keywords": [
-        "Java",
-        "Python",
-        "C/C++",
-        "JavaScript",
-        "SQL",
-        "bash"
-      ]
+      "keywords": ["Java", "Python", "C/C++", "JavaScript", "SQL", "bash"]
     },
     {
       "name": "Data and Software Engineering Technologies",
@@ -330,12 +323,7 @@
     {
       "name": "Distributed Systems",
       "icon": "fa-solid fa-network-wired",
-      "keywords": [
-        "Distributed Databases",
-        "Consensus Protocols",
-        "Fault Tolerance",
-        "Cloud Computing Architectures"
-      ]
+      "keywords": ["Distributed Databases", "Consensus Protocols", "Fault Tolerance", "Cloud Computing Architectures"]
     },
     {
       "name": "Others",

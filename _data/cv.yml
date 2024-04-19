@@ -6,8 +6,6 @@
     - name: Languages
       value: English, Hindi, Bengali, Spanish
 
-
-
 - title: Experience
   type: time_table
   contents:
@@ -40,24 +38,23 @@
     - title: Technical Lead
       institution: UTU, SG
       year: 2016 - 17
-      description:  
+      description:
         - Built the foundational services and partner integrations for the maiden launch of UTU at Thailand.
         - Developed low latency (<25 μs) transaction processing module for bank mainframe integration.
 
     - title: Founder
       institution: Truckaurbus Marketplace, IN
       year: 2014 - 16
-      description: 
+      description:
         - Took Truckaurbus from zero to launching across 15 cities, and 25+ OEM/Banks/NBFC Partners and 240K unique visitors/day.
         - Architected the core marketplace and auctioning platform, dealers lead generation network and ad-serving platform.
 
     - title: Senior SDE
       institution: Microsoft, IN
       year: 2010 - 14
-      description: 
-        - Windows Kernel Platform Group (7/8), Windows Server 2012 R2 / Hyper-V, MS Lync. 
+      description:
+        - Windows Kernel Platform Group (7/8), Windows Server 2012 R2 / Hyper-V, MS Lync.
         - Early machine learning modules on Azure; Azure CDN.
-
 
 - title: Education
   type: time_table
@@ -71,10 +68,9 @@
       institution: Birla Institute of Technology and Science, Pilani, IN
       year: 2017
       description: Algorithms, Distributed Systems, Deep Learning, Natural Language Processing, Machine Learning, Artificial Intelligence (AI)
-    
+
     - title: Bachelor of Science
       institution: Indian Institute of Technology, Madras
-
 
 - title: Open Source Projects
   type: time_table
@@ -97,8 +93,7 @@
 
     - title: <a href="https://drdo.in/drdo">Micromechanical Flying insect for low-cost outdoor surveillance</a>
       year: 2009
-      description: Created micromechanical flying insect based on swarm intelligence driven by piezo-electric thorax actuators and muscle wire technology, with integrated onboard GPS and real time imaging. 
-
+      description: Created micromechanical flying insect based on swarm intelligence driven by piezo-electric thorax actuators and muscle wire technology, with integrated onboard GPS and real time imaging.
 
 - title: Certifications
   type: time_table

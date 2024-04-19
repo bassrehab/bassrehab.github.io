@@ -2,7 +2,6 @@ I have been working as an architect and a software engineer for over 12 years, e
 
 When I am not working you would find me either stargazing, drifting cars, conceptualizing the next startup, [9gag-ing](https://9gag.com/), binge watching [Family Guy](https://youtu.be/isS5K9nOhd8) or out on late night walks with Astro. I am an entrepreneur at heart, and it all started with [truckaurbus.com](https://truckaurbus.com). I love everything open source.
 
-
 ### What I Do
 
 **Software Engineering**
@@ -17,8 +16,8 @@ With 12+ yrs of industry knowledge spanning banking, telecom, technology and pub
 **Research**
 My interests stretch across Algorithms, Distributed Systems and Parallel Computing, Machine Intelligence, Natural Language Processing, Data Management, Data Mining, Privacy Engineering and Quantum Computing.
 
-
 ### Fun Facts
+
 - Languages spoken: 7
 - [Drifts](https://www.youtube.com/watch?v=w7mgEp_zMXQ) performed: 339
 - Cities lived: 15
