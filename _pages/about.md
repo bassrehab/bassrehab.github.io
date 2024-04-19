@@ -23,30 +23,32 @@ I have been working as an architect and a software engineer for over 12 years, e
 When I am not working you would find me either stargazing, drifting cars, conceptualizing the next startup, [9gag-ing](https://9gag.com/), binge watching [Family Guy](https://youtu.be/isS5K9nOhd8) or out on late night walks with [Astro](assets/img/astro.jpg). I am an entrepreneur at heart, and it all started with [truckaurbus.com](https://truckaurbus.com). 
 
 I love everything open source.
-  
-  
-
+<br />
+<br />
 #### what I do
-  
+<br />
 **Software Engineering**
 
 I love designing and building internet scale, service-oriented, distributed applications with specialisation in low latency real time data processing, systems programming and ML engineering.
-  
+<br />
 **Technical Leadership**
 
 I believe in empathetic and servant leadership embedded in strong engineering principles to build and lead - successful and high performing teams in fast-paced, competitive work environments
-  
+<br />
 **Strategy Consulting**
 
 With over a dozen years of industry knowledge spanning banking, telecom, technology and public sectors - I help organizations innovate, accelerate growth, manage risk better, reduce cost and achieve competitive strategic differentiation.
-
+<br />
 **Research Interests**
 
 Algorithms, Distributed Systems and Parallel Computing, Machine Intelligence, Large Language Models (LLM), Privacy Engineering, Risk Analytics, Engineering Management and Quantum Computing.
-  
+<br />
+<br />
   
 #### fun facts
 - Languages spoken: 7
 - [Drifts](https://www.youtube.com/watch?v=w7mgEp_zMXQ) performed: 339
 - Cities lived: 15
 - Coffee consumed: 23,747 and growing
+<br />
+<br />
