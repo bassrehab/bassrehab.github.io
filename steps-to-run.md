@@ -1,7 +1,7 @@
 Steps:
-run `pip install jupyter`
+pip install jupyter
 delete Gemfile.lock
-run `bundle install`
+bundle install
 npx prettier . --write
 npx prettier . --check
 
