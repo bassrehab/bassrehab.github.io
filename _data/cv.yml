@@ -2,96 +2,142 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
+      value: Subhadip Mitra
     - name: Languages
-      value: English, German
+      value: English, Hindi, Bengali, Spanish
 
-- title: Education
-  type: time_table
-  contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
-      description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
-      description:
-        - Description 1.
-        - Description 2.
+
 
 - title: Experience
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - title: Data & Analytics Lead and Site Lead, South East Asia
+      institution: Google, SG
+      year: 2021 -
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
+        - Professional Services Organization; led Google Cloud's data analytics in South East Asia
+        - For SE Asia, Data and Analytics - owned and delivered high stakes projects (100% CSAT), defined the regional GTM Strategy (> $7m in presales, 7+ new offerings), Practice and Innovation Strategy
+        - Delivery Governance oversight across multiple practices - AI/ML, Data Analytics, Infrastructure, Security, etc. ( > $15m)
+
+    - title: Principal Engineer
+      institution: Standard Chartered Bank, SG
+      year: 2019 - 21
       description:
-        - Description 1.
-        - Description 2.
+        - Conceptualized and built Retail Bank's data platform across 11 markets and 1200 users, significantly reduced ML model deployment time.
+        - Created credit downgrade & default prediction models based on news trends and social influencers for over 15,000 named entities.
+        - Formulated risk scoring models based on customer's social media profile attributes, photos, videos, and neighborhood metrics.
+        - Defined technology strategy and roadmaps for Bank's External/3rd party data management, Data Partnership & Ecosystems, Data Monetization, Marketing Automation (Martech), Customer Experience, Data Privacy, Explainable AI (XAI), Data Sovereignty and Cloud adoption
 
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
+    - title: Principal Data Engineer
+      institution: Teradata / Think Big Analytics, SG
+      year: 2017 - 19
       description:
+        - Designed and developed grounds up 5 Data Lakes across the globe, with highly scalable ETL pipelines serving data volumes of up to 1.2 PB per hour and 40K daily files.
+        - Engineered the low latency real time in-memory platform, processing over 2.5 million events/sec.
+        - Built RT fraud detection ML system for a leading Bank that reduced false positives by 60% and increased detection rates by 70%.
+        - Successfully built and upgraded multiple Hadoop clusters on Cloud/On-prem ranging between 150-250 nodes.
 
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
+    - title: Technical Lead
+      institution: UTU, SG
+      year: 2016 - 17
+      description:  
+        - Built the foundational services and partner integrations for the maiden launch of UTU at Thailand.
+        - Developed low latency (<25 μs) transaction processing module for bank mainframe integration.
+
+    - title: Founder
+      institution: Truckaurbus Marketplace, IN
+      year: 2014 - 16
+      description: 
+        - Took Truckaurbus from zero to launching across 15 cities, and 25+ OEM/Banks/NBFC Partners and 240K unique visitors/day.
+        - Architected the core marketplace and auctioning platform, dealers lead generation network and ad-serving platform.
+
+    - title: Senior SDE
+      institution: Microsoft, IN
+      year: 2010 - 14
+      description: 
+        - Windows Kernel Platform Group (7/8), Windows Server 2012 R2 / Hyper-V, MS Lync. 
+        - Early machine learning modules on Azure; Azure CDN.
+
+
+- title: Education
+  type: time_table
+  contents:
+    - title: MBA, Business Analytics
+      institution: Birla Institute of Technology and Science, Pilani, IN
+      year: 2022
+      description: Financial Risk Analytics, Marketing Models, Financial Management, Strategic Management, Operations Management, Financial and Management Accounting, Predictive Analytics
+
+    - title: Master of Technology, Software Systems
+      institution: Birla Institute of Technology and Science, Pilani, IN
+      year: 2017
+      description: Algorithms, Distributed Systems, Deep Learning, Natural Language Processing, Machine Learning, Artificial Intelligence (AI)
+    
+    - title: Bachelor of Science
+      institution: Indian Institute of Technology, Madras
+
 
 - title: Open Source Projects
   type: time_table
   contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+    - title: <a href="https://golocate.me">Open Location Proof (GoLocate.me)</a>
+      year: 2022
+      description: A privacy aware open protocol to prove without repudiation an entity's point-in-time presence, participation, and location in physical or virtual space. GoLocate.me is a planned implementation node demonstrating the protocol
 
-- title: Honors and Awards
+    - title: <a href="https://oconsent.io">OConsent - Open Consent Protocol</a>
+      year: 2021
+      description: A transparent, fast, and scalable protocol for Consent and Privacy management built on top of public blockchains.
+
+    - title: <a href="https://github.com/bassrehab/ISO8583-Simulator">ISO8583 Simulator</a>
+      year: 2016
+      description: A simulator that takes in ISO 8583 messages (messaging protocol used by Banks, Payment Processor, Clearing houses and other financial Institutions)
+
+    - title: <a href="https://github.com/bassrehab/heartohelp.us">Heartohelp.us (Compassion Pit), an anonymous chat system for online emotional support</a>
+      year: 2011
+      description: Created an online website/community with a live Listener and Venter chat system, profile, and rating system. Number of registered users, 19,800 in 2012, across 19 countries.
+
+    - title: <a href="https://drdo.in/drdo">Micromechanical Flying insect for low-cost outdoor surveillance</a>
+      year: 2009
+      description: Created micromechanical flying insect based on swarm intelligence driven by piezo-electric thorax actuators and muscle wire technology, with integrated onboard GPS and real time imaging. 
+
+
+- title: Certifications
   type: time_table
   contents:
-    - year: 1921
+    - year: 2022
       items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
+        - Google Cloud Certified Professional Cloud Architect
+        - Google Cloud Certified Professional Data Engineer
+        - Google Cloud Certified Professional Machine Learning Engineer
+    - year: 2018
       items:
-        - Max Planck Medal
+        - Blockchain Hyperledger, The Linux Foundation
+        - Deep Learning Specialization, Coursera
 
 - title: Academic Interests
   type: nested_list
   contents:
-    - title: Topic 1.
+    - title: Data & AI
       items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
+        - Large Language Models (LLM)
+        - Data and Computation Privacy
+        - Graph Neural Networks
+        - AI/ML Infrastructure
+        - Approximate Computations
+    - title: Distributed Systems
       items:
-        - Description 1.
-        - Description 2.
+        - Distributed Databases
+        - Consensus Protocols
+        - Fault Tolerance
+        - Cloud Computing Architectures
+    - title: Others
+      items:
+        - Quantum Algorithms and error corrections
+        - Quantitative Finance
+        - High Frequency Trading
+        - Theoretical Physics
+        - Security and Cryptography
 
 - title: Other Interests
   type: list
   contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+    - <u>Hobbies:</u> Website Design, Car Design and Modifications, Competitive Programming
