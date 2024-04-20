@@ -90,7 +90,7 @@ pinterest_id: # your pinterest id
 publons_id: # your ID on Publons
 quora_username: # your Quora username
 research_gate_profile: Subhadip-Mitra-3 # your profile on ResearchGate
-scholar_userid: B3U5mSYAAAAJ # your Google Scholar ID
+scholar_userid: # your Google Scholar ID
 scopus_id: # your profile on Scopus
 semanticscholar_id: # your Semantic Scholar ID
 spotify_id: # your spotify id
@@ -107,7 +107,7 @@ youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
 zotero_username: # your zotero username
 
 contact_note: >
-  Far far away, behind the word mountains, far from the countries.
+  Beyond the byte rivers and through the silicon forests, lies a place where your thoughts and our innovations meet. Reach out and let's connect!
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
@@ -127,7 +127,7 @@ bing_site_verification: 04fec5e0d64b1c9bc788e98f81ee2a78 # out your bing-site-ve
 # -----------------------------------------------------------------------------
 
 blog_name: the blog # blog_name will be displayed in your blog page
-blog_description: a simple whitespace theme for academics
+blog_description: from silicon chips to neural networks
 permalink: /blog/:year/:title/
 
 # Pagination
@@ -290,8 +290,8 @@ display_categories: ["blockquotes"] # these categories will be displayed on the 
 # -----------------------------------------------------------------------------
 
 scholar:
-  last_name: [Einstein]
-  first_name: [Albert, A.]
+  last_name: [Mitra]
+  first_name: [Subhadip]
 
   style: apa
   locale: en
