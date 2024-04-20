@@ -382,7 +382,7 @@ ul.task-list input[type="checkbox"] {
   text-align: center;
 
   .contact-icons {
-    font-size: 4rem;
+    font-size: 2rem;
 
     a {
       i::before {
@@ -394,6 +394,10 @@ ul.task-list input[type="checkbox"] {
         i::before {
           color: var(--global-theme-color);
         }
+      }
+
+      i {
+        margin: 15px 5px;
       }
     }
   }
