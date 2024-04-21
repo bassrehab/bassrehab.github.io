@@ -23,7 +23,7 @@ Off the clock, I'm a constellation chaser, [asphalt surfer](https://youtu.be/hep
 <br />
 <br />
 
-## what I do:
+## what I do
 
 **Software Engineering:**  
 I craft digital dreams and engineer realities - that are internet scale, service-oriented, distributed applications specializing in low latency RT data processing and ML engineering.
