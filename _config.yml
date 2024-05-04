@@ -162,7 +162,8 @@ disqus_shortname: al-folio # put your disqus shortname
 # you can display them in your blog by adding a link to the RSS feed.
 external_sources:
   - name: medium.com
-    rss_url: https://medium.com/@bassrehab/feed
+    rss_url:
+    #rss_url: https://medium.com/@bassrehab/feed
 
 # -----------------------------------------------------------------------------
 # Collections
