@@ -282,7 +282,7 @@ jekyll-archives:
     tag: "/blog/tag/:name/"
     category: "/blog/category/:name/"
 
-display_tags: ["llm", "genai", "links", "data", "code"] # these tags will be displayed on the front page of your blog
+display_tags: ["llm", "genai", "quantum-computing", "data", "code"] # these tags will be displayed on the front page of your blog
 display_categories: ["platforms", "algorithms"] # these categories will be displayed on the front page of your blog
 
 # -----------------------------------------------------------------------------
