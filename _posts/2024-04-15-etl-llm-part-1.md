@@ -22,7 +22,7 @@ In this part, we delve into how traditional algorithms can be used to design the
 
 Join us as we begin our journey into rethinking ETLs with the power of advanced language models, setting the stage for a deeper dive into practical applications and optimization strategies in the subsequent parts of the series.
 
-![Bar Chart Approximations](/assets/img/blog/etl-with-llm.png){: width="100%" }
+<br />
 
 ## Understanding the Problem
 
@@ -32,28 +32,32 @@ Before diving into algorithms, let's clarify the core elements:
 - **Output Dataset**: The desired structure, data types, and any specific formatting requirements for your target data.
 - **ETL Operations**: The available transformations at your disposal (e.g., cleaning, filtering, joining, aggregation, calculations).
 
+<br />
+
 ## Core Algorithm Considerations
 
 Here's a foundational outline of the algorithm, which we'll refine for optimality:
 
 1. **Graph Construction:**
 
-- Represent datasets as nodes.
-- Possible ETL operations define the potential edges between nodes.
+   - Represent datasets as nodes.
+   - Possible ETL operations define the potential edges between nodes.
 
 2. **Cost Assignment:**
 
-- Associate a cost with each ETL operation. Costs can incorporate:
-- Computational Complexity: Time and resource usage of the operation.
-- Data Volume impact: How the operation changes dataset size.
-- Dependencies: Operations that must precede others.
+   - Associate a cost with each ETL operation. Costs can incorporate:
+   - Computational Complexity: Time and resource usage of the operation.
+   - Data Volume impact: How the operation changes dataset size.
+   - Dependencies: Operations that must precede others.
 
 3. **Search/Optimization:**
 
-- Employ a search algorithm to find the path with the lowest cumulative cost from Start to End Node. Consider:
-- Dijkstra's Algorithm: Suited for finding the shortest overall path.
-- A Search:\* Incorporates heuristics (estimates of cost-to-goal) for potential speedups.
-- Genetic Algorithms: Explore a broader search space, potentially finding unconventional but less costly solutions.
+   - Employ a search algorithm to find the path with the lowest cumulative cost from Start to End Node. Consider:
+   - Dijkstra's Algorithm: Suited for finding the shortest overall path.
+   - A Search:\* Incorporates heuristics (estimates of cost-to-goal) for potential speedups.
+   - Genetic Algorithms: Explore a broader search space, potentially finding unconventional but less costly solutions.
+
+<br />
 
 ## Optimization Refinements
 
@@ -61,6 +65,9 @@ Here's a foundational outline of the algorithm, which we'll refine for optimalit
 - **Caching and Materialization**: If certain intermediary datasets are reused frequently, strategically store them to avoid recalculation.
 - **Parallelism**: Leverage parallel processing in your ETL tool where possible to execute multiple operations simultaneously.
 - **Constraints**: Factor in constraints like deadlines, resource limits, or error-tolerance thresholds.
+
+<br />
+<br />
 
 **Algorithm Pseudocode (Illustrative)**
 
@@ -75,6 +82,8 @@ Here's a foundational outline of the algorithm, which we'll refine for optimalit
     return optimal_path
 
 ```
+
+<br />
 
 #### Step 1: Define the GraphNode Class
 
@@ -94,6 +103,8 @@ class GraphNode:
         return f"GraphNode({self.name})"
 ```
 
+<br />
+
 #### Step 2: Edge Representation
 
 The Edges must include multiple costs and a probability for each cost. This would typically involve storing each cost along with its probability in a tuple or a custom object.
@@ -107,6 +118,8 @@ Multiple costs can represent the computation cost ($) which can have probability
           self.costs = costs  # List of costs
           self.probabilities = probabilities  # List of probabilities for each cost
 ```
+
+<br />
 
 #### Step 3: Function to Create Graph with Intermediate Nodes
 
@@ -141,6 +154,8 @@ def create_graph(input_dataset, output_dataset, available_operations):
 
 ```
 
+<br />
+
 #### Step 4: Hypothetical Operation Definitions
 
 To simulate realistic ETL operations, we define each operation with a function that modifies the dataset (simplified for this example):
@@ -158,6 +173,8 @@ available_operations = [
 ]
 
 ```
+
+<br />
 
 #### Step 5: Implementing a modified Dijkstra's Algorithm
 
@@ -197,6 +214,9 @@ def dijkstra(start_node):
 
 ```
 
+<br />
+<br />
+
 **Example Execution**
 
 Here's we might set up an example run of the above setup:
@@ -215,6 +235,9 @@ print("Total cost:", cost
 This example demonstrates generating intermediate nodes dynamically as a result of applying operations in an ETL workflow. In a real application, the operations and their impacts would be more complex, involving actual data transformations, schema changes, and potentially conditional logic to decide which operations to apply based on the data's characteristics or previous processing steps.
 
 <br />
+
+---
+
 <br />
 
 # Defining a DSL
@@ -224,6 +247,8 @@ Creating a Domain-Specific Language (DSL) for modeling and specifying ETL (Extra
 ## DSL Structure Overview
 
 The DSL will consist of definitions for datasets, operations (transforms and actions), and workflow sequences. Here's an example of what each component might look like in our DSL:
+
+<br />
 
 #### 1. Dataset Definitions
 
@@ -246,6 +271,8 @@ dataset final_data {
 }
 ```
 
+<br />
+
 #### 2. Operation Definitions
 
 Operations can be transformations or any kind of data processing function. Each operation specifies input and output datasets and may include a cost or complexity rating.
@@ -267,6 +294,8 @@ operation transform_data {
 
 ```
 
+<br />
+
 #### 3. Workflow Definition
 
 A workflow defines the sequence of operations applied to turn raw data into its final form.
@@ -280,6 +309,9 @@ workflow main_etl {
 ```
 
 <br />
+
+---
+
 <br />
 
 # Search Algorithm Selection
@@ -287,6 +319,15 @@ workflow main_etl {
 Let's dive deeper into how to choose the best search algorithm for planning our ETL process. Recall that our core task involves finding the optimal (likely the lowest cost) path through the graph of datasets and ETL operations. While we defined a modified, Djiktra's algorithm for variable and probabilistic costs, for discussion below we will use single aggregated weights.
 
 Absolutely, let's dive deeper into how to choose the best search algorithm for planning your ETL process. Recall that our core task involves finding the optimal (likely the lowest cost) path through the graph of datasets and ETL operations.
+
+<br />
+<iframe width="100%" height="400"
+  src="https://www.youtube.com/embed/A60q6dcoCjw" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+  allowfullscreen>
+</iframe>
+<br />
 
 ## Key Search Algorithm Candidates
 
@@ -312,6 +353,8 @@ Absolutely, let's dive deeper into how to choose the best search algorithm for p
 - Excellent for exploring a wider range of solutions and potentially discovering non-intuitive, less costly paths.
 - Complexity: Can be computationally intensive but may find better solutions in complex scenarios.
 
+<br />
+
 ## Factors Influencing Algorithm Selection
 
 - **Size and Complexity of the ETL Graph**: For smaller graphs, Dijkstra's might be sufficient. Large, complex graphs might benefit from A\* or genetic algorithms.
@@ -322,10 +365,14 @@ Absolutely, let's dive deeper into how to choose the best search algorithm for p
 
 - **Resource Constraints**: Genetic algorithms can be computationally expensive. If runtime or available resources are limited, Dijkstra's or A\* might be more practical.
 
+<br />
+
 ### Caveats
 
 - **No Perfect Algorithm**: The best algorithm is often problem-specific. Experimentation might be necessary.
 - **Tool Integration**: Our chosen ETL tool might have built-in optimization features or favor certain search algorithms.
+
+<br />
 
 ## Example: Heuristic for ETL
 
@@ -336,4 +383,4 @@ Imagine your goal is to minimize data volume throughout the process. A heuristic
 <br />
 <br />
 
-In the next iteration of this series, we will walkthrough examples of ETL scenarios, leveraging A\* Star algorithm above and explore various optimization goals.
+In the [next iteration of this series](/blog/2024/etl-llm-part-2/), we will walkthrough examples of ETL scenarios, leveraging A\* Star algorithm above and explore various optimization goals.

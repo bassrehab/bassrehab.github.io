@@ -8,11 +8,11 @@ middle_name:
 last_name: Mitra
 email: contact@subhadipmitra.com
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+  Embark on a journey through technology and personal exploration with Subhadip Mitra. Discover his insights, projects and musings, where the strive for innovation meets an evolving individuality.
 footer_text: >
   Rights Reserved.
 
-keywords: subhadip, subhadip mitra, subhadip google, google, dikku, personal website # add your own keywords or leave empty
+keywords: subhadip, subhadip mitra, subhadip google, google, dikku, personal website, Data Analytics, Quantum Computing, Distributed Systems, Blockchain, Artificial Intelligence, Big Data, ETL Processes, Data Management, Open Source Projects, Technology Blogging, Software Engineering Insights, Data & Analytics Trends, Personal Technology Musings, Approximate Calculations, Quantum Data Management, Real-Time Data Processing, Data Platform Innovations, Cloud Technologies, Machine Learning Models, Technology Consulting # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: favicon.png # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 

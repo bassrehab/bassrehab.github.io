@@ -26,7 +26,7 @@ In domains like real-time analytics, trend monitoring, and exploratory data anal
 
 ## Classes of Approximation Techniques
 
-Let’s explore some key categories of approximate big data calculations:
+Let's explore some key categories of approximate big data calculations:
 
 1. **Sampling**
 
@@ -36,7 +36,7 @@ Let’s explore some key categories of approximate big data calculations:
 
 2. **Sketching**
 
-   - Idea: Create compact ‘sketches’ or summaries of the data that capture key statistical properties.
+   - Idea: Create compact 'sketches' or summaries of the data that capture key statistical properties.
    - Methods: Count-Min Sketch (frequency distributions), Bloom filters (probabilistic set membership), HyperLogLog (cardinality estimations)
    - Example: Track the number of unique visitors to a website using a HyperLogLog sketch, which efficiently compresses this information.
 
@@ -58,7 +58,7 @@ Successful use of approximate calculations often lies in selecting the right tec
 
 The embrace of approximation techniques marks a shift in big data analytics. By accepting a calculated level of imprecision, we gain the ability to analyze datasets of previously unmanageable size and complexity, unlocking insights that would otherwise remain computationally out of reach.
 
-Big data calculations traditionally involve exact computations, where every data point is processed to yield precise results. This approach is comprehensive but can be highly resource-intensive and slow, especially as data volumes increase. In contrast, approximate calculations leverage statistical and probabilistic methods to deliver results that are close enough to the exact values but require significantly less computational power and time. Here’s a practical example comparing the two approaches:
+Big data calculations traditionally involve exact computations, where every data point is processed to yield precise results. This approach is comprehensive but can be highly resource-intensive and slow, especially as data volumes increase. In contrast, approximate calculations leverage statistical and probabilistic methods to deliver results that are close enough to the exact values but require significantly less computational power and time. Here's a practical example comparing the two approaches:
 
 ## Example: Calculating Average Customer Spend in Retail
 
