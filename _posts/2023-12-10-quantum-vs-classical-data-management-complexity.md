@@ -4,7 +4,7 @@ title: Quantum vs. Classical - Data Management Computational Complexity
 date: 2023-12-10 20:14:00
 description: Grover’s Algorithm and the Revolution of Quantum Search Efficiency
 tags: data platform quantum-computing algorithms
-categories: platforms quantum-computing algorithms
+categories: platform quantum-computing algorithms
 giscus_comments: true
 featured: false
 related_posts: true

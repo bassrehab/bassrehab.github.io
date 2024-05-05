@@ -3,8 +3,8 @@ layout: post
 title: The Next Frontier - Envisioning the Future of Data Platforms Beyond Data Mesh, Data Lakehouse, and Data Hub/Fabric
 date: 2023-10-12 19:09:00
 description: Advancements in data management, from warehouses to Data Mesh and Lakehouse, signal a shift toward more adaptive platforms like, Quantum Data Management, Genetic algorithm concepts, etc.
-tags: data platform
-categories: platforms
+tags: data platform inventive
+categories: platform
 giscus_comments: true
 featured: false
 related_posts: true

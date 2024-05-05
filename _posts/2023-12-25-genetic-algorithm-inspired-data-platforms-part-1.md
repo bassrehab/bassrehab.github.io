@@ -4,7 +4,7 @@ title: Evolutionary Bytes - Harnessing Genetic Algorithms for Smarter Data Platf
 date: 2023-12-25 12:10:04
 description: Explore how genetic algorithms revolutionize data platforms, offering adaptive, dynamic solutions to meet complex challenges in the fast-evolving digital landscape.
 tags: data platform genetic algorithms
-categories: platforms algorithms
+categories: platform algorithms
 giscus_comments: true
 featured: false
 related_posts: true

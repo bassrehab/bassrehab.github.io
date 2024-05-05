@@ -178,7 +178,6 @@ Imagine a customer support scenario where a user has a question about a product.
 - **KG**: Represents products, their features, warranties, and troubleshooting steps as interconnected entities.
 - **Context Store**: Stores user purchase history, recent interactions with the support system, and real-time product availability data.
 
-
 By working together:
 
 - The KG can guide the support agent towards relevant troubleshooting steps based on the specific product and its features.

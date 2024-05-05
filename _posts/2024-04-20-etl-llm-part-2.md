@@ -3,7 +3,7 @@ layout: post
 title: (Part 2/3) Rethinking ETLs - How Large Language Models (LLM) can enhance Data Transformation and Integration
 date: 2024-04-20 21:07:38
 description: Rethinking ETLs - The Power of Large Language Models. Part 2 Exploring examples and optimization goals
-tags: algorithms genai llm data
+tags: algorithms genai llm data code
 categories: algorithms genai
 giscus_comments: true
 featured: false

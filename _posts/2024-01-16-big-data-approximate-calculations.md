@@ -3,7 +3,7 @@ layout: post
 title: Who Needs Exact Answers Anyway? The Joy of Approximate Big Data
 date: 2024-01-16 23:40:08
 description: Discover how sacrificing a bit of accuracy can lead to huge gains in big data analysis speed and efficiency.
-tags: algorithms
+tags: algorithms code data
 categories: algorithms
 giscus_comments: true
 featured: false

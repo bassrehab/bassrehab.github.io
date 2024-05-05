@@ -3,8 +3,8 @@ layout: post
 title: Evolutionary Bytes - Harnessing Genetic Algorithms for Smarter Data Platforms (Part 2/2)
 date: 2023-12-29 15:10:04
 description: Explore how genetic algorithms revolutionize data platforms, offering adaptive, dynamic solutions to meet complex challenges in the fast-evolving digital landscape.
-tags: data platform genetic algorithms
-categories: platforms algorithms
+tags: data platform genetic algorithms code
+categories: platform algorithms
 giscus_comments: true
 featured: false
 related_posts: true
@@ -16,6 +16,8 @@ toc:
 
 ![Database Optimization with Genetic Algorithms](/assets/img/blog/db-optimization.png){: width="100%" }
 
+<br />
+
 ## Understanding Query Execution Plans
 
 - **Query**: A database query is a request for specific data from the database tables. Queries often involve multiple tables, joins to connect those tables, and filters/sorts to refine the result set.
@@ -25,9 +27,13 @@ toc:
   - Whether or not to utilize indexes
 - **Cost Estimation**: The database engine can estimate the cost (in terms of time or resource consumption) of each possible plan. Choosing the optimal query execution plan is critical for performance, especially with complex queries.
 
+<br />
+
 ## The Challenge of Optimization
 
 The number of possible execution plans grows exponentially as the complexity of a query increases. With many tables and joins, it becomes impossible for the database engine to exhaustively evaluate every plan to find the truly optimal one. Traditional optimizers often rely on heuristics that might lead to good, but not perfect, plans.
+
+<br />
 
 ## Where Genetic Algorithms Come In
 
@@ -46,6 +52,8 @@ Genetic algorithms (GAs) mimic evolutionary principles to find near-optimal solu
 - **Mutation**: Random changes are introduced into some chromosomes. This helps avoid getting stuck in a local optimum and promotes exploration of the search space.
 
 - **Iterative Evolution**: The steps of selection, crossover, and mutation are repeated over multiple generations. The average fitness of the population should improve over time.
+
+<br />
 
 ## Foundation Query Optimizer class
 
@@ -154,6 +162,8 @@ class PostgresQueryOptimizer:
 
 ```
 
+<br />
+
 **Initialization**:
 
 `__init__(self, population_size, mutation_rate, crossover_rate)`: This function sets up the optimizer with hyperparameters like population size (number of candidate plans to consider simultaneously), mutation rate (how often chromosomes change slightly), and crossover rate (how often chromosomes exchange information).
@@ -208,7 +218,6 @@ This function creates a starting set of chromosomes (candidate execution plans) 
 - After iterating, the function returns the chromosome with the lowest estimated cost (considered the "best" execution plan).
 
 <br />
-<br />
 
 While the above is a good starting point for a theoretical treatise, a real world implementation would involve more sophistacted cost estimation logic that leverages Postgres' `EXPLAIN ANALYZE` output for detailed metrics.
 
@@ -249,8 +258,12 @@ def chromosome_representation(self, query):
 
 - **Sort Orders**: For each join (if applicable), we determine relevant columns for sorting with a function `get_relevant_sort_columns` (implementation also required). A `"NO_SORT"` option signifies no explicit sorting on the join result.
 
+<br />
+
 **Example Chromosome**
 `[('customer',  'product'), 'HJ',  ('transaction',  'customer'), 'NL', 'idx_customer_name', 'NO_INDEX', 'idx_product_id', 'customer_id',  'NO_SORT']`
+
+<br />
 
 **Additional considerations**
 
@@ -261,6 +274,8 @@ def chromosome_representation(self, query):
 
 - **Conditional Logic**: We would need to introduce logic to only include index or sorting decisions when they're actually relevant to the query.
 - **Chromosome Validity**: We should also consider adding checks to ensure the combination of represented elements (join order, table, index, sort column) is always a valid option with respect to the query and database schema.
+
+<br />
 
 ## Conclusion
 

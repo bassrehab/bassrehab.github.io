@@ -3,8 +3,8 @@ layout: post
 title: Quantum Experiment Data Exchange (QEDX) - Building an Interoperability Standard
 date: 2023-11-20 21:35:20
 description: Advancements in data management, from warehouses to Data Mesh and Lakehouse, signal a shift toward more adaptive platforms like, Quantum Data Management, Genetic algorithm concepts, etc.
-tags: data platform quantum-computing
-categories: platforms quantum-computing
+tags: data platform quantum-computing inventive code
+categories: platform quantum-computing
 giscus_comments: true
 featured: false
 related_posts: true
@@ -13,6 +13,8 @@ toc:
 ---
 
 In this post, we will design the foundations for an interoperability standard for our Quantum Data Management (QDM) Platform. Read more about interoperability in QDM [here](/blog/2023/quantum-data-platform/).
+
+<br />
 
 # A. Proposed Standard
 
@@ -61,6 +63,8 @@ We are only considering the distinctive QDM platform specific operational data. 
 - Benchmarking: Facilitates fair comparison of different quantum devices and algorithms on standardized datasets.
 - Collaboration: Enables smoother data exchange between researchers, regardless of their specific experimental setups.
 
+<br />
+
 # B. Technical Design
 
 ## 1. Core Data Structure
@@ -100,6 +104,8 @@ Below is an example of a JSON based human-readable serialization option. An XML 
   ]
 }
 ```
+
+<br />
 
 ## 3. Schema Validation
 
@@ -151,6 +157,8 @@ Let's extend the QEDX structure proposed earlier:
 
 ```
 
+<br />
+
 #### 4.1.2 Metadata:
 
 - `methods`: Type of characterization techniques used (randomized benchmarking, gate set tomography, etc.).
@@ -173,7 +181,9 @@ Let's extend the QEDX structure proposed earlier:
 - Security: Support for encryption/decryption if handling sensitive data.
 - Data visualization: Recommendations for consistent ways to visually represent quantum experimental data for human interpretation.
 
-# Final representations
+<br />
+
+# C. Final representations
 
 **experiment**
 
