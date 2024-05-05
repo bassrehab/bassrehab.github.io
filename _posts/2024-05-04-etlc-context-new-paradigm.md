@@ -178,13 +178,14 @@ Imagine a customer support scenario where a user has a question about a product.
 - **KG**: Represents products, their features, warranties, and troubleshooting steps as interconnected entities.
 - **Context Store**: Stores user purchase history, recent interactions with the support system, and real-time product availability data.
 
-<br />
 
 By working together:
 
 - The KG can guide the support agent towards relevant troubleshooting steps based on the specific product and its features.
 - The context store can inform the agent of the user's past interactions and product ownership, allowing for a more personalized support experience.
 - Real-time data from the context store could reveal if the product is experiencing a known issue, enabling the agent to address the user's concern more efficiently.
+
+<br />
 
 ## Building a Context Store on GCP with BigTable and EKG
 
