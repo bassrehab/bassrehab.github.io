@@ -8,6 +8,10 @@ div.container-link-button {
 
 table.table-cv {
   background-color: transparent !important;
+
+  tr.certificate-meta {
+    border-top: 1px solid rgb(66, 66, 70);
+  }
 }
 
 a.btncv {

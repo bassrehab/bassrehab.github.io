@@ -32,8 +32,8 @@
       "summary": "Professional Services Organization",
       "highlights": [
         "Led Google Cloud's data analytics in South East Asia",
-        "For SE Asia, Data and Analytics - owned and delivered high stakes projects (100% CSAT), defined the regional GTM Strategy (> $7m in presales, 7+ new offerings), Practice and Innovation Strategy",
-        "Delivery Governance oversight across multiple practices - AI/ML, Data Analytics, Infrastructure, Security, etc. ( > $15m)"
+        "For SE Asia, Data and Analytics - owned and delivered high stakes projects (100% CSAT), defined the sub-regional GTM Strategy (> $XXm in presales, Y new offerings), Practice and Innovation Strategy",
+        "Delivery Governance oversight across multiple practices - AI/ML, Data Analytics, Infrastructure, Security, etc. ( > $XXm)"
       ]
     },
     {
@@ -44,7 +44,7 @@
       "endDate": "2021",
       "summary": "Data and Analytics Transformation and Strategy",
       "highlights": [
-        "Conceptualized and built Retail Bank's data platform across 11 markets and 1200 users, significantly reduced ML model deployment time.",
+        "Conceptualized and built Retail Bank's data platform across 11 markets and XXX users, significantly reduced ML model deployment time.",
         "Created credit downgrade & default prediction models based on news trends and social influencers for over 15,000 named entities.",
         "Formulated risk scoring models based on customer's social media profile attributes, photos, videos, and neighborhood metrics.",
         "Defined technology strategy and roadmaps for Bank's External/3rd party data management, Data Partnership & Ecosystems, Data Monetization, Marketing Automation (Martech), Customer Experience, Data Privacy, Explainable AI (XAI), Data Sovereignty and Cloud adoption"
@@ -150,9 +150,9 @@
   "certificates": [
     {
       "name": "Google Cloud Certified Professional Cloud Architect",
-      "date": "2022",
+      "date": "2024",
       "issuer": "Google Cloud",
-      "url": "https://www.credential.net/358f644a-44bd-46d8-8ecf-d459eb76bfc8?key=94b8b8a7f674475de7a78dc4d8078f6659da7ab8be9a54958f12632dd3eb3864"
+      "url": "https://www.credly.com/badges/d6baf5ca-ab06-41fa-aca5-723316294ef7"
     },
     {
       "name": "Google Cloud Certified Professional Cloud Data Engineer",
@@ -162,9 +162,9 @@
     },
     {
       "name": "Google Cloud Certified Professional Machine Learning Engineer",
-      "date": "2022",
+      "date": "2024",
       "issuer": "Google Cloud",
-      "url": "https://www.credential.net/d65574ec-81ed-410b-b5f2-6512a0757f84"
+      "url": "https://www.credly.com/badges/3f6df2e7-7394-43ae-8c02-ddfe3b300850/public_url"
     },
     {
       "name": "Blockchain Hyperledger",

@@ -478,6 +478,7 @@ footer.sticky-bottom {
   .card {
     background-color: var(--global-card-bg-color);
     border: 1px solid var(--global-divider-color);
+    box-shadow: none;
 
     .list-group-item {
       background-color: inherit;
@@ -486,6 +487,15 @@ footer.sticky-bottom {
       .badge {
         color: var(--global-card-bg-color) !important;
         background-color: var(--global-theme-color) !important;
+      }
+
+      .sub-list-items {
+        padding-left: 1rem;
+        padding-top: 1rem;
+      }
+
+      .sub-list-items-left-padding-only {
+        padding-left: 1rem;
       }
     }
   }
