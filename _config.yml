@@ -126,8 +126,8 @@ bing_site_verification: 04fec5e0d64b1c9bc788e98f81ee2a78 # out your bing-site-ve
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: the blog # blog_name will be displayed in your blog page
-blog_description: from silicon chips to neural networks
+blog_name: binary breakthroughs # blog_name will be displayed in your blog page
+blog_description: from silicon chips to neural networks. <a href="/blog/1970/welcome/">welcome.</a>
 permalink: /blog/:year/:title/
 
 # Pagination
