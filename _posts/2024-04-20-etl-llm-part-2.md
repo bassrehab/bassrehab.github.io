@@ -169,19 +169,19 @@ We can consider different heuristic approaches when designing our A\* search for
    - Domain Knowledge: Understanding which operations are generally CPU-bound, memory-bound, or have I/O bottlenecks.
    - Example: Slightly penalize computationally expensive joins or complex aggregations.
 
-{:class="table table-bordered"}
-|**Hybrid Heuristics**|
-|In complex ETL scenarios, you'll likely get the best results by combining aspects of these heuristics. For instance: Prioritize early filtering to reduce data size, BUT check if it depends on fields that need cleaning first. Favor a computationally expensive join if it's essential for generating multiple output fields and avoids several smaller joins later.|
+> ##### **Hybrid Heuristics**
+> In complex ETL scenarios, you'll likely get the best results by combining aspects of these heuristics. For instance: Prioritize early filtering to reduce data size, BUT check if it depends on fields that need cleaning first. Favor a computationally expensive join if it's essential for generating multiple output fields and avoids several smaller joins later.
+
+---
 
 <br />
-<br />
-<br />
+
 
 ### Building a Heuristic Strategy
 
 Consider the ETL operation in Banking, where we are building the Customer 360 degree view. The Data sources are the customer transactions from POS with Credit Card numbers need to be hashed before joining with the customer profile. Third Party datasets are also used to augment the customer profile, which are only available end of day. Datasets also include recent call center interaction view and past Campaigns /and offers prepared for the customer.
 
----
+
 
 <br />
 <br />
@@ -238,9 +238,9 @@ Here's a breakdown of factors we could incorporate into a heuristic `h(n)` that 
 
 1. **Dataset Size Anticipation**:
 
-- _Expansive Operations_: Penalize operations likely to increase dataset size significantly (e.g., certain joins, unnest operations on complex data).
-- _Reductive Operations_: Favor operations known to reduce dataset size (filtering, aggregation with ‘lossy' calculations like averages).
-- _Estimation_: You might need some profiling of our datasets to understand the average impact of different operations.
+   - _Expansive Operations_: Penalize operations likely to increase dataset size significantly (e.g., certain joins, unnest operations on complex data).
+   - _Reductive Operations_: Favor operations known to reduce dataset size (filtering, aggregation with ‘lossy' calculations like averages).
+   - _Estimation_: You might need some profiling of our datasets to understand the average impact of different operations.
 
 2. **Memory-Intensive Operations**:
    Identify operations likely to require large in-memory processing (complex sorts, joins with certain algorithms). Increase the cost contribution of nodes leading to those operations.
@@ -252,6 +252,8 @@ Here's a breakdown of factors we could incorporate into a heuristic `h(n)` that 
 
 If some operations necessitate intermediate storage, include an estimate of the storage cost in the heuristic calculation.
 
+<br />
+
 ##### Execution Planning
 
 Effective execution planning is key to optimizing performance and managing resources. Our approach involves dissecting the workflow into distinct nodes, each with unique characteristics and challenges. Let’s delve into the specifics of two critical nodes in our current pipeline, examining their roles and the anticipated heuristic costs associated with their operations.
@@ -260,7 +262,6 @@ Effective execution planning is key to optimizing performance and managing resou
 
 - _Node B_: Represents a state where a large external dataset needs to be joined, likely increasing dataset size and potentially involving data transfer. This node would likely have a higher heuristic cost.
 
-<br />
 <br />
 
 ##### Mathematical Representions
@@ -272,8 +273,8 @@ To represent Node A mathematically, we can describe it using notation that captu
 Let's define:
 
 - $$ D $$: Initial dataset.
-- $$ t*{1}, t*{2}$$: Time boundaries for filtering.
-- $$ f(D, t*{1}, t*{2})$$: Function that filters $$ D $$ to include only transactions within the time period $$[t_{1}, t_{2}]$$.
+- $$ t_{1}, t_{2}$$: Time boundaries for filtering.
+- $$ f(D, t_{1}, t_{2})$$: Function that filters $$ D $$ to include only transactions within the time period $$[t_{1}, t_{2}]$$.
 - $$ s(X): Function that sorts dataset $$ X $$ in memory.
 
 Then, Node A can be represented as:
@@ -281,7 +282,7 @@ $$ A = s(f(D, t_1, t_2))$$
 
 Here, $$ f(D, t_1, t_2) $$ reduces the size of $$ D $$ by filtering out transactions outside the specified time window, and $$ s(X) $$ represents a memory-intensive sorting operation on the filtered dataset. The overall cost $$ C_A $$ for Node A could be estimated by considering both the reduction in size (which decreases cost) and the sorting penalty (which increases cost). Mathematically, the cost might be represented as:
 
-$$ C_A = cost(f(D, t_1, t_2)) - reduction_bonus + cost(s(X)) + sort_penalty $$
+> $$ C_A = cost(f(D, t_1, t_2)) - reduction_bonus + cost(s(X)) + sort_penalty $$
 
 This formula provides a way to quantify the heuristic cost of operations performed in Node A, taking into account both the benefits and penalties of the operations involved.
 
@@ -303,12 +304,13 @@ $$ B = j(D, E) $$
 Here, $$ j(D, E) $$ represents the join operation that combines dataset $$ D $$ with external dataset $$ E $$, likely increasing the size and complexity of the data.
 
 Considering the resource costs, particularly for data transfer and increased dataset size, we can mathematically represent the cost $$ C_B $$ for Node B as follows:
-$$ C_B = base_cost(D) + base_cost(E) + join_cost(D, E) + data_transfer_cost + size_penalty $$
 
-- $$ base_cost(D) $$ and $$ base_cost(E) $$ represent the inherent costs of handling datasets $$ D $$ and $$ E $$, respectively.
-- $$ join_cost(D, E) $$ accounts for the computational overhead of performing the join operation.
-- $$ data_transfer_cost $$ covers the expenses related to transferring $$ E $$ if it is not locally available.
-- $$ size_penalty $$ is added due to the increased dataset size resulting from the join, which may affect subsequent processing steps.
+> $$ C_B = base\_cost(D) + base\_cost(E) + join\_cost(D, E) + data\_transfer\_cost + size\_penalty $$
+
+- $$ base\_cost(D) $$ and $$ base\_cost(E) $$ represent the inherent costs of handling datasets $$ D $$ and $$ E $$, respectively.
+- $$ join\_cost(D, E) $$ accounts for the computational overhead of performing the join operation.
+- $$ data\_transfer\_cost $$ covers the expenses related to transferring $$ E $$ if it is not locally available.
+- $$ size\_penalty $$ is added due to the increased dataset size resulting from the join, which may affect subsequent processing steps.
 
 This formulation provides a baseline framework to analyze the costs associated with Node B in your data processing pipeline.
 
