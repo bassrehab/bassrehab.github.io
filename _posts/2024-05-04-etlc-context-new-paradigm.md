@@ -2,7 +2,7 @@
 layout: post
 title: Introducing ETL-C (Extract, Transform, Load, Contextualize) - a new data processing paradigm
 date: 2024-05-04 22:20:18
-description: Discover the power of ELT-C that extracts, loads, transforms, and contextualizes your data for deeper insights and better business decisions
+description: Think your AI apps could use a deeper understanding of your data? ETL-C (extract, load, transform, and contextualize) could be the answer. It's about adding context for better decisions. Intrigued? Read on.
 tags: platform genai knowledge-graphs
 categories: platform genai
 giscus_comments: true
