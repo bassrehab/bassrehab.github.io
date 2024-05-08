@@ -275,14 +275,14 @@ Let's define:
 - $$ D $$: Initial dataset.
 - $$ t_{1}, t_{2}$$: Time boundaries for filtering.
 - $$ f(D, t_{1}, t_{2})$$: Function that filters $$ D $$ to include only transactions within the time period $$[t_{1}, t_{2}]$$.
-- $$ s(X): Function that sorts dataset $$ X $$ in memory.
+- $$ s(X) $$: Function that sorts dataset $$ X $$ in memory.
 
 Then, Node A can be represented as:
 $$ A = s(f(D, t_1, t_2))$$
 
 Here, $$ f(D, t_1, t_2) $$ reduces the size of $$ D $$ by filtering out transactions outside the specified time window, and $$ s(X) $$ represents a memory-intensive sorting operation on the filtered dataset. The overall cost $$ C_A $$ for Node A could be estimated by considering both the reduction in size (which decreases cost) and the sorting penalty (which increases cost). Mathematically, the cost might be represented as:
 
-> $$ C_A = cost(f(D, t_1, t_2)) - reduction_bonus + cost(s(X)) + sort_penalty $$
+> $$ C_A = cost(f(D, t_1, t_2)) - reduction\_bonus + cost(s(X)) + sort\_penalty $$
 
 This formula provides a way to quantify the heuristic cost of operations performed in Node A, taking into account both the benefits and penalties of the operations involved.
 
