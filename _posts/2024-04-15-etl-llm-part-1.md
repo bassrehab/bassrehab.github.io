@@ -333,28 +333,25 @@ Absolutely, let's dive deeper into how to choose the best search algorithm for p
 
 1. **Dijkstra's Algorithm**:
 
-    - Classic shortest path algorithm.
-    - Guarantees finding the optimal solution if all edge costs are non-negative.
-    - Well-suited when your primary objective is minimizing the overall cumulative cost.
-    - Complexity: `O(|V|²)` in a simple implementation, but can be improved to `O(|E| + |V|log|V|)` using priority queues. `|V| = number of nodes (datasets)`, `|E| = number of edges (ETL operations)`.
-
+   - Classic shortest path algorithm.
+   - Guarantees finding the optimal solution if all edge costs are non-negative.
+   - Well-suited when your primary objective is minimizing the overall cumulative cost.
+   - Complexity: `O(|V|²)` in a simple implementation, but can be improved to `O(|E| + |V|log|V|)` using priority queues. `|V| = number of nodes (datasets)`, `|E| = number of edges (ETL operations)`.
 
 2. **A\* Search**
 
-    - Extension of Dijkstra's that uses a heuristic function to guide the search.
-    - Heuristic: An estimate of the cost from a given node to the goal node.
-    - Can potentially find solutions faster than Dijkstra's, especially when good heuristics are available.
-    - Complexity: Depends on the quality of the heuristic, but potentially still faster than a purely uninformed search like Dijkstra's.
-
+   - Extension of Dijkstra's that uses a heuristic function to guide the search.
+   - Heuristic: An estimate of the cost from a given node to the goal node.
+   - Can potentially find solutions faster than Dijkstra's, especially when good heuristics are available.
+   - Complexity: Depends on the quality of the heuristic, but potentially still faster than a purely uninformed search like Dijkstra's.
 
 3. **Genetic Algorithms**
 
-    - Inspired by evolutionary processes.
-    - Maintain a population of potential ETL plans (paths).
-    - "Crossover" and "mutation" operations combine and modify plans iteratively, favoring those with lower costs.
-    - Excellent for exploring a wider range of solutions and potentially discovering non-intuitive, less costly paths.
-    - Complexity: Can be computationally intensive but may find better solutions in complex scenarios.
-
+   - Inspired by evolutionary processes.
+   - Maintain a population of potential ETL plans (paths).
+   - "Crossover" and "mutation" operations combine and modify plans iteratively, favoring those with lower costs.
+   - Excellent for exploring a wider range of solutions and potentially discovering non-intuitive, less costly paths.
+   - Complexity: Can be computationally intensive but may find better solutions in complex scenarios.
 
 <br />
 

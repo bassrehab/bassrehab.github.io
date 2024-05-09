@@ -170,18 +170,16 @@ We can consider different heuristic approaches when designing our A\* search for
    - Example: Slightly penalize computationally expensive joins or complex aggregations.
 
 > ##### **Hybrid Heuristics**
+>
 > In complex ETL scenarios, you'll likely get the best results by combining aspects of these heuristics. For instance: Prioritize early filtering to reduce data size, BUT check if it depends on fields that need cleaning first. Favor a computationally expensive join if it's essential for generating multiple output fields and avoids several smaller joins later.
 
 ---
 
 <br />
 
-
 ### Building a Heuristic Strategy
 
 Consider the ETL operation in Banking, where we are building the Customer 360 degree view. The Data sources are the customer transactions from POS with Credit Card numbers need to be hashed before joining with the customer profile. Third Party datasets are also used to augment the customer profile, which are only available end of day. Datasets also include recent call center interaction view and past Campaigns /and offers prepared for the customer.
-
-
 
 <br />
 <br />
@@ -273,8 +271,8 @@ To represent Node A mathematically, we can describe it using notation that captu
 Let's define:
 
 - $$ D $$: Initial dataset.
-- $$ t_{1}, t_{2}$$: Time boundaries for filtering.
-- $$ f(D, t_{1}, t_{2})$$: Function that filters $$ D $$ to include only transactions within the time period $$[t_{1}, t_{2}]$$.
+- $$ t*{1}, t*{2}$$: Time boundaries for filtering.
+- $$ f(D, t*{1}, t*{2})$$: Function that filters $$ D $$ to include only transactions within the time period $$[t_{1}, t_{2}]$$.
 - $$ s(X) $$: Function that sorts dataset $$ X $$ in memory.
 
 Then, Node A can be represented as:
@@ -282,7 +280,7 @@ $$ A = s(f(D, t_1, t_2))$$
 
 Here, $$ f(D, t_1, t_2) $$ reduces the size of $$ D $$ by filtering out transactions outside the specified time window, and $$ s(X) $$ represents a memory-intensive sorting operation on the filtered dataset. The overall cost $$ C_A $$ for Node A could be estimated by considering both the reduction in size (which decreases cost) and the sorting penalty (which increases cost). Mathematically, the cost might be represented as:
 
-> $$ C_A = cost(f(D, t_1, t_2)) - reduction\_bonus + cost(s(X)) + sort\_penalty $$
+> $$ C_A = cost(f(D, t_1, t_2)) - reduction_bonus + cost(s(X)) + sort_penalty $$
 
 This formula provides a way to quantify the heuristic cost of operations performed in Node A, taking into account both the benefits and penalties of the operations involved.
 
@@ -305,12 +303,12 @@ Here, $$ j(D, E) $$ represents the join operation that combines dataset $$ D $$ 
 
 Considering the resource costs, particularly for data transfer and increased dataset size, we can mathematically represent the cost $$ C_B $$ for Node B as follows:
 
-> $$ C_B = base\_cost(D) + base\_cost(E) + join\_cost(D, E) + data\_transfer\_cost + size\_penalty $$
+> $$ C_B = base_cost(D) + base_cost(E) + join_cost(D, E) + data_transfer_cost + size_penalty $$
 
-- $$ base\_cost(D) $$ and $$ base\_cost(E) $$ represent the inherent costs of handling datasets $$ D $$ and $$ E $$, respectively.
-- $$ join\_cost(D, E) $$ accounts for the computational overhead of performing the join operation.
-- $$ data\_transfer\_cost $$ covers the expenses related to transferring $$ E $$ if it is not locally available.
-- $$ size\_penalty $$ is added due to the increased dataset size resulting from the join, which may affect subsequent processing steps.
+- $$ base_cost(D) $$ and $$ base_cost(E) $$ represent the inherent costs of handling datasets $$ D $$ and $$ E $$, respectively.
+- $$ join_cost(D, E) $$ accounts for the computational overhead of performing the join operation.
+- $$ data_transfer_cost $$ covers the expenses related to transferring $$ E $$ if it is not locally available.
+- $$ size_penalty $$ is added due to the increased dataset size resulting from the join, which may affect subsequent processing steps.
 
 This formulation provides a baseline framework to analyze the costs associated with Node B in your data processing pipeline.
 

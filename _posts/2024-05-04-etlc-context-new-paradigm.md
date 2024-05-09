@@ -14,7 +14,7 @@ toc:
 
 Think of your data as a sprawling city.
 
-Raw data is just buildings and streets, lacking the vibrant life that gives it purpose. ELT-C injects that vibrancy - the demographics, traffic patterns, and even the local buzz. With the added dimensions of Context Stores, your data city becomes a place of strategic insights and informed action. 
+Raw data is just buildings and streets, lacking the vibrant life that gives it purpose. ELT-C injects that vibrancy - the demographics, traffic patterns, and even the local buzz. With the added dimensions of Context Stores, your data city becomes a place of strategic insights and informed action.
 
 > As we develop an increasing number of generative AI applications powered by large language models (LLMs), contextual information about the organization's in-house datasets becomes crucial. This contextual data equips our platforms to effectively and successfully deploy GenAI applications in real-world scenarios, ensuring they are relevant to specific business needs and tailored to the appropriate contexts.
 
@@ -39,7 +39,6 @@ Let's recap the key ETL stages followed by the Contextualize:
    - Merging datasets from different sources
    - Calculations or aggregations (like calculating totals or averages)
 
-
 4. **Contextualize**
    Contextualization is the heart of ELT-C, going beyond basic data processing and turning your information into a powerful analysis tool. It involves adding layers of information, including:
 
@@ -50,7 +49,6 @@ Let's recap the key ETL stages followed by the Contextualize:
      - Customer demographics: Supplementing sales transactions with customer age, location, or income data for better segmentation.
      - Market trends: Adding industry reports or competitor data to contextualize your company's performance.
      - Weather data: Correlating weather patterns with sales trends or energy consumption patterns to understand external drivers.
-
 
    - **User Data**: Augmenting data with insights about how users interact with your products, services, or website. This could include:
      - Website behavior: Tracking user navigation paths to reveal buying intent or improve site design.
@@ -69,7 +67,6 @@ Let's see how the combination of metadata, external data, and user data could al
   - **How it helps:** Ensures the bank uses up-to-date, reliable information and can trace any issues back to the origin.
   - **Contextualize for Better Analysis**: Knowing the recency of data is key for some offers (e.g., targeting recent high spenders). Metadata on the origin of data could reveal if certain marketing campaigns outperform others based on the data source, leading to refined targeting strategies.
 
-
 - **External Data**
 
   - **Example:**
@@ -79,7 +76,6 @@ Let's see how the combination of metadata, external data, and user data could al
   - **Contextualize for Better Analysis:**
     - Localized economic data alongside customer demographics could reveal underserved areas where the bank can expand its card offerings.
     - Sudden changes in economic forecasts or competitor actions might trigger proactive offers to solidify relationships with existing customers.
-
 
 - **User Data**
 
@@ -92,7 +88,6 @@ Let's see how the combination of metadata, external data, and user data could al
 <br />
 
 ---
-
 
 # Context Bridge & Stores
 
@@ -135,7 +130,7 @@ A Context Store is a centralized repository designed specifically for storing, m
 
 ### Context Stores vs [Vector Stores](https://en.wikipedia.org/wiki/Vector_database)
 
-Data isn't just about numbers and values. Context adds the crucial "why" and "how" behind data points. Context stores have the potential to handle this richness, while vector stores specialize in representing relationships within data. 
+Data isn't just about numbers and values. Context adds the crucial "why" and "how" behind data points. Context stores have the potential to handle this richness, while vector stores specialize in representing relationships within data.
 
 Let's delve into these specialized tools.
 
@@ -189,13 +184,15 @@ Knowledge Graphs (KGs) and Context Stores can complement each other to significa
 
 #### How They Can Work Together
 
-- **Contextualizing Knowledge Graphs**: Context stores can provide KG entities with richer context. Imagine a KG entity for a "product". 
+- **Contextualizing Knowledge Graphs**: Context stores can provide KG entities with richer context. Imagine a KG entity for a "product".
+
   > A context store might house information about a specific product launch event, user reviews mentioning the product, or real-time pricing data. This contextual data adds depth to the product entity within the KG.
 
-- **Reasoning with Context**: KGs enable reasoning over connected entities, considering the relationships within the graph. Context stores can provide real-time updates or specific details that influence this reasoning process. Think of a recommendation system that leverages a KG to understand user preferences and product relationships. 
+- **Reasoning with Context**: KGs enable reasoning over connected entities, considering the relationships within the graph. Context stores can provide real-time updates or specific details that influence this reasoning process. Think of a recommendation system that leverages a KG to understand user preferences and product relationships.
+
   > Real-time stock data from a context store could influence the recommendation engine to suggest alternative products if a preferred item is out of stock.
 
-- **Enriching Context with Knowledge**: KGs can act as a source of structured context for the data within a context store. 
+- **Enriching Context with Knowledge**: KGs can act as a source of structured context for the data within a context store.
   > For instance, a context store might hold user search queries related to a particular topic. A KG could link these queries to relevant entities and their relationships, providing a more comprehensive understanding of user intent behind the searches. These queries can be in the form of the on-site / in-app LLM powered chat interactions too.
 
 <br />
@@ -286,15 +283,11 @@ Understanding these variations - `ELT-C`, `ELT-C`, `EC-T`, and even `EL-C-T-C` i
      - Loaded into a target data warehouse or lake
    - **C (Contextualize)**: After the data is cleaned and structured within the target system, an additional step enriches it by adding relevant context (metadata, external data, user interactions)
 
-
-
 2. **ELT-C**
 
    - **EL (Extract, Load):** Emphasizes loading raw data into the target system as quickly as possible. Transformations and cleaning are deferred.
    - **T (Transform):** Once in the target system (typically suitable for big data), transformations are applied, often leveraging the target system's processing power.
    - **C (Contextualize):** Similar to ETL-C, context is added as a final enrichment step.
-
-
 
 3. **EL-C-T**
 
@@ -302,14 +295,12 @@ Understanding these variations - `ELT-C`, `ELT-C`, `EC-T`, and even `EL-C-T-C` i
    - **C (Contextualize):** Contextualization occurs immediately after loading, adding context while the data is still raw. This might involve linking external data or incorporating real-time insights.
    - **T (Transform):** Finally, the now contextually enriched data undergoes transformations for cleaning, formatting, and structuring.
 
-
 4. **EL-C-T-C**
 
    - **EL (Extract, Load)**: Identical initial step to the previous variations.
    - **C (Contextualize)**: Context is added after loading, as explained before.
    - **T (Transform)**: Transformations are applied.
    - **C (Contextualize)**: An additional contextualization layer is added after transformations. This might involve re-evaluating context based on the transformed data or deriving new contextual features.
-
 
 <br />
 
