@@ -12,11 +12,13 @@ toc:
   sidebar: left
 ---
 
+> This blog post proposes a novel concept - ETL-C, a context-first approach for building Data / AI platforms in the Generative AI dominant era. More discussions to follow in the coming days.
+
 Think of your data as a sprawling city.
 
 Raw data is just buildings and streets, lacking the vibrant life that gives it purpose. ELT-C injects that vibrancy - the demographics, traffic patterns, and even the local buzz. With the added dimensions of Context Stores, your data city becomes a place of strategic insights and informed action.
 
-> As we develop an increasing number of generative AI applications powered by large language models (LLMs), contextual information about the organization's in-house datasets becomes crucial. This contextual data equips our platforms to effectively and successfully deploy GenAI applications in real-world scenarios, ensuring they are relevant to specific business needs and tailored to the appropriate contexts.
+As we develop an increasing number of generative AI applications powered by large language models (LLMs), contextual information about the organization's in-house datasets becomes crucial. This contextual data equips our platforms to effectively and successfully deploy GenAI applications in real-world scenarios, ensuring they are relevant to specific business needs and tailored to the appropriate contexts.
 
 Let's explore how this integrated approach empowers data-driven decision-making.
 
