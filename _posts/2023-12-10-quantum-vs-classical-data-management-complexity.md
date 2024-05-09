@@ -18,15 +18,19 @@ This post delves into the complex world of computational complexity in data mana
 
 ![Grover Algorithm Circuit](/assets/img/blog/grover_algorithm_circuit.png){: width="100%" }
 
+<br />
+
 ## Traditional Data Platforms: Foundations
 
-In traditional data platforms, core database operations exhibit the following complexities:
+In traditional data platforms, core database operations exhibit the following 'common' complexities:
 
 - **Searching**: Unsorted data typically requires linear search algorithms with complexity `O(n)`, where `n` is the size of the dataset. Sorted datasets can use binary search, achieving `O(log n)`. However, more advanced indexing structures like B-trees further reduce this complexity.
 
 - **Insertion/Deletion**: These operations, especially in sorted environments, tend to have `O(n)` complexity as data may need to be shifted. Balanced trees can reduce this to `O(log n)`.
+
 - **Complex Queries and Joins**: The complexity of these operations depends on the algorithms used and data structures. Nested-loop joins can reach `O(n²)`, while optimized hash joins or merge joins can be closer to `O(n log n)` or even `O(n)` with suitable structures.
-  <br />
+
+<br />
 
 ## Quantum Data Management: A New Paradigm
 
@@ -45,13 +49,19 @@ Quantum Data Management Platforms introduce groundbreaking algorithms with poten
 - **Quantum Amplitude Amplification**: A generalization of Grover’s algorithm, this extends the quadratic speedup potential to a wider range of computational problems beyond pure searching.
 - **Quantum-Inspired Indexing**: Research into the adaptation of traditional indexing structures like B-trees and hash tables to the quantum domain is ongoing. These may lead to further logarithmic-like improvements in specific query scenarios.
 
-### Key Considerations and Caveats
+<br />
+
+#### Key Considerations and Caveats
 
 It’s crucial to highlight several points:
 
 - **Quantum Error Correction**: Real-world QDMPs will require extensive error correction, introducing overheads that impact overall computational complexity. The extent of this overhead will depend on the progress in developing robust quantum computers.
 - **Problem-Specific Suitability**: Quantum algorithms are highly specialized. Grover’s search, for instance, is excellent for unstructured search problems but offers less advantage when data possesses some internal structure.
 - **Algorithm Development**: The field of quantum database algorithms is still in its infancy. The full potential of QDMPs relies on the continual development of novel algorithms that exploit quantum phenomena.
+
+<br />
+---
+<br />
 
 ## Mathematical Example: Search Complexity
 
@@ -66,6 +76,8 @@ Let’s break down how Grover’s algorithm achieves this impressive search effi
 
 **Problem:** You have a function (often called an ‘oracle’) that takes an input and outputs ‘1’ if the input is your desired solution and ‘0’ otherwise. Your goal is to find an input that makes the function produce a ‘1’.
 
+<br />
+
 ### Grover’s Algorithm Intuition
 
 Here’s the core idea behind Grover’s algorithm, presented in a simplified way:
@@ -78,12 +90,16 @@ Here’s the core idea behind Grover’s algorithm, presented in a simplified wa
 
 **Step 4. Iteration:** Steps 2 and 3 are repeated multiple times. Each iteration amplifies the correct answer further.
 
+<br />
+
 ### Why So Fast?
 
 **Interference:** The amplitude amplification step uses quantum interference to cleverly increase the probability of measuring the correct answer while simultaneously decreasing the probability of measuring incorrect ones.
 **Success Probability:** After a specific number of iterations (roughly the square root of the number of entries), the probability of measuring the correct solution becomes very high.
 
-#### Analogy
+<br />
+
+**Analogy**
 
 Think of a lottery with a billion tickets, but only one winner. Normally, you’d check tickets one by one. Grover’s does something akin to:
 
@@ -92,26 +108,36 @@ Think of a lottery with a billion tickets, but only one winner. Normally, you’
 3. Having a way to shake the ‘box’ so the winning ticket tends to float to the top.
 4. Repeating step 3 a few times. Now when you open the box, you have a high chance of picking the winner.
 
+<br />
+
 ### Addressing Our Numbers
 
 With a billion entries (n = 1,000,000,000), the square root of n is approximately 31,622. This roughly aligns with the 30,000 steps mentioned. Importantly, the number of steps in Grover’s algorithm doesn’t grow at the same rate as a traditional search.
 
-### Important Notes
+**Important Notes**
 
 - **Oracle Creation**: Adapting real-world problems into an oracle suitable for Grover’s search can be difficult.
 - **Limitations**: Grover’s is best suited for unstructured searches. If data has a known structure, traditional methods might work better.
+
+<br />
+---
+<br />
 
 ## Unveiling the Math: Amplitude Amplification in Grover’s Algorithm
 
 Grover’s algorithm’s power lies in its core operation — amplitude amplification. Let’s delve into the mathematical details of this critical step.
 
-### Setting the Stage: Hilbert Space and Notation
+<br />
+
+**Setting the Stage: Hilbert Space and Notation**
 
 - We work in a Hilbert space representing the superposition of all possible database entries (n qubits). Each basis state represents one entry.
 - Denote the initial uniform superposition as: `|s⟩ = (|0⟩ + |1⟩)/√2` (for single qubit) or a similar equal superposition for n qubits.
 - The oracle function is represented by a unitary operator, O, that flips the sign of the desired solution state while leaving others unchanged.
 
-### The Magic: Amplitude Amplification Operator
+<br />
+
+**The Magic: Amplitude Amplification Operator**
 
 The key operator in Grover’s diffusion is the Grover operator, denoted as G. It’s constructed using the reflection operator, R:
 
@@ -121,12 +147,16 @@ The Grover operator, G, is then defined as:
 
 `G = R — (2|0⟩⟨0⟩ + 2|1⟩⟨1⟩) = R — 2I`
 
-#### Understanding the Operators:
+<br />
+
+**Understanding the Operators**
 
 - R reflects the current state around the uniform superposition |s⟩.
 - The additional term -2I ensures the overall reflection doesn’t change the norm (length) of the state vector.
 
-#### The Amplification Process
+<br />
+
+**The Amplification Process**
 
 Now comes the magic! We apply the oracle (O) followed by the Grover operator (G) in a loop:
 
@@ -134,7 +164,9 @@ Now comes the magic! We apply the oracle (O) followed by the Grover operator (G)
 
 This sequence (GO) cleverly amplifies the amplitude of the desired solution state while diminishing those of incorrect entries.
 
-#### Iterative Amplification:
+<br />
+
+**Iterative Amplification**
 
 Repeating the sequence (GO) multiple times enhances this amplification effect.
 
@@ -142,7 +174,9 @@ Mathematically, after `t` iterations:
 
 `|ψ_t⟩ = (GO)^t |s⟩`
 
-#### Finding the Optimal Number of Iterations
+<br />
+
+**Finding the Optimal Number of Iterations**
 
 The number of iterations (t) for optimal amplification depends on the number of entries (n). Here’s the sweet spot:
 
@@ -150,13 +184,22 @@ The number of iterations (t) for optimal amplification depends on the number of 
 
 With this number of iterations, the probability of measuring the desired solution becomes very high.
 
-#### Inner Workings: A Geometric View
+<br />
+
+**Inner Workings: A Geometric View**
 
 Imagine the initial state as a vector in the n-dimensional Hilbert space. The oracle “marks” the solution by rotating it. Subsequent applications of the Grover operator act like further rotations, amplifying the solution’s projection onto the desired subspace while diminishing those of incorrect entries.
 
-#### Complexity Analysis
+<br />
+
+**Complexity Analysis**
 
 The number of iterations (t) scales as the square root of n, a significant improvement over the linear search complexity (O(n)). This translates to the dramatic speedup observed in Grover’s algorithm.
+
+<br />
+---
+<br />
+
 
 ## Conclusion
 
