@@ -133,7 +133,7 @@ How medium fixed duplicate stories
 [Designing a wide-column database on RocksDB](https://medium.com/pinterest-engineering/building-pinterests-new-wide-column-database-using-rocksdb-f5277ee4e3d2)
 How Pinterest built a wide-column database on RocksDB
 
-# 2.3 / Others
+## 2.3 / Others
 
 [Smashing the state machine: the true potential of web race conditions](https://portswigger.net/research/smashing-the-state-machine)
 Web race condition attacks
