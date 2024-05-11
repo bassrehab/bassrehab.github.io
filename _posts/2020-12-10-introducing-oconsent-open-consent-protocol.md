@@ -21,49 +21,52 @@ In the rest of the blog post, I will take you through the core concepts of OCons
 <br />
 
 # OConsent Preview
+
 <br />
 
 {% include figure.liquid loading="eager" path="assets/img/blog/oconsent-hashing.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
-
 Following are the key steps of the Open Consent creation -
 
 1. **Agreement Seed Creation**:
+
    - A unique identifier (UUID v4) is generated, referred to as the "Agreement Seed."
    - The Data Controller signs this seed with their private key to initiate the creation of a consent agreement.
 
 2. **JSON-LD Consent Agreement**:
-   - This step involves the creation of a JSON-LD (JavaScript Object Notation for Linked Data) formatted consent agreement. 
-   - Both the Data Subject (the user) and the Data Controller (the service provider) sign this agreement with their respective private keys. 
+
+   - This step involves the creation of a JSON-LD (JavaScript Object Notation for Linked Data) formatted consent agreement.
+   - Both the Data Subject (the user) and the Data Controller (the service provider) sign this agreement with their respective private keys.
    - The agreement includes a hash (a cryptographic representation) of its content, ensuring integrity and non-repudiation.
 
 3. **Consent Agreement Hash**:
+
    - This is essentially a confirmation step where the hash of the signed agreement is combined with a timestamp hash provided by a Time Stamping Authority, which also signs it with its private key.
    - This ensures the agreement is not only signed but also timestamped to establish exactly when the consent was recorded.
 
 4. **JSON-LD Consent Proof**:
+
    - The signed and timestamped hash of the consent agreement is then placed into a JSON-LD structured proof.
    - This proof contains the agreement hash and the timestamp hash, ready for the next step.
 
 5. **Embedding in Blockchain**:
-   - The JSON-LD Consent Proof is ready to be embedded into a local blockchain system. 
+
+   - The JSON-LD Consent Proof is ready to be embedded into a local blockchain system.
    - Additionally, it's "fingerprinted" on a global blockchain, ensuring it can be verified independently anywhere in the world.
 
 6. **Public Key Verification**:
-   - The final step involves storing the public keys of both the Data Subject and the Data Controller on the platform. 
+   - The final step involves storing the public keys of both the Data Subject and the Data Controller on the platform.
    - These keys can be used to verify the signatures on the consent agreement, ensuring that the stakeholders who signed the documents are indeed who they claim to be.
 
 This process enhances the security and transparency of data consent agreements, leveraging blockchain's decentralized and immutable characteristics to protect user data and ensure compliance with data privacy laws.
 
-<br />
----
+## <br />
 
 ## Illustrative Programs
 
 ### Python Program to Generate JSON-LD Consent Proof
 
 The below program will generate a consent agreement, sign it with private keys from both the Data Controller and the Data Subject, and then timestamp it using a simulated Time Stamping Authority (NIST in this scenario).
-
 
 ```python
 from cryptography.hazmat.primitives import hashes
@@ -126,11 +129,11 @@ class ConsentProofGenerator:
             "agreement_seed": str(uuid.uuid4()),  # Agreement Seed creation (Step 2)
             "data": "Example data content stored in AWS S3"
         }, indent=4)
-        
+
         # Signatures by Data Controller and Data Subject (Step 3)
         dc_signature = self.sign_data(self.dc_private_key, consent_agreement)
         ds_signature = self.sign_data(self.ds_private_key, consent_agreement)
-        
+
         # Hash and timestamp (Step 4 and 5)
         consent_agreement_hash = self.generate_hash(consent_agreement + dc_signature + ds_signature)
         timestamp = datetime.now().isoformat()
@@ -184,9 +187,11 @@ json_ld_consent_proof = generator.create_consent_proof()
 print(json_ld_consent_proof)
 
 ```
+
 <br />
 
 #### Key Components of the Program:
+
 1. **Key Generation**: Simulates RSA key pairs for the Data Controller, Data Subject, and Time Stamping Authority.
 2. **Signing Data**: Each party signs the agreement, simulating the cryptographic assurance of the data's integrity and origin.
 3. **Hash Generation**: For both the consent data and the timestamped data, ensuring the immutability of records.
@@ -198,60 +203,52 @@ print(json_ld_consent_proof)
 
 ```json
 {
-    "@context": "https://w3id.org/oconsent/v1",
-    "type": "OConsent - Open Consent Agreement",
-    "agreement_hash_id": "b2c6209b6a8ed85b4ba4f838dde8a59d724d316c380dfbf62ed71a57ac78f6bc",
-    "agreement_version": "1.01",
-    "linked_agreement_hash_id": "7b3784a33886431787e075416d46c965",
-    "metadata": {
-        "data_subject": {
-            "name": "Mr. XYZ",
-            "id": "7a2a83b1694940f38d6a2a8f50e4d979"
-        },
-        "data_controller": {
-            "name": "ABC LLC.",
-            "id": "478ecb5f2b674ad18976007d64c069de"
-        },
-        "agreement_date": "2024-05-11T15:04:58.136144",
-        "is_transferable": false
+  "@context": "https://w3id.org/oconsent/v1",
+  "type": "OConsent - Open Consent Agreement",
+  "agreement_hash_id": "b2c6209b6a8ed85b4ba4f838dde8a59d724d316c380dfbf62ed71a57ac78f6bc",
+  "agreement_version": "1.01",
+  "linked_agreement_hash_id": "7b3784a33886431787e075416d46c965",
+  "metadata": {
+    "data_subject": {
+      "name": "Mr. XYZ",
+      "id": "7a2a83b1694940f38d6a2a8f50e4d979"
     },
-    "consent_scope": [
-        {
-            "marketing": {
-                "data_attributes": [
-                    "datasetA:attr1",
-                    "datasetB:attr2"
-                ],
-                "expiry": "01/12/2020"
-            },
-            "analytics": {
-                "data_attributes": [
-                    "datasetB:attr2",
-                    "datasetZ:attr4"
-                ],
-                "expiry": "01/11/2020"
-            }
-        }
-    ],
-    "monetization_enabled": true,
-    "monetization_scope": {
-        "storage": "AWS S3",
-        "data_usage": [
-            "Data analysis",
-            "Machine learning model training"
-        ],
-        "s3_uri": "s3://data-analytics/datasets/ml-training-data.csv"
+    "data_controller": {
+      "name": "ABC LLC.",
+      "id": "478ecb5f2b674ad18976007d64c069de"
     },
-    "signatures": {
-        "data_controller": "753527ed1f50f0bc5af3b3fa50e9659d096dc101c336dda830f6a3c01e95ab15047a7427ece03c4dcb1edaa662eda03ca6303a4fe2d5f6bdcaf351f6bcc44943ad435773dd9e910a62c79ca2cd3ff888850a534423c5094f80c0f749cd30c3f4c04d8750d5873ab2430d2ca20557bf2ef07f8e5b5021728355bc79c20cfc462645ad14c8a149b2fd820e95979711d3798eddc083d302d5e4cb3ff88f242b12ee34864004ac23bb53b3c5792c74f3236f47c6c7c9d547aff68afa8257bafcc4d07dc2d4a081fba10cd9a9c6a4330ae56e298bcd452d148fb2f19b1fe0c678601bcccbdd174aec4a1133c777742cfdd19ee2ad6094b3036d9ccaf39974bca34a2b",
-        "data_subject": "5a40b16b2aa3348d23152b5145c0965ac121c8678c81afc32c6bbb2c0fa9a7f0a831ba8ca2cc2dad8cf9d83ebdfda483535eeb2ec6319d8be447e22dc486fdb124a337f9a86a6c787bbddc799cb84db4f685413e4c9046bce510c9caf57239d7ed1fc179e960f389dfdb43ce2df7261e61949244c9c4bf1c1d52a867cb56f8e06adb267922a020ce5e1e2b7ae112ed618cdbfe655e3f7f54ea673a695e8061fa9b4435eda0e60db75f6124f1b4ba3a309cc5690c5f377c7c98153b3deb1a3719390084eeebb26fbf3f321304e63f841c61bda938a3f4386ee59369f08135895660ae2079040fe909c53c3ba31e6b6e80ade7a1f2697db66f03a098272fc29d24",
-        "time_stamping_authority": "41a2cf34861def4ea8444afaf6ff6adf1333ae4b2552a21d9d03f0a6e952a256a5ed14e86934e332683387dd19ef8cf225ce333c2a713cc6dae5ba26015b3fd9a4357e3ea9b7cb2238c5ef583ca0b787c01a094a4e9312521e5abf0f51d3008a5c5dedc306fbe5b134d8046dae8bfa95737a4f117a04064d557649820b9cbf0bc44217d3f0a889855ab8327e26e5a2ba02d5b6957298ee4779ae5b544e8adcf09669405e77092ec9e1124ec9f8e5d0e0b04f21df1f20802622da562e89d1c5c805045d637d528cbb2de020bd4c0f4c1d9cce32819c4fdfd2ae11fec04cbdd5876eb8c008f054c1706a3dd5bcaf5733e7713d80d52c8a1150f443266addaff0c6"
-    },
-    "timestamp_hash": "679db11c126e730175257e61fb40fddd91bbfdae0166fc6d41bd1011d709bf60"
+    "agreement_date": "2024-05-11T15:04:58.136144",
+    "is_transferable": false
+  },
+  "consent_scope": [
+    {
+      "marketing": {
+        "data_attributes": ["datasetA:attr1", "datasetB:attr2"],
+        "expiry": "01/12/2020"
+      },
+      "analytics": {
+        "data_attributes": ["datasetB:attr2", "datasetZ:attr4"],
+        "expiry": "01/11/2020"
+      }
+    }
+  ],
+  "monetization_enabled": true,
+  "monetization_scope": {
+    "storage": "AWS S3",
+    "data_usage": ["Data analysis", "Machine learning model training"],
+    "s3_uri": "s3://data-analytics/datasets/ml-training-data.csv"
+  },
+  "signatures": {
+    "data_controller": "753527ed1f50f0bc5af3b3fa50e9659d096dc101c336dda830f6a3c01e95ab15047a7427ece03c4dcb1edaa662eda03ca6303a4fe2d5f6bdcaf351f6bcc44943ad435773dd9e910a62c79ca2cd3ff888850a534423c5094f80c0f749cd30c3f4c04d8750d5873ab2430d2ca20557bf2ef07f8e5b5021728355bc79c20cfc462645ad14c8a149b2fd820e95979711d3798eddc083d302d5e4cb3ff88f242b12ee34864004ac23bb53b3c5792c74f3236f47c6c7c9d547aff68afa8257bafcc4d07dc2d4a081fba10cd9a9c6a4330ae56e298bcd452d148fb2f19b1fe0c678601bcccbdd174aec4a1133c777742cfdd19ee2ad6094b3036d9ccaf39974bca34a2b",
+    "data_subject": "5a40b16b2aa3348d23152b5145c0965ac121c8678c81afc32c6bbb2c0fa9a7f0a831ba8ca2cc2dad8cf9d83ebdfda483535eeb2ec6319d8be447e22dc486fdb124a337f9a86a6c787bbddc799cb84db4f685413e4c9046bce510c9caf57239d7ed1fc179e960f389dfdb43ce2df7261e61949244c9c4bf1c1d52a867cb56f8e06adb267922a020ce5e1e2b7ae112ed618cdbfe655e3f7f54ea673a695e8061fa9b4435eda0e60db75f6124f1b4ba3a309cc5690c5f377c7c98153b3deb1a3719390084eeebb26fbf3f321304e63f841c61bda938a3f4386ee59369f08135895660ae2079040fe909c53c3ba31e6b6e80ade7a1f2697db66f03a098272fc29d24",
+    "time_stamping_authority": "41a2cf34861def4ea8444afaf6ff6adf1333ae4b2552a21d9d03f0a6e952a256a5ed14e86934e332683387dd19ef8cf225ce333c2a713cc6dae5ba26015b3fd9a4357e3ea9b7cb2238c5ef583ca0b787c01a094a4e9312521e5abf0f51d3008a5c5dedc306fbe5b134d8046dae8bfa95737a4f117a04064d557649820b9cbf0bc44217d3f0a889855ab8327e26e5a2ba02d5b6957298ee4779ae5b544e8adcf09669405e77092ec9e1124ec9f8e5d0e0b04f21df1f20802622da562e89d1c5c805045d637d528cbb2de020bd4c0f4c1d9cce32819c4fdfd2ae11fec04cbdd5876eb8c008f054c1706a3dd5bcaf5733e7713d80d52c8a1150f443266addaff0c6"
+  },
+  "timestamp_hash": "679db11c126e730175257e61fb40fddd91bbfdae0166fc6d41bd1011d709bf60"
 }
 ```
-<br />
----
+
+## <br />
+
 <br />
 
 ## Public Blockchain embedding example
@@ -260,7 +257,7 @@ Embedding data into Bitcoin and Ethereum blockchains typically involves differen
 
 #### Bitcoin Embedding Example
 
-For Bitcoin, we would use an `OP_RETURN` transaction. 
+For Bitcoin, we would use an `OP_RETURN` transaction.
 Following is a simplified Python example using the `bit` library to embed the hash of the `json_ld_consent_proof`:
 
 ```python
@@ -285,7 +282,7 @@ print(f"Transaction Hash: {transaction_hash}")
 
 ### Ethereum Embedding Example
 
-For Ethereum, a smart contract can be used to store strings. 
+For Ethereum, a smart contract can be used to store strings.
 Following is an example using `web3.py` to interact with a smart contract:
 
 ```solidity
@@ -348,7 +345,6 @@ print(f"Transaction Token: {transaction_token}")
 
 Below describes at a high level how a user who is keen to share (and / or monetize) their data may install a Google Chrome browser extension, and allow anonymized tracking. The file data is anaonymized, and uploaded to AWS S3. The hash of the data is returned - uniquely identifying the dataset, alongwith the S3 URI.
 
-
 **1. Manifest.json (Extension Configuration):**
 
 ```json
@@ -357,12 +353,7 @@ Below describes at a high level how a user who is keen to share (and / or moneti
   "name": "Privacy-Aware Website Tracking",
   "description": "Tracks anonymized website behavior with user consent.",
   "version": "1.0.0",
-  "permissions": [
-    "activeTab",
-    "webNavigation",
-    "storage",
-    "identity"
-  ],
+  "permissions": ["activeTab", "webNavigation", "storage", "identity"],
   "background": {
     "service_worker": "background.js"
   },
@@ -379,12 +370,12 @@ Below describes at a high level how a user who is keen to share (and / or moneti
 
 ```javascript
 // Handle user login (e.g., using Chrome Identity API)
-chrome.identity.getAuthToken({ interactive: true }, function(token) {
+chrome.identity.getAuthToken({ interactive: true }, function (token) {
   // ... store token securely ...
 });
 
 // Listen for web navigation events
-chrome.webNavigation.onCompleted.addListener(details => {
+chrome.webNavigation.onCompleted.addListener((details) => {
   // Send a message to the content script to start tracking
   chrome.tabs.sendMessage(details.tabId, { action: "startTracking" });
 });
@@ -395,14 +386,15 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
     // Sign data with user's private key (retrieved securely)
     const signedData = await signData(message.data);
 
-    // Upload signed data to S3 
+    // Upload signed data to S3
     const { hash, s3Uri } = await uploadToS3(signedData);
 
     // Send response back to content script
-    sendResponse({ hash, s3Uri }); 
+    sendResponse({ hash, s3Uri });
   }
 });
 ```
+
 **3. content.js (Content Script):**
 
 ```javascript
@@ -422,7 +414,7 @@ function startTracking() {
   // Periodically send data to background script
   setInterval(() => {
     if (isTracking && trackingData.length > 0) {
-      chrome.runtime.sendMessage({ action: "data", data: trackingData }, response => {
+      chrome.runtime.sendMessage({ action: "data", data: trackingData }, (response) => {
         // Handle response from background script (e.g., display hash and S3 URI)
       });
       trackingData = []; // Clear data after sending
@@ -435,13 +427,11 @@ function startTracking() {
 
 --
 
-
 ## Time-leased sharing of the User's Data
 
 Time-leased data sharing empowers users with greater control over their personal information while enabling organizations to derive valuable insights. This innovative model introduces a concept where users explicitly grant access to their anonymized data for a predetermined duration.
 
-Time-leased data sharing leverages blockchain technology and smart contracts to create a transparent, secure, and tamper-proof framework for data exchange.  It allows users to define the terms of data usage, including the specific data points shared, the intended purpose, and the duration of access. By doing so, users retain ownership and control over their data, ensuring that it's not exploited beyond their consent.
-
+Time-leased data sharing leverages blockchain technology and smart contracts to create a transparent, secure, and tamper-proof framework for data exchange. It allows users to define the terms of data usage, including the specific data points shared, the intended purpose, and the duration of access. By doing so, users retain ownership and control over their data, ensuring that it's not exploited beyond their consent.
 
 Below is a sample approach that leverages smart contracts to enforce the temporal control.
 
@@ -451,10 +441,10 @@ Below is a sample approach that leverages smart contracts to enforce the tempora
 
 The core components of a smart contract for this purpose would typically include:
 
-* **Data Hash Storage:** A variable (e.g., `bytes32 dataHash`) to securely store the hash of the anonymized data file. This hash serves as a unique identifier for the data without revealing its content.
-* **Expiration Timestamp:** A variable (e.g., `uint256 expirationTime`) to store the Unix timestamp representing the date and time when the data sharing agreement expires.
-* **Data Validity Function:** A function (e.g., `isDataValid()`) that compares the current block timestamp (accessible within the smart contract) with the stored `expirationTime`. It returns `true` if the data is still valid (current time is before expiration) and `false` if it has expired.
-* **Optional Revocation Mechanism:** Additional functions or events can be included to explicitly revoke access to the data before the expiration time, either by the data owner or through some other agreed-upon condition.
+- **Data Hash Storage:** A variable (e.g., `bytes32 dataHash`) to securely store the hash of the anonymized data file. This hash serves as a unique identifier for the data without revealing its content.
+- **Expiration Timestamp:** A variable (e.g., `uint256 expirationTime`) to store the Unix timestamp representing the date and time when the data sharing agreement expires.
+- **Data Validity Function:** A function (e.g., `isDataValid()`) that compares the current block timestamp (accessible within the smart contract) with the stored `expirationTime`. It returns `true` if the data is still valid (current time is before expiration) and `false` if it has expired.
+- **Optional Revocation Mechanism:** Additional functions or events can be included to explicitly revoke access to the data before the expiration time, either by the data owner or through some other agreed-upon condition.
 
 <br />
 
@@ -463,6 +453,7 @@ The core components of a smart contract for this purpose would typically include
 1. **Data Upload and Hashing:** The Chrome extension anonymizes the user's data, calculates its hash (e.g., SHA-256), and uploads the data to the S3 bucket.
 
 2. **Smart Contract Deployment:**
+
    - The extension sends a transaction to the blockchain to deploy the smart contract.
    - The transaction includes the data hash and the chosen expiration timestamp as arguments to the contract's constructor.
 
@@ -486,7 +477,7 @@ contract DataLease {
 
     function revokeAccess() public {
         require(msg.sender == owner, "Only the owner can revoke access");
-        expirationTime = block.timestamp; 
+        expirationTime = block.timestamp;
         emit DataExpired(dataHash);
     }
 }
@@ -494,8 +485,7 @@ contract DataLease {
 
 ## Looking forward ..
 
-In conclusion, OConsent represents a significant step towards a more transparent and user-centric approach to data sharing. By leveraging blockchain technology and focusing on user empowerment, it addresses key challenges in consent management and privacy protection.  While still evolving, OConsent demonstrates the potential of decentralized solutions to reshape the data landscape. The protocol's future development and adoption will be crucial in determining its broader impact on promoting a more equitable and transparent data economy.
-
+In conclusion, OConsent represents a significant step towards a more transparent and user-centric approach to data sharing. By leveraging blockchain technology and focusing on user empowerment, it addresses key challenges in consent management and privacy protection. While still evolving, OConsent demonstrates the potential of decentralized solutions to reshape the data landscape. The protocol's future development and adoption will be crucial in determining its broader impact on promoting a more equitable and transparent data economy.
 
 OConsent now has a dedicated home at https://oconsent.io.
 The Original Paper is available at https://arxiv.org/abs/2201.01326

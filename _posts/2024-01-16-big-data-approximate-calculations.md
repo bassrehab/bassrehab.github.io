@@ -53,6 +53,7 @@ Approximation techniques often come with provable accuracy guarantees. Key conce
 - **Convergence**: Iterative algorithms often improve in accuracy with additional data or computation time, allowing you to tune their precision.
 
 ---
+
 <br />
 
 # The Art of Approximation
@@ -201,13 +202,11 @@ Upon further calculation you can see the relative percentage error across `100 e
 
 [Link to the colab](https://colab.research.google.com/drive/1OBAt8w49NSA_3ltZvOGYD5ZnzKGm3f2W?usp=sharing)
 
-
 <br />
 
 ---
 
 ## Example: Probabilistic Data Structures and Algorithms
-
 
 This section of our blog is dedicated to demonstrating how these powerful data structures—**Bloom Filters, Count-Min Sketches, HyperLogLog, Reservoir Sampling**, and **Cuckoo Filters**—can be practically implemented using Python to manage large datasets effectively. We will generate random datasets and use these structures to perform various operations, comparing their outputs and accuracy. Through these examples, you'll see firsthand how probabilistic data structures enable significant scalability and efficiency improvements in data processing, all while maintaining a balance between performance and precision.
 
@@ -308,7 +307,7 @@ def main():
     # Exact calculations for comparison
     unique_elements_exact = len(set(data))
 
-    # Bloom Filter creation and testing 
+    # Bloom Filter creation and testing
     bloom, k, m = create_bloom_filter(n_elements, error_rate=0.005)
 
     k += 2  # Increase the number of hash functions by 2 for better accuracy
@@ -317,7 +316,7 @@ def main():
         add_to_bloom_filter(bloom, item, k, m)
 
     # Test membership for the query set (with positive_count defined)
-    positive_count = 0  
+    positive_count = 0
     for query in queries:
         if is_member_bloom_filter(bloom, query, k, m):
             positive_count += 1
@@ -332,7 +331,7 @@ def main():
         if is_member_bloom_filter(bloom, item, k, m):
             false_positives_bloom += 1
     false_positive_rate_bloom = false_positives_bloom / n_elements
-    
+
     # Create other data structures
     cms = create_count_min_sketch(data)
     hll = create_hyperloglog(data)
@@ -341,7 +340,7 @@ def main():
 
     # Test Cuckoo Filter (similar to Bloom Filter)
     cuckoo_positive_count = 0
-    false_positives_cuckoo = 0  
+    false_positives_cuckoo = 0
     for query in queries:
         if is_member_cuckoo_filter(cf, query):
             cuckoo_positive_count += 1
@@ -350,7 +349,7 @@ def main():
             false_positives_cuckoo += 1
 
     false_positive_rate_cuckoo = false_positives_cuckoo / n_elements
-    
+
 
     # Outputs for comparisons
     bloom_accuracy = positive_count / n_queries * 100
@@ -367,18 +366,17 @@ def main():
     print(f"Frequency of {queries[0]} in Count-Min Sketch: {cms_frequency_example}")
     print(f"Estimated number of unique elements by HyperLogLog: {hll_count}")
     print(f"Actual number of unique elements: {unique_elements_exact}")
-    print(f"Sample from Reservoir Sampling: {reservoir_sample[:10]}") 
+    print(f"Sample from Reservoir Sampling: {reservoir_sample[:10]}")
 
 if __name__ == '__main__':
     main()
-    
+
 
 ```
 
 <br />
 
 The sample output from the above looks something like this:
-
 
 ```
 Bloom Filter Accuracy (Approximate Positive Rate): 10.15%
@@ -400,33 +398,30 @@ Let's analyze the output above:
 
 **Bloom Filter**
 
-* **Accuracy (Approximate Positive Rate): 10.15%**  This means that when queried for items known to be in the dataset, the Bloom filter correctly identified them as present about 10.15% of the time. This is a relatively low accuracy, suggesting that the Bloom filter's parameters (size, number of hash functions) might need adjustment to reduce false negatives.
-* **False Positive Rate: 0.80%**  This indicates that the Bloom filter incorrectly identified items not in the dataset as present about 0.80% of the time. This is a reasonable false positive rate for many applications, but depending on your specific requirements, you might want to adjust the filter parameters to lower it further.
+- **Accuracy (Approximate Positive Rate): 10.15%** This means that when queried for items known to be in the dataset, the Bloom filter correctly identified them as present about 10.15% of the time. This is a relatively low accuracy, suggesting that the Bloom filter's parameters (size, number of hash functions) might need adjustment to reduce false negatives.
+- **False Positive Rate: 0.80%** This indicates that the Bloom filter incorrectly identified items not in the dataset as present about 0.80% of the time. This is a reasonable false positive rate for many applications, but depending on your specific requirements, you might want to adjust the filter parameters to lower it further.
 
 **Cuckoo Filter**
 
-* **Accuracy (Approximate Positive Rate): 9.47%** Similar to the Bloom filter, this indicates the rate at which the Cuckoo filter correctly identified items present in the dataset. The accuracy is slightly lower than the Bloom filter in this case.
-* **False Positive Rate: 0.00%** This shows that the Cuckoo filter did not produce any false positives during testing. This is excellent, as it means the filter is highly reliable in indicating whether an element is genuinely present.
+- **Accuracy (Approximate Positive Rate): 9.47%** Similar to the Bloom filter, this indicates the rate at which the Cuckoo filter correctly identified items present in the dataset. The accuracy is slightly lower than the Bloom filter in this case.
+- **False Positive Rate: 0.00%** This shows that the Cuckoo filter did not produce any false positives during testing. This is excellent, as it means the filter is highly reliable in indicating whether an element is genuinely present.
 
 **Count-Min Sketch**
 
-* **Frequency of 3011802: 945** This is the estimated frequency of the item '3011802' within your dataset according to the Count-Min Sketch. Remember that Count-Min Sketch provides approximate counts, so this value is likely an overestimate.
+- **Frequency of 3011802: 945** This is the estimated frequency of the item '3011802' within your dataset according to the Count-Min Sketch. Remember that Count-Min Sketch provides approximate counts, so this value is likely an overestimate.
 
 **HyperLogLog**
 
-* **Estimated Unique Elements: 967630.0644626628** This is the HyperLogLog's estimate of the number of unique elements in your dataset. It's quite close to the actual number (951924), showcasing the effectiveness of HyperLogLog for cardinality estimation.
+- **Estimated Unique Elements: 967630.0644626628** This is the HyperLogLog's estimate of the number of unique elements in your dataset. It's quite close to the actual number (951924), showcasing the effectiveness of HyperLogLog for cardinality estimation.
 
 **Reservoir Sampling**
 
-* **Sample:** The output shows a random sample of 10 elements from your dataset. This sample should be representative of the original data distribution.
+- **Sample:** The output shows a random sample of 10 elements from your dataset. This sample should be representative of the original data distribution.
 
 **Overall Assessment**
 
-* The Bloom and Cuckoo filters might need parameter tuning to improve their accuracy (reduce false negatives). 
-* The Cuckoo filter's zero false positive rate is impressive.
-* The Count-Min Sketch is providing a frequency estimate, but it's important to remember that it's likely an overestimation.
-* The HyperLogLog is performing very well, providing a close approximation of the actual number of unique elements.
-* The Reservoir Sampling has produced a representative sample, which can be useful for various downstream analyses.
-
-
-
+- The Bloom and Cuckoo filters might need parameter tuning to improve their accuracy (reduce false negatives).
+- The Cuckoo filter's zero false positive rate is impressive.
+- The Count-Min Sketch is providing a frequency estimate, but it's important to remember that it's likely an overestimation.
+- The HyperLogLog is performing very well, providing a close approximation of the actual number of unique elements.
+- The Reservoir Sampling has produced a representative sample, which can be useful for various downstream analyses.

@@ -41,14 +41,15 @@ In an optimal scenario where all base stations exhibit similar timing errors, th
 <br/>
 
 ## Experiment Setup: Simulating Synchronization Errors in Cellular Networks
-In this experiment, I will simulate a scenario with two base stations and a mobile device, introducing synchronization errors at one base station to observe how these impact the calculated position of the mobile device.
 
+In this experiment, I will simulate a scenario with two base stations and a mobile device, introducing synchronization errors at one base station to observe how these impact the calculated position of the mobile device.
 
 ### Mathematical Formulation and Analysis
 
 Assuming the ideal case where there is no synchronization error, the position of the mobile device is calculated based on the time differences of arrival of signals from multiple base stations. In the presence of synchronization errors, the time difference measurements are contaminated, resulting in errors in the calculated position. The mathematical details are as follows:
 
 1. **Distance Calculation**:
+
    - The actual distance $$d_i$$ from a base station $$BS_i$$ to the mobile device is calculated using the formula:
      $$
      d_i = c \cdot (t_i + \tau_{tx,i})
@@ -56,6 +57,7 @@ Assuming the ideal case where there is no synchronization error, the position of
      where $$c$$ is the speed of light, $$t_i$$ is the actual time of flight of the signal, and $$\tau_{tx,i}$$ is the timing error at base station $$i$$.
 
 2. **Error Introduction**:
+
    - When synchronization errors are introduced, the measured time of flight $$t'_i$$ becomes:
      $$
      t'_i = t_i + \frac{\tau_{tx,i}}{c}
@@ -66,6 +68,7 @@ Assuming the ideal case where there is no synchronization error, the position of
      $$
 
 3. **Error Impact on Position Calculation**:
+
    - The position error $$e_{m,t}$$ due to the timing error $$\tau_{tx,i}$$ can be expressed as the difference between the actual and perceived distances:
      $$
      e_{m,t} = |d'_i - d_i| = |\tau_{tx,i}|
@@ -79,26 +82,28 @@ Assuming the ideal case where there is no synchronization error, the position of
 #### Example with Quantitative Analysis
 
 For illustration, consider synchronization errors of $$\tau_{tx,1} = 50 \, \text{ns}$$ and $$\tau_{tx,2} = 200 \, \text{ns}$$ at two base stations. Using the speed of light ($$c \approx 3 \times 10^8 \, \text{m/s}$$), the errors in distances become:
+
 - For BS₁: $$e_{m,t,1} = 50 \times 10^{-9} \times 3 \times 10^8 = 15 \, \text{meters}$$
 - For BS₂: $$e_{m,t,2} = 200 \times 10^{-9} \times 3 \times 10^8 = 60 \, \text{meters}$$
 
 The resulting hyperbolic curves would be shifted by these amounts, significantly affecting the accuracy of the position estimation, especially when the errors have opposite signs or different magnitudes at the two base stations. This can lead to a scenario where the position error becomes the vector sum of the individual errors, worsening under specific geometric configurations (e.g., non-right-angled base station setups).
-
-
-
 
 ## Programmatic Simulations
 
 In this experiment, I'll simulate a scenario with two base stations and a mobile device. I'll introduce synchronization errors at one base station and observe how these errors impact the calculated position of the mobile device.
 
 ### Prerequisites
+
 - Python environment with libraries: `numpy`, `matplotlib`
 
 ### Dataset
+
 The "dataset" in this context will be generated synthetically, representing the positions of base stations and the mobile device, along with the propagation delays affected by synchronization errors.
 
 ### Python Program
+
 The program will:
+
 1. Define the positions of two base stations and one mobile device.
 2. Compute the ideal distances (without synchronization error) from the mobile device to each base station.
 3. Introduce a synchronization error to simulate the real conditions.
@@ -166,10 +171,9 @@ plt.show()
 
 {% include figure.liquid loading="eager" path="assets/img/blog/python-experiment-output.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
-
 <br />
 
-The plot visualizes the impact of a synchronization error on the positioning of a mobile device in a cellular network. The blue and green dots represent the locations of two base stations, while the red 'X' marks the true position of the mobile device. The dashed circles illustrate the perceived positions of the mobile device due to the synchronization error introduced at Base Station 1. This graphical representation clearly shows how even small timing discrepancies can significantly distort position estimates in TDOA systems. 
+The plot visualizes the impact of a synchronization error on the positioning of a mobile device in a cellular network. The blue and green dots represent the locations of two base stations, while the red 'X' marks the true position of the mobile device. The dashed circles illustrate the perceived positions of the mobile device due to the synchronization error introduced at Base Station 1. This graphical representation clearly shows how even small timing discrepancies can significantly distort position estimates in TDOA systems.
 
 ---
 
@@ -182,27 +186,33 @@ The plot visualizes the impact of a synchronization error on the positioning of 
 To determine if the Python programmatic output and the mathematical analysis agree, let's compare the expected outcomes from the mathematical analysis with what was visually depicted in the Python simulation:
 
 ### Mathematical Analysis:
+
 - **Errors in Distance**: From the theoretical analysis, synchronization errors introduce discrepancies in the perceived distances from the base stations to the mobile device. For example:
   - A synchronization error of 50 ns introduces an error of approximately 15 meters.
   - A synchronization error of 200 ns introduces an error of approximately 60 meters.
 
 ### Python Programmatic Output:
+
 - The Python simulation visualized the perceived positions of the mobile device by drawing circles (representing the range based on the synchronization error) around each base station. The intersections of these circles should indicate the perceived locations of the mobile device due to synchronization errors.
 - **Base Station 1** had an added synchronization error which shifted its circle outward, indicating an increased perceived distance to the mobile device.
 - **Base Station 2** had no synchronization error; thus, its circle accurately represents the true distance.
 
 ### Agreement Analysis:
+
 1. **Consistency with Theoretical Errors**:
+
    - The shift in the circle for Base Station 1 in the Python plot should correspond to the 15 meters and 60 meters errors for the respective synchronization errors. This should result in a visible offset between the true position (marked by the red 'X') and the intersections of the circles.
    - The larger the error, the greater the displacement of the intersection from the true position, which should match the theoretical increase in error due to larger synchronization discrepancies.
 
 2. **Visual Inspection**:
+
    - From the plot, if the perceived positions (circle intersections) appear further from the actual position of the mobile device as the synchronization error increases, this matches the theoretical expectation. The circles' radii increasing with synchronization errors and their intersections moving further away from the actual position visually confirm the expected theoretical outcomes.
 
 3. **Quantitative Agreement**:
    - Ideally, measuring the distances between the true position and the perceived positions (intersections of the circles) in the plot should give approximately the distances calculated in the mathematical analysis. This would require additional analysis tools or manual measurements from the plot.
 
 ### Concluding observation:
+
 If the distances measured from the plot (either through a tool or an overlay grid) closely approximate the 15 meters and 60 meters errors calculated mathematically, then the Python programmatic output and the mathematical analysis agree. This agreement would validate both the theoretical framework and the simulation's effectiveness in modeling the impact of synchronization errors in cellular network positioning.
 
 ---

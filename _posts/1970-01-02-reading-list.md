@@ -65,7 +65,7 @@ todo
 ## 2.1/ Aggregated links:
 
 - [Netflix TechBlog](https://medium.com/netflix-techblog)
-- [Uber Blog](http://eng.uber.com/)
+- [Uber Blog](http://eng.uber.com)
 - [The Cloudflare Blog](https://blog.cloudflare.com/)
 - [Engineering at Meta](https://engineering.fb.com/)
 - [LinkedIn Engineering](https://engineering.linkedin.com/blog)
@@ -87,9 +87,6 @@ todo
 - [Capital One](https://lnkd.in/ezsKUf_H)
 
 ## 2.2/ Individual links:
-
-[Fixing Go's Linker](https://www.uber.com/en-IN/blog/fixing-gos-linker/?uclick_id=e30f9188-99b2-40b7-a79f-a66a169984bb)
-Uber's journey into Go's linker internals
 
 [How Meta built the infrastructure for Threads](https://engineering.fb.com/2023/12/19/core-infra/how-meta-built-the-infrastructure-for-threads/)
 The infra that powers theads

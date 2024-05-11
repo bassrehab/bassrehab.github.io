@@ -59,8 +59,8 @@ It’s crucial to highlight several points:
 - **Problem-Specific Suitability**: Quantum algorithms are highly specialized. Grover’s search, for instance, is excellent for unstructured search problems but offers less advantage when data possesses some internal structure.
 - **Algorithm Development**: The field of quantum database algorithms is still in its infancy. The full potential of QDMPs relies on the continual development of novel algorithms that exploit quantum phenomena.
 
-<br />
----
+## <br />
+
 <br />
 
 ## Mathematical Example: Search Complexity
@@ -119,8 +119,8 @@ With a billion entries (n = 1,000,000,000), the square root of n is approximatel
 - **Oracle Creation**: Adapting real-world problems into an oracle suitable for Grover’s search can be difficult.
 - **Limitations**: Grover’s is best suited for unstructured searches. If data has a known structure, traditional methods might work better.
 
-<br />
----
+## <br />
+
 <br />
 
 ## Unveiling the Math: Amplitude Amplification in Grover’s Algorithm
@@ -196,10 +196,9 @@ Imagine the initial state as a vector in the n-dimensional Hilbert space. The or
 
 The number of iterations (t) scales as the square root of n, a significant improvement over the linear search complexity (O(n)). This translates to the dramatic speedup observed in Grover’s algorithm.
 
-<br />
----
-<br />
+## <br />
 
+<br />
 
 ## Conclusion
 
