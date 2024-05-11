@@ -12,7 +12,7 @@ toc:
   sidebar: left
 ---
 
-> This blog post proposes a novel concept - ETL-C, a context-first approach for building Data / AI platforms in the Generative AI dominant era. More discussions to follow in the coming days.
+> This blog post proposes a novel concept - ETL-C, a context-first approach for building Data / AI platforms in the Generative AI dominant era. More discussions to follow.
 
 Think of your data as a sprawling city.
 

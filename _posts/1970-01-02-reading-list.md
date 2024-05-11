@@ -7,7 +7,7 @@ tags: list
 categories: others
 giscus_comments: true
 featured: true
-related_posts: true
+related_posts: false
 toc:
   sidebar: left
 ---

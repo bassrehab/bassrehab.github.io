@@ -83,7 +83,7 @@ lastfm_id: # your lastfm id
 lattes_id: # your ID on Lattes (Brazilian Lattes CV)
 linkedin_username: # your LinkedIn user name
 mastodon_username: # your mastodon instance+username in the format instance.tld/@username
-medium_username: bassrehab # your Medium username
+medium_username: # your Medium username
 orcid_id: # your ORCID ID
 osf_id: # your OSF ID
 pinterest_id: # your pinterest id
@@ -135,7 +135,7 @@ pagination:
   enabled: true
 
 related_blog_posts:
-  enabled: false
+  enabled: true
   max_related: 5
 
 # Giscus comments (RECOMMENDED)
@@ -160,9 +160,9 @@ disqus_shortname: al-folio # put your disqus shortname
 # External sources.
 # If you have blog posts published on medium.com or other external sources,
 # you can display them in your blog by adding a link to the RSS feed.
-external_sources:
-  - name: medium.com
-    rss_url: https://medium.com/@bassrehab/feed
+# external_sources:
+#  - name: medium.com
+#    rss_url: https://medium.com/@bassrehab/feed
 
 # -----------------------------------------------------------------------------
 # Collections
@@ -283,7 +283,7 @@ jekyll-archives:
     category: "/blog/category/:name/"
 
 display_tags: ["llm", "genai", "quantum-computing", "data", "code"] # these tags will be displayed on the front page of your blog
-display_categories: ["platforms", "algorithms"] # these categories will be displayed on the front page of your blog
+display_categories: ["platform", "algorithms"] # these categories will be displayed on the front page of your blog
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar

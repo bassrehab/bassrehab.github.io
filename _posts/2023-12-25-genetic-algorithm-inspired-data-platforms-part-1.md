@@ -32,8 +32,8 @@ Genetic algorithms operate based on a few key principles derived from biological
 
 The operation of a genetic algorithm can be described mathematically as follows:
 
-- **Initialization**: Generate an initial population 𝑃(0)P(0) of 𝑁N individuals randomly. Each individual 𝑥x in the population represents a potential solution.
-- **Fitness Evaluation**: Evaluate each individual using a fitness function 𝑓(𝑥)f(x), which measures the quality of the represented solution.
+- **Initialization**: Generate an initial population $$ P(0) $$ of $$ N $$ individuals randomly. Each individual 𝑥x in the population represents a potential solution.
+- **Fitness Evaluation**: Evaluate each individual using a fitness function $$ f(x) $$, which measures the quality of the represented solution.
 - **New Generation Creation**:
 
   - **Selection**: Select individuals based on their fitness scores to form a mating pool. Selection strategies might include tournament selection, roulette wheel selection, or rank selection.
