@@ -14,8 +14,6 @@ toc:
 
 [In part 1 of this series](/blog/2023/genetic-algorithm-inspired-data-platforms-part-1/), we explored the power of genetic algorithms in shaping data platforms and powering e-commerce personalization. Now, we'll take a more platform-specific technical turn. Let's uncover how genetic algorithms revolutionize database query optimization, leading to lightning-fast responses and efficient resource usage.
 
-![Database Optimization with Genetic Algorithms](/assets/img/blog/db-optimization.png){: width="100%" }
-
 <br />
 
 ## Understanding Query Execution Plans
@@ -58,8 +56,6 @@ Genetic algorithms (GAs) mimic evolutionary principles to find near-optimal solu
 ## Foundation Query Optimizer class
 
 Below is an initial class repr of the query optimizer funtion. It assumes a Postgres implementation, and 3 table joins, e.g. Customer, Products, Transactions. More complex representations can be taken up, to accurately reflect real-world formultations. But, for now, lets proceed with a simplified approach.
-
-![Database Optimization with Genetic Algorithms](/assets/img/blog/db-opt-2.png){: width="100%" }
 
 ```python
 import random

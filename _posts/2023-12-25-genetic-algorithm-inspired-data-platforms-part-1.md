@@ -16,6 +16,10 @@ Genetically-Inspired Data Platforms leverage the principles of genetic algorithm
 
 ![example iteration of the genetic algorithm with a population of three individuals, each consisting of four genes](/assets/img/blog/genetic-algorithm.png){: width="100%" }
 
+_The image illustrates a genetic algorithm's example iteration of the genetic algorithm with a population of three individuals, each consisting of four genes, showing steps from initial population generation through fitness measurement, selection, reproduction, mutation, and elitism, culminating in a new generation._
+
+<br />
+
 ## Fundamental Concepts of Genetic Algorithms
 
 Genetic algorithms operate based on a few key principles derived from biological evolution:
