@@ -170,16 +170,6 @@ At their core, genetic algorithms are inspired by the principles of natural sele
 
 <br />
 
-## Example: Let's get specific
-
-- **Population**: Each solution in the pool represents a different weighting scheme for recommendation factors.
-- **Chromosome**: [0.3, 0.5, 0.1, 0.1] (Weight on recent purchases, trending, category match, wish-list)
-- **Fitness Function**: Revenue generated, average session length, etc.
-- **Crossover**: Solution 1: [0.3, 0.5, 0.1, 0.1] combines with Solution 2: [0.2, 0.3, 0.3, 0.2] => Offspring: [0.3, 0.3, 0.3, 0.1]
-- **Mutation**: Offspring parameter changes slightly [0.3, 0.3, 0.3, 0.1] => [0.32, 0.3, 0.28, 0.1].
-
-<br />
-
 ## Illustrative Experiment setup: GA vs Classical ML approach
 
 > This is for illustrative purposes. Real-world data would be far more complex, involving thousands of users, products, and interactions.
@@ -251,42 +241,114 @@ class RecommenderGA:
         self.population = new_population
         return self.population
 
+
 class RecommenderCollabFiltering:
-    def __init__(self, num_recommendations):
+    def __init__(self, num_items, num_features, num_recommendations):
+        self.num_items = num_items
+        self.num_features = num_features
         self.num_recommendations = num_recommendations
-        self.recommendations = [[random.random() for _ in range(4)] for _ in range(num_recommendations)]
+        self.items = np.random.rand(self.num_items, self.num_features)  # Simulating item feature vectors
 
-    def fitness(self, recommendation):
-        # Simulate a fitness score based on user ratings
-        user_rating = recommendation[0] * 0.4 + recommendation[1] * 0.3 + recommendation[2] * 0.2 + recommendation[3] * 0.1
-        return user_rating
+    def cosine_similarity(self, item1, item2):
+        # Calculate the cosine similarity between two items
+        dot_product = np.dot(item1, item2)
+        norm_item1 = np.linalg.norm(item1)
+        norm_item2 = np.linalg.norm(item2)
+        return dot_product / (norm_item1 * norm_item2) if (norm_item1 * norm_item2) != 0 else 0
 
-    def generate_recommendations(self):
-        self.recommendations = [[random.random() for _ in range(4)] for _ in range(self.num_recommendations)]
-        return self.recommendations
+    def recommend(self, user_profile):
+        # Generate recommendations based on the user profile
+        similarities = np.array([self.cosine_similarity(user_profile, item) for item in self.items])
+        recommended_indices = np.argsort(-similarities)[:self.num_recommendations]  # Get indices of top recommendations
+        return self.items[recommended_indices], similarities[recommended_indices]
+
+    def fitness(self, user_profile):
+        # Evaluate the fitness of the recommendations based on their similarity scores
+        _, similarity_scores = self.recommend(user_profile)
+        # Fitness could be the average similarity score, which reflects overall user satisfaction
+        return np.mean(similarity_scores)
+
+    def update_items(self, new_item_data):
+        # Optionally update item data if new items are added or item features are changed
+        if new_item_data.shape == (self.num_items, self.num_features):
+            self.items = new_item_data
+        else:
+            raise ValueError("New item data must match the shape of the existing item matrix")
 
 class ECommerceABTest:
-    def __init__(self, population_size, num_days):
-        self.ga_recommender = RecommenderGA(population_size)
-        self.collab_recommender = RecommenderCollabFiltering(population_size)
+    def __init__(self, ga_population_size, num_items, num_features, num_recommendations, num_days):
+        # Initialize GA-based and Collaborative Filtering-based recommenders
+        self.ga_recommender = RecommenderGA(ga_population_size)
+        self.collab_recommender = RecommenderCollabFiltering(num_items, num_features, num_recommendations)
         self.num_days = num_days
-        self.data_generator = SimulatedDataGenerator()
+        self.results = {"GA": [], "Collab": []}
+        self.user_profiles = [np.random.rand(num_features) for _ in range(ga_population_size)]  # Simulate user profiles
 
     def run_test(self):
-        results = {"GA": [], "Collab": []}
         for day in range(self.num_days):
-            ga_rec = self.ga_recommender.generate_recommendations()
-            collab_rec = self.collab_recommender.generate_recommendations()
+            ga_fitness_scores = [self.ga_recommender.fitness(self.ga_recommender.generate_recommendations()) for _ in self.user_profiles]
+            collab_fitness_scores = [self.collab_recommender.fitness(profile) for profile in self.user_profiles]
 
-            ga_performance = sum(map(self.ga_recommender.fitness, ga_rec)) / len(ga_rec)
-            collab_performance = sum(map(self.collab_recommender.fitness, collab_rec)) / len(collab_rec)
+            # Average fitness scores for GA and Collaborative Filtering
+            ga_avg_fitness = np.mean(ga_fitness_scores)
+            collab_avg_fitness = np.mean(collab_fitness_scores)
 
-            results["GA"].append(ga_performance)
-            results["Collab"].append(collab_performance)
+            self.results["GA"].append(ga_avg_fitness)
+            self.results["Collab"].append(collab_avg_fitness)
+            print(f"Day {day + 1}: GA Avg Fitness = {ga_avg_fitness}, Collab Filtering Avg Fitness = {collab_avg_fitness}")
 
-        return results
+    def get_results(self):
+        return self.results
 
 ```
+
+<br />
+
+Explanation of the parameters and terms used in the context of the `RecommenderGA` class:
+
+### **Population**
+
+In the context of a genetic algorithm, the **population** refers to a group of potential solutions to the problem at hand. Each solution, also known as an individual in the population, represents a different set of parameters or strategies. In the `RecommenderGA` class, each solution is a different weighting scheme for various factors that influence recommendations. The size of the population determines the diversity and coverage of possible solutions, which directly influences the genetic algorithm's ability to explore the solution space effectively.
+
+### **Chromosome**
+
+A **chromosome** in genetic algorithms represents an individual solution encoded as a set of parameters or genes. In the `RecommenderGA` class, an example chromosome like [0.3, 0.5, 0.1, 0.1] could represent the weights assigned to different recommendation factors:
+
+- **0.3** - Weight on recent purchases
+- **0.5** - Weight on trending items
+- **0.1** - Weight on category match
+- **0.1** - Weight on items from a wish-list
+
+These weights determine how each factor contributes to the recommendation score for a particular item, influencing the final recommendations presented to users.
+
+### **Fitness Function**
+
+The **fitness function** is a critical component of genetic algorithms used to evaluate how good a particular solution (or chromosome) is at solving the problem. It quantifies the quality of each individual, guiding the selection process for breeding. In recommendation systems, a fitness function could consider multiple factors like:
+
+- **Revenue generated** by the recommendations, which could track increased sales directly attributable to the recommended items.
+- **Average session length**, indicating how engaging the recommendations are by measuring the time users spend interacting with them.
+
+These metrics help determine the effectiveness of different weighting schemes in improving business outcomes and user engagement.
+
+### **Crossover**
+
+**Crossover** is a genetic operator used to combine the information from two parent solutions to generate new offspring for the next generation, aiming to preserve good characteristics from both parents. It involves swapping parts of two chromosomes. For example:
+
+- **Parent 1:** [0.3, 0.5, 0.1, 0.1]
+- **Parent 2:** [0.2, 0.3, 0.3, 0.2]
+
+A possible offspring after crossover could be [0.3, 0.3, 0.3, 0.1], taking parts from both parents. This process is intended to explore new areas of the solution space by combining successful elements from existing solutions.
+
+### **Mutation**
+
+**Mutation** introduces random changes to the offspring's genes, helping maintain genetic diversity within the population and allowing the algorithm to explore a broader range of solutions. It helps prevent the algorithm from settling into a local optimum early. In the example:
+
+- **Before Mutation:** [0.3, 0.3, 0.3, 0.1]
+- **After Mutation:** [0.32, 0.3, 0.28, 0.1]
+
+This slight alteration in the weights might lead to discovering a more effective combination of factors that wasn't present in the initial population.
+
+Together, these components facilitate the genetic algorithm's ability to optimize complex problems by simulating evolutionary processes, making it a robust tool for developing sophisticated recommendation systems.
 
 <br />
 
@@ -302,8 +364,17 @@ For realistic fitness functions for both the Genetic Algorithm (GA) based recomm
 **Example usage**
 
 ```python
-test = ECommerceABTest(population_size=10, num_days=30)
+# Example usage
+ga_population_size = 10
+num_items = 100  # Total number of items
+num_features = 4  # Number of features per item
+num_recommendations = 5  # Number of recommendations to generate
+num_days = 30  # Duration of the A/B test
+
+test = ECommerceABTest(ga_population_size, num_items, num_features, num_recommendations, num_days)
 test.run_test()
+results = test.get_results()
+print(results)
 ```
 
 <br />
