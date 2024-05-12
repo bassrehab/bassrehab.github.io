@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-A simple inline announcement with Markdown emoji! :sparkles: :smile:
+I've got some HUGE news to share: I'm getting married! 💍👰‍♀️🤵‍♂️
