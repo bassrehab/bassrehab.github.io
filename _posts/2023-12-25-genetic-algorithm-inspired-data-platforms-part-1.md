@@ -297,8 +297,6 @@ For realistic fitness functions for both the Genetic Algorithm (GA) based recomm
 - **Fitness Function for GA:** Could be based on simulated metrics like click-through rate (CTR), conversion rate, or overall user satisfaction score. I simulated these values for simplicity.
 - **Fitness Function for Collaborative Filtering:** This could similarly be based on metrics like CTR or user ratings.
 
-Following can be a representative data:
-
 <br />
 
 **Example usage**
