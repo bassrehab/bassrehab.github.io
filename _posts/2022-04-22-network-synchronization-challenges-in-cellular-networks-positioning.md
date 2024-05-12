@@ -2,7 +2,7 @@
 layout: post
 title: Overcoming Synchronization Hurdles in Cellular Network Positioning
 date: 2022-04-22 06:15:21
-description: Let's talk tech! I'll post everything from polished pieces to spur-of-the-moment thoughts. And if you've got ideas for posts or want to collaborate, let's connect!
+description: In this article, I discuss the challenges of synchronization in cellular network positioning and the importance of precise timing for accurate positioning. I also explore ways to mitigate these errors, including algorithmic adjustments and improving synchronization technologies.
 tags: system-design telco maths
 categories: telco system-design
 giscus_comments: true

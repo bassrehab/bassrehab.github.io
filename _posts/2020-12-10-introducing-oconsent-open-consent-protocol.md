@@ -60,7 +60,7 @@ Following are the key steps of the Open Consent creation -
 
 This process enhances the security and transparency of data consent agreements, leveraging blockchain's decentralized and immutable characteristics to protect user data and ensure compliance with data privacy laws.
 
-## <br />
+<br />
 
 ## Illustrative Programs
 
@@ -247,7 +247,7 @@ print(json_ld_consent_proof)
 }
 ```
 
-## <br />
+<br />
 
 <br />
 
@@ -425,7 +425,7 @@ function startTracking() {
 
 <br />
 
---
+---
 
 ## Time-leased sharing of the User's Data
 
