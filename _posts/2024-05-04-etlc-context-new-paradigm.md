@@ -95,7 +95,7 @@ Let's see how the combination of metadata, external data, and user data could al
 
 <br />
 
-![Conceptual Context Bridge](/assets/img/blog/contexts.png)
+{% include figure.liquid loading="eager" path="assets/img/blog/contexts.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 In image above, a Context Bridge that provides real time contexts across multiple publishers and subsribers. Context Stores can become even more powerful, when integrated with an Enterprise Knowledge Graph or Data Catalog (structured entity relationships meet flexible context stores for richer data analysis)
 
