@@ -354,14 +354,6 @@ This data provides a clear comparison over the 30-day period, showing consistent
 
 _The plot showing the comparison of average fitness scores over a 30-day period for both the Genetic Algorithm (GA) based recommender and the Collaborative Filtering (CF) based recommender. As illustrated, the GA-based system shows a trend of improving fitness, indicating adaptation and optimization over time, whereas the CF-based system shows more variability with generally lower scores._
 
-## Caveats
-
-- **Statistical Significance**: Did the test run long enough with large enough groups to deem the differences "real"? That requires statistical analysis.
-- **Other Factors**: Website changes, seasonality, promotions, etc., could all confound results in the real world.
-- **Overfitting**: GAs can sometimes overfit to the training data. Testing against a holdout set would be crucial in a real-world experiment.
-- **Interpretability**: Like some machine learning methods, GAs can arrive at great solutions, but the reasoning behind the optimized parameters might be difficult for humans to fully parse.
-- **Data Needs**: GAs thrive on data. A platform needs extensive user behavior and product information for the algorithms to be effective.
-
 ---
 
 ## Additional considerations
