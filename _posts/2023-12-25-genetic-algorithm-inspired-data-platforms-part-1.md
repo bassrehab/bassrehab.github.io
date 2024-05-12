@@ -306,11 +306,11 @@ class ECommerceABTest:
 
 Explanation of the parameters and terms used in the context of the `RecommenderGA` class:
 
-### **Population**
+**Population**
 
 In the context of a genetic algorithm, the **population** refers to a group of potential solutions to the problem at hand. Each solution, also known as an individual in the population, represents a different set of parameters or strategies. In the `RecommenderGA` class, each solution is a different weighting scheme for various factors that influence recommendations. The size of the population determines the diversity and coverage of possible solutions, which directly influences the genetic algorithm's ability to explore the solution space effectively.
 
-### **Chromosome**
+**Chromosome**
 
 A **chromosome** in genetic algorithms represents an individual solution encoded as a set of parameters or genes. In the `RecommenderGA` class, an example chromosome like [0.3, 0.5, 0.1, 0.1] could represent the weights assigned to different recommendation factors:
 
@@ -321,7 +321,7 @@ A **chromosome** in genetic algorithms represents an individual solution encoded
 
 These weights determine how each factor contributes to the recommendation score for a particular item, influencing the final recommendations presented to users.
 
-### **Fitness Function**
+**Fitness Function**
 
 The **fitness function** is a critical component of genetic algorithms used to evaluate how good a particular solution (or chromosome) is at solving the problem. It quantifies the quality of each individual, guiding the selection process for breeding. In recommendation systems, a fitness function could consider multiple factors like:
 
@@ -330,7 +330,7 @@ The **fitness function** is a critical component of genetic algorithms used to e
 
 These metrics help determine the effectiveness of different weighting schemes in improving business outcomes and user engagement.
 
-### **Crossover**
+**Crossover**
 
 **Crossover** is a genetic operator used to combine the information from two parent solutions to generate new offspring for the next generation, aiming to preserve good characteristics from both parents. It involves swapping parts of two chromosomes. For example:
 
@@ -339,7 +339,7 @@ These metrics help determine the effectiveness of different weighting schemes in
 
 A possible offspring after crossover could be [0.3, 0.3, 0.3, 0.1], taking parts from both parents. This process is intended to explore new areas of the solution space by combining successful elements from existing solutions.
 
-### **Mutation**
+**Mutation**
 
 **Mutation** introduces random changes to the offspring's genes, helping maintain genetic diversity within the population and allowing the algorithm to explore a broader range of solutions. It helps prevent the algorithm from settling into a local optimum early. In the example:
 
