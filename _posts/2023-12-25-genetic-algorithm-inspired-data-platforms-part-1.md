@@ -309,7 +309,9 @@ test.run_test()
 ```
 
 <br />
+
 **30 day fitness comparative study**
+
 Below is the data from the 30-day simulation of the A/B test between the Genetic Algorithm (GA) based recommender and the Classical Algorithm (Collaborative Filtering) based recommender:
 
 {:class="table table-bordered"}
