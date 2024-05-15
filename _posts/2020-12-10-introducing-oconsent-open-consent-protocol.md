@@ -24,8 +24,6 @@ In the rest of the blog post, I will take you through the core concepts of OCons
 
 <br />
 
-{% include figure.liquid loading="eager" path="assets/img/blog/oconsent-hashing.png" class="img-fluid rounded z-depth-1" zoomable=true %}
-
 Following are the key steps of the Open Consent creation -
 
 1. **Agreement Seed Creation**:
