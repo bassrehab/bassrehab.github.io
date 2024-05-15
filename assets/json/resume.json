@@ -222,22 +222,7 @@
       "level": "Expert",
       "icon": "fa-solid fa-microchip",
       "keywords": [
-        "Hadoop",
-        "Apache Spark",
-        "Apache Flink",
-        "Apache Kafka",
-        "Apache Ignite",
-        "Apache HBase",
-        "Apache Arrow",
-        "Apache Iceberg",
-        "Quarkus",
-        "AWS",
-        "Google Cloud Platform (GCP)",
-        "REST APIs",
-        "Microservices",
-        "ETL Design & Development",
-        "Data Privacy",
-        "Object Oriented Design"
+        "Hadoop, Apache Spark, Apache Flink, Apache Kafka, Apache Ignite, Apache HBase, Apache Arrow, Apache Iceberg, Quarkus, AWS, Google Cloud Platform (GCP), REST APIs, Microservices, ETL Design & Development, Data Privacy, Object Oriented Design"
       ]
     },
     {
@@ -245,17 +230,7 @@
       "level": "Advanced",
       "icon": "fa-solid fa-brain",
       "keywords": [
-        "Generative AI",
-        "Large Language Models (LLM)",
-        "Machine Learning",
-        "Machine Learning Operations (MLOps)",
-        "Recommender Systems",
-        "Anomaly Detection",
-        "Risk Modeling (Market, Credit and Operations)",
-        "Retrieval-augmented Generation (RAG)",
-        "LangChain",
-        "LlamaIndex",
-        "Graph Neural Networks"
+        "Generative AI, Large Language Models (LLM), Machine Learning, Machine Learning Operations (MLOps), Recommender Systems, Anomaly Detection, Risk Modeling (Market, Credit and Operations), Retrieval-augmented Generation (RAG), LangChain, LlamaIndex, Graph Neural Networks"
       ]
     },
     {
@@ -263,13 +238,7 @@
       "level": "Expert",
       "icon": "fa-solid fa-briefcase",
       "keywords": [
-        "Solution Architecture",
-        "Strategy Consulting",
-        "Product Design & Management",
-        "C-suite Advisory",
-        "GTM Strategy",
-        "Cloud Migration",
-        "Stakeholder Engagement"
+        "Solution Architecture, Strategy Consulting, Product Design & Management, C-suite Advisory, GTM Strategy, Cloud Migration, Stakeholder Engagement"
       ]
     },
     {
@@ -277,22 +246,14 @@
       "level": "Expert",
       "icon": "fa-solid fa-users-cog",
       "keywords": [
-        "Team Leadership",
-        "Program Management",
-        "Technical Hiring",
-        "Cross-functional Collaboration",
-        "Strategic Planning",
-        "Budget Management",
-        "Resource Allocation",
-        "Performance Metrics",
-        "Mentoring and Coaching"
+        "Team Leadership, Program Management, Technical Hiring, Cross-functional Collaboration, Strategic Planning, Budget Management, Resource Allocation, Performance Metrics, Mentoring and Coaching"
       ]
     },
     {
       "name": "Languages",
       "level": "Advanced",
       "icon": "fa-solid fa-code",
-      "keywords": ["Java", "Python", "C/C++", "JavaScript", "SQL", "bash"]
+      "keywords": ["Java, Python, C/C++, JavaScript, SQL, bash"]
     }
   ],
   "interests": [
