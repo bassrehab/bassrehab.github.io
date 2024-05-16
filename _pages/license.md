@@ -5,7 +5,7 @@ title: "Licenses"
 description: "Please Read: Applicable licenses for subhadipmitra.com"
 ---
 
-# Articles
+### Articles
 
 All the files inside `source/posts` and `img/posts` directory are licensed under
 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The attribution requirement is only met when:
@@ -15,22 +15,30 @@ All the files inside `source/posts` and `img/posts` directory are licensed under
 2. The following message is displayed above and below the article:
    `This article has been originally published on <a href="https://subhadipmitra.com/">Subhadip Mitra's website</a>.`
 
-# Assets
+<br />
+
+### Assets
 
 All the files inside `assets/img/blog`, `assets/img/screenshots`, `assets/pdf`, `assets/img/json` directory are copyrighted to Subhadip Mitra. All rights reserved.
 
 
-# Code
+<br />
+
+### Code
 
 All the codes, code snippets, libraries at `subhadipmitra.com` are licensed under [GNU Lesser General Public License v3.0](https://www.gnu.org/licenses/lgpl-3.0.en.html)
 
+<br />
 
-# Logos
+
+### Logos
 
 All the files inside `source/img/logos` directory are copyrighted to their respective companies.
 
+<br />
 
-# Theme
+
+### Theme
 
 The MIT License (MIT)
 
