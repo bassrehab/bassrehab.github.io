@@ -1,3 +1,10 @@
+---
+layout: page
+permalink: /license/
+title: "Licenses"
+description: "Please Read: Applicable licenses for subhadipmitra.com"
+---
+
 # Articles
 
 All the files inside `source/posts` and `img/posts` directory are licensed under
