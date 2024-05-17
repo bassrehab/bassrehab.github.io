@@ -8,9 +8,6 @@ children:
   - title: licenses
     permalink: /license/
   - title: divider
-  - title: projects
-    permalink: /projects/
-  - title: divider
   - title: privacy
     permalink: /privacy/
 ---
