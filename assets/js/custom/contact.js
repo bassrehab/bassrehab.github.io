@@ -1,0 +1,1 @@
+!function(e){e(function(){e("form").submit(function(a){var n={body:{subject:e("#name").val(),email:e("#email").val(),message:e("#message").val()}};e.ajax({type:"POST",url:"https://zjk34z7eqetkmgy5y5p6a3euxi0mybge.lambda-url.ca-central-1.on.aws/",data:n,dataType:"json",encode:!0}).done(function(e){console.log(e)}),a.preventDefault()})})}(jQuery);
