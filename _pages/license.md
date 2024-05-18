@@ -21,7 +21,6 @@ All the files inside `source/posts` and `img/posts` directory are licensed under
 
 All the files inside `assets/img/blog`, `assets/img/screenshots`, `assets/pdf`, `assets/img/json` directory are copyrighted to Subhadip Mitra. All rights reserved.
 
-
 <br />
 
 ### Code
@@ -30,13 +29,11 @@ All the codes, code snippets, libraries at `subhadipmitra.com` are licensed unde
 
 <br />
 
-
 ### Logos
 
 All the files inside `source/img/logos` directory are copyrighted to their respective companies.
 
 <br />
-
 
 ### Theme
 
