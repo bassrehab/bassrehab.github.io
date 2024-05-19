@@ -217,3 +217,24 @@ ul.timeline li::before {
      color: var(--global-text-color);
 }
 */
+
+/*********************************
+  * CV Meeting CTA
+  *********************************/
+
+.meeting-cta {
+  background-color: var(--global-theme-color);
+  padding: 12px 15px 1px 15px;
+  display: inline-block;
+  border-radius: 4px;
+
+  p {
+    color:var(--global-card-bg-color);
+
+    a {
+      color: var(--global-card-bg-color);
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
+}
