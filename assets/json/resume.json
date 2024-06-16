@@ -5,7 +5,7 @@
     "image": "",
     "email": "contact@subhadipmitra.com",
     "url": "https://subhadipmitra.com",
-    "summary": "Product-minded architect and hands-on software engineer with 14 yrs. experience building and delivering large scale distributed Data and Machine Learning Systems across Finance, Telecom & Technology sectors - I help organizations innovate, accelerate growth, manage risk better, reduce cost and achieve competitive strategic differentiation.",
+    "summary": "Accomplished Data and AI leader with 14+ years of experience driving innovation and transformation in diverse industries. Proven ability to build high-performance teams, develop and execute strategic roadmaps, and deliver significant business impact through cutting-edge Data and AI solutions",
     "location": {
       "city": "Singapore",
       "countryCode": "SG",
@@ -16,6 +16,16 @@
         "network": "Twitter",
         "username": "bassrehab",
         "url": "https://twitter.com/bassrehab"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "subhadipmitra",
+        "url": "https://linkedin.com/in/subhadip-mitra"
+      },
+      {
+        "network": "GitHub",
+        "username": "bassrehab",
+        "url": "https://github.com/bassrehab"
       }
     ]
   },
@@ -28,9 +38,10 @@
       "endDate": "-",
       "summary": "Professional Services Organization",
       "highlights": [
-        "Led Google Cloud Professional Services' Data Analytics in South East Asia",
-        "Owned and delivered high stakes projects (100% CSAT), defined the sub-regional PSO GTM Strategy (> $XXm in presales, Y new offerings), Practice and Innovation Strategy",
-        "As Site Lead, provided Delivery Governance oversight across multiple practices - AI/ML, Data Analytics, Infrastructure, Security, etc. ( > $XXm)"
+        "Spearheaded Google Cloud's PSO Data & Analytics in Southeast Asia, driving projects with 100% customer satisfaction. Defined GTM strategy, resulting in  million in presales with new offerings. Upskilled team members on new technologies and methodologies, achieving an  GenAI Blackbelt certification rate within  months, establishing the group as a top global performer in emerging GenAI technologies.",
+        "Oversaw an X million Southeast Asia delivery portfolio in AI/ML, Data Analytics, Infrastructure, and Security, ensuring flawless project execution. Engaged with C-level executives to forge strategic partnerships and drive  million in PSO revenue. Implemented an automated revenue modeling system for running projects, decreasing forecast variance and improving deviation identification.",
+        "Led the development of comprehensive Data Monetization, AI Centers of Excellence, Cross Cloud Data Mesh, Edge (Distributed Cloud) Analytics & Martech strategies, increasing pursuit value across JAPAC. Developed a unified GenAI platform for a major telco and insurance group, improving AI service delivery and customer engagement with seamless multi-cloud interoperability. Innovated with a Multi-Agent Debate-based Decisioning system and an automated Cloud Architecture/Workload Discovery and multi-billion node graph modeling solution.",
+        "Drove key GTM partnerships with top global consulting firms, significantly boosting strategic alignment and innovation within the Data Strategy Pod. Aligned cross-functional GTM and PSO teams' sales plays with new service strategies, achieving YoY growth in services revenue."
       ]
     },
     {
@@ -41,10 +52,11 @@
       "endDate": "2021",
       "summary": "Data and Analytics Transformation and Strategy",
       "highlights": [
-        "Conceptualized and built Retail Bank's data platform across 11 markets and XXX users, significantly reduced ML model deployment time.",
-        "Created credit downgrade & default prediction models based on news trends and social influencers for over 15,000 named entities.",
-        "Formulated risk scoring models based on customer's social media profile attributes, photos, videos, and neighborhood metrics.",
-        "Defined technology strategy and roadmaps for Bank's External/3rd party data management, Data Partnership & Ecosystems, Data Monetization, Marketing Automation (Martech), Customer Experience, Data Privacy, Explainable AI (XAI), Data Sovereignty and Cloud adoption"
+        "Led Development of Retail Bank's Data & Analytics Platform and Digital Banking Martech Strategy: Managed a cross-functional team of 15 senior Data Engineers and Data Scientists across Malaysia, Singapore, and India to build and scale a data and analytics platform serving 11 key markets, 800+ batch/real-time source systems, and 1200 end-users. Additionally, led the formulation and execution of the bank's Martech strategy for Digital Banking, driving customer acquisition, engagement, and retention.",
+        "Accelerated Model Deployment with Self-Service ML Workbench: Spearheaded the development and implementation of an automated, self-service ML Workbench, reducing model production deployment time from 6 months to 1 week, significantly improving the bank's ability to respond to market changes and customer needs.",
+        "Pioneered Innovative Credit Risk Modeling: Developed cutting-edge credit downgrade and default prediction models leveraging news trends, social influencers for over 15,000 named corporate entities, enhancing risk assessment accuracy by 15% and reducing potential losses by $5 million.",
+        "Developed innovative risk scoring models incorporating alternative data sources, such as social media profile attributes, photos, videos, and neighborhood metrics, resulting in a 10% increase in model accuracy and a 7% reduction in loan defaults.",
+        "Defined technology strategy and roadmaps for Bank's External/3rd party data management, Data Partnership & Ecosystems, Data Monetization, Marketing Automation, Customer Experience, Data Privacy, Explainable AI (XAI), Data Sovereignty and Cloud adoption"
       ]
     },
     {
