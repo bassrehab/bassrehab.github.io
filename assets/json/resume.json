@@ -38,11 +38,11 @@
       "endDate": "-",
       "summary": "Professional Services Organization",
       "highlights": [
-      "Led Google Cloud's PSO Data & Analytics in Southeast Asia, achieving 100% customer satisfaction and $X millions in presales.",
-      "Oversaw $Y million delivery portfolio across multiple practices.",
-      "Developed Data Monetization, AI CoE, Cross Cloud Data Mesh, Edge Analytics & Martech strategies",
-      "Drove GTM partnerships with top consulting firms, boosting strategic alignment and innovation.",
-      "Aligned cross-functional teams with new service strategies, achieving YoY $Z million services revenue growth."
+        "Led Google Cloud's PSO Data & Analytics in Southeast Asia, achieving 100% customer satisfaction and $X millions in presales.",
+        "Oversaw $Y million delivery portfolio across multiple practices.",
+        "Developed Data Monetization, AI CoE, Cross Cloud Data Mesh, Edge Analytics & Martech strategies",
+        "Drove GTM partnerships with top consulting firms, boosting strategic alignment and innovation.",
+        "Aligned cross-functional teams with new service strategies, achieving YoY $Z million services revenue growth."
       ]
     },
     {
@@ -53,12 +53,12 @@
       "endDate": "2021",
       "summary": "Data and Analytics Transformation and Strategy",
       "highlights": [
-          "Led development of retail bank's data & analytics platform serving multiple markets, systems, and users. Formulated and executed Martech strategy for digital banking.",
-          "Developed self-service ML Workbench, significantly reducing model deployment time.",
-          "Created credit risk models leveraging news trends and social influencers, significantly improving accuracy and reducing losses.",
-          "Developed risk scoring models incorporating alternative data sources, increasing accuracy and reducing loan defaults.",
-          "Defined technology strategy and roadmaps for bank's data management, partnerships, monetization, marketing automation, customer experience, privacy, XAI, data sovereignty, and cloud adoption."
-          ]
+        "Led development of retail bank's data & analytics platform serving multiple markets, systems, and users. Formulated and executed Martech strategy for digital banking.",
+        "Developed self-service ML Workbench, significantly reducing model deployment time.",
+        "Created credit risk models leveraging news trends and social influencers, significantly improving accuracy and reducing losses.",
+        "Developed risk scoring models incorporating alternative data sources, increasing accuracy and reducing loan defaults.",
+        "Defined technology strategy and roadmaps for bank's data management, partnerships, monetization, marketing automation, customer experience, privacy, XAI, data sovereignty, and cloud adoption."
+      ]
     },
     {
       "name": "Teradata / Think Big Analytics, Singapore",
@@ -68,10 +68,10 @@
       "endDate": "2019",
       "summary": "Global Big Data and Analytics Consulting",
       "highlights": [
-        "Designed and developed 5 global Data Lakes with scalable ETL pipelines, handling up to 1.2 PB per hour and 40K daily files.",
-        "Engineered a low latency real-time in-memory platform, processing over 2.5 million events per second.",
-        "Built a real-time fraud detection ML system for a leading bank, reducing false positives by 60% and increasing detection rates by 70%.",
-        "Successfully built and upgraded multiple Hadoop clusters on Cloud/On-prem, ranging between 150-250 nodes."
+        "Designed and developed X global Data Lakes with scalable ETL pipelines, handling up to Y PB per hour and Z K daily files.",
+        "Engineered a low latency real-time in-memory platform, processing over X million events per second.",
+        "Built a real-time fraud detection ML system for a leading bank, reducing false positives by Y% and increasing detection rates by Z%.",
+        "Successfully built and upgraded multiple Hadoop clusters on Cloud/On-prem, ranging between X nodes."
       ]
     },
     {
@@ -333,7 +333,7 @@
       "summary": "Developed a micromechanical flying insect for low-cost outdoor surveillance, utilizing swarm intelligence, piezo-electric thorax actuators, muscle wire technology, with onboard GPS and real-time imaging.",
       "startDate": "2008",
       "endDate": "2009",
-      "url": "https://drdo.in/drdo"
+      "url": "https://drdo.in/"
     }
   ]
 }
