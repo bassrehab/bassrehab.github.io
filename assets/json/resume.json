@@ -32,22 +32,18 @@
   "work": [
     {
       "name": "Google, Singapore",
-      "position": "Data & Analytics Lead and Site Lead, South East Asia",
+      "position": "Data & Analytics Manager and Site Lead, South East Asia",
       "url": "https://google.com",
       "startDate": "2021",
       "endDate": "-",
       "summary": "Professional Services Organization",
       "highlights": [
-        "Led Southeast Asia Data & Analytics practice, delivering $X million in projects with 100% customer satisfaction. Managed a team of Y professionals, improving team performance by Z% through targeted mentoring and upskilling programs.",
-        "Developed regional GTM strategy generating $Y million in presales and achieved X% GenAI certification rate within X months. Orchestrated cross-functional collaboration between sales, marketing, and technical teams to ensure cohesive execution.",
-        "Managed $Z million delivery portfolio across AI/ML, Data Analytics, Infrastructure, and Security, consistently delivering projects under budget while exceeding KPIs.",
-        "Engaged C-level executives to establish X strategic partnerships, driving $Y million in PSO revenue. Presented long-term data strategy roadmaps to board members, securing buy-in for multi-year digital transformation initiatives.",
-        "Implemented automated revenue modeling system, reducing forecast variance by X% and improving deviation identification by Y%. This innovation led to $Z million in cost savings through improved resource allocation.",
-        "Directed data initiatives increasing pursuit value by $X million across JAPAC. Recognized as a thought leader, invited to speak at Y industry conferences and published Z articles in leading tech journals.",
-        "Developed multi-cloud GenAI platform design for major telco, improving AI service delivery by X% and customer engagement by Y%. Successfully led change management for this transformation, affecting over X-1000 employees across Y countries.",
-        "Innovated GenAI Multi-Agent Debate-based Decisioning system for strategic decision-making.",
-        " Implemented robust risk management protocols, reducing project failure rates by X% across the portfolio.",
-        "Created automated Cloud Architecture Discovery and Modeling solution for multi-billion node graph modeling of Cloud Assets."
+        "Spearheaded GCP's Southeast Asia D&A practice, delivering $XM in projects with 100% customer satisfaction.",
+        "Architected Data Monetization, Data CoE, Cross Cloud Data Mesh, Edge Analytics & Martech strategies, boosting JAPAC pursuit value by $YM.",
+        "Established Z strategic partnerships, generating $XM in revenue for Professional Services.",
+        "As Site Lead, managed $YM delivery portfolio across AI/ML, Data Analytics, Infrastructure, and Security. Also, automated revenue modeling for projects, reducing forecast variance Z% and improving deviation detection N%.",
+        "Developed multi-cloud GenAI platform, improving AI service delivery by X% and increasing customer engagement by Y%.",
+        "Innovated patent-pending GenAI Multi-Agent Decisioning system."
       ]
     },
     {
@@ -58,25 +54,25 @@
       "endDate": "2021",
       "summary": "Data and Analytics Transformation and Strategy",
       "highlights": [
-        "Led development of retail bank's data & analytics platform serving multiple markets, systems, and users. Formulated and executed Martech strategy for digital banking.",
-        "Developed self-service ML Workbench, significantly reducing model deployment time.",
-        "Created credit risk models leveraging news trends and social influencers, significantly improving accuracy and reducing losses.",
-        "Developed risk scoring models incorporating alternative data sources, increasing accuracy and reducing loan defaults.",
-        "Defined technology strategy and roadmaps for bank's data management, partnerships, monetization, marketing automation, customer experience, privacy, XAI, data sovereignty, and cloud adoption."
+        "Led design and development of retail bank's data & analytics platform for X+ markets, Y+ systems, and N+ users.",
+        "Architected retail bank's Martech strategy, boosting customer acquisition X% and retention Y% via data-driven personalization.",
+        "Developed self-service ML Workbench: reducing model production deployment time from X months to Y weeks.",
+        "Created innovative credit risk models over X,000 named entities, leveraging news trends and social influencers, improving accuracy by Y% and reducing potential losses by $ZM.",
+        "Defined technology strategy and roadmaps for bank's external / 3rd party data management, monetization, privacy, explainable AI, data sovereignty and cloud adoption."
       ]
     },
     {
-      "name": "Teradata / Think Big Analytics, Singapore",
-      "position": "Principal Data Engineer",
+      "name": "Think Big Analytics (a Teradata company), Singapore",
+      "position": "Principal Data Engineer / Solution Architect",
       "url": "https://www.teradata.com",
       "startDate": "2017",
       "endDate": "2019",
       "summary": "Global Big Data and Analytics Consulting",
       "highlights": [
-        "Designed and developed X global Data Lakes with scalable ETL pipelines, handling up to Y PB per hour and Z K daily files.",
-        "Engineered a low latency real-time in-memory platform, processing over X million events per second.",
-        "Built a real-time fraud detection ML system for a leading bank, reducing false positives by Y% and increasing detection rates by Z%.",
-        "Successfully built and upgraded multiple Hadoop clusters on Cloud/On-prem, ranging between X nodes."
+        "Designed X global Data Lakes with ETL pipelines handling Y PB/hour and Z,000 daily files.",
+        "Engineered real-time platform processing XM events/second, improving Ad campaign responsiveness by Z%.",
+        "Built ML fraud detection system for leading bank: X% fewer false positives, Y% higher detection rates resulting in $ZM in savings.",
+        "Managed large-scale Hadoop infrastructure (X+ nodes), ensuring high availability and performance of critical data workloads."
       ]
     },
     {
@@ -99,7 +95,7 @@
       "endDate": "2016",
       "summary": "Startup Growth and Platform Development",
       "highlights": [
-        "Scaled Truckaurbus from inception to operation across 15 cities, securing partnerships with over 25 OEMs, Banks, and NBFCs, achieving 240K unique visitors per day.",
+        "Scaled Truckaurbus from inception to operation across 1X cities, securing partnerships with over YY OEMs, Banks, and NBFCs, achieving NNNK unique visitors per day.",
         "Architected the core marketplace and auctioning platform, alongside developing a dealers' lead generation network and ad-serving platform."
       ]
     },
