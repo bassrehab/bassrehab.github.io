@@ -171,10 +171,12 @@ That moment your facial recognition system, trained on a biased dataset, decided
 **The Ethics Intervention:** Conduct regular bias audits with tools like Google's What-If Tool or open source frameworks like Fairlearn. These tools provide valuable insights into how your model performs across different groups and help identify potential biases.
 
 - **For classical ML models:** Look at metrics like:
-  _ **Demographic Parity:** Are the model's predictions equally distributed across different demographic groups?
-  _ **Equalized Odds:** Does the model have similar true positive and false positive rates across different groups? \* **Disparate Impact:** Is the model disproportionately affecting one group over another?
-  <br>
-  <br>
+
+  - **Demographic Parity:** Are the model's predictions equally distributed across different demographic groups?
+  - **Equalized Odds:** Does the model have similar true positive and false positive rates across different groups?
+  - **Disparate Impact:** Is the model disproportionately affecting one group over another?
+    <br>
+    <br>
 
 - **For LLMs:** Consider:
   - **Token-level Bias:** Are certain tokens or phrases associated with specific demographic groups being treated differently?
