@@ -74,42 +74,6 @@
         "Built ML fraud detection system for leading bank: X% fewer false positives, Y% higher detection rates resulting in $ZM in savings.",
         "Managed large-scale Hadoop infrastructure (X+ nodes), ensuring high availability and performance of critical data workloads."
       ]
-    },
-    {
-      "name": "UTU, Singapore",
-      "position": "Technical Lead",
-      "url": "https://utu.global",
-      "startDate": "2016",
-      "endDate": "2017",
-      "summary": "Foundational Services Development and Integration",
-      "highlights": [
-        "Built foundational services and partner integrations for the maiden launch of UTU in Thailand.",
-        "Developed a low latency (<25 μs) transaction processing module for bank mainframe integration."
-      ]
-    },
-    {
-      "name": "Truckaurbus Marketplace, India",
-      "position": "Founder",
-      "url": "https://truckaurbus.com",
-      "startDate": "2014",
-      "endDate": "2016",
-      "summary": "Startup Growth and Platform Development",
-      "highlights": [
-        "Scaled Truckaurbus from inception to operation across 1X cities, securing partnerships with over YY OEMs, Banks, and NBFCs, achieving NNNK unique visitors per day.",
-        "Architected the core marketplace and auctioning platform, alongside developing a dealers' lead generation network and ad-serving platform."
-      ]
-    },
-    {
-      "name": "Microsoft, India",
-      "position": "Senior Software Development Engineer",
-      "url": "https://microsoft.com",
-      "startDate": "2010",
-      "endDate": "2014",
-      "summary": "Core System Development and Early AI Implementation",
-      "highlights": [
-        "Contributed to the Windows Kernel Platform Group for Windows 7/8 and Windows Server 2012 R2 / Hyper-V, and MS Lync.",
-        "Developed early machine learning modules on Azure and enhanced the Azure Content Delivery Network."
-      ]
     }
   ],
   "education": [
