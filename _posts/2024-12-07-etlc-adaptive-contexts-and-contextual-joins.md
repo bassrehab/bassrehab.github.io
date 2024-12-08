@@ -14,9 +14,6 @@ toc:
 
 > This blog post proposes a novel concept - ETL-C, a context-first approach for building Data / AI platforms in the Generative AI dominant era. Read prior [post here](https://subhadipmitra.com/blog/2024/etlc-context-new-paradigm/).
 
-
-### **Introduction: Adding Context to Data Engineering**
-
 ### **Introduction: Reimagining ETL with Context**
 
 Traditional ETL pipelines (Extract, Transform, Load) have long been the foundation of data engineering, enabling businesses to process, integrate, and analyze their data. However, as businesses grow more complex and dynamic, these pipelines face significant challenges. They often operate in rigid, static ways, failing to adapt to the nuanced, real-world context of the data they process.
