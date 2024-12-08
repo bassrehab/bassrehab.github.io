@@ -11,9 +11,6 @@ related_posts: true
 toc:
   sidebar: left
 ---
-### **Part 3 of 3: Reimagining ETL with Large Language Models—The Path to Intelligent Pipelines**
-
----
 
 ### **Introduction: A New Era of ETL**
 

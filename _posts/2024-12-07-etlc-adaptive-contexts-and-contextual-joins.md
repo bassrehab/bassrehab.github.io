@@ -14,9 +14,6 @@ toc:
 
 > This blog post proposes a novel concept - ETL-C, a context-first approach for building Data / AI platforms in the Generative AI dominant era. Read prior [post here](https://subhadipmitra.com/blog/2024/etlc-context-new-paradigm/).
 
-### **ETLC 2.0: Building Context-Aware Data Pipelines**
-
----
 
 ### **Introduction: Adding Context to Data Engineering**
 
