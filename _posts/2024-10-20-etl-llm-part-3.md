@@ -1,7 +1,7 @@
 ---
 layout: post
 title: (Part 3/3) -  Reimagining ETL with Large Language Models—The Path to Intelligent Pipelines
-date: 2024-11-20 23:07:15
+date: 2024-10-20 23:07:15
 description: Explore how Large Language Models (LLMs) are revolutionizing ETL pipelines. Discover advanced techniques like context-driven transformations, semantic joins, and multimodal integration, redefining data engineering with smarter, adaptive, and intelligent workflows.
 tags: algorithms genai llm data code
 categories: algorithms genai
