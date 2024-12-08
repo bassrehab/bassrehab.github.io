@@ -18,12 +18,12 @@ toc:
 
 Traditional ETL pipelines (Extract, Transform, Load) have long been the foundation of data engineering, enabling businesses to process, integrate, and analyze their data. However, as businesses grow more complex and dynamic, these pipelines face significant challenges. They often operate in rigid, static ways, failing to adapt to the nuanced, real-world context of the data they process.
 
-That’s where **ETLC** (Extract, Transform, Load, Contextualize) comes in, introducing **Context** as a fundamental addition to the ETL process. **ETLC 2.0** builds on this concept, offering three key advancements:
+That's where **ETLC** (Extract, Transform, Load, Contextualize) comes in, introducing **Context** as a fundamental addition to the ETL process. **ETLC 2.0** builds on this concept, offering three key advancements:
 1. **Adaptive Context**: Pipelines that dynamically adjust their behavior based on time, external triggers, or operational metrics.
 2. **Contextual Joins**: A smarter way to resolve inconsistencies and enrich relationships between datasets by leveraging semantic understanding and metadata.
 3. **Context Store**: A scalable infrastructure to manage, query, and apply contextual data efficiently.
 
-In this post, I’ll walk through these ideas, sharing **technical details** and **real-world examples** that demonstrate how ETLC 2.0 can transform industries like retail banking, e-commerce, and customer analytics.
+In this post, I'll walk through these ideas, sharing **technical details** and **real-world examples** that demonstrate how ETLC 2.0 can transform industries like retail banking, e-commerce, and customer analytics.
 
 ---
 
@@ -112,7 +112,7 @@ processed_transaction = fraud_detection(transaction_data, current_context)
 
 ### **The Concept**
 Traditional joins rely on exact key matches, which often fail when:
-- Data is inconsistent (e.g., “Jane Smith” vs. “J. Smith”).
+- Data is inconsistent (e.g., “Subhadip Mitra” vs. “S. Mitra”).
 - Relationships require semantic understanding (e.g., matching similar products by description).
 
 **Contextual Joins** solve these issues by using:
@@ -127,11 +127,10 @@ Traditional joins rely on exact key matches, which often fail when:
 
 For keys $$ k_1 \in D_1 $$ and $$ k_2 \in D_2 $$, the **Semantic Similarity Score** is defined as:
 
-$$
 
-S(k_1, k_2) = \alpha \cdot \text{cos}(\vec{e}_{k_1}, \vec{e}_{k_2}) + \beta \cdot M(k_1, k_2)
 
-$$
+$$ S(k_1, k_2) $$ = $$ \alpha \cdot \text{cos}(\vec{e}_{k_1}, \vec{e}_{k_2}) + \beta \cdot M(k_1, k_2) $$
+
 Where:
 - $$ \vec{e}_{k} $$: Embedding of key \( k \).
 - $$ M(k_1, k_2) $$: Metadata-based similarity (e.g., location match, time overlap).
@@ -149,8 +148,8 @@ $$
 
 #### **Scenario**
 A retail bank builds a **Customer 360 View** by integrating:
-1. **CRM Data**: Customer profiles (e.g., “Jane Smith”).
-2. **Transaction Data**: Credit card logs (e.g., “J. Smith”).
+1. **CRM Data**: Customer profiles (e.g., “Subhadip Mitra”).
+2. **Transaction Data**: Credit card logs (e.g., “S. Mitra”).
 3. **Call Center Logs**: Unstructured sentiment data (e.g., comments like “I love your service!”).
 
 #### **Implementation**
@@ -168,8 +167,8 @@ from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 
 # Datasets
-names_crm = ["Jane Smith"]
-names_transactions = ["J. Smith"]
+names_crm = ["Subhadip Mitra"]
+names_transactions = ["S. Mitra"]
 locations_crm = ["New York"]
 locations_transactions = ["NYC"]
 
