@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <b>Data & Analytics at Google</b>
+subtitle: <b>Engineering Leader & Technology Strategist at Google Cloud</b>
 
 profile:
   align: right
@@ -19,23 +19,23 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Welcome to my binary odysseys! I'm Subhadip, a seasoned technologist with 15+ years of experience wrangling data, crafting AI magic, and navigating the cloud. Currently, I lead Google's Data & Analytics practice in Southeast Asia, where we build cutting-edge solutions for the region's biggest players.
+Welcome to my digital journey! I'm Subhadip, a technology leader with 15+ years of experience driving enterprise transformation through Data, AI, and Cloud innovations. Currently, I lead Google Cloud's Data & Analytics practice in Southeast Asia, where we architect and deliver enterprise-scale solutions that shape the region's digital future.
 
 ### what I do
 
-- **Software & Data Engineering:** I engineer internet-scale applications, data pipelines, and platforms that handle petabytes of data and millions of events per second. My toolkit includes Java, Python, Spark, Kafka, and more.
-- **Machine Learning & AI:** I bring ML models to life, from fraud detection systems to generative AI applications. I'm passionate about Large Language Models, RAG, RLHF, and Multi-Agent Systems.
-- **Cloud Architecture:** I design and implement multi-cloud solutions that are optimized for performance and cost.
-- **Technology Consulting:** I provide C-level advisory services, helping organizations leverage technology to drive innovation, manage risk, and achieve strategic goals.
-- **Research Interests:** I'm perpetually curious, exploring - Algorithms, Distributed Systems, and Parallel Computing. My fascination extends to Machine Intelligence, the enigmatic realms of Large Language Models, and the pioneering frontiers of Quantum Computing.
+- **Enterprise Technology Leadership:** I partner with C-suite executives to drive digital transformation, develop data monetization frameworks, and create sustainable technology roadmaps that deliver measurable business impact. My teams consistently achieve 100% customer satisfaction while driving significant revenue growth.
+- **Technical Innovation:** I pioneer cutting-edge solutions in GenAI, distributed systems, and privacy-preserving computing. Recent work includes patent-pending innovations in Multi-Agent systems and novel approaches to real-time data processing at scale.
+- **Data & AI Architecture:** I architect enterprise-scale platforms handling petabyte-scale workloads, with expertise spanning Large Language Models, RAG architectures, and Multi-Agent Systems. I'm particularly passionate about next-generation AI architectures and their enterprise applications.
+- **Strategic Consulting:** I guide organizations through complex digital transformations, helping them leverage emerging technologies while managing risk and ensuring sustainable growth. My frameworks for data monetization and cloud adoption have been adopted across JAPAC.
+- **Research & Innovation:** I actively contribute to academic publications and industry forums, focusing on Data Monetization Strategy, Privacy-Preserving Computing, and AI innovations. My fascination extends to Quantum Computing and its potential impact on enterprise computing.
 
 ### beyond the code
 
-When I'm not immersed in the digital world, you'll find me [stargazing](https://www.youtube.com/watch?v=wkQuOrsgVGY), [drifting](https://youtu.be/hepFlpCdTgU?si=hCVeZfF1x5xmOKUe&t=82) or conjuring up the next startup idea. You might find me laughing uproariously at [Family Guy](https://youtu.be/y1CotE1_Q4M?si=-PbJel0rtajfQPAW&t=68), lost in the endless scroll of [9gag](https://9gag.com/), or meandering through the midnight cityscape with my furry friend, [Astro](/assets/img/astro.jpg)
+When not architecting digital transformations, you'll find me [stargazing](https://www.youtube.com/watch?v=wkQuOrsgVGY), contemplating quantum mechanics, or [drifting](https://youtu.be/hepFlpCdTgU?si=hCVeZfF1x5xmOKUe&t=82) through thoughts of the next big innovation. For lighter moments, I'm either laughing at [Family Guy](https://youtu.be/y1CotE1_Q4M?si=-PbJel0rtajfQPAW&t=68), lost in the endless scroll of [9gag](https://9gag.com/), or exploring Singapore's midnight cityscape with my furry friend, [Astro](/assets/img/astro.jpg).
 
 ### join the adventure
 
-Let's explore the intersection of technology and creativity. Expect a blend of insights, ideas, and a sprinkle of fun – right here, where the bits meet the imagination.
+I'm passionate about mentoring the next generation of technology leaders and collaborating on innovations that push the boundaries of what's possible. Let's connect and explore how we can shape the future of technology together – where strategic thinking meets technical excellence, and where imagination transforms into enterprise impact.
 
 <br />
 <br />
