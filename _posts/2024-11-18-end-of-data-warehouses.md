@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The End of Data Warehouses? Enter the Age of Dynamic Context Engines
-date: 2024-11-02 02:07:11
+date: 2024-11-18 02:07:11
 description: Traditional data warehouses are struggling to keep up with modern demands. Enter Dynamic Context Engines (DCEs) -  real-time, path-aware platforms that enrich data with context for smarter, faster decisions. Discover why they're the future of data analytics.
 tags: platform genai etlc
 categories: platform genai
