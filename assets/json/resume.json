@@ -31,7 +31,7 @@
   },
   "work": [
     {
-      "name": "Google, Singapore",
+      "name": "Google",
       "position": "Data & Analytics Manager and Site Lead, South East Asia",
       "url": "https://google.com",
       "startDate": "2021",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "name": "Standard Chartered Bank, Singapore",
+      "name": "Standard Chartered Bank",
       "position": "Principal Engineer",
       "url": "https://sc.com",
       "startDate": "2019",
@@ -64,7 +64,7 @@
       ]
     },
     {
-      "name": "Think Big Analytics (a Teradata company), Singapore",
+      "name": "Think Big Analytics (a Teradata company)",
       "position": "Principal Data Engineer / Solution Architect",
       "url": "https://www.teradata.com",
       "startDate": "2017",
@@ -78,7 +78,7 @@
       ]
     },
     {
-      "name": "UTU, Singapore",
+      "name": "UTU",
       "position": "Technical Lead",
       "url": "https://utu.global",
       "startDate": "2016",
@@ -88,34 +88,6 @@
         "Led market entry strategy and technology roadmap for Thailand expansion, collaborating with C-level executives and banking partners",
         "Established architectural patterns and governance frameworks for mission-critical payment systems",
         "Built and mentored engineering teams while developing high-performance integration solutions"
-      ]
-    },
-    {
-      "name": "Truckaurbus Marketplace, India",
-      "position": "Founder",
-      "url": "https://truckaurbus.com",
-      "startDate": "2014",
-      "endDate": "2016",
-      "summary": "Startup Growth and Platform Development",
-      "highlights": [
-        "Founded and scaled a digital marketplace for commercial vehicles, achieving multi-city operations and significant daily user engagement",
-        "Built strategic partnerships with major OEMs, financial institutions, and NBFCs to create a comprehensive ecosystem",
-        "Architected and developed full-stack marketplace platform including real-time auctions, lead generation network, and programmatic advertising systems",
-        "Led all aspects of technical strategy, product development, and business growth from concept to market operation"
-      ]
-    },
-    {
-      "name": "Microsoft, India",
-      "position": "Senior Software Development Engineer",
-      "url": "https://microsoft.com",
-      "startDate": "2010",
-      "endDate": "2014",
-      "summary": "Core System Development and Early AI Implementation",
-      "highlights": [
-        "Contributed to core Windows Kernel development for Windows 7/8 and Windows Server 2012 R2, focusing on Hyper-V virtualization and system performance",
-        "Pioneered early machine learning implementations on Azure platform, developing foundational modules for cloud-based AI workloads",
-        "Enhanced Azure Content Delivery Network architecture and performance optimization",
-        "Developed key components for Microsoft Lync enterprise communication platform"
       ]
     }
   ],

@@ -10,8 +10,8 @@ profile:
   image_circular: false # crops the image to make it circular
   more_info: >
     <div class="hp-contact-inset">
-      <p>hi@subhadipmitra.com</p> <br>
-      <p>Singapore</p>
+      <p>contact@subhadipmitra.com</p> <br>
+      <p><a href="https://calendly.com/contact-x9nm/30min">Schedule a one-on-one meeting</a></p>
     </div>
 
 news: false # includes a list of news items
