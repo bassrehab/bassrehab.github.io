@@ -11,7 +11,7 @@ profile:
   more_info: >
     <div class="hp-contact-inset">
       <p>contact@subhadipmitra.com</p> <br>
-      <p><a href="https://calendly.com/contact-x9nm/30min">Schedule a one-on-one meeting</a></p>
+      <p><a href="https://calendly.com/contact-x9nm/30min">Schedule a 1:1 meeting</a></p>
     </div>
 
 news: false # includes a list of news items
