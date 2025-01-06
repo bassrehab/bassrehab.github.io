@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Engineering Multi-Agent Systems - A Retail Banking Case Study
-date: 2025-01-01 12:12:13
+date: 2024-12-28 12:12:13
 description: Explore a detailed technical implementation of a multi-agent system for retail banking credit assessment. Learn about agent architecture, distributed systems patterns, error handling, compliance requirements, and performance optimization through actual code examples and system diagrams. Ideal for software architects and engineers building scalable financial systems.
-tags: platform genai architecture casestudy
+tags: genai architecture casestudy
 categories: architecture genai casetudy
 giscus_comments: true
 featured: false
@@ -30,7 +30,7 @@ Traditional monolithic architectures struggle with these requirements. Let's exp
 
 Our credit assessment system uses specialized agents that each handle specific aspects of the loan application process:
 
-![Reference system architecture](./assets/img/blog/agents-fsi-system-architecture.png)
+![Reference system architecture](/assets/img/blog/agents-fsi-system-architecture.png)
 
 
 ### Key Components
@@ -63,7 +63,7 @@ Let's examine how these components work together in practice.
 
 The diagram below shows how a typical application flows through the system:
 
-![Reference credit-flow artifact](./assets/img/blog/credit-assessment-process-flow.png)
+![Reference credit-flow artifact](/assets/img/blog/credit-assessment-process-flow.png)
 
 
 ### Code Implementation
@@ -148,7 +148,7 @@ Real-world performance improvements implemented:
 
 ### Error Handling in Production
 
-![Reference credits system failure handling](./assets/img/blog/credit-system-failure-handling.png)
+![Reference credits system failure handling](/assets/img/blog/credit-system-failure-handling.png)
 
 
 When dealing with financial transactions, error handling becomes critical. Our system implements several layers of protection:
@@ -758,7 +758,7 @@ Each pattern addresses specific needs in the credit assessment workflow while ma
 
 ## Future Improvements
 
-We're currently working on several enhancements:
+Several enhancements are possible, some of them can be (perhaps, we will cover them in the next post):
 
 1. Machine Learning Integration
    - Real-time model retraining
