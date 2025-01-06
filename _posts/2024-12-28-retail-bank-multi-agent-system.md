@@ -12,6 +12,8 @@ toc:
   sidebar: left
 ---
 
+> Note: this blog post covers traditional software agents and doesn't cover generative AI or autonomous agents. 
+
 Modern retail banking systems face complex challenges that demand sophisticated technical solutions. In this deep dive, we'll explore how multi-agent architectures solve real problems in credit assessment systems, using a production-grade implementation as our guide.
 
 ## The Credit Assessment Challenge
@@ -67,6 +69,217 @@ The diagram below shows how a typical application flows through the system:
 
 
 ### Code Implementation
+
+Below is a sample representative implementation.
+
+```python
+from datetime import datetime
+from typing import Dict, Any, Optional, List
+from dataclasses import dataclass
+from enum import Enum
+import asyncio
+import aiohttp
+import aioredis
+import logging
+import json
+
+class CreditDecision(Enum):
+    APPROVED = "approved"
+    DECLINED = "declined"
+    REFER = "refer_to_underwriter"
+    ERROR = "error"
+
+@dataclass
+class LoanApplication:
+    application_id: str
+    customer_id: str
+    loan_amount: float
+    term_months: int
+    purpose: str
+    submitted_at: datetime
+    income_docs: List[str]
+    status: str
+
+@dataclass
+class CreditAssessment:
+    credit_score: int
+    delinquencies: int
+    total_debt: float
+    monthly_obligations: float
+
+class IncomeVerificationAgent:
+    def __init__(self, redis_client: aioredis.Redis):
+        self.redis = redis_client
+        self.cache_ttl = 3600  # 1 hour
+        
+    async def verify_income(self, application: LoanApplication) -> Dict[str, Any]:
+        cache_key = f"income::{application.customer_id}"
+        
+        # Check cache first
+        cached = await self.redis.get(cache_key)
+        if cached:
+            return json.loads(cached)
+        
+        try:
+            # Process bank statements using OCR and ML
+            income_data = await self._process_bank_statements(
+                application.income_docs
+            )
+            
+            # Verify against employer records
+            employer_data = await self._verify_employment(
+                application.customer_id
+            )
+            
+            result = {
+                "monthly_income": income_data["average_monthly_income"],
+                "income_stability": income_data["stability_score"],
+                "employment_verified": employer_data["verified"],
+                "employer": employer_data["employer_name"],
+                "length_of_employment": employer_data["years_employed"]
+            }
+            
+            # Cache the result
+            await self.redis.set(
+                cache_key, 
+                json.dumps(result),
+                ex=self.cache_ttl
+            )
+            
+            return result
+            
+        except Exception as e:
+            logging.error(f"Income verification failed: {str(e)}")
+            raise
+
+class FraudDetectionAgent:
+    def __init__(self, model_endpoint: str):
+        self.model_endpoint = model_endpoint
+        self.session = aiohttp.ClientSession()
+        
+    async def check_fraud(self, application: LoanApplication, 
+                         income_data: Dict[str, Any]) -> Dict[str, Any]:
+        try:
+            # Prepare features for fraud detection
+            features = {
+                "customer_id": application.customer_id,
+                "loan_amount": application.loan_amount,
+                "income": income_data["monthly_income"],
+                "purpose": application.purpose,
+                "application_timestamp": application.submitted_at.isoformat()
+            }
+            
+            # Call fraud detection model
+            async with self.session.post(
+                self.model_endpoint,
+                json=features
+            ) as response:
+                prediction = await response.json()
+                
+            return {
+                "fraud_score": prediction["fraud_probability"],
+                "risk_flags": prediction["risk_flags"],
+                "velocity_check": prediction["velocity_check_result"]
+            }
+            
+        except Exception as e:
+            logging.error(f"Fraud check failed: {str(e)}")
+            raise
+
+class CreditAssessmentOrchestrator:
+    def __init__(self, 
+                 income_agent: IncomeVerificationAgent,
+                 fraud_agent: FraudDetectionAgent,
+                 redis_client: aioredis.Redis):
+        self.income_agent = income_agent
+        self.fraud_agent = fraud_agent
+        self.redis = redis_client
+        
+    async def process_application(self, 
+                                application: LoanApplication) -> CreditDecision:
+        try:
+            # Start timing for SLA tracking
+            start_time = datetime.now()
+            
+            # Step 1: Verify Income
+            income_data = await self.income_agent.verify_income(application)
+            
+            # Quick fail if income is insufficient
+            if income_data["monthly_income"] * 0.4 < \
+               self._calculate_monthly_payment(application):
+                return CreditDecision.DECLINED
+            
+            # Step 2: Fraud Check
+            fraud_result = await self.fraud_agent.check_fraud(
+                application, income_data
+            )
+            
+            if fraud_result["fraud_score"] > 0.7:
+                await self._trigger_fraud_investigation(application)
+                return CreditDecision.DECLINED
+            
+            # Step 3: Credit Bureau Check
+            credit_result = await self._check_credit_bureau(
+                application.customer_id
+            )
+            
+            # Step 4: Calculate debt-to-income ratio
+            dti = self._calculate_dti(
+                income_data["monthly_income"],
+                credit_result["monthly_obligations"]
+            )
+            
+            # Final decision logic
+            decision = self._make_decision(
+                credit_score=credit_result["credit_score"],
+                fraud_score=fraud_result["fraud_score"],
+                dti=dti,
+                income_stability=income_data["income_stability"]
+            )
+            
+            # Log decision for audit
+            await self._log_decision(
+                application, decision, start_time,
+                income_data, fraud_result, credit_result
+            )
+            
+            return decision
+            
+        except Exception as e:
+            logging.error(
+                f"Application processing failed: {str(e)}"
+            )
+            return CreditDecision.ERROR
+    
+    def _calculate_monthly_payment(self, 
+                                 application: LoanApplication) -> float:
+        # Implement actual payment calculation logic
+        rate = 0.05  # Example annual interest rate
+        monthly_rate = rate / 12
+        term = application.term_months
+        
+        return (application.loan_amount * monthly_rate * 
+                (1 + monthly_rate)**term) / \
+               ((1 + monthly_rate)**term - 1)
+    
+    def _calculate_dti(self, monthly_income: float, 
+                      obligations: float) -> float:
+        return obligations / monthly_income
+    
+    def _make_decision(self, credit_score: int, 
+                      fraud_score: float,
+                      dti: float, 
+                      income_stability: float) -> CreditDecision:
+        if credit_score >= 700 and fraud_score < 0.3 and \
+           dti < 0.43 and income_stability > 0.8:
+            return CreditDecision.APPROVED
+        elif credit_score < 580 or fraud_score > 0.7 or dti > 0.5:
+            return CreditDecision.DECLINED
+        else:
+            return CreditDecision.REFER
+
+```
+
 
 The heart of our system is the `CreditAssessmentOrchestrator`. Here's how it processes applications:
 
