@@ -28,7 +28,7 @@ We'll cover everything from sophisticated memory systems (because even AI needs 
 Our autonomous agent system comprises multiple specialized agents, each powered by LLMs but trained for specific tasks. The system architecture is designed to handle complex customer queries while maintaining context and ensuring consistent, accurate responses.
 
 
-{% include figure.liquid loading="eager" path="assets/img/blog/telco-genai-agents-system-architecture.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.liquid loading="eager" path="assets/img/blog/telco-genai-agents-system-architecture-gemini.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 
 
