@@ -27,7 +27,10 @@ We'll cover everything from sophisticated memory systems (because even AI needs 
 
 Our autonomous agent system comprises multiple specialized agents, each powered by LLMs but trained for specific tasks. The system architecture is designed to handle complex customer queries while maintaining context and ensuring consistent, accurate responses.
 
-![Reference telecome genai agents systems architecture](/assets/img/blog/telco-genai-agents-system-architecture.png)
+
+{% include figure.liquid loading="eager" path="assets/img/blog/telco-genai-agents-system-architecture.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+
+
 
 <br>
 
@@ -205,8 +208,9 @@ class KnowledgeAgent(BaseAgent):
 
 The sequence diagram below shows how agents collaborate to resolve customer queries:
 
-![Reference telecome genai agents systems architecture](/assets/img/blog/autonomous-agents-interactions-workflow.png)
+{% include figure.liquid loading="eager" path="assets/img/blog/autonomous-agents-interactions-workflow.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
+<br>
 
 Let's examine a real customer service scenario:
 
@@ -1565,12 +1569,13 @@ class PromptEvolutionSystem:
 
 ## Conclusion
 
+<br>
 
-Building autonomous agent systems is a bit like herding cats - if the cats were incredibly intelligent but occasionally forgot how to cat. We've covered everything from making agents remember things (better than I remember where I parked my car) to helping them evolve their prompts (more successfully than my attempts to evolve my coffee addiction into a tea appreciation).
+Building autonomous agent systems is both an art and a science. While we've covered the technical architecture, memory systems, and monitoring capabilities in depth, the real challenge lies in creating agents that can handle the unpredictable nature of customer interactions while continuously improving their capabilities.
 
-Remember, the goal isn't to create perfect agents - it's to create agents that are better at handling customer service than that one time I spent three hours trying to explain why my internet was working too fast. (Yes, that was a real complaint someone made.)
+The future of these systems isn't just about processing power or sophisticated algorithms - it's about creating intelligent, adaptive agents that can work together seamlessly to solve real customer problems. Whether it's handling complex technical troubleshooting or managing delicate customer situations, the goal is to build systems that are both powerful and practical.
 
-Now, for those who prefer their conclusions with actual technical substance, here's the serious part...
+Now, for the detailed technical conclusions...
 
 Building autonomous multi-agent systems requires careful attention to several critical aspects:
 

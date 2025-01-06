@@ -12,7 +12,7 @@ toc:
   sidebar: left
 ---
 
-> Note: this blog post covers traditional software agents and doesn't cover generative AI or autonomous agents. 
+> Note: this blog post covers traditional software agents and doesn't cover generative AI or autonomous agents. For a GenAI Agents System design case study, refer to [this post](https://subhadipmitra.com/blog/2025/telecom-autonomous-multi-agent-genai-system/).
 
 Modern retail banking systems face complex challenges that demand sophisticated technical solutions. In this deep dive, we'll explore how multi-agent architectures solve real problems in credit assessment systems, using a production-grade implementation as our guide.
 
@@ -32,8 +32,10 @@ Traditional monolithic architectures struggle with these requirements. Let's exp
 
 Our credit assessment system uses specialized agents that each handle specific aspects of the loan application process:
 
-![Reference system architecture](/assets/img/blog/agents-fsi-system-architecture.png)
 
+{% include figure.liquid loading="eager" path="assets/img/blog/agents-fsi-system-architecture.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+
+<br>
 
 ### Key Components
 
@@ -65,7 +67,10 @@ Let's examine how these components work together in practice.
 
 The diagram below shows how a typical application flows through the system:
 
-![Reference credit-flow artifact](/assets/img/blog/credit-assessment-process-flow.png)
+
+{% include figure.liquid loading="eager" path="assets/img/blog/credit-assessment-process-flow.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+
+<br>
 
 
 ### Code Implementation
@@ -361,8 +366,10 @@ Real-world performance improvements implemented:
 
 ### Error Handling in Production
 
-![Reference credits system failure handling](/assets/img/blog/credit-system-failure-handling.png)
 
+{% include figure.liquid loading="eager" path="assets/img/blog/credit-system-failure-handling.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+
+<br>
 
 When dealing with financial transactions, error handling becomes critical. Our system implements several layers of protection:
 
