@@ -1,4 +1,209 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://subhadipmitra.com/feed.xml" rel="self" type="application/atom+xml"/><link href="https://subhadipmitra.com/" rel="alternate" type="text/html" hreflang="en"/><updated>2025-01-06T07:03:49+00:00</updated><id>https://subhadipmitra.com/feed.xml</id><title type="html">subhadip mitra</title><subtitle>Embark on a journey through technology and personal exploration with Subhadip Mitra. Discover his insights, projects and musings, where the strive for innovation meets an evolving individuality. </subtitle><entry><title type="html">Engineering Multi-Agent Systems - A Retail Banking Case Study</title><link href="https://subhadipmitra.com/blog/2024/retail-bank-multi-agent-system/" rel="alternate" type="text/html" title="Engineering Multi-Agent Systems - A Retail Banking Case Study"/><published>2024-12-28T12:15:13+00:00</published><updated>2024-12-28T12:15:13+00:00</updated><id>https://subhadipmitra.com/blog/2024/retail-bank-multi-agent-system</id><content type="html" xml:base="https://subhadipmitra.com/blog/2024/retail-bank-multi-agent-system/"><![CDATA[<p>Modern retail banking systems face complex challenges that demand sophisticated technical solutions. In this deep dive, we’ll explore how multi-agent architectures solve real problems in credit assessment systems, using a production-grade implementation as our guide.</p> <h2 id="the-credit-assessment-challenge">The Credit Assessment Challenge</h2> <p>A bank’s credit assessment system needs to:</p> <ul> <li>Process thousands of applications simultaneously</li> <li>Integrate with multiple external systems</li> <li>Maintain strict compliance and audit trails</li> <li>Provide real-time decisions when possible</li> <li>Scale during high-demand periods (like tax season)</li> <li>Handle system failures gracefully</li> </ul> <p>Traditional monolithic architectures struggle with these requirements. Let’s explore how a multi-agent system addresses these challenges.</p> <h2 id="system-architecture">System Architecture</h2> <p>Our credit assessment system uses specialized agents that each handle specific aspects of the loan application process:</p> <p><img src="/assets/img/blog/agents-fsi-system-architecture.png" alt="Reference system architecture"/></p> <h3 id="key-components">Key Components</h3> <ol> <li>Income Verification Agent <ul> <li>Processes bank statements and pay stubs</li> <li>Verifies employment information</li> <li>Calculates income stability metrics</li> </ul> </li> <li>Credit Bureau Agent <ul> <li>Manages rate-limited API access to credit bureaus</li> <li>Normalizes data from multiple bureaus</li> <li>Maintains score history and change tracking</li> </ul> </li> <li>Fraud Detection Agent <ul> <li>Runs ML models for fraud detection</li> <li>Performs velocity checks</li> <li>Manages investigation workflows</li> </ul> </li> <li>Risk Assessment Agent <ul> <li>Calculates debt-to-income ratios</li> <li>Evaluates borrower risk profiles</li> <li>Applies regulatory rules</li> </ul> </li> </ol> <h2 id="implementation-deep-dive">Implementation Deep Dive</h2> <p>Let’s examine how these components work together in practice.</p> <h3 id="application-flow">Application Flow</h3> <p>The diagram below shows how a typical application flows through the system:</p> <p><img src="/assets/img/blog/credit-assessment-process-flow.png" alt="Reference credit-flow artifact"/></p> <h3 id="code-implementation">Code Implementation</h3> <p>The heart of our system is the <code class="language-plaintext highlighter-rouge">CreditAssessmentOrchestrator</code>. Here’s how it processes applications:</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="k">def</span> <span class="nf">process_application</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">application</span><span class="p">:</span> <span class="n">LoanApplication</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">CreditDecision</span><span class="p">:</span>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://subhadipmitra.com/feed.xml" rel="self" type="application/atom+xml"/><link href="https://subhadipmitra.com/" rel="alternate" type="text/html" hreflang="en"/><updated>2025-01-06T07:20:01+00:00</updated><id>https://subhadipmitra.com/feed.xml</id><title type="html">subhadip mitra</title><subtitle>Embark on a journey through technology and personal exploration with Subhadip Mitra. Discover his insights, projects and musings, where the strive for innovation meets an evolving individuality. </subtitle><entry><title type="html">Engineering Multi-Agent Systems - A Retail Banking Case Study</title><link href="https://subhadipmitra.com/blog/2024/retail-bank-multi-agent-system/" rel="alternate" type="text/html" title="Engineering Multi-Agent Systems - A Retail Banking Case Study"/><published>2024-12-28T12:15:13+00:00</published><updated>2024-12-28T12:15:13+00:00</updated><id>https://subhadipmitra.com/blog/2024/retail-bank-multi-agent-system</id><content type="html" xml:base="https://subhadipmitra.com/blog/2024/retail-bank-multi-agent-system/"><![CDATA[<blockquote> <p>Note: this blog post covers traditional software agents and doesn’t cover generative AI or autonomous agents.</p> </blockquote> <p>Modern retail banking systems face complex challenges that demand sophisticated technical solutions. In this deep dive, we’ll explore how multi-agent architectures solve real problems in credit assessment systems, using a production-grade implementation as our guide.</p> <h2 id="the-credit-assessment-challenge">The Credit Assessment Challenge</h2> <p>A bank’s credit assessment system needs to:</p> <ul> <li>Process thousands of applications simultaneously</li> <li>Integrate with multiple external systems</li> <li>Maintain strict compliance and audit trails</li> <li>Provide real-time decisions when possible</li> <li>Scale during high-demand periods (like tax season)</li> <li>Handle system failures gracefully</li> </ul> <p>Traditional monolithic architectures struggle with these requirements. Let’s explore how a multi-agent system addresses these challenges.</p> <h2 id="system-architecture">System Architecture</h2> <p>Our credit assessment system uses specialized agents that each handle specific aspects of the loan application process:</p> <p><img src="/assets/img/blog/agents-fsi-system-architecture.png" alt="Reference system architecture"/></p> <h3 id="key-components">Key Components</h3> <ol> <li>Income Verification Agent <ul> <li>Processes bank statements and pay stubs</li> <li>Verifies employment information</li> <li>Calculates income stability metrics</li> </ul> </li> <li>Credit Bureau Agent <ul> <li>Manages rate-limited API access to credit bureaus</li> <li>Normalizes data from multiple bureaus</li> <li>Maintains score history and change tracking</li> </ul> </li> <li>Fraud Detection Agent <ul> <li>Runs ML models for fraud detection</li> <li>Performs velocity checks</li> <li>Manages investigation workflows</li> </ul> </li> <li>Risk Assessment Agent <ul> <li>Calculates debt-to-income ratios</li> <li>Evaluates borrower risk profiles</li> <li>Applies regulatory rules</li> </ul> </li> </ol> <h2 id="implementation-deep-dive">Implementation Deep Dive</h2> <p>Let’s examine how these components work together in practice.</p> <h3 id="application-flow">Application Flow</h3> <p>The diagram below shows how a typical application flows through the system:</p> <p><img src="/assets/img/blog/credit-assessment-process-flow.png" alt="Reference credit-flow artifact"/></p> <h3 id="code-implementation">Code Implementation</h3> <p>Below is a sample representative implementation.</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="n">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">List</span>
+<span class="kn">from</span> <span class="n">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span> <span class="n">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="kn">import</span> <span class="n">asyncio</span>
+<span class="kn">import</span> <span class="n">aiohttp</span>
+<span class="kn">import</span> <span class="n">aioredis</span>
+<span class="kn">import</span> <span class="n">logging</span>
+<span class="kn">import</span> <span class="n">json</span>
+
+<span class="k">class</span> <span class="nc">CreditDecision</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">APPROVED</span> <span class="o">=</span> <span class="sh">"</span><span class="s">approved</span><span class="sh">"</span>
+    <span class="n">DECLINED</span> <span class="o">=</span> <span class="sh">"</span><span class="s">declined</span><span class="sh">"</span>
+    <span class="n">REFER</span> <span class="o">=</span> <span class="sh">"</span><span class="s">refer_to_underwriter</span><span class="sh">"</span>
+    <span class="n">ERROR</span> <span class="o">=</span> <span class="sh">"</span><span class="s">error</span><span class="sh">"</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">LoanApplication</span><span class="p">:</span>
+    <span class="n">application_id</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">customer_id</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">loan_amount</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">term_months</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">purpose</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">submitted_at</span><span class="p">:</span> <span class="n">datetime</span>
+    <span class="n">income_docs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+    <span class="n">status</span><span class="p">:</span> <span class="nb">str</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">CreditAssessment</span><span class="p">:</span>
+    <span class="n">credit_score</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">delinquencies</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">total_debt</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">monthly_obligations</span><span class="p">:</span> <span class="nb">float</span>
+
+<span class="k">class</span> <span class="nc">IncomeVerificationAgent</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">redis_client</span><span class="p">:</span> <span class="n">aioredis</span><span class="p">.</span><span class="n">Redis</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">redis</span> <span class="o">=</span> <span class="n">redis_client</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">cache_ttl</span> <span class="o">=</span> <span class="mi">3600</span>  <span class="c1"># 1 hour
+</span>        
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">verify_income</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">application</span><span class="p">:</span> <span class="n">LoanApplication</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+        <span class="n">cache_key</span> <span class="o">=</span> <span class="sa">f</span><span class="sh">"</span><span class="s">income::</span><span class="si">{</span><span class="n">application</span><span class="p">.</span><span class="n">customer_id</span><span class="si">}</span><span class="sh">"</span>
+        
+        <span class="c1"># Check cache first
+</span>        <span class="n">cached</span> <span class="o">=</span> <span class="k">await</span> <span class="n">self</span><span class="p">.</span><span class="n">redis</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">cache_key</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">cached</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">json</span><span class="p">.</span><span class="nf">loads</span><span class="p">(</span><span class="n">cached</span><span class="p">)</span>
+        
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># Process bank statements using OCR and ML
+</span>            <span class="n">income_data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">self</span><span class="p">.</span><span class="nf">_process_bank_statements</span><span class="p">(</span>
+                <span class="n">application</span><span class="p">.</span><span class="n">income_docs</span>
+            <span class="p">)</span>
+            
+            <span class="c1"># Verify against employer records
+</span>            <span class="n">employer_data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">self</span><span class="p">.</span><span class="nf">_verify_employment</span><span class="p">(</span>
+                <span class="n">application</span><span class="p">.</span><span class="n">customer_id</span>
+            <span class="p">)</span>
+            
+            <span class="n">result</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="sh">"</span><span class="s">monthly_income</span><span class="sh">"</span><span class="p">:</span> <span class="n">income_data</span><span class="p">[</span><span class="sh">"</span><span class="s">average_monthly_income</span><span class="sh">"</span><span class="p">],</span>
+                <span class="sh">"</span><span class="s">income_stability</span><span class="sh">"</span><span class="p">:</span> <span class="n">income_data</span><span class="p">[</span><span class="sh">"</span><span class="s">stability_score</span><span class="sh">"</span><span class="p">],</span>
+                <span class="sh">"</span><span class="s">employment_verified</span><span class="sh">"</span><span class="p">:</span> <span class="n">employer_data</span><span class="p">[</span><span class="sh">"</span><span class="s">verified</span><span class="sh">"</span><span class="p">],</span>
+                <span class="sh">"</span><span class="s">employer</span><span class="sh">"</span><span class="p">:</span> <span class="n">employer_data</span><span class="p">[</span><span class="sh">"</span><span class="s">employer_name</span><span class="sh">"</span><span class="p">],</span>
+                <span class="sh">"</span><span class="s">length_of_employment</span><span class="sh">"</span><span class="p">:</span> <span class="n">employer_data</span><span class="p">[</span><span class="sh">"</span><span class="s">years_employed</span><span class="sh">"</span><span class="p">]</span>
+            <span class="p">}</span>
+            
+            <span class="c1"># Cache the result
+</span>            <span class="k">await</span> <span class="n">self</span><span class="p">.</span><span class="n">redis</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span>
+                <span class="n">cache_key</span><span class="p">,</span> 
+                <span class="n">json</span><span class="p">.</span><span class="nf">dumps</span><span class="p">(</span><span class="n">result</span><span class="p">),</span>
+                <span class="n">ex</span><span class="o">=</span><span class="n">self</span><span class="p">.</span><span class="n">cache_ttl</span>
+            <span class="p">)</span>
+            
+            <span class="k">return</span> <span class="n">result</span>
+            
+        <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">logging</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Income verification failed: </span><span class="si">{</span><span class="nf">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+            <span class="k">raise</span>
+
+<span class="k">class</span> <span class="nc">FraudDetectionAgent</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">model_endpoint</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">model_endpoint</span> <span class="o">=</span> <span class="n">model_endpoint</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">session</span> <span class="o">=</span> <span class="n">aiohttp</span><span class="p">.</span><span class="nc">ClientSession</span><span class="p">()</span>
+        
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">check_fraud</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">application</span><span class="p">:</span> <span class="n">LoanApplication</span><span class="p">,</span> 
+                         <span class="n">income_data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># Prepare features for fraud detection
+</span>            <span class="n">features</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="sh">"</span><span class="s">customer_id</span><span class="sh">"</span><span class="p">:</span> <span class="n">application</span><span class="p">.</span><span class="n">customer_id</span><span class="p">,</span>
+                <span class="sh">"</span><span class="s">loan_amount</span><span class="sh">"</span><span class="p">:</span> <span class="n">application</span><span class="p">.</span><span class="n">loan_amount</span><span class="p">,</span>
+                <span class="sh">"</span><span class="s">income</span><span class="sh">"</span><span class="p">:</span> <span class="n">income_data</span><span class="p">[</span><span class="sh">"</span><span class="s">monthly_income</span><span class="sh">"</span><span class="p">],</span>
+                <span class="sh">"</span><span class="s">purpose</span><span class="sh">"</span><span class="p">:</span> <span class="n">application</span><span class="p">.</span><span class="n">purpose</span><span class="p">,</span>
+                <span class="sh">"</span><span class="s">application_timestamp</span><span class="sh">"</span><span class="p">:</span> <span class="n">application</span><span class="p">.</span><span class="n">submitted_at</span><span class="p">.</span><span class="nf">isoformat</span><span class="p">()</span>
+            <span class="p">}</span>
+            
+            <span class="c1"># Call fraud detection model
+</span>            <span class="k">async</span> <span class="k">with</span> <span class="n">self</span><span class="p">.</span><span class="n">session</span><span class="p">.</span><span class="nf">post</span><span class="p">(</span>
+                <span class="n">self</span><span class="p">.</span><span class="n">model_endpoint</span><span class="p">,</span>
+                <span class="n">json</span><span class="o">=</span><span class="n">features</span>
+            <span class="p">)</span> <span class="k">as</span> <span class="n">response</span><span class="p">:</span>
+                <span class="n">prediction</span> <span class="o">=</span> <span class="k">await</span> <span class="n">response</span><span class="p">.</span><span class="nf">json</span><span class="p">()</span>
+                
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="sh">"</span><span class="s">fraud_score</span><span class="sh">"</span><span class="p">:</span> <span class="n">prediction</span><span class="p">[</span><span class="sh">"</span><span class="s">fraud_probability</span><span class="sh">"</span><span class="p">],</span>
+                <span class="sh">"</span><span class="s">risk_flags</span><span class="sh">"</span><span class="p">:</span> <span class="n">prediction</span><span class="p">[</span><span class="sh">"</span><span class="s">risk_flags</span><span class="sh">"</span><span class="p">],</span>
+                <span class="sh">"</span><span class="s">velocity_check</span><span class="sh">"</span><span class="p">:</span> <span class="n">prediction</span><span class="p">[</span><span class="sh">"</span><span class="s">velocity_check_result</span><span class="sh">"</span><span class="p">]</span>
+            <span class="p">}</span>
+            
+        <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">logging</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Fraud check failed: </span><span class="si">{</span><span class="nf">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+            <span class="k">raise</span>
+
+<span class="k">class</span> <span class="nc">CreditAssessmentOrchestrator</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> 
+                 <span class="n">income_agent</span><span class="p">:</span> <span class="n">IncomeVerificationAgent</span><span class="p">,</span>
+                 <span class="n">fraud_agent</span><span class="p">:</span> <span class="n">FraudDetectionAgent</span><span class="p">,</span>
+                 <span class="n">redis_client</span><span class="p">:</span> <span class="n">aioredis</span><span class="p">.</span><span class="n">Redis</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">income_agent</span> <span class="o">=</span> <span class="n">income_agent</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">fraud_agent</span> <span class="o">=</span> <span class="n">fraud_agent</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">redis</span> <span class="o">=</span> <span class="n">redis_client</span>
+        
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">process_application</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> 
+                                <span class="n">application</span><span class="p">:</span> <span class="n">LoanApplication</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">CreditDecision</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># Start timing for SLA tracking
+</span>            <span class="n">start_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="nf">now</span><span class="p">()</span>
+            
+            <span class="c1"># Step 1: Verify Income
+</span>            <span class="n">income_data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">self</span><span class="p">.</span><span class="n">income_agent</span><span class="p">.</span><span class="nf">verify_income</span><span class="p">(</span><span class="n">application</span><span class="p">)</span>
+            
+            <span class="c1"># Quick fail if income is insufficient
+</span>            <span class="k">if</span> <span class="n">income_data</span><span class="p">[</span><span class="sh">"</span><span class="s">monthly_income</span><span class="sh">"</span><span class="p">]</span> <span class="o">*</span> <span class="mf">0.4</span> <span class="o">&lt;</span> \
+               <span class="n">self</span><span class="p">.</span><span class="nf">_calculate_monthly_payment</span><span class="p">(</span><span class="n">application</span><span class="p">):</span>
+                <span class="k">return</span> <span class="n">CreditDecision</span><span class="p">.</span><span class="n">DECLINED</span>
+            
+            <span class="c1"># Step 2: Fraud Check
+</span>            <span class="n">fraud_result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">self</span><span class="p">.</span><span class="n">fraud_agent</span><span class="p">.</span><span class="nf">check_fraud</span><span class="p">(</span>
+                <span class="n">application</span><span class="p">,</span> <span class="n">income_data</span>
+            <span class="p">)</span>
+            
+            <span class="k">if</span> <span class="n">fraud_result</span><span class="p">[</span><span class="sh">"</span><span class="s">fraud_score</span><span class="sh">"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.7</span><span class="p">:</span>
+                <span class="k">await</span> <span class="n">self</span><span class="p">.</span><span class="nf">_trigger_fraud_investigation</span><span class="p">(</span><span class="n">application</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">CreditDecision</span><span class="p">.</span><span class="n">DECLINED</span>
+            
+            <span class="c1"># Step 3: Credit Bureau Check
+</span>            <span class="n">credit_result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">self</span><span class="p">.</span><span class="nf">_check_credit_bureau</span><span class="p">(</span>
+                <span class="n">application</span><span class="p">.</span><span class="n">customer_id</span>
+            <span class="p">)</span>
+            
+            <span class="c1"># Step 4: Calculate debt-to-income ratio
+</span>            <span class="n">dti</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">_calculate_dti</span><span class="p">(</span>
+                <span class="n">income_data</span><span class="p">[</span><span class="sh">"</span><span class="s">monthly_income</span><span class="sh">"</span><span class="p">],</span>
+                <span class="n">credit_result</span><span class="p">[</span><span class="sh">"</span><span class="s">monthly_obligations</span><span class="sh">"</span><span class="p">]</span>
+            <span class="p">)</span>
+            
+            <span class="c1"># Final decision logic
+</span>            <span class="n">decision</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">_make_decision</span><span class="p">(</span>
+                <span class="n">credit_score</span><span class="o">=</span><span class="n">credit_result</span><span class="p">[</span><span class="sh">"</span><span class="s">credit_score</span><span class="sh">"</span><span class="p">],</span>
+                <span class="n">fraud_score</span><span class="o">=</span><span class="n">fraud_result</span><span class="p">[</span><span class="sh">"</span><span class="s">fraud_score</span><span class="sh">"</span><span class="p">],</span>
+                <span class="n">dti</span><span class="o">=</span><span class="n">dti</span><span class="p">,</span>
+                <span class="n">income_stability</span><span class="o">=</span><span class="n">income_data</span><span class="p">[</span><span class="sh">"</span><span class="s">income_stability</span><span class="sh">"</span><span class="p">]</span>
+            <span class="p">)</span>
+            
+            <span class="c1"># Log decision for audit
+</span>            <span class="k">await</span> <span class="n">self</span><span class="p">.</span><span class="nf">_log_decision</span><span class="p">(</span>
+                <span class="n">application</span><span class="p">,</span> <span class="n">decision</span><span class="p">,</span> <span class="n">start_time</span><span class="p">,</span>
+                <span class="n">income_data</span><span class="p">,</span> <span class="n">fraud_result</span><span class="p">,</span> <span class="n">credit_result</span>
+            <span class="p">)</span>
+            
+            <span class="k">return</span> <span class="n">decision</span>
+            
+        <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">logging</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span>
+                <span class="sa">f</span><span class="sh">"</span><span class="s">Application processing failed: </span><span class="si">{</span><span class="nf">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="sh">"</span>
+            <span class="p">)</span>
+            <span class="k">return</span> <span class="n">CreditDecision</span><span class="p">.</span><span class="n">ERROR</span>
+    
+    <span class="k">def</span> <span class="nf">_calculate_monthly_payment</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> 
+                                 <span class="n">application</span><span class="p">:</span> <span class="n">LoanApplication</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="c1"># Implement actual payment calculation logic
+</span>        <span class="n">rate</span> <span class="o">=</span> <span class="mf">0.05</span>  <span class="c1"># Example annual interest rate
+</span>        <span class="n">monthly_rate</span> <span class="o">=</span> <span class="n">rate</span> <span class="o">/</span> <span class="mi">12</span>
+        <span class="n">term</span> <span class="o">=</span> <span class="n">application</span><span class="p">.</span><span class="n">term_months</span>
+        
+        <span class="nf">return </span><span class="p">(</span><span class="n">application</span><span class="p">.</span><span class="n">loan_amount</span> <span class="o">*</span> <span class="n">monthly_rate</span> <span class="o">*</span> 
+                <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">monthly_rate</span><span class="p">)</span><span class="o">**</span><span class="n">term</span><span class="p">)</span> <span class="o">/</span> \
+               <span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="n">monthly_rate</span><span class="p">)</span><span class="o">**</span><span class="n">term</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">_calculate_dti</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">monthly_income</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> 
+                      <span class="n">obligations</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">obligations</span> <span class="o">/</span> <span class="n">monthly_income</span>
+    
+    <span class="k">def</span> <span class="nf">_make_decision</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">credit_score</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> 
+                      <span class="n">fraud_score</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+                      <span class="n">dti</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> 
+                      <span class="n">income_stability</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">CreditDecision</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">credit_score</span> <span class="o">&gt;=</span> <span class="mi">700</span> <span class="ow">and</span> <span class="n">fraud_score</span> <span class="o">&lt;</span> <span class="mf">0.3</span> <span class="ow">and</span> \
+           <span class="n">dti</span> <span class="o">&lt;</span> <span class="mf">0.43</span> <span class="ow">and</span> <span class="n">income_stability</span> <span class="o">&gt;</span> <span class="mf">0.8</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">CreditDecision</span><span class="p">.</span><span class="n">APPROVED</span>
+        <span class="k">elif</span> <span class="n">credit_score</span> <span class="o">&lt;</span> <span class="mi">580</span> <span class="ow">or</span> <span class="n">fraud_score</span> <span class="o">&gt;</span> <span class="mf">0.7</span> <span class="ow">or</span> <span class="n">dti</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">CreditDecision</span><span class="p">.</span><span class="n">DECLINED</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">CreditDecision</span><span class="p">.</span><span class="n">REFER</span>
+
+</code></pre></div></div> <p>The heart of our system is the <code class="language-plaintext highlighter-rouge">CreditAssessmentOrchestrator</code>. Here’s how it processes applications:</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="k">def</span> <span class="nf">process_application</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">application</span><span class="p">:</span> <span class="n">LoanApplication</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">CreditDecision</span><span class="p">:</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Start timing for SLA tracking
 </span>        <span class="n">start_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="nf">now</span><span class="p">()</span>
