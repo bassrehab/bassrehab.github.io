@@ -3,8 +3,8 @@ layout: post
 title: Engineering Multi-Agent Systems - A Retail Banking Case Study
 date: 2024-12-28 12:15:13
 description: Explore a detailed technical implementation of a multi-agent system for retail banking credit assessment. Learn about agent architecture, distributed systems patterns, error handling, compliance requirements, and performance optimization through actual code examples and system diagrams. Ideal for software architects and engineers building scalable financial systems.
-tags: genai architecture casestudy
-categories: architecture genai casetudy
+tags: architecture casestudy
+categories: architecture casetudy
 giscus_comments: true
 featured: false
 related_posts: true
