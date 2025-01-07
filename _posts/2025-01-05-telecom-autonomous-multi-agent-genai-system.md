@@ -3,8 +3,8 @@ layout: post
 title: Engineering Autonomous Multi-Agent Systems - A Technical Deep Dive into Telecom Customer Service
 date: 2025-01-05 11:23:37
 description: Dive into the world of autonomous AI agents with practical implementations, code examples, and real-world scenarios. Learn how to build intelligent systems with advanced memory management, dynamic prompt evolution, and sophisticated monitoring capabilities in telecom customer service.
-tags: genai architecture casestudy
-categories: architecture genai casetudy
+tags: genai architecture casestudy system-design
+categories: architecture genai casetudy system-design
 giscus_comments: true
 featured: false
 related_posts: true
