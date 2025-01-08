@@ -287,11 +287,11 @@
   ],
   "projects": [
     {
-      "name": "Open Location Proof (GoLocate.me)",
+      "name": "Open Location Proof (olp-protocol.org)",
       "summary": "A privacy aware open protocol to prove without repudiation an entity's point-in-time presence, participation, and location in physical or virtual space. GoLocate.me is a planned implementation node demonstrating the protocol.",
       "startDate": "2022",
       "endDate": "2023",
-      "url": "https://golocate.me"
+      "url": "https://olp-protocol.org"
     },
     {
       "name": "OConsent - Open Consent Protocol",
