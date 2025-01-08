@@ -112,4 +112,381 @@
             <span class="n">key</span><span class="o">,</span> <span class="n">compressed</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div></div> <h2 id="memory-optimization-techniques">Memory Optimization Techniques</h2> <h3 id="1-data-layout-optimization">1. Data Layout Optimization</h3> <ul> <li>Field ordering for better packing</li> <li>Padding elimination</li> <li>Object pooling</li> <li>Array pre-allocation</li> </ul> <h3 id="2-access-pattern-optimization">2. Access Pattern Optimization</h3> <ul> <li>NUMA-aware allocation</li> <li>Thread affinity</li> <li>Cache line alignment</li> <li>Sequential access patterns</li> </ul> <h3 id="3-gc-optimization">3. GC Optimization</h3> <ul> <li>ZGC configuration</li> <li>Large pages support</li> <li>GC logging</li> <li>Heap sizing strategy</li> </ul> <h2 id="eviction-strategies">Eviction Strategies</h2> <h3 id="1-time-based-eviction">1. Time-Based Eviction</h3> <ul> <li>Rolling time window</li> <li>Configurable retention</li> <li>Background processing</li> <li>Priority queues</li> </ul> <h3 id="2-size-based-eviction">2. Size-Based Eviction</h3> <ul> <li>Memory thresholds</li> <li>Eviction batches</li> <li>Resource monitoring</li> <li>Backpressure handling</li> </ul> <h2 id="monitoring-and-alerting">Monitoring and Alerting</h2> <h3 id="memory-metrics">Memory Metrics</h3> <ol> <li> <strong>Usage Metrics</strong> <ul> <li>Region utilization</li> <li>Page allocation rates</li> <li>Eviction statistics</li> <li>GC performance</li> </ul> </li> <li> <strong>Performance Metrics</strong> <ul> <li>Access latencies</li> <li>Hit/miss ratios</li> <li>Throughput rates</li> <li>Queue depths</li> </ul> </li> </ol> <h3 id="alert-thresholds">Alert Thresholds</h3> <ol> <li> <strong>Critical Alerts</strong> <ul> <li>Memory usage &gt; 90%</li> <li>GC pause &gt; 500ms</li> <li>Eviction rate spike</li> <li>Error rate increase</li> </ul> </li> <li> <strong>Warning Alerts</strong> <ul> <li>Memory usage &gt; 80%</li> <li>GC pause &gt; 200ms</li> <li>Queue depth increase</li> <li>Throughput drop</li> </ul> </li> </ol> <h2 id="performance-results">Performance Results</h2> <h3 id="latency-profile">Latency Profile</h3> <ul> <li>Read operations: &lt; 1ms (p99)</li> <li>Write operations: &lt; 2ms (p99)</li> <li>Query operations: &lt; 10ms (p99)</li> <li>Scan operations: &lt; 100ms (p99)</li> </ul> <h3 id="throughput-achievements">Throughput Achievements</h3> <ul> <li>Event processing: 2.5M/second</li> <li>Query processing: 100K/second</li> <li>Scan processing: 10K/second</li> <li>Background operations: 1K/second</li> </ul> <h2 id="lessons-learned">Lessons Learned</h2> <ol> <li> <strong>Memory Management</strong> <ul> <li>Pre-allocation crucial</li> <li>NUMA awareness important</li> <li>Monitor everything</li> <li>Plan for growth</li> </ul> </li> <li> <strong>Performance Tuning</strong> <ul> <li>Start with defaults</li> <li>Measure thoroughly</li> <li>Tune incrementally</li> <li>Document changes</li> </ul> </li> <li> <strong>Operational Aspects</strong> <ul> <li>Regular monitoring</li> <li>Proactive maintenance</li> <li>Capacity planning</li> <li>Team training</li> </ul> </li> </ol> <h2 id="looking-ahead">Looking Ahead</h2> <p>In Part 4, we’ll explore how we optimized our Kafka infrastructure to handle the massive throughput requirements while ensuring reliable message delivery and processing.</p> <p>Stay tuned to learn about our Kafka cluster design, configuration tuning, and operational practices.</p> </div> </article> <hr> <div style="background: var(--global-code-bg-color); padding: 2rem;"> <div> <h3>Subscribe to my blog</h3> </div> <p style=" margin-bottom: 1rem;"> Get notified when new articles are published. No spam, unsubscribe anytime. </p> <div id="mc_embed_signup"> <form action="https://subhadipmitra.us13.list-manage.com/subscribe/post?u=1ab948a9588be0b556677c306&amp;id=1cb83ab5a9&amp;f_id=007605e9f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"> <div style="display: flex; gap: 0.5rem;"> <input type="email" name="EMAIL" id="mce-EMAIL" placeholder="Enter your email" required style="width: 100%; padding: 0.5rem 1rem; border-radius: 6px; outline: none;"> <button type="submit" style="background-color: var(--global-theme-color); padding: 0.5rem 1.5rem; color: var(--global-bg-color); font-weight: 500; border-radius: 6px; border: none; cursor: pointer;"> Subscribe </button> </div> <div style="position: absolute; left: -5000px;" aria-hidden="true"> <input type="text" name="b_XXXXX_XXXXX" tabindex="-1"> </div> </form> </div> <p style="font-size: 0.75rem; margin-top: 0.75rem;"> By subscribing, you agree to our <a href="/privacy" style="text-decoration: underline; color: inherit;">Privacy Policy</a> </p> </div> <br> <hr> <br> <ul class="list-disc pl-8"></ul> <h2 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h2> <p class="mb-2">Here are some more articles you might like to read next:</p> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2022/building-a-massive-scale-real-time-data-platform-p2/">Part 2 - Building a Massive-Scale Real-Time Data Platform - Data Partitioning and Flow</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2022/building-a-massive-scale-real-time-data-platform-p1/">Part 1 - Building a Massive-Scale Real-Time Data Platform - System Overview and Architecture</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2024/retail-bank-multi-agent-system/">Engineering Multi-Agent Systems - A Retail Banking Case Study</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2025/telecom-autonomous-multi-agent-genai-system/">Engineering Autonomous Multi-Agent Systems - A Technical Deep Dive into Telecom Customer Service</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2021/designing-a-real-time-data-processing-system/">Designing a Real Time Data Processing System</a> </li> <div id="giscus_thread" style="max-width: 1024px; margin: 0 auto;"> <script>let giscusTheme=determineComputedTheme(),giscusAttributes={src:"https://giscus.app/client.js","data-repo":"bassrehab/bassrehab.github.io","data-repo-id":"R_kgDOLvY8Tg","data-category":"Comments","data-category-id":"DIC_kwDOLvY8Ts4CexzE","data-mapping":"title","data-strict":"0","data-reactions-enabled":"1","data-emit-metadata":"0","data-input-position":"bottom","data-theme":giscusTheme,"data-lang":"en",crossorigin:"anonymous",async:""},giscusScript=document.createElement("script");Object.entries(giscusAttributes).forEach(([t,e])=>giscusScript.setAttribute(t,e)),document.getElementById("giscus_thread").appendChild(giscusScript);</script> <noscript>Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript" rel="external nofollow noopener" target="_blank">comments powered by giscus.</a> </noscript> </div> </div> </div> </div> </div> <footer class="sticky-bottom mt-5" role="contentinfo"> <div class="container"> © Copyright 2025 Subhadip Mitra. Some Rights Reserved. Last updated: January 07, 2025. </div> </footer> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> <script src="/assets/js/bootstrap.bundle.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js" type="text/javascript"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/js/zoom.js?85ddb88934d28b74e78031fd54cf8308"></script> <script defer src="/assets/js/bootstrap-toc.min.js?c82ff4de8b0955d6ff14f5b05eed7eb6"></script> <script src="/assets/js/no_defer.js?2781658a0a2b13ed609542042a859126"></script> <script defer src="/assets/js/common.js?b7816bd189846d29eded8745f9c4cf77"></script> <script defer src="/assets/js/copy_code.js?12775fdf7f95e901d7119054556e495f" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?d9f17b6adc2311cbabd747f4538bb15f"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script type="text/javascript">window.MathJax={tex:{tags:"ams"}};</script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.min.js"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script> <script async src="https://www.googletagmanager.com/gtag/js?id=G-TW7YQ5XPC6"></script> <script>function gtag(){window.dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-TW7YQ5XPC6");</script> <script type="text/javascript">function progressBarSetup(){"max"in document.createElement("progress")?(initializeProgressElement(),$(document).on("scroll",function(){progressBar.attr({value:getCurrentScrollPosition()})}),$(window).on("resize",initializeProgressElement)):(resizeProgressBar(),$(document).on("scroll",resizeProgressBar),$(window).on("resize",resizeProgressBar))}function getCurrentScrollPosition(){return $(window).scrollTop()}function initializeProgressElement(){let e=$("#navbar").outerHeight(!0);$("body").css({"padding-top":e}),$("progress-container").css({"padding-top":e}),progressBar.css({top:e}),progressBar.attr({max:getDistanceToScroll(),value:getCurrentScrollPosition()})}function getDistanceToScroll(){return $(document).height()-$(window).height()}function resizeProgressBar(){progressBar.css({width:getWidthPercentage()+"%"})}function getWidthPercentage(){return getCurrentScrollPosition()/getDistanceToScroll()*100}const progressBar=$("#progress");window.onload=function(){setTimeout(progressBarSetup,50)};</script> </body> </html>
+</code></pre></div></div> <h2 id="memory-optimization-techniques">Memory Optimization Techniques</h2> <h3 id="1-data-layout-optimization">1. Data Layout Optimization</h3> <h4 id="object-structure-design">Object Structure Design</h4> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Before Optimization</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">EventData</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">id</span><span class="o">;</span>                     <span class="c1">// 8 bytes reference</span>
+    <span class="kd">private</span> <span class="kt">long</span> <span class="n">timestamp</span><span class="o">;</span>                <span class="c1">// 8 bytes</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">eventType</span><span class="o">;</span>              <span class="c1">// 8 bytes reference</span>
+    <span class="kd">private</span> <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">String</span><span class="o">&gt;</span> <span class="n">metadata</span><span class="o">;</span>  <span class="c1">// 8 bytes reference + overhead</span>
+    <span class="kd">private</span> <span class="kt">byte</span><span class="o">[]</span> <span class="n">payload</span><span class="o">;</span>                <span class="c1">// 8 bytes reference + data</span>
+<span class="o">}</span>
+
+<span class="c1">// After Optimization</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OptimizedEventData</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">long</span> <span class="n">id</span><span class="o">;</span>          <span class="c1">// 8 bytes (converted from String)</span>
+    <span class="kd">private</span> <span class="kt">long</span> <span class="n">timestamp</span><span class="o">;</span>   <span class="c1">// 8 bytes</span>
+    <span class="kd">private</span> <span class="kt">byte</span> <span class="n">eventType</span><span class="o">;</span>   <span class="c1">// 1 byte (enum converted to byte)</span>
+    <span class="kd">private</span> <span class="kt">short</span> <span class="n">metaCount</span><span class="o">;</span>  <span class="c1">// 2 bytes</span>
+    <span class="kd">private</span> <span class="kt">byte</span><span class="o">[]</span> <span class="n">combined</span><span class="o">;</span>  <span class="c1">// metadata + payload combined</span>
+<span class="o">}</span>
+</code></pre></div></div> <h4 id="memory-alignment">Memory Alignment</h4> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">AlignedEventData</span> <span class="o">{</span>
+    <span class="c1">// Fields arranged by size (descending) for optimal packing</span>
+    <span class="kd">private</span> <span class="kt">long</span> <span class="n">timestamp</span><span class="o">;</span>      <span class="c1">// 8 bytes</span>
+    <span class="kd">private</span> <span class="kt">long</span> <span class="n">id</span><span class="o">;</span>            <span class="c1">// 8 bytes</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">dataLength</span><span class="o">;</span>     <span class="c1">// 4 bytes</span>
+    <span class="kd">private</span> <span class="kt">short</span> <span class="n">flags</span><span class="o">;</span>        <span class="c1">// 2 bytes</span>
+    <span class="kd">private</span> <span class="kt">byte</span> <span class="n">eventType</span><span class="o">;</span>     <span class="c1">// 1 byte</span>
+    <span class="kd">private</span> <span class="kt">byte</span> <span class="n">reserved</span><span class="o">;</span>      <span class="c1">// 1 byte (padding for 8-byte alignment)</span>
+    <span class="kd">private</span> <span class="kt">byte</span><span class="o">[]</span> <span class="n">data</span><span class="o">;</span>        <span class="c1">// aligned access</span>
+<span class="o">}</span>
+</code></pre></div></div> <h4 id="object-pooling-implementation">Object Pooling Implementation</h4> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">EventObjectPool</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">Queue</span><span class="o">&lt;</span><span class="nc">EventData</span><span class="o">&gt;</span> <span class="n">pool</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">maxPoolSize</span><span class="o">;</span>
+    
+    <span class="kd">public</span> <span class="nf">EventObjectPool</span><span class="o">(</span><span class="kt">int</span> <span class="n">maxSize</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">pool</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ConcurrentLinkedQueue</span><span class="o">&lt;&gt;();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">maxPoolSize</span> <span class="o">=</span> <span class="n">maxSize</span><span class="o">;</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="nc">EventData</span> <span class="nf">acquire</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">EventData</span> <span class="n">event</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="na">poll</span><span class="o">();</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">event</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">event</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">EventData</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">event</span><span class="o">;</span>
+    <span class="o">}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">release</span><span class="o">(</span><span class="nc">EventData</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">event</span><span class="o">.</span><span class="na">reset</span><span class="o">();</span> <span class="c1">// Clear sensitive data</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">pool</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&lt;</span> <span class="n">maxPoolSize</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">pool</span><span class="o">.</span><span class="na">offer</span><span class="o">(</span><span class="n">event</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div> <h3 id="2-access-pattern-optimization">2. Access Pattern Optimization</h3> <h4 id="numa-aware-allocation">NUMA-Aware Allocation</h4> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">NumaAwareAllocation</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">numaNodes</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">ThreadLocal</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">nodeAffinity</span><span class="o">;</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">allocateMemory</span><span class="o">(</span><span class="kt">int</span> <span class="n">size</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">node</span> <span class="o">=</span> <span class="n">nodeAffinity</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>
+        <span class="c1">// Allocate memory on specific NUMA node</span>
+        <span class="kt">long</span> <span class="n">address</span> <span class="o">=</span> <span class="n">unsafe</span><span class="o">.</span><span class="na">allocateMemory</span><span class="o">(</span><span class="n">size</span><span class="o">);</span>
+        <span class="c1">// Bind memory to NUMA node</span>
+        <span class="n">numaBindMemory</span><span class="o">(</span><span class="n">address</span><span class="o">,</span> <span class="n">size</span><span class="o">,</span> <span class="n">node</span><span class="o">);</span>
+    <span class="o">}</span>
+    
+    <span class="kd">private</span> <span class="kd">native</span> <span class="kt">void</span> <span class="nf">numaBindMemory</span><span class="o">(</span><span class="kt">long</span> <span class="n">address</span><span class="o">,</span> <span class="kt">int</span> <span class="n">size</span><span class="o">,</span> <span class="kt">int</span> <span class="n">node</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div> <h4 id="thread-affinity">Thread Affinity</h4> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ThreadAffinityManager</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">ConcurrentMap</span><span class="o">&lt;</span><span class="nc">Thread</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">threadToCore</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">availableCores</span><span class="o">;</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setThreadAffinity</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">Thread</span> <span class="n">currentThread</span> <span class="o">=</span> <span class="nc">Thread</span><span class="o">.</span><span class="na">currentThread</span><span class="o">();</span>
+        <span class="kt">int</span> <span class="n">core</span> <span class="o">=</span> <span class="n">threadToCore</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">currentThread</span><span class="o">);</span>
+        
+        <span class="c1">// Set processor affinity</span>
+        <span class="n">setThreadAffinityMask</span><span class="o">(</span><span class="mi">1L</span> <span class="o">&lt;&lt;</span> <span class="n">core</span><span class="o">);</span>
+    <span class="o">}</span>
+    
+    <span class="kd">private</span> <span class="kd">native</span> <span class="kt">void</span> <span class="nf">setThreadAffinityMask</span><span class="o">(</span><span class="kt">long</span> <span class="n">mask</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div> <h4 id="cache-line-optimization">Cache Line Optimization</h4> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CacheLineAligned</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="no">CACHE_LINE</span> <span class="o">=</span> <span class="mi">64</span><span class="o">;</span> <span class="c1">// bytes</span>
+    
+    <span class="c1">// Prevent false sharing with padding</span>
+    <span class="nd">@sun</span><span class="o">.</span><span class="na">misc</span><span class="o">.</span><span class="na">Contended</span>
+    <span class="kd">private</span> <span class="kd">volatile</span> <span class="kt">long</span> <span class="n">counter</span><span class="o">;</span>
+    
+    <span class="c1">// Ensure cache line alignment</span>
+    <span class="kd">private</span> <span class="kt">long</span> <span class="n">padding1</span><span class="o">,</span> <span class="n">padding2</span><span class="o">,</span> <span class="n">padding3</span><span class="o">,</span> <span class="n">padding4</span><span class="o">,</span> 
+                <span class="n">padding5</span><span class="o">,</span> <span class="n">padding6</span><span class="o">,</span> <span class="n">padding7</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div> <h3 id="3-memory-access-patterns">3. Memory Access Patterns</h3> <h4 id="sequential-access">Sequential Access</h4> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SequentialAccessBuffer</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">ByteBuffer</span> <span class="n">buffer</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">blockSize</span><span class="o">;</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">processData</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// Sequential read is faster than random access</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">buffer</span><span class="o">.</span><span class="na">capacity</span><span class="o">();</span> <span class="n">i</span> <span class="o">+=</span> <span class="n">blockSize</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">buffer</span><span class="o">.</span><span class="na">position</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+            <span class="n">processBlock</span><span class="o">(</span><span class="n">buffer</span><span class="o">,</span> <span class="n">blockSize</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div> <h4 id="batch-processing">Batch Processing</h4> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">BatchProcessor</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="no">BATCH_SIZE</span> <span class="o">=</span> <span class="mi">1000</span><span class="o">;</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">processBatch</span><span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">Event</span><span class="o">&gt;</span> <span class="n">events</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// Process events in batches to improve memory access patterns</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">events</span><span class="o">.</span><span class="na">size</span><span class="o">();</span> <span class="n">i</span> <span class="o">+=</span> <span class="no">BATCH_SIZE</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kt">int</span> <span class="n">end</span> <span class="o">=</span> <span class="nc">Math</span><span class="o">.</span><span class="na">min</span><span class="o">(</span><span class="n">i</span> <span class="o">+</span> <span class="no">BATCH_SIZE</span><span class="o">,</span> <span class="n">events</span><span class="o">.</span><span class="na">size</span><span class="o">());</span>
+            <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Event</span><span class="o">&gt;</span> <span class="n">batch</span> <span class="o">=</span> <span class="n">events</span><span class="o">.</span><span class="na">subList</span><span class="o">(</span><span class="n">i</span><span class="o">,</span> <span class="n">end</span><span class="o">);</span>
+            <span class="n">processEventBatch</span><span class="o">(</span><span class="n">batch</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div> <p><br></p> <h2 id="eviction-strategies">Eviction Strategies</h2> <p><br></p> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/blog/memory-eviction-flow-480.webp 480w,/assets/img/blog/memory-eviction-flow-800.webp 800w,/assets/img/blog/memory-eviction-flow-1400.webp 1400w," sizes="95vw" type="image/webp"></source> <img src="/assets/img/blog/memory-eviction-flow.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" data-zoomable="" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> </figure> <p><br></p> <h3 id="1-time-based-eviction">1. Time-Based Eviction</h3> <h4 id="rolling-window-implementation">Rolling Window Implementation</h4> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TimeBasedEviction</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">Duration</span> <span class="n">windowSize</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">EvictionQueue</span><span class="o">&lt;</span><span class="nc">TimedEntry</span><span class="o">&gt;</span> <span class="n">queue</span><span class="o">;</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">evictExpired</span><span class="o">()</span> <span class="o">{</span>
+        <span class="kt">long</span> <span class="n">cutoff</span> <span class="o">=</span> <span class="nc">System</span><span class="o">.</span><span class="na">currentTimeMillis</span><span class="o">()</span> <span class="o">-</span> <span class="n">windowSize</span><span class="o">.</span><span class="na">toMillis</span><span class="o">();</span>
+        
+        <span class="k">while</span> <span class="o">(!</span><span class="n">queue</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">()</span> <span class="o">&amp;&amp;</span> 
+               <span class="n">queue</span><span class="o">.</span><span class="na">peek</span><span class="o">().</span><span class="na">getTimestamp</span><span class="o">()</span> <span class="o">&lt;</span> <span class="n">cutoff</span><span class="o">)</span> <span class="o">{</span>
+            <span class="nc">TimedEntry</span> <span class="n">entry</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="na">poll</span><span class="o">();</span>
+            <span class="n">processEviction</span><span class="o">(</span><span class="n">entry</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">processEviction</span><span class="o">(</span><span class="nc">TimedEntry</span> <span class="n">entry</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// Move to appropriate storage tier</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">entry</span><span class="o">.</span><span class="na">isHot</span><span class="o">())</span> <span class="o">{</span>
+            <span class="n">moveToWarmStorage</span><span class="o">(</span><span class="n">entry</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="n">moveToColdStorage</span><span class="o">(</span><span class="n">entry</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div> <h4 id="priority-based-time-eviction">Priority-Based Time Eviction</h4> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PriorityTimeEviction</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">PriorityQueue</span><span class="o">&lt;</span><span class="nc">EventData</span><span class="o">&gt;</span> <span class="n">priorityQueue</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">customerTiers</span><span class="o">;</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">evictWithPriority</span><span class="o">()</span> <span class="o">{</span>
+        <span class="kt">long</span> <span class="n">currentTime</span> <span class="o">=</span> <span class="nc">System</span><span class="o">.</span><span class="na">currentTimeMillis</span><span class="o">();</span>
+        
+        <span class="k">while</span> <span class="o">(</span><span class="n">needsEviction</span><span class="o">())</span> <span class="o">{</span>
+            <span class="nc">EventData</span> <span class="n">event</span> <span class="o">=</span> <span class="n">priorityQueue</span><span class="o">.</span><span class="na">peek</span><span class="o">();</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">shouldEvict</span><span class="o">(</span><span class="n">event</span><span class="o">,</span> <span class="n">currentTime</span><span class="o">))</span> <span class="o">{</span>
+                <span class="n">event</span> <span class="o">=</span> <span class="n">priorityQueue</span><span class="o">.</span><span class="na">poll</span><span class="o">();</span>
+                <span class="n">evictEvent</span><span class="o">(</span><span class="n">event</span><span class="o">);</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="k">break</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">shouldEvict</span><span class="o">(</span><span class="nc">EventData</span> <span class="n">event</span><span class="o">,</span> <span class="kt">long</span> <span class="n">currentTime</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">tier</span> <span class="o">=</span> <span class="n">customerTiers</span><span class="o">.</span><span class="na">getOrDefault</span><span class="o">(</span><span class="n">event</span><span class="o">.</span><span class="na">getCustomerId</span><span class="o">(),</span> <span class="mi">0</span><span class="o">);</span>
+        <span class="kt">long</span> <span class="n">age</span> <span class="o">=</span> <span class="n">currentTime</span> <span class="o">-</span> <span class="n">event</span><span class="o">.</span><span class="na">getTimestamp</span><span class="o">();</span>
+        
+        <span class="c1">// Higher tier customers get longer retention</span>
+        <span class="k">return</span> <span class="n">age</span> <span class="o">&gt;</span> <span class="n">getRetentionPeriod</span><span class="o">(</span><span class="n">tier</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div> <h3 id="2-size-based-eviction">2. Size-Based Eviction</h3> <h4 id="memory-threshold-management">Memory Threshold Management</h4> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MemoryThresholdEviction</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">double</span> <span class="no">WARNING_THRESHOLD</span> <span class="o">=</span> <span class="mf">0.80</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">double</span> <span class="no">CRITICAL_THRESHOLD</span> <span class="o">=</span> <span class="mf">0.90</span><span class="o">;</span>
+    
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">MemoryUsageMonitor</span> <span class="n">monitor</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">EvictionPolicy</span> <span class="n">policy</span><span class="o">;</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">checkAndEvict</span><span class="o">()</span> <span class="o">{</span>
+        <span class="kt">double</span> <span class="n">usage</span> <span class="o">=</span> <span class="n">monitor</span><span class="o">.</span><span class="na">getCurrentUsage</span><span class="o">();</span>
+        
+        <span class="k">if</span> <span class="o">(</span><span class="n">usage</span> <span class="o">&gt;=</span> <span class="no">CRITICAL_THRESHOLD</span><span class="o">)</span> <span class="o">{</span>
+            <span class="c1">// Aggressive eviction</span>
+            <span class="n">policy</span><span class="o">.</span><span class="na">criticalEviction</span><span class="o">();</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">usage</span> <span class="o">&gt;=</span> <span class="no">WARNING_THRESHOLD</span><span class="o">)</span> <span class="o">{</span>
+            <span class="c1">// Normal eviction</span>
+            <span class="n">policy</span><span class="o">.</span><span class="na">normalEviction</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div> <h4 id="back-pressure-implementation">Back-pressure Implementation</h4> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">BackPressureManager</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">AtomicDouble</span> <span class="n">memoryUsage</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">BlockingQueue</span><span class="o">&lt;</span><span class="nc">Event</span><span class="o">&gt;</span> <span class="n">inputQueue</span><span class="o">;</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">applyBackPressure</span><span class="o">(</span><span class="nc">Event</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">double</span> <span class="n">usage</span> <span class="o">=</span> <span class="n">memoryUsage</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>
+        
+        <span class="k">if</span> <span class="o">(</span><span class="n">usage</span> <span class="o">&gt;</span> <span class="mf">0.95</span><span class="o">)</span> <span class="o">{</span>
+            <span class="c1">// Reject new events</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nf">MemoryPressureException</span><span class="o">(</span><span class="s">"Memory full"</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">usage</span> <span class="o">&gt;</span> <span class="mf">0.85</span><span class="o">)</span> <span class="o">{</span>
+            <span class="c1">// Add with timeout</span>
+            <span class="kt">boolean</span> <span class="n">added</span> <span class="o">=</span> <span class="n">inputQueue</span><span class="o">.</span><span class="na">offer</span><span class="o">(</span><span class="n">event</span><span class="o">,</span> 
+                <span class="mi">100</span><span class="o">,</span> <span class="nc">TimeUnit</span><span class="o">.</span><span class="na">MILLISECONDS</span><span class="o">);</span>
+            <span class="k">if</span> <span class="o">(!</span><span class="n">added</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">handleRejection</span><span class="o">(</span><span class="n">event</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="c1">// Normal processing</span>
+            <span class="n">inputQueue</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">event</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div> <h4 id="batch-eviction-control">Batch Eviction Control</h4> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">BatchEvictionController</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="no">MAX_BATCH_SIZE</span> <span class="o">=</span> <span class="mi">10000</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">EvictionQueue</span> <span class="n">queue</span><span class="o">;</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">evictBatch</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">List</span><span class="o">&lt;</span><span class="nc">QueueEntry</span><span class="o">&gt;</span> <span class="n">batch</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+        <span class="kt">int</span> <span class="n">currentSize</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        
+        <span class="k">while</span> <span class="o">(</span><span class="n">currentSize</span> <span class="o">&lt;</span> <span class="no">MAX_BATCH_SIZE</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">queue</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>
+            <span class="nc">QueueEntry</span> <span class="n">entry</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="na">poll</span><span class="o">();</span>
+            <span class="n">batch</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">entry</span><span class="o">);</span>
+            <span class="n">currentSize</span> <span class="o">+=</span> <span class="n">entry</span><span class="o">.</span><span class="na">getSize</span><span class="o">();</span>
+        <span class="o">}</span>
+        
+        <span class="k">if</span> <span class="o">(!</span><span class="n">batch</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>
+            <span class="n">processBatchEviction</span><span class="o">(</span><span class="n">batch</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div> <h2 id="monitoring-and-alerting">Monitoring and Alerting</h2> <h3 id="memory-metrics">Memory Metrics</h3> <ol> <li> <strong>Usage Metrics</strong> <ul> <li>Region utilization</li> <li>Page allocation rates</li> <li>Eviction statistics</li> <li>GC performance</li> </ul> </li> <li> <strong>Performance Metrics</strong> <ul> <li>Access latencies</li> <li>Hit/miss ratios</li> <li>Throughput rates</li> <li>Queue depths</li> </ul> </li> </ol> <h3 id="alert-thresholds">Alert Thresholds</h3> <ol> <li> <strong>Critical Alerts</strong> <ul> <li>Memory usage &gt; 90%</li> <li>GC pause &gt; 500ms</li> <li>Eviction rate spike</li> <li>Error rate increase</li> </ul> </li> <li> <strong>Warning Alerts</strong> <ul> <li>Memory usage &gt; 80%</li> <li>GC pause &gt; 200ms</li> <li>Queue depth increase</li> <li>Throughput drop</li> </ul> </li> </ol> <h2 id="performance-results">Performance Results</h2> <h3 id="latency-profile">Latency Profile</h3> <ul> <li>Read operations: &lt; 1ms (p99)</li> <li>Write operations: &lt; 2ms (p99)</li> <li>Query operations: &lt; 10ms (p99)</li> <li>Scan operations: &lt; 100ms (p99)</li> </ul> <h3 id="throughput-achievements">Throughput Achievements</h3> <ul> <li>Event processing: 2.5M/second</li> <li>Query processing: 100K/second</li> <li>Scan processing: 10K/second</li> <li>Background operations: 1K/second</li> </ul> <h2 id="lessons-learned">Lessons Learned</h2> <h3 id="1-memory-architecture-design">1. Memory Architecture Design</h3> <h4 id="initial-planning">Initial Planning</h4> <ul> <li> <strong>Start Conservative</strong>: Begin with smaller memory regions and scale up based on actual usage patterns</li> <li> <strong>Measure Everything</strong>: Implement comprehensive memory monitoring before going live</li> <li> <strong>Plan for Growth</strong>: Design memory regions with at least 50% headroom for unexpected spikes</li> <li> <strong>Document Assumptions</strong>: Keep track of all memory sizing assumptions and validate them regularly</li> </ul> <h4 id="real-world-insights">Real-world Insights</h4> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Example of what not to do</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PoorMemoryPlanning</span> <span class="o">{</span>
+    <span class="c1">// Don't hardcode memory sizes</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="no">MEMORY_SIZE</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span><span class="o">;</span> <span class="c1">// 100MB fixed</span>
+    
+    <span class="c1">// Don't assume fixed event sizes</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="no">EVENT_SIZE</span> <span class="o">=</span> <span class="mi">1024</span><span class="o">;</span> <span class="c1">// 1KB per event</span>
+<span class="o">}</span>
+
+<span class="c1">// Better approach</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AdaptiveMemoryPlanning</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">ConfigurationManager</span> <span class="n">config</span><span class="o">;</span>
+    
+    <span class="kd">public</span> <span class="kt">long</span> <span class="nf">calculateMemorySize</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// Base size from configuration</span>
+        <span class="kt">long</span> <span class="n">baseSize</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="na">getBaseMemorySize</span><span class="o">();</span>
+        
+        <span class="c1">// Growth factor based on historical data</span>
+        <span class="kt">double</span> <span class="n">growthFactor</span> <span class="o">=</span> <span class="n">getHistoricalGrowthFactor</span><span class="o">();</span>
+        
+        <span class="c1">// Add safety margin</span>
+        <span class="k">return</span> <span class="o">(</span><span class="kt">long</span><span class="o">)(</span><span class="n">baseSize</span> <span class="o">*</span> <span class="n">growthFactor</span> <span class="o">*</span> <span class="mf">1.5</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div> <h3 id="2-performance-optimization">2. Performance Optimization</h3> <h4 id="memory-access-patterns">Memory Access Patterns</h4> <ul> <li> <strong>Profile First</strong>: Always profile before optimizing</li> <li> <strong>Batch Operations</strong>: Batch similar operations for better cache utilization</li> <li> <strong>Avoid Premature Optimization</strong>: Start with simple, maintainable code and optimize based on data</li> <li> <strong>Test at Scale</strong>: Performance characteristics change dramatically at scale</li> </ul> <h4 id="implementation-experience">Implementation Experience</h4> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Common performance pitfall</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">IneffientProcessing</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">processEvents</span><span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">Event</span><span class="o">&gt;</span> <span class="n">events</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// Don't process one at a time</span>
+        <span class="k">for</span> <span class="o">(</span><span class="nc">Event</span> <span class="n">event</span> <span class="o">:</span> <span class="n">events</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">processEvent</span><span class="o">(</span><span class="n">event</span><span class="o">);</span>
+            <span class="n">saveToDatabase</span><span class="o">(</span><span class="n">event</span><span class="o">);</span>
+            <span class="n">updateMetrics</span><span class="o">(</span><span class="n">event</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// Optimized approach</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BatchProcessing</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="no">BATCH_SIZE</span> <span class="o">=</span> <span class="mi">1000</span><span class="o">;</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">processEvents</span><span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">Event</span><span class="o">&gt;</span> <span class="n">events</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// Process in batches</span>
+        <span class="k">for</span> <span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">Event</span><span class="o">&gt;</span> <span class="n">batch</span> <span class="o">:</span> <span class="nc">Lists</span><span class="o">.</span><span class="na">partition</span><span class="o">(</span><span class="n">events</span><span class="o">,</span> <span class="no">BATCH_SIZE</span><span class="o">))</span> <span class="o">{</span>
+            <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Event</span><span class="o">&gt;</span> <span class="n">processed</span> <span class="o">=</span> <span class="n">processEventBatch</span><span class="o">(</span><span class="n">batch</span><span class="o">);</span>
+            <span class="n">saveBatchToDatabase</span><span class="o">(</span><span class="n">processed</span><span class="o">);</span>
+            <span class="n">updateMetricsBatch</span><span class="o">(</span><span class="n">processed</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div> <h3 id="3-operational-management">3. Operational Management</h3> <h4 id="monitoring-and-alerting-1">Monitoring and Alerting</h4> <ul> <li> <strong>Define Clear Thresholds</strong>: Establish clear memory thresholds for different alert levels</li> <li> <strong>Implement Trending</strong>: Track memory usage patterns over time</li> <li> <strong>Set Up Early Warnings</strong>: Alert before reaching critical levels</li> <li> <strong>Keep Historical Data</strong>: Maintain historical memory usage data for capacity planning</li> </ul> <h4 id="monitoring-implementation">Monitoring Implementation</h4> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MemoryMonitoring</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">double</span> <span class="no">WARNING_THRESHOLD</span> <span class="o">=</span> <span class="mf">0.75</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">double</span> <span class="no">CRITICAL_THRESHOLD</span> <span class="o">=</span> <span class="mf">0.90</span><span class="o">;</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">monitorMemory</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// Track multiple metrics</span>
+        <span class="n">recordMemoryMetrics</span><span class="o">(</span>
+            <span class="n">getHeapUsage</span><span class="o">(),</span>
+            <span class="n">getOffHeapUsage</span><span class="o">(),</span>
+            <span class="n">getGCMetrics</span><span class="o">(),</span>
+            <span class="n">getEvictionRates</span><span class="o">()</span>
+        <span class="o">);</span>
+        
+        <span class="c1">// Monitor trends</span>
+        <span class="n">analyzeTrends</span><span class="o">();</span>
+        
+        <span class="c1">// Predict capacity needs</span>
+        <span class="n">predictCapacityNeeds</span><span class="o">();</span>
+    <span class="o">}</span>
+    
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">analyzeTrends</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// Look at last 24 hours</span>
+        <span class="nc">List</span><span class="o">&lt;</span><span class="nc">MemoryMetric</span><span class="o">&gt;</span> <span class="n">recent</span> <span class="o">=</span> <span class="n">getRecentMetrics</span><span class="o">(</span><span class="nc">Duration</span><span class="o">.</span><span class="na">ofHours</span><span class="o">(</span><span class="mi">24</span><span class="o">));</span>
+        
+        <span class="c1">// Calculate growth rate</span>
+        <span class="kt">double</span> <span class="n">growthRate</span> <span class="o">=</span> <span class="n">calculateGrowthRate</span><span class="o">(</span><span class="n">recent</span><span class="o">);</span>
+        
+        <span class="c1">// Predict when we'll hit thresholds</span>
+        <span class="n">predictThresholdBreach</span><span class="o">(</span><span class="n">growthRate</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div> <h3 id="4-team-and-process">4. Team and Process</h3> <h4 id="knowledge-sharing">Knowledge Sharing</h4> <ul> <li> <strong>Document Everything</strong>: Maintain detailed documentation of memory-related decisions</li> <li> <strong>Regular Reviews</strong>: Conduct regular reviews of memory usage patterns</li> <li> <strong>Share Insights</strong>: Create knowledge sharing sessions for the team</li> <li> <strong>Update Runbooks</strong>: Keep operational runbooks updated with learned lessons</li> </ul> <h4 id="process-implementation">Process Implementation</h4> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">OperationalRunbook</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">handleMemoryPressure</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// Clear documentation of steps</span>
+        <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Action</span><span class="o">&gt;</span> <span class="n">actions</span> <span class="o">=</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span>
+            <span class="k">new</span> <span class="nf">Action</span><span class="o">(</span><span class="s">"Check memory metrics"</span><span class="o">),</span>
+            <span class="k">new</span> <span class="nf">Action</span><span class="o">(</span><span class="s">"Analyze GC logs"</span><span class="o">),</span>
+            <span class="k">new</span> <span class="nf">Action</span><span class="o">(</span><span class="s">"Review recent changes"</span><span class="o">),</span>
+            <span class="k">new</span> <span class="nf">Action</span><span class="o">(</span><span class="s">"Check eviction rates"</span><span class="o">),</span>
+            <span class="k">new</span> <span class="nf">Action</span><span class="o">(</span><span class="s">"Verify backup systems"</span><span class="o">)</span>
+        <span class="o">);</span>
+        
+        <span class="c1">// Execute and document each step</span>
+        <span class="k">for</span> <span class="o">(</span><span class="nc">Action</span> <span class="n">action</span> <span class="o">:</span> <span class="n">actions</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">executeAndDocument</span><span class="o">(</span><span class="n">action</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div> <h3 id="5-capacity-planning">5. Capacity Planning</h3> <h4 id="resource-management">Resource Management</h4> <ul> <li> <strong>Regular Review</strong>: Review memory usage patterns monthly</li> <li> <strong>Predictive Planning</strong>: Use trending data for capacity planning</li> <li> <strong>Cost Analysis</strong>: Balance memory usage with cost implications</li> <li> <strong>Growth Planning</strong>: Plan for both expected and unexpected growth</li> </ul> <h4 id="planning-implementation">Planning Implementation</h4> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CapacityPlanner</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nc">CapacityPlan</span> <span class="nf">createPlan</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="nc">CapacityPlan</span><span class="o">.</span><span class="na">builder</span><span class="o">()</span>
+            <span class="o">.</span><span class="na">currentUsage</span><span class="o">(</span><span class="n">getCurrentUsage</span><span class="o">())</span>
+            <span class="o">.</span><span class="na">growthRate</span><span class="o">(</span><span class="n">calculateGrowthRate</span><span class="o">())</span>
+            <span class="o">.</span><span class="na">seasonalFactors</span><span class="o">(</span><span class="n">getSeasonalPatterns</span><span class="o">())</span>
+            <span class="o">.</span><span class="na">costImplications</span><span class="o">(</span><span class="n">analyzeCosts</span><span class="o">())</span>
+            <span class="o">.</span><span class="na">recommendedActions</span><span class="o">(</span><span class="n">generateRecommendations</span><span class="o">())</span>
+            <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+    <span class="o">}</span>
+    
+    <span class="kd">private</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Recommendation</span><span class="o">&gt;</span> <span class="nf">generateRecommendations</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Recommendation</span><span class="o">&gt;</span> <span class="n">recommendations</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+        
+        <span class="c1">// Memory sizing recommendations</span>
+        <span class="n">recommendations</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">analyzeMemorySizing</span><span class="o">());</span>
+        
+        <span class="c1">// Cost optimization recommendations</span>
+        <span class="n">recommendations</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">analyzeCostOptimizations</span><span class="o">());</span>
+        
+        <span class="c1">// Performance improvement recommendations</span>
+        <span class="n">recommendations</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">analyzePerformance</span><span class="o">());</span>
+        
+        <span class="k">return</span> <span class="n">recommendations</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div> <h3 id="6-technical-debt-management">6. Technical Debt Management</h3> <h4 id="code-evolution">Code Evolution</h4> <ul> <li> <strong>Maintain Clean Code</strong>: Technical debt compounds quickly in memory management</li> <li> <strong>Regular Refactoring</strong>: Schedule regular refactoring sessions</li> <li> <strong>Performance Tests</strong>: Maintain comprehensive performance test suites</li> <li> <strong>Configuration Management</strong>: Keep configurations well-documented and versioned</li> </ul> <h4 id="technical-debt-tracking">Technical Debt Tracking</h4> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TechnicalDebtTracker</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">trackMemoryIssues</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// Track known issues</span>
+        <span class="nc">List</span><span class="o">&lt;</span><span class="nc">TechnicalDebt</span><span class="o">&gt;</span> <span class="n">issues</span> <span class="o">=</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span>
+            <span class="k">new</span> <span class="nf">TechnicalDebt</span><span class="o">(</span><span class="s">"Manual memory management in legacy code"</span><span class="o">),</span>
+            <span class="k">new</span> <span class="nf">TechnicalDebt</span><span class="o">(</span><span class="s">"Outdated eviction policies"</span><span class="o">),</span>
+            <span class="k">new</span> <span class="nf">TechnicalDebt</span><span class="o">(</span><span class="s">"Unoptimized object creation"</span><span class="o">),</span>
+            <span class="k">new</span> <span class="nf">TechnicalDebt</span><span class="o">(</span><span class="s">"Missing memory metrics"</span><span class="o">)</span>
+        <span class="o">);</span>
+        
+        <span class="c1">// Prioritize and plan resolution</span>
+        <span class="n">prioritizeIssues</span><span class="o">(</span><span class="n">issues</span><span class="o">);</span>
+        <span class="n">createResolutionPlan</span><span class="o">(</span><span class="n">issues</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div> <h3 id="7-future-considerations">7. Future Considerations</h3> <h4 id="scalability-planning">Scalability Planning</h4> <ul> <li> <strong>Architecture Reviews</strong>: Regular reviews of memory architecture</li> <li> <strong>Technology Updates</strong>: Keep track of new memory management features</li> <li> <strong>Performance Improvements</strong>: Continuous performance optimization</li> <li> <strong>Cost Optimization</strong>: Regular review of memory costs and benefits</li> </ul> <h4 id="innovation-planning">Innovation Planning</h4> <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">FuturePlanning</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">planImprovements</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// Track potential improvements</span>
+        <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Improvement</span><span class="o">&gt;</span> <span class="n">improvements</span> <span class="o">=</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span>
+            <span class="k">new</span> <span class="nf">Improvement</span><span class="o">(</span><span class="s">"Implement new GC algorithms"</span><span class="o">),</span>
+            <span class="k">new</span> <span class="nf">Improvement</span><span class="o">(</span><span class="s">"Adopt newer memory management APIs"</span><span class="o">),</span>
+            <span class="k">new</span> <span class="nf">Improvement</span><span class="o">(</span><span class="s">"Implement machine learning for prediction"</span><span class="o">),</span>
+            <span class="k">new</span> <span class="nf">Improvement</span><span class="o">(</span><span class="s">"Automate capacity planning"</span><span class="o">)</span>
+        <span class="o">);</span>
+        
+        <span class="c1">// Evaluate and prioritize</span>
+        <span class="n">evaluateImprovements</span><span class="o">(</span><span class="n">improvements</span><span class="o">);</span>
+        <span class="n">createImplementationPlan</span><span class="o">(</span><span class="n">improvements</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div> <p>These lessons learned have been critical in maintaining and improving our memory management system. They continue to guide our decisions and help us avoid common pitfalls in high-scale data processing systems.</p> <h2 id="looking-ahead">Looking Ahead</h2> <p>In Part 4, we’ll explore how we optimized our Kafka infrastructure to handle the massive throughput requirements while ensuring reliable message delivery and processing.</p> <p>Stay tuned to learn about our Kafka cluster design, configuration tuning, and operational practices.</p> </div> </article> <hr> <div style="background: var(--global-code-bg-color); padding: 2rem;"> <div> <h2>Subscribe to my blog</h2> </div> <p style=" margin-bottom: 1rem;"> Get notified when new articles are published. No spam, unsubscribe anytime. </p> <div id="mc_embed_signup"> <form action="https://subhadipmitra.us13.list-manage.com/subscribe/post?u=1ab948a9588be0b556677c306&amp;id=1cb83ab5a9&amp;f_id=007605e9f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"> <div style="display: flex; gap: 0.5rem;"> <input type="email" name="EMAIL" id="mce-EMAIL" placeholder="Enter your email" required style="width: 100%; padding: 0.5rem 1rem; border-radius: 6px; outline: none;"> <button type="submit" style="background-color: var(--global-theme-color); padding: 0.5rem 1.5rem; color: var(--global-bg-color); font-weight: 500; border-radius: 6px; border: none; cursor: pointer;"> Subscribe </button> </div> <div style="position: absolute; left: -5000px;" aria-hidden="true"> <input type="text" name="b_XXXXX_XXXXX" tabindex="-1"> </div> </form> </div> <p style="font-size: 0.75rem; margin-top: 0.75rem;"> By subscribing, you agree to our <a href="/privacy" style="text-decoration: underline; color: inherit;">Privacy Policy</a> </p> </div> <br> <hr> <br> <ul class="list-disc pl-8"></ul> <h2 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h2> <p class="mb-2">Here are some more articles you might like to read next:</p> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2024/retail-bank-multi-agent-system/">Engineering Multi-Agent Systems - A Retail Banking Case Study</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2025/telecom-autonomous-multi-agent-genai-system/">Engineering Autonomous Multi-Agent Systems - A Technical Deep Dive into Telecom Customer Service</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2022/building-a-massive-scale-real-time-data-platform-p4/">Part 4 - Building a Massive-Scale Real-Time Data Platform - Memory Management with Apache Ignite</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/genetic-algorithm-inspired-data-platforms-part-1/">Evolutionary Bytes - Harnessing Genetic Algorithms for Smarter Data Platforms (Part 1/2)</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2024/etlc-context-new-paradigm/">Introducing ETL-C (Extract, Transform, Load, Contextualize) - a new data processing paradigm</a> </li> <div id="giscus_thread" style="max-width: 1024px; margin: 0 auto;"> <script>let giscusTheme=determineComputedTheme(),giscusAttributes={src:"https://giscus.app/client.js","data-repo":"bassrehab/bassrehab.github.io","data-repo-id":"R_kgDOLvY8Tg","data-category":"Comments","data-category-id":"DIC_kwDOLvY8Ts4CexzE","data-mapping":"title","data-strict":"0","data-reactions-enabled":"1","data-emit-metadata":"0","data-input-position":"bottom","data-theme":giscusTheme,"data-lang":"en",crossorigin:"anonymous",async:""},giscusScript=document.createElement("script");Object.entries(giscusAttributes).forEach(([t,e])=>giscusScript.setAttribute(t,e)),document.getElementById("giscus_thread").appendChild(giscusScript);</script> <noscript>Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript" rel="external nofollow noopener" target="_blank">comments powered by giscus.</a> </noscript> </div> </div> </div> </div> </div> <footer class="sticky-bottom mt-5" role="contentinfo"> <div class="container"> © Copyright 2025 Subhadip Mitra. Some Rights Reserved. Last updated: January 08, 2025. </div> </footer> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> <script src="/assets/js/bootstrap.bundle.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js" type="text/javascript"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/js/zoom.js?85ddb88934d28b74e78031fd54cf8308"></script> <script defer src="/assets/js/bootstrap-toc.min.js?c82ff4de8b0955d6ff14f5b05eed7eb6"></script> <script src="/assets/js/no_defer.js?2781658a0a2b13ed609542042a859126"></script> <script defer src="/assets/js/common.js?b7816bd189846d29eded8745f9c4cf77"></script> <script defer src="/assets/js/copy_code.js?12775fdf7f95e901d7119054556e495f" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?d9f17b6adc2311cbabd747f4538bb15f"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script type="text/javascript">window.MathJax={tex:{tags:"ams"}};</script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.min.js"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script> <script async src="https://www.googletagmanager.com/gtag/js?id=G-TW7YQ5XPC6"></script> <script>function gtag(){window.dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-TW7YQ5XPC6");</script> <script type="text/javascript">function progressBarSetup(){"max"in document.createElement("progress")?(initializeProgressElement(),$(document).on("scroll",function(){progressBar.attr({value:getCurrentScrollPosition()})}),$(window).on("resize",initializeProgressElement)):(resizeProgressBar(),$(document).on("scroll",resizeProgressBar),$(window).on("resize",resizeProgressBar))}function getCurrentScrollPosition(){return $(window).scrollTop()}function initializeProgressElement(){let e=$("#navbar").outerHeight(!0);$("body").css({"padding-top":e}),$("progress-container").css({"padding-top":e}),progressBar.css({top:e}),progressBar.attr({max:getDistanceToScroll(),value:getCurrentScrollPosition()})}function getDistanceToScroll(){return $(document).height()-$(window).height()}function resizeProgressBar(){progressBar.css({width:getWidthPercentage()+"%"})}function getWidthPercentage(){return getCurrentScrollPosition()/getDistanceToScroll()*100}const progressBar=$("#progress");window.onload=function(){setTimeout(progressBarSetup,50)};</script> </body> </html>
