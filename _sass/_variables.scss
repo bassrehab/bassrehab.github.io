@@ -5,6 +5,14 @@
 
 @use "sass:color";
 
+// Import Google Fonts (replace with your chosen fonts)
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&family=Inter:ital,wght@0,400;0,700;1,400&display=swap');
+
+// Set font variables (replace with your font names)
+$font-family: 'Open Sans', sans-serif;
+$headers-font-family: 'Roboto', sans-serif;
+$font-family-monospace: 'Courier New', Courier, monospace;
+
 // Colors
 $red-color: #ff3636 !default;
 $red-color-dark: #b71c1c !default;
@@ -23,6 +31,10 @@ $light-purple-color: color.adjust($purple-color, $lightness: 25%);
 $pink-color: #f92080 !default;
 $pink-color-light: #ffdddd !default;
 $yellow-color: #efcc00 !default;
+$saffron-color: #ffc107 !default;
+$sky-color: #8cabff !default;
+$golden-poppy-color: #f0b823 !default;
+$fuchsia-color: #e1afd1 !default;
 
 $grey-color: #828282 !default;
 $grey-color-light: color.adjust($grey-color, $lightness: 40%);

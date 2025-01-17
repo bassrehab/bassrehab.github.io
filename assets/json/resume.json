@@ -1,200 +1,311 @@
 {
   "basics": {
-    "name": "Albert Einstein",
-    "label": "Scientist",
+    "name": "Subhadip Mitra",
+    "label": "Engineering Leadership, Technology Consulting",
     "image": "",
-    "email": "albert@einstein.de",
-    "phone": "(912) 123-4567",
-    "url": "https://alshedivat.github.io/al-folio/",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+    "email": "contact@subhadipmitra.com",
+    "url": "https://subhadipmitra.com",
+    "summary": "Senior Technology Leader with 14+ years of experience driving enterprise transformation through Data, AI, and Cloud innovations. Proven track record of building high-performance teams, developing strategic roadmaps, and delivering significant business impact through technological innovation and organizational leadership",
     "location": {
-      "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
-      "countryCode": "US",
-      "region": "California"
+      "city": "Singapore",
+      "countryCode": "SG",
+      "region": "Singapore"
     },
     "profiles": [
       {
         "network": "Twitter",
-        "username": "AlbertEinstein",
-        "url": "https://twitter.com/AlbertEinstein"
+        "username": "bassrehab",
+        "url": "https://twitter.com/bassrehab"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "subhadipmitra",
+        "url": "https://linkedin.com/in/subhadip-mitra"
+      },
+      {
+        "network": "GitHub",
+        "username": "bassrehab",
+        "url": "https://github.com/bassrehab"
       }
     ]
   },
   "work": [
     {
-      "name": "Institute for Advanced Study, Princeton University",
-      "position": "Professor of Theoretical Physics",
-      "url": "https://example.com",
-      "startDate": "1933-01-01",
-      "endDate": "1955-01-01",
-      "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
-      "highlights": ["Relativity"]
-    }
-  ],
-  "volunteer": [
+      "name": "Google",
+      "position": "Data & Analytics Manager and Site Lead, South East Asia",
+      "url": "https://google.com",
+      "startDate": "2021",
+      "endDate": "-",
+      "summary": "Professional Services Organization",
+      "highlights": [
+        "Transformed Google Cloud Platform's Data & Analytics practice across Southeast Asia, building and leading high-performing teams that consistently delivered enterprise-scale projects with 100% customer satisfaction",
+        "Developed and executed regional go-to-market strategy, including Data Monetization frameworks, Data CoE models, and Cross-Cloud architectures, resulting in significant market expansion and revenue growth across JAPAC",
+        "Led delivery governance for Google Cloud Consulting's Southeast Asia portfolio, implementing robust frameworks that ensured consistent project delivery and revenue realization across AI/ML, Analytics, Infrastructure and Security domains",
+        "Built and nurtured C-suite relationships with strategic partners and enterprise clients, establishing Google Cloud as the preferred digital transformation partner in Southeast Asia",
+        "Led organizational transformation initiatives including talent development programs, delivery excellence frameworks, and automated operations systems that scaled the practice's capabilities",
+        "Led technical innovation initiatives including patent-pending GenAI systems, AI-powered verification techniques, and novel optimization algorithms for distributed systems and real-time processing",
+        "Created ETLC (Extract, Transform, Load, Contextualize) framework and pioneered spatiotemporal graph optimization approaches, demonstrating continued technical leadership",
+        "Established governance frameworks and best practices that were adopted across JAPAC, demonstrating ability to influence and drive change beyond direct reporting lines"
+      ]
+    },
     {
-      "organization": "People's Climate March",
-      "location": "Zurich, Switzerland",
-      "position": "Lead Organizer",
-      "url": "https://example.com",
-      "startDate": "2014-04-01",
-      "endDate": "2015-07-01",
-      "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.",
-      "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
+      "name": "Standard Chartered Bank",
+      "position": "Principal Engineer",
+      "url": "https://sc.com",
+      "startDate": "2019",
+      "endDate": "2021",
+      "summary": "Data and Analytics Transformation and Strategy",
+      "highlights": [
+        "Led enterprise-wide data & analytics transformation, influencing C-suite stakeholders and aligning multiple business units across retail banking division",
+        "Spearheaded bank's MarTech modernization strategy, building consensus across business and technology teams to deliver significant customer impact",
+        "Built and mentored high-performing teams while developing a self-service ML Workbench, establishing new standards for model deployment efficiency",
+        "Pioneered next-generation credit risk assessment strategies, leading cross-functional teams to integrate alternative data sources and AI innovations",
+        "Established enterprise architectural vision and governance frameworks, driving organizational alignment on data monetization, privacy, and cloud adoption"
+      ]
+    },
+    {
+      "name": "Think Big Analytics (a Teradata company)",
+      "position": "Principal Data Engineer / Solution Architect",
+      "url": "https://www.teradata.com",
+      "startDate": "2017",
+      "endDate": "2019",
+      "summary": "Global Big Data and Analytics Consulting",
+      "highlights": [
+        "Led strategic advisory and delivery for Fortune 500 clients across APAC, building trusted C-suite relationships and driving digital transformation initiatives",
+        "Architected large-scale data platforms handling petabyte-scale workloads while mentoring teams in technical excellence and delivery best practices",
+        "Established technical thought leadership in real-time analytics and ML, influencing enterprise architecture decisions for major banking clients",
+        "Built and led cross-functional teams delivering mission-critical infrastructure and ML solutions with significant business impact"
+      ]
+    },
+    {
+      "name": "UTU",
+      "position": "Technical Lead",
+      "url": "https://utu.global",
+      "startDate": "2016",
+      "endDate": "2017",
+      "summary": "Foundational Services Development and Integration",
+      "highlights": [
+        "Led market entry strategy and technology roadmap for Thailand expansion, collaborating with C-level executives and banking partners",
+        "Established architectural patterns and governance frameworks for mission-critical payment systems",
+        "Built and mentored engineering teams while developing high-performance integration solutions"
+      ]
     }
   ],
   "education": [
     {
-      "institution": "University of Zurich, Zurich, Switzerland",
-      "location": "Zurich, Switzerland",
-      "url": "https://www.uzh.ch/",
-      "area": "Software Development",
-      "studyType": "PhD",
-      "startDate": "1905-01-01",
-      "endDate": "1905-01-01",
-      "score": "10",
-      "courses": ["Theory of Relativity"]
-    }
-  ],
-  "awards": [
+      "institution": "Birla Institute of Technology and Science, Pilani, IN",
+      "location": "Pilani, India",
+      "url": "https://bits-pilani.ac.in",
+      "area": "Business Analytics",
+      "studyType": "MBA, Business Analytics",
+      "startDate": "2021",
+      "endDate": "2023",
+      "courses": [
+        "Financial Risk Analytics",
+        "Marketing Models",
+        "Financial Management",
+        "Strategic Management",
+        "Operations Management",
+        "Financial and Management Accounting",
+        "Predictive Analytics"
+      ]
+    },
     {
-      "title": "Nobel Prize in Physics",
-      "date": "1921-11-01",
-      "awarder": "Royal Swedish Academy of Sciences",
-      "url": "https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/",
-      "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
+      "institution": "Birla Institute of Technology and Science, Pilani, IN",
+      "location": "Pilani, India",
+      "url": "https://bits-pilani.ac.in",
+      "area": "Software Systems",
+      "studyType": "Master of Technology, Software Systems",
+      "startDate": "2017",
+      "endDate": "2020",
+      "courses": [
+        "Algorithms",
+        "Distributed Systems",
+        "Deep Learning",
+        "Natural Language Processing",
+        "Machine Learning",
+        "Artificial Intelligence (AI)"
+      ]
+    },
+    {
+      "institution": "Indian Institute of Technology Madras",
+      "location": "Chennai, India",
+      "url": "https://study.iitm.ac.in",
+      "area": "Data Science",
+      "studyType": "Bachelor of Science",
+      "startDate": "",
+      "endDate": "",
+      "courses": [
+        "Statistics and Applications",
+        "Python for Data Science",
+        "Machine Learning Foundations",
+        "Business Data Management",
+        "Computational Thinking",
+        "Linear Algebra for Data Science",
+        "Mathematics for Data Science"
+      ]
     }
   ],
   "certificates": [
     {
-      "name": "Machine Learning",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-location-dot"
+      "name": "Google Cloud Certified Professional Cloud Architect",
+      "date": "2024",
+      "issuer": "Google Cloud",
+      "url": "https://www.credly.com/badges/d6baf5ca-ab06-41fa-aca5-723316294ef7"
     },
     {
-      "name": "Quantum Computing",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-tag"
+      "name": "Google Cloud Certified Professional Cloud Data Engineer",
+      "date": "2022",
+      "issuer": "Google Cloud",
+      "url": "https://www.credential.net/ae4b2086-f607-4057-98f4-ad2e7c0106e6"
     },
     {
-      "name": "Quantum Information",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-envelope"
-    },
-    {
-      "name": "Quantum Cryptography",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-hashtag"
-    },
-    {
-      "name": "Quantum Communication",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-calendar"
-    },
-    {
-      "name": "Quantum Teleportation",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-clipboard-check"
+      "name": "Google Cloud Certified Professional Machine Learning Engineer",
+      "date": "2024",
+      "issuer": "Google Cloud",
+      "url": "https://www.credly.com/badges/3f6df2e7-7394-43ae-8c02-ddfe3b300850/public_url"
     }
   ],
   "publications": [
     {
-      "name": "Zur Elektrody/namik bewegter Körper",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1905-06-30",
-      "url": "https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies",
-      "summary": "It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source."
+      "name": "Data Monetization Strategy for Enterprises",
+      "publisher": "BITS Pilani",
+      "releaseDate": "2023-12",
+      "url": "https://www.researchgate.net/publication/376557741_Data_Monetization_Strategy_for_Enterprises",
+      "summary": "This paper details a Data Monetization Framework for enterprises to transform data into economic value, discussing strategic implementation, emerging technologies like AI, and related challenges."
     },
     {
-      "name": "Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1905-03-18",
-      "url": "https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt",
-      "summary": "In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921."
+      "name": "Open Location Proof (OLP)",
+      "publisher": "GoLocateMe",
+      "releaseDate": "2022-01",
+      "url": "https://golocate.me/",
+      "summary": "A privacy aware open protocol to prove without repudiation an entity's point-in-time presence, participation and location in physical or virtual space. GoLocate.Me is a planned implementation node demonstrating the protocol."
     },
     {
-      "name": "Die Grundlage der allgemeinen Relativitätstheorie",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1916-03-20",
-      "url": "https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie",
-      "summary": "The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914)."
+      "name": "OConsent: Open Consent Protocol for Privacy and Consent Management with Blockchain",
+      "publisher": "BITS Pilani",
+      "releaseDate": "2021-12",
+      "url": "https://arxiv.org/abs/2201.01326",
+      "summary": "This paper proposes a blockchain-based protocol for transparent personal data processing, enhancing user control and compliance with data privacy laws like GDPR."
+    }
+  ],
+  "volunteering": [
+    {
+      "organization": "GoogleServe",
+      "position": "Volunteer",
+      "url": "https://google.org",
+      "startDate": "2022",
+      "endDate": "2023",
+      "summary": "Led technology enablement initiatives for non-profit organizations as part of Google's community impact program"
+    },
+    {
+      "organization": "Manbhum Nityananda Trust, Purulia",
+      "position": "Volunteer",
+      "url": "https://mant.org.in",
+      "startDate": "2001",
+      "endDate": "2003",
+      "summary": "Contributed to community development initiatives focusing on education and healthcare in eastern India"
+    },
+    {
+      "organization": "Vibha, Pune",
+      "position": "Volunteer",
+      "url": "https://vibha.org",
+      "startDate": "2010",
+      "endDate": "2012",
+      "summary": "Supported education technology initiatives for underprivileged children"
     }
   ],
   "skills": [
     {
-      "name": "Physics",
-      "level": "Master",
-      "icon": "fa-solid fa-hashtag",
+      "name": "Data and Software Engineering Technologies",
+      "level": "Expert",
+      "icon": "fa-solid fa-microchip",
       "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
+        "Hadoop, Apache Spark, Apache Flink, Apache Kafka, Apache Ignite, Apache HBase, Apache Arrow, Apache Iceberg, Quarkus, AWS, Google Cloud Platform (GCP), REST APIs, Microservices, ETL Design & Development, Data Privacy, Object Oriented Design"
       ]
-    }
-  ],
-  "languages": [
-    {
-      "language": "German",
-      "fluency": "Native speaker",
-      "icon": ""
     },
     {
-      "language": "English",
-      "fluency": "Fluent",
-      "icon": ""
+      "name": "AI and Machine Learning Technologies",
+      "level": "Advanced",
+      "icon": "fa-solid fa-brain",
+      "keywords": [
+        "Large Language Models (LLM), Generative AI, Vector Databases, Multi-Modal AI, Machine Learning Operations (MLOps), Graph Neural Networks, Retrieval-augmented Generation (RAG), LangChain, Responsible AI, Model Governance"
+      ]
+    },
+    {
+      "name": "Technology Consulting",
+      "level": "Expert",
+      "icon": "fa-solid fa-briefcase",
+      "keywords": [
+        "Enterprise Architecture, Solution Architecture, Strategy Consulting, Product Design & Management, C-suite Advisory, GTM Strategy, Cloud Migration, Stakeholder Engagement"
+      ]
+    },
+    {
+      "name": "Engineering Management and Leadership",
+      "level": "Expert",
+      "icon": "fa-solid fa-users-cog",
+      "keywords": [
+        "Team Leadership, Program Management, Technical Hiring, Cross-functional Collaboration, Strategic Planning, Budget Management, Resource Allocation, Performance Metrics, Mentoring and Coaching"
+      ]
+    },
+    {
+      "name": "Languages",
+      "level": "Advanced",
+      "icon": "fa-solid fa-code",
+      "keywords": ["Java, Python, C/C++, JavaScript, SQL, bash"]
     }
   ],
   "interests": [
     {
-      "name": "Physics",
-      "icon": "fa-solid fa-tag",
+      "name": "Data & AI",
+      "icon": "fa-solid fa-robot",
       "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
+        "Large Language Models (LLM)",
+        "Data and Computation Privacy",
+        "Graph Neural Networks",
+        "AI/ML Infrastructure",
+        "Approximate Computations",
+        "Probabilistic Data Structures"
       ]
-    }
-  ],
-  "references": [
-    {
-      "name": "Professor John Doe",
-      "icon": "fa-solid fa-laptop",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit. D"
     },
     {
-      "name": "Professor John Doe",
-      "icon": "fa-solid fa-thumbtack",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit. D"
+      "name": "Distributed Systems",
+      "icon": "fa-solid fa-network-wired",
+      "keywords": ["Distributed Databases", "Consensus Protocols", "Fault Tolerance", "Cloud Computing Architectures"]
+    },
+    {
+      "name": "Others",
+      "icon": "fa-solid fa-flask",
+      "keywords": [
+        "Quantum Algorithms and error corrections",
+        "Quantitative Finance",
+        "High Frequency Trading",
+        "Theoretical Physics",
+        "Security and Cryptography"
+      ]
     }
   ],
   "projects": [
     {
-      "name": "Quantum Computing",
-      "summary": "Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.",
-      "highlights": ["Quantum Teleportation", "Quantum Cryptography"],
-      "startDate": "2018-01-01",
-      "endDate": "2018-01-01",
-      "url": "https://example.com"
+      "name": "Open Location Proof (olp-protocol.org)",
+      "summary": "A privacy aware open protocol to prove without repudiation an entity's point-in-time presence, participation, and location in physical or virtual space. GoLocate.me is a planned implementation node demonstrating the protocol.",
+      "startDate": "2022",
+      "endDate": "2023",
+      "url": "https://olp-protocol.org"
+    },
+    {
+      "name": "OConsent - Open Consent Protocol",
+      "summary": "A transparent, fast, and scalable protocol for Consent and Privacy management built on top of public blockchains.",
+      "startDate": "2021",
+      "endDate": "2022",
+      "url": "https://oconsent.io"
+    },
+    {
+      "name": "ISO8583 Simulator",
+      "summary": "A simulator that processes ISO 8583 messages, a messaging protocol used by banks, payment processors, clearing houses, and other financial institutions.",
+      "startDate": "2016",
+      "endDate": "2017",
+      "url": "https://github.com/bassrehab/ISO8583-Simulator"
     }
   ]
 }
