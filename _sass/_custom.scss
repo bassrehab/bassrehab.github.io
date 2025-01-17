@@ -1,0 +1,30 @@
+.contact-icons a {
+    font-size: 2.5rem;
+}
+
+.contact-icons {
+    border-top: 1px solid var(--global-divider-color);
+}
+
+.cv .card {
+    box-shadow: none;
+}
+
+.badge {
+    box-shadow:none;
+}
+
+input.newsletter-form-input {
+    border: 1px solid var(--global-divider-color);
+}
+
+.profile .more-info {
+    background: var(--global-code-bg-color);
+    font-family: "Inter",sans-serif;
+    padding: 10px;
+    font-size: 0.95rem;
+}
+
+#toc-sidebar a.nav-link {
+    font-size: 0.9rem;
+}

@@ -1,13 +1,19 @@
 ---
 layout: page
-title: submenus
+title: more
 nav: true
 nav_order: 8
 dropdown: true
 children:
-  - title: bookshelf
-    permalink: /books/
+  - title: archive
+    permalink: /archive/
   - title: divider
-  - title: blog
-    permalink: /blog/
+  - title: contact
+    permalink: /contact/
+  - title: divider
+  - title: licenses
+    permalink: /license/
+  - title: divider
+  - title: privacy
+    permalink: /privacy/
 ---
