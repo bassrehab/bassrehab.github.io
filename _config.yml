@@ -14,7 +14,7 @@ footer_text: >
   Some Rights Reserved.
 keywords: subhadip-mitra,google,google-cloud,data-&-analytics,ai-innovations,enterprise-technology-leadership,digital-transformation,machine-learning-models,cloud-technologies,quantum-computing,technology-consulting # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: s # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+icon: favicon.png # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://subhadipmitra.com  # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/. Leave blank for root
@@ -641,3 +641,4 @@ jsonresume:
   - languages
   - interests
   - references
+  - patents_and_defensive_publications
