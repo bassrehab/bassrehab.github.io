@@ -32,3 +32,22 @@ input.newsletter-form-input {
 abbr.badge {
     color: var(--global-bg-color)!important;
 }
+
+.newsletter-signup {
+    background-color: var(--global-code-bg-color); /* Light background color */
+
+    padding: 20px;
+    margin-bottom: 20px; /* Add some space below */
+    text-align: center; /* Center align the content */
+  }
+  
+  .newsletter-signup .newsletter-title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .newsletter-signup p {
+    margin-bottom: 15px; /* Add space between paragraphs */
+    line-height: 1.5;
+  }
