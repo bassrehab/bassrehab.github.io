@@ -87,6 +87,10 @@ layout: default
     {% endif %}
   {% endif %}
 
+  {% if site.newsletter.enabled %}
+    {% include newsletter.liquid %}
+  {% endif %}
+
   {% if site.disqus_shortname and page.disqus_comments %}
     {% include disqus.liquid %}
   {% endif %}

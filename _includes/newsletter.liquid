@@ -1,9 +1,15 @@
+{% if page.layout == 'post' %}
+<br />
 <div
-  class="newsletter-form-container"
+  class="newsletter-form-container newsletter-signup"
   {% if include.center %}
     style="margin: 20px"
   {% endif %}
 >
+<p class="newsletter-title">Strategic Insights for Technology Leaders</p>
+<p>Join my newsletter for exclusive content on leveraging Data, AI, and Cloud to drive digital transformation and achieve breakthrough business results. Stay informed on the latest trends, strategies, and best practices for leading in the age of intelligent systems.</p>
+<p><a href="https://www.linkedin.com/in/subhadip-mitra/recent-activity/posts/" target="_blank">Read Newsletter Archive in the meantime</a></p>
+
   <form
     class="newsletter-form"
     action="https://app.loops.so/api/newsletter-form/{{ site.newsletter.endpoint }}"
@@ -39,7 +45,7 @@
     class="newsletter-success"
     style="justify-content: {% if include.left %}flex-start{% elsif include.right %}flex-end{% else %}center{% endif %}"
   >
-    <p class="newsletter-success-message">You're subscribed!</p>
+    <p class="newsletter-success-message">You're going to love this! Thanks for subscribing.</p>
   </div>
 
   <div
@@ -66,3 +72,5 @@
     }
   </style>
 </noscript>
+
+{% endif %}

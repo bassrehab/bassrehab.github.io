@@ -7,7 +7,7 @@ first_name: Subhadip
 middle_name: 
 last_name: Mitra
 contact_note: >
-  <b>Stay Updated:</b> Get the latest tech insights delivered to your inbox.
+  For the quickest response, please reach out via email.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Explore the intersection of technology and innovation with Subhadip Mitra, a technology leader at Google Cloud. Discover his insights on AI innovations, machine learning models, and data & analytics.  He drives digital transformation through cloud technologies and explores the future of quantum computing.  Dive into his projects and musings on enterprise technology leadership and technology consulting.
 footer_text: >
@@ -47,7 +47,7 @@ rss_icon: true
 # -----------------------------------------------------------------------------
 
 navbar_fixed: true
-footer_fixed: true
+footer_fixed: false
 search_enabled: true
 socials_in_search: true
 posts_in_search: true
