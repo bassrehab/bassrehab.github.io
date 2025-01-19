@@ -7,10 +7,14 @@ subtitle: <b>Technical Leader, Data & AI Transformation | Google Cloud</b>
 profile:
   align: right
 <<<<<<< HEAD
+<<<<<<< HEAD
   image: subhadipmitra-white-bg.png
 =======
   image: subhadip-mitra-profile-pic.jpeg
 >>>>>>> 5cca6878 (update profile pic)
+=======
+  image: subhadip-mitra-photo.jpg
+>>>>>>> 7ce32600 (update photos)
   image_circular: false # crops the image to make it circular
   more_info: >
     <div class="hp-contact-inset">
