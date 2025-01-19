@@ -3,7 +3,7 @@ layout: post
 title: Part 4 - Building a Massive-Scale Real-Time Data Platform - Memory Management with Apache Ignite
 date: 2022-12-05 12:11:08
 description: Deep dive into memory management with Apache Ignite for high-performance data platforms. Learn how to handle 2.5M events/second with sub-millisecond latency through practical memory architecture, optimization techniques, and real-world implementation patterns.
-tags: system-design architecture casestudy
+tags: system-design architecture casestudy ignite kafka
 categories: architecture system-design casetudy
 giscus_comments: true
 featured: false

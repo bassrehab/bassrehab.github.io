@@ -3,7 +3,7 @@ layout: post
 title: Part 1 - Building a Massive-Scale Real-Time Data Platform - System Overview and Architecture
 date: 2022-11-12 02:25:11
 description: Dive into the architecture of a telco-scale real-time data platform processing 2.5M events/second and 350GB DPI data/15min. Learn how we combined Apache Kafka, Ignite, and Cassandra to build a high-performance system handling massive telecommunications data for real-time analytics and customer insights.
-tags: system-design architecture casestudy
+tags: system-design architecture casestudy ignite kafka
 categories: architecture system-design casetudy
 giscus_comments: true
 featured: false
