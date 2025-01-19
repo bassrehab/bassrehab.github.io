@@ -194,4 +194,4 @@ In the upcoming parts of this series, we'll dive deep into:
 
 Each part will include detailed technical implementations, code examples, and real-world learnings from building and operating this system at scale.
 
-Stay tuned for Part 2, where we'll explore our data partitioning strategy and how we managed the massive data flow through the system.
+Stay tuned for [Part 2](https://subhadipmitra.com/blog/2022/building-a-massive-scale-real-time-data-platform-p2/), where we'll explore our data partitioning strategy and how we managed the massive data flow through the system.
