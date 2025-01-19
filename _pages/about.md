@@ -6,7 +6,7 @@ subtitle: <b>Building the Future of Data & AI</b>
 
 profile:
   align: right
-  image: subhadip-mitra-profile-pic.jpeg
+  image: subhadip-mitra-photo.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
     <div class="hp-contact-inset">
