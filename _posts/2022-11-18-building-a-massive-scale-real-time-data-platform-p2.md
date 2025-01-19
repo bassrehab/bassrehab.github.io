@@ -3,7 +3,7 @@ layout: post
 title: Part 2 - Building a Massive-Scale Real-Time Data Platform - Data Partitioning and Flow
 date: 2022-11-18 01:12:18
 description: Explore how to architect data partitioning and flow for massive-scale event processing. Learn implementation patterns for handling 2.5M events/second across distributed systems using Kafka, Ignite, and Cassandra. Practical insights on partition strategies, data routing, and performance optimization.
-tags: system-design architecture casestudy
+tags: system-design architecture casestudy ignite kafka
 categories: architecture system-design casetudy
 giscus_comments: true
 featured: false
@@ -12,7 +12,7 @@ toc:
   sidebar: left
 ---
 
-In Part 1 of this series, we introduced our telecommunications data platform that processes 2.5 million events per second and handles 350GB of DPI data every 15 minutes. Today, we'll dive deep into how we designed and implemented the data partitioning strategy and managed the massive data flow through the system.
+In [Part 1](https://subhadipmitra.com/blog/2022/building-a-massive-scale-real-time-data-platform-p1/) of this series, we introduced our telecommunications data platform that processes 2.5 million events per second and handles 350GB of DPI data every 15 minutes. Today, we'll dive deep into how we designed and implemented the data partitioning strategy and managed the massive data flow through the system.
 
 ## Data Characteristics and Challenges
 
@@ -282,6 +282,6 @@ public class DataFlowManager {
 
 ## Looking Ahead
 
-In Part 3, we'll explore how we managed memory with Apache Ignite to handle this massive scale of data processing efficiently. We'll dive into memory architecture, tiered storage, eviction policies, and performance optimization techniques.
+In [Part 3](https://subhadipmitra.com/blog/2022/building-a-massive-scale-real-time-data-platform-p3/), we'll explore how we managed memory with Apache Ignite to handle this massive scale of data processing efficiently. We'll dive into memory architecture, tiered storage, eviction policies, and performance optimization techniques.
 
 Stay tuned to learn how we achieved sub-millisecond response times while processing millions of events per second.

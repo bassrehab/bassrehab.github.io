@@ -12,7 +12,7 @@ toc:
   sidebar: left
 ---
 
-In Parts 1 and 2, we explored our system architecture and data partitioning strategies. Today, we'll dive deep into how we managed memory using Apache Ignite to handle 2.5 million events per second while maintaining sub-millisecond response times.
+In [Parts 1](https://subhadipmitra.com/blog/2022/building-a-massive-scale-real-time-data-platform-p1/) and [2](https://subhadipmitra.com/blog/2022/building-a-massive-scale-real-time-data-platform-p2/), we explored our system architecture and data partitioning strategies. Today, we'll dive deep into how we managed memory using Apache Ignite to handle 2.5 million events per second while maintaining sub-millisecond response times.
 
 ## Memory Management Challenges
 
@@ -774,6 +774,6 @@ These lessons learned have been critical in maintaining and improving our memory
 
 ## Looking Ahead
 
-In Part 4, we'll explore how we optimized our Kafka infrastructure to handle the massive throughput requirements while ensuring reliable message delivery and processing.
+In [Part 4](https://subhadipmitra.com/blog/2022/building-a-massive-scale-real-time-data-platform-p4/), we'll explore how we optimized our Kafka infrastructure to handle the massive throughput requirements while ensuring reliable message delivery and processing.
 
 Stay tuned to learn about our Kafka cluster design, configuration tuning, and operational practices.
