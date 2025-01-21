@@ -44,7 +44,7 @@ A hands-on technology leader, I leverage Data, AI, and Cloud to drive transforma
 
 ### engage further
 
-- [GitHub Profile]([link to GitHub](https://github.com/bassrehab)): See my code contributions and open-source projects.
+- [GitHub Profile](https://github.com/bassrehab): See my code contributions and open-source projects.
 - [LinkedIn Profile](https://www.linkedin.com/in/subhadip-mitra/): Connect with me to learn more about my experience and leadership philosophy.
 - [Publications](https://subhadipmitra.com/publications/): Explore my research and frameworks in detail.
 - [Blog](https://subhadipmitra.com/blog/): Read my latest insights on the future of Data, AI, and Cloud.
