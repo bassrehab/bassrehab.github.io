@@ -25,7 +25,7 @@ I’m Subhadip Mitra—a hands-on technology leader with 15+ years of driving en
 - **Data Analytics Manager:** Spearheading our Data Analytics practice to architect innovative, data-driven solutions.
 - **Site Lead:** Overseeing cross-practice engagements (spanning AI, Data Analytics, Infrastructure, Application Modernization, and Security) to drive delivery governance, revenue growth, and operational excellence.
 
-<br />
+
 
 **Impact at a Glance**
 - **$20M+ Delivery Portfolio:** Managing 50+ enterprise-scale projects with 100% customer satisfaction and proactive escalation management.
@@ -36,21 +36,21 @@ I’m Subhadip Mitra—a hands-on technology leader with 15+ years of driving en
   - Created the [ETLC](https://subhadipmitra.com/blog/2024/etlc-adaptive-contexts-and-contextual-joins/) framework, reimagining data platforms for the Generative AI era.
   - Engineered privacy-centric protocols ([Open Location Proof](https://olp-protocol.org) & [Open Consent Protocol](https://oconsent.io)) for secure data sharing and transparent consent management.
 
-<br />
+
 
 **High-Performing Teams & Culture**
 - Built and mentored world-class engineering teams across Southeast Asia.
 - Fostered a culture of continuous learning, innovation, and accountability.
 - Delivered enterprise-grade solutions by driving best practices and operational excellence across diverse technology practices.
 
-<br />
+
 
 **Core Expertise**
 - **Leadership:** Orchestrating technology strategies that align with business objectives while building high-performance, cross-functional teams.
 - **Enterprise Architecture:** Designing robust, scalable data and AI infrastructures that drive actionable insights.
 - **Digital Transformation:** Spearheading complex cloud initiatives and multi-year digital roadmaps that deliver measurable impact.
 
-<br />
+
 
 **Explore & Connect**
 - **GitHub:** [My Open-Source Contributions](https://github.com/bassrehab)  
