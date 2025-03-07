@@ -26,7 +26,19 @@ At **Google Cloud**, I lead Data Analytics and serve as Site Lead for Southeast 
 - Architecting scalable, resilient data platforms handling petabyte-scale workloads
 - Building high-performing engineering teams across APAC with 100% client satisfaction
 
+<<<<<<< HEAD
 While directing strategic initiatives, I maintain deep technical involvement through innovative frameworks:
+=======
+#### Notable Outcomes
+- **$20M+ Delivery Portfolio:** Managing 50+ enterprise-scale projects with 100% customer satisfaction and proactive escalation management.
+- **$30M+ Business Impact:** Leading cloud transformation initiatives that fuel robust revenue growth across JAPAC.
+- **Innovative Frameworks:**  
+  - Published [ARTEMIS](https://www.tdcommons.org/dpubs_series/7729/) – an adaptive multi-agent debate framework transforming real-time decision-making.
+  - Invented proprietary approaches for continuous context propagation and scalable workload discovery.
+  - Created the [ETLC](https://subhadipmitra.com/blog/2024/etlc-adaptive-contexts-and-contextual-joins/) framework, reimagining data platforms for the Generative AI era.
+  - Engineered privacy-centric protocols ([Open Location Proof](https://olp-protocol.org) & [Open Consent Protocol](https://oconsent.io)) for secure data sharing and transparent consent management.
+- **High-Performing Teams:** Built and mentored top-tier engineering groups across Southeast Asia, fostering a culture of ownership, innovation, and rapid delivery.
+>>>>>>> 66b0cf15 (update home and cv - invented)
 
 - **Multi-Agent Decision Framework** — Invented an adaptive system for enterprise decision-making, ([ARTEMIS](https://www.tdcommons.org/dpubs_series/7729/))
 - **Next-Gen Data Platform Architecture** — Framework reimagining data integration for the Generative AI era, ([ETLC](https://subhadipmitra.com/blog/2024/etlc-adaptive-contexts-and-contextual-joins/)) 
