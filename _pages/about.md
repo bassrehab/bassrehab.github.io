@@ -30,7 +30,7 @@ I’m Subhadip—a hands-on technology leader with 15+ years of driving enterpri
 - **$30M+ Business Impact:** Leading cloud transformation initiatives that fuel robust revenue growth across JAPAC.
 - **Innovative Frameworks:**  
   - Published [ARTEMIS](https://www.tdcommons.org/dpubs_series/7729/) – an adaptive multi-agent debate framework transforming real-time decision-making.
-  - Developed proprietary approaches for continuous context propagation and scalable workload discovery.
+  - Invented proprietary approaches for continuous context propagation and scalable workload discovery.
   - Created the [ETLC](https://subhadipmitra.com/blog/2024/etlc-adaptive-contexts-and-contextual-joins/) framework, reimagining data platforms for the Generative AI era.
   - Engineered privacy-centric protocols ([Open Location Proof](https://olp-protocol.org) & [Open Consent Protocol](https://oconsent.io)) for secure data sharing and transparent consent management.
 - **High-Performing Teams:** Built and mentored top-tier engineering groups across Southeast Asia, fostering a culture of ownership, innovation, and rapid delivery.
