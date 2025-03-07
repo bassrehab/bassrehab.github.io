@@ -6,7 +6,7 @@ subtitle: <b>Driving AI & Data-Led Transformations at Global Scale</b>
 
 profile:
   align: right
-  image: subhadip-mitra-photo.jpg
+  image: subhadip-mitra-bw.png
   image_circular: false # crops the image to make it circular
   more_info: >
     <div class="hp-contact-inset">
