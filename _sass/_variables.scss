@@ -5,13 +5,11 @@
 
 @use "sass:color";
 
-// Import Google Fonts (replace with your chosen fonts)
-@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&family=Inter:ital,wght@0,400;0,700;1,400&display=swap');
 
 // Set font variables (replace with your font names)
 $font-family: 'Inter', sans-serif;
 $headers-font-family: 'Inter Tight', sans-serif;
-$font-family-monospace: 'Courier New', Courier, monospace;
+$font-family-monospace: "Fira Code", monospace;
 
 // Colors
 $red-color: #ff3636 !default;
