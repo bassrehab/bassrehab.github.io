@@ -82,15 +82,15 @@ html[data-theme="dark"] {
   --global-code-bg-color: #{$code-bg-color-dark};
   --global-text-color: #{$grey-color-light};
   --global-text-color-light: #{$grey-color-light};
-  --global-theme-color: #{$golden-poppy-color};
-  --global-hover-color: #{$golden-poppy-color};
+  --global-theme-color: #{$sky-high-blue};
+  --global-hover-color: #{$sky-high-blue};
   --global-hover-text-color: #{$white-color};
   --global-footer-bg-color: #{$grey-color-light};
   --global-footer-text-color: #{$grey-color-dark};
   --global-footer-link-color: #{$black-color};
   --global-distill-app-color: #{$grey-color-light};
   --global-divider-color: #424246;
-  --global-card-bg-color: #{$grey-900};
+  --global-card-bg-color: #{$code-bg-color-dark};
 
   --global-back-to-top-bg-color: rgba(
     #{color.channel($white-color, "red", $space: rgb)},
