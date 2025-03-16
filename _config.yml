@@ -12,7 +12,7 @@ description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Explore the intersection of technology and innovation with Subhadip Mitra, a technology leader at Google Cloud. Discover his insights on AI innovations, machine learning models, and data & analytics.  He drives digital transformation through cloud technologies and explores the future of quantum computing.  Dive into his projects and musings on enterprise technology leadership and technology consulting.
 footer_text: >
   Some Rights Reserved.
-keywords: subhadip-mitra,google,google-cloud,data-&-analytics,ai-innovations,enterprise-technology-leadership,digital-transformation,machine-learning-models,cloud-technologies,quantum-computing,technology-consulting # add your own keywords or leave empty
+keywords: subhadip-mitra,subhadip,google,google-cloud,data-&-analytics,ai-innovations,enterprise-technology-leadership,digital-transformation,machine-learning-models,cloud-technologies,quantum-computing,technology-consulting,singapore,researcher,llm,genai # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: favicon.png # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
