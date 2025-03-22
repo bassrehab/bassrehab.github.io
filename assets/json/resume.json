@@ -88,23 +88,10 @@
       ]
     },
     {
-      "name": "Truckaurbus Marketplace Pvt. Ltd.",
-      "position": "Founder & CTO",
-      "url": "",
-      "startDate": "2014-01-01",
-      "endDate": "2016-01-01",
-      "summary": "Founded and scaled a B2B digital marketplace across 15 cities, leading end-to-end technical strategy and product development.",
-      "highlights": [
-        "Built a platform supporting real-time auctions and programmatic advertising, enabling transparent pricing for B2B services.",
-        "Established partnerships with 25+ OEMs and banks, creating an ecosystem that drove rapid market adoption.",
-        "Led technical architecture decisions and development processes, balancing rapid iteration with scalable infrastructure."
-      ]
-    },
-    {
       "name": "Various Companies",
       "position": "Software Engineering, Architecture and Technical Consulting Roles",
       "startDate": "2010-01-01",
-      "endDate": "2014-01-01",
+      "endDate": "2016-01-01",
       "summary": "Progressively advanced through roles in software development, systems integration, and technical consulting within financial services and algorithmic trading domains.",
       "highlights": [
         "Consistently exceeded performance expectations, leading to promotions and increased responsibilities.",
