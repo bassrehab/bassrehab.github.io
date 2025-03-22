@@ -14,6 +14,8 @@ toc:
 
 After exploring the architecture and implementation of autonomous multi-agent systems for telecom customer service in [my previous article](https://subhadipmitra.com/blog/2025/telecom-autonomous-multi-agent-genai-system/), it's time to address an emerging standard that promises to solve many of the challenges I outlined: Model Context Protocol (MCP).
 
+> An initial implementation of a framework for building autonomous multi-agent systems with standardized context management is available [here](https://github.com/bassrehab/pycontext/). Contributions are most welcome.
+
 <br />
 
 ## What is Model Context Protocol and Why Should You Care?
