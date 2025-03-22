@@ -1,395 +1,403 @@
 {
-    "basics": {
-      "name": "Subhadip Mitra",
-      "label": "Strategic Leader in Data, AI & Cloud Innovation",
-      "image": "http://subhadipmitra.com/assets/img/prof_pic.jpg",
-      "email": "contact@subhadipmitra.com",
-      "url": "https://subhadipmitra.com",
-      "summary": "Senior Technology Leader with 15+ years of experience driving enterprise transformation through Data, AI, and Cloud innovations. Proven track record of building and mentoring high-performing teams, developing strategic roadmaps, and delivering significant business impact. Passionate about building the next generation of products and services at the intersection of Generative AI and Large-Scale Data Platforms.",
-      "location": {
-        "city": "Singapore",
-        "countryCode": "SG",
-        "region": "Singapore"
-      },
-      "profiles": [
-        {
-          "network": "Twitter",
-          "username": "bassrehab",
-          "url": "https://twitter.com/bassrehab"
-        },
-        {
-          "network": "LinkedIn",
-          "username": "subhadipmitra",
-          "url": "https://linkedin.com/in/subhadip-mitra"
-        },
-        {
-          "network": "GitHub",
-          "username": "bassrehab",
-          "url": "https://github.com/bassrehab"
-        }
-      ]
+  "basics": {
+    "name": "Subhadip Mitra",
+    "label": "Technical Leader, Data & AI Transformation",
+    "image": "http://subhadipmitra.com/assets/img/prof_pic.jpg",
+    "email": "contact@subhadipmitra.com",
+    "url": "https://subhadipmitra.com",
+    "summary": "Hands-on technology leader with 15+ years of experience driving enterprise transformation through AI, Data, and Cloud innovations. At Google Cloud, I lead the Data Analytics practice while spearheading technical innovation through published frameworks like ARTEMIS and privacy-centric protocols. My approach combines strategic vision with technical execution—building high-performance engineering teams, architecting billion-scale data platforms, and delivering solutions with $30M+ business impact across JAPAC.",
+    "location": {
+      "city": "Singapore",
+      "countryCode": "SG",
+      "region": "Singapore"
     },
-    "work": [
+    "profiles": [
       {
-        "name": "Google Cloud – Professional Services Organization, Southeast Asia",
-        "position": "Data & Analytics Manager | Site Lead, PSO Southeast Asia",
-        "url": "https://cloud.google.com",
-        "startDate": "2021-01-01",
-        "endDate": "",
-        "summary": "Serving in dual roles as Data Analytics Manager and Site Lead, responsible for architecting innovative, data-driven solutions and overseeing cross-practice engagements across AI, Data Analytics, Infrastructure, Application Modernization, and Security.",
-        "highlights": [
-          "Transformed Google Cloud Platform's Data & Analytics practice across Southeast Asia by building and leading high-performing teams, delivering 50+ enterprise-scale projects with 100% customer satisfaction and proactive escalation management.",
-          "Invented ARTEMIS - an adaptive multi-agent debate framework transforming real-time decision-making.",
-          "Developed and executed regional go-to-market strategies, including Data Monetization frameworks, Data CoE models, and Cross-Cloud architectures, resulting in significant market expansion and revenue growth across JAPAC.",
-          "Led delivery governance for the Southeast Asia portfolio, ensuring consistent project delivery and revenue realization across multiple domains.",
-          "Built and nurtured C-suite relationships with strategic partners and enterprise clients, establishing Google Cloud as the preferred digital transformation partner in the region.",
-          "Drove technical innovation through contributions in multi-agent decision-making and context modeling, including the creation of the ETLC (Extract, Transform, Load, Contextualize) framework for the GenAI era.",
-          "Engineered privacy-centric protocols (Open Location Proof & Open Consent Protocol) for secure data sharing and transparent consent management."
-        ]
+        "network": "Twitter",
+        "username": "bassrehab",
+        "url": "https://twitter.com/bassrehab"
       },
       {
-        "name": "Standard Chartered Bank",
-        "position": "Principal Engineer – Data & Analytics Transformation",
-        "url": "https://www.sc.com",
-        "startDate": "2019-01-01",
-        "endDate": "2021-01-01",
-        "summary": "Led enterprise-wide data & analytics transformation and strategy initiatives, influencing C-suite stakeholders across retail banking divisions.",
-        "highlights": [
-          "Directed transformation initiatives that integrated alternative data sources with advanced AI/ML models, significantly reducing deployment times.",
-          "Spearheaded the bank's MarTech modernization strategy, aligning business and technology teams to deliver significant customer impact.",
-          "Mentored high-performing teams and established new standards for model deployment efficiency.",
-          "Developed scalable platforms and governance frameworks driving data monetization, privacy, and cloud adoption."
-        ]
+        "network": "LinkedIn",
+        "username": "subhadipmitra",
+        "url": "https://linkedin.com/in/subhadip-mitra"
       },
       {
-        "name": "Think Big Analytics (a Teradata company)",
-        "position": "Principal Data Engineer / Solution Architect",
-        "url": "https://www.teradata.com",
-        "startDate": "2017-01-01",
-        "endDate": "2019-01-01",
-        "summary": "Provided strategic advisory and delivered large-scale data platforms for Fortune 500 clients across APAC.",
-        "highlights": [
-          "Architected petabyte-scale data processing platforms and real-time analytics solutions.",
-          "Built trusted C-suite relationships and drove digital transformation initiatives.",
-          "Mentored cross-functional teams and established best practices in data architecture and cloud migration."
-        ]
-      },
-      {
-        "name": "UTU",
-        "position": "Technical Lead",
-        "url": "https://utu.global",
-        "startDate": "2016-01-01",
-        "endDate": "2017-01-01",
-        "summary": "Led foundational services development and integration, driving market entry strategies and technology roadmaps.",
-        "highlights": [
-          "Collaborated with C-level executives and banking partners for Thailand expansion.",
-          "Established architectural patterns and governance frameworks for mission-critical payment systems.",
-          "Built and mentored engineering teams to deliver high-performance integration solutions."
-        ]
-      },
-      {
-        "name": "Various Companies",
-        "position": "Software Engineering, Architecture and Technical Consulting Roles",
-        "startDate": "2010-01-01",
-        "endDate": "2016-01-01",
-        "summary": "Progressively advanced through roles in software development, systems integration, and technical consulting within financial services and algorithmic trading domains.",
-        "highlights": [
-          "Consistently exceeded performance expectations, leading to promotions and increased responsibilities.",
-          "Developed strong expertise in Java development and client communication."
-        ]
-      }
-    ],
-    "education": [
-      {
-        "institution": "Birla Institute of Technology and Science, Pilani, IN",
-        "location": "Pilani, India",
-        "url": "https://bits-pilani.ac.in",
-        "area": "Business Analytics",
-        "studyType": "MBA, Business Analytics",
-        "startDate": "2021-01-01",
-        "endDate": "2023-01-01",
-        "courses": [
-          "Financial Risk Analytics",
-          "Marketing Models",
-          "Financial Management",
-          "Strategic Management",
-          "Operations Management",
-          "Financial and Management Accounting",
-          "Predictive Analytics"
-        ]
-      },
-      {
-        "institution": "Birla Institute of Technology and Science, Pilani, IN",
-        "location": "Pilani, India",
-        "url": "https://bits-pilani.ac.in",
-        "area": "Software Systems",
-        "studyType": "Master of Technology, Software Systems",
-        "startDate": "2017-01-01",
-        "endDate": "2020-01-01",
-        "courses": [
-          "Algorithms",
-          "Distributed Systems",
-          "Deep Learning",
-          "Natural Language Processing",
-          "Machine Learning",
-          "Artificial Intelligence (AI)"
-        ]
-      }
-    ],
-    "certificates": [
-      {
-        "name": "Google Cloud Certified Professional Cloud Architect",
-        "date": "2024-01-01",
-        "issuer": "Google Cloud",
-        "url": "https://www.credly.com/badges/d6baf5ca-ab06-41fa-aca5-723316294ef7"
-      },
-      {
-        "name": "Google Cloud Certified Professional Cloud Data Engineer",
-        "date": "2022-01-01",
-        "issuer": "Google Cloud",
-        "url": "https://www.credential.net/ae4b2086-f607-4057-98f4-ad2e7c0106e6"
-      },
-      {
-        "name": "Google Cloud Certified Professional Machine Learning Engineer",
-        "date": "2024-01-01",
-        "issuer": "Google Cloud",
-        "url": "https://www.credly.com/badges/3f6df2e7-7394-43ae-8c02-ddfe3b300850/public_url"
-      }
-    ],
-    "publications": [
-      {
-        "name": "Data Monetization Strategy for Enterprises",
-        "publisher": "BITS Pilani",
-        "releaseDate": "2023-12-01",
-        "url": "https://www.researchgate.net/publication/376557741_Data_Monetization_Strategy_for_Enterprises",
-        "summary": "A comprehensive framework for enterprises to transform data into economic value, influencing data strategy across JAPAC."
-      },
-      {
-        "name": "Open Location Proof (OLP)",
-        "publisher": "Subhadip Mitra",
-        "releaseDate": "2022-01-01",
-        "url": "https://olp-protocol.org/",
-        "summary": "A privacy-aware open protocol for non-repudiable point-in-time presence verification."
-      },
-      {
-        "name": "OConsent: Open Consent Protocol for Privacy and Consent Management with Blockchain",
-        "publisher": "BITS Pilani",
-        "releaseDate": "2021-12-01",
-        "url": "https://arxiv.org/abs/2201.01326",
-        "summary": "A blockchain-based protocol for transparent personal data processing, enhancing user control and compliance with data privacy laws."
-      },
-      {
-        "name": "ARTEMIS – Adaptive Multi-agent Debate Framework",
-        "publisher": "TD Commons",
-        "releaseDate": "2025-01-15",
-        "url": "https://www.tdcommons.org/dpubs_series/7729/",
-        "summary": "An adaptive multi-agent debate framework transforming real-time decision-making."
-      },
-      {
-        "name": "Automated Data Architecture Optimization for Billion-Node Cloud Deployments",
-        "publisher": "Google",
-        "releaseDate": "2023-05-01",
-        "url": "#",
-        "summary": "A system for automatically mapping and optimizing data architectures in cloud environments."
-      },
-      {
-        "name": "ETLC (Extract, Transform, Load, Contextualize) Framework for GenAI-Era Data Platforms",
-        "publisher": "Google",
-        "releaseDate": "2024-05-01",
-        "url": "#",
-        "summary": "A framework that reimagines data platforms for the Generative AI era."
-      }
-    ],
-    "skills": [
-      {
-        "name": "Technology Leadership & Strategy",
-        "keywords": [
-          "Strategic Leadership",
-          "Vision & Execution",
-          "Digital Transformation",
-          "Data-Driven Strategy",
-          "C-Suite Advisory",
-          "Enterprise Architecture",
-          "Solution Architecture",
-          "Cloud Adoption",
-          "Go-to-Market Strategy",
-          "Innovation Management",
-          "Stakeholder Engagement"
-        ]
-      },
-      {
-        "name": "Team Building & Management",
-        "keywords": [
-          "Building High-Performing Teams",
-          "Mentoring & Coaching",
-          "Talent Development",
-          "Cross-functional Collaboration",
-          "Performance Management",
-          "Resource Allocation",
-          "Budget Management"
-        ]
-      },
-      {
-        "name": "Data Engineering & Architecture",
-        "keywords": [
-          "Petabyte-Scale Data Platforms",
-          "Data Pipelines",
-          "ETL/ELT",
-          "Data Warehousing",
-          "Data Lakes",
-          "Data Modeling",
-          "Database Design (SQL, NoSQL)",
-          "Cloud Data Architectures",
-          "Hadoop",
-          "Apache Spark",
-          "Apache Flink",
-          "Apache Kafka",
-          "Apache Ignite",
-          "Apache HBase",
-          "Apache Arrow",
-          "Apache Iceberg"
-        ]
-      },
-      {
-        "name": "Generative AI & Machine Learning",
-        "keywords": [
-          "Generative AI (GenAI)",
-          "Large Language Models (LLMs)",
-          "Transformer Networks",
-          "Prompt Engineering",
-          "Vector Databases",
-          "Multi-Modal AI",
-          "Machine Learning Operations (MLOps)",
-          "Retrieval-Augmented Generation (RAG)",
-          "Responsible AI",
-          "Model Governance",
-          "Deep Learning",
-          "Reasoning and Decision-making systems"
-        ]
-      },
-      {
-        "name": "Cloud Platforms",
-        "keywords": [
-          "Google Cloud Platform (GCP)",
-          "BigQuery",
-          "Dataflow",
-          "Vertex AI",
-          "Cloud Spanner",
-          "Cloud SQL",
-          "Cloud Storage",
-          "AWS"
-        ]
-      },
-      {
-        "name": "Programming Languages & Tools",
-        "keywords": [
-          "Python",
-          "Java",
-          "SQL",
-          "C/C++",
-          "JavaScript",
-          "Bash",
-          "Git",
-          "Docker",
-          "Kubernetes",
-          "Terraform",
-          "REST APIs",
-          "Microservices"
-        ]
-      },
-      {
-        "name": "Methodologies & Frameworks",
-        "keywords": [
-          "Agile Development",
-          "DevOps",
-          "CI/CD",
-          "Data Privacy",
-          "ETLC Framework",
-          "OConsent Protocol",
-          "Open Location Proof Protocol"
-        ]
-      }
-    ],
-    "interests": [
-      {
-        "name": "Data & AI Innovation",
-        "keywords": [
-          "Generative AI (GenAI)",
-          "Large Language Models (LLMs)",
-          "AI/ML Infrastructure",
-          "Data Privacy",
-          "Approximate Computations",
-          "Probabilistic Data Structures"
-        ]
-      },
-      {
-        "name": "Advanced Computing Architectures",
-        "keywords": [
-          "Distributed Systems",
-          "Cloud Computing Architectures",
-          "Serverless Computing",
-          "Microservices",
-          "Fault Tolerance",
-          "Consensus Protocols",
-          "Distributed Databases",
-          "Real-time Systems"
-        ]
-      },
-      {
-        "name": "Emerging Technologies",
-        "keywords": [
-          "Quantum Computing",
-          "Quantum Algorithms",
-          "Post-Quantum Cryptography",
-          "Neuromorphic Computing"
-        ]
-      },
-      {
-        "name": "Theoretical Exploration",
-        "keywords": [
-          "Theoretical Physics",
-          "Mathematical Modeling",
-          "Stochastic Processes"
-        ]
-      }
-    ],
-    "projects": [
-      {
-        "name": "Open Location Proof (olp-protocol.org)",
-        "summary": "A privacy-aware open protocol for non-repudiable location verification in physical or virtual spaces. GoLocate.me is a planned implementation node demonstrating the protocol.",
-        "highlights": [
-          "Developed a novel protocol for privacy-preserving location verification.",
-          "Designed to be decentralized and tamper-resistant.",
-          "Applicable across industries such as supply chain, finance, and social networking."
-        ],
-        "startDate": "2022-01-01",
-        "endDate": "2023-01-01",
-        "url": "https://olp-protocol.org"
-      },
-      {
-        "name": "OConsent - Open Consent Protocol",
-        "summary": "A transparent, fast, and scalable protocol for managing user consent and privacy on public blockchains.",
-        "highlights": [
-          "Proposed a blockchain-based solution for transparent consent management.",
-          "Designed for compliance with data privacy regulations like GDPR.",
-          "Automates consent enforcement and revocation using smart contracts."
-        ],
-        "startDate": "2021-01-01",
-        "endDate": "2022-01-01",
-        "url": "https://oconsent.io"
-      },
-      {
-        "name": "ISO8583 Simulator",
-        "summary": "A Java-based simulator for processing ISO 8583 messages, used by banks and payment processors.",
-        "highlights": [
-          "Developed a simulator for financial messaging protocols.",
-          "Enabled testing and validation of payment processing systems.",
-          "Supported development and testing of payment applications."
-        ],
-        "startDate": "2016-01-01",
-        "endDate": "2017-01-01",
-        "url": "https://github.com/bassrehab/ISO8583-Simulator"
+        "network": "GitHub",
+        "username": "bassrehab",
+        "url": "https://github.com/bassrehab"
       }
     ]
-  }
-  
+  },
+  "work": [
+    {
+      "name": "Google Cloud - Professional Services Organization, Southeast Asia",
+      "position": "Data & Analytics Manager | Site Lead, PSO Southeast Asia",
+      "url": "https://cloud.google.com",
+      "startDate": "2021-01-01",
+      "endDate": "",
+      "summary": "Leading Google Cloud's Data Analytics practice while serving as Site Lead overseeing cross-practice delivery governance in Southeast Asia across Data & Analytics, AI, Infrastructure, Security, Enterprise Architecture, and Application Modernization.",
+      "highlights": [
+        "Direct a 20M+ Data Analytics delivery portfolio across JAPAC while simultaneosuly overseeing a 30M+ cross-practice delivery portfolio as Site Lead for Southeast Asia, all with consistent customer satisfaction (last 2 years)",
+        "Published ARTEMIS (invention and technical disclosure), an adaptive multi-agent framework for enterprise decision-making, demonstrating continued technical contribution beyond management responsibilities.",
+        "Led critical interventions for strategic accounts across JAPAC including a major financial services provider (7-week onsite intervention transforming governance and architecture) and a global consumer electronics manufacturer (strategic roadmap development preventing customer migration to alternative platform).",
+        "Executed high-value projects including a global shipping company's 12,000+ user analytics migration, a leading bank's first Data & AI Center of Excellence in JAPAC, and a telecom provider's first-of-its-kind Data Monetization Platform.",
+        "As co-Site Lead, scaled regional delivery excellence contributing to 100% annual revenue target attainment with 97% CSAT across all Southeast Asia projects.",
+        "Built high-performing teams exceeding utilization targets despite market headwinds, with focused rapid upskilling in GenAI, cloud data technologies, and database modernization.",
+        "Spearheaded the first $X million Sovereign GenAI Transformation program, delivering it across 20+ government agencies within 3 months.",
+        "Contributed to $25M+ in strategic pursuits and pipeline development, converting major accounts including financial institutions, manufacturers, and government agencies across JAPAC."
+      ]
+    },
+    {
+      "name": "Standard Chartered Bank",
+      "position": "Principal Engineer - Data & Analytics Transformation",
+      "url": "https://www.sc.com",
+      "startDate": "2019-01-01",
+      "endDate": "2021-01-01",
+      "summary": "Led enterprise-wide AI and data platform development serving 11 markets and 1200+ global users, delivering technical excellence while influencing C-suite data strategy.",
+      "highlights": [
+        "Delivered a Self-Service ML Platform that reduced model development and deployment time from 6 months to 1 week, establishing new standards for model development efficiency.",
+        "Designed credit risk AI models integrating alternative data sources, improving accuracy by 15% while maintaining regulatory compliance.",
+        "Modernized MarTech infrastructure, scaling customer analytics and driving a 30% increase in acquisition through data-driven engagement strategies."
+      ]
+    },
+    {
+      "name": "Think Big Analytics (a Teradata company)",
+      "position": "Principal Data Engineer / Solution Architect",
+      "url": "https://www.teradata.com",
+      "startDate": "2017-01-01",
+      "endDate": "2019-01-01",
+      "summary": "Architected enterprise-scale data solutions for Fortune 500 clients across APAC, designing scalable platforms with measurable business impact.",
+      "highlights": [
+        "Engineered 5 high-performance data lakes capable of processing 1.2 PB/hour, achieving 20% optimization through architectural innovations.",
+        "Built real-time fraud detection systems, reducing false positives by 60% and saving $3M annually through advanced statistical models.",
+        "Designed and scaled enterprise architectures supporting global Fortune 500 clients across APAC, focusing on performance optimization and business value."
+      ]
+    },
+    {
+      "name": "UTU",
+      "position": "Technical Lead",
+      "url": "https://utu.global",
+      "startDate": "2016-01-01",
+      "endDate": "2017-01-01",
+      "summary": "Led technical strategy and engineering for a fintech startup, delivering high-performance payment systems and enabling market expansion into Thailand.",
+      "highlights": [
+        "Delivered high-performance payment systems, ensuring 99.99% uptime, sub-100ms latency, and scalability to handle peak transaction volumes.",
+        "Defined technology roadmaps enabling product growth and market expansion into Thailand, working directly with C-level executives and banking partners.",
+        "Established architectural patterns and governance frameworks for mission-critical payment systems, balancing innovation with compliance requirements."
+      ]
+    },
+    {
+      "name": "Truckaurbus Marketplace Pvt. Ltd.",
+      "position": "Founder & CTO",
+      "url": "",
+      "startDate": "2014-01-01",
+      "endDate": "2016-01-01",
+      "summary": "Founded and scaled a B2B digital marketplace across 15 cities, leading end-to-end technical strategy and product development.",
+      "highlights": [
+        "Built a platform supporting real-time auctions and programmatic advertising, enabling transparent pricing for B2B services.",
+        "Established partnerships with 25+ OEMs and banks, creating an ecosystem that drove rapid market adoption.",
+        "Led technical architecture decisions and development processes, balancing rapid iteration with scalable infrastructure."
+      ]
+    },
+    {
+      "name": "Various Companies",
+      "position": "Software Engineering, Architecture and Technical Consulting Roles",
+      "startDate": "2010-01-01",
+      "endDate": "2014-01-01",
+      "summary": "Progressively advanced through roles in software development, systems integration, and technical consulting within financial services and algorithmic trading domains.",
+      "highlights": [
+        "Consistently exceeded performance expectations, leading to promotions and increased responsibilities.",
+        "Developed strong expertise in Java development, architectural design, and client communication."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Birla Institute of Technology and Science, Pilani, IN",
+      "location": "Pilani, India",
+      "url": "https://bits-pilani.ac.in",
+      "area": "Business Analytics",
+      "studyType": "MBA, Business Analytics",
+      "startDate": "2021-01-01",
+      "endDate": "2023-01-01",
+      "courses": [
+        "Financial Risk Analytics",
+        "Marketing Models",
+        "Financial Management",
+        "Strategic Management",
+        "Operations Management",
+        "Financial and Management Accounting",
+        "Predictive Analytics"
+      ]
+    },
+    {
+      "institution": "Birla Institute of Technology and Science, Pilani, IN",
+      "location": "Pilani, India",
+      "url": "https://bits-pilani.ac.in",
+      "area": "Software Systems",
+      "studyType": "Master of Technology, Software Systems",
+      "startDate": "2017-01-01",
+      "endDate": "2020-01-01",
+      "courses": [
+        "Algorithms",
+        "Distributed Systems",
+        "Deep Learning",
+        "Natural Language Processing",
+        "Machine Learning",
+        "Artificial Intelligence (AI)"
+      ]
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Google Cloud Certified Professional Cloud Architect",
+      "date": "2024-01-01",
+      "issuer": "Google Cloud",
+      "url": "https://www.credly.com/badges/d6baf5ca-ab06-41fa-aca5-723316294ef7"
+    },
+    {
+      "name": "Google Cloud Certified Professional Cloud Data Engineer",
+      "date": "2022-01-01",
+      "issuer": "Google Cloud",
+      "url": "https://www.credential.net/ae4b2086-f607-4057-98f4-ad2e7c0106e6"
+    },
+    {
+      "name": "Google Cloud Certified Professional Machine Learning Engineer",
+      "date": "2024-01-01",
+      "issuer": "Google Cloud",
+      "url": "https://www.credly.com/badges/3f6df2e7-7394-43ae-8c02-ddfe3b300850/public_url"
+    }
+  ],
+  "publications": [
+    {
+      "name": "ARTEMIS - Adaptive Multi-agent Debate Framework",
+      "publisher": "TD Commons",
+      "releaseDate": "2025-01-15",
+      "url": "https://www.tdcommons.org/dpubs_series/7729/",
+      "summary": "Technical disclosure on an adaptive framework for multi-agent decision systems, using structured debate protocols to enhance enterprise decision-making through collaborative reasoning."
+    },
+    {
+      "name": "ETLC (Extract, Transform, Load, Contextualize) Framework for GenAI-Era Data Platforms",
+      "publisher": "Google",
+      "releaseDate": "2024-05-01",
+      "url": "#",
+      "summary": "A framework reimagining data platforms for the Generative AI era, enabling context-aware data pipelines that enhance LLM capabilities through improved data preparation and enrichment."
+    },
+    {
+      "name": "Data Monetization Strategy for Enterprises",
+      "publisher": "BITS Pilani",
+      "releaseDate": "2023-12-01",
+      "url": "https://www.researchgate.net/publication/376557741_Data_Monetization_Strategy_for_Enterprises",
+      "summary": "A comprehensive framework for enterprises to transform data into economic value, establishing methodologies now implemented across multiple JAPAC organizations."
+    },
+    {
+      "name": "Automated Data Architecture Optimization for Billion-Node Cloud Deployments",
+      "publisher": "Google",
+      "releaseDate": "2023-05-01",
+      "url": "#",
+      "summary": "A system for automatically mapping and optimizing data architectures in complex cloud environments through spatiotemporal graph optimization approaches."
+    },
+    {
+      "name": "OConsent: Open Consent Protocol for Privacy and Consent Management with Blockchain",
+      "publisher": "BITS Pilani",
+      "releaseDate": "2021-12-01",
+      "url": "https://arxiv.org/abs/2201.01326",
+      "summary": "A blockchain-based protocol for transparent personal data processing, enhancing user control and compliance with data privacy regulations."
+    },
+    {
+      "name": "Compass - Automated Cloud Workload Discovery System",
+      "publisher": "Google",
+      "releaseDate": "2023-05-01",
+      "url": "#",
+      "summary": "A system leveraging billion-node graph models for architecture assessments and spatiotemporal graph optimization approaches, enabling automated discovery and mapping of complex cloud workloads."
+    }
+  ],
+  "skills": [
+    {
+      "name": "Technology Leadership & Strategy",
+      "keywords": [
+        "Enterprise Architecture",
+        "Technical Vision & Roadmaps",
+        "Digital Transformation",
+        "AI & Data Strategy",
+        "Cloud Architecture",
+        "Multi-Region Deployments",
+        "Security & Compliance",
+        "C-Suite Advisory",
+        "Business-Technology Alignment",
+        "Innovation Leadership",
+        "Strategic Planning"
+      ]
+    },
+    {
+      "name": "Data Engineering & Architecture",
+      "keywords": [
+        "Petabyte-Scale Data Platforms",
+        "Data Pipelines",
+        "Real-Time Data Processing",
+        "Data Mesh & Data Fabric",
+        "Data Modeling",
+        "Polyglot Persistence",
+        "Cloud Data Architectures",
+        "Data Governance",
+        "Apache Spark",
+        "Apache Flink",
+        "Apache Kafka",
+        "Apache Iceberg",
+        "Apache Beam"
+      ]
+    },
+    {
+      "name": "Generative AI & Machine Learning",
+      "keywords": [
+        "Multi-Agent Systems",
+        "Large Language Models (LLMs)",
+        "Responsible AI",
+        "Model Governance",
+        "Retrieval-Augmented Generation (RAG)",
+        "Vector Databases",
+        "LLMOps",
+        "Multi-Modal AI",
+        "Enterprise AI Integration",
+        "ML/AI Infrastructure",
+        "Reinforcement Learning from Human Feedback (RLHF)",
+        "Context Window Optimization"
+      ]
+    },
+    {
+      "name": "Engineering Leadership",
+      "keywords": [
+        "High-Performance Team Building",
+        "Technical Mentorship",
+        "Engineering Excellence",
+        "Delivery Management",
+        "Architecture Reviews",
+        "System Design",
+        "Performance Optimization",
+        "Cross-Functional Collaboration",
+        "Problem-Solving",
+        "Agile Methodologies",
+        "DevOps & SRE Practices"
+      ]
+    },
+    {
+      "name": "Cloud Platforms & Infrastructure",
+      "keywords": [
+        "Google Cloud Platform (GCP)",
+        "BigQuery",
+        "Vertex AI",
+        "Cloud Spanner",
+        "GKE",
+        "Terraform",
+        "Infrastructure as Code",
+        "Serverless Architectures",
+        "Event-Driven Systems",
+        "Microservices",
+        "API Design",
+        "Distributed Systems"
+      ]
+    },
+    {
+      "name": "Programming & Development",
+      "keywords": [
+        "Python",
+        "Java",
+        "SQL",
+        "C/C++",
+        "JavaScript",
+        "Scala",
+        "Systems Programming",
+        "Low-Level Optimization",
+        "Concurrency & Parallelism",
+        "High-Performance Computing",
+        "Algorithm Design",
+        "Memory Management"
+      ]
+    }
+  ],
+  "interests": [
+    {
+      "name": "Multi-Agent Systems",
+      "keywords": [
+        "Cooperative AI",
+        "Agent Communication Protocols",
+        "Emergent Behaviors",
+        "Multi-Agent Debate",
+        "Consensus Mechanisms",
+        "Agent Coordination"
+      ]
+    },
+    {
+      "name": "Privacy-Preserving AI",
+      "keywords": [
+        "Differential Privacy",
+        "Federated Learning",
+        "Multi-Party Computation",
+        "Homomorphic Encryption",
+        "Privacy-Utility Tradeoffs",
+        "Consent Management"
+      ]
+    },
+    {
+      "name": "Advanced Computing Architectures",
+      "keywords": [
+        "Quantum Computing",
+        "Neuromorphic Computing",
+        "Post-Quantum Cryptography",
+        "Field-Theoretic Computing",
+        "Approximate Computing",
+        "Non-Von Neumann Architectures"
+      ]
+    },
+    {
+      "name": "Theoretical Foundations",
+      "keywords": [
+        "Mathematical Modeling",
+        "Information Theory",
+        "Complex Systems",
+        "Probabilistic Methods",
+        "Distributed Consensus",
+        "Theoretical Physics Applications"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Open Location Proof Protocol",
+      "summary": "A privacy-aware open protocol for non-repudiable location verification in physical or virtual spaces, with complete technical specifications and reference implementations.",
+      "highlights": [
+        "Designed a cryptographically secure yet privacy-preserving protocol for verifiable location attestation.",
+        "Created a fully decentralized architecture resistant to tampering and third-party manipulation.",
+        "Published comprehensive specifications enabling adoption across industries from supply chain to fintech."
+      ],
+      "startDate": "2022-01-01",
+      "endDate": "2023-01-01",
+      "url": "https://olp-protocol.org"
+    },
+    {
+      "name": "OConsent - Open Consent Protocol",
+      "summary": "An Open sourced transparent, fast, and scalable protocol for managing user consent and privacy on public blockchains, addressing critical data protection requirements.",
+      "highlights": [
+        "Engineered a blockchain-based solution for transparent consent management with cryptographic verification.",
+        "Designed for GDPR and other global privacy regulation compliance with automated audit capabilities.",
+        "Created a system enabling granular control over personal data usage with tamper-proof consent records."
+      ],
+      "startDate": "2021-01-01",
+      "endDate": "2022-01-01",
+      "url": "https://oconsent.io"
+    },
+    {
+      "name": "ISO8583 Simulator",
+      "summary": "A high-performance Java-based simulator for ISO 8583 financial messaging, used by banks and payment processors for system validation and testing.",
+      "highlights": [
+        "Built a highly flexible simulator supporting multiple ISO 8583 versions and custom message formats.",
+        "Implemented advanced performance testing capabilities with configurable load profiles.",
+        "Designed a modular architecture supporting extension to other financial messaging protocols."
+      ],
+      "startDate": "2016-01-01",
+      "endDate": "2017-01-01",
+      "url": "https://github.com/bassrehab/ISO8583-Simulator"
+    }
+  ]
+}

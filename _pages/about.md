@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <b>Driving AI & Data-Led Transformations at Global Scale</b>
+subtitle: <b>Technical Leader, Data & AI Transformation | Google Cloud</b>
 
 profile:
   align: right
@@ -20,34 +20,54 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-I’m Subhadip—a hands-on technology leader with 15+ years of driving enterprise digital transformation through AI, Data, and Cloud. At **Google Cloud**’s Professional Services Organization in Southeast Asia, I serve in dual roles:
+<br />
 
-- **Data Analytics Manager:** Spearheading our Data Analytics practice to architect innovative, data-driven solutions.
-- **Site Lead:** Overseeing cross-practice engagements (spanning AI, Data Analytics, Infrastructure, Application Modernization, and Security) to drive delivery governance, revenue growth, and operational excellence.
 
-#### Notable Outcomes
-- **$20M+ Delivery Portfolio:** Managing 50+ enterprise-scale projects with 100% customer satisfaction and proactive escalation management.
-- **$30M+ Business Impact:** Leading cloud transformation initiatives that fuel robust revenue growth across JAPAC.
-- **Innovative Frameworks:**  
-  - Published [ARTEMIS](https://www.tdcommons.org/dpubs_series/7729/) – an adaptive multi-agent debate framework transforming real-time decision-making.
-  - Invented proprietary approaches for continuous context propagation and scalable workload discovery.
-  - Created the [ETLC](https://subhadipmitra.com/blog/2024/etlc-adaptive-contexts-and-contextual-joins/) framework, reimagining data platforms for the Generative AI era.
-  - Engineered privacy-centric protocols ([Open Location Proof](https://olp-protocol.org) & [Open Consent Protocol](https://oconsent.io)) for secure data sharing and transparent consent management.
-- **High-Performing Teams:** Built and mentored top-tier engineering groups across Southeast Asia, fostering a culture of ownership, innovation, and rapid delivery.
 
-#### Why I Do It
-I’m driven by curiosity and empathy—two values that consistently spark the most impactful AI breakthroughs. When I’m not orchestrating large-scale transformations, I’m experimenting with emerging GenAI concepts, always pushing boundaries to unlock new possibilities.
+At **Google Cloud**, I lead Data Analytics and serve as Site Lead for Southeast Asia, driving large-scale transformations that directly impact business outcomes:
 
-#### Core Expertise & Focus
-- **Leadership:** Orchestrating technology strategies that align with business objectives while building high-performance, cross-functional teams.
-- **Enterprise Architecture:** Designing robust, scalable data and AI infrastructures that drive actionable insights.
-- **Digital Transformation:** Spearheading complex cloud initiatives and multi-year digital roadmaps that deliver measurable impact.
+- Leading $20M+ in mission-critical enterprise projects with consistent delivery excellence
+- Architecting scalable, resilient data platforms handling petabyte-scale workloads
+- Building high-performing engineering teams across APAC with 100% client satisfaction
 
-#### Explore & Connect
-- **GitHub:** [My Open-Source Contributions](https://github.com/bassrehab)  
-- **LinkedIn:** [Connect with Me](https://www.linkedin.com/in/subhadip-mitra/)  
-- **Publications:** [Research & Frameworks](https://subhadipmitra.com/publications/)  
-- **Blog:** [Insights on AI, Data & Cloud](https://subhadipmitra.com/blog/)
+While directing strategic initiatives, I maintain deep technical involvement through innovative frameworks:
 
+- **Multi-Agent Decision Framework** — Invented an adaptive system for enterprise decision-making, ([ARTEMIS](https://www.tdcommons.org/dpubs_series/7729/))
+- **Next-Gen Data Platform Architecture** — Framework reimagining data integration for the Generative AI era, ([ETLC](https://subhadipmitra.com/blog/2024/etlc-adaptive-contexts-and-contextual-joins/)) 
+- **Privacy & Consent Protocols** — open frameworks for secure data sharing and transparent consent management
+
+
+I've also developed proprietary approaches for continuous context propagation (patent-pending) and automated cloud workload discovery using billion-node graph models for architecture optimization.
+
+---
+
+#### Engineering Leadership Across Enterprise & Startup Environments
+
+My journey as founder of a B2B digital marketplace (scaled across 15 cities) informs my approach to enterprise transformation—combining startup agility with enterprise-grade scalability.
+
+At Standard Chartered Bank, I led the development of enterprise-wide AI platforms serving 11 markets while reducing ML deployment cycles from 6 months to 1 week. I applied this same focus on measurable impact at Google Cloud, driving technical architecture that delivers 20-60% performance improvements in high-volume data systems.
+
+---
+
+#### Technical Publications & Innovation
+
+- [Engineering Autonomous Multi-Agent Systems](https://subhadipmitra.com/blog/2025/telecom-autonomous-multi-agent-genai-system/) — Technical architecture for large-scale AI systems (Jan 2025)
+- [Context-Aware Data Pipelines](https://subhadipmitra.com/blog/2024/etlc-adaptive-contexts-and-contextual-joins/) — Framework for next-generation data integration at scale (Dec 2024)
+- [Privacy-Centric Consent Framework](https://oconsent.io/) — an open protocol for transparent data management (2021)
+- [Secure Location Data Architecture](https://olp-protocol.org/) — Framework for verifiable location sharing (2021)
+
+
+
+#### Current Research Focus
+
+My technical explorations currently center on two emerging frontiers:
+- **Multi-agent systems for enterprise decision-making** — Architecting autonomous systems that reason, debate, and solve complex business problems
+- **Privacy-preserving AI architectures** — Developing frameworks that enable advanced analytics while maintaining robust data governance
+
+---
+
+#### Connect
+
+[Email](mailto:contact@subhadipmitra.com) · [Schedule a Meeting](https://calendly.com/subhadipmitra) · [LinkedIn](https://linkedin.com/in/subhadipmitra) · [GitHub](https://github.com/subhadipmitra)
 
 <br />
