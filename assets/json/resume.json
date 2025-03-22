@@ -75,27 +75,13 @@
       ]
     },
     {
-      "name": "UTU",
-      "position": "Technical Lead",
-      "url": "https://utu.global",
-      "startDate": "2016-01-01",
-      "endDate": "2017-01-01",
-      "summary": "Led technical strategy and engineering for a fintech startup, delivering high-performance payment systems and enabling market expansion into Thailand.",
-      "highlights": [
-        "Delivered high-performance payment systems, ensuring 99.99% uptime, sub-100ms latency, and scalability to handle peak transaction volumes.",
-        "Defined technology roadmaps enabling product growth and market expansion into Thailand, working directly with C-level executives and banking partners.",
-        "Established architectural patterns and governance frameworks for mission-critical payment systems, balancing innovation with compliance requirements."
-      ]
-    },
-    {
       "name": "Various Companies",
       "position": "Software Engineering, Architecture and Technical Consulting Roles",
       "startDate": "2010-01-01",
-      "endDate": "2016-01-01",
+      "endDate": "2017-01-01",
       "summary": "Progressively advanced through roles in software development, systems integration, and technical consulting within financial services and algorithmic trading domains.",
       "highlights": [
-        "Consistently exceeded performance expectations, leading to promotions and increased responsibilities.",
-        "Developed strong expertise in Java development, architectural design, and client communication."
+
       ]
     }
   ],
