@@ -77,7 +77,7 @@ I've also developed proprietary approaches for continuous context propagation (p
 
 #### Engineering Leadership Across Enterprise & Startup Environments
 
-My journey as founder of a B2B digital marketplace (scaled across 15 cities) informs my approach to enterprise transformation—combining startup agility with enterprise-grade scalability.
+My journey as founder of a B2B digital [marketplace](https://truckaurbus.com) (scaled across 15 cities) informs my approach to enterprise transformation—combining startup agility with enterprise-grade scalability.
 
 At Standard Chartered Bank, I led the development of enterprise-wide AI platforms serving 11 markets while reducing ML deployment cycles from 6 months to 1 week. I applied this same focus on measurable impact at Google Cloud, driving technical architecture that delivers 20-60% performance improvements in high-volume data systems.
 
