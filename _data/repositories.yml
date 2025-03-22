@@ -2,12 +2,11 @@ github_users:
   - bassrehab
 
 github_repos:
+  - bassrehab/oconsent
   - bassrehab/ISO8583-Simulator
+  - bassrehab/alphapunch-freq
   - bassrehab/smpp-kafka-producer
   - bassrehab/blockchain-loyalty-fabric
-  - bassrehab/credit_risk
-  - bassrehab/adventribe-nft
   - bassrehab/olp
-  - bassrehab/reinforcement-learning-stock-trading
   - bassrehab/blockchain_exchange
   - bassrehab/unified-socket
