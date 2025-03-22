@@ -65,7 +65,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "";
               },
-            },{id: "post-engineering-autonomous-multi-agent-systems-a-technical-deep-dive-into-telecom-customer-service",
+            },{id: "post-implementing-model-context-protocol-in-autonomous-multi-agent-systems-technical-architecture-and-performance-optimization",
+      
+        title: "Implementing Model Context Protocol in Autonomous Multi-Agent Systems - Technical Architecture and Performance...",
+      
+      description: "Discover how to implement Model Context Protocol (MCP) in autonomous multi-agent systems with this technical deep dive. Learn advanced context optimization strategies, distributed architecture patterns, and performance benchmarks with complete Python implementations. Includes hypothetical telecom implementation scenarios showing potential optimization benefits.",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/implementing-model-context-protocol/";
+        
+      },
+    },{id: "post-engineering-autonomous-multi-agent-systems-a-technical-deep-dive-into-telecom-customer-service",
       
         title: "Engineering Autonomous Multi-Agent Systems - A Technical Deep Dive into Telecom Customer Service...",
       
