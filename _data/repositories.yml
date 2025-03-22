@@ -7,6 +7,5 @@ github_repos:
   - bassrehab/alphapunch-freq
   - bassrehab/smpp-kafka-producer
   - bassrehab/blockchain-loyalty-fabric
-  - bassrehab/olp
   - bassrehab/blockchain_exchange
   - bassrehab/unified-socket
