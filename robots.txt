@@ -1,4 +1,1 @@
-User-agent: *
-Disallow:
-
-Sitemap: https://subhadipmitra.com/sitemap.xml
+User-agent: * Disallow: Sitemap: https://subhadipmitra.com/sitemap.xml
