@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <b>Technical Leader, Data & AI Transformation | Google Cloud</b>
+subtitle: <b>Data & AI</b> @ <a href="https://cloud.google.com/consulting">Google Cloud</a> • <b>Other Affiliations</b> - <a href="https://www.iitm.ac.in/">IIT Madras</a>, <a href="https://www.bits-pilani.ac.in/">BITS Pilani</a>
 
 profile:
   align: right
@@ -15,14 +15,21 @@ profile:
       <p><a href="https://calendly.com/contact-x9nm/30min">Schedule a Meeting</a></p>
     </div>
 
-news: false # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
+
+announcements:
+  enabled: false # includes a list of news items
+  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
+  limit: 5 # leave blank to include all the news in the `_news` folder
+
+latest_posts:
+  enabled: true
+  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
+  limit: 3 # leave blank to include all the blog posts
 ---
 
 <br />
-
-
 
 At **Google Cloud**, I lead Data Analytics and serve as Site Lead for Southeast Asia, driving large-scale transformations that directly impact business outcomes:
 
@@ -41,7 +48,7 @@ I've also developed proprietary approaches for continuous context propagation (p
 
 ---
 
-#### Engineering Leadership Across Enterprise & Startup Environments
+#### Engineering Leadership across Enterprise & Startup Environments
 
 My journey as founder of a B2B digital [marketplace](https://truckaurbus.com) (scaled across 15 cities) informs my approach to enterprise transformation—combining startup agility with enterprise-grade scalability.
 
