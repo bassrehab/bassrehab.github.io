@@ -31,7 +31,7 @@ latest_posts:
 
 <br />
 
-At **Google Cloud**, I lead Data Analytics and serve as Site Lead for Southeast Asia, where I manage multi-million-dollar initiatives and mentor high-performing teams—all while remaining an active engineer and researcher. My background also includes founding a B2B digital [marketplace](https://truckaurbus.com), which has enriched my approach by blending startup agility with enterprise-grade strategy.
+At **Google Cloud**, I lead Data Analytics and serve as Site Lead for Southeast Asia, where I manage multi-million-dollar initiatives and mentor high-performing teams-all while remaining an active engineer and researcher. My background also includes founding a B2B digital [marketplace](https://truckaurbus.com), which has enriched my approach by blending startup agility with enterprise-grade strategy.
 
 
 #### Core Expertise
@@ -45,17 +45,21 @@ At **Google Cloud**, I lead Data Analytics and serve as Site Lead for Southeast 
 
 #### Innovations & Research
 
-- **Multi-Agent Decision Framework** — Invented an adaptive system for enterprise decision-making, ([ARTEMIS](https://www.tdcommons.org/dpubs_series/7729/), 2025)
-- **Next-Gen Data Platform Architecture** — Framework reimagining data integration for the Generative AI era, ([ETLC](https://subhadipmitra.com/blog/2024/etlc-adaptive-contexts-and-contextual-joins/), 2024) 
-- **Privacy & Consent Protocols** — open frameworks ([OLP](https://olp-protocol.com), 2022; [OConsent](https://oconsent.io), 2021) for secure data sharing and transparent consent management.
+- **Multi-Agent Decision Framework** - Invented an adaptive system for enterprise decision-making, ([ARTEMIS](https://www.tdcommons.org/dpubs_series/7729/), 2025)
+- **Next-Gen Data Platform Architecture** - Framework reimagining data integration for the Generative AI era, ([ETLC](https://subhadipmitra.com/blog/2024/etlc-adaptive-contexts-and-contextual-joins/), 2024) 
+- **Privacy & Consent Protocols** - open frameworks ([OLP](https://olp-protocol.com), 2022; [OConsent](https://oconsent.io), 2021) for secure data sharing and transparent consent management.
 - **Proprietary Methods:** Invented techniques for continuous context propagation and scalable workload discovery using billion-node graph models.
 
 
-#### Current Research Focus
+#### Current Research Interests
 
-My technical explorations currently center on two emerging frontiers:
-- **Multi-agent systems for enterprise decision-making** — Architecting autonomous systems that reason, debate, and solve complex business problems
-- **Privacy-preserving AI architectures** — Developing frameworks that enable advanced analytics while maintaining robust data governance
+- **Multi-agent Enterprise Systems** - Building practical [frameworks](https://github.com/bassrehab/pycontext) for coordinated AI agents that work together to solve complex business problems at scale, with emphasis on reliability and governance.
+
+- **LLM Infrastructure Optimization** - Researching efficient deployment architectures, inference acceleration techniques, and cost-effective serving strategies for large language models in production environments.
+
+- **Contextual Representation for AI Systems** - Improving how AI models maintain and process contextual information, with focus on efficient relationship modeling and information retrieval in practical applications.
+
+- **Spatiotemporal Graph Analytics** - Applying graph theory to model how resources interact across both space and time, with practical applications in cloud infrastructure optimization and workload scheduling.
 
 ---
 
