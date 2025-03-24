@@ -31,38 +31,24 @@ latest_posts:
 
 <br />
 
-At **Google Cloud**, I lead Data Analytics and serve as Site Lead for Southeast Asia, driving large-scale transformations that directly impact business outcomes:
-
-- Leading $20M+ in mission-critical enterprise projects with consistent delivery excellence
-- Architecting scalable, resilient data platforms handling petabyte-scale workloads
-- Building high-performing engineering teams across APAC with 100% client satisfaction
-
-While directing strategic initiatives, I maintain deep technical involvement through innovative frameworks:
-
-- **Multi-Agent Decision Framework** — Invented an adaptive system for enterprise decision-making, ([ARTEMIS](https://www.tdcommons.org/dpubs_series/7729/))
-- **Next-Gen Data Platform Architecture** — Framework reimagining data integration for the Generative AI era, ([ETLC](https://subhadipmitra.com/blog/2024/etlc-adaptive-contexts-and-contextual-joins/)) 
-- **Privacy & Consent Protocols** — open frameworks for secure data sharing and transparent consent management
+At **Google Cloud**, I lead Data Analytics and serve as Site Lead for Southeast Asia, where I manage multi-million-dollar initiatives and mentor high-performing teams—all while remaining an active engineer and researcher. My background also includes founding a B2B digital [marketplace](https://truckaurbus.com), which has enriched my approach by blending startup agility with enterprise-grade strategy.
 
 
-I've also developed proprietary approaches for continuous context propagation (patent-pending) and automated cloud workload discovery using billion-node graph models for architecture optimization.
+#### Core Expertise
+
+- **Leadership & Strategy:** Shaping technology vision and guiding cross-functional teams.
+- **Hands-On Engineering:** Developing innovative AI, Data, and Cloud solutions.
+- **Digital Transformation:** Architecting scalable platforms that deliver measurable business impact.
+- **Entrepreneurial Insight:** Merging startup innovation with proven enterprise methodologies.
 
 ---
 
-#### Engineering Leadership across Enterprise & Startup Environments
+#### Innovations & Research
 
-My journey as founder of a B2B digital [marketplace](https://truckaurbus.com) (scaled across 15 cities) informs my approach to enterprise transformation—combining startup agility with enterprise-grade scalability.
-
-At Standard Chartered Bank, I led the development of enterprise-wide AI platforms serving 11 markets while reducing ML deployment cycles from 6 months to 1 week. I applied this same focus on measurable impact at Google Cloud, driving technical architecture that delivers 20-60% performance improvements in high-volume data systems.
-
----
-
-#### Technical Publications & Innovation
-
-- [Engineering Autonomous Multi-Agent Systems](https://subhadipmitra.com/blog/2025/telecom-autonomous-multi-agent-genai-system/) — Technical architecture for large-scale AI systems (Jan 2025)
-- [Context-Aware Data Pipelines](https://subhadipmitra.com/blog/2024/etlc-adaptive-contexts-and-contextual-joins/) — Framework for next-generation data integration at scale (Dec 2024)
-- [Privacy-Centric Consent Framework](https://oconsent.io/) — an open protocol for transparent data management (2021)
-- [Secure Location Data Architecture](https://olp-protocol.org/) — Framework for verifiable location sharing (2021)
-
+- **Multi-Agent Decision Framework** — Invented an adaptive system for enterprise decision-making, ([ARTEMIS](https://www.tdcommons.org/dpubs_series/7729/), 2025)
+- **Next-Gen Data Platform Architecture** — Framework reimagining data integration for the Generative AI era, ([ETLC](https://subhadipmitra.com/blog/2024/etlc-adaptive-contexts-and-contextual-joins/), 2024) 
+- **Privacy & Consent Protocols** — open frameworks ([OLP](https://olp-protocol.com), 2022; [OConsent](https://oconsent.io), 2021) for secure data sharing and transparent consent management.
+- **Proprietary Methods:** Invented techniques for continuous context propagation and scalable workload discovery using billion-node graph models.
 
 
 #### Current Research Focus
