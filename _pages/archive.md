@@ -1,5 +1,5 @@
 ---
-layout: archive
+layout: blog-archive
 title: "Blog Archive"
 permalink: /archive/
 header:
@@ -9,3 +9,4 @@ header:
     - label: "Explore More"
       url: "/blog/" 
 ---
+
