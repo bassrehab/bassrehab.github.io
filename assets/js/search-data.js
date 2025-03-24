@@ -393,7 +393,7 @@ ninja.data = [{
         title: 'ORCID',
         section: 'Socials',
         handler: () => {
-          window.open("https://orcid.org/0000-0002-3977-7402", "_blank");
+          window.open("https://orcid.org/", "_blank");
         },
       },{
         id: 'social-researchgate',
@@ -414,7 +414,7 @@ ninja.data = [{
         title: 'Google Scholar',
         section: 'Socials',
         handler: () => {
-          window.open("https://scholar.google.com/citations?user=B3U5mSYAAAAJ", "_blank");
+          window.open("https://scholar.google.com/citations?user=", "_blank");
         },
       },{
         id: 'social-x',
