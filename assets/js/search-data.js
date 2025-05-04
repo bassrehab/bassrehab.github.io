@@ -389,13 +389,6 @@ ninja.data = [{
           window.open("https://www.linkedin.com/in/subhadip-mitra", "_blank");
         },
       },{
-        id: 'social-orcid',
-        title: 'ORCID',
-        section: 'Socials',
-        handler: () => {
-          window.open("https://orcid.org/", "_blank");
-        },
-      },{
         id: 'social-researchgate',
         title: 'ResearchGate',
         section: 'Socials',
@@ -408,13 +401,6 @@ ninja.data = [{
         section: 'Socials',
         handler: () => {
           window.open("/feed.xml", "_blank");
-        },
-      },{
-        id: 'social-scholar',
-        title: 'Google Scholar',
-        section: 'Socials',
-        handler: () => {
-          window.open("https://scholar.google.com/citations?user=", "_blank");
         },
       },{
         id: 'social-x',
