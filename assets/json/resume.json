@@ -5,7 +5,7 @@
     "image": "http://subhadipmitra.com/assets/img/prof_pic.jpg",
     "email": "contact@subhadipmitra.com",
     "url": "https://subhadipmitra.com",
-    "summary": "Hands-on technology leader with 15+ years of experience driving enterprise transformation through AI, Data, and Cloud innovations. At Google Cloud, I lead the Data Analytics practice while spearheading technical innovation through published frameworks like ARTEMIS and privacy-centric protocols. My approach combines strategic vision with technical execution—building high-performance engineering teams, architecting billion-scale data platforms, and delivering solutions with $30M+ business impact across JAPAC.",
+    "summary": "Hands-on technology leader with 15+ years of experience driving enterprise transformation through AI, Data, and Cloud innovations. At Google Cloud, I lead the Data Analytics practice while spearheading technical innovation through published frameworks like ARTEMIS, FTCS, ETLC and privacy-centric protocols. My approach combines strategic vision with technical execution—building high-performance engineering teams, architecting billion-scale data platforms, and delivering solutions with \\$XXM+ business impact across JAPAC.",
     "location": {
       "city": "Singapore",
       "countryCode": "SG",
@@ -38,14 +38,14 @@
       "endDate": "",
       "summary": "Leading Google Cloud's Data Analytics practice while serving as Site Lead overseeing cross-practice delivery governance in Southeast Asia across Data & Analytics, AI, Infrastructure, Security, Enterprise Architecture, and Application Modernization.",
       "highlights": [
-        "Direct a \\$20M+ Data Analytics delivery portfolio across JAPAC while simultaneously overseeing a $30M+ cross-practice delivery portfolio as Site Lead for Southeast Asia, all with consistent customer satisfaction (last 2 years)",
-        "Published ARTEMIS (invention and technical disclosure), an adaptive multi-agent framework for enterprise decision-making, demonstrating continued technical contribution beyond management responsibilities.",
+        "Direct a \\$XXM+ Data Analytics delivery portfolio across JAPAC while simultaneously overseeing a \\$XXM+ cross-practice delivery portfolio as Site Lead for Southeast Asia, all with consistent customer satisfaction (last 2 years)",
+        "Published multiple technical innovations including FTCS (Field-Theoretic Context System), ETLC (Extract, Transform, Load, Contextualize) and ARTEMIS frameworks, demonstrating continued technical contribution beyond management responsibilities.",
         "Led critical interventions for strategic accounts across JAPAC including a major financial services provider (7-week onsite intervention transforming governance and architecture) and a global consumer electronics manufacturer (strategic roadmap development preventing customer migration to alternative platform).",
         "Executed high-value projects including a global shipping company's 12K+ user analytics migration, a leading bank's first Data & AI Center of Excellence in JAPAC, and a telecom provider's first-of-its-kind Data Monetization Platform.",
         "As co-Site Lead, scaled regional delivery excellence contributing to 100% annual revenue target attainment with 97% CSAT across all Southeast Asia projects.",
         "Built high-performing teams exceeding utilization targets despite market headwinds, with focused rapid upskilling in GenAI, cloud data technologies, and database modernization.",
-        "Spearheaded the first $X million Sovereign GenAI Transformation program, delivering it across 20+ government agencies within 3 months.",
-        "Contributed to $25M+ in strategic pursuits and pipeline development, converting major accounts including financial institutions, manufacturers, and government agencies across JAPAC."
+        "Spearheaded the first \\$X million Sovereign GenAI Transformation program, delivering it across 20+ government agencies within 3 months.",
+        "Contributed to \\$XXM+ in strategic pursuits and pipeline development, converting major accounts including financial institutions, manufacturers, and government agencies across JAPAC."
       ]
     },
     {
@@ -70,7 +70,7 @@
       "summary": "Architected enterprise-scale data solutions for Fortune 500 clients across APAC, designing scalable platforms with measurable business impact.",
       "highlights": [
         "Engineered 5 high-performance data lakes capable of processing 1.2 PB/hour, achieving 20% optimization through architectural innovations.",
-        "Built real-time fraud detection systems, reducing false positives by 60% and saving $3M annually through advanced statistical models.",
+        "Built real-time fraud detection systems, reducing false positives by 60% and saving \\$XM annually through advanced statistical models.",
         "Designed and scaled enterprise architectures supporting global Fortune 500 clients across APAC, focusing on performance optimization and business value."
       ]
     },
@@ -143,6 +143,20 @@
     }
   ],
   "publications": [
+    {
+      "name": "Field-Theoretic Context System (FTCS)",
+      "publisher": "TD Commons",
+      "releaseDate": "2025-05-01",
+      "url": "https://www.tdcommons.org/dpubs_series/8022/",
+      "summary": "An innovative approach to context processing that models context as interacting fields rather than discrete states, enabling natural context flow, relationship preservation, and dynamic evolution through partial differential equations that govern field dynamics."
+    },
+    {
+      "name": "ETLC: A Context-First Approach to Data Processing in the Generative AI Era",
+      "publisher": "Google Cloud",
+      "releaseDate": "2025-05-01",
+      "url": "https://services.google.com/fh/files/blogs/etlc_full_paper.pdf",
+      "summary": "A comprehensive whitepaper introducing ETLC (Extract, Transform, Load, Contextualize), adding semantic, relational, operational, environmental, and behavioral context to data pipelines, enabling Dynamic Context Engines for context-aware RAG, AI co-pilots, and agentic systems."
+    },
     {
       "name": "ARTEMIS - Adaptive Multi-agent Debate Framework",
       "publisher": "TD Commons",
@@ -290,6 +304,17 @@
     }
   ],
   "interests": [
+    {
+      "name": "Context Systems & Field Theory",
+      "keywords": [
+        "Field-Theoretic Computing",
+        "Continuous Context Modeling",
+        "Dynamic Context Evolution",
+        "Non-Conservative Information Systems",
+        "Context-Aware AI",
+        "Adaptive Context Propagation"
+      ]
+    },
     {
       "name": "Multi-Agent Systems",
       "keywords": [

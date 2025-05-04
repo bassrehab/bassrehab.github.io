@@ -2,7 +2,8 @@
 layout: about
 title: about
 permalink: /
-subtitle: <b>Data & AI</b> @ <a href="https://cloud.google.com/consulting">Google Cloud</a> • <b>Other Affiliations</b> - <a href="https://www.iitm.ac.in/">IIT Madras</a>, <a href="https://www.bits-pilani.ac.in/">BITS Pilani</a>
+subtitle: <b>Data & AI</b> @ <a href="https://cloud.google.com/consulting">Google Cloud</a> • <b>Other Affiliations</b> - <a href="https://www.iitm.ac.in/">IIT Madras</a>, <a href="https://www.bits-pilani.ac.in/">BITS Pilani</a>, <a href="https://www.ieee.org/">IEEE</a>, <a href="https://www.acm.org/">ACM</a>, <a href="https://www.scs.org.sg/">SCS</a>, <a href="https://rin.org.uk/">RIN</a>
+
 
 profile:
   align: right
@@ -45,19 +46,21 @@ At **Google Cloud**, I lead Data Analytics and serve as Site Lead for Southeast 
 
 #### Innovations & Research
 
+- **Field-Theoretic Context System (FTCS)** - Pioneered a novel approach to context processing that models context as interacting fields rather than discrete states, enabling natural context flow and dynamic evolution. ([Technical Disclosure](https://www.tdcommons.org/dpubs_series/8022/), 2025)
+- **ETLC: Context-First Data Processing** - Developed a framework that reimagines data integration for the Generative AI era by adding semantic, relational, operational, environmental, and behavioral context. ([Google Cloud Whitepaper](https://services.google.com/fh/files/blogs/etlc_full_paper.pdf), 2025)
 - **Multi-Agent Decision Framework** - Invented an adaptive system for enterprise decision-making, ([ARTEMIS](https://www.tdcommons.org/dpubs_series/7729/), 2025)
 - **Next-Gen Data Platform Architecture** - Framework reimagining data integration for the Generative AI era, ([ETLC](https://subhadipmitra.com/blog/2024/etlc-adaptive-contexts-and-contextual-joins/), 2024) 
-- **Privacy & Consent Protocols** - open frameworks ([OLP](https://olp-protocol.com), 2022; [OConsent](https://oconsent.io), 2021) for secure data sharing and transparent consent management.
-- **Proprietary Methods:** Invented techniques for continuous context propagation and scalable workload discovery using billion-node graph models.
+- **Privacy & Consent Protocols** - open frameworks ([OLP](https://olpprotocol.com), 2022; [OConsent](https://oconsent.io), 2021) for secure data sharing and transparent consent management.
+- **Proprietary Methods:** Invented techniques for scalable workload discovery using billion-node graph models.
 
 
 #### Current Research Interests
 
+- **Contextual Representation for AI Systems** - Advancing field-theoretic approaches to how AI models maintain and process contextual information, with focus on efficient relationship modeling, dynamic context evolution, and information retrieval in practical applications.
+
 - **Multi-agent Enterprise Systems** - Building practical [frameworks](https://github.com/bassrehab/pycontext) for coordinated AI agents that work together to solve complex business problems at scale, with emphasis on reliability and governance.
 
 - **LLM Infrastructure Optimization** - Researching efficient deployment architectures, inference acceleration techniques, and cost-effective serving strategies for large language models in production environments.
-
-- **Contextual Representation for AI Systems** - Improving how AI models maintain and process contextual information, with focus on efficient relationship modeling and information retrieval in practical applications.
 
 - **Spatiotemporal Graph Analytics** - Applying graph theory to model how resources interact across both space and time, with practical applications in cloud infrastructure optimization and workload scheduling.
 
