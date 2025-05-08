@@ -48,7 +48,7 @@ At **Google Cloud**, I lead Data Analytics and serve as Site Lead for Southeast 
 
 - **Field-Theoretic Context System (FTCS)** - Pioneered a novel approach to context processing that models context as interacting fields rather than discrete states, enabling natural context flow and dynamic evolution. ([Technical Disclosure](https://www.tdcommons.org/dpubs_series/8022/), 2025)
 - **ETLC: Context-First Data Processing** - Developed a framework that reimagines data integration for the Generative AI era by adding semantic, relational, operational, environmental, and behavioral context. ([Google Cloud Whitepaper](https://services.google.com/fh/files/blogs/etlc_full_paper.pdf), 2025)
-- **Multi-Agent Decision Framework** - Invented an adaptive system for enterprise decision-making, ([ARTEMIS](https://www.tdcommons.org/dpubs_series/7729/), 2025)
+- **Multi-Agent Decision Framework (ARTEMIS)** - Invented an adaptive system for enterprise decision-making, ([Technical Disclosure](https://www.tdcommons.org/dpubs_series/7729/), 2025)
 - **Next-Gen Data Platform Architecture** - Framework reimagining data integration for the Generative AI era, ([ETLC](https://subhadipmitra.com/blog/2024/etlc-adaptive-contexts-and-contextual-joins/), 2024) 
 - **Privacy & Consent Protocols** - open frameworks ([OLP](https://olpprotocol.com), 2022; [OConsent](https://oconsent.io), 2021) for secure data sharing and transparent consent management.
 - **Proprietary Methods:** Invented techniques for scalable workload discovery using billion-node graph models.
