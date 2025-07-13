@@ -65,7 +65,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/privacy/";
               },
-            },{id: "post-implementing-model-context-protocol-in-autonomous-multi-agent-systems-technical-architecture-and-performance-optimization",
+            },{id: "post-why-kimi-k2-stands-out-a-deep-dive-into-its-trillion-parameter-moe",
+        
+          title: "Why Kimi K2 Stands Out - A Deep Dive into Its Trillion-Parameter MoE...",
+        
+        description: "Explore Kimi K2’s trillion-parameter MoE architecture, MuonClip optimizer, and agentic training. Learn why it outperforms GPT-4.1 and DeepSeek-V3",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/why-kimi-k2-stands-out/";
+          
+        },
+      },{id: "post-implementing-model-context-protocol-in-autonomous-multi-agent-systems-technical-architecture-and-performance-optimization",
         
           title: "Implementing Model Context Protocol in Autonomous Multi-Agent Systems - Technical Architecture and Performance...",
         
@@ -73,7 +84,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2025/implementing-model-context-protocol/";
+            window.location.href = "/blog/2025/implementing-model-context-protocol-copy/";
           
         },
       },{id: "post-engineering-autonomous-multi-agent-systems-a-technical-deep-dive-into-telecom-customer-service",
