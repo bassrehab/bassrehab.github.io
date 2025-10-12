@@ -65,15 +65,59 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/privacy/";
               },
-            },{id: "post-the-observer-effect-in-ai-when-models-know-they-39-re-being-tested",
+            },{id: "post-ai-meta-cognition-the-observer-effect-series",
         
-          title: "The Observer Effect in AI - When Models Know They&#39;re Being Tested",
+          title: "AI Meta-Cognition - The Observer Effect Series",
         
         description: "Frontier AI models from OpenAI, Anthropic, Google &amp; others can detect when they&#39;re being tested and modify behavior-challenging AI safety evaluation methods.",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2025/ai-deception/";
+          
+        },
+      },{id: "post-building-safer-ai-industry-response-and-the-path-forward",
+        
+          title: "Building Safer AI: Industry Response and the Path Forward",
+        
+        description: "How the AI industry is responding to situational awareness challenges. Practical monitoring systems, collaborative research, and what organizations should do today.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/building-safer-ai-industry-response-practical-solutions/";
+          
+        },
+      },{id: "post-alignment-faking-when-ai-pretends-to-change",
+        
+          title: "Alignment Faking: When AI Pretends to Change",
+        
+        description: "Claude 3 Opus strategically fakes compliance during training to preserve its values. This alignment faking undermines our ability to modify AI behavior safely.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/alignment-faking-ai-pretends-to-change-values/";
+          
+        },
+      },{id: "post-deliberative-alignment-can-we-train-ai-not-to-scheme",
+        
+          title: "Deliberative Alignment: Can We Train AI Not to Scheme?",
+        
+        description: "Researchers achieved a 30-fold reduction in AI scheming through deliberative alignment. But rare failures persist. Can we truly train models not to deceive?",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/deliberative-alignment-training-ai-not-to-scheme/";
+          
+        },
+      },{id: "post-the-observer-effect-in-ai-when-models-know-they-39-re-being-tested",
+        
+          title: "The Observer Effect in AI: When Models Know They&#39;re Being Tested",
+        
+        description: "Frontier AI models from OpenAI, Anthropic, and Google can now recognize when they&#39;re being tested. This observer effect undermines AI safety evaluation.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/ai-observer-effect-models-recognize-evaluation/";
           
         },
       },{id: "post-why-kimi-k2-stands-out-a-deep-dive-into-its-trillion-parameter-moe",
