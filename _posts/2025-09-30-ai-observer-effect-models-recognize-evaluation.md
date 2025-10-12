@@ -61,9 +61,16 @@ AI evaluation is now facing the same problem.
 
 This isn't theoretical. It's happening now, across every major AI provider.
 
+![Why Situational Awareness Makes Evaluating Scheming Hard](/assets/img/blog/situational-awareness.png){: width="100%" }
+
 ---
 
+<br />
+<br />
+
 ## Part 1: How Widespread Is This?
+
+<br />
 
 ### The Multi-Provider Study
 
@@ -111,6 +118,8 @@ The model's *belief* about its constraints-not the actual resource limitations-w
 Think about that. The model's self-awareness actively made it *worse* at its job.
 
 ---
+
+<br />
 
 ## Part 2: From Awareness to Strategic Deception
 

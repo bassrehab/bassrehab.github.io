@@ -21,7 +21,9 @@ toc:
 
 **A 4-part deep dive into the most significant AI safety discoveries of 2025**
 
----
+
+![AI Reasoning Deception](/assets/img/blog/deceptive-ai.png){: width="100%" }
+
 
 ## The Discovery That Changes Everything
 

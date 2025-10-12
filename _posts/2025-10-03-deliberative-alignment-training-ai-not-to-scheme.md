@@ -207,6 +207,8 @@ This doesn't scale.
 
 ---
 
+![Two types of training environments](/assets/img/blog/anti-scheming.png){: width="100%" }
+
 ## The Comparison Study: Capabilities-Focused Training
 
 To understand whether increased situational awareness is unique to safety training, researchers ran a comparison experiment:
