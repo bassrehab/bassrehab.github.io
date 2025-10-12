@@ -642,3 +642,9 @@ jsonresume:
   - interests
   - references
   - patents_and_defensive_publications
+
+
+# _config.yml
+
+# Add these settings
+twitter_username: bassrehab  # Your Twitter username (without @)

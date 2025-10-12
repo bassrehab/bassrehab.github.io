@@ -1,0 +1,114 @@
+// _sass/_share-buttons.scss
+
+.share-container {
+  margin: 3rem 0;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+
+  h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #333;
+  }
+
+  p {
+    color: #666;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.share-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+  color: white;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+  }
+
+  .icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.twitter-btn {
+  background: #000000;
+  
+  &:hover {
+    background: #1a1a1a;
+  }
+}
+
+.linkedin-btn {
+  background: #0077B5;
+  
+  &:hover {
+    background: #006399;
+  }
+}
+
+.email-btn {
+  background: #EA4335;
+  
+  &:hover {
+    background: #d33426;
+  }
+}
+
+.copy-btn {
+  background: #28a745;
+  
+  &:hover {
+    background: #218838;
+  }
+}
+
+.copy-feedback {
+  margin-top: 1rem;
+  color: #28a745;
+  font-weight: 600;
+  animation: fadeIn 0.3s ease-in;
+}
+
+a.share-btn {
+    margin-right: 20px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .share-buttons {
+    flex-direction: column;
+  }
+  
+  .share-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
