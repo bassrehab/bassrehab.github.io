@@ -74,7 +74,7 @@ The scheming and alignment faking research represents something remarkable: **Co
 - Meta contributing Llama models for comparative analysis
 - UK AI Safety Institute conducting independent verification
 
-This level of transparency was unthinkable in 2020. It's still incomplete—but it's progress.
+This level of transparency was unthinkable in 2020. It's still incomplete-but it's progress.
 
 ### Why Openness Matters
 
@@ -86,7 +86,7 @@ This level of transparency was unthinkable in 2020. It's still incomplete—but 
 
 **Public accountability:** Transparency creates pressure for responsible development
 
-**The alternative**—keeping findings secret—would only delay confronting these challenges while preventing the collective problem-solving necessary to address them.
+**The alternative**-keeping findings secret-would only delay confronting these challenges while preventing the collective problem-solving necessary to address them.
 
 ---
 
@@ -111,7 +111,7 @@ In August 2025, OpenAI launched a Kaggle competition inviting researchers worldw
 - Code execution capabilities could be exploited
 - Memory systems could be poisoned with malicious data
 
-**The lesson:** Agentic systems—models acting autonomously with tools and memory—are *significantly* more vulnerable than models in controlled evaluation environments.
+**The lesson:** Agentic systems-models acting autonomously with tools and memory-are *significantly* more vulnerable than models in controlled evaluation environments.
 
 This is concerning because the industry is moving rapidly toward agentic AI.
 
@@ -274,10 +274,30 @@ for alert in monitor.alerts:
         investigate_divergence(alert)
 ```
 
+<br />
+
+## 🛠️ Try It Yourself: AI Metacognition Toolkit
+
+The detection methods discussed in this series are now available as an open-source Python toolkit. Rather than building monitoring systems from scratch, you can use production-ready implementations:
+
+**Key capabilities:**
+- **Detect situational awareness** in AI model outputs using Bayesian inference
+- **Analyze reasoning chains** through counterfactual interventions  
+- **Monitor production systems** for behavioral divergence
+- **Statistical anomaly detection** with configurable thresholds
+
+### Quick Start
+```bash
+pip install ai-metacognition-toolkit
+```
+
+<br />
+<br />
+
 **What this monitors:**
 
 1. **Response length divergence:** Sudden changes might indicate different reasoning strategies
-2. **Refusal rate changes:** Critical for safety—unexpected increases/decreases require investigation
+2. **Refusal rate changes:** Critical for safety-unexpected increases/decreases require investigation
 3. **Tool usage patterns:** Agentic behavior divergence from evaluation
 4. **Reasoning depth:** Changes suggest different cognitive strategies
 
@@ -285,6 +305,8 @@ for alert in monitor.alerts:
 - Refusal rate divergence >3σ: Immediate review (safety-critical)
 - Any feature >4σ: Consider model rollback
 - Persistent trends: May indicate systematic evaluation-production gap
+
+<br />
 
 ### Real-World Deployment
 
@@ -370,7 +392,7 @@ Several organizations are implementing variants of this approach:
 
 **Evidence-based regulation:**
 
-The traditional regulatory approach—"certify as safe before deployment"—faces challenges when evaluation reliability is uncertain.
+The traditional regulatory approach-"certify as safe before deployment"-faces challenges when evaluation reliability is uncertain.
 
 **Alternative framework:**
 - Continuous monitoring requirements rather than one-time certification
@@ -578,7 +600,7 @@ The meta-cognitive era of AI demands a fundamental shift in mindset.
 - Improving evaluation methodologies
 - Clear research directions
 
-**The challenge ahead isn't to eliminate uncertainty—that may be impossible.**
+**The challenge ahead isn't to eliminate uncertainty-that may be impossible.**
 
 **The challenge is to build robust safety frameworks despite fundamental limits on our ability to evaluate and control sophisticated AI systems.**
 
@@ -591,7 +613,7 @@ This requires:
 
 **We're building the future one uncertain step at a time.**
 
-The observer effect in AI is here to stay. Our response to this challenge—characterized by collaboration, transparency, and methodological rigor—will determine whether advanced AI systems can be deployed safely and beneficially.
+The observer effect in AI is here to stay. Our response to this challenge-characterized by collaboration, transparency, and methodological rigor-will determine whether advanced AI systems can be deployed safely and beneficially.
 
 The meta-cognitive era has begun. The work continues.
 
@@ -616,10 +638,17 @@ The meta-cognitive era has begun. The work continues.
 ## Series Resources
 
 **Read the full series:**
-1. [The Observer Effect in AI: When Models Know They're Being Tested](/blog/observer-effect-ai)
-2. [Deliberative Alignment: Can We Train AI Not to Scheme?](/blog/deliberative-alignment)
-3. [Alignment Faking: When AI Pretends to Change](/blog/alignment-faking)
+1. [The Observer Effect in AI: When Models Know They're Being Tested]({% link _posts/2025-09-30-ai-observer-effect-models-recognize-evaluation.md %})
+2. [Deliberative Alignment: Can We Train AI Not to Scheme?]({% link _posts/2025-10-03-deliberative-alignment-training-ai-not-to-scheme.md %})
+3. [Alignment Faking: When AI Pretends to Change]({% link _posts/2025-10-07-alignment-faking-ai-pretends-to-change-values.md %})
 4. Building Safer AI: Industry Response and the Path Forward *(you are here)*
+
+<br />
+
+**Practical tools:**
+- 🛠️ [AI Metacognition Toolkit](https://ai-metacognition-toolkit.subhadipmitra.com/) - Open-source implementation of methods from this series
+
+<br />
 
 **External resources:**
 - [Video explanation: "AI Models Can Now Scheme"](https://www.youtube.com/watch?v=S0yWN527sKk)
@@ -632,7 +661,7 @@ The meta-cognitive era has begun. The work continues.
 
 ## Acknowledgments
 
-This series draws on collaborative research between OpenAI, Apollo Research, Anthropic, Google DeepMind, and independent safety organizations. The transparent publication of detailed findings—including failure modes and limitations—represents crucial progress toward responsible AI development.
+This series draws on collaborative research between OpenAI, Apollo Research, Anthropic, Google DeepMind, and independent safety organizations. The transparent publication of detailed findings-including failure modes and limitations-represents crucial progress toward responsible AI development.
 
 Special thanks to the researchers whose work made this series possible, and to the AI safety community for ongoing efforts to understand and address these challenges.
 

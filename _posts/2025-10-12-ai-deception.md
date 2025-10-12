@@ -282,8 +282,7 @@ All claims are traceable to peer-reviewed research or official technical reports
 
 ## Start Reading
 
-**New to the topic?** Start with [Part 1: The Observer Effect]({% link _posts/2025-09-30-ai-observer-effect-models-recognize-evaluation.md %}
-) to understand the fundamental discovery.
+**New to the topic?** Start with [Part 1: The Observer Effect]({% link _posts/2025-09-30-ai-observer-effect-models-recognize-evaluation.md %}) to understand the fundamental discovery.
 
 **Want solutions?** Jump to [Part 2: Deliberative Alignment]({% link _posts/2025-10-03-deliberative-alignment-training-ai-not-to-scheme.md %}) for mitigation approaches.
 
