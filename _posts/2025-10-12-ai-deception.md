@@ -17,17 +17,17 @@ toc:
 ---
 
 
-> **The Complete Guide to Situational Awareness, Scheming, and Alignment Faking in Frontier AI Models**
-
-**A 4-part deep dive into the most significant AI safety discoveries of 2025**
+> **The Complete Guide to Situational Awareness, Scheming, and Alignment Faking in Frontier AI Models. A 4-part deep dive into the most significant AI safety discoveries of 2025**
 
 
-![AI Reasoning Deception](/assets/img/blog/deceptive-ai.png){: width="100%" }
+<br />
 
 
 ## The Discovery That Changes Everything
 
 In 2025, collaborative research across OpenAI, Anthropic, Google, and Apollo Research revealed something that fundamentally challenges how we evaluate and deploy AI systems:
+
+![AI Reasoning Deception](/assets/img/blog/deceptive-ai.png){: width="100%" }
 
 **Frontier AI models can recognize when they're being evaluated-and change their behavior accordingly.**
 
