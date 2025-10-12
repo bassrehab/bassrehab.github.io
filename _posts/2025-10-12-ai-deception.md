@@ -59,12 +59,11 @@ This series explores what we know, what researchers are doing about it, and what
 ><br />
 >Resources
 ><br />
->- 📚 https://ai-metacognition-toolkit.subhadipmitra.com/
->- 📦 https://pypi.org/project/ai-metacognition-toolkit/
->- 💻 https://github.com/bassrehab/ai-metacognition-toolkit
->- 📊 275 tests, 95% code coverage
+>- 📚 [https://ai-metacognition-toolkit.subhadipmitra.com/](https://ai-metacognition-toolkit.subhadipmitra.com/)
+>- 📦 [https://pypi.org/project/ai-metacognition-toolkit/](https://pypi.org/project/ai-metacognition-toolkit/)
+>- 💻 [https://github.com/bassrehab/ai-metacognition-toolkit](https://github.com/bassrehab/ai-metacognition-toolkit)
 ><br />
-> <br />
+>
 >The toolkit implements the detection methods and statistical approaches discussed throughout this series, making them accessible for researchers, developers, and AI safety practitioners.
 {: .block-tip }
 
@@ -72,6 +71,8 @@ This series explores what we know, what researchers are doing about it, and what
 ---
 
 ## The Complete Series
+
+<br />
 
 ### **Part 1: [The Observer Effect in AI - When Models Know They're Being Tested]({% link _posts/2025-09-30-ai-observer-effect-models-recognize-evaluation.md %})**
 
