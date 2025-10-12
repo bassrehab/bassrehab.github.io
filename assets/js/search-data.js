@@ -65,7 +65,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/privacy/";
               },
-            },{id: "post-why-kimi-k2-stands-out-a-deep-dive-into-its-trillion-parameter-moe",
+            },{id: "post-the-observer-effect-in-ai-when-models-know-they-39-re-being-tested",
+        
+          title: "The Observer Effect in AI - When Models Know They&#39;re Being Tested",
+        
+        description: "Frontier AI models from OpenAI, Anthropic, Google &amp; others can detect when they&#39;re being tested and modify behavior-challenging AI safety evaluation methods.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/ai-deception/";
+          
+        },
+      },{id: "post-why-kimi-k2-stands-out-a-deep-dive-into-its-trillion-parameter-moe",
         
           title: "Why Kimi K2 Stands Out - A Deep Dive into Its Trillion-Parameter MoE...",
         
