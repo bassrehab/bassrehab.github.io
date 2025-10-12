@@ -40,6 +40,33 @@ The implications are profound: **We may be building systems we cannot fully eval
 
 This series explores what we know, what researchers are doing about it, and what comes next.
 
+
+<br />
+
+>## 🛠️ Try It Yourself: AI Metacognition Toolkit
+><br />
+>The detection methods discussed in this series are now available as an open-source Python toolkit. You can use it to:
+><br />
+>- **Detect situational awareness** in AI model outputs using Bayesian inference
+>- **Analyze reasoning chains** through counterfactual interventions
+>- **Monitor production systems** for behavioral divergence
+>
+> ### Quick Start
+>`pip install ai-metacognition-toolkit`
+><br />
+><br />
+>Resources
+><br />
+>- 📚 https://ai-metacognition-toolkit.subhadipmitra.com/
+>- 📦 https://pypi.org/project/ai-metacognition-toolkit/
+>- 💻 https://github.com/bassrehab/ai-metacognition-toolkit
+>- 📊 275 tests, 95% code coverage
+><br />
+> <br />
+>The toolkit implements the detection methods and statistical approaches discussed throughout this series, making them accessible for researchers, developers, and AI safety practitioners.
+{: .block-tip }
+
+
 ---
 
 ## The Complete Series
