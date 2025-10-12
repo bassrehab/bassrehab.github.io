@@ -2,11 +2,11 @@ github_users:
   - bassrehab
 
 github_repos:
-  - bassrehab/pycontext
+  - bassrehab/ai-metacognition-toolkit
+  - LLMConsent/llmconsent-standards  
   - bassrehab/oconsent
   - bassrehab/ISO8583-Simulator
   - bassrehab/neuralmark
   - bassrehab/smpp-kafka-producer
   - bassrehab/blockchain-loyalty-fabric
   - bassrehab/blockchain_exchange
-  - bassrehab/unified-socket
