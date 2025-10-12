@@ -34,35 +34,54 @@ latest_posts:
 
 At **Google Cloud**, I lead Data Analytics and serve as Site Lead for Southeast Asia, where I manage multi-million-dollar initiatives and mentor high-performing teams-all while remaining an active engineer and researcher. My background also includes founding a B2B digital [marketplace](https://truckaurbus.com), which has enriched my approach by blending startup agility with enterprise-grade strategy.
 
+---
 
-#### Core Expertise
+#### What I Do
 
-- **Leadership & Strategy:** Shaping technology vision and guiding cross-functional teams.
-- **Hands-On Engineering:** Developing innovative AI, Data, and Cloud solutions.
-- **Digital Transformation:** Architecting scalable platforms that deliver measurable business impact.
-- **Entrepreneurial Insight:** Merging startup innovation with proven enterprise methodologies.
+**Strategic Leadership** - Driving digital transformation and cloud adoption across enterprise organizations in Southeast Asia.
+
+**Research & Innovation** - Developing novel approaches to AI systems, from field-theoretic context models to multi-agent frameworks. Published in technical disclosures and industry whitepapers.
+
+**Hands-On Engineering** - Building production systems, contributing to open-source frameworks, and maintaining active codebases.
+
+**Entrepreneurial Experience** - Founded and scaled a B2B marketplace, bringing startup agility to enterprise strategy.
+
 
 ---
 
-#### Innovations & Research
+#### Select Innovations & Frameworks
 
 - **Field-Theoretic Context System (FTCS)** - Pioneered a novel approach to context processing that models context as interacting fields rather than discrete states, enabling natural context flow and dynamic evolution. ([Technical Disclosure](https://www.tdcommons.org/dpubs_series/8022/), 2025)
+
 - **ETLC: Context-First Data Processing** - Developed a framework that reimagines data integration for the Generative AI era by adding semantic, relational, operational, environmental, and behavioral context. ([Google Cloud Whitepaper](https://services.google.com/fh/files/blogs/etlc_full_paper.pdf), 2025)
+
 - **Multi-Agent Decision Framework (ARTEMIS)** - Invented an adaptive system for enterprise decision-making, ([Technical Disclosure](https://www.tdcommons.org/dpubs_series/7729/), 2025)
-- **Next-Gen Data Platform Architecture** - Framework reimagining data integration for the Generative AI era, ([ETLC](https://subhadipmitra.com/blog/2024/etlc-adaptive-contexts-and-contextual-joins/), 2024) 
+
+- **AI Metacognition Toolkit** - Open-source framework for systematic reasoning in AI systems  [Documentation](https://ai-metacognition-toolkit.subhadipmitra.com/) • [PyPI](https://pypi.org/project/ai-metacognition-toolkit/) • [GitHub](https://github.com/bassrehab/ai-metacognition-toolkit)
+
 - **Privacy & Consent Protocols** - open frameworks ([OLP](https://olpprotocol.com), 2022; [OConsent](https://oconsent.io), 2021) for secure data sharing and transparent consent management.
-- **Proprietary Methods:** Invented techniques for scalable workload discovery using billion-node graph models.
+
+<br />
 
 
-#### Current Research Interests
+#### Current Research Focus
 
-- **Contextual Representation for AI Systems** - Advancing field-theoretic approaches to how AI models maintain and process contextual information, with focus on efficient relationship modeling, dynamic context evolution, and information retrieval in practical applications.
+- **Contextual AI Systems** - Field-theoretic approaches to context representation, efficient relationship modeling, and dynamic information flow.
 
-- **Multi-agent Enterprise Systems** - Building practical [frameworks](https://github.com/bassrehab/pycontext) for coordinated AI agents that work together to solve complex business problems at scale, with emphasis on reliability and governance.
+- **Multi-Agent Enterprises** - Practical [frameworks](https://github.com/bassrehab/pycontext) for coordinated AI agents solving complex business problems at scale.
 
-- **LLM Infrastructure Optimization** - Researching efficient deployment architectures, inference acceleration techniques, and cost-effective serving strategies for large language models in production environments.
+- **LLM Infrastructure** - Efficient deployment architectures, inference acceleration, and cost-effective serving strategies.
 
-- **Spatiotemporal Graph Analytics** - Applying graph theory to model how resources interact across both space and time, with practical applications in cloud infrastructure optimization and workload scheduling.
+- **Spatiotemporal Analytics** - Graph-theoretic models for cloud infrastructure optimization and resource scheduling.
+
+
+---
+
+#### Affiliations & Recognition
+
+**Academic** - [IIT Madras](https://www.iitm.ac.in/), [BITS Pilani](https://www.bits-pilani.ac.in/)  
+**Professional** - [IEEE](https://www.ieee.org/), [ACM](https://www.acm.org/), [SCS](https://www.scs.org.sg/), [RIN](https://rin.org.uk/)  
+**Patents & Publications** - 3 Technical Disclosures, Multiple Industry Publications
 
 ---
 
