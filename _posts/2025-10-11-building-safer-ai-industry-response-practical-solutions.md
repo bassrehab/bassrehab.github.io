@@ -276,6 +276,23 @@ for alert in monitor.alerts:
 
 <br />
 
+## 🛠️ Try It Yourself: AI Metacognition Toolkit
+
+The detection methods discussed in this series are now available as an open-source Python toolkit. Rather than building monitoring systems from scratch, you can use production-ready implementations:
+
+**Key capabilities:**
+- **Detect situational awareness** in AI model outputs using Bayesian inference
+- **Analyze reasoning chains** through counterfactual interventions  
+- **Monitor production systems** for behavioral divergence
+- **Statistical anomaly detection** with configurable thresholds
+
+### Quick Start
+```bash
+pip install ai-metacognition-toolkit
+```
+
+<br />
+<br />
 
 **What this monitors:**
 
