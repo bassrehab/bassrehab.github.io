@@ -711,12 +711,12 @@ social: true
             <div class="bento-label">Education</div>
             <h3 class="bento-title">Academic Background</h3>
             <ul class="bento-list">
-                <li><strong>MBA, Business Analytics</strong> - BITS Pilani</li>
-                <li><strong>MTech, Software Systems</strong> - BITS Pilani</li>
+                <li><strong>MBA, Business Analytics</strong> - <a href="https://www.bits-pilani.ac.in/">BITS Pilani</a></li>
+                <li><strong>MTech, Software Systems</strong> - <a href="https://www.bits-pilani.ac.in/">BITS Pilani</a></li>
             </ul>
             <br>
             <div class="bento-label" style="margin-top: 1rem;">Affiliations</div>
-            <p class="bento-description">IIT Madras • IEEE • ACM • SCS • RIN</p>
+            <p class="bento-description"><a href="https://www.iitm.ac.in/">IIT Madras</a> • <a href="https://www.ieee.org/">IEEE</a> • <a href="https://www.acm.org/">ACM</a> • <a href="https://www.scs.org.sg/">SCS</a> • <a href="https://rin.org.uk/">RIN</a></p>
         </div>
     </div>
 
