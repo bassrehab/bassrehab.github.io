@@ -1,0 +1,332 @@
+/* Modern CV Styling - Add this to your CV page */
+
+/* Container and base styling */
+.cv-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: #2c3e50;
+  line-height: 1.6;
+}
+
+/* Privacy notice styling */
+.cv-page > p:first-of-type {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1.25rem 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 3rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  box-shadow: 0 4px 6px rgba(102, 126, 234, 0.2);
+}
+
+.cv-page > p:first-of-type a {
+  color: white;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.5);
+  transition: text-decoration-color 0.3s;
+}
+
+.cv-page > p:first-of-type a:hover {
+  text-decoration-color: white;
+}
+
+/* Section headers */
+.cv-page h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 3rem 0 1.5rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid #667eea;
+  position: relative;
+}
+
+.cv-page h2::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: #764ba2;
+}
+
+/* Basics section - modern card */
+.cv-page h2:first-of-type + table {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px;
+  padding: 2rem;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+}
+
+.cv-page h2:first-of-type + table td {
+  padding: 0.75rem 0;
+  border: none;
+  font-size: 1rem;
+}
+
+.cv-page h2:first-of-type + table td:first-child {
+  font-weight: 600;
+  color: #667eea;
+  min-width: 120px;
+  padding-right: 1.5rem;
+}
+
+/* Work experience entries */
+.cv-page ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cv-page ul li {
+  position: relative;
+  padding-left: 2.5rem;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-left: 2px solid #e2e8f0;
+}
+
+.cv-page ul li::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 0 0 4px #fff, 0 0 0 6px #e2e8f0;
+}
+
+.cv-page ul li:last-child {
+  border-left-color: transparent;
+  padding-bottom: 0;
+  margin-bottom: 1rem;
+}
+
+/* Date styling */
+.cv-page ul li::after {
+  content: attr(data-date);
+  position: absolute;
+  left: -8rem;
+  top: -2px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #718096;
+  white-space: nowrap;
+}
+
+/* Job title and company */
+.cv-page ul li > a {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a202c;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 0.25rem;
+  transition: color 0.3s;
+}
+
+.cv-page ul li > a:hover {
+  color: #667eea;
+}
+
+.cv-page ul li > p:first-of-type {
+  font-size: 0.95rem;
+  color: #4a5568;
+  margin: 0.25rem 0 1rem 0;
+  font-weight: 500;
+}
+
+/* Bullet points within experience */
+.cv-page ul li ul {
+  margin-top: 1rem;
+  padding-left: 0;
+}
+
+.cv-page ul li ul li {
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  border: none;
+  position: relative;
+}
+
+.cv-page ul li ul li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-size: 0.875rem;
+  box-shadow: none;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background: none;
+  top: 2px;
+}
+
+.cv-page ul li ul li::after {
+  display: none;
+}
+
+/* Publications styling */
+.cv-page h2:contains("Publications") ~ ul li {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  padding-left: 1.5rem;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #667eea;
+  margin-bottom: 1.5rem;
+}
+
+.cv-page h2:contains("Publications") ~ ul li::before,
+.cv-page h2:contains("Publications") ~ ul li::after {
+  display: none;
+}
+
+/* Skills table styling */
+.cv-page table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 1.5rem 0;
+}
+
+.cv-page table td {
+  padding: 0.875rem 1.25rem;
+  border: 1px solid #e2e8f0;
+  background: white;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.cv-page table td:first-child {
+  font-weight: 600;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  color: #2d3748;
+  border-right: 3px solid #667eea;
+  min-width: 200px;
+}
+
+.cv-page table tr:first-child td:first-child {
+  border-top-left-radius: 8px;
+}
+
+.cv-page table tr:first-child td:last-child {
+  border-top-right-radius: 8px;
+}
+
+.cv-page table tr:last-child td:first-child {
+  border-bottom-left-radius: 8px;
+}
+
+.cv-page table tr:last-child td:last-child {
+  border-bottom-right-radius: 8px;
+}
+
+.cv-page table tr:hover td {
+  background: #f7fafc;
+}
+
+/* Certificates styling */
+.cv-page h2 + table[style*="border"] {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.cv-page h2 + table[style*="border"] td {
+  padding: 1rem;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.cv-page h2 + table[style*="border"] tr {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.cv-page h2 + table[style*="border"] tr:last-child {
+  margin-bottom: 0;
+}
+
+.cv-page h2 + table[style*="border"] td a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #667eea;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.cv-page h2 + table[style*="border"] td a:hover {
+  color: #764ba2;
+}
+
+/* Projects styling */
+.cv-page h2:contains("Projects") ~ ul li {
+  background: white;
+  border-radius: 12px;
+  padding: 1.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #667eea;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cv-page h2:contains("Projects") ~ ul li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+.cv-page h2:contains("Projects") ~ ul li::before,
+.cv-page h2:contains("Projects") ~ ul li::after {
+  display: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .cv-page {
+    padding: 1rem;
+  }
+  
+  .cv-page h2 {
+    font-size: 1.5rem;
+  }
+  
+  .cv-page ul li {
+    padding-left: 1.5rem;
+  }
+  
+  .cv-page ul li::after {
+    position: static;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+  }
+  
+  .cv-page table td:first-child {
+    min-width: auto;
+  }
+}
+
+/* Print styles */
+@media print {
+  .cv-page ul li {
+    page-break-inside: avoid;
+  }
+  
+  .cv-page h2 {
+    page-break-after: avoid;
+  }
+}
