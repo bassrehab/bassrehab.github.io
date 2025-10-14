@@ -32,7 +32,7 @@ ninja.data = [{
           },
         },{id: "nav-cv",
           title: "cv",
-          description: "This is a public version of my resume with certain sensitive details removed for privacy. These include contact numbers and specific project metrics. For a detailed resume, please contact me at contact@subhadipmitra.com or connect with me on LinkedIn - https://www.linkedin.com/in/subhadip-mitra/",
+          description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
