@@ -1,0 +1,379 @@
+/* Editorial Typography System - Site-wide */
+
+/* Import this in your main.scss or _base.scss */
+
+/* Typography Variables */
+:root {
+  --font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-heading-weight: 800;
+  --font-display-weight: 900;
+  --letter-spacing-tight: -0.03em;
+  --letter-spacing-normal: -0.02em;
+  --letter-spacing-loose: -0.01em;
+}
+
+/* Base Body Typography */
+body {
+  font-family: var(--font-system);
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings - Editorial Style */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-system);
+  font-weight: var(--font-heading-weight);
+  line-height: 1.2;
+  color: var(--global-text-color);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* H1 - Display/Hero */
+h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: var(--font-display-weight);
+  line-height: 1;
+  letter-spacing: var(--letter-spacing-tight);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+/* H2 - Section Headers */
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: var(--font-display-weight);
+  line-height: 1.1;
+  letter-spacing: var(--letter-spacing-normal);
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+/* H3 - Subsection Headers */
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: var(--font-heading-weight);
+  line-height: 1.2;
+  letter-spacing: var(--letter-spacing-normal);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* H4 - Card/Component Titles */
+h4 {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: var(--letter-spacing-loose);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* H5 & H6 - Minor Headings */
+h5 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+h6 {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--global-theme-color);
+}
+
+/* Paragraph & Body Text */
+p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+  color: var(--global-text-color-light);
+}
+
+/* Lead Paragraph (Introductory text) */
+.lead,
+p.lead {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--global-text-color-light);
+  margin-bottom: 2rem;
+}
+
+/* Small Text */
+small,
+.small {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Labels & Metadata */
+.label,
+.meta {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--global-theme-color);
+}
+
+/* Links */
+a {
+  color: var(--global-theme-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--global-text-color);
+}
+
+/* Strong & Bold */
+strong,
+b {
+  font-weight: 700;
+  color: var(--global-text-color);
+}
+
+/* Emphasis */
+em,
+i {
+  font-style: italic;
+}
+
+/* Lists */
+ul, ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  color: var(--global-text-color-light);
+}
+
+/* Blockquotes */
+blockquote {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  font-style: italic;
+  margin: 2rem 0;
+  padding-left: 2rem;
+  border-left: 4px solid var(--global-theme-color);
+  color: var(--global-text-color-light);
+}
+
+blockquote p {
+  margin-bottom: 0.5rem;
+}
+
+/* Code Typography */
+code {
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  font-size: 0.9em;
+  background: var(--global-code-bg-color);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+
+pre {
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  padding: 1.25rem;
+  background: var(--global-code-bg-color);
+  border-radius: 8px;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  font-size: inherit;
+}
+
+/* Utility Classes */
+
+/* Display Text - For hero sections */
+.display-1 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: var(--font-display-weight);
+  line-height: 0.95;
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.display-2 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: var(--font-display-weight);
+  line-height: 1;
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.display-3 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: var(--font-display-weight);
+  line-height: 1.05;
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+/* Text Sizes */
+.text-xs {
+  font-size: 0.75rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.text-base {
+  font-size: 1rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+}
+
+/* Font Weights */
+.font-normal {
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-extrabold {
+  font-weight: 800;
+}
+
+.font-black {
+  font-weight: 900;
+}
+
+/* Letter Spacing */
+.tracking-tighter {
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.tracking-tight {
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+.tracking-normal {
+  letter-spacing: 0;
+}
+
+.tracking-wide {
+  letter-spacing: 0.05em;
+}
+
+.tracking-wider {
+  letter-spacing: 0.1em;
+}
+
+/* Line Height */
+.leading-none {
+  line-height: 1;
+}
+
+.leading-tight {
+  line-height: 1.2;
+}
+
+.leading-snug {
+  line-height: 1.4;
+}
+
+.leading-normal {
+  line-height: 1.6;
+}
+
+.leading-relaxed {
+  line-height: 1.8;
+}
+
+/* Text Colors */
+.text-primary {
+  color: var(--global-text-color);
+}
+
+.text-secondary {
+  color: var(--global-text-color-light);
+}
+
+.text-accent {
+  color: var(--global-theme-color);
+}
+
+/* Responsive Typography Adjustments */
+@media (max-width: 768px) {
+  body {
+    font-size: 0.9375rem; /* 15px */
+  }
+
+  h1 {
+    margin-top: 0;
+  }
+
+  h2 {
+    margin-top: 2rem;
+  }
+
+  h3 {
+    margin-top: 1.5rem;
+  }
+
+  blockquote {
+    padding-left: 1.25rem;
+    margin: 1.5rem 0;
+    font-size: 1.125rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  p, li {
+    orphans: 3;
+    widows: 3;
+  }
+}

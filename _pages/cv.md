@@ -570,10 +570,10 @@ nav_order: 5
         <h1>Subhadip Mitra</h1>
         <div class="tagline">Technical Leader, Data & AI Transformation</div>
         <div class="contact-info">
-            <a href="mailto:contact@subhadipmitra.com">📧 contact@subhadipmitra.com</a>
-            <a href="https://subhadipmitra.com" target="_blank">🌐 subhadipmitra.com</a>
-            <a href="https://www.linkedin.com/in/subhadip-mitra/" target="_blank">💼 LinkedIn</a>
-            <a href="/assets/pdf/cv.pdf" target="_blank">📄 Download PDF</a>
+            <a href="mailto:contact@subhadipmitra.com"><i class="fas fa-envelope"></i> contact@subhadipmitra.com</a>
+            <a href="https://subhadipmitra.com" target="_blank"><i class="fas fa-globe"></i> subhadipmitra.com</a>
+            <a href="https://www.linkedin.com/in/subhadip-mitra/" target="_blank"><i class="fas fa-suitcase"></i> LinkedIn</a>
+            <a href="/assets/pdf/cv.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Download PDF</a>
         </div>
     </div>
 
