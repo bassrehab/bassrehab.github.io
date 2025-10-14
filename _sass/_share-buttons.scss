@@ -1,27 +1,26 @@
 // _sass/_share-buttons.scss
 
 .share-container {
-  margin: 3rem 0;
+  margin: 2rem 0 -0.5rem 0;
   padding: 2rem;
   background: #f8f9fa;
-  border-radius: 8px;
-  border: 1px solid #e9ecef;
+  background: var(--global-code-bg-color);
+  border-radius: 2px;
 
   h2 {
     margin-top: 0;
     font-size: 1.5rem;
-    color: #333;
+    color: var(--global-text-color);
   }
 
   p {
-    color: #666;
+    color: var(--global-text-color);
     margin-bottom: 1.5rem;
   }
 }
 
 .share-buttons {
   display: flex;
-  gap: 1rem;
   flex-wrap: wrap;
   align-items: center;
 }
@@ -44,6 +43,7 @@
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     text-decoration: none;
+    color: white!important;
   }
 
   .icon {
