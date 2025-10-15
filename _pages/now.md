@@ -461,7 +461,7 @@ nav_order: 1
             <div class="stat-label">Active Projects</div>
         </div>
         <div class="stat-item">
-            <div class="stat-number">12</div>
+            <div class="stat-number">6</div>
             <div class="stat-label">Countries This Year</div>
         </div>
         <div class="stat-item">
@@ -469,7 +469,7 @@ nav_order: 1
             <div class="stat-label">Papers In Progress</div>
         </div>
         <div class="stat-item">
-            <div class="stat-number">5</div>
+            <div class="stat-number">2</div>
             <div class="stat-label">Talks Scheduled</div>
         </div>
     </div>
