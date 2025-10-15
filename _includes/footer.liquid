@@ -1,26 +1,210 @@
+<!-- Add this CSS to your main stylesheet or in a <style> tag -->
+<style>
+.modern-footer {
+  background: var(--global-bg-color);
+  border-top: 1px solid var(--global-divider-color);
+  padding: 3rem 0 2rem 0;
+  margin-top: 8rem;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.footer-brand h3 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--global-text-color);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.footer-brand p {
+  font-size: 0.95rem;
+  color: var(--global-text-color-light);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.footer-section h4 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--global-theme-color);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  color: var(--global-text-color-light);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: var(--global-theme-color);
+}
+
+.footer-bottom {
+  padding-top: 2rem;
+  border-top: 1px solid var(--global-divider-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-copyright {
+  font-size: 0.875rem;
+  color: var(--global-text-color-light);
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-social a {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--global-code-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 8px;
+  color: var(--global-text-color);
+  text-decoration: none;
+  transition: all 0.3s;
+  font-size: 1rem;
+}
+
+.footer-social a:hover {
+  background: var(--global-theme-color);
+  color: var(--global-bg-color);
+  border-color: var(--global-theme-color);
+  transform: translateY(-2px);
+}
+
+/* Dark theme specific adjustments */
+[data-theme='dark'] .footer-social a:hover {
+  color: #fff;
+}
+
+html.dark-mode .footer-social a:hover {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .modern-footer {
+    margin-top: 4rem;
+    padding: 2rem 0 1.5rem 0;
+  }
+}
+</style>
+
+<!-- Updated Footer HTML -->
 {% capture footer_contents %}
-  &copy; Copyright {{ site.time | date: '%Y' }}
-  {{ site.first_name }}
-  {{ site.middle_name }}
-  {{ site.last_name }}. {{ site.footer_text }}
-  {% if site.impressum_path %}
-    <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>.
-  {% endif %}
-  {% if site.last_updated %}
-    Last updated: {{ 'now' | date: '%B %d, %Y' }}.
-  {% endif %}
+<div class="footer-container">
+  <div class="footer-grid">
+    <!-- Brand/About Section -->
+    <div class="footer-brand">
+      <h3>{{ site.first_name }} {{ site.last_name }}</h3>
+      <p>
+        Technical Leader, Inventor, and Researcher building the future of Data & Applied AI. 
+        Leading Google Cloud's practice across Southeast Asia.
+      </p>
+    </div>
+    
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h4>Explore</h4>
+      <ul class="footer-links">
+        <li><a href="/">About</a></li>
+        <li><a href="/now/">What I'm Doing Now</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/publications/">Publications</a></li>
+        <li><a href="/repositories/">Repositories</a></li>
+      </ul>
+    </div>
+    
+    <!-- Connect -->
+    <div class="footer-section">
+      <h4>Connect</h4>
+      <ul class="footer-links">
+        <li><a href="mailto:contact@subhadipmitra.com">Email</a></li>
+        <li><a href="https://calendly.com/subhadipmitra" target="_blank">Schedule a Call</a></li>
+        <li><a href="https://linkedin.com/in/subhadip-mitra" target="_blank">LinkedIn</a></li>
+        <li><a href="https://github.com/subhadipmitra" target="_blank">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Bottom Bar -->
+  <div class="footer-bottom">
+    <div class="footer-copyright">
+      &copy; {{ site.time | date: '%Y' }} {{ site.first_name }} {{ site.last_name }}. 
+      {{ site.footer_text }}
+      {% if site.last_updated %}
+        Last updated: {{ 'now' | date: '%B %d, %Y' }}.
+      {% endif %}
+    </div>
+    
+    <div class="footer-social">
+      <a href="https://linkedin.com/in/subhadip-mitra" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https://github.com/bassrehab" target="_blank" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://twitter.com/bassrehab" target="_blank" aria-label="Twitter">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="mailto:contact@subhadipmitra.com" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+  </div>
+</div>
 {% endcapture %}
 
 {% if site.footer_fixed %}
-  <footer class="fixed-bottom" role="contentinfo">
-    <div class="container mt-0">
-      {{ footer_contents }}
-    </div>
+  <footer class="modern-footer fixed-bottom" role="contentinfo">
+    {{ footer_contents }}
   </footer>
 {% else %}
-  <footer class="sticky-bottom mt-5" role="contentinfo">
-    <div class="container">
-      {{ footer_contents }}
-    </div>
+  <footer class="modern-footer" role="contentinfo">
+    {{ footer_contents }}
   </footer>
 {% endif %}

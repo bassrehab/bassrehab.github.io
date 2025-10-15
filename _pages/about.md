@@ -11,7 +11,7 @@ profile:
 
 news: false
 selected_papers: false
-social: true
+social: false
 ---
 
 <style>
@@ -687,6 +687,7 @@ social: true
         <div class="bento-item bento-small">
             <div class="bento-label">Connect</div>
             <ul class="bento-list">
+                <li><a href="/now/" style="text-decoration: none; color: inherit;"><i class="fas fa-clock"></i> What I'm Doing Now</a></li>
                 <li><a href="mailto:contact@subhadipmitra.com" style="text-decoration: none; color: inherit;"><i class="fas fa-envelope"></i> Email</a></li>
                 <li><a href="https://calendly.com/subhadipmitra" style="text-decoration: none; color: inherit;"><i class="fas fa-calendar-alt"></i> Schedule</a></li>
                 <li><a href="https://linkedin.com/in/subhadip-mitra" style="text-decoration: none; color: inherit;"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
@@ -843,16 +844,16 @@ social: true
             </article>
 
             <article class="research-card" data-number="03">
-                <h3>LLM Infrastructure Optimization</h3>
+                <h3>Distributed Systems & Infrastructure</h3>
                 <p>
-                    Researching efficient deployment architectures, inference acceleration techniques, and cost-effective serving strategies for production LLMs.
+                    Researching efficient architectures for AI systems at scale - from LLM serving and inference optimization to graph-based modeling of resource interactions across distributed cloud infrastructure.
                 </p>
             </article>
 
             <article class="research-card" data-number="04">
-                <h3>Spatiotemporal Graph Analytics</h3>
+                <h3>Orbital Edge Intelligence Systems</h3>
                 <p>
-                    Applying graph theory to model resource interactions across space and time, with applications in cloud infrastructure optimization.
+                    Advancing autonomous processing architectures for LEO satellite constellations - focusing on on-orbit analytics, inter-satellite task coordination, and distributed reinforcement learning for real-time geospatial intelligence without ground latency.
                 </p>
             </article>
         </div>
