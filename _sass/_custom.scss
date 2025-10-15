@@ -113,3 +113,137 @@ abbr.badge {
     border: none;
     border-radius: 4px; 
   }
+
+
+.modern-footer {
+  background: var(--global-bg-color);
+  border-top: 1px solid var(--global-divider-color);
+  padding: 3rem 0 2rem 0;
+  margin-top: 8rem;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.footer-brand h3 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--global-text-color);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.footer-brand p {
+  font-size: 0.95rem;
+  color: var(--global-text-color-light);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.footer-section h4 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--global-theme-color);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  color: var(--global-text-color-light);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: var(--global-theme-color);
+}
+
+.footer-bottom {
+  padding-top: 2rem;
+  border-top: 1px solid var(--global-divider-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-copyright {
+  font-size: 0.875rem;
+  color: var(--global-text-color-light);
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-social a {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--global-code-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 8px;
+  color: var(--global-text-color);
+  text-decoration: none;
+  transition: all 0.3s;
+  font-size: 1rem;
+}
+
+.footer-social a:hover {
+  background: var(--global-theme-color);
+  color: var(--global-bg-color);
+  border-color: var(--global-theme-color);
+  transform: translateY(-2px);
+}
+
+/* Dark theme specific adjustments */
+[data-theme='dark'] .footer-social a:hover {
+  color: #fff;
+}
+
+html.dark-mode .footer-social a:hover {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .modern-footer {
+    margin-top: 4rem;
+    padding: 2rem 0 1.5rem 0;
+  }
+}
