@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Deliberative Alignment: Can We Train AI Not to Scheme?"
+title: "Deliberative Alignment: Can We Train AI Not to Scheme? - (Part 2/4)" 
 date: 2025-10-03
 author: [Subhadip Mitra]
 categories: [AI Safety, Machine Learning, Research]

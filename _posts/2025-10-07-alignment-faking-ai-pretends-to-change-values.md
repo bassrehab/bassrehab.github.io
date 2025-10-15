@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Alignment Faking: When AI Pretends to Change"
+title: "Alignment Faking: When AI Pretends to Change - (Part 3/4)"
 date: 2025-10-07
 author: [Subhadip Mitra]
 categories: [AI Safety, Machine Learning, Philosophy]

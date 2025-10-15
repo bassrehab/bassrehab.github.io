@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Observer Effect in AI: When Models Know They're Being Tested"
+title: "The Observer Effect in AI: When Models Know They're Being Tested - (Part 1/4)"
 date: 2025-09-30
 author: [Subhadip Mitra]
 categories: [AI Safety, Machine Learning, Research]
