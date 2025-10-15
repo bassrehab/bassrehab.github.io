@@ -488,6 +488,21 @@ nav_order: 1
                     <p>Will Larson • Exploring effective technical leadership patterns</p>
                 </div>
             </div>
+
+            <div class="book-item">
+                <div class="book-emoji"><i class="fas fa-book" style="color: #f59e0b;"></i></div>
+                <div class="book-details">
+                    <h4>Low Earth Orbit Satellite Design</h4>
+                    <p>George Sebestyen • Exploring satellite systems architecture and distributed networks</p>
+                </div>
+            </div>
+            <div class="book-item">
+                <div class="book-emoji"><i class="fas fa-book" style="color: #259e0b;"></i></div>
+                <div class="book-details">
+                    <h4>Probabilistic Combinatorial Optimization on Graphs</h4>
+                    <p>Cecile Murat & Vangelis Paschos • Finding approximate solutions for complex network optimization problems.</p>
+                </div>
+            </div>
             <div class="book-item">
                 <div class="book-emoji"><i class="fas fa-book" style="color: #8b5cf6;"></i></div>
                 <div class="book-details">
@@ -501,14 +516,7 @@ nav_order: 1
                     <h4>Why Machines Learn</h4>
                     <p>Anil Ananthaswamy • Deep dive into the mathematical foundations of machine learning</p>
                 </div>
-            </div>
-            <div class="book-item">
-                <div class="book-emoji"><i class="fas fa-book" style="color: #f59e0b;"></i></div>
-                <div class="book-details">
-                    <h4>Low Earth Orbit Satellite Design</h4>
-                    <p>George Sebestyen • Exploring satellite systems architecture and distributed networks</p>
-                </div>
-            </div>
+            </div>            
         </div>
     </section>
 
