@@ -677,7 +677,7 @@ social: false
         <!-- Current Role - Large -->
         <div class="bento-item bento-large">
             <div class="bento-label">Google Cloud · 2021-Present</div>
-            <h2 class="bento-title">Data & AI Manager | Site Lead Southeast Asia</h2>
+            <h2 class="bento-title">Data & Analytics Manager | Site Lead Southeast Asia</h2>
             <p class="bento-description">
                 Lead Data Analytics delivery and cross-practice operations across 7 countries in Southeast Asia. Built 0-to-1 organization establishing the region's premier Data & AI practice. Pioneered technical frameworks (FTCS, ETLC, ARTEMIS) and production-ready AI agent systems for autonomous data engineering. Led critical interventions safeguarding $XXM+ revenue while scaling enterprise Data and AI transformation across multiple sectors.
             </p>
@@ -691,7 +691,7 @@ social: false
                 <li><a href="mailto:contact@subhadipmitra.com" style="text-decoration: none; color: inherit;"><i class="fas fa-envelope"></i> Email</a></li>
                 <li><a href="https://calendly.com/subhadipmitra" style="text-decoration: none; color: inherit;"><i class="fas fa-calendar-alt"></i> Schedule</a></li>
                 <li><a href="https://linkedin.com/in/subhadip-mitra" style="text-decoration: none; color: inherit;"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-                <li><a href="https://github.com/subhadipmitra" style="text-decoration: none; color: inherit;"><i class="fab fa-github"></i> GitHub</a></li>
+                <li><a href="https://github.com/bassrehab" style="text-decoration: none; color: inherit;"><i class="fab fa-github"></i> GitHub</a></li>
             </ul>
         </div>
 
