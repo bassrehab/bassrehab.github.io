@@ -83,9 +83,9 @@ ninja.data = [{
             window.location.href = "/blog/2025/ai-deception/";
           
         },
-      },{id: "post-building-safer-ai-industry-response-and-the-path-forward",
+      },{id: "post-building-safer-ai-industry-response-and-the-path-forward-part-4-4",
         
-          title: "Building Safer AI: Industry Response and the Path Forward",
+          title: "Building Safer AI: Industry Response and the Path Forward - (Part 4/4)",
         
         description: "How the AI industry is responding to situational awareness challenges. Practical monitoring systems, collaborative research, and what organizations should do today.",
         section: "Posts",
@@ -94,9 +94,9 @@ ninja.data = [{
             window.location.href = "/blog/2025/building-safer-ai-industry-response-practical-solutions/";
           
         },
-      },{id: "post-alignment-faking-when-ai-pretends-to-change",
+      },{id: "post-alignment-faking-when-ai-pretends-to-change-part-3-4",
         
-          title: "Alignment Faking: When AI Pretends to Change",
+          title: "Alignment Faking: When AI Pretends to Change - (Part 3/4)",
         
         description: "Claude 3 Opus strategically fakes compliance during training to preserve its values. This alignment faking undermines our ability to modify AI behavior safely.",
         section: "Posts",
@@ -105,9 +105,9 @@ ninja.data = [{
             window.location.href = "/blog/2025/alignment-faking-ai-pretends-to-change-values/";
           
         },
-      },{id: "post-deliberative-alignment-can-we-train-ai-not-to-scheme",
+      },{id: "post-deliberative-alignment-can-we-train-ai-not-to-scheme-part-2-4",
         
-          title: "Deliberative Alignment: Can We Train AI Not to Scheme?",
+          title: "Deliberative Alignment: Can We Train AI Not to Scheme? - (Part 2/4)",
         
         description: "Researchers achieved a 30-fold reduction in AI scheming through deliberative alignment. But rare failures persist. Can we truly train models not to deceive?",
         section: "Posts",
@@ -116,9 +116,9 @@ ninja.data = [{
             window.location.href = "/blog/2025/deliberative-alignment-training-ai-not-to-scheme/";
           
         },
-      },{id: "post-the-observer-effect-in-ai-when-models-know-they-39-re-being-tested",
+      },{id: "post-the-observer-effect-in-ai-when-models-know-they-39-re-being-tested-part-1-4",
         
-          title: "The Observer Effect in AI: When Models Know They&#39;re Being Tested",
+          title: "The Observer Effect in AI: When Models Know They&#39;re Being Tested - (Part...",
         
         description: "Frontier AI models from OpenAI, Anthropic, and Google can now recognize when they&#39;re being tested. This observer effect undermines AI safety evaluation.",
         section: "Posts",
