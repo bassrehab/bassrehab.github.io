@@ -26,7 +26,7 @@ social: false
                 <span class="highlight">Future of Data & Applied AI</span>
             </h1>
             <p class="hero-description">
-                Leading Google Cloud's Data & AI practice across Southeast Asia. Building teams, pioneering frameworks, delivering transformation at petabyte-scale.
+                Leading Google Cloud's Data & Analytics practice across Southeast Asia. Building teams, pioneering frameworks, delivering transformation at petabyte-scale.
             </p>
             <div class="hero-pills">
                 <span class="pill">Applied AI</span>
