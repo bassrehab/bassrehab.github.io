@@ -15,7 +15,6 @@ social: false
 ---
 
 
-
 <div class="editorial-home">
     <!-- Oversized Hero -->
     <section class="hero-editorial">
@@ -63,6 +62,9 @@ social: false
             </ul>
         </div>
 
+
+
+
         <!-- Expertise - Medium -->
         <div class="bento-item bento-medium">
             <div class="bento-label">Core Expertise</div>
@@ -87,7 +89,25 @@ social: false
             <div class="bento-label" style="margin-top: 1rem;">Affiliations</div>
             <p class="bento-description"><a href="https://www.iitm.ac.in/">IIT Madras</a> • <a href="https://www.ieee.org/">IEEE</a> • <a href="https://www.acm.org/">ACM</a> • <a href="https://www.scs.org.sg/">SCS</a> • <a href="https://rin.org.uk/">RIN</a></p>
         </div>
+
+        <!-- Recent Writing - Full Width -->
+        <div class="bento-item bento-blog" style="grid-column: span 12;">
+            <div class="bento-label">Latest Writing</div>
+            <h3 class="bento-title">Recent Posts</h3>
+            <div class="posts-list">
+                {% for post in site.posts limit:3 %}
+                <article class="post-entry">
+                    <time class="post-meta" datetime="{{ post.date }}">{{ post.date | date: "%b %d, %Y" }}</time>
+                    <h4 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h4>
+                    <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 15 }}</p>
+                </article>
+                {% endfor %}
+            </div>
+            <a href="/blog" class="view-all">View all posts <i class="fas fa-arrow-right"></i></a>
+        </div>
     </div>
+
+
 
     <!-- Stats Strip -->
     <div class="stats-strip">
