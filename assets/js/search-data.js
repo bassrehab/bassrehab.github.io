@@ -72,7 +72,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/privacy/";
               },
-            },{id: "post-ai-meta-cognition-the-observer-effect-series",
+            },{id: "post-the-data-platform-crisis-hiding-behind-ai-why-you-have-6-months-to-pivot",
+        
+          title: "The Data Platform Crisis Hiding Behind AI: Why you have 6 months to...",
+        
+        description: "Enterprise data platforms face a 100,000x query increase from agentic AI. Introducing Symbiotic Agent-Ready Platforms (SARPs) - the architectural paradigm shift needed to survive the transition to machine intelligence.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/agent-ready-data-platforms-sarp/";
+          
+        },
+      },{id: "post-ai-meta-cognition-the-observer-effect-series",
         
           title: "AI Meta-Cognition - The Observer Effect Series",
         
