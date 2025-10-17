@@ -57,7 +57,7 @@ social: false
             <ul class="bento-list">
                 <li><a href="/now/" style="text-decoration: none; color: inherit;"><i class="fas fa-clock"></i> What I'm Doing Now</a></li>
                 <li><a href="mailto:contact@subhadipmitra.com" style="text-decoration: none; color: inherit;"><i class="fas fa-envelope"></i> Email</a></li>
-                <li><a href="https://calendly.com/subhadipmitra" style="text-decoration: none; color: inherit;"><i class="fas fa-calendar-alt"></i> Schedule</a></li>
+                <li><a href="https://calendly.com/contact-x9nm/30min" style="text-decoration: none; color: inherit;"><i class="fas fa-calendar-alt"></i> Schedule</a></li>
                 <li><a href="https://linkedin.com/in/subhadip-mitra" style="text-decoration: none; color: inherit;"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
                 <li><a href="https://github.com/bassrehab" style="text-decoration: none; color: inherit;"><i class="fab fa-github"></i> GitHub</a></li>
             </ul>
@@ -235,7 +235,7 @@ social: false
         </p>
         <div class="cta-buttons">
             <a href="mailto:contact@subhadipmitra.com" class="btn-primary">Get in Touch</a>
-            <a href="https://calendly.com/subhadipmitra" class="btn-secondary" target="_blank">Schedule a Call</a>
+            <a href="https://calendly.com/contact-x9nm/30min" class="btn-secondary" target="_blank">Schedule a Call</a>
         </div>
     </section>
 </div>

@@ -15,7 +15,7 @@ nav_order: 5
         <div class="tagline">Technical Leader, Data & AI Transformation</div>
         <div class="contact-info">
             <a href="mailto:contact@subhadipmitra.com"><i class="fas fa-envelope"></i> contact@subhadipmitra.com</a>
-            <a href="https://subhadipmitra.com" target="_blank"><i class="fas fa-globe"></i> subhadipmitra.com</a>
+            <a href="https://calendly.com/contact-x9nm/30min" target="_blank"><i class="fas fa-calendar"></i> Schedule a call</a>
             <a href="https://www.linkedin.com/in/subhadip-mitra/" target="_blank"><i class="fas fa-suitcase"></i> LinkedIn</a>
             <a href="/assets/pdf/cv.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Download PDF</a>
         </div>
