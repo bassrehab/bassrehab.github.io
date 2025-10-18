@@ -6,7 +6,7 @@ description: Dive into the world of autonomous AI agents with practical implemen
 tags: genai architecture casestudy system-design
 categories: architecture genai casetudy system-design
 giscus_comments: true
-featured: true
+featured: false
 related_posts: true
 toc:
   sidebar: left

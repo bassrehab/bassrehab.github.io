@@ -196,14 +196,20 @@ social: false
             <article class="innovation-feature">
                 <div class="innovation-visual"><i class="fas fa-shield-alt"></i></div>
                 <div class="innovation-content">
-                    <div class="innovation-year">2021-2022</div>
+                    <div class="innovation-year">2021-2025</div>
                     <h3>Privacy & Consent Protocols</h3>
                     <p>
-                        Open-source frameworks (OLP, OConsent) for secure data sharing and transparent consent management on blockchain, GDPR-compliant.
+                        Open-source frameworks for secure data sharing and consent management. OLP & OConsent (2021-2022) focused on blockchain-based GDPR compliance. LLMConsent (2025) extends this to AI training data, agent permissions, and user sovereignty.
                     </p>
-                    <a href="https://oconsent.io" class="innovation-link" target="_blank">
-                        Explore Projects <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div style="margin-top: 0.5rem;">
+                        <a href="https://oconsent.io" class="innovation-link" target="_blank">
+                            OConsent Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <span style="margin: 0 0.5rem;">•</span>
+                        <a href="blog/2025/building-consent-layer-for-ai/" class="innovation-link">
+                            LLMConsent RFC <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
             </article>
         </div>
