@@ -138,6 +138,17 @@ ninja.data = [{
             window.location.href = "/blog/2025/ai-observer-effect-models-recognize-evaluation/";
           
         },
+      },{id: "post-we-need-a-consent-layer-for-ai-and-i-39-m-trying-to-build-one",
+        
+          title: "We Need a Consent Layer for AI (And I&#39;m Trying to Build One)...",
+        
+        description: "AI companies are getting sued over training data, agents operate with no permission framework, and users can&#39;t control their AI profiles. I wrote four open standards (LLMConsent) to create a decentralized consent protocol for AI—like HTTP but for data rights, agent permissions, and user sovereignty. This is an RFC, not a product.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/building-consent-layer-for-ai/";
+          
+        },
       },{id: "post-why-kimi-k2-stands-out-a-deep-dive-into-its-trillion-parameter-moe",
         
           title: "Why Kimi K2 Stands Out - A Deep Dive into Its Trillion-Parameter MoE...",
