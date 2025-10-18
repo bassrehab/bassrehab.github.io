@@ -8,6 +8,9 @@ nav_order: 3
 ---
 
 <style>
+header.post-header {
+    display: none !important;
+}
 /* Editorial Projects Page */
 .projects-editorial {
   max-width: 1400px;
