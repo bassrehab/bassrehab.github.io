@@ -16,7 +16,7 @@ toc:
 
 
 
->### TL;DR: The Infrastructure Crisis Hiding Behind the AI Revolution
+>### TL;DR: The Data Platform Crisis Hiding Behind the AI Revolution
 >
 >**The Problem**: 
 > Enterprise data platforms are designed for humans querying 10-50 times per day. Agentic AI systems generate 1,000-10,000 queries per second with fractal complexity - a 100,000x increase that collapses traditional architectures. This isn't a performance gap; it's an existential mismatch causing 80% of GenAI initiatives to fail at scale.
@@ -80,6 +80,8 @@ Agents reason in **continuous semantic spaces** (embeddings, latent representati
 For a typical GPT-4 agent working with 1536-dimensional embeddings across result sets of 10K rows, this translation consumes 15.36M FLOPs per query - creating a semantic impedance that grows linearly with model sophistication. As models evolve to 4096-dimensional embeddings (expected in GPT-5/Claude 4.5 successors), this bottleneck becomes untenable.
 
 ### The Failure Mode Divergence
+
+> ... Human queries fail gracefully: wrong results trigger reruns with refined filters. Agent queries fail catastrophically: a single hallucinated JOIN condition propagates through 7 levels of speculative execution, spawning 2,187 derivative queries (3⁷) before timeout.
 
 Human queries fail gracefully: wrong results trigger reruns with refined filters. Agent queries fail catastrophically: a single hallucinated JOIN condition propagates through 7 levels of speculative execution, spawning 2,187 derivative queries (3⁷) before timeout. We term this **speculative avalanche failure** - a failure mode that doesn't exist in human-centric systems and for which current observability tools provide zero visibility.
 
