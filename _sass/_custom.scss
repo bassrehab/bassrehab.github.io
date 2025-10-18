@@ -69,15 +69,15 @@ abbr.badge {
 .newsletter-signup {
     background-color: var(--global-code-bg-color); /* Light background color */
     color: var(--global-text-color);
-    padding: 20px;
+    padding: 35px 20px;
     margin-bottom: 20px; /* Add some space below */
     text-align: center; /* Center align the content */
   }
   
   .newsletter-signup .newsletter-title {
-    font-size: 1.2em;
+    font-size: 1.5rem;
+    margin-top: 0px;
     margin-bottom: 10px;
-    font-weight: bold;
     color: var(--global-text-color);
   }
   
