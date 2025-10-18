@@ -9,7 +9,7 @@ description: Frontier AI models from OpenAI, Anthropic, Google & others can dete
 tags: genai llm aisafetry
 categories: llm genai
 giscus_comments: true
-featured: false
+featured: true
 related_posts: true
 pretty_table: true
 toc:

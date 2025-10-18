@@ -6,7 +6,7 @@ description: A collected list of research papers, tech blogs, videos that I foll
 tags: list
 categories: others
 giscus_comments: true
-featured: true
+featured: false
 related_posts: false
 toc:
   sidebar: left
