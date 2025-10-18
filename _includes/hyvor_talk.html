@@ -1,0 +1,65 @@
+<!-- Hyvor Talk Comments -->
+{% if site.hyvor_talk.website_id %}
+<div class="hyvor-talk-container">
+  <style>
+    .hyvor-talk-container {
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 2px solid var(--global-divider-color, #e5e5e5);
+    }
+    
+    .hyvor-talk-header {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    
+    .hyvor-talk-header h3 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      color: var(--global-text-color, #000);
+    }
+    
+    .hyvor-talk-header p {
+      font-size: 1rem;
+      color: var(--global-text-color-light, #666);
+      margin: 0;
+    }
+    
+    #hyvor-talk-view {
+      /* Hyvor Talk will render here */
+    }
+  </style>
+  
+  <div class="hyvor-talk-header">
+    <h3>Join the Discussion</h3>
+    <p>Share your thoughts, ask questions, or provide feedback on this article</p>
+  </div>
+  
+  <div id="hyvor-talk-view"></div>
+  
+  <script type="application/javascript">
+    var HYVOR_TALK_WEBSITE = {{ site.hyvor_talk.website_id }};
+    var HYVOR_TALK_CONFIG = {
+      url: '{{ page.url | absolute_url }}',
+      id: '{{ page.url }}',
+      {% if page.title %}
+      title: '{{ page.title | escape }}',
+      {% endif %}
+      {% if site.hyvor_talk.color_mode == 'auto' %}
+      palette: {
+        accent: '{{ site.hyvor_talk.accent_color | default: "#b509ac" }}',
+        accentText: '#ffffff',
+        footerHeader: 'var(--global-text-color)',
+        footerHeaderText: 'var(--global-text-color-light)',
+        box: 'var(--global-card-bg-color)',
+        boxText: 'var(--global-text-color)',
+        boxLightText: 'var(--global-text-color-light)',
+        backgroundText: 'var(--global-text-color)'
+      }
+      {% endif %}
+    };
+  </script>
+  <script async type="application/javascript" src="//talk.hyvor.com/web-api/embed.js"></script>
+</div>
+{% endif %}
