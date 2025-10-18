@@ -30,6 +30,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
+        },{id: "nav-projects",
+          title: "projects",
+          description: "Open-source frameworks and protocols advancing AI, privacy, and distributed systems",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
         },{id: "nav-repositories",
           title: "repositories",
           description: "👋 Hi there! I&#39;m delighted to share a portfolio of my work through these GitHub repositories. I am always open to collaborating with other passionate developers or incorporating valuable feedback to enhance these projects. Feel free to fork any repository, submit pull requests, or reach out directly if you have ideas or suggestions. Your contributions are welcome and greatly appreciated!",
