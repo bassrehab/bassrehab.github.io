@@ -22,7 +22,7 @@ nav_order: 1
             </span>
             <span class="status-pill"><i class="fas fa-map-marker-alt"></i> Singapore</span>
         </div>
-        <p class="last-updated">Last updated: October 15, 2025</p>
+        <p class="last-updated">Last updated: November 15, 2025</p>
     </header>
 
     <!-- Current Projects -->
@@ -31,7 +31,27 @@ nav_order: 1
             <span class="section-icon"><i class="fas fa-rocket"></i></span>
             <h2 class="section-title">Current Projects</h2>
         </div>
-        
+
+        <div class="project-card">
+            <div class="project-header">
+                <h3 class="project-title">delta Team - Innovation & Transformation (JAPAC)</h3>
+                <span class="project-status active">Active</span>
+            </div>
+            <p class="project-description">
+                Member of Google Cloud's elite <a href="https://cloud.google.com/consulting/innovation-and-transformation" target="_blank">delta team</a> architecting enterprise AI solutions at scale across Japan-Asia Pacific region. Bridging whiteboard vision to sustainable implementation for large-scale digital transformation initiatives.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <div class="project-header">
+                <h3 class="project-title">UPIR - Universal Plan Intermediate Representation</h3>
+                <span class="project-status completed">Published</span>
+            </div>
+            <p class="project-description">
+                Completed framework for automated synthesis and verification of distributed systems using formal methods and machine learning. Published on <a href="https://www.tdcommons.org/dpubs_series/8852/" target="_blank">TD Commons</a> with <a href="https://github.com/bassrehab/upir" target="_blank">open-source implementation</a>. Achieves 274x speedup for verification with 60% latency reduction in production systems.
+            </p>
+        </div>
+
         <div class="project-card">
             <div class="project-header">
                 <h3 class="project-title">Autonomous Decision Intelligence Platform</h3>
@@ -91,6 +111,7 @@ nav_order: 1
         </div>
         <div class="section-content">
             <ul class="now-list">
+                <li><i class="fas fa-check-square"></i> <strong>Formal Verification & Program Synthesis:</strong> Exploring compositional verification approaches and automated code generation for distributed systems (recently published UPIR framework)</li>
                 <li><i class="fas fa-brain"></i> <strong>Agentic Systems at Scale:</strong> Deep diving into orchestration patterns, fault tolerance, and coordination protocols for multi-agent systems in production</li>
                 <li><i class="fas fa-code"></i> <strong>LLM Optimization:</strong> Exploring quantization techniques, serving architectures, and cost-effective inference strategies for enterprise deployment</li>
                 <li><i class="fas fa-project-diagram"></i> <strong>Spatiotemporal Graph Theory:</strong> Applying graph analytics to model resource interactions across distributed cloud infrastructure</li>
@@ -102,16 +123,16 @@ nav_order: 1
     <!-- Quick Stats -->
     <div class="quick-stats">
         <div class="stat-item">
-            <div class="stat-number">5</div>
+            <div class="stat-number">6</div>
             <div class="stat-label">Active Projects</div>
         </div>
         <div class="stat-item">
-            <div class="stat-number">6</div>
+            <div class="stat-number">7</div>
             <div class="stat-label">Countries This Year</div>
         </div>
         <div class="stat-item">
-            <div class="stat-number">2</div>
-            <div class="stat-label">Papers In Progress</div>
+            <div class="stat-number">1</div>
+            <div class="stat-label">Papers Published (Nov)</div>
         </div>
         <div class="stat-item">
             <div class="stat-number">2</div>

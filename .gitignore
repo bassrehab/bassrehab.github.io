@@ -11,3 +11,7 @@ assets/libs/
 node_modules/
 vendor
 .idea
+
+# Claude Code documentation and drafts
+CLAUDE.md
+dev/

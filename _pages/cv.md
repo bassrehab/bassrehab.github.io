@@ -2,12 +2,213 @@
 layout: page
 permalink: /cv/
 title: cv
-description: 
+description:
 nav: true
 nav_order: 5
 ---
 
+<style>
+@media print {
+  /* Hide navigation and UI elements */
+  header.header,
+  nav,
+  .header,
+  .cv-download,
+  .privacy-notice,
+  footer,
+  .social,
+  .back-to-top {
+    display: none !important;
+  }
 
+  /* Optimize page layout */
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 11pt;
+    line-height: 1.4;
+  }
+
+  .cv-editorial {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Hero section optimization */
+  .cv-hero {
+    margin-bottom: 1.5rem;
+    padding: 1rem 0;
+    background: white !important;
+  }
+
+  .cv-hero-content h1 {
+    font-size: 24pt;
+    margin-bottom: 0.5rem;
+    color: black !important;
+  }
+
+  .subtitle {
+    font-size: 12pt;
+    color: #333 !important;
+    margin-bottom: 0.5rem;
+  }
+
+  .cv-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 9pt;
+    color: #333 !important;
+  }
+
+  /* Section styling */
+  .cv-section {
+    page-break-inside: avoid;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-label {
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #666 !important;
+    margin-bottom: 0.25rem;
+  }
+
+  .section-title {
+    font-size: 16pt;
+    margin-bottom: 1rem;
+    color: black !important;
+  }
+
+  /* Timeline items */
+  .timeline-item {
+    page-break-inside: avoid;
+    margin-bottom: 1.5rem;
+    border-left: 2px solid #ddd;
+    padding-left: 1rem;
+  }
+
+  .job-title {
+    font-size: 12pt;
+    margin-bottom: 0.25rem;
+    color: black !important;
+  }
+
+  .job-company {
+    font-size: 10pt;
+    color: #333 !important;
+  }
+
+  .job-period {
+    font-size: 9pt;
+    color: #666 !important;
+    margin-bottom: 0.5rem;
+  }
+
+  .job-description {
+    font-size: 10pt;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+    color: black !important;
+  }
+
+  .job-highlights ul {
+    margin: 0;
+    padding-left: 1.5rem;
+  }
+
+  .job-highlights li {
+    font-size: 9pt;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+    color: black !important;
+  }
+
+  /* Publications */
+  .publications-grid {
+    display: block;
+  }
+
+  .publication-card {
+    page-break-inside: avoid;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+  }
+
+  .publication-date {
+    font-size: 8pt;
+    color: #666 !important;
+  }
+
+  .publication-title {
+    font-size: 10pt;
+    margin: 0.25rem 0;
+    color: black !important;
+  }
+
+  .publication-venue {
+    font-size: 9pt;
+    color: #333 !important;
+  }
+
+  .publication-description {
+    font-size: 9pt;
+    line-height: 1.4;
+    color: black !important;
+  }
+
+  /* Skills */
+  .skill-category {
+    page-break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+
+  .skill-category-title {
+    font-size: 11pt;
+    margin-bottom: 0.5rem;
+    color: black !important;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  .skill-tag {
+    font-size: 8pt;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid #ddd;
+    background: white !important;
+    color: black !important;
+  }
+
+  /* Links */
+  a {
+    color: black !important;
+    text-decoration: none;
+  }
+
+  a[href^="http"]:after {
+    content: "";
+  }
+
+  /* Ensure proper page breaks */
+  h2, h3 {
+    page-break-after: avoid;
+  }
+
+  /* Remove extra spacing */
+  .stats-strip,
+  .cta-section,
+  .testimonials {
+    display: none !important;
+  }
+}
+</style>
 
 <div class="cv-editorial">
   
@@ -64,16 +265,16 @@ nav_order: 5
           <div class="job-period">January 2021 - Present</div>
         </div>
         <p class="job-description">
-          Leading Google Cloud's Data Analytics practice while serving as Site Lead overseeing cross-practice delivery governance in Southeast Asia across Data & Analytics, AI, Infrastructure, Security, Enterprise Architecture, and Application Modernization.
+          Built and lead Google Cloud's Data Analytics practice across Southeast Asia (7 countries) while serving as Site Lead overseeing regional delivery operations. Member of <a href="https://cloud.google.com/consulting/innovation-and-transformation" target="_blank">delta</a> - Google Cloud's elite innovation and transformation team architecting enterprise AI solutions at scale across JAPAC.
         </p>
         <div class="job-highlights">
           <ul>
             <li>Direct a \$ XXM+ Data Analytics delivery portfolio across JAPAC while simultaneously overseeing a \$ XXM+ cross-practice delivery portfolio as Site Lead for Southeast Asia</li>
-            <li>Published multiple technical innovations including FTCS (Field-Theoretic Context System), ETLC (Extract, Transform, Load, Contextualize) and ARTEMIS frameworks</li>
+            <li>Spearheaded organization-wide agentic AI transformation across PSO JAPAC, driving operationalization and adoption for both external customer solutions and internal productivity gains</li>
+            <li>Published multiple technical innovations including UPIR (distributed systems synthesis), FTCS (Field-Theoretic Context System), ETLC (Extract, Transform, Load, Contextualize) and ARTEMIS frameworks</li>
             <li>Led critical interventions for strategic accounts across JAPAC including major financial services and consumer electronics manufacturers</li>
             <li>Executed high-value projects including 12K+ user analytics migrations, first Data & AI Centers of Excellence, and Data Monetization Platforms</li>
             <li>As co-Site Lead, scaled regional delivery excellence contributing to 100% annual revenue target attainment with 97% CSAT</li>
-            <li>Spearheaded the first \$X million Sovereign GenAI Transformation program, delivering across 20+ government agencies within 3 months</li>
           </ul>
         </div>
       </article>
@@ -180,6 +381,22 @@ nav_order: 5
     
     <div class="publications-grid">
       <article class="publication-card">
+        <div class="publication-date">November 2025</div>
+        <h3 class="publication-title">
+          <a href="https://www.tdcommons.org/dpubs_series/8852/" target="_blank">UPIR: Automated Synthesis and Verification of Distributed Systems</a>
+        </h3>
+        <div class="publication-venue">Google, Technical Disclosure Commons</div>
+        <p class="publication-description">
+          Framework combining formal verification, program synthesis, and machine learning to automatically generate verified distributed system implementations. Achieves 274x speedup with 60% latency reduction through compositional verification and proof caching.
+        </p>
+        <div class="project-links" style="margin-top: 0.5rem;">
+          <a href="https://github.com/bassrehab/upir" target="_blank" style="color: var(--global-theme-color); text-decoration: none; font-size: 0.875rem;">
+            <i class="fab fa-github"></i> GitHub Repository
+          </a>
+        </div>
+      </article>
+
+      <article class="publication-card">
         <div class="publication-date">May 2025</div>
         <h3 class="publication-title">
           <a href="https://services.google.com/fh/files/blogs/etlc_full_paper.pdf" target="_blank">ETLC: A Context-First Approach to Data Processing in the Generative AI Era</a>
@@ -195,7 +412,7 @@ nav_order: 5
         <h3 class="publication-title">
           <a href="https://www.tdcommons.org/dpubs_series/8022/" target="_blank">Field-Theoretic Context System (FTCS)</a>
         </h3>
-        <div class="publication-venue">TD Commons</div>
+        <div class="publication-venue">Google, Technical Disclosure Commons</div>
         <p class="publication-description">
           An innovative approach modeling context as interacting fields rather than discrete states, enabling natural context flow and dynamic evolution through partial differential equations.
         </p>
@@ -206,7 +423,7 @@ nav_order: 5
         <h3 class="publication-title">
           <a href="https://www.tdcommons.org/dpubs_series/7729/" target="_blank">ARTEMIS - Adaptive Multi-agent Debate Framework</a>
         </h3>
-        <div class="publication-venue">TD Commons</div>
+        <div class="publication-venue">Google, Technical Disclosure Commons</div>
         <p class="publication-description">
           Technical disclosure on an adaptive framework for multi-agent decision systems using structured debate protocols to enhance enterprise decision-making.
         </p>
@@ -323,6 +540,7 @@ nav_order: 5
           <span class="skill-tag">JavaScript</span>
           <span class="skill-tag">Scala</span>
           <span class="skill-tag">Algorithm Design</span>
+          <span class="skill-tag">Formal Verification</span>
           <span class="skill-tag">High-Performance Computing</span>
         </div>
       </div>

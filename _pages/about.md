@@ -46,7 +46,7 @@ social: false
             <div class="bento-label">Google Cloud · 2021-Present</div>
             <h2 class="bento-title">Data & Analytics Manager | Site Lead Southeast Asia</h2>
             <p class="bento-description">
-                Lead Data Analytics delivery and cross-practice operations across 7 countries in Southeast Asia. Built 0-to-1 organization establishing the region's premier Data & AI practice. Pioneered technical frameworks (FTCS, ETLC, ARTEMIS) and production-ready AI agent systems for autonomous data engineering. Led critical interventions safeguarding $XXM+ revenue while scaling enterprise Data and AI transformation across multiple sectors.
+                Lead Data Analytics delivery and cross-practice operations across 7 countries in Southeast Asia. Member of <a href="https://cloud.google.com/consulting/innovation-and-transformation" target="_blank"><strong>delta</strong></a> - Google Cloud's elite innovation and transformation team architecting enterprise AI solutions at scale. Built 0-to-1 organization establishing the region's premier Data & Analytics practice. Pioneered technical frameworks (FTCS, ETLC, ARTEMIS, UPIR) and production-ready AI agent systems for autonomous data engineering. Led critical interventions safeguarding $XXM+ revenue while scaling enterprise Data and AI transformation across multiple sectors.
             </p>
         </div>
 
@@ -120,7 +120,7 @@ social: false
             <div class="stat-label">Enterprise Clients</div>
         </div>
         <div class="stat-block">
-            <div class="stat-value">8+</div>
+            <div class="stat-value">9+</div>
             <div class="stat-label">Industry Frameworks</div>
         </div>
         <div class="stat-block">
@@ -151,6 +151,26 @@ social: false
         </div>
 
         <div class="innovation-grid">
+            <article class="innovation-feature">
+                <div class="innovation-visual">UPIR</div>
+                <div class="innovation-content">
+                    <div class="innovation-year">2025</div>
+                    <h3>Automated Distributed Systems Synthesis</h3>
+                    <p>
+                        Revolutionary approach combining formal verification, program synthesis, and reinforcement learning to automatically generate verified implementations from specifications. Achieves 274x speedup for complex systems with 60% latency reduction.
+                    </p>
+                    <div style="margin-top: 0.5rem;">
+                        <a href="https://www.tdcommons.org/dpubs_series/8852/" class="innovation-link" target="_blank">
+                            Read Technical Disclosure <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <span style="margin: 0 0.5rem;">•</span>
+                        <a href="https://github.com/bassrehab/upir" class="innovation-link" target="_blank">
+                            GitHub Repo <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
             <article class="innovation-feature">
                 <div class="innovation-visual">FTCS</div>
                 <div class="innovation-content">
