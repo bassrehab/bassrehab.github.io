@@ -79,7 +79,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/privacy/";
               },
-            },{id: "post-the-data-platform-crisis-hiding-behind-ai-why-you-have-6-months-to-pivot",
+            },{id: "post-upir-what-if-distributed-systems-could-write-and-verify-themselves",
+        
+          title: "UPIR: What If Distributed Systems Could Write (and Verify) Themselves?",
+        
+        description: "Lessons from building a framework that automatically generates verified distributed systems - and why I think formal methods, synthesis, and ML need to work together",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/upir-distributed-systems/";
+          
+        },
+      },{id: "post-the-data-platform-crisis-hiding-behind-ai-why-you-have-6-months-to-pivot",
         
           title: "The Data Platform Crisis Hiding Behind AI: Why you have 6 months to...",
         
