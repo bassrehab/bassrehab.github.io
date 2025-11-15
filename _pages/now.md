@@ -52,7 +52,7 @@ nav_order: 1
             </p>
         </div>
 
-        <div class="project-card">
+        <!-- <div class="project-card">
             <div class="project-header">
                 <h3 class="project-title">Autonomous Decision Intelligence Platform</h3>
                 <span class="project-status active">Active</span>
@@ -60,7 +60,7 @@ nav_order: 1
             <p class="project-description">
                 Building domain-agnostic agentic system for enterprise decisioning, anomalous event detection, and adaptive pattern learning. Horizontal solution deployable across industries with self-learning capabilities and explainable decision paths.
             </p>
-        </div>
+        </div> -->
 
         <div class="project-card">
             <div class="project-header">
@@ -72,7 +72,7 @@ nav_order: 1
             </p>
         </div>
 
-        <div class="project-card">
+         <!-- <div class="project-card">
             <div class="project-header">
                 <h3 class="project-title">Decentralized Verification Infrastructure</h3>
                 <span class="project-status active">Active</span>
@@ -80,7 +80,7 @@ nav_order: 1
             <p class="project-description">
                 Developing cryptographic proof systems for secure, privacy-preserving verification at scale. Focus on trustless validation mechanisms and distributed consensus for identity and data integrity use cases.
             </p>
-        </div>
+        </div> -->
 
         <div class="project-card">
             <div class="project-header">
@@ -92,7 +92,7 @@ nav_order: 1
             </p>
         </div>
 
-        <div class="project-card">
+          <!-- <div class="project-card">
             <div class="project-header">
                 <h3 class="project-title">Space-Based Analytics Research</h3>
                 <span class="project-status research">Research</span>
@@ -100,7 +100,7 @@ nav_order: 1
             <p class="project-description">
                 Exploring satellite data analytics and distributed space infrastructure patterns. Investigating real-time processing architectures for LEO satellite constellations and geospatial intelligence applications.
             </p>
-        </div>
+        </div> -->
     </section>
 
     <!-- Learning & Research -->
@@ -115,7 +115,7 @@ nav_order: 1
                 <li><i class="fas fa-brain"></i> <strong>Agentic Systems at Scale:</strong> Deep diving into orchestration patterns, fault tolerance, and coordination protocols for multi-agent systems in production</li>
                 <li><i class="fas fa-code"></i> <strong>LLM Optimization:</strong> Exploring quantization techniques, serving architectures, and cost-effective inference strategies for enterprise deployment</li>
                 <li><i class="fas fa-project-diagram"></i> <strong>Spatiotemporal Graph Theory:</strong> Applying graph analytics to model resource interactions across distributed cloud infrastructure</li>
-                <li><i class="fas fa-shield-alt"></i> <strong>AI Governance:</strong> Researching practical frameworks for responsible AI deployment in regulated industries</li>
+                <!-- <li><i class="fas fa-shield-alt"></i> <strong>AI Governance:</strong> Researching practical frameworks for responsible AI deployment in regulated industries</li> -->
             </ul>
         </div>
     </section>
@@ -182,7 +182,7 @@ nav_order: 1
                     <h4>Why Machines Learn</h4>
                     <p>Anil Ananthaswamy • Deep dive into the mathematical foundations of machine learning</p>
                 </div>
-            </div>            
+            </div>
         </div>
     </section>
 
@@ -220,11 +220,12 @@ nav_order: 1
     <!-- Footer -->
     <div class="now-footer">
         <p>
-            This is a <strong>/now page</strong>. It's meant to be a living document that I update regularly. 
+            This is a <strong>/now page</strong>. It's meant to be a living document that I update regularly.
             Want to create your own? Learn more at <a href="https://nownownow.com" target="_blank">nownownow.com</a>.
             <br><br>
-            Questions or want to connect? <a href="mailto:contact@subhadipmitra.com">Send me an email</a> or 
+            Questions or want to connect? <a href="mailto:contact@subhadipmitra.com">Send me an email</a> or
             <a href="https://calendly.com/subhadipmitra" target="_blank">schedule a call</a>.
         </p>
     </div>
+
 </div>

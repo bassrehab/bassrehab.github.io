@@ -2,18 +2,17 @@
 layout: about
 title: about
 permalink: /
-subtitle: 
+subtitle:
 
 profile:
   align: right
-  image: subhadip-mitra-portrait-home.png
+  image: subhadip-mitra-portrait-home-cl.png
   image_circular: false
 
 news: false
 selected_papers: false
 social: false
 ---
-
 
 <div class="editorial-home">
     <!-- Oversized Hero -->
@@ -284,4 +283,5 @@ social: false
             <a href="https://calendly.com/contact-x9nm/30min" class="btn-secondary" target="_blank">Schedule a Call</a>
         </div>
     </section>
+
 </div>
