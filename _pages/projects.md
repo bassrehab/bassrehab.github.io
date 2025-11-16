@@ -453,12 +453,12 @@ header.post-header {
     <!-- Stats -->
     <div class="projects-stats">
       <div class="project-stat">
-        <div class="project-stat-value">4</div>
+        <div class="project-stat-value">5</div>
         <div class="project-stat-label">Active Projects</div>
       </div>
       <div class="project-stat">
-        <div class="project-stat-value">3</div>
-        <div class="project-stat-label">Published Protocols</div>
+        <div class="project-stat-value">4</div>
+        <div class="project-stat-label">Technical Disclosures</div>
       </div>
       <div class="project-stat">
         <div class="project-stat-value">3</div>
@@ -473,6 +473,7 @@ header.post-header {
     <button class="filter-btn" data-filter="ai">AI & Safety</button>
     <button class="filter-btn" data-filter="privacy">Privacy & Consent</button>
     <button class="filter-btn" data-filter="protocols">Protocols</button>
+    <button class="filter-btn" data-filter="distributed-systems">Distributed Systems</button>
   </div>
 
   <!-- Featured Projects -->
@@ -484,7 +485,62 @@ header.post-header {
     <h2 class="section-title">Production-Ready Frameworks</h2>
     
     <div class="projects-grid">
-      
+
+      <!-- UPIR -->
+      <article class="project-card" data-category="protocols distributed-systems">
+        <span class="project-status">Active</span>
+        <h3 class="project-title">
+          <a href="https://www.tdcommons.org/dpubs_series/8852/" target="_blank">
+            UPIR: Universal Plan Intermediate Representation
+          </a>
+        </h3>
+        <p class="project-description">
+          Framework for automated synthesis and verification of distributed systems - bridging the gap between high-level specifications and provably correct implementations.
+        </p>
+
+        <ul class="project-highlights">
+          <li>Compositional verification with proof caching (274x speedup)</li>
+          <li>CEGIS-based synthesis for automated implementation generation</li>
+          <li>Constrained RL with PPO for optimization under correctness guarantees</li>
+          <li>First framework to unify synthesis, verification, and optimization</li>
+        </ul>
+
+        <div class="tech-stack">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Formal Verification</span>
+          <span class="tech-tag">Z3 Solver</span>
+          <span class="tech-tag">Reinforcement Learning</span>
+          <span class="tech-tag">Distributed Systems</span>
+        </div>
+
+        <div class="project-links">
+          <a href="https://www.tdcommons.org/dpubs_series/8852/" class="project-link primary" target="_blank">
+            <i class="fas fa-file-pdf"></i> Technical Disclosure
+          </a>
+          <a href="https://pypi.org/project/upir/" class="project-link" target="_blank">
+            <i class="fas fa-cube"></i> PyPI
+          </a>
+          <a href="https://github.com/bassrehab/upir" class="project-link" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+        </div>
+
+        <div class="impact-metrics">
+          <div class="metric">
+            <div class="metric-value">2025</div>
+            <div class="metric-label">Released</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">274x</div>
+            <div class="metric-label">Speedup</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">Open Source</div>
+            <div class="metric-label">Implementation</div>
+          </div>
+        </div>
+      </article>
+
       <!-- AI Metacognition Toolkit -->
       <article class="project-card" data-category="ai">
         <span class="project-status">Active</span>
@@ -568,11 +624,14 @@ header.post-header {
           <a href="https://llmconsent.org" class="project-link primary" target="_blank">
             <i class="fas fa-globe"></i> Visit Site
           </a>
+          <a href="https://subhadipmitra.com/blog/2025/building-consent-layer-for-ai/" class="project-link" target="_blank">
+            <i class="fas fa-pen"></i> Blog Post
+          </a>
           <a href="https://github.com/llmconsent" class="project-link" target="_blank">
             <i class="fab fa-github"></i> GitHub
           </a>
         </div>
-        
+
         <div class="impact-metrics">
           <div class="metric">
             <div class="metric-value">2024</div>
