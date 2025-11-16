@@ -79,6 +79,20 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/privacy/";
               },
+            },{id: "dropdown-docs-upir",
+              title: "docs: UPIR",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "https://upir.subhadipmitra.com";
+              },
+            },{id: "dropdown-docs-ai-metacognition",
+              title: "docs: AI Metacognition",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "https://ai-metacognition-toolkit.subhadipmitra.com/";
+              },
             },{id: "post-upir-what-if-distributed-systems-could-write-and-verify-themselves",
         
           title: "UPIR: What If Distributed Systems Could Write (and Verify) Themselves?",
