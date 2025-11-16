@@ -150,6 +150,51 @@ I ran benchmarks on a bunch of representative distributed systems patterns. Here
 
 These aren't toy examples. These are patterns that show up in real production systems - leader election, distributed consensus, replication protocols.
 
+## Getting Started
+
+Want to try it yourself? UPIR is available as a Python package on PyPI:
+
+```bash
+pip install upir
+```
+
+Here's a minimal example to verify a distributed system component:
+
+```python
+from upir.core.architecture import Architecture
+from upir.core.specification import FormalSpecification
+from upir.core.temporal import TemporalOperator, TemporalProperty
+from upir.verification.verifier import Verifier
+
+# Define what you want: process events within 100ms
+spec = FormalSpecification(
+    properties=[
+        TemporalProperty(
+            operator=TemporalOperator.WITHIN,
+            predicate="process_event",
+            time_bound=100
+        )
+    ]
+)
+
+# Create your architecture
+arch = Architecture(
+    components=[...],  # your components
+    connections=[...]   # how they connect
+)
+
+# Verify it
+verifier = Verifier()
+results = verifier.verify_specification(arch, spec)
+```
+
+**Requirements:** Python >=3.9
+
+**Links:**
+- PyPI: [pypi.org/project/upir](https://pypi.org/project/upir/)
+- Documentation: [upir.subhadipmitra.com](https://upir.subhadipmitra.com)
+- GitHub: [github.com/bassrehab/upir](https://github.com/bassrehab/upir)
+
 ## What's Actually In The Repo
 
 The [GitHub repo](https://github.com/bassrehab/upir) has the full implementation if you want to poke around:
