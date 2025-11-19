@@ -1,20 +1,651 @@
 ---
 layout: page
 permalink: /publications/
-title: publications
-description: publications by categories in reversed chronological order.
+title: "publications"
+description: "Exploring innovations in AI, distributed systems, blockchain, and beyond"
 nav: true
 nav_order: 2
 ---
 
-<!-- _pages/publications.md -->
+<style>
+header.post-header {
+  display: none;
+}
+</style>
 
-<!-- Bibsearch Feature -->
+<div class="publications-page-modern">
+  <!-- Hero Section -->
+  <div class="pubs-hero">
+    <div class="hero-icon">
+      <i class="fa-solid fa-book-open"></i>
+    </div>
+    <h1 class="hero-title">Research & Publications</h1>
+    <p class="hero-description">
+      Exploring the intersection of artificial intelligence, distributed systems, blockchain technology,
+      and algorithmic innovation. My work spans from theoretical foundations to practical implementations
+      that drive real-world impact.
+    </p>
 
-{% include bib_search.liquid %}
+    <!-- Research Interests Tags -->
+    <div class="research-interests">
+      <span class="interest-tag"><i class="fa-solid fa-brain"></i> Generative AI & LLMs</span>
+      <span class="interest-tag"><i class="fa-solid fa-network-wired"></i> Distributed Systems</span>
+      <span class="interest-tag"><i class="fa-solid fa-shield-halved"></i> Privacy & Blockchain</span>
+      <span class="interest-tag"><i class="fa-solid fa-chart-line"></i> Financial Technology</span>
+      <span class="interest-tag"><i class="fa-solid fa-project-diagram"></i> Graph Algorithms</span>
+    </div>
+  </div>
 
-<div class="publications">
+  <!-- Statistics Dashboard -->
+  <div class="pubs-stats">
+    <div class="stat-card">
+      <div class="stat-icon">
+        <i class="fa-solid fa-file-lines"></i>
+      </div>
+      <div class="stat-content">
+        <div class="stat-number" id="total-pubs">14</div>
+        <div class="stat-label">Publications</div>
+      </div>
+    </div>
 
-{% bibliography %}
+    <div class="stat-card">
+      <div class="stat-icon">
+        <i class="fa-solid fa-calendar-days"></i>
+      </div>
+      <div class="stat-content">
+        <div class="stat-number">18</div>
+        <div class="stat-label">Years Active</div>
+      </div>
+    </div>
 
+    <div class="stat-card">
+      <div class="stat-icon">
+        <i class="fa-solid fa-star"></i>
+      </div>
+      <div class="stat-content">
+        <div class="stat-number" id="featured-pubs">7</div>
+        <div class="stat-label">Featured Works</div>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">
+        <i class="fa-solid fa-building"></i>
+      </div>
+      <div class="stat-content">
+        <div class="stat-number">5</div>
+        <div class="stat-label">Institutions</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Filter/Search Section -->
+  <div class="pubs-filter-section">
+    <div class="section-header">
+      <i class="fa-solid fa-filter"></i>
+      <h2>Browse Publications</h2>
+    </div>
+
+    <div class="filter-controls">
+      <div class="search-container">
+        {% include bib_search.liquid %}
+      </div>
+
+      <div class="year-filter-buttons">
+        <button class="year-filter-btn active" data-year="all">All Years</button>
+        <button class="year-filter-btn" data-year="2025">2025</button>
+        <button class="year-filter-btn" data-year="2023">2023</button>
+        <button class="year-filter-btn" data-year="2021">2021</button>
+        <button class="year-filter-btn" data-year="2020-2015">2015-2020</button>
+        <button class="year-filter-btn" data-year="2014-2007">2007-2014</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Publications List with Timeline -->
+  <div class="publications-timeline">
+    <div class="publications">
+      {% bibliography %}
+    </div>
+  </div>
 </div>
+
+<style>
+.publications-page-modern {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* Hero Section */
+.pubs-hero {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 3rem 2rem;
+  background: var(--global-code-bg-color);
+  border-radius: 24px;
+  border: 1px solid var(--global-divider-color);
+}
+
+.hero-icon {
+  font-size: 3.5rem;
+  color: var(--global-theme-color);
+  margin-bottom: 1.5rem;
+  animation: pulse-soft 3s ease-in-out infinite;
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 900;
+  color: var(--global-text-color);
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.hero-description {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--global-text-color-light);
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+}
+
+/* Research Interests */
+.research-interests {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.interest-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  background: var(--global-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--global-text-color);
+  transition: all 0.3s ease;
+}
+
+.interest-tag:hover {
+  border-color: var(--global-theme-color);
+  background: var(--global-theme-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.interest-tag i {
+  font-size: 0.875rem;
+}
+
+/* Statistics Dashboard */
+.pubs-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.75rem;
+  background: var(--global-card-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border-color: var(--global-theme-color);
+}
+
+.stat-icon {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--global-theme-color) 0%, #764ba2 100%);
+  border-radius: 12px;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.stat-content {
+  flex: 1;
+}
+
+.stat-number {
+  font-size: 2.25rem;
+  font-weight: 900;
+  color: var(--global-text-color);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: var(--global-text-color-light);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Filter Section */
+.pubs-filter-section {
+  margin-bottom: 3rem;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-header i {
+  font-size: 1.5rem;
+  color: var(--global-theme-color);
+}
+
+.section-header h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--global-text-color);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.filter-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--global-code-bg-color);
+  border-radius: 16px;
+  border: 1px solid var(--global-divider-color);
+}
+
+.search-container {
+  width: 100%;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background: var(--global-bg-color);
+  border: 2px solid var(--global-divider-color);
+  border-radius: 12px;
+  font-size: 1rem;
+  color: var(--global-text-color);
+  transition: all 0.3s ease;
+}
+
+.search-container input:focus {
+  outline: none;
+  border-color: var(--global-theme-color);
+  box-shadow: 0 0 0 3px rgba(181, 9, 172, 0.1);
+}
+
+.year-filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.year-filter-btn {
+  padding: 0.625rem 1.25rem;
+  background: var(--global-bg-color);
+  border: 2px solid var(--global-divider-color);
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--global-text-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Inter", sans-serif;
+}
+
+.year-filter-btn:hover {
+  border-color: var(--global-theme-color);
+  color: var(--global-theme-color);
+}
+
+.year-filter-btn.active {
+  background: var(--global-theme-color);
+  color: white;
+  border-color: var(--global-theme-color);
+}
+
+/* Publications Timeline */
+.publications-timeline {
+  position: relative;
+}
+
+/* Enhanced publication cards */
+.publications .bibliography {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.publications .bibliography li {
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background: var(--global-card-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.publications .bibliography li:hover {
+  transform: translateX(8px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  border-color: var(--global-theme-color);
+}
+
+.publications .bibliography li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--global-theme-color);
+  border-radius: 16px 0 0 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.publications .bibliography li:hover::before {
+  opacity: 1;
+}
+
+/* Year grouping headers */
+.publications .bibliography .year {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--global-theme-color);
+  margin: 3rem 0 1.5rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--global-divider-color);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.publications .bibliography .year::before {
+  content: '\f073';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-size: 1.25rem;
+}
+
+/* Title styling */
+.publications .title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--global-text-color);
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+/* Author styling */
+.publications .author {
+  font-size: 0.95rem;
+  color: var(--global-text-color-light);
+  margin-bottom: 0.5rem;
+}
+
+.publications .author em {
+  color: var(--global-theme-color);
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Periodical (venue/date) */
+.publications .periodical {
+  font-size: 0.9rem;
+  color: var(--global-text-color-light);
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+/* Abbr badge */
+.publications .abbr {
+  margin-bottom: 1rem;
+}
+
+.publications .abbr .badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.375rem 0.75rem;
+  background: var(--global-theme-color);
+  color: white;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Links/Buttons */
+.publications .links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.publications .links .btn {
+  padding: 0.375rem 0.875rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  background: var(--global-bg-color);
+  border: 1px solid var(--global-divider-color);
+  color: var(--global-text-color);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.publications .links .btn:hover {
+  background: var(--global-theme-color);
+  color: white;
+  border-color: var(--global-theme-color);
+  transform: translateY(-2px);
+}
+
+/* Abstract and BibTeX hidden blocks */
+.publications .abstract.hidden,
+.publications .bibtex.hidden {
+  display: none;
+  margin-top: 1rem;
+  padding: 1.25rem;
+  background: var(--global-code-bg-color);
+  border-radius: 12px;
+  border-left: 4px solid var(--global-theme-color);
+}
+
+.publications .abstract.open,
+.publications .bibtex.open {
+  display: block;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.publications .abstract p {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--global-text-color);
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .publications-page-modern {
+    padding: 1rem 0;
+  }
+
+  .pubs-hero {
+    padding: 2rem 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-icon {
+    font-size: 2.5rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .research-interests {
+    gap: 0.5rem;
+  }
+
+  .interest-tag {
+    font-size: 0.8125rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .pubs-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .stat-card {
+    padding: 1.25rem;
+  }
+
+  .stat-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.25rem;
+  }
+
+  .stat-number {
+    font-size: 1.75rem;
+  }
+
+  .filter-controls {
+    padding: 1.25rem;
+  }
+
+  .year-filter-buttons {
+    gap: 0.5rem;
+  }
+
+  .year-filter-btn {
+    font-size: 0.8125rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .publications .bibliography li {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .publications .bibliography li:hover {
+    transform: none;
+  }
+
+  .publications .title {
+    font-size: 1.125rem;
+  }
+
+  .publications .links {
+    gap: 0.375rem;
+  }
+
+  .publications .links .btn {
+    font-size: 0.75rem;
+    padding: 0.375rem 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pubs-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .year-filter-buttons {
+    flex-direction: column;
+  }
+
+  .year-filter-btn {
+    width: 100%;
+  }
+
+  .research-interests {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .interest-tag {
+    justify-content: center;
+  }
+}
+</style>
+
+<script>
+// Year filter functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const filterButtons = document.querySelectorAll('.year-filter-btn');
+  const publications = document.querySelectorAll('.publications .bibliography li');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const year = this.dataset.year;
+
+      // Update active state
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+
+      // Filter publications
+      publications.forEach(pub => {
+        const pubYear = pub.querySelector('.periodical')?.textContent?.match(/\d{4}/)?.[0];
+
+        if (year === 'all') {
+          pub.style.display = '';
+        } else if (year.includes('-')) {
+          const [start, end] = year.split('-').map(Number);
+          const pubYearNum = parseInt(pubYear);
+          pub.style.display = (pubYearNum >= start && pubYearNum <= end) ? '' : 'none';
+        } else {
+          pub.style.display = pubYear === year ? '' : 'none';
+        }
+      });
+    });
+  });
+});
+</script>
