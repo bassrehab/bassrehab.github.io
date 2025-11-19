@@ -335,7 +335,7 @@
     <span class="n">timestamp</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="bp">None</span>
     <span class="n">token_count</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="bp">None</span>
     <span class="n">references</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span>
-    
+
     <span class="k">def</span> <span class="nf">__post_init__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">self</span><span class="p">.</span><span class="n">timestamp</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">self</span><span class="p">.</span><span class="n">timestamp</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="nf">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
@@ -362,18 +362,18 @@
     <span class="n">metrics</span><span class="p">:</span> <span class="n">ContextMetrics</span>
     <span class="n">version</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">trace_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="bp">None</span>
-    
+
     <span class="k">def</span> <span class="nf">__post_init__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">self</span><span class="p">.</span><span class="n">trace_id</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">self</span><span class="p">.</span><span class="n">trace_id</span> <span class="o">=</span> <span class="nf">str</span><span class="p">(</span><span class="n">uuid</span><span class="p">.</span><span class="nf">uuid4</span><span class="p">())</span>
-            
+
     <span class="k">def</span> <span class="nf">calculate_metrics</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
         <span class="sh">"""</span><span class="s">Calculate metrics based on current context blocks</span><span class="sh">"""</span>
         <span class="n">total_tokens</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="n">block</span><span class="p">.</span><span class="n">token_count</span> <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">self</span><span class="p">.</span><span class="n">blocks</span><span class="p">)</span>
-        
+
         <span class="c1"># Assuming 8K context window
 </span>        <span class="n">context_saturation</span> <span class="o">=</span> <span class="nf">min</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">total_tokens</span> <span class="o">/</span> <span class="mi">8192</span><span class="p">)</span>
-        
+
         <span class="c1"># Calculate distribution of context types
 </span>        <span class="n">type_counts</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">self</span><span class="p">.</span><span class="n">blocks</span><span class="p">:</span>
@@ -381,18 +381,18 @@
             <span class="k">if</span> <span class="n">type_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">type_counts</span><span class="p">:</span>
                 <span class="n">type_counts</span><span class="p">[</span><span class="n">type_name</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
             <span class="n">type_counts</span><span class="p">[</span><span class="n">type_name</span><span class="p">]</span> <span class="o">+=</span> <span class="n">block</span><span class="p">.</span><span class="n">token_count</span>
-        
+
         <span class="n">type_distribution</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="o">/</span> <span class="n">total_tokens</span> <span class="k">if</span> <span class="n">total_tokens</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">0</span> 
+            <span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="o">/</span> <span class="n">total_tokens</span> <span class="k">if</span> <span class="n">total_tokens</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">0</span>
             <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">type_counts</span><span class="p">.</span><span class="nf">items</span><span class="p">()</span>
         <span class="p">}</span>
-        
+
         <span class="n">self</span><span class="p">.</span><span class="n">metrics</span> <span class="o">=</span> <span class="nc">ContextMetrics</span><span class="p">(</span>
             <span class="n">total_tokens</span><span class="o">=</span><span class="n">total_tokens</span><span class="p">,</span>
             <span class="n">context_saturation</span><span class="o">=</span><span class="n">context_saturation</span><span class="p">,</span>
             <span class="n">type_distribution</span><span class="o">=</span><span class="n">type_distribution</span>
         <span class="p">)</span>
-        
+
     <span class="k">def</span> <span class="nf">to_dict</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
         <span class="sh">"""</span><span class="s">Convert to dictionary representation for serialization</span><span class="sh">"""</span>
         <span class="k">return</span> <span class="p">{</span>
@@ -425,14 +425,14 @@
 
 <span class="k">class</span> <span class="nc">ContextManager</span><span class="p">:</span>
     <span class="sh">"""</span><span class="s">Manages context operations using Model Context Protocol</span><span class="sh">"""</span>
-    
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> 
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span>
                 <span class="n">max_tokens</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">8192</span><span class="p">,</span>
                 <span class="n">relevance_threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">):</span>
         <span class="n">self</span><span class="p">.</span><span class="n">max_tokens</span> <span class="o">=</span> <span class="n">max_tokens</span>
         <span class="n">self</span><span class="p">.</span><span class="n">relevance_threshold</span> <span class="o">=</span> <span class="n">relevance_threshold</span>
         <span class="n">self</span><span class="p">.</span><span class="n">sessions</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">ContextPackage</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
-        
+
     <span class="k">def</span> <span class="nf">create_session</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">agent_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sh">"""</span><span class="s">Create a new context session</span><span class="sh">"""</span>
         <span class="n">session_id</span> <span class="o">=</span> <span class="nf">str</span><span class="p">(</span><span class="n">uuid</span><span class="p">.</span><span class="nf">uuid4</span><span class="p">())</span>
@@ -447,8 +447,8 @@
             <span class="p">)</span>
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">session_id</span>
-    
-    <span class="k">def</span> <span class="nf">add_context</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> 
+
+    <span class="k">def</span> <span class="nf">add_context</span><span class="p">(</span><span class="n">self</span><span class="p">,</span>
                    <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
                    <span class="n">content</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
                    <span class="n">context_type</span><span class="p">:</span> <span class="n">ContextType</span><span class="p">,</span>
@@ -457,7 +457,7 @@
         <span class="sh">"""</span><span class="s">Add context to an existing session</span><span class="sh">"""</span>
         <span class="k">if</span> <span class="n">session_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">self</span><span class="p">.</span><span class="n">sessions</span><span class="p">:</span>
             <span class="k">raise</span> <span class="nc">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Session </span><span class="si">{</span><span class="n">session_id</span><span class="si">}</span><span class="s"> does not exist</span><span class="sh">"</span><span class="p">)</span>
-        
+
         <span class="n">block_id</span> <span class="o">=</span> <span class="nf">str</span><span class="p">(</span><span class="n">uuid</span><span class="p">.</span><span class="nf">uuid4</span><span class="p">())</span>
         <span class="n">block</span> <span class="o">=</span> <span class="nc">ContextBlock</span><span class="p">(</span>
             <span class="nb">id</span><span class="o">=</span><span class="n">block_id</span><span class="p">,</span>
@@ -466,49 +466,49 @@
             <span class="nb">type</span><span class="o">=</span><span class="n">context_type</span><span class="p">,</span>
             <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span> <span class="ow">or</span> <span class="p">{}</span>
         <span class="p">)</span>
-        
+
         <span class="n">self</span><span class="p">.</span><span class="n">sessions</span><span class="p">[</span><span class="n">session_id</span><span class="p">].</span><span class="n">blocks</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">block</span><span class="p">)</span>
         <span class="n">self</span><span class="p">.</span><span class="n">sessions</span><span class="p">[</span><span class="n">session_id</span><span class="p">].</span><span class="nf">calculate_metrics</span><span class="p">()</span>
-        
+
         <span class="c1"># If we've exceeded context window, perform context pruning
 </span>        <span class="k">if</span> <span class="n">self</span><span class="p">.</span><span class="n">sessions</span><span class="p">[</span><span class="n">session_id</span><span class="p">].</span><span class="n">metrics</span><span class="p">.</span><span class="n">context_saturation</span> <span class="o">&gt;=</span> <span class="mf">0.9</span><span class="p">:</span>
             <span class="n">self</span><span class="p">.</span><span class="nf">_prune_context</span><span class="p">(</span><span class="n">session_id</span><span class="p">)</span>
-            
+
         <span class="k">return</span> <span class="n">block_id</span>
-    
+
     <span class="k">def</span> <span class="nf">_prune_context</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
         <span class="sh">"""</span><span class="s">Prune least relevant context to fit within token limits</span><span class="sh">"""</span>
         <span class="n">session</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">sessions</span><span class="p">[</span><span class="n">session_id</span><span class="p">]</span>
-        
+
         <span class="c1"># Don't prune SYSTEM context
 </span>        <span class="n">system_blocks</span> <span class="o">=</span> <span class="p">[</span><span class="n">b</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">session</span><span class="p">.</span><span class="n">blocks</span> <span class="k">if</span> <span class="n">b</span><span class="p">.</span><span class="nb">type</span> <span class="o">==</span> <span class="n">ContextType</span><span class="p">.</span><span class="n">SYSTEM</span><span class="p">]</span>
         <span class="n">other_blocks</span> <span class="o">=</span> <span class="p">[</span><span class="n">b</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">session</span><span class="p">.</span><span class="n">blocks</span> <span class="k">if</span> <span class="n">b</span><span class="p">.</span><span class="nb">type</span> <span class="o">!=</span> <span class="n">ContextType</span><span class="p">.</span><span class="n">SYSTEM</span><span class="p">]</span>
-        
+
         <span class="c1"># Sort by relevance score (ascending)
 </span>        <span class="n">other_blocks</span><span class="p">.</span><span class="nf">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">.</span><span class="n">relevance_score</span><span class="p">)</span>
-        
+
         <span class="c1"># Keep removing blocks until we're under target
 </span>        <span class="n">system_tokens</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">token_count</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">system_blocks</span><span class="p">)</span>
         <span class="n">target_tokens</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">max_tokens</span> <span class="o">*</span> <span class="mf">0.8</span><span class="p">)</span> <span class="o">-</span> <span class="n">system_tokens</span>  <span class="c1"># Target 80% usage
-</span>        
+</span>
         <span class="n">current_tokens</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">token_count</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">other_blocks</span><span class="p">)</span>
         <span class="k">while</span> <span class="n">current_tokens</span> <span class="o">&gt;</span> <span class="n">target_tokens</span> <span class="ow">and</span> <span class="n">other_blocks</span><span class="p">:</span>
             <span class="n">removed_block</span> <span class="o">=</span> <span class="n">other_blocks</span><span class="p">.</span><span class="nf">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># Remove least relevant
 </span>            <span class="n">current_tokens</span> <span class="o">-=</span> <span class="n">removed_block</span><span class="p">.</span><span class="n">token_count</span>
-        
+
         <span class="c1"># Reconstitute the blocks list
 </span>        <span class="n">session</span><span class="p">.</span><span class="n">blocks</span> <span class="o">=</span> <span class="n">system_blocks</span> <span class="o">+</span> <span class="n">other_blocks</span>
         <span class="n">session</span><span class="p">.</span><span class="nf">calculate_metrics</span><span class="p">()</span>
-    
-    <span class="k">def</span> <span class="nf">get_formatted_context</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> 
+
+    <span class="k">def</span> <span class="nf">get_formatted_context</span><span class="p">(</span><span class="n">self</span><span class="p">,</span>
                              <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
                              <span class="n">formatter</span><span class="p">:</span> <span class="n">Callable</span> <span class="o">=</span> <span class="bp">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sh">"""</span><span class="s">Get formatted context for model input</span><span class="sh">"""</span>
         <span class="k">if</span> <span class="n">session_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">self</span><span class="p">.</span><span class="n">sessions</span><span class="p">:</span>
             <span class="k">raise</span> <span class="nc">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Session </span><span class="si">{</span><span class="n">session_id</span><span class="si">}</span><span class="s"> does not exist</span><span class="sh">"</span><span class="p">)</span>
-        
+
         <span class="n">session</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">sessions</span><span class="p">[</span><span class="n">session_id</span><span class="p">]</span>
-        
+
         <span class="c1"># Default formatter concatenates content with block type as separator
 </span>        <span class="k">if</span> <span class="n">formatter</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
@@ -516,20 +516,20 @@
                 <span class="k">if</span> <span class="n">block</span><span class="p">.</span><span class="n">relevance_score</span> <span class="o">&gt;=</span> <span class="n">self</span><span class="p">.</span><span class="n">relevance_threshold</span><span class="p">:</span>
                     <span class="n">result</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">[</span><span class="si">{</span><span class="n">block</span><span class="p">.</span><span class="nb">type</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s">]</span><span class="se">\n</span><span class="si">{</span><span class="n">block</span><span class="p">.</span><span class="n">content</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
             <span class="k">return</span> <span class="sh">"</span><span class="se">\n\n</span><span class="sh">"</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-        
+
         <span class="k">return</span> <span class="nf">formatter</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
-    
+
     <span class="k">def</span> <span class="nf">export_session</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
         <span class="sh">"""</span><span class="s">Export session as serializable dict</span><span class="sh">"""</span>
         <span class="k">if</span> <span class="n">session_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">self</span><span class="p">.</span><span class="n">sessions</span><span class="p">:</span>
             <span class="k">raise</span> <span class="nc">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Session </span><span class="si">{</span><span class="n">session_id</span><span class="si">}</span><span class="s"> does not exist</span><span class="sh">"</span><span class="p">)</span>
-        
+
         <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">sessions</span><span class="p">[</span><span class="n">session_id</span><span class="p">].</span><span class="nf">to_dict</span><span class="p">()</span>
-        
+
     <span class="k">def</span> <span class="nf">import_session</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">session_data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sh">"""</span><span class="s">Import a session from serialized data</span><span class="sh">"""</span>
         <span class="n">session_id</span> <span class="o">=</span> <span class="n">session_data</span><span class="p">[</span><span class="sh">"</span><span class="s">session_id</span><span class="sh">"</span><span class="p">]</span>
-        
+
         <span class="n">blocks</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">block_data</span> <span class="ow">in</span> <span class="n">session_data</span><span class="p">[</span><span class="sh">"</span><span class="s">blocks</span><span class="sh">"</span><span class="p">]:</span>
             <span class="n">blocks</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="nc">ContextBlock</span><span class="p">(</span>
@@ -542,13 +542,13 @@
                 <span class="n">token_count</span><span class="o">=</span><span class="n">block_data</span><span class="p">[</span><span class="sh">"</span><span class="s">token_count</span><span class="sh">"</span><span class="p">],</span>
                 <span class="n">references</span><span class="o">=</span><span class="n">block_data</span><span class="p">[</span><span class="sh">"</span><span class="s">references</span><span class="sh">"</span><span class="p">]</span>
             <span class="p">))</span>
-        
+
         <span class="n">metrics</span> <span class="o">=</span> <span class="nc">ContextMetrics</span><span class="p">(</span>
             <span class="n">total_tokens</span><span class="o">=</span><span class="n">session_data</span><span class="p">[</span><span class="sh">"</span><span class="s">metrics</span><span class="sh">"</span><span class="p">][</span><span class="sh">"</span><span class="s">total_tokens</span><span class="sh">"</span><span class="p">],</span>
             <span class="n">context_saturation</span><span class="o">=</span><span class="n">session_data</span><span class="p">[</span><span class="sh">"</span><span class="s">metrics</span><span class="sh">"</span><span class="p">][</span><span class="sh">"</span><span class="s">context_saturation</span><span class="sh">"</span><span class="p">],</span>
             <span class="n">type_distribution</span><span class="o">=</span><span class="n">session_data</span><span class="p">[</span><span class="sh">"</span><span class="s">metrics</span><span class="sh">"</span><span class="p">][</span><span class="sh">"</span><span class="s">type_distribution</span><span class="sh">"</span><span class="p">]</span>
         <span class="p">)</span>
-        
+
         <span class="n">self</span><span class="p">.</span><span class="n">sessions</span><span class="p">[</span><span class="n">session_id</span><span class="p">]</span> <span class="o">=</span> <span class="nc">ContextPackage</span><span class="p">(</span>
             <span class="n">session_id</span><span class="o">=</span><span class="n">session_id</span><span class="p">,</span>
             <span class="n">agent_id</span><span class="o">=</span><span class="n">session_data</span><span class="p">[</span><span class="sh">"</span><span class="s">agent_id</span><span class="sh">"</span><span class="p">],</span>
@@ -557,7 +557,7 @@
             <span class="n">version</span><span class="o">=</span><span class="n">session_data</span><span class="p">[</span><span class="sh">"</span><span class="s">version</span><span class="sh">"</span><span class="p">],</span>
             <span class="n">trace_id</span><span class="o">=</span><span class="n">session_data</span><span class="p">[</span><span class="sh">"</span><span class="s">trace_id</span><span class="sh">"</span><span class="p">]</span>
         <span class="p">)</span>
-        
+
         <span class="k">return</span> <span class="n">session_id</span>
 </code></pre></div></div> <p><br></p> <h3 id="integration-with-existing-agent-systems">Integration with Existing Agent Systems</h3> <p>Now let’s implement the integration of MCP into our multi-agent telecom customer service system from the previous article:</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Union</span>
 <span class="kn">import</span> <span class="n">asyncio</span>
@@ -565,7 +565,7 @@
 
 <span class="k">class</span> <span class="nc">MCPEnabledAgent</span><span class="p">:</span>
     <span class="sh">"""</span><span class="s">Base class for agents that use Model Context Protocol</span><span class="sh">"""</span>
-    
+
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span>
                 <span class="n">llm_client</span><span class="p">,</span>
                 <span class="n">agent_role</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -574,11 +574,11 @@
         <span class="n">self</span><span class="p">.</span><span class="n">role</span> <span class="o">=</span> <span class="n">agent_role</span>
         <span class="n">self</span><span class="p">.</span><span class="n">context_manager</span> <span class="o">=</span> <span class="n">context_manager</span> <span class="ow">or</span> <span class="nc">ContextManager</span><span class="p">()</span>
         <span class="n">self</span><span class="p">.</span><span class="n">session_id</span> <span class="o">=</span> <span class="bp">None</span>
-    
+
     <span class="k">async</span> <span class="k">def</span> <span class="nf">initialize_session</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sh">"""</span><span class="s">Initialize a new context session</span><span class="sh">"""</span>
         <span class="n">self</span><span class="p">.</span><span class="n">session_id</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">context_manager</span><span class="p">.</span><span class="nf">create_session</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">role</span><span class="p">)</span>
-        
+
         <span class="c1"># Add system prompt as SYSTEM context
 </span>        <span class="n">system_prompt</span> <span class="o">=</span> <span class="k">await</span> <span class="n">self</span><span class="p">.</span><span class="nf">_load_role_prompt</span><span class="p">()</span>
         <span class="n">self</span><span class="p">.</span><span class="n">context_manager</span><span class="p">.</span><span class="nf">add_context</span><span class="p">(</span>
@@ -588,20 +588,20 @@
             <span class="n">relevance_score</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>  <span class="c1"># System prompts always max relevance
 </span>            <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="sh">"</span><span class="s">type</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">system_prompt</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">role</span><span class="sh">"</span><span class="p">:</span> <span class="n">self</span><span class="p">.</span><span class="n">role</span><span class="p">}</span>
         <span class="p">)</span>
-        
+
         <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">session_id</span>
-    
+
     <span class="k">async</span> <span class="k">def</span> <span class="nf">_load_role_prompt</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sh">"""</span><span class="s">Load role-specific prompt - implement in subclasses</span><span class="sh">"""</span>
         <span class="k">raise</span> <span class="nc">NotImplementedError</span><span class="p">()</span>
-    
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">add_user_context</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> 
-                              <span class="n">content</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> 
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">add_user_context</span><span class="p">(</span><span class="n">self</span><span class="p">,</span>
+                              <span class="n">content</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
                               <span class="n">metadata</span><span class="p">:</span> <span class="n">Dict</span> <span class="o">=</span> <span class="bp">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sh">"""</span><span class="s">Add user input to context</span><span class="sh">"""</span>
         <span class="k">if</span> <span class="n">self</span><span class="p">.</span><span class="n">session_id</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">await</span> <span class="n">self</span><span class="p">.</span><span class="nf">initialize_session</span><span class="p">()</span>
-            
+
         <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">context_manager</span><span class="p">.</span><span class="nf">add_context</span><span class="p">(</span>
             <span class="n">session_id</span><span class="o">=</span><span class="n">self</span><span class="p">.</span><span class="n">session_id</span><span class="p">,</span>
             <span class="n">content</span><span class="o">=</span><span class="n">content</span><span class="p">,</span>
@@ -609,7 +609,7 @@
             <span class="n">relevance_score</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span>  <span class="c1"># User context starts with high relevance
 </span>            <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span> <span class="ow">or</span> <span class="p">{}</span>
         <span class="p">)</span>
-    
+
     <span class="k">async</span> <span class="k">def</span> <span class="nf">add_memory_context</span><span class="p">(</span><span class="n">self</span><span class="p">,</span>
                                 <span class="n">content</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
                                 <span class="n">relevance_score</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
@@ -617,7 +617,7 @@
         <span class="sh">"""</span><span class="s">Add memory (from episodic or semantic memory) to context</span><span class="sh">"""</span>
         <span class="k">if</span> <span class="n">self</span><span class="p">.</span><span class="n">session_id</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">await</span> <span class="n">self</span><span class="p">.</span><span class="nf">initialize_session</span><span class="p">()</span>
-            
+
         <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">context_manager</span><span class="p">.</span><span class="nf">add_context</span><span class="p">(</span>
             <span class="n">session_id</span><span class="o">=</span><span class="n">self</span><span class="p">.</span><span class="n">session_id</span><span class="p">,</span>
             <span class="n">content</span><span class="o">=</span><span class="n">content</span><span class="p">,</span>
@@ -625,7 +625,7 @@
             <span class="n">relevance_score</span><span class="o">=</span><span class="n">relevance_score</span><span class="p">,</span>
             <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span> <span class="ow">or</span> <span class="p">{}</span>
         <span class="p">)</span>
-    
+
     <span class="k">async</span> <span class="k">def</span> <span class="nf">add_tool_context</span><span class="p">(</span><span class="n">self</span><span class="p">,</span>
                               <span class="n">content</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
                               <span class="n">tool_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -633,11 +633,11 @@
         <span class="sh">"""</span><span class="s">Add tool usage results to context</span><span class="sh">"""</span>
         <span class="k">if</span> <span class="n">self</span><span class="p">.</span><span class="n">session_id</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">await</span> <span class="n">self</span><span class="p">.</span><span class="nf">initialize_session</span><span class="p">()</span>
-            
+
         <span class="k">if</span> <span class="n">metadata</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="n">metadata</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="n">metadata</span><span class="p">[</span><span class="sh">"</span><span class="s">tool_name</span><span class="sh">"</span><span class="p">]</span> <span class="o">=</span> <span class="n">tool_name</span>
-            
+
         <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">context_manager</span><span class="p">.</span><span class="nf">add_context</span><span class="p">(</span>
             <span class="n">session_id</span><span class="o">=</span><span class="n">self</span><span class="p">.</span><span class="n">session_id</span><span class="p">,</span>
             <span class="n">content</span><span class="o">=</span><span class="n">content</span><span class="p">,</span>
@@ -645,22 +645,22 @@
             <span class="n">relevance_score</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>  <span class="c1"># Tool outputs generally have high relevance
 </span>            <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span>
         <span class="p">)</span>
-    
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">process_with_llm</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> 
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">process_with_llm</span><span class="p">(</span><span class="n">self</span><span class="p">,</span>
                               <span class="n">prompt</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="bp">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sh">"""</span><span class="s">Process the current context with LLM</span><span class="sh">"""</span>
         <span class="k">if</span> <span class="n">self</span><span class="p">.</span><span class="n">session_id</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">await</span> <span class="n">self</span><span class="p">.</span><span class="nf">initialize_session</span><span class="p">()</span>
-        
+
         <span class="n">formatted_context</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">context_manager</span><span class="p">.</span><span class="nf">get_formatted_context</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">session_id</span><span class="p">)</span>
-        
+
         <span class="k">if</span> <span class="n">prompt</span><span class="p">:</span>
             <span class="c1"># Add additional prompt as temporary context
 </span>            <span class="n">formatted_context</span> <span class="o">+=</span> <span class="sa">f</span><span class="sh">"</span><span class="se">\n\n</span><span class="s">[PROMPT]</span><span class="se">\n</span><span class="si">{</span><span class="n">prompt</span><span class="si">}</span><span class="sh">"</span>
-        
+
         <span class="c1"># Call LLM with formatted context
 </span>        <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">self</span><span class="p">.</span><span class="n">llm</span><span class="p">.</span><span class="nf">generate</span><span class="p">(</span><span class="n">formatted_context</span><span class="p">)</span>
-        
+
         <span class="c1"># Add agent response to context
 </span>        <span class="n">self</span><span class="p">.</span><span class="n">context_manager</span><span class="p">.</span><span class="nf">add_context</span><span class="p">(</span>
             <span class="n">session_id</span><span class="o">=</span><span class="n">self</span><span class="p">.</span><span class="n">session_id</span><span class="p">,</span>
@@ -669,31 +669,31 @@
             <span class="n">relevance_score</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span>  <span class="c1"># Agent responses are highly relevant
 </span>            <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="sh">"</span><span class="s">type</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">agent_response</span><span class="sh">"</span><span class="p">}</span>
         <span class="p">)</span>
-        
+
         <span class="k">return</span> <span class="n">response</span>
-    
+
     <span class="k">def</span> <span class="nf">export_context</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
         <span class="sh">"""</span><span class="s">Export current context for transfer to another agent</span><span class="sh">"""</span>
         <span class="k">if</span> <span class="n">self</span><span class="p">.</span><span class="n">session_id</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
             <span class="k">raise</span> <span class="nc">ValueError</span><span class="p">(</span><span class="sh">"</span><span class="s">No active session</span><span class="sh">"</span><span class="p">)</span>
-            
+
         <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">context_manager</span><span class="p">.</span><span class="nf">export_session</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">session_id</span><span class="p">)</span>
-    
+
     <span class="k">def</span> <span class="nf">import_context</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">context_data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
         <span class="sh">"""</span><span class="s">Import context from another agent</span><span class="sh">"""</span>
         <span class="n">self</span><span class="p">.</span><span class="n">session_id</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">context_manager</span><span class="p">.</span><span class="nf">import_session</span><span class="p">(</span><span class="n">context_data</span><span class="p">)</span>
 </code></pre></div></div> <p><br> <br> Now we can implement our specialized telecom agents with MCP integration:</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MCPEnabledIntentAgent</span><span class="p">(</span><span class="n">MCPEnabledAgent</span><span class="p">):</span>
     <span class="sh">"""</span><span class="s">Intent analysis agent with MCP integration</span><span class="sh">"""</span>
-    
+
     <span class="k">async</span> <span class="k">def</span> <span class="nf">_load_role_prompt</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="sh">"""</span><span class="s">You are an Intent Analysis Agent in a telecom customer service system.
 Your role is to precisely identify customer intent from queries, detect multiple or
 hidden intents, assess intent confidence, and identify required context for resolution.</span><span class="sh">"""</span>
-    
+
     <span class="k">async</span> <span class="k">def</span> <span class="nf">analyze_intent</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
         <span class="sh">"""</span><span class="s">Analyze customer intent using MCP for context management</span><span class="sh">"""</span>
         <span class="k">await</span> <span class="n">self</span><span class="p">.</span><span class="nf">add_user_context</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="p">{</span><span class="sh">"</span><span class="s">type</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">customer_query</span><span class="sh">"</span><span class="p">})</span>
-        
+
         <span class="n">analysis_prompt</span> <span class="o">=</span> <span class="sh">"""</span><span class="s">Based on the customer query above, provide the following analysis:
 1. Primary Intent: The main customer goal
 2. Secondary Intents: Additional or implied needs
@@ -702,9 +702,9 @@ hidden intents, assess intent confidence, and identify required context for reso
 
 Return your analysis in JSON format.
 </span><span class="sh">"""</span>
-        
+
         <span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">self</span><span class="p">.</span><span class="nf">process_with_llm</span><span class="p">(</span><span class="n">analysis_prompt</span><span class="p">)</span>
-        
+
         <span class="c1"># Parse JSON response (in production, add error handling)
 </span>        <span class="k">try</span><span class="p">:</span>
             <span class="n">analysis</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="nf">loads</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
@@ -716,25 +716,25 @@ Return your analysis in JSON format.
                 <span class="sh">"</span><span class="s">required_information</span><span class="sh">"</span><span class="p">:</span> <span class="p">[],</span>
                 <span class="sh">"</span><span class="s">confidence</span><span class="sh">"</span><span class="p">:</span> <span class="mf">0.5</span>
             <span class="p">}</span>
-            
+
         <span class="k">return</span> <span class="n">analysis</span>
 
 <span class="k">class</span> <span class="nc">MCPEnabledTechnicalAgent</span><span class="p">(</span><span class="n">MCPEnabledAgent</span><span class="p">):</span>
     <span class="sh">"""</span><span class="s">Technical support agent with MCP integration</span><span class="sh">"""</span>
-    
+
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">llm_client</span><span class="p">,</span> <span class="n">network_api</span><span class="p">,</span> <span class="n">context_manager</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="nf">super</span><span class="p">().</span><span class="nf">__init__</span><span class="p">(</span><span class="n">llm_client</span><span class="p">,</span> <span class="sh">"</span><span class="s">technical_agent</span><span class="sh">"</span><span class="p">,</span> <span class="n">context_manager</span><span class="p">)</span>
         <span class="n">self</span><span class="p">.</span><span class="n">network_api</span> <span class="o">=</span> <span class="n">network_api</span>
-    
+
     <span class="k">async</span> <span class="k">def</span> <span class="nf">_load_role_prompt</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="sh">"""</span><span class="s">You are a Technical Support Agent specializing in telecom issues.
 Your role is to diagnose technical issues from symptoms, design step-by-step
 troubleshooting plans, interpret diagnostic results, and recommend solutions.</span><span class="sh">"""</span>
-    
+
     <span class="k">async</span> <span class="k">def</span> <span class="nf">diagnose_issue</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">issue_description</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">customer_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
         <span class="sh">"""</span><span class="s">Diagnose technical issue with MCP context management</span><span class="sh">"""</span>
         <span class="k">await</span> <span class="n">self</span><span class="p">.</span><span class="nf">add_user_context</span><span class="p">(</span><span class="n">issue_description</span><span class="p">,</span> <span class="p">{</span><span class="sh">"</span><span class="s">customer_id</span><span class="sh">"</span><span class="p">:</span> <span class="n">customer_id</span><span class="p">})</span>
-        
+
         <span class="c1"># Add relevant customer technical data from memory
 </span>        <span class="n">network_data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">self</span><span class="p">.</span><span class="n">network_api</span><span class="p">.</span><span class="nf">get_customer_network_data</span><span class="p">(</span><span class="n">customer_id</span><span class="p">)</span>
         <span class="k">await</span> <span class="n">self</span><span class="p">.</span><span class="nf">add_memory_context</span><span class="p">(</span>
@@ -742,7 +742,7 @@ troubleshooting plans, interpret diagnostic results, and recommend solutions.</s
             <span class="n">relevance_score</span><span class="o">=</span><span class="mf">0.85</span><span class="p">,</span>
             <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="sh">"</span><span class="s">type</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">network_data</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">customer_id</span><span class="sh">"</span><span class="p">:</span> <span class="n">customer_id</span><span class="p">}</span>
         <span class="p">)</span>
-        
+
         <span class="c1"># Run network diagnostics and add results to context
 </span>        <span class="n">diagnostics</span> <span class="o">=</span> <span class="k">await</span> <span class="n">self</span><span class="p">.</span><span class="n">network_api</span><span class="p">.</span><span class="nf">run_diagnostics</span><span class="p">(</span><span class="n">customer_id</span><span class="p">)</span>
         <span class="k">await</span> <span class="n">self</span><span class="p">.</span><span class="nf">add_tool_context</span><span class="p">(</span>
@@ -750,7 +750,7 @@ troubleshooting plans, interpret diagnostic results, and recommend solutions.</s
             <span class="n">tool_name</span><span class="o">=</span><span class="sh">"</span><span class="s">network_diagnostics</span><span class="sh">"</span><span class="p">,</span>
             <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="sh">"</span><span class="s">customer_id</span><span class="sh">"</span><span class="p">:</span> <span class="n">customer_id</span><span class="p">}</span>
         <span class="p">)</span>
-        
+
         <span class="n">analysis_prompt</span> <span class="o">=</span> <span class="sh">"""</span><span class="s">Based on the customer issue, network data, and diagnostic results,
 provide a technical analysis with:
 1. Root Cause: The most likely cause of the issue
@@ -760,9 +760,9 @@ provide a technical analysis with:
 
 Return your analysis in JSON format.
 </span><span class="sh">"""</span>
-        
+
         <span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">self</span><span class="p">.</span><span class="nf">process_with_llm</span><span class="p">(</span><span class="n">analysis_prompt</span><span class="p">)</span>
-        
+
         <span class="k">try</span><span class="p">:</span>
             <span class="n">analysis</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="nf">loads</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
         <span class="k">except</span> <span class="n">json</span><span class="p">.</span><span class="n">JSONDecodeError</span><span class="p">:</span>
@@ -772,26 +772,26 @@ Return your analysis in JSON format.
                 <span class="sh">"</span><span class="s">alternative_solutions</span><span class="sh">"</span><span class="p">:</span> <span class="p">[],</span>
                 <span class="sh">"</span><span class="s">confidence</span><span class="sh">"</span><span class="p">:</span> <span class="mf">0.5</span>
             <span class="p">}</span>
-            
+
         <span class="k">return</span> <span class="n">analysis</span>
 </code></pre></div></div> <p><br> <br></p> <h2 id="context-optimization-strategies">Context Optimization Strategies</h2> <p>Agent systems operating at scale need advanced optimization strategies to ensure efficient use of context windows. Here are key MCP-enabled optimization techniques:</p> <p><br></p> <h3 id="context-window-management">Context Window Management</h3> <p><br></p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ContextWindowOptimizer</span><span class="p">:</span>
     <span class="sh">"""</span><span class="s">Optimizes context window usage using MCP metadata</span><span class="sh">"""</span>
-    
+
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">context_manager</span><span class="p">:</span> <span class="n">ContextManager</span><span class="p">):</span>
         <span class="n">self</span><span class="p">.</span><span class="n">context_manager</span> <span class="o">=</span> <span class="n">context_manager</span>
-    
+
     <span class="k">async</span> <span class="k">def</span> <span class="nf">optimize_session</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">max_tokens</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">4096</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
         <span class="sh">"""</span><span class="s">Optimize context window to fit within token limit</span><span class="sh">"""</span>
         <span class="k">if</span> <span class="n">session_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">self</span><span class="p">.</span><span class="n">context_manager</span><span class="p">.</span><span class="n">sessions</span><span class="p">:</span>
             <span class="k">raise</span> <span class="nc">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Session </span><span class="si">{</span><span class="n">session_id</span><span class="si">}</span><span class="s"> does not exist</span><span class="sh">"</span><span class="p">)</span>
-            
+
         <span class="n">session</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">context_manager</span><span class="p">.</span><span class="n">sessions</span><span class="p">[</span><span class="n">session_id</span><span class="p">]</span>
-        
+
         <span class="c1"># Calculate current usage
 </span>        <span class="n">current_tokens</span> <span class="o">=</span> <span class="n">session</span><span class="p">.</span><span class="n">metrics</span><span class="p">.</span><span class="n">total_tokens</span>
         <span class="k">if</span> <span class="n">current_tokens</span> <span class="o">&lt;=</span> <span class="n">max_tokens</span><span class="p">:</span>
             <span class="k">return</span>  <span class="c1"># Already within limits
-</span>            
+</span>
         <span class="c1"># Sort blocks by type and relevance
 </span>        <span class="n">typed_blocks</span> <span class="o">=</span> <span class="p">{</span>
             <span class="n">ContextType</span><span class="p">.</span><span class="n">SYSTEM</span><span class="p">:</span> <span class="p">[],</span>
@@ -801,38 +801,38 @@ Return your analysis in JSON format.
             <span class="n">ContextType</span><span class="p">.</span><span class="n">KNOWLEDGE</span><span class="p">:</span> <span class="p">[],</span>
             <span class="n">ContextType</span><span class="p">.</span><span class="n">TOOL</span><span class="p">:</span> <span class="p">[]</span>
         <span class="p">}</span>
-        
+
         <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">session</span><span class="p">.</span><span class="n">blocks</span><span class="p">:</span>
             <span class="n">typed_blocks</span><span class="p">[</span><span class="n">block</span><span class="p">.</span><span class="nb">type</span><span class="p">].</span><span class="nf">append</span><span class="p">(</span><span class="n">block</span><span class="p">)</span>
-            
+
         <span class="c1"># Always keep SYSTEM blocks
 </span>        <span class="n">optimized_blocks</span> <span class="o">=</span> <span class="n">typed_blocks</span><span class="p">[</span><span class="n">ContextType</span><span class="p">.</span><span class="n">SYSTEM</span><span class="p">].</span><span class="nf">copy</span><span class="p">()</span>
         <span class="n">used_tokens</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">token_count</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">optimized_blocks</span><span class="p">)</span>
-        
+
         <span class="c1"># Keep most recent USER and AGENT blocks
 </span>        <span class="k">for</span> <span class="n">block_type</span> <span class="ow">in</span> <span class="p">[</span><span class="n">ContextType</span><span class="p">.</span><span class="n">USER</span><span class="p">,</span> <span class="n">ContextType</span><span class="p">.</span><span class="n">AGENT</span><span class="p">]:</span>
             <span class="n">blocks</span> <span class="o">=</span> <span class="nf">sorted</span><span class="p">(</span><span class="n">typed_blocks</span><span class="p">[</span><span class="n">block_type</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">b</span><span class="p">:</span> <span class="n">b</span><span class="p">.</span><span class="n">timestamp</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-            
+
             <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">blocks</span><span class="p">:</span>
                 <span class="k">if</span> <span class="n">used_tokens</span> <span class="o">+</span> <span class="n">block</span><span class="p">.</span><span class="n">token_count</span> <span class="o">&lt;=</span> <span class="n">max_tokens</span> <span class="o">*</span> <span class="mf">0.7</span><span class="p">:</span>  <span class="c1"># Keep 30% for tools/memory
 </span>                    <span class="n">optimized_blocks</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">block</span><span class="p">)</span>
                     <span class="n">used_tokens</span> <span class="o">+=</span> <span class="n">block</span><span class="p">.</span><span class="n">token_count</span>
-                    
+
         <span class="c1"># Use remaining space for TOOL, MEMORY and KNOWLEDGE blocks by relevance
 </span>        <span class="n">remaining_types</span> <span class="o">=</span> <span class="p">[</span><span class="n">ContextType</span><span class="p">.</span><span class="n">TOOL</span><span class="p">,</span> <span class="n">ContextType</span><span class="p">.</span><span class="n">MEMORY</span><span class="p">,</span> <span class="n">ContextType</span><span class="p">.</span><span class="n">KNOWLEDGE</span><span class="p">]</span>
         <span class="n">remaining_blocks</span> <span class="o">=</span> <span class="p">[]</span>
-        
+
         <span class="k">for</span> <span class="n">block_type</span> <span class="ow">in</span> <span class="n">remaining_types</span><span class="p">:</span>
             <span class="n">remaining_blocks</span><span class="p">.</span><span class="nf">extend</span><span class="p">(</span><span class="n">typed_blocks</span><span class="p">[</span><span class="n">block_type</span><span class="p">])</span>
-            
+
         <span class="c1"># Sort by relevance score
 </span>        <span class="n">remaining_blocks</span><span class="p">.</span><span class="nf">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">b</span><span class="p">:</span> <span class="n">b</span><span class="p">.</span><span class="n">relevance_score</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-        
+
         <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">remaining_blocks</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">used_tokens</span> <span class="o">+</span> <span class="n">block</span><span class="p">.</span><span class="n">token_count</span> <span class="o">&lt;=</span> <span class="n">max_tokens</span><span class="p">:</span>
                 <span class="n">optimized_blocks</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">block</span><span class="p">)</span>
                 <span class="n">used_tokens</span> <span class="o">+=</span> <span class="n">block</span><span class="p">.</span><span class="n">token_count</span>
-                
+
         <span class="c1"># Update session with optimized blocks
 </span>        <span class="n">session</span><span class="p">.</span><span class="n">blocks</span> <span class="o">=</span> <span class="n">optimized_blocks</span>
         <span class="n">session</span><span class="p">.</span><span class="nf">calculate_metrics</span><span class="p">()</span>
@@ -842,57 +842,57 @@ Return your analysis in JSON format.
 
 <span class="k">class</span> <span class="nc">ContextualRelevanceCalculator</span><span class="p">:</span>
     <span class="sh">"""</span><span class="s">Calculates contextual relevance between blocks using TF-IDF</span><span class="sh">"""</span>
-    
+
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
         <span class="n">self</span><span class="p">.</span><span class="n">vectorizer</span> <span class="o">=</span> <span class="nc">TfidfVectorizer</span><span class="p">(</span><span class="n">stop_words</span><span class="o">=</span><span class="sh">'</span><span class="s">english</span><span class="sh">'</span><span class="p">)</span>
-        
-    <span class="k">def</span> <span class="nf">calculate_relevance</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> 
-                           <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> 
+
+    <span class="k">def</span> <span class="nf">calculate_relevance</span><span class="p">(</span><span class="n">self</span><span class="p">,</span>
+                           <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
                            <span class="n">context_blocks</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ContextBlock</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
         <span class="sh">"""</span><span class="s">Calculate relevance scores between query and context blocks</span><span class="sh">"""</span>
         <span class="n">texts</span> <span class="o">=</span> <span class="p">[</span><span class="n">query</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">block</span><span class="p">.</span><span class="n">content</span> <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">context_blocks</span><span class="p">]</span>
-        
+
         <span class="c1"># Handle empty texts
 </span>        <span class="n">cleaned_texts</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span> <span class="k">if</span> <span class="n">t</span><span class="p">.</span><span class="nf">strip</span><span class="p">()</span> <span class="k">else</span> <span class="sh">"</span><span class="s">empty</span><span class="sh">"</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">texts</span><span class="p">]</span>
-        
+
         <span class="k">try</span><span class="p">:</span>
             <span class="c1"># Transform texts to TF-IDF vectors
 </span>            <span class="n">tfidf_matrix</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">vectorizer</span><span class="p">.</span><span class="nf">fit_transform</span><span class="p">(</span><span class="n">cleaned_texts</span><span class="p">)</span>
-            
+
             <span class="c1"># Calculate cosine similarity between query and each block
 </span>            <span class="n">query_vector</span> <span class="o">=</span> <span class="n">tfidf_matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span>
             <span class="n">block_vectors</span> <span class="o">=</span> <span class="n">tfidf_matrix</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
-            
+
             <span class="n">similarities</span> <span class="o">=</span> <span class="nf">cosine_similarity</span><span class="p">(</span><span class="n">query_vector</span><span class="p">,</span> <span class="n">block_vectors</span><span class="p">).</span><span class="nf">flatten</span><span class="p">()</span>
-            
+
             <span class="c1"># Create mapping of block IDs to relevance scores
 </span>            <span class="n">relevance_scores</span> <span class="o">=</span> <span class="p">{}</span>
             <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">block</span> <span class="ow">in</span> <span class="nf">enumerate</span><span class="p">(</span><span class="n">context_blocks</span><span class="p">):</span>
                 <span class="n">relevance_scores</span><span class="p">[</span><span class="n">block</span><span class="p">.</span><span class="nb">id</span><span class="p">]</span> <span class="o">=</span> <span class="nf">float</span><span class="p">(</span><span class="n">similarities</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-                
+
             <span class="k">return</span> <span class="n">relevance_scores</span>
         <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="c1"># Fallback to default scores if vectorization fails
 </span>            <span class="k">return</span> <span class="p">{</span><span class="n">block</span><span class="p">.</span><span class="nb">id</span><span class="p">:</span> <span class="mf">0.5</span> <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">context_blocks</span><span class="p">}</span>
-    
-    <span class="k">def</span> <span class="nf">update_relevance_scores</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> 
-                               <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> 
+
+    <span class="k">def</span> <span class="nf">update_relevance_scores</span><span class="p">(</span><span class="n">self</span><span class="p">,</span>
+                               <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
                                <span class="n">context_manager</span><span class="p">:</span> <span class="n">ContextManager</span><span class="p">,</span>
                                <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
         <span class="sh">"""</span><span class="s">Update relevance scores for all blocks in a session</span><span class="sh">"""</span>
         <span class="k">if</span> <span class="n">session_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">context_manager</span><span class="p">.</span><span class="n">sessions</span><span class="p">:</span>
             <span class="k">raise</span> <span class="nc">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Session </span><span class="si">{</span><span class="n">session_id</span><span class="si">}</span><span class="s"> does not exist</span><span class="sh">"</span><span class="p">)</span>
-            
+
         <span class="n">session</span> <span class="o">=</span> <span class="n">context_manager</span><span class="p">.</span><span class="n">sessions</span><span class="p">[</span><span class="n">session_id</span><span class="p">]</span>
         <span class="n">non_system_blocks</span> <span class="o">=</span> <span class="p">[</span><span class="n">b</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">session</span><span class="p">.</span><span class="n">blocks</span> <span class="k">if</span> <span class="n">b</span><span class="p">.</span><span class="nb">type</span> <span class="o">!=</span> <span class="n">ContextType</span><span class="p">.</span><span class="n">SYSTEM</span><span class="p">]</span>
-        
+
         <span class="n">relevance_scores</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">calculate_relevance</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">non_system_blocks</span><span class="p">)</span>
-        
+
         <span class="c1"># Update blocks with new scores
 </span>        <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">non_system_blocks</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">block</span><span class="p">.</span><span class="nb">id</span> <span class="ow">in</span> <span class="n">relevance_scores</span><span class="p">:</span>
                 <span class="n">block</span><span class="p">.</span><span class="n">relevance_score</span> <span class="o">=</span> <span class="n">relevance_scores</span><span class="p">[</span><span class="n">block</span><span class="p">.</span><span class="nb">id</span><span class="p">]</span>
-                
+
         <span class="c1"># System blocks always keep max relevance
 </span>        <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">session</span><span class="p">.</span><span class="n">blocks</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">block</span><span class="p">.</span><span class="nb">type</span> <span class="o">==</span> <span class="n">ContextType</span><span class="p">.</span><span class="n">SYSTEM</span><span class="p">:</span>
@@ -908,15 +908,15 @@ Return your analysis in JSON format.
     <span class="n">operation</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">times</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span>
     <span class="n">token_counts</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
-    
+
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">mean_time</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">statistics</span><span class="p">.</span><span class="nf">mean</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">times</span><span class="p">)</span>
-    
+
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">p95_time</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">statistics</span><span class="p">.</span><span class="nf">quantiles</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">times</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">20</span><span class="p">)[</span><span class="mi">18</span><span class="p">]</span>  <span class="c1"># 95th percentile
-</span>    
+</span>
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">tokens_per_second</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
         <span class="n">total_tokens</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">token_counts</span><span class="p">)</span>
@@ -925,24 +925,24 @@ Return your analysis in JSON format.
 
 <span class="k">class</span> <span class="nc">MCPBenchmark</span><span class="p">:</span>
     <span class="sh">"""</span><span class="s">Benchmark performance of MCP operations</span><span class="sh">"""</span>
-    
+
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">context_manager</span><span class="p">:</span> <span class="n">ContextManager</span><span class="p">):</span>
         <span class="n">self</span><span class="p">.</span><span class="n">context_manager</span> <span class="o">=</span> <span class="n">context_manager</span>
         <span class="n">self</span><span class="p">.</span><span class="n">results</span> <span class="o">=</span> <span class="p">{}</span>
-        
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">run_add_context_benchmark</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> 
-                                      <span class="n">iterations</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> 
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">run_add_context_benchmark</span><span class="p">(</span><span class="n">self</span><span class="p">,</span>
+                                      <span class="n">iterations</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span>
                                       <span class="n">content_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">500</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BenchmarkResult</span><span class="p">:</span>
         <span class="sh">"""</span><span class="s">Benchmark context addition operations</span><span class="sh">"""</span>
         <span class="n">session_id</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">context_manager</span><span class="p">.</span><span class="nf">create_session</span><span class="p">(</span><span class="sh">"</span><span class="s">benchmark</span><span class="sh">"</span><span class="p">)</span>
-        
+
         <span class="n">times</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="n">token_counts</span> <span class="o">=</span> <span class="p">[]</span>
-        
+
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">iterations</span><span class="p">):</span>
             <span class="c1"># Generate content of specified size
 </span>            <span class="n">content</span> <span class="o">=</span> <span class="sa">f</span><span class="sh">"</span><span class="s">Benchmark content iteration </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s"> </span><span class="sh">"</span> <span class="o">+</span> <span class="sh">"</span><span class="s">word </span><span class="sh">"</span> <span class="o">*</span> <span class="n">content_size</span>
-            
+
             <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="nf">time</span><span class="p">()</span>
             <span class="n">block_id</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">context_manager</span><span class="p">.</span><span class="nf">add_context</span><span class="p">(</span>
                 <span class="n">session_id</span><span class="o">=</span><span class="n">session_id</span><span class="p">,</span>
@@ -951,30 +951,30 @@ Return your analysis in JSON format.
                 <span class="n">relevance_score</span><span class="o">=</span><span class="mf">0.5</span>
             <span class="p">)</span>
             <span class="n">end_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="nf">time</span><span class="p">()</span>
-            
+
             <span class="n">elapsed</span> <span class="o">=</span> <span class="n">end_time</span> <span class="o">-</span> <span class="n">start_time</span>
             <span class="n">times</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">elapsed</span><span class="p">)</span>
-            
+
             <span class="c1"># Get token count
-</span>            <span class="n">block</span> <span class="o">=</span> <span class="nf">next</span><span class="p">(</span><span class="n">b</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">self</span><span class="p">.</span><span class="n">context_manager</span><span class="p">.</span><span class="n">sessions</span><span class="p">[</span><span class="n">session_id</span><span class="p">].</span><span class="n">blocks</span> 
+</span>            <span class="n">block</span> <span class="o">=</span> <span class="nf">next</span><span class="p">(</span><span class="n">b</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">self</span><span class="p">.</span><span class="n">context_manager</span><span class="p">.</span><span class="n">sessions</span><span class="p">[</span><span class="n">session_id</span><span class="p">].</span><span class="n">blocks</span>
                         <span class="k">if</span> <span class="n">b</span><span class="p">.</span><span class="nb">id</span> <span class="o">==</span> <span class="n">block_id</span><span class="p">)</span>
             <span class="n">token_counts</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">block</span><span class="p">.</span><span class="n">token_count</span><span class="p">)</span>
-            
+
         <span class="n">result</span> <span class="o">=</span> <span class="nc">BenchmarkResult</span><span class="p">(</span>
             <span class="n">operation</span><span class="o">=</span><span class="sh">"</span><span class="s">add_context</span><span class="sh">"</span><span class="p">,</span>
             <span class="n">times</span><span class="o">=</span><span class="n">times</span><span class="p">,</span>
             <span class="n">token_counts</span><span class="o">=</span><span class="n">token_counts</span>
         <span class="p">)</span>
-        
+
         <span class="n">self</span><span class="p">.</span><span class="n">results</span><span class="p">[</span><span class="sh">"</span><span class="s">add_context</span><span class="sh">"</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span>
         <span class="k">return</span> <span class="n">result</span>
-    
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">run_format_context_benchmark</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> 
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">run_format_context_benchmark</span><span class="p">(</span><span class="n">self</span><span class="p">,</span>
                                         <span class="n">iterations</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span>
                                         <span class="n">block_count</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BenchmarkResult</span><span class="p">:</span>
         <span class="sh">"""</span><span class="s">Benchmark context formatting operations</span><span class="sh">"""</span>
         <span class="n">session_id</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">context_manager</span><span class="p">.</span><span class="nf">create_session</span><span class="p">(</span><span class="sh">"</span><span class="s">benchmark</span><span class="sh">"</span><span class="p">)</span>
-        
+
         <span class="c1"># Prepare session with specified number of blocks
 </span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">block_count</span><span class="p">):</span>
             <span class="n">content</span> <span class="o">=</span> <span class="sa">f</span><span class="sh">"</span><span class="s">Benchmark content block </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s"> </span><span class="sh">"</span> <span class="o">+</span> <span class="sh">"</span><span class="s">word </span><span class="sh">"</span> <span class="o">*</span> <span class="mi">100</span>
@@ -984,41 +984,41 @@ Return your analysis in JSON format.
                 <span class="n">context_type</span><span class="o">=</span><span class="n">ContextType</span><span class="p">.</span><span class="n">MEMORY</span><span class="p">,</span>
                 <span class="n">relevance_score</span><span class="o">=</span><span class="mf">0.5</span>
             <span class="p">)</span>
-            
+
         <span class="n">times</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="n">token_counts</span> <span class="o">=</span> <span class="p">[]</span>
-        
+
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">iterations</span><span class="p">):</span>
             <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="nf">time</span><span class="p">()</span>
             <span class="n">formatted</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">context_manager</span><span class="p">.</span><span class="nf">get_formatted_context</span><span class="p">(</span><span class="n">session_id</span><span class="p">)</span>
             <span class="n">end_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="nf">time</span><span class="p">()</span>
-            
+
             <span class="n">elapsed</span> <span class="o">=</span> <span class="n">end_time</span> <span class="o">-</span> <span class="n">start_time</span>
             <span class="n">times</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">elapsed</span><span class="p">)</span>
-            
+
             <span class="c1"># Approximate token count of formatted output
 </span>            <span class="n">token_counts</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">formatted</span><span class="p">.</span><span class="nf">split</span><span class="p">()))</span>
-            
+
         <span class="n">result</span> <span class="o">=</span> <span class="nc">BenchmarkResult</span><span class="p">(</span>
             <span class="n">operation</span><span class="o">=</span><span class="sh">"</span><span class="s">format_context</span><span class="sh">"</span><span class="p">,</span>
             <span class="n">times</span><span class="o">=</span><span class="n">times</span><span class="p">,</span>
             <span class="n">token_counts</span><span class="o">=</span><span class="n">token_counts</span>
         <span class="p">)</span>
-        
+
         <span class="n">self</span><span class="p">.</span><span class="n">results</span><span class="p">[</span><span class="sh">"</span><span class="s">format_context</span><span class="sh">"</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span>
         <span class="k">return</span> <span class="n">result</span>
-    
+
     <span class="k">async</span> <span class="k">def</span> <span class="nf">run_prune_context_benchmark</span><span class="p">(</span><span class="n">self</span><span class="p">,</span>
                                        <span class="n">iterations</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span>
                                        <span class="n">initial_blocks</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BenchmarkResult</span><span class="p">:</span>
         <span class="sh">"""</span><span class="s">Benchmark context pruning operations</span><span class="sh">"""</span>
         <span class="n">times</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="n">token_counts</span> <span class="o">=</span> <span class="p">[]</span>
-        
+
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">iterations</span><span class="p">):</span>
             <span class="c1"># Create new session for each iteration
 </span>            <span class="n">session_id</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">context_manager</span><span class="p">.</span><span class="nf">create_session</span><span class="p">(</span><span class="sh">"</span><span class="s">benchmark</span><span class="sh">"</span><span class="p">)</span>
-            
+
             <span class="c1"># Add initial blocks
 </span>            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">initial_blocks</span><span class="p">):</span>
                 <span class="n">content</span> <span class="o">=</span> <span class="sa">f</span><span class="sh">"</span><span class="s">Benchmark content block </span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s"> </span><span class="sh">"</span> <span class="o">+</span> <span class="sh">"</span><span class="s">word </span><span class="sh">"</span> <span class="o">*</span> <span class="mi">50</span>
@@ -1028,64 +1028,64 @@ Return your analysis in JSON format.
                     <span class="n">context_type</span><span class="o">=</span><span class="n">ContextType</span><span class="p">.</span><span class="n">MEMORY</span><span class="p">,</span>
                     <span class="n">relevance_score</span><span class="o">=</span><span class="n">j</span><span class="o">/</span><span class="n">initial_blocks</span>  <span class="c1"># Vary relevance
 </span>                <span class="p">)</span>
-                
+
             <span class="c1"># Force context saturation to trigger pruning
 </span>            <span class="n">self</span><span class="p">.</span><span class="n">context_manager</span><span class="p">.</span><span class="n">sessions</span><span class="p">[</span><span class="n">session_id</span><span class="p">].</span><span class="n">metrics</span><span class="p">.</span><span class="n">context_saturation</span> <span class="o">=</span> <span class="mf">0.95</span>
-            
+
             <span class="c1"># Measure pruning operation
 </span>            <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="nf">time</span><span class="p">()</span>
             <span class="n">self</span><span class="p">.</span><span class="n">context_manager</span><span class="p">.</span><span class="nf">_prune_context</span><span class="p">(</span><span class="n">session_id</span><span class="p">)</span>
             <span class="n">end_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="nf">time</span><span class="p">()</span>
-            
+
             <span class="n">elapsed</span> <span class="o">=</span> <span class="n">end_time</span> <span class="o">-</span> <span class="n">start_time</span>
             <span class="n">times</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">elapsed</span><span class="p">)</span>
-            
+
             <span class="c1"># Count tokens in pruned context
-</span>            <span class="n">token_count</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">token_count</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> 
+</span>            <span class="n">token_count</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">token_count</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span>
                              <span class="n">self</span><span class="p">.</span><span class="n">context_manager</span><span class="p">.</span><span class="n">sessions</span><span class="p">[</span><span class="n">session_id</span><span class="p">].</span><span class="n">blocks</span><span class="p">)</span>
             <span class="n">token_counts</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">token_count</span><span class="p">)</span>
-            
+
         <span class="n">result</span> <span class="o">=</span> <span class="nc">BenchmarkResult</span><span class="p">(</span>
             <span class="n">operation</span><span class="o">=</span><span class="sh">"</span><span class="s">prune_context</span><span class="sh">"</span><span class="p">,</span>
             <span class="n">times</span><span class="o">=</span><span class="n">times</span><span class="p">,</span>
             <span class="n">token_counts</span><span class="o">=</span><span class="n">token_counts</span>
         <span class="p">)</span>
-        
+
         <span class="n">self</span><span class="p">.</span><span class="n">results</span><span class="p">[</span><span class="sh">"</span><span class="s">prune_context</span><span class="sh">"</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span>
         <span class="k">return</span> <span class="n">result</span>
-    
+
     <span class="k">def</span> <span class="nf">plot_results</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">save_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="bp">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
         <span class="sh">"""</span><span class="s">Plot benchmark results</span><span class="sh">"""</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">self</span><span class="p">.</span><span class="n">results</span><span class="p">:</span>
             <span class="k">raise</span> <span class="nc">ValueError</span><span class="p">(</span><span class="sh">"</span><span class="s">No benchmark results to plot</span><span class="sh">"</span><span class="p">)</span>
-            
+
         <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-        
+
         <span class="n">operations</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">results</span><span class="p">.</span><span class="nf">keys</span><span class="p">())</span>
-        
+
         <span class="c1"># Plot 1: Mean operation time
 </span>        <span class="n">mean_times</span> <span class="o">=</span> <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">results</span><span class="p">[</span><span class="n">op</span><span class="p">].</span><span class="n">mean_time</span> <span class="k">for</span> <span class="n">op</span> <span class="ow">in</span> <span class="n">operations</span><span class="p">]</span>
         <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">bar</span><span class="p">(</span><span class="n">operations</span><span class="p">,</span> <span class="n">mean_times</span><span class="p">)</span>
         <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">set_title</span><span class="p">(</span><span class="sh">'</span><span class="s">Mean Operation Time (s)</span><span class="sh">'</span><span class="p">)</span>
         <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">set_ylabel</span><span class="p">(</span><span class="sh">'</span><span class="s">Seconds</span><span class="sh">'</span><span class="p">)</span>
-        
+
         <span class="c1"># Plot 2: 95th percentile operation time
 </span>        <span class="n">p95_times</span> <span class="o">=</span> <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">results</span><span class="p">[</span><span class="n">op</span><span class="p">].</span><span class="n">p95_time</span> <span class="k">for</span> <span class="n">op</span> <span class="ow">in</span> <span class="n">operations</span><span class="p">]</span>
         <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nf">bar</span><span class="p">(</span><span class="n">operations</span><span class="p">,</span> <span class="n">p95_times</span><span class="p">)</span>
         <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nf">set_title</span><span class="p">(</span><span class="sh">'</span><span class="s">P95 Operation Time (s)</span><span class="sh">'</span><span class="p">)</span>
         <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nf">set_ylabel</span><span class="p">(</span><span class="sh">'</span><span class="s">Seconds</span><span class="sh">'</span><span class="p">)</span>
-        
+
         <span class="c1"># Plot 3: Tokens per second
 </span>        <span class="n">tps</span> <span class="o">=</span> <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">results</span><span class="p">[</span><span class="n">op</span><span class="p">].</span><span class="n">tokens_per_second</span> <span class="k">for</span> <span class="n">op</span> <span class="ow">in</span> <span class="n">operations</span><span class="p">]</span>
         <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="nf">bar</span><span class="p">(</span><span class="n">operations</span><span class="p">,</span> <span class="n">tps</span><span class="p">)</span>
         <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="nf">set_title</span><span class="p">(</span><span class="sh">'</span><span class="s">Throughput (tokens/s)</span><span class="sh">'</span><span class="p">)</span>
         <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="nf">set_ylabel</span><span class="p">(</span><span class="sh">'</span><span class="s">Tokens per Second</span><span class="sh">'</span><span class="p">)</span>
-        
+
         <span class="n">plt</span><span class="p">.</span><span class="nf">tight_layout</span><span class="p">()</span>
-        
+
         <span class="k">if</span> <span class="n">save_path</span><span class="p">:</span>
             <span class="n">plt</span><span class="p">.</span><span class="nf">savefig</span><span class="p">(</span><span class="n">save_path</span><span class="p">)</span>
-        
+
         <span class="n">plt</span><span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </code></pre></div></div> <p><br> <br></p> <h2 id="context-aware-mcp-implementation-in-production-systems">Context-Aware MCP Implementation in Production Systems</h2> <p>Implementing MCP in production requires careful consideration of scaling, memory management, and performance optimization. Here’s how to implement these features in real-world systems:</p> <p><br></p> <h3 id="distributed-context-store">Distributed Context Store</h3> <p>For large-scale deployments, a centralized context manager won’t suffice. Here’s a distributed MCP store implementation that scales horizontally:</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">redis</span>
 <span class="kn">import</span> <span class="n">pickle</span>
@@ -1093,23 +1093,23 @@ Return your analysis in JSON format.
 
 <span class="k">class</span> <span class="nc">DistributedContextStore</span><span class="p">:</span>
     <span class="sh">"""</span><span class="s">Distributed context store using Redis</span><span class="sh">"""</span>
-    
+
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">redis_url</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">ttl</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3600</span><span class="p">):</span>
         <span class="n">self</span><span class="p">.</span><span class="n">redis</span> <span class="o">=</span> <span class="n">redis</span><span class="p">.</span><span class="nf">from_url</span><span class="p">(</span><span class="n">redis_url</span><span class="p">)</span>
         <span class="n">self</span><span class="p">.</span><span class="n">ttl</span> <span class="o">=</span> <span class="n">ttl</span>  <span class="c1"># Default TTL in seconds
-</span>    
+</span>
     <span class="k">def</span> <span class="nf">_session_key</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sh">"""</span><span class="s">Generate Redis key for a session</span><span class="sh">"""</span>
         <span class="k">return</span> <span class="sa">f</span><span class="sh">"</span><span class="s">mcp:session:</span><span class="si">{</span><span class="n">session_id</span><span class="si">}</span><span class="sh">"</span>
-    
+
     <span class="k">def</span> <span class="nf">_block_key</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">block_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sh">"""</span><span class="s">Generate Redis key for a block</span><span class="sh">"""</span>
         <span class="k">return</span> <span class="sa">f</span><span class="sh">"</span><span class="s">mcp:block:</span><span class="si">{</span><span class="n">session_id</span><span class="si">}</span><span class="s">:</span><span class="si">{</span><span class="n">block_id</span><span class="si">}</span><span class="sh">"</span>
-    
+
     <span class="k">def</span> <span class="nf">store_session</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">session</span><span class="p">:</span> <span class="n">ContextPackage</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
         <span class="sh">"""</span><span class="s">Store session metadata in Redis</span><span class="sh">"""</span>
         <span class="n">session_key</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">_session_key</span><span class="p">(</span><span class="n">session</span><span class="p">.</span><span class="n">session_id</span><span class="p">)</span>
-        
+
         <span class="c1"># Store main session metadata
 </span>        <span class="n">session_data</span> <span class="o">=</span> <span class="p">{</span>
             <span class="sh">"</span><span class="s">agent_id</span><span class="sh">"</span><span class="p">:</span> <span class="n">session</span><span class="p">.</span><span class="n">agent_id</span><span class="p">,</span>
@@ -1118,49 +1118,49 @@ Return your analysis in JSON format.
             <span class="sh">"</span><span class="s">metrics</span><span class="sh">"</span><span class="p">:</span> <span class="n">pickle</span><span class="p">.</span><span class="nf">dumps</span><span class="p">(</span><span class="n">session</span><span class="p">.</span><span class="n">metrics</span><span class="p">),</span>
             <span class="sh">"</span><span class="s">block_ids</span><span class="sh">"</span><span class="p">:</span> <span class="p">[</span><span class="n">b</span><span class="p">.</span><span class="nb">id</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">session</span><span class="p">.</span><span class="n">blocks</span><span class="p">]</span>
         <span class="p">}</span>
-        
+
         <span class="c1"># Store in Redis with pipeline for performance
 </span>        <span class="n">pipe</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">redis</span><span class="p">.</span><span class="nf">pipeline</span><span class="p">()</span>
         <span class="n">pipe</span><span class="p">.</span><span class="nf">hmset</span><span class="p">(</span><span class="n">session_key</span><span class="p">,</span> <span class="n">session_data</span><span class="p">)</span>
         <span class="n">pipe</span><span class="p">.</span><span class="nf">expire</span><span class="p">(</span><span class="n">session_key</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">ttl</span><span class="p">)</span>
-        
+
         <span class="c1"># Store each block separately for efficient partial updates
 </span>        <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">session</span><span class="p">.</span><span class="n">blocks</span><span class="p">:</span>
             <span class="n">block_key</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">_block_key</span><span class="p">(</span><span class="n">session</span><span class="p">.</span><span class="n">session_id</span><span class="p">,</span> <span class="n">block</span><span class="p">.</span><span class="nb">id</span><span class="p">)</span>
             <span class="n">block_data</span> <span class="o">=</span> <span class="n">pickle</span><span class="p">.</span><span class="nf">dumps</span><span class="p">(</span><span class="n">block</span><span class="p">)</span>
             <span class="n">pipe</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="n">block_key</span><span class="p">,</span> <span class="n">block_data</span><span class="p">)</span>
             <span class="n">pipe</span><span class="p">.</span><span class="nf">expire</span><span class="p">(</span><span class="n">block_key</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">ttl</span><span class="p">)</span>
-            
+
         <span class="n">pipe</span><span class="p">.</span><span class="nf">execute</span><span class="p">()</span>
-    
+
     <span class="k">def</span> <span class="nf">retrieve_session</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ContextPackage</span><span class="p">]:</span>
         <span class="sh">"""</span><span class="s">Retrieve complete session from Redis</span><span class="sh">"""</span>
         <span class="n">session_key</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">_session_key</span><span class="p">(</span><span class="n">session_id</span><span class="p">)</span>
-        
+
         <span class="c1"># Get session metadata
 </span>        <span class="n">session_data</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">redis</span><span class="p">.</span><span class="nf">hgetall</span><span class="p">(</span><span class="n">session_key</span><span class="p">)</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">session_data</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">None</span>
-            
+
         <span class="c1"># Decode metrics
 </span>        <span class="n">metrics</span> <span class="o">=</span> <span class="n">pickle</span><span class="p">.</span><span class="nf">loads</span><span class="p">(</span><span class="n">session_data</span><span class="p">[</span><span class="sa">b</span><span class="sh">"</span><span class="s">metrics</span><span class="sh">"</span><span class="p">])</span>
-        
+
         <span class="c1"># Get block IDs and retrieve blocks
 </span>        <span class="n">block_ids</span> <span class="o">=</span> <span class="n">session_data</span><span class="p">[</span><span class="sa">b</span><span class="sh">"</span><span class="s">block_ids</span><span class="sh">"</span><span class="p">].</span><span class="nf">decode</span><span class="p">().</span><span class="nf">split</span><span class="p">(</span><span class="sh">"</span><span class="s">,</span><span class="sh">"</span><span class="p">)</span>
         <span class="n">blocks</span> <span class="o">=</span> <span class="p">[]</span>
-        
+
         <span class="n">pipe</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">redis</span><span class="p">.</span><span class="nf">pipeline</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">block_id</span> <span class="ow">in</span> <span class="n">block_ids</span><span class="p">:</span>
             <span class="n">block_key</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">_block_key</span><span class="p">(</span><span class="n">session_id</span><span class="p">,</span> <span class="n">block_id</span><span class="p">)</span>
             <span class="n">pipe</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">block_key</span><span class="p">)</span>
-            
+
         <span class="n">block_data_list</span> <span class="o">=</span> <span class="n">pipe</span><span class="p">.</span><span class="nf">execute</span><span class="p">()</span>
-        
+
         <span class="k">for</span> <span class="n">block_data</span> <span class="ow">in</span> <span class="n">block_data_list</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">block_data</span><span class="p">:</span>
                 <span class="n">block</span> <span class="o">=</span> <span class="n">pickle</span><span class="p">.</span><span class="nf">loads</span><span class="p">(</span><span class="n">block_data</span><span class="p">)</span>
                 <span class="n">blocks</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">block</span><span class="p">)</span>
-                
+
         <span class="c1"># Reconstruct session
 </span>        <span class="k">return</span> <span class="nc">ContextPackage</span><span class="p">(</span>
             <span class="n">session_id</span><span class="o">=</span><span class="n">session_id</span><span class="p">,</span>
@@ -1170,34 +1170,34 @@ Return your analysis in JSON format.
             <span class="n">version</span><span class="o">=</span><span class="nf">int</span><span class="p">(</span><span class="n">session_data</span><span class="p">[</span><span class="sa">b</span><span class="sh">"</span><span class="s">version</span><span class="sh">"</span><span class="p">]),</span>
             <span class="n">trace_id</span><span class="o">=</span><span class="n">session_data</span><span class="p">[</span><span class="sa">b</span><span class="sh">"</span><span class="s">trace_id</span><span class="sh">"</span><span class="p">].</span><span class="nf">decode</span><span class="p">()</span>
         <span class="p">)</span>
-    
+
     <span class="k">def</span> <span class="nf">update_block</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">block</span><span class="p">:</span> <span class="n">ContextBlock</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
         <span class="sh">"""</span><span class="s">Update a specific block in a session</span><span class="sh">"""</span>
         <span class="n">block_key</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">_block_key</span><span class="p">(</span><span class="n">session_id</span><span class="p">,</span> <span class="n">block</span><span class="p">.</span><span class="nb">id</span><span class="p">)</span>
         <span class="n">block_data</span> <span class="o">=</span> <span class="n">pickle</span><span class="p">.</span><span class="nf">dumps</span><span class="p">(</span><span class="n">block</span><span class="p">)</span>
-        
+
         <span class="n">pipe</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">redis</span><span class="p">.</span><span class="nf">pipeline</span><span class="p">()</span>
         <span class="n">pipe</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="n">block_key</span><span class="p">,</span> <span class="n">block_data</span><span class="p">)</span>
         <span class="n">pipe</span><span class="p">.</span><span class="nf">expire</span><span class="p">(</span><span class="n">block_key</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">ttl</span><span class="p">)</span>
         <span class="n">pipe</span><span class="p">.</span><span class="nf">execute</span><span class="p">()</span>
-    
+
     <span class="k">def</span> <span class="nf">delete_session</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
         <span class="sh">"""</span><span class="s">Delete a session and all its blocks</span><span class="sh">"""</span>
         <span class="n">session_key</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">_session_key</span><span class="p">(</span><span class="n">session_id</span><span class="p">)</span>
-        
+
         <span class="c1"># Get block IDs
 </span>        <span class="n">session_data</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">redis</span><span class="p">.</span><span class="nf">hgetall</span><span class="p">(</span><span class="n">session_key</span><span class="p">)</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">session_data</span><span class="p">:</span>
             <span class="k">return</span>
-            
+
         <span class="n">block_ids</span> <span class="o">=</span> <span class="n">session_data</span><span class="p">[</span><span class="sa">b</span><span class="sh">"</span><span class="s">block_ids</span><span class="sh">"</span><span class="p">].</span><span class="nf">decode</span><span class="p">().</span><span class="nf">split</span><span class="p">(</span><span class="sh">"</span><span class="s">,</span><span class="sh">"</span><span class="p">)</span>
-        
+
         <span class="c1"># Delete all blocks and session
 </span>        <span class="n">pipe</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">redis</span><span class="p">.</span><span class="nf">pipeline</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">block_id</span> <span class="ow">in</span> <span class="n">block_ids</span><span class="p">:</span>
             <span class="n">block_key</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">_block_key</span><span class="p">(</span><span class="n">session_id</span><span class="p">,</span> <span class="n">block_id</span><span class="p">)</span>
             <span class="n">pipe</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="n">block_key</span><span class="p">)</span>
-            
+
         <span class="n">pipe</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="n">session_key</span><span class="p">)</span>
         <span class="n">pipe</span><span class="p">.</span><span class="nf">execute</span><span class="p">()</span>
 </code></pre></div></div> <p><br></p> <h3 id="real-time-context-optimization">Real-time Context Optimization</h3> <p>In high-volume systems, real-time context optimization becomes critical for cost and performance reasons:</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">asyncio</span>
@@ -1206,8 +1206,8 @@ Return your analysis in JSON format.
 
 <span class="k">class</span> <span class="nc">RealTimeContextOptimizer</span><span class="p">:</span>
     <span class="sh">"""</span><span class="s">Real-time context optimization strategies for production systems</span><span class="sh">"""</span>
-    
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> 
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span>
                 <span class="n">context_manager</span><span class="p">:</span> <span class="n">ContextManager</span><span class="p">,</span>
                 <span class="n">token_budget</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">4096</span><span class="p">,</span>
                 <span class="n">optimization_interval</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span>  <span class="c1"># seconds
@@ -1218,70 +1218,70 @@ Return your analysis in JSON format.
         <span class="n">self</span><span class="p">.</span><span class="n">relevance_decay_factor</span> <span class="o">=</span> <span class="n">relevance_decay_factor</span>
         <span class="n">self</span><span class="p">.</span><span class="n">running</span> <span class="o">=</span> <span class="bp">False</span>
         <span class="n">self</span><span class="p">.</span><span class="n">performance_metrics</span> <span class="o">=</span> <span class="nf">deque</span><span class="p">(</span><span class="n">maxlen</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>  <span class="c1"># Keep last 1000 metrics
-</span>    
+</span>
     <span class="k">async</span> <span class="k">def</span> <span class="nf">start_optimization_loop</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
         <span class="sh">"""</span><span class="s">Start continuous optimization in background</span><span class="sh">"""</span>
         <span class="n">self</span><span class="p">.</span><span class="n">running</span> <span class="o">=</span> <span class="bp">True</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">while</span> <span class="n">self</span><span class="p">.</span><span class="n">running</span><span class="p">:</span>
                 <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="nf">time</span><span class="p">()</span>
-                
+
                 <span class="c1"># Perform optimization
 </span>                <span class="k">await</span> <span class="n">self</span><span class="p">.</span><span class="nf">optimize_session</span><span class="p">(</span><span class="n">session_id</span><span class="p">)</span>
-                
+
                 <span class="c1"># Measure performance
 </span>                <span class="n">end_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="nf">time</span><span class="p">()</span>
                 <span class="n">self</span><span class="p">.</span><span class="n">performance_metrics</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">end_time</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span>
-                
+
                 <span class="c1"># Sleep until next interval
 </span>                <span class="k">await</span> <span class="n">asyncio</span><span class="p">.</span><span class="nf">sleep</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">optimization_interval</span><span class="p">)</span>
         <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Optimization loop error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
             <span class="n">self</span><span class="p">.</span><span class="n">running</span> <span class="o">=</span> <span class="bp">False</span>
-    
+
     <span class="k">def</span> <span class="nf">stop_optimization_loop</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
         <span class="sh">"""</span><span class="s">Stop background optimization</span><span class="sh">"""</span>
         <span class="n">self</span><span class="p">.</span><span class="n">running</span> <span class="o">=</span> <span class="bp">False</span>
-    
+
     <span class="k">async</span> <span class="k">def</span> <span class="nf">optimize_session</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
         <span class="sh">"""</span><span class="s">Perform a single optimization cycle</span><span class="sh">"""</span>
         <span class="k">if</span> <span class="n">session_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">self</span><span class="p">.</span><span class="n">context_manager</span><span class="p">.</span><span class="n">sessions</span><span class="p">:</span>
             <span class="k">return</span>
-            
+
         <span class="n">session</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">context_manager</span><span class="p">.</span><span class="n">sessions</span><span class="p">[</span><span class="n">session_id</span><span class="p">]</span>
-        
+
         <span class="c1"># Apply time-based relevance decay
 </span>        <span class="n">self</span><span class="p">.</span><span class="nf">_apply_relevance_decay</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
-        
+
         <span class="c1"># Update relevance based on recency
 </span>        <span class="n">self</span><span class="p">.</span><span class="nf">_update_recency_relevance</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
-        
+
         <span class="c1"># Enforce token budget
 </span>        <span class="k">if</span> <span class="n">session</span><span class="p">.</span><span class="n">metrics</span><span class="p">.</span><span class="n">total_tokens</span> <span class="o">&gt;</span> <span class="n">self</span><span class="p">.</span><span class="n">token_budget</span><span class="p">:</span>
             <span class="n">self</span><span class="p">.</span><span class="nf">_enforce_token_budget</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
-            
+
         <span class="c1"># Re-calculate metrics
 </span>        <span class="n">session</span><span class="p">.</span><span class="nf">calculate_metrics</span><span class="p">()</span>
-    
+
     <span class="k">def</span> <span class="nf">_apply_relevance_decay</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">session</span><span class="p">:</span> <span class="n">ContextPackage</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
         <span class="sh">"""</span><span class="s">Apply time-based decay to relevance scores</span><span class="sh">"""</span>
         <span class="n">current_time</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="nf">time</span><span class="p">()</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
-        
+
         <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">session</span><span class="p">.</span><span class="n">blocks</span><span class="p">:</span>
             <span class="c1"># Don't decay system blocks
 </span>            <span class="k">if</span> <span class="n">block</span><span class="p">.</span><span class="nb">type</span> <span class="o">==</span> <span class="n">ContextType</span><span class="p">.</span><span class="n">SYSTEM</span><span class="p">:</span>
                 <span class="k">continue</span>
-                
+
             <span class="c1"># Calculate age in seconds
 </span>            <span class="n">age_seconds</span> <span class="o">=</span> <span class="p">(</span><span class="n">current_time</span> <span class="o">-</span> <span class="n">block</span><span class="p">.</span><span class="n">timestamp</span><span class="p">)</span> <span class="o">/</span> <span class="mi">1000</span>
-            
+
             <span class="c1"># Apply exponential decay
 </span>            <span class="n">decay</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">relevance_decay_factor</span> <span class="o">**</span> <span class="p">(</span><span class="n">age_seconds</span> <span class="o">/</span> <span class="mi">60</span><span class="p">)</span>  <span class="c1"># Decay per minute
 </span>            <span class="n">block</span><span class="p">.</span><span class="n">relevance_score</span> <span class="o">*=</span> <span class="n">decay</span>
-            
+
             <span class="c1"># Ensure minimum relevance
 </span>            <span class="n">block</span><span class="p">.</span><span class="n">relevance_score</span> <span class="o">=</span> <span class="nf">max</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">block</span><span class="p">.</span><span class="n">relevance_score</span><span class="p">)</span>
-    
+
     <span class="k">def</span> <span class="nf">_update_recency_relevance</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">session</span><span class="p">:</span> <span class="n">ContextPackage</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
         <span class="sh">"""</span><span class="s">Boost relevance of recent conversational turns</span><span class="sh">"""</span>
         <span class="c1"># Sort blocks by timestamp
@@ -1290,50 +1290,50 @@ Return your analysis in JSON format.
             <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">b</span><span class="p">:</span> <span class="n">b</span><span class="p">.</span><span class="n">timestamp</span><span class="p">,</span>
             <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span>
         <span class="p">)</span>
-        
+
         <span class="c1"># Boost most recent conversation turns
 </span>        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">block</span> <span class="ow">in</span> <span class="nf">enumerate</span><span class="p">(</span><span class="n">recent_blocks</span><span class="p">[:</span><span class="mi">10</span><span class="p">]):</span>  <span class="c1"># Consider last 10 turns
 </span>            <span class="n">recency_boost</span> <span class="o">=</span> <span class="mf">0.95</span> <span class="o">**</span> <span class="n">i</span>  <span class="c1"># Exponential decay based on recency
 </span>            <span class="n">block</span><span class="p">.</span><span class="n">relevance_score</span> <span class="o">=</span> <span class="nf">min</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">block</span><span class="p">.</span><span class="n">relevance_score</span> <span class="o">+</span> <span class="n">recency_boost</span><span class="p">)</span>
-    
+
     <span class="k">def</span> <span class="nf">_enforce_token_budget</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">session</span><span class="p">:</span> <span class="n">ContextPackage</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
         <span class="sh">"""</span><span class="s">Ensure token count stays within budget</span><span class="sh">"""</span>
         <span class="c1"># Priority order: SYSTEM &gt; recent USER/AGENT &gt; TOOL &gt; MEMORY &gt; KNOWLEDGE
 </span>        <span class="n">system_blocks</span> <span class="o">=</span> <span class="p">[</span><span class="n">b</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">session</span><span class="p">.</span><span class="n">blocks</span> <span class="k">if</span> <span class="n">b</span><span class="p">.</span><span class="nb">type</span> <span class="o">==</span> <span class="n">ContextType</span><span class="p">.</span><span class="n">SYSTEM</span><span class="p">]</span>
-        
+
         <span class="c1"># Get non-system blocks, sorted by relevance
 </span>        <span class="n">non_system_blocks</span> <span class="o">=</span> <span class="p">[</span><span class="n">b</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">session</span><span class="p">.</span><span class="n">blocks</span> <span class="k">if</span> <span class="n">b</span><span class="p">.</span><span class="nb">type</span> <span class="o">!=</span> <span class="n">ContextType</span><span class="p">.</span><span class="n">SYSTEM</span><span class="p">]</span>
         <span class="n">non_system_blocks</span><span class="p">.</span><span class="nf">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">b</span><span class="p">:</span> <span class="n">b</span><span class="p">.</span><span class="n">relevance_score</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-        
+
         <span class="c1"># Calculate tokens in system blocks
 </span>        <span class="n">system_tokens</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">token_count</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">system_blocks</span><span class="p">)</span>
-        
+
         <span class="c1"># Calculate how many tokens we can use for non-system blocks
 </span>        <span class="n">available_tokens</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">token_budget</span> <span class="o">-</span> <span class="n">system_tokens</span>
-        
+
         <span class="c1"># Keep adding blocks until we hit the limit
 </span>        <span class="n">kept_blocks</span> <span class="o">=</span> <span class="n">system_blocks</span><span class="p">.</span><span class="nf">copy</span><span class="p">()</span>
         <span class="n">used_tokens</span> <span class="o">=</span> <span class="n">system_tokens</span>
-        
+
         <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">non_system_blocks</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">used_tokens</span> <span class="o">+</span> <span class="n">block</span><span class="p">.</span><span class="n">token_count</span> <span class="o">&lt;=</span> <span class="n">self</span><span class="p">.</span><span class="n">token_budget</span><span class="p">:</span>
                 <span class="n">kept_blocks</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">block</span><span class="p">)</span>
                 <span class="n">used_tokens</span> <span class="o">+=</span> <span class="n">block</span><span class="p">.</span><span class="n">token_count</span>
             <span class="c1"># else discard this block
-</span>                
+</span>
         <span class="c1"># Update session blocks
 </span>        <span class="n">session</span><span class="p">.</span><span class="n">blocks</span> <span class="o">=</span> <span class="n">kept_blocks</span>
 </code></pre></div></div> <p><br> <br></p> <h2 id="hypothetical-implementation-example-telecom-customer-service">Hypothetical Implementation Example: Telecom Customer Service</h2> <p>Let’s explore a hypothetical scenario showing how MCP implementation could transform a telecom customer service system handling 50,000+ customer interactions daily: (I am working on a more realistic experimental setup, the result from which I would share in the coming weeks, stay tuned!) <br> <br></p> <h3 id="hypothetical-baseline-before-mcp">Hypothetical Baseline (Before MCP)</h3> <p>Consider a telecom company using a conventional LLM-based customer service system with these theoretical performance characteristics:</p> <ol> <li> <strong>Average completion time</strong>: 12.5 seconds per query</li> <li> <strong>Context window utilization</strong>: 32% (wasted tokens)</li> <li> <strong>Coherence over multi-turn conversations</strong>: 68% (measured by user satisfaction)</li> <li> <strong>Agent handoff success rate</strong>: 52% (context lost during transfers)</li> <li> <strong>Daily token costs</strong>: $4,200 (for 50,000 interactions)</li> </ol> <p><br> <br></p> <h3 id="hypothetical-mcp-implementation-approach">Hypothetical MCP Implementation Approach</h3> <p>In this scenario, we could implement MCP and optimize context management with the following approach:</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="k">def</span> <span class="nf">telecom_service_enhancement</span><span class="p">():</span>
     <span class="c1"># Initialize MCP components
 </span>    <span class="n">redis_url</span> <span class="o">=</span> <span class="sh">"</span><span class="s">redis://redis-master.production:6379/0</span><span class="sh">"</span>
     <span class="n">context_store</span> <span class="o">=</span> <span class="nc">DistributedContextStore</span><span class="p">(</span><span class="n">redis_url</span><span class="p">)</span>
-    
+
     <span class="c1"># Create optimized context manager
 </span>    <span class="n">optimized_manager</span> <span class="o">=</span> <span class="nc">ContextManager</span><span class="p">(</span><span class="n">max_tokens</span><span class="o">=</span><span class="mi">8192</span><span class="p">)</span>
-    
+
     <span class="c1"># Inject relevance calculator
 </span>    <span class="n">relevance_calculator</span> <span class="o">=</span> <span class="nc">ContextualRelevanceCalculator</span><span class="p">()</span>
-    
+
     <span class="c1"># Initialize real-time optimizer
 </span>    <span class="n">optimizer</span> <span class="o">=</span> <span class="nc">RealTimeContextOptimizer</span><span class="p">(</span>
         <span class="n">context_manager</span><span class="o">=</span><span class="n">optimized_manager</span><span class="p">,</span>
@@ -1341,20 +1341,20 @@ Return your analysis in JSON format.
         <span class="n">optimization_interval</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
         <span class="n">relevance_decay_factor</span><span class="o">=</span><span class="mf">0.98</span>
     <span class="p">)</span>
-    
+
     <span class="c1"># Create agents with MCP
 </span>    <span class="n">intent_agent</span> <span class="o">=</span> <span class="nc">MCPEnabledIntentAgent</span><span class="p">(</span>
         <span class="n">llm_client</span><span class="o">=</span><span class="n">anthropic_client</span><span class="p">,</span>
         <span class="n">agent_role</span><span class="o">=</span><span class="sh">"</span><span class="s">intent_agent</span><span class="sh">"</span><span class="p">,</span>
         <span class="n">context_manager</span><span class="o">=</span><span class="n">optimized_manager</span>
     <span class="p">)</span>
-    
+
     <span class="n">technical_agent</span> <span class="o">=</span> <span class="nc">MCPEnabledTechnicalAgent</span><span class="p">(</span>
         <span class="n">llm_client</span><span class="o">=</span><span class="n">anthropic_client</span><span class="p">,</span>
         <span class="n">network_api</span><span class="o">=</span><span class="n">network_api</span><span class="p">,</span>
         <span class="n">context_manager</span><span class="o">=</span><span class="n">optimized_manager</span>
     <span class="p">)</span>
-    
+
     <span class="c1"># Create coordinator with context transfer capabilities
 </span>    <span class="n">coordinator</span> <span class="o">=</span> <span class="nc">AgentCoordinator</span><span class="p">(</span>
         <span class="n">agents</span><span class="o">=</span><span class="p">{</span>
@@ -1365,94 +1365,94 @@ Return your analysis in JSON format.
         <span class="n">context_manager</span><span class="o">=</span><span class="n">optimized_manager</span><span class="p">,</span>
         <span class="n">context_store</span><span class="o">=</span><span class="n">context_store</span>
     <span class="p">)</span>
-    
+
     <span class="c1"># Initialize metrics collection
 </span>    <span class="n">metrics_collector</span> <span class="o">=</span> <span class="nc">MetricsCollector</span><span class="p">(</span>
         <span class="n">prometheus_endpoint</span><span class="o">=</span><span class="sh">"</span><span class="s">http://prometheus.monitoring:9090/metrics</span><span class="sh">"</span>
     <span class="p">)</span>
-    
+
     <span class="c1"># Start service
 </span>    <span class="k">return</span> <span class="k">await</span> <span class="nf">start_service</span><span class="p">(</span><span class="n">coordinator</span><span class="p">,</span> <span class="n">metrics_collector</span><span class="p">)</span>
 </code></pre></div></div> <p><br> <br></p> <h3 id="projected-mcp-implementation-results">Projected MCP Implementation Results</h3> <p>Based on the architecture described above, this hypothetical MCP-enabled system could potentially achieve these performance improvements:</p> <ol> <li> <strong>Average completion time</strong>: Potentially reduced seconds per query</li> <li> <strong>Context window utilization</strong>: Could increase to X%</li> <li> <strong>Coherence over multi-turn conversations</strong>: Might improve to Y%</li> <li> <strong>Agent handoff success rate</strong>: Could increase to Z%</li> <li> <strong>Daily token costs</strong>: Potentially reduced to $P (Q% cost savings)</li> </ol> <p>These theoretical improvements would result from:</p> <ol> <li>Efficient context packaging and transmission between agents</li> <li>Dynamic relevance scoring to prioritize important information</li> <li>Standardized context exchange protocols enabling seamless agent handoffs</li> <li>Automatic optimization of context window utilization</li> <li>Reduced token waste through intelligent pruning</li> </ol> <p><br> <br></p> <h2 id="key-performance-considerations">Key Performance Considerations</h2> <p>To implement MCP in your own production system, consider these performance best practices:</p> <p><br></p> <h3 id="memory-management">Memory Management</h3> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MCPMemoryOptimizer</span><span class="p">:</span>
     <span class="sh">"""</span><span class="s">Optimizes memory usage for MCP in production</span><span class="sh">"""</span>
-    
+
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">context_manager</span><span class="p">:</span> <span class="n">ContextManager</span><span class="p">):</span>
         <span class="n">self</span><span class="p">.</span><span class="n">context_manager</span> <span class="o">=</span> <span class="n">context_manager</span>
-        
+
     <span class="k">def</span> <span class="nf">optimize_memory_usage</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
         <span class="sh">"""</span><span class="s">Optimize memory usage and return memory saved in MB</span><span class="sh">"""</span>
         <span class="n">session</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">context_manager</span><span class="p">.</span><span class="n">sessions</span><span class="p">[</span><span class="n">session_id</span><span class="p">]</span>
-        
+
         <span class="c1"># Calculate current memory usage
 </span>        <span class="n">initial_memory</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">_estimate_memory_usage</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
-        
+
         <span class="c1"># Perform optimizations
 </span>        <span class="n">self</span><span class="p">.</span><span class="nf">_deduplicate_content</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
         <span class="n">self</span><span class="p">.</span><span class="nf">_compress_metadata</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
         <span class="n">self</span><span class="p">.</span><span class="nf">_truncate_long_blocks</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
-        
+
         <span class="c1"># Calculate new memory usage
 </span>        <span class="n">final_memory</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">_estimate_memory_usage</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
-        
+
         <span class="c1"># Return memory saved in MB
 </span>        <span class="nf">return </span><span class="p">(</span><span class="n">initial_memory</span> <span class="o">-</span> <span class="n">final_memory</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">)</span>
-    
+
     <span class="k">def</span> <span class="nf">_estimate_memory_usage</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">session</span><span class="p">:</span> <span class="n">ContextPackage</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
         <span class="sh">"""</span><span class="s">Estimate memory usage in bytes</span><span class="sh">"""</span>
         <span class="n">memory_usage</span> <span class="o">=</span> <span class="mi">0</span>
-        
+
         <span class="c1"># Session metadata
 </span>        <span class="n">memory_usage</span> <span class="o">+=</span> <span class="nf">len</span><span class="p">(</span><span class="n">session</span><span class="p">.</span><span class="n">session_id</span><span class="p">)</span> <span class="o">+</span> <span class="nf">len</span><span class="p">(</span><span class="n">session</span><span class="p">.</span><span class="n">agent_id</span><span class="p">)</span> <span class="o">+</span> <span class="mi">16</span>  <span class="c1"># Base overhead
-</span>        
+</span>
         <span class="c1"># Blocks
 </span>        <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">session</span><span class="p">.</span><span class="n">blocks</span><span class="p">:</span>
             <span class="c1"># Content is the main memory user
 </span>            <span class="n">memory_usage</span> <span class="o">+=</span> <span class="nf">len</span><span class="p">(</span><span class="n">block</span><span class="p">.</span><span class="n">content</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span>  <span class="c1"># Unicode overhead
-</span>            
+</span>
             <span class="c1"># Metadata
 </span>            <span class="k">if</span> <span class="n">block</span><span class="p">.</span><span class="n">metadata</span><span class="p">:</span>
                 <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">block</span><span class="p">.</span><span class="n">metadata</span><span class="p">.</span><span class="nf">items</span><span class="p">():</span>
                     <span class="n">memory_usage</span> <span class="o">+=</span> <span class="nf">len</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">+</span> <span class="nf">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-                    
+
             <span class="c1"># Other fields
 </span>            <span class="n">memory_usage</span> <span class="o">+=</span> <span class="mi">64</span>  <span class="c1"># Base block overhead
-</span>            
+</span>
         <span class="k">return</span> <span class="n">memory_usage</span>
-    
+
     <span class="k">def</span> <span class="nf">_deduplicate_content</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">session</span><span class="p">:</span> <span class="n">ContextPackage</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
         <span class="sh">"""</span><span class="s">Remove duplicate content in blocks</span><span class="sh">"""</span>
         <span class="n">content_set</span> <span class="o">=</span> <span class="nf">set</span><span class="p">()</span>
         <span class="n">blocks_to_keep</span> <span class="o">=</span> <span class="p">[]</span>
-        
+
         <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">session</span><span class="p">.</span><span class="n">blocks</span><span class="p">:</span>
             <span class="c1"># Always keep system blocks
 </span>            <span class="k">if</span> <span class="n">block</span><span class="p">.</span><span class="nb">type</span> <span class="o">==</span> <span class="n">ContextType</span><span class="p">.</span><span class="n">SYSTEM</span><span class="p">:</span>
                 <span class="n">blocks_to_keep</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">block</span><span class="p">)</span>
                 <span class="k">continue</span>
-                
+
             <span class="c1"># Check for duplicate content
 </span>            <span class="k">if</span> <span class="n">block</span><span class="p">.</span><span class="n">content</span> <span class="ow">in</span> <span class="n">content_set</span><span class="p">:</span>
                 <span class="k">continue</span>  <span class="c1"># Skip duplicate
-</span>                
+</span>
             <span class="n">content_set</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="n">block</span><span class="p">.</span><span class="n">content</span><span class="p">)</span>
             <span class="n">blocks_to_keep</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">block</span><span class="p">)</span>
-            
+
         <span class="n">session</span><span class="p">.</span><span class="n">blocks</span> <span class="o">=</span> <span class="n">blocks_to_keep</span>
-    
+
     <span class="k">def</span> <span class="nf">_compress_metadata</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">session</span><span class="p">:</span> <span class="n">ContextPackage</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
         <span class="sh">"""</span><span class="s">Compress metadata by removing unnecessary fields</span><span class="sh">"""</span>
         <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">session</span><span class="p">.</span><span class="n">blocks</span><span class="p">:</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="n">block</span><span class="p">.</span><span class="n">metadata</span><span class="p">:</span>
                 <span class="k">continue</span>
-                
+
             <span class="c1"># Remove empty values
 </span>            <span class="n">block</span><span class="p">.</span><span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">block</span><span class="p">.</span><span class="n">metadata</span><span class="p">.</span><span class="nf">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">v</span><span class="p">}</span>
-            
+
             <span class="c1"># Truncate long values
 </span>            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">block</span><span class="p">.</span><span class="n">metadata</span><span class="p">.</span><span class="nf">items</span><span class="p">():</span>
                 <span class="k">if</span> <span class="nf">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
                     <span class="n">block</span><span class="p">.</span><span class="n">metadata</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="p">[:</span><span class="mi">97</span><span class="p">]</span> <span class="o">+</span> <span class="sh">"</span><span class="s">...</span><span class="sh">"</span>
-    
+
     <span class="k">def</span> <span class="nf">_truncate_long_blocks</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">session</span><span class="p">:</span> <span class="n">ContextPackage</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
         <span class="sh">"""</span><span class="s">Truncate extremely long content blocks</span><span class="sh">"""</span>
         <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">session</span><span class="p">.</span><span class="n">blocks</span><span class="p">:</span>
@@ -1467,32 +1467,32 @@ Return your analysis in JSON format.
 
 <span class="k">class</span> <span class="nc">MCPConcurrencyManager</span><span class="p">:</span>
     <span class="sh">"""</span><span class="s">Manages concurrent access to MCP resources</span><span class="sh">"""</span>
-    
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> 
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span>
                 <span class="n">max_concurrent_sessions</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span>
                 <span class="n">max_concurrent_contexts</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5000</span><span class="p">):</span>
         <span class="n">self</span><span class="p">.</span><span class="n">session_semaphore</span> <span class="o">=</span> <span class="n">asyncio</span><span class="p">.</span><span class="nc">Semaphore</span><span class="p">(</span><span class="n">max_concurrent_sessions</span><span class="p">)</span>
         <span class="n">self</span><span class="p">.</span><span class="n">context_semaphore</span> <span class="o">=</span> <span class="n">asyncio</span><span class="p">.</span><span class="nc">Semaphore</span><span class="p">(</span><span class="n">max_concurrent_contexts</span><span class="p">)</span>
         <span class="n">self</span><span class="p">.</span><span class="n">session_locks</span> <span class="o">=</span> <span class="p">{}</span>
-        
+
     <span class="nd">@asynccontextmanager</span>
     <span class="k">async</span> <span class="k">def</span> <span class="nf">session_context</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
         <span class="sh">"""</span><span class="s">Manage concurrent access to a session</span><span class="sh">"""</span>
         <span class="c1"># Create lock for this session if doesn't exist
 </span>        <span class="k">if</span> <span class="n">session_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">self</span><span class="p">.</span><span class="n">session_locks</span><span class="p">:</span>
             <span class="n">self</span><span class="p">.</span><span class="n">session_locks</span><span class="p">[</span><span class="n">session_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">asyncio</span><span class="p">.</span><span class="nc">Lock</span><span class="p">()</span>
-            
+
         <span class="c1"># Acquire session semaphore and lock
 </span>        <span class="k">async</span> <span class="k">with</span> <span class="n">self</span><span class="p">.</span><span class="n">session_semaphore</span><span class="p">:</span>
             <span class="k">async</span> <span class="k">with</span> <span class="n">self</span><span class="p">.</span><span class="n">session_locks</span><span class="p">[</span><span class="n">session_id</span><span class="p">]:</span>
                 <span class="k">yield</span>
-                
+
     <span class="nd">@asynccontextmanager</span>
     <span class="k">async</span> <span class="k">def</span> <span class="nf">context_operation</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
         <span class="sh">"""</span><span class="s">Manage concurrent context operations</span><span class="sh">"""</span>
         <span class="k">async</span> <span class="k">with</span> <span class="n">self</span><span class="p">.</span><span class="n">context_semaphore</span><span class="p">:</span>
             <span class="k">yield</span>
-            
+
     <span class="k">def</span> <span class="nf">cleanup_session</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">session_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
         <span class="sh">"""</span><span class="s">Remove locks for a session when it</span><span class="sh">'</span><span class="s">s no longer needed</span><span class="sh">"""</span>
         <span class="k">if</span> <span class="n">session_id</span> <span class="ow">in</span> <span class="n">self</span><span class="p">.</span><span class="n">session_locks</span><span class="p">:</span>
@@ -1501,27 +1501,27 @@ Return your analysis in JSON format.
     <span class="c1"># Initialize distributed components with lower capacity
 </span>    <span class="n">redis_url</span> <span class="o">=</span> <span class="sh">"</span><span class="s">redis://redis-staging:6379/0</span><span class="sh">"</span>
     <span class="n">context_store</span> <span class="o">=</span> <span class="nc">DistributedContextStore</span><span class="p">(</span><span class="n">redis_url</span><span class="p">,</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">1800</span><span class="p">)</span>  <span class="c1"># 30 minute TTL
-</span>    
+</span>
     <span class="c1"># Create context manager with conservative limits
 </span>    <span class="n">context_manager</span> <span class="o">=</span> <span class="nc">ContextManager</span><span class="p">(</span><span class="n">max_tokens</span><span class="o">=</span><span class="mi">4096</span><span class="p">)</span>
-    
+
     <span class="c1"># Configure for 5% of traffic
 </span>    <span class="n">traffic_ratio</span> <span class="o">=</span> <span class="mf">0.05</span>
-    
+
     <span class="c1"># Create MCP-enabled intent agent
 </span>    <span class="n">intent_agent</span> <span class="o">=</span> <span class="nc">MCPEnabledIntentAgent</span><span class="p">(</span>
         <span class="n">llm_client</span><span class="o">=</span><span class="n">anthropic_client</span><span class="p">,</span>
         <span class="n">agent_role</span><span class="o">=</span><span class="sh">"</span><span class="s">intent_agent</span><span class="sh">"</span><span class="p">,</span>
         <span class="n">context_manager</span><span class="o">=</span><span class="n">context_manager</span>
     <span class="p">)</span>
-    
+
     <span class="c1"># Create monitoring
 </span>    <span class="n">monitor</span> <span class="o">=</span> <span class="nc">ProductionMonitor</span><span class="p">(</span>
         <span class="n">datadog_api_key</span><span class="o">=</span><span class="sh">"</span><span class="s">YOUR_API_KEY</span><span class="sh">"</span><span class="p">,</span>
         <span class="n">experiment_name</span><span class="o">=</span><span class="sh">"</span><span class="s">mcp_pilot</span><span class="sh">"</span><span class="p">,</span>
         <span class="n">sample_rate</span><span class="o">=</span><span class="mf">0.1</span>  <span class="c1"># Sample 10% of interactions for detailed analysis
 </span>    <span class="p">)</span>
-    
+
     <span class="c1"># Start pilot with traffic splitting
 </span>    <span class="k">return</span> <span class="k">await</span> <span class="nf">start_pilot</span><span class="p">(</span>
         <span class="n">agent</span><span class="o">=</span><span class="n">intent_agent</span><span class="p">,</span>
@@ -1529,7 +1529,14 @@ Return your analysis in JSON format.
         <span class="n">traffic_ratio</span><span class="o">=</span><span class="n">traffic_ratio</span><span class="p">,</span>
         <span class="n">monitor</span><span class="o">=</span><span class="n">monitor</span>
     <span class="p">)</span>
-</code></pre></div></div> <p><br> <br></p> <h2 id="concluding-thoughts">Concluding thoughts</h2> <p>Model Context Protocol represents a significant advance in autonomous multi-agent system architecture. By standardizing context management, MCP solves critical challenges around context optimization, agent collaboration, and memory management.</p> <p>Key takeaways from our implementation:</p> <ol> <li> <strong>Standardization matters</strong>: Unified context protocols enable seamless interoperability between diverse agent systems</li> <li> <strong>Memory optimization is critical</strong>: Real-time context management directly impacts cost and performance</li> <li> <strong>Production deployments require careful scaling</strong>: Distributed context stores and concurrency management are essential</li> <li> <strong>Relevance scoring drives optimization</strong>: Dynamic scoring algorithms significantly improve context window utilization</li> </ol> <p>While this telecom example is hypothetical, the architectural patterns and implementation strategies described show how MCP could deliver tangible business benefits through reduced costs, faster responses, and improved customer satisfaction in real-world applications.</p> <p>As autonomous agent systems continue to evolve, Model Context Protocol will likely become a standard component of production agent architectures, enabling more sophisticated agent interactions and improved performance characteristics.</p> <p>Future directions for MCP development include:</p> <ol> <li> <strong>Cross-modal context representation</strong>: Supporting efficient encoding of multimodal content</li> <li> <strong>Federated context management</strong>: Enabling privacy-preserving context sharing across organizations</li> <li> <strong>Self-optimizing context strategies</strong>: Using reinforcement learning to dynamically tune context parameters</li> </ol> <p>By implementing MCP in your own systems, you can achieve similar performance improvements while establishing a foundation for future enhancements to your agent architecture.</p> <hr> <p><em>Want to learn more about implementing MCP in your organization? Check out my previous articles on <a href="https://subhadipmitra.com/blog/2025/telecom-autonomous-multi-agent-genai-system/">autonomous multi-agent systems</a> and <a href="https://subhadipmitra.com/blog/2024/etlc-context-new-paradigm/">context-aware data pipelines</a>.</em></p> </div> </article> <style>.post-footer-featured{margin-top:6rem;padding-top:0}.newsletter-featured{background:var(--global-card-bg-color,#fff);border:2px solid var(--global-theme-color,#b509ac);border-radius:24px;padding:3rem;margin-bottom:3rem}.showcase-label-newsletter{display:inline-flex;align-items:center;gap:.5rem;font-size:.875rem;letter-spacing:.15em;text-transform:uppercase;color:var(--global-theme-color,#b509ac);font-weight:700;margin-bottom:1rem}.newsletter-featured h2{font-size:2rem;font-weight:900;margin:0 0 1rem 0;letter-spacing:-0.02em;line-height:1.1;color:var(--global-text-color,#000)}.newsletter-featured p{font-size:1.125rem;color:var(--global-text-color-light,#666);margin-bottom:1.5rem;line-height:1.6}.newsletter-form-featured{display:flex;gap:.75rem;margin-bottom:1rem}.newsletter-form-featured input{flex:1;padding:.875rem 1.25rem;background:var(--global-bg-color,#fff);color:var(--global-text-color,#000);border:1px solid var(--global-divider-color,#e5e5e5);border-radius:12px;font-size:1rem;transition:all .3s}.newsletter-form-featured input:focus{outline:0;border-color:var(--global-theme-color,#b509ac);box-shadow:0 0 0 3px rgba(181,9,172,0.1)}.newsletter-form-featured button{padding:.875rem 2rem;background:var(--global-theme-color,#b509ac);color:white;border:0;border-radius:12px;font-weight:700;font-size:1rem;cursor:pointer;transition:all .3s;white-space:nowrap}.newsletter-form-featured button:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(181,9,172,0.3)}.newsletter-links{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;font-size:.875rem;color:var(--global-text-color-light,#666)}.newsletter-links a{color:var(--global-theme-color,#b509ac);text-decoration:none;font-weight:600;transition:opacity .3s}.newsletter-links a:hover{opacity:.7}.share-section-featured{text-align:center;padding:2rem 0 3rem 0;border-bottom:1px solid var(--global-divider-color,#e5e5e5)}.share-section-featured .share-label{font-size:.875rem;text-transform:uppercase;letter-spacing:.1em;color:var(--global-text-color-light,#666);font-weight:600;margin-bottom:1.25rem}.share-buttons-featured{display:flex;gap:1rem;justify-content:center;align-items:center}.share-link-featured{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;color:var(--global-text-color,#000);text-decoration:none;font-size:1rem;transition:gap .3s,color .3s}.share-link-featured:hover{gap:1rem;color:var(--global-theme-color,#b509ac)}.share-link-featured i,.share-link-featured svg{transition:transform .3s;width:18px;height:18px}.share-link-featured:hover i,.share-link-featured:hover svg{transform:translateX(4px)}.related-posts-section{margin-top:3rem;padding-top:0}.related-posts-section h3{font-size:1.75rem;font-weight:800;margin-bottom:2rem;color:var(--global-text-color,#000);text-align:center}@media(max-width:768px){.newsletter-featured{padding:2rem}.newsletter-featured h2{font-size:1.5rem}.newsletter-form-featured{flex-direction:column}.share-buttons-featured{flex-direction:column;gap:.75rem}}</style> <div class="post-footer-featured"> <div class="newsletter-featured"> <div class="showcase-label-newsletter"> <svg width="16" height="16" viewbox="0 0 24 24" fill="currentColor"> <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path> </svg> Strategic Insights </div> <h2>Get More Like This</h2> <p> Join technical leaders from Google, Amazon, and Fortune 500s. Get strategic insights on Data, AI, and Cloud transformation delivered to your inbox. </p> <form class="newsletter-form-featured" action="https://app.loops.so/api/newsletter-form/cm614n2d604nlfy1lfo7vgmo5" method="POST"> <input type="email" name="email" placeholder="your@email.com" required> <button type="submit">Subscribe</button> </form> <div class="newsletter-links"> <span>Free insights • No spam • Unsubscribe anytime</span> <span>•</span> <a href="/archive/">Browse the archive →</a> </div> </div> <div class="share-section-featured"> <div class="share-label">Share This Article</div> <div class="share-buttons-featured"> <a href="https://twitter.com/intent/tweet?text=Implementing%20Model%20Context%20Protocol%20in%20Autonomous%20Multi-Agent%20Systems%20-%20Technical%20Architecture%20and%20Performance%20Optimization&amp;url=https://subhadipmitra.com/blog/2025/implementing-model-context-protocol-copy/&amp;via=bassrehab" class="share-link-featured" target="_blank" rel="noopener noreferrer"> Share on X <svg viewbox="0 0 24 24" fill="currentColor"> <path d="M13.6823 10.6218L20.2391 3H18.6854L12.9921 9.61788L8.44486 3H3.2002L10.0765 13.0074L3.2002 21H4.75404L10.7663 14.0113L15.5685 21H20.8131L13.6819 10.6218H13.6823ZM11.5541 13.0956L10.8574 12.0991L5.31391 4.16971H7.70053L12.1742 10.5689L12.8709 11.5655L18.6861 19.8835H16.2995L11.5541 13.096V13.0956Z"></path> </svg> </a> <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://subhadipmitra.com/blog/2025/implementing-model-context-protocol-copy/" class="share-link-featured" target="_blank" rel="noopener noreferrer"> Share on LinkedIn <svg viewbox="0 0 24 24" fill="currentColor"> <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path> </svg> </a> <button onclick="copyLinkFeatured('https://subhadipmitra.com/blog/2025/implementing-model-context-protocol-copy/')" class="share-link-featured" style="background: none; border: none; cursor: pointer; padding: 0;"> <span class="copy-text">Copy Link</span> <span class="copied-text" style="display: none;">Link Copied!</span> <svg class="copy-icon" viewbox="0 0 24 24" fill="currentColor"> <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path> </svg> <svg class="check-icon" style="display: none;" viewbox="0 0 24 24" fill="currentColor"> <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path> </svg> </button> </div> </div> <div class="related-posts-section"> <h3>Continue Reading</h3> </div> </div> <script>
+</code></pre></div></div> <p><br> <br></p> <h2 id="concluding-thoughts">Concluding thoughts</h2> <p>Model Context Protocol represents a significant advance in autonomous multi-agent system architecture. By standardizing context management, MCP solves critical challenges around context optimization, agent collaboration, and memory management.</p> <p>Key takeaways from our implementation:</p> <ol> <li> <strong>Standardization matters</strong>: Unified context protocols enable seamless interoperability between diverse agent systems</li> <li> <strong>Memory optimization is critical</strong>: Real-time context management directly impacts cost and performance</li> <li> <strong>Production deployments require careful scaling</strong>: Distributed context stores and concurrency management are essential</li> <li> <strong>Relevance scoring drives optimization</strong>: Dynamic scoring algorithms significantly improve context window utilization</li> </ol> <p>While this telecom example is hypothetical, the architectural patterns and implementation strategies described show how MCP could deliver tangible business benefits through reduced costs, faster responses, and improved customer satisfaction in real-world applications.</p> <p>As autonomous agent systems continue to evolve, Model Context Protocol will likely become a standard component of production agent architectures, enabling more sophisticated agent interactions and improved performance characteristics.</p> <p>Future directions for MCP development include:</p> <ol> <li> <strong>Cross-modal context representation</strong>: Supporting efficient encoding of multimodal content</li> <li> <strong>Federated context management</strong>: Enabling privacy-preserving context sharing across organizations</li> <li> <strong>Self-optimizing context strategies</strong>: Using reinforcement learning to dynamically tune context parameters</li> </ol> <p>By implementing MCP in your own systems, you can achieve similar performance improvements while establishing a foundation for future enhancements to your agent architecture.</p> <hr> <p><em>Want to learn more about implementing MCP in your organization? Check out my previous articles on <a href="https://subhadipmitra.com/blog/2025/telecom-autonomous-multi-agent-genai-system/">autonomous multi-agent systems</a> and <a href="https://subhadipmitra.com/blog/2024/etlc-context-new-paradigm/">context-aware data pipelines</a>.</em></p> </div> </article> <div class="citation-section"> <div class="citation-header"> <h3>Citation</h3> <p class="citation-intro">If you found this article useful, please cite it using one of the formats below:</p> </div> <div class="citation-content"> <div class="citation-format"> <h4>APA Format</h4> <div class="citation-text"> <p>Mitra, Subhadip. (2025, March). <em>Implementing Model Context Protocol in Autonomous Multi-Agent Systems - Technical Architecture and Performance Optimization</em>. Retrieved from https://subhadipmitra.com/blog/2025/implementing-model-context-protocol-copy/</p> </div> </div> <div class="citation-format"> <h4>BibTeX Entry</h4> <div class="language-bibtex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">@article</span><span class="p">{</span><span class="nl">mitra2025implementing-model-context-protocol-in-autonomous-multi-agent-systems-technical-architecture-and-performance-optimization</span><span class="p">,</span>
+  <span class="na">title</span>   <span class="p">=</span> <span class="s">{Implementing Model Context Protocol in Autonomous Multi-Agent Systems - Technical Architecture and Performance Optimization}</span><span class="p">,</span>
+  <span class="na">author</span>  <span class="p">=</span> <span class="s">{Mitra, Subhadip}</span><span class="p">,</span>
+  <span class="na">year</span>    <span class="p">=</span> <span class="s">{2025}</span><span class="p">,</span>
+  <span class="na">month</span>   <span class="p">=</span> <span class="s">{Mar}</span><span class="p">,</span>
+  <span class="na">url</span>     <span class="p">=</span> <span class="s">{https://subhadipmitra.com/blog/2025/implementing-model-context-protocol-copy/}</span>
+<span class="p">}</span>
+</code></pre></div></div> </div> </div> </div> <style>.post-footer-featured{margin-top:6rem;padding-top:0}.newsletter-featured{background:var(--global-card-bg-color,#fff);border:2px solid var(--global-theme-color,#b509ac);border-radius:24px;padding:3rem;margin-bottom:3rem}.showcase-label-newsletter{display:inline-flex;align-items:center;gap:.5rem;font-size:.875rem;letter-spacing:.15em;text-transform:uppercase;color:var(--global-theme-color,#b509ac);font-weight:700;margin-bottom:1rem}.newsletter-featured h2{font-size:2rem;font-weight:900;margin:0 0 1rem 0;letter-spacing:-0.02em;line-height:1.1;color:var(--global-text-color,#000)}.newsletter-featured p{font-size:1.125rem;color:var(--global-text-color-light,#666);margin-bottom:1.5rem;line-height:1.6}.newsletter-form-featured{display:flex;gap:.75rem;margin-bottom:1rem}.newsletter-form-featured input{flex:1;padding:.875rem 1.25rem;background:var(--global-bg-color,#fff);color:var(--global-text-color,#000);border:1px solid var(--global-divider-color,#e5e5e5);border-radius:12px;font-size:1rem;transition:all .3s}.newsletter-form-featured input:focus{outline:0;border-color:var(--global-theme-color,#b509ac);box-shadow:0 0 0 3px rgba(181,9,172,0.1)}.newsletter-form-featured button{padding:.875rem 2rem;background:var(--global-theme-color,#b509ac);color:white;border:0;border-radius:12px;font-weight:700;font-size:1rem;cursor:pointer;transition:all .3s;white-space:nowrap}.newsletter-form-featured button:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(181,9,172,0.3)}.newsletter-links{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;font-size:.875rem;color:var(--global-text-color-light,#666)}.newsletter-links a{color:var(--global-theme-color,#b509ac);text-decoration:none;font-weight:600;transition:opacity .3s}.newsletter-links a:hover{opacity:.7}.share-section-featured{text-align:center;padding:2rem 0 3rem 0;border-bottom:1px solid var(--global-divider-color,#e5e5e5)}.share-section-featured .share-label{font-size:.875rem;text-transform:uppercase;letter-spacing:.1em;color:var(--global-text-color-light,#666);font-weight:600;margin-bottom:1.25rem}.share-buttons-featured{display:flex;gap:1rem;justify-content:center;align-items:center}.share-link-featured{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;color:var(--global-text-color,#000);text-decoration:none;font-size:1rem;transition:gap .3s,color .3s}.share-link-featured:hover{gap:1rem;color:var(--global-theme-color,#b509ac)}.share-link-featured i,.share-link-featured svg{transition:transform .3s;width:18px;height:18px}.share-link-featured:hover i,.share-link-featured:hover svg{transform:translateX(4px)}.related-posts-section{margin-top:3rem;padding-top:0}.related-posts-section h3{font-size:1.75rem;font-weight:800;margin-bottom:2rem;color:var(--global-text-color,#000);text-align:center}@media(max-width:768px){.newsletter-featured{padding:2rem}.newsletter-featured h2{font-size:1.5rem}.newsletter-form-featured{flex-direction:column}.share-buttons-featured{flex-direction:column;gap:.75rem}}</style> <div class="post-footer-featured"> <div class="newsletter-featured"> <div class="showcase-label-newsletter"> <svg width="16" height="16" viewbox="0 0 24 24" fill="currentColor"> <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path> </svg> Strategic Insights </div> <h2>Get More Like This</h2> <p> Join technical leaders from Google, Amazon, and Fortune 500s. Get strategic insights on Data, AI, and Cloud transformation delivered to your inbox. </p> <form class="newsletter-form-featured" action="https://app.loops.so/api/newsletter-form/cm614n2d604nlfy1lfo7vgmo5" method="POST"> <input type="email" name="email" placeholder="your@email.com" required> <button type="submit">Subscribe</button> </form> <div class="newsletter-links"> <span>Free insights • No spam • Unsubscribe anytime</span> <span>•</span> <a href="/archive/">Browse the archive →</a> </div> </div> <div class="share-section-featured"> <div class="share-label">Share This Article</div> <div class="share-buttons-featured"> <a href="https://twitter.com/intent/tweet?text=Implementing%20Model%20Context%20Protocol%20in%20Autonomous%20Multi-Agent%20Systems%20-%20Technical%20Architecture%20and%20Performance%20Optimization&amp;url=https://subhadipmitra.com/blog/2025/implementing-model-context-protocol-copy/&amp;via=bassrehab" class="share-link-featured" target="_blank" rel="noopener noreferrer"> Share on X <svg viewbox="0 0 24 24" fill="currentColor"> <path d="M13.6823 10.6218L20.2391 3H18.6854L12.9921 9.61788L8.44486 3H3.2002L10.0765 13.0074L3.2002 21H4.75404L10.7663 14.0113L15.5685 21H20.8131L13.6819 10.6218H13.6823ZM11.5541 13.0956L10.8574 12.0991L5.31391 4.16971H7.70053L12.1742 10.5689L12.8709 11.5655L18.6861 19.8835H16.2995L11.5541 13.096V13.0956Z"></path> </svg> </a> <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://subhadipmitra.com/blog/2025/implementing-model-context-protocol-copy/" class="share-link-featured" target="_blank" rel="noopener noreferrer"> Share on LinkedIn <svg viewbox="0 0 24 24" fill="currentColor"> <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path> </svg> </a> <button onclick="copyLinkFeatured('https://subhadipmitra.com/blog/2025/implementing-model-context-protocol-copy/')" class="share-link-featured" style="background: none; border: none; cursor: pointer; padding: 0;"> <span class="copy-text">Copy Link</span> <span class="copied-text" style="display: none;">Link Copied!</span> <svg class="copy-icon" viewbox="0 0 24 24" fill="currentColor"> <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path> </svg> <svg class="check-icon" style="display: none;" viewbox="0 0 24 24" fill="currentColor"> <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path> </svg> </button> </div> </div> <div class="related-posts-section"> <h3>Continue Reading</h3> </div> </div> <script>
 function copyLinkFeatured(url) {
   navigator.clipboard.writeText(url).then(() => {
     const btn = event.target.closest('button');
@@ -1575,7 +1582,7 @@ function copyLinkFeatured(url) {
       }
       
     };
-  </script> <script async type="application/javascript" src="//talk.hyvor.com/web-api/embed.js"></script> </div> </div> </div> </div> </div> <footer class="modern-footer" role="contentinfo"> <div class="footer-container"> <div class="footer-grid"> <div class="footer-brand"> <h3>Subhadip Mitra</h3> <p> Technical Leader, Inventor, and Researcher building the future of Data &amp; Applied AI. <br>Leading Google Cloud's D&amp;A practice across Southeast Asia. </p> <br> <p><a href="mailto:contact@subhadipmitra.com">contact@subhadipmitra.com</a></p> </div> <div class="footer-section"> <h4>Explore</h4> <ul class="footer-links"> <li><a href="/">About</a></li> <li><a href="/now/">What I'm Doing Now</a></li> <li><a href="/blog/">Blog</a></li> <li><a href="/publications/">Publications</a></li> <li><a href="/repositories/">Repositories</a></li> </ul> </div> <div class="footer-section"> <h4>Connect</h4> <ul class="footer-links"> <li><a href="mailto:contact@subhadipmitra.com">Email</a></li> <li><a href="https://calendly.com/contact-x9nm/30min" target="_blank" rel="external nofollow noopener">Schedule a Call</a></li> <li><a href="https://linkedin.com/in/subhadip-mitra" target="_blank" rel="external nofollow noopener">LinkedIn</a></li> <li><a href="https://github.com/bassrehab" target="_blank" rel="external nofollow noopener">GitHub</a></li> </ul> </div> </div> <div class="footer-bottom"> <div class="footer-copyright"> © 2025 Subhadip Mitra. Some Rights Reserved. Last updated: November 16, 2025. </div> <div class="footer-social"> <a href="https://linkedin.com/in/subhadip-mitra" target="_blank" aria-label="LinkedIn" rel="external nofollow noopener"> <i class="fab fa-linkedin-in"></i> </a> <a href="https://github.com/bassrehab" target="_blank" aria-label="GitHub" rel="external nofollow noopener"> <i class="fab fa-github"></i> </a> <a href="https://twitter.com/bassrehab" target="_blank" aria-label="Twitter" rel="external nofollow noopener"> <i class="fab fa-twitter"></i> </a> <a href="mailto:contact@subhadipmitra.com" aria-label="Email"> <i class="fas fa-envelope"></i> </a> </div> </div> </div> </footer> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> <script src="/assets/js/bootstrap.bundle.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?a0db7e5d5c70cc3252b3138b0c91dcaf" type="text/javascript"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/js/zoom.js?85ddb88934d28b74e78031fd54cf8308"></script> <script defer src="/assets/js/bootstrap-toc.min.js?c82ff4de8b0955d6ff14f5b05eed7eb6"></script> <script src="/assets/js/no_defer.js?2781658a0a2b13ed609542042a859126"></script> <script defer src="/assets/js/common.js?e0514a05c5c95ac1a93a8dfd5249b92e"></script> <script defer src="/assets/js/copy_code.js?12775fdf7f95e901d7119054556e495f" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?d9f17b6adc2311cbabd747f4538bb15f"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/js/mathjax-setup.js?a5bb4e6a542c546dd929b24b8b236dfd"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script async src="https://www.googletagmanager.com/gtag/js?id=G-TW7YQ5XPC6"></script> <script>
+  </script> <script async type="application/javascript" src="//talk.hyvor.com/web-api/embed.js"></script> </div> </div> </div> </div> </div> <footer class="modern-footer" role="contentinfo"> <div class="footer-container"> <div class="footer-grid"> <div class="footer-brand"> <h3>Subhadip Mitra</h3> <p> Technical Leader, Inventor, and Researcher building the future of Data &amp; Applied AI. <br>Leading Google Cloud's D&amp;A practice across Southeast Asia. </p> <br> <p><a href="mailto:contact@subhadipmitra.com">contact@subhadipmitra.com</a></p> </div> <div class="footer-section"> <h4>Explore</h4> <ul class="footer-links"> <li><a href="/">About</a></li> <li><a href="/now/">What I'm Doing Now</a></li> <li><a href="/blog/">Blog</a></li> <li><a href="/publications/">Publications</a></li> <li><a href="/repositories/">Repositories</a></li> </ul> </div> <div class="footer-section"> <h4>Connect</h4> <ul class="footer-links"> <li><a href="mailto:contact@subhadipmitra.com">Email</a></li> <li><a href="https://calendly.com/contact-x9nm/30min" target="_blank" rel="external nofollow noopener">Schedule a Call</a></li> <li><a href="https://linkedin.com/in/subhadip-mitra" target="_blank" rel="external nofollow noopener">LinkedIn</a></li> <li><a href="https://github.com/bassrehab" target="_blank" rel="external nofollow noopener">GitHub</a></li> </ul> </div> </div> <div class="footer-bottom"> <div class="footer-copyright"> © 2025 Subhadip Mitra. Some Rights Reserved. Last updated: November 19, 2025. </div> <div class="footer-social"> <a href="https://linkedin.com/in/subhadip-mitra" target="_blank" aria-label="LinkedIn" rel="external nofollow noopener"> <i class="fab fa-linkedin-in"></i> </a> <a href="https://github.com/bassrehab" target="_blank" aria-label="GitHub" rel="external nofollow noopener"> <i class="fab fa-github"></i> </a> <a href="https://twitter.com/bassrehab" target="_blank" aria-label="Twitter" rel="external nofollow noopener"> <i class="fab fa-twitter"></i> </a> <a href="mailto:contact@subhadipmitra.com" aria-label="Email"> <i class="fas fa-envelope"></i> </a> </div> </div> </div> </footer> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> <script src="/assets/js/bootstrap.bundle.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?a0db7e5d5c70cc3252b3138b0c91dcaf" type="text/javascript"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/js/zoom.js?85ddb88934d28b74e78031fd54cf8308"></script> <script defer src="/assets/js/bootstrap-toc.min.js?c82ff4de8b0955d6ff14f5b05eed7eb6"></script> <script src="/assets/js/no_defer.js?2781658a0a2b13ed609542042a859126"></script> <script defer src="/assets/js/common.js?e0514a05c5c95ac1a93a8dfd5249b92e"></script> <script defer src="/assets/js/copy_code.js?12775fdf7f95e901d7119054556e495f" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?d9f17b6adc2311cbabd747f4538bb15f"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/js/mathjax-setup.js?a5bb4e6a542c546dd929b24b8b236dfd"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script async src="https://www.googletagmanager.com/gtag/js?id=G-TW7YQ5XPC6"></script> <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() {
       dataLayer.push(arguments);
