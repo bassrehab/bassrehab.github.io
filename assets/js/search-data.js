@@ -25,7 +25,7 @@ ninja.data = [{
           },
         },{id: "nav-publications",
           title: "publications",
-          description: "publications by categories in reversed chronological order.",
+          description: "Exploring innovations in AI, distributed systems, blockchain, and beyond",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
@@ -39,7 +39,7 @@ ninja.data = [{
           },
         },{id: "nav-repositories",
           title: "repositories",
-          description: "👋 Hi there! I&#39;m delighted to share a portfolio of my work through these GitHub repositories. I am always open to collaborating with other passionate developers or incorporating valuable feedback to enhance these projects. Feel free to fork any repository, submit pull requests, or reach out directly if you have ideas or suggestions. Your contributions are welcome and greatly appreciated!",
+          description: "Explore my open source contributions and projects on GitHub",
           section: "Navigation",
           handler: () => {
             window.location.href = "/repositories/";
