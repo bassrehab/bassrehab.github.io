@@ -34,6 +34,7 @@ header.post-header {
       <span class="interest-tag"><i class="fa-solid fa-chart-line"></i> Financial Technology</span>
       <span class="interest-tag"><i class="fa-solid fa-project-diagram"></i> Graph Algorithms</span>
     </div>
+
   </div>
 
   <!-- Statistics Dashboard -->
@@ -77,6 +78,7 @@ header.post-header {
         <div class="stat-label">Institutions</div>
       </div>
     </div>
+
   </div>
 
   <!-- Filter/Search Section -->
@@ -100,6 +102,7 @@ header.post-header {
         <button class="year-filter-btn" data-year="2014-2007">2007-2014</button>
       </div>
     </div>
+
   </div>
 
   <!-- Publications List with Timeline -->
