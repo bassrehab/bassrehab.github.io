@@ -4,7 +4,7 @@ github_users:
 github_repos:
   - bassrehab/upir
   - bassrehab/ai-metacognition-toolkit
-  - LLMConsent/llmconsent-standards
+  - bassrehab/llmconsent-standards
   - bassrehab/oconsent
   - bassrehab/ISO8583-Simulator
   - bassrehab/neuralmark
