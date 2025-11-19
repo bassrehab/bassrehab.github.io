@@ -93,7 +93,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "https://ai-metacognition-toolkit.subhadipmitra.com/";
               },
-            },{id: "post-upir-what-if-distributed-systems-could-write-and-verify-themselves",
+            },{id: "post-the-mcp-maturity-model-evaluating-your-multi-agent-context-strategy",
+        
+          title: "The MCP Maturity Model: Evaluating Your Multi-Agent Context Strategy",
+        
+        description: "A practical framework for evaluating your multi-agent context management strategy. From ad-hoc string concatenation to self-evolving context systems - where does your architecture stand?",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/mcp-maturity-model/";
+          
+        },
+      },{id: "post-upir-what-if-distributed-systems-could-write-and-verify-themselves",
         
           title: "UPIR: What If Distributed Systems Could Write (and Verify) Themselves?",
         
