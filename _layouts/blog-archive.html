@@ -1,39 +1,538 @@
 ---
 layout: default
 ---
-<div class="page__hero--overlay"
-  style="background-color: var(--global-code-bg-color);">
-  <div class="wrapper">
-    <h1 id="page-title" class="page__title" itemprop="headline">
-      {{ page.title }}
-    </h1>
-    <p class="view"><a href="{{ page.header.actions[0].url }}" class="btn btn--primary">{{ page.header.actions[0].label }}</a>
+
+<style>
+/* Archive Page Design */
+.archive-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Hero Section */
+.archive-hero {
+  min-height: 35vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 5rem;
+  padding: 3rem 0;
+  background: linear-gradient(135deg,
+    var(--global-code-bg-color) 0%,
+    var(--global-bg-color) 100%);
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.archive-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 500px;
+  height: 500px;
+  background: var(--global-theme-color);
+  opacity: 0.03;
+  border-radius: 50%;
+}
+
+.archive-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: var(--global-theme-color);
+  opacity: 0.03;
+  border-radius: 50%;
+}
+
+.archive-hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1;
+  color: var(--global-text-color);
+  margin-bottom: 1rem;
+  letter-spacing: -0.03em;
+  position: relative;
+  z-index: 1;
+}
+
+.archive-hero .archive-subtitle {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--global-text-color-light);
+  margin-bottom: 2rem;
+  max-width: 600px;
+  font-weight: 400;
+  position: relative;
+  z-index: 1;
+}
+
+.archive-hero .archive-count {
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--global-theme-color);
+  position: relative;
+  z-index: 1;
+}
+
+.archive-hero .btn {
+  margin-top: 1rem;
+  padding: 0.875rem 2rem;
+  background: var(--global-theme-color);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+.archive-hero .btn:hover {
+  background: var(--global-text-color);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Timeline Container */
+.archive-timeline {
+  position: relative;
+  padding: 0;
+}
+
+/* Timeline Line */
+.archive-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom,
+    var(--global-theme-color) 0%,
+    var(--global-divider-color) 100%);
+  border-radius: 2px;
+}
+
+/* Year Section */
+.archive-year {
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.archive-year-header {
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding-left: 3.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.archive-year-marker {
+  position: absolute;
+  left: -10px;
+  width: 24px;
+  height: 24px;
+  background: var(--global-theme-color);
+  border: 4px solid var(--global-bg-color);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px var(--global-theme-color-light, rgba(181, 9, 172, 0.1));
+  z-index: 2;
+}
+
+.archive-year-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--global-text-color);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.archive-year-count {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--global-text-color-light);
+  margin-left: 1.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--global-code-bg-color);
+  border-radius: 50px;
+}
+
+/* Posts List */
+.archive-posts {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-left: 3.5rem;
+}
+
+.archive-posts li {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+/* Post Card */
+.archive-post-card {
+  background: var(--global-card-bg-color, var(--global-bg-color));
+  border: 2px solid var(--global-divider-color);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.archive-post-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--global-theme-color);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+  transform-origin: bottom;
+}
+
+.archive-post-card:hover {
+  border-color: var(--global-theme-color);
+  transform: translateX(8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+.archive-post-card:hover::before {
+  transform: scaleY(1);
+  transform-origin: top;
+}
+
+.archive-post-date {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--global-theme-color);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.archive-post-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.archive-post-title a {
+  color: var(--global-text-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.archive-post-title a:hover {
+  color: var(--global-theme-color);
+}
+
+.archive-post-excerpt {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--global-text-color-light);
+  margin: 0;
+}
+
+.archive-post-meta {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--global-divider-color);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.archive-post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.archive-post-tags a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.35rem 0.75rem;
+  background: var(--global-code-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 50px;
+  color: var(--global-text-color-light);
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.archive-post-tags a:hover {
+  background: var(--global-theme-color);
+  border-color: var(--global-theme-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* External link icon */
+.external-link-icon {
+  display: inline-block;
+  margin-left: 0.5rem;
+  opacity: 0.6;
+  vertical-align: middle;
+}
+
+/* Stats Section */
+.archive-stats {
+  margin-top: 4rem;
+  padding: 2.5rem;
+  background: var(--global-code-bg-color);
+  border-radius: 20px;
+  text-align: center;
+  border: 2px solid var(--global-divider-color);
+}
+
+.archive-stats h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--global-text-color);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.archive-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.archive-stat {
+  padding: 1.5rem;
+  background: var(--global-bg-color);
+  border-radius: 12px;
+  border: 1px solid var(--global-divider-color);
+}
+
+.archive-stat-number {
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--global-theme-color);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.archive-stat-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--global-text-color-light);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .archive-hero {
+    min-height: auto;
+    margin-bottom: 3rem;
+    padding: 2rem 1rem;
+    border-radius: 16px;
+  }
+
+  .archive-hero h1 {
+    font-size: 2rem;
+  }
+
+  .archive-hero .archive-subtitle {
+    font-size: 1rem;
+  }
+
+  .archive-timeline::before {
+    left: 0;
+    width: 3px;
+  }
+
+  .archive-year-header {
+    padding-left: 2.5rem;
+  }
+
+  .archive-year-title {
+    font-size: 2rem;
+  }
+
+  .archive-year-count {
+    margin-left: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .archive-posts {
+    padding-left: 2.5rem;
+  }
+
+  .archive-post-card {
+    padding: 1.5rem;
+  }
+
+  .archive-post-title {
+    font-size: 1.25rem;
+  }
+
+  .archive-stats {
+    padding: 1.5rem;
+  }
+
+  .archive-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+</style>
+
+<div class="archive-container">
+
+  <!-- Hero Section -->
+  <div class="archive-hero">
+    <h1>{{ page.title }}</h1>
+    <p class="archive-subtitle">A complete chronological collection of all articles and insights</p>
+    {% if paginator %}
+      {% assign posts = paginator.posts %}
+    {% else %}
+      {% assign posts = site.posts %}
+    {% endif %}
+    <p class="archive-count">
+      <i class="fa-solid fa-book"></i> {{ posts.size }} Articles
     </p>
-
+    {% if page.header.actions[0] %}
+      <a href="{{ page.header.actions[0].url }}" class="btn">{{ page.header.actions[0].label }}</a>
+    {% endif %}
   </div>
-</div>
 
-<div class="archive">
-  {% if paginator %}
-    {% assign posts = paginator.posts %}
-  {% else %}
-    {% assign posts = site.posts %}
-  {% endif %}
+  <!-- Timeline -->
+  <div class="archive-timeline">
+    {% assign posts_by_year = posts | group_by_exp: "post", "post.date | date: '%Y'" %}
 
-  <ul class="post-list">
-    {% for post in posts %}
-      <li>
-        <h3><a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-        <p>{{ post.date | date: "%B %d, %Y" }}</p>
-        <p>{{ post.excerpt | strip_html | escape}}</p>
-      </li>
+    {% for year_group in posts_by_year %}
+      <div class="archive-year">
+        <div class="archive-year-header">
+          <div class="archive-year-marker"></div>
+          <h2 class="archive-year-title">{{ year_group.name }}</h2>
+          <span class="archive-year-count">{{ year_group.items.size }} articles</span>
+        </div>
+
+        <ul class="archive-posts">
+          {% for post in year_group.items %}
+            <li>
+              <article class="archive-post-card">
+                <div class="archive-post-date">
+                  <i class="fa-solid fa-calendar-days"></i>
+                  {{ post.date | date: "%B %d" }}
+                </div>
+
+                <h3 class="archive-post-title">
+                  {% if post.redirect == blank %}
+                    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                  {% elsif post.redirect contains '://' %}
+                    <a href="{{ post.redirect }}" target="_blank">
+                      {{ post.title }}
+                      <svg class="external-link-icon" width="1.25rem" height="1.25rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </a>
+                  {% else %}
+                    <a href="{{ post.redirect | relative_url }}">{{ post.title }}</a>
+                  {% endif %}
+                </h3>
+
+                {% if post.description %}
+                  <p class="archive-post-excerpt">{{ post.description }}</p>
+                {% elsif post.excerpt %}
+                  <p class="archive-post-excerpt">{{ post.excerpt | strip_html | truncate: 200 }}</p>
+                {% endif %}
+
+                {% assign tags = post.tags | join: "" %}
+                {% assign categories = post.categories | join: "" %}
+                {% if tags != "" or categories != "" or post.external_source %}
+                  <div class="archive-post-meta">
+                    {% if post.external_source %}
+                      <span style="color: var(--global-text-color-light);">
+                        <i class="fa-solid fa-rss"></i> {{ post.external_source }}
+                      </span>
+                    {% endif %}
+
+                    <div class="archive-post-tags">
+                      {% for tag in post.tags limit: 3 %}
+                        <a href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}">
+                          <i class="fa-solid fa-hashtag"></i>{{ tag }}
+                        </a>
+                      {% endfor %}
+
+                      {% for category in post.categories limit: 2 %}
+                        <a href="{{ category | slugify | prepend: '/blog/category/' | relative_url }}">
+                          <i class="fa-solid fa-tag"></i>{{ category }}
+                        </a>
+                      {% endfor %}
+                    </div>
+                  </div>
+                {% endif %}
+              </article>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
     {% endfor %}
-  </ul>
+  </div>
 
+  <!-- Archive Stats -->
+  {% unless paginator %}
+    {% assign total_posts = site.posts.size %}
+    {% assign years_active = posts_by_year.size %}
+    {% assign all_tags = site.posts | map: 'tags' | join: ',' | split: ',' | uniq | size %}
+
+    <div class="archive-stats">
+      <h3><i class="fa-solid fa-chart-simple"></i> Archive Statistics</h3>
+      <div class="archive-stats-grid">
+        <div class="archive-stat">
+          <div class="archive-stat-number">{{ total_posts }}</div>
+          <div class="archive-stat-label">Total Articles</div>
+        </div>
+        <div class="archive-stat">
+          <div class="archive-stat-number">{{ years_active }}</div>
+          <div class="archive-stat-label">Years Active</div>
+        </div>
+        <div class="archive-stat">
+          <div class="archive-stat-number">{{ all_tags }}</div>
+          <div class="archive-stat-label">Unique Tags</div>
+        </div>
+      </div>
+    </div>
+  {% endunless %}
+
+  <!-- Pagination -->
   {% if paginator.total_pages > 1 %}
-    <div class="pagination">
+    <div class="pagination" style="margin-top: 4rem;">
       {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path | relative_url }}" class="previous">Previous</a>
+        <a href="{{ paginator.previous_page_path | relative_url }}" class="previous">
+          <i class="fa-solid fa-chevron-left"></i> Previous
+        </a>
       {% endif %}
       {% for page in (1..paginator.total_pages) %}
         {% if page == paginator.page %}
@@ -43,8 +542,11 @@ layout: default
         {% endif %}
       {% endfor %}
       {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path | relative_url }}" class="next">Next</a>
+        <a href="{{ paginator.next_page_path | relative_url }}" class="next">
+          Next <i class="fa-solid fa-chevron-right"></i>
+        </a>
       {% endif %}
     </div>
   {% endif %}
+
 </div>

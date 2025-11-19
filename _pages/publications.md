@@ -370,7 +370,6 @@ header.post-header {
   left: 0;
   top: 0;
   bottom: 0;
-  width: 4px;
   background: var(--global-theme-color);
   border-radius: 16px 0 0 16px;
   opacity: 0;
