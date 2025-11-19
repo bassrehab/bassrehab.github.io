@@ -1,4 +1,3 @@
-
 h1,
 h2,
 h3,
@@ -6,7 +5,6 @@ h4,
 h5,
 h6 {
   font-family: "Inter", sans-serif !important;
-
 }
 
 body,
@@ -17,103 +15,99 @@ li,
 span,
 strong {
   font-family: "Inter Tight", sans-serif !important;
-
 }
 
-
-code, kbd, pre, samp, code span {
-
+code,
+kbd,
+pre,
+samp,
+code span {
   font-family: "Fira Code", monospace !important;
-
 }
 .contact-icons a {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 
 .contact-icons {
-    border-top: 1px solid var(--global-divider-color);
+  border-top: 1px solid var(--global-divider-color);
 }
-
 
 td.list-group-name {
   min-width: 5rem;
 }
 
 .cv .card {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 .badge {
-    box-shadow:none;
+  box-shadow: none;
 }
 
 input.newsletter-form-input {
-    border: 1px solid var(--global-divider-color);
+  border: 1px solid var(--global-divider-color);
 }
 
 .profile .more-info {
-    background: var(--global-code-bg-color);
-    font-family: "Inter",sans-serif;
-    padding: 10px;
-    font-size: 0.95rem;
+  background: var(--global-code-bg-color);
+  font-family: "Inter", sans-serif;
+  padding: 10px;
+  font-size: 0.95rem;
 }
 
 #toc-sidebar a.nav-link {
-    font-size: 0.9rem;
+  font-size: 0.9rem;
 }
 
 abbr.badge {
-    color: var(--global-bg-color)!important;
+  color: var(--global-bg-color) !important;
 }
 
 .newsletter-signup {
-    background-color: var(--global-code-bg-color); /* Light background color */
-    color: var(--global-text-color);
-    padding: 35px 20px;
-    margin-bottom: 20px; /* Add some space below */
-    text-align: center; /* Center align the content */
-  }
-  
-  .newsletter-signup .newsletter-title {
-    font-size: 1.5rem;
-    margin-top: 0px;
-    margin-bottom: 10px;
-    color: var(--global-text-color);
-  }
-  
-  .newsletter-signup p {
-    margin-bottom: 15px; /* Add space between paragraphs */
-    line-height: 1.5;
-    color: var(--global-text-color);
-  }
+  background-color: var(--global-code-bg-color); /* Light background color */
+  color: var(--global-text-color);
+  padding: 35px 20px;
+  margin-bottom: 20px; /* Add some space below */
+  text-align: center; /* Center align the content */
+}
 
+.newsletter-signup .newsletter-title {
+  font-size: 1.5rem;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  color: var(--global-text-color);
+}
 
+.newsletter-signup p {
+  margin-bottom: 15px; /* Add space between paragraphs */
+  line-height: 1.5;
+  color: var(--global-text-color);
+}
 
-  .page__hero--overlay {
-    padding: 3em 0; 
-    text-align: center; 
-    color: var(--global-bg-color); 
-  }
-  
-  .page__hero--overlay h1 {
-    font-size: 2.5em; 
-    margin-bottom: 0.5em; 
-  }
-  
-  .page__hero--overlay .page__lead {
-    font-size: 1.2em; 
-    margin-bottom: 1em; 
-  }
-  
-  .page__hero--overlay .btn {
-    padding: 0.8em 1.5em;
-    font-size: 1em;
-    background-color: var(--global-theme-color);
-    color: var(--global-bg-color);
-    border: none;
-    border-radius: 4px; 
-  }
+.page__hero--overlay {
+  padding: 3em 0;
+  text-align: center;
+  color: var(--global-bg-color);
+}
 
+.page__hero--overlay h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+
+.page__hero--overlay .page__lead {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+
+.page__hero--overlay .btn {
+  padding: 0.8em 1.5em;
+  font-size: 1em;
+  background-color: var(--global-theme-color);
+  color: var(--global-bg-color);
+  border: none;
+  border-radius: 4px;
+}
 
 .modern-footer {
   background: var(--global-bg-color);
@@ -223,7 +217,7 @@ abbr.badge {
 }
 
 /* Dark theme specific adjustments */
-[data-theme='dark'] .footer-social a:hover {
+[data-theme="dark"] .footer-social a:hover {
   color: #fff;
 }
 
@@ -236,12 +230,12 @@ html.dark-mode .footer-social a:hover {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .footer-bottom {
     flex-direction: column;
     text-align: center;
   }
-  
+
   .modern-footer {
     margin-top: 4rem;
     padding: 2rem 0 1.5rem 0;
@@ -251,11 +245,9 @@ html.dark-mode .footer-social a:hover {
 /* Citation Section Styles */
 .citation-section {
   margin: 4rem 0 2rem 0;
-  padding: 2rem;
+  padding: 0.1rem 2rem 2rem;
   background: var(--global-code-bg-color);
-  border-left: 4px solid var(--global-theme-color);
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .citation-header {
@@ -352,12 +344,12 @@ html.dark-mode .footer-social a:hover {
 }
 
 /* Dark mode adjustments */
-[data-theme='dark'] .citation-section,
+[data-theme="dark"] .citation-section,
 html.dark-mode .citation-section {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-[data-theme='dark'] .citation-format:hover,
+[data-theme="dark"] .citation-format:hover,
 html.dark-mode .citation-format:hover {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
 }
@@ -384,4 +376,77 @@ html.dark-mode .citation-format:hover {
   }
 }
 
+/* Mermaid Diagram Fixes */
+.mermaid {
+  overflow: visible !important;
+  min-height: 400px;
+  height: auto !important;
+  display: block;
+  margin: 2rem 0;
+}
+
+.mermaid svg {
+  max-width: 100%;
+  height: auto !important;
+  overflow: visible !important;
+  display: block;
+}
+
+/* Fix pre/code wrapper around mermaid */
+pre:has(.mermaid),
+code:has(.mermaid) {
+  height: auto !important;
+  min-height: fit-content !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Ensure mermaid container expands to fit content */
+.mermaid pre,
+.mermaid code {
+  height: 100% !important;
+  min-height: 100% !important;
+  background: transparent !important;
+}
+
+/* Mermaid Dark Mode Fix */
+[data-theme="dark"] .mermaid,
+html.dark-mode .mermaid {
+  background: transparent;
+}
+
+[data-theme="dark"] .mermaid .node rect,
+[data-theme="dark"] .mermaid .node circle,
+[data-theme="dark"] .mermaid .node ellipse,
+[data-theme="dark"] .mermaid .node polygon,
+html.dark-mode .mermaid .node rect,
+html.dark-mode .mermaid .node circle,
+html.dark-mode .mermaid .node ellipse,
+html.dark-mode .mermaid .node polygon {
+  fill: var(--global-code-bg-color) !important;
+  stroke: var(--global-divider-color) !important;
+}
+
+[data-theme="dark"] .mermaid .nodeLabel,
+[data-theme="dark"] .mermaid .edgeLabel,
+[data-theme="dark"] .mermaid text,
+html.dark-mode .mermaid .nodeLabel,
+html.dark-mode .mermaid .edgeLabel,
+html.dark-mode .mermaid text {
+  fill: var(--global-text-color) !important;
+  color: var(--global-text-color) !important;
+}
+
+[data-theme="dark"] .mermaid .edgePath path,
+[data-theme="dark"] .mermaid path.path,
+html.dark-mode .mermaid .edgePath path,
+html.dark-mode .mermaid path.path {
+  stroke: var(--global-text-color-light) !important;
+}
+
+[data-theme="dark"] .mermaid .arrowheadPath,
+html.dark-mode .mermaid .arrowheadPath {
+  fill: var(--global-text-color-light) !important;
+}
 
