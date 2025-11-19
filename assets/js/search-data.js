@@ -200,7 +200,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2025/implementing-model-context-protocol-copy/";
+            window.location.href = "/blog/2025/implementing-model-context-protocol/";
           
         },
       },{id: "post-engineering-autonomous-multi-agent-systems-a-technical-deep-dive-into-telecom-customer-service",
