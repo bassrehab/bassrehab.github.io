@@ -5,6 +5,7 @@ date: 2024-12-28 12:15:13
 description: Explore a detailed technical implementation of a multi-agent system for retail banking credit assessment. Learn about agent architecture, distributed systems patterns, error handling, compliance requirements, and performance optimization through actual code examples and system diagrams. Ideal for software architects and engineers building scalable financial systems.
 tags: architecture casestudy
 categories: architecture casetudy
+citation: true
 giscus_comments: true
 featured: false
 related_posts: true
@@ -19,6 +20,7 @@ Modern retail banking systems face complex challenges that demand sophisticated 
 ## The Credit Assessment Challenge
 
 A bank's credit assessment system needs to:
+
 - Process thousands of applications simultaneously
 - Integrate with multiple external systems
 - Maintain strict compliance and audit trails
@@ -32,7 +34,6 @@ Traditional monolithic architectures struggle with these requirements. Let's exp
 
 Our credit assessment system uses specialized agents that each handle specific aspects of the loan application process:
 
-
 {% include figure.liquid loading="eager" path="assets/img/blog/agents-fsi-system-architecture.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 <br>
@@ -40,16 +41,19 @@ Our credit assessment system uses specialized agents that each handle specific a
 ### Key Components
 
 1. Income Verification Agent
+
    - Processes bank statements and pay stubs
    - Verifies employment information
    - Calculates income stability metrics
 
 2. Credit Bureau Agent
+
    - Manages rate-limited API access to credit bureaus
    - Normalizes data from multiple bureaus
    - Maintains score history and change tracking
 
 3. Fraud Detection Agent
+
    - Runs ML models for fraud detection
    - Performs velocity checks
    - Manages investigation workflows
@@ -67,11 +71,9 @@ Let's examine how these components work together in practice.
 
 The diagram below shows how a typical application flows through the system:
 
-
 {% include figure.liquid loading="eager" path="assets/img/blog/credit-assessment-process-flow.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 <br>
-
 
 ### Code Implementation
 
@@ -116,26 +118,26 @@ class IncomeVerificationAgent:
     def __init__(self, redis_client: aioredis.Redis):
         self.redis = redis_client
         self.cache_ttl = 3600  # 1 hour
-        
+
     async def verify_income(self, application: LoanApplication) -> Dict[str, Any]:
         cache_key = f"income::{application.customer_id}"
-        
+
         # Check cache first
         cached = await self.redis.get(cache_key)
         if cached:
             return json.loads(cached)
-        
+
         try:
             # Process bank statements using OCR and ML
             income_data = await self._process_bank_statements(
                 application.income_docs
             )
-            
+
             # Verify against employer records
             employer_data = await self._verify_employment(
                 application.customer_id
             )
-            
+
             result = {
                 "monthly_income": income_data["average_monthly_income"],
                 "income_stability": income_data["stability_score"],
@@ -143,16 +145,16 @@ class IncomeVerificationAgent:
                 "employer": employer_data["employer_name"],
                 "length_of_employment": employer_data["years_employed"]
             }
-            
+
             # Cache the result
             await self.redis.set(
-                cache_key, 
+                cache_key,
                 json.dumps(result),
                 ex=self.cache_ttl
             )
-            
+
             return result
-            
+
         except Exception as e:
             logging.error(f"Income verification failed: {str(e)}")
             raise
@@ -161,8 +163,8 @@ class FraudDetectionAgent:
     def __init__(self, model_endpoint: str):
         self.model_endpoint = model_endpoint
         self.session = aiohttp.ClientSession()
-        
-    async def check_fraud(self, application: LoanApplication, 
+
+    async def check_fraud(self, application: LoanApplication,
                          income_data: Dict[str, Any]) -> Dict[str, Any]:
         try:
             # Prepare features for fraud detection
@@ -173,67 +175,67 @@ class FraudDetectionAgent:
                 "purpose": application.purpose,
                 "application_timestamp": application.submitted_at.isoformat()
             }
-            
+
             # Call fraud detection model
             async with self.session.post(
                 self.model_endpoint,
                 json=features
             ) as response:
                 prediction = await response.json()
-                
+
             return {
                 "fraud_score": prediction["fraud_probability"],
                 "risk_flags": prediction["risk_flags"],
                 "velocity_check": prediction["velocity_check_result"]
             }
-            
+
         except Exception as e:
             logging.error(f"Fraud check failed: {str(e)}")
             raise
 
 class CreditAssessmentOrchestrator:
-    def __init__(self, 
+    def __init__(self,
                  income_agent: IncomeVerificationAgent,
                  fraud_agent: FraudDetectionAgent,
                  redis_client: aioredis.Redis):
         self.income_agent = income_agent
         self.fraud_agent = fraud_agent
         self.redis = redis_client
-        
-    async def process_application(self, 
+
+    async def process_application(self,
                                 application: LoanApplication) -> CreditDecision:
         try:
             # Start timing for SLA tracking
             start_time = datetime.now()
-            
+
             # Step 1: Verify Income
             income_data = await self.income_agent.verify_income(application)
-            
+
             # Quick fail if income is insufficient
             if income_data["monthly_income"] * 0.4 < \
                self._calculate_monthly_payment(application):
                 return CreditDecision.DECLINED
-            
+
             # Step 2: Fraud Check
             fraud_result = await self.fraud_agent.check_fraud(
                 application, income_data
             )
-            
+
             if fraud_result["fraud_score"] > 0.7:
                 await self._trigger_fraud_investigation(application)
                 return CreditDecision.DECLINED
-            
+
             # Step 3: Credit Bureau Check
             credit_result = await self._check_credit_bureau(
                 application.customer_id
             )
-            
+
             # Step 4: Calculate debt-to-income ratio
             dti = self._calculate_dti(
                 income_data["monthly_income"],
                 credit_result["monthly_obligations"]
             )
-            
+
             # Final decision logic
             decision = self._make_decision(
                 credit_score=credit_result["credit_score"],
@@ -241,39 +243,39 @@ class CreditAssessmentOrchestrator:
                 dti=dti,
                 income_stability=income_data["income_stability"]
             )
-            
+
             # Log decision for audit
             await self._log_decision(
                 application, decision, start_time,
                 income_data, fraud_result, credit_result
             )
-            
+
             return decision
-            
+
         except Exception as e:
             logging.error(
                 f"Application processing failed: {str(e)}"
             )
             return CreditDecision.ERROR
-    
-    def _calculate_monthly_payment(self, 
+
+    def _calculate_monthly_payment(self,
                                  application: LoanApplication) -> float:
         # Implement actual payment calculation logic
         rate = 0.05  # Example annual interest rate
         monthly_rate = rate / 12
         term = application.term_months
-        
-        return (application.loan_amount * monthly_rate * 
+
+        return (application.loan_amount * monthly_rate *
                 (1 + monthly_rate)**term) / \
                ((1 + monthly_rate)**term - 1)
-    
-    def _calculate_dti(self, monthly_income: float, 
+
+    def _calculate_dti(self, monthly_income: float,
                       obligations: float) -> float:
         return obligations / monthly_income
-    
-    def _make_decision(self, credit_score: int, 
+
+    def _make_decision(self, credit_score: int,
                       fraud_score: float,
-                      dti: float, 
+                      dti: float,
                       income_stability: float) -> CreditDecision:
         if credit_score >= 700 and fraud_score < 0.3 and \
            dti < 0.43 and income_stability > 0.8:
@@ -285,7 +287,6 @@ class CreditAssessmentOrchestrator:
 
 ```
 
-
 The heart of our system is the `CreditAssessmentOrchestrator`. Here's how it processes applications:
 
 ```python
@@ -293,10 +294,10 @@ async def process_application(self, application: LoanApplication) -> CreditDecis
     try:
         # Start timing for SLA tracking
         start_time = datetime.now()
-        
+
         # Step 1: Verify Income
         income_data = await self.income_agent.verify_income(application)
-        
+
         # Quick fail if income is insufficient
         if income_data["monthly_income"] * 0.4 < \
            self._calculate_monthly_payment(application):
@@ -304,6 +305,7 @@ async def process_application(self, application: LoanApplication) -> CreditDecis
 ```
 
 This code demonstrates several key patterns:
+
 - Async processing for improved throughput
 - Early rejection for obvious failures
 - SLA monitoring
@@ -316,7 +318,7 @@ State management is crucial in credit assessment. Our `IncomeVerificationAgent` 
 ```python
 async def verify_income(self, application: LoanApplication) -> Dict[str, Any]:
     cache_key = f"income::{application.customer_id}"
-    
+
     # Check cache first
     cached = await self.redis.get(cache_key)
     if cached:
@@ -324,6 +326,7 @@ async def verify_income(self, application: LoanApplication) -> Dict[str, Any]:
 ```
 
 This implementation:
+
 - Uses Redis for distributed caching
 - Implements TTL for regulatory compliance
 - Maintains audit trails
@@ -334,11 +337,13 @@ This implementation:
 ### Scaling Characteristics
 
 Our production system handles varying load profiles:
+
 - Normal operation: 100-200 applications/minute
 - Peak periods (tax season): 500-600 applications/minute
 - Batch processing: Up to 10,000 applications/hour
 
 Key scaling strategies:
+
 1. Horizontal scaling of stateless agents
 2. Redis cluster for state management
 3. Partitioned queues for better throughput
@@ -349,11 +354,13 @@ Key scaling strategies:
 Real-world performance improvements implemented:
 
 1. Smart Batching
+
    - Group credit bureau checks by provider
    - Batch document processing jobs
    - Combine similar ML model inferences
 
 2. Caching Strategy
+
    - Cache income verification results (1-hour TTL)
    - Cache credit scores (24-hour TTL)
    - No caching of fraud checks (real-time requirement)
@@ -366,7 +373,6 @@ Real-world performance improvements implemented:
 
 ### Error Handling in Production
 
-
 {% include figure.liquid loading="eager" path="assets/img/blog/credit-system-failure-handling.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 <br>
@@ -374,19 +380,20 @@ Real-world performance improvements implemented:
 When dealing with financial transactions, error handling becomes critical. Our system implements several layers of protection:
 
 1. Circuit Breakers
+
 ```python
 class CreditBureauService:
     def __init__(self):
         self.failure_count = 0
         self.last_failure = None
         self.circuit_open = False
-        
+
     async def check_credit(self, customer_id: str):
         if self.circuit_open:
             if (datetime.now() - self.last_failure).seconds < 300:
                 raise CircuitBreakerError("Credit bureau service unavailable")
             self.circuit_open = False
-            
+
         try:
             return await self._make_bureau_call(customer_id)
         except Exception as e:
@@ -398,11 +405,12 @@ class CreditBureauService:
 ```
 
 2. Retry Mechanisms
+
    - Exponential backoff for transient failures
    - Different strategies for different error types:
-     * Retry immediately for timeouts
-     * Delay for rate limiting
-     * No retry for validation errors
+     - Retry immediately for timeouts
+     - Delay for rate limiting
+     - No retry for validation errors
 
 3. Dead Letter Queues
    - Failed applications are moved to analysis queues
@@ -414,6 +422,7 @@ class CreditBureauService:
 Financial systems require stringent compliance measures. Our architecture addresses these through:
 
 ### 1. Comprehensive Logging
+
 ```python
 @dataclass
 class AuditLog:
@@ -427,7 +436,7 @@ class AuditLog:
     error_details: Optional[str]
 
 class AuditLogger:
-    async def log_action(self, 
+    async def log_action(self,
                         application: LoanApplication,
                         action: str,
                         input_data: Dict,
@@ -447,11 +456,13 @@ class AuditLogger:
 ```
 
 ### 2. Data Retention
+
 - Configurable retention periods by data type
 - Automated archival processes
 - Secure data disposal workflows
 
 ### 3. Access Controls
+
 - Role-based access for different agent types
 - Audit trails for all data access
 - Encryption for sensitive data fields
@@ -461,27 +472,30 @@ class AuditLogger:
 In production, visibility into system behavior is crucial. Our monitoring setup includes:
 
 1. Business Metrics
+
    - Application approval rates
    - Average decision time
    - Agent processing rates
    - Queue depths
 
 2. Technical Metrics
+
    - External API latencies
    - Cache hit rates
    - Database IOPS
    - Memory utilization
 
 3. Alerting Rules
+
 ```python
 class MetricsCollector:
     def __init__(self):
         self.metrics = {}
-        
+
     async def track_decision_time(self, start_time: datetime):
         processing_time = (datetime.now() - start_time).total_seconds()
         await self.push_metric('decision_time', processing_time)
-        
+
         if processing_time > 30:  # SLA threshold
             await self.alert_slow_processing(processing_time)
 ```
@@ -497,7 +511,7 @@ class PerformanceTester:
     async def run_load_test(self, concurrent_users: int, duration_seconds: int):
         start_time = time.time()
         test_results = []
-        
+
         async def simulate_user():
             while time.time() - start_time < duration_seconds:
                 application = self.generate_test_application()
@@ -516,7 +530,7 @@ class PerformanceTester:
                         'error': str(e)
                     })
                 await asyncio.sleep(random.uniform(0.1, 0.5))
-        
+
         users = [simulate_user() for _ in range(concurrent_users)]
         await asyncio.gather(*users)
         return self.analyze_results(test_results)
@@ -525,6 +539,7 @@ class PerformanceTester:
 Key findings from our load tests:
 
 1. Throughput Characteristics
+
    - Baseline: 100 requests/second with 95th percentile latency < 500ms
    - Max throughput: 350 requests/second before degradation
    - Memory usage grows linearly until 250 requests/second
@@ -542,18 +557,19 @@ Key findings from our load tests:
 We identified several bottlenecks during testing:
 
 1. Document Processing Agent
+
 ```python
 class DocumentProcessingOptimization:
     def __init__(self):
         self.thread_pool = ThreadPoolExecutor(max_workers=cpu_count() * 2)
         self.batch_size = 10
         self.processing_queue = asyncio.Queue()
-    
+
     async def process_documents(self, documents: List[str]):
         # Batch documents for efficient processing
-        batches = [documents[i:i + self.batch_size] 
+        batches = [documents[i:i + self.batch_size]
                   for i in range(0, len(documents), self.batch_size)]
-        
+
         async def process_batch(batch):
             try:
                 # Use thread pool for CPU-intensive OCR
@@ -566,13 +582,14 @@ class DocumentProcessingOptimization:
             except Exception as e:
                 logging.error(f"Batch processing failed: {str(e)}")
                 raise
-        
+
         # Process batches concurrently
         tasks = [process_batch(batch) for batch in batches]
         return await asyncio.gather(*tasks)
 ```
 
 2. Credit Bureau Integration
+
 ```python
 class CreditBureauOptimization:
     def __init__(self):
@@ -584,13 +601,13 @@ class CreditBureauOptimization:
             maxsize=10000,
             ttl=86400  # 24 hours
         )
-    
+
     async def get_credit_report(self, customer_id: str):
         # Check cache first
         cache_key = f"credit_report:{customer_id}"
         if cache_key in self.cache:
             return self.cache[cache_key]
-        
+
         async with self.rate_limiter:
             try:
                 report = await self._fetch_credit_report(customer_id)
@@ -612,7 +629,7 @@ class MemoryOptimizedAgent:
             max_size=1000,
             cleanup_interval=300
         )
-    
+
     async def process_large_document(self, document: bytes):
         async with self.object_pool.acquire() as processor:
             try:
@@ -626,7 +643,7 @@ class MemoryOptimizedAgent:
 async def profile_agent_memory():
     agent = MemoryOptimizedAgent()
     large_docs = generate_test_documents(1000)
-    
+
     # Monitor memory usage during processing
     memory_samples = []
     for doc in large_docs:
@@ -634,7 +651,7 @@ async def profile_agent_memory():
         await agent.process_large_document(doc)
         mem_after = get_memory_usage()
         memory_samples.append(mem_after - mem_before)
-    
+
     return analyze_memory_pattern(memory_samples)
 ```
 
@@ -650,7 +667,7 @@ class DatabaseOptimization:
             max_size=20,
             cleanup_timeout=60
         )
-    
+
     async def bulk_insert_applications(self, applications: List[Application]):
         async with self.pool.acquire() as conn:
             async with conn.transaction():
@@ -661,12 +678,12 @@ class DatabaseOptimization:
                     columns=['id', 'customer_id', 'data']
                 )
                 return result
-                
+
     async def get_application_batch(self, batch_size: int):
         async with self.pool.acquire() as conn:
             # Use cursor-based pagination
             return await conn.fetch("""
-                SELECT * FROM applications 
+                SELECT * FROM applications
                 WHERE status = 'pending'
                 ORDER BY submitted_at
                 LIMIT $1
@@ -711,31 +728,31 @@ class EventPublisher:
             EventType.INCOME_VERIFIED: self._validate_income_event,
             EventType.FRAUD_DETECTED: self._validate_fraud_event
         }
-    
+
     async def publish(self, event: Event, channel: str) -> bool:
         try:
             # Version compatibility check
             if not await self._check_version_compatibility(event):
                 raise VersionIncompatibleError(f"Event version {event.version} not supported")
-            
+
             # Validate event structure
             if event.event_type in self.event_validators:
                 await self.event_validators[event.event_type](event)
-            
+
             # Publish event
             await self.redis.publish(
                 channel,
                 json.dumps(dataclasses.asdict(event))
             )
-            
+
             # Store event for audit
             await self._store_event(event)
             return True
-            
+
         except Exception as e:
             logging.error(f"Failed to publish event: {str(e)}")
             return False
-    
+
     async def _store_event(self, event: Event):
         """Store event in time-series database for audit"""
         event_key = f"event:{event.correlation_id}:{event.timestamp}"
@@ -755,31 +772,31 @@ class AgentCommunicator:
     def __init__(self, timeout: int = 30):
         self.timeout = timeout
         self.pending_requests: Dict[str, asyncio.Future] = {}
-        
-    async def request(self, target_agent: str, 
-                     request_type: str, 
+
+    async def request(self, target_agent: str,
+                     request_type: str,
                      payload: Dict[str, Any]) -> Dict[str, Any]:
         request_id = str(uuid.uuid4())
-        
+
         # Create future for response
         future = asyncio.Future()
         self.pending_requests[request_id] = future
-        
+
         try:
             # Send request
             await self._send_request(target_agent, request_id, request_type, payload)
-            
+
             # Wait for response with timeout
             return await asyncio.wait_for(future, timeout=self.timeout)
-            
+
         except asyncio.TimeoutError:
             del self.pending_requests[request_id]
             raise RequestTimeoutError(f"Request to {target_agent} timed out")
-            
+
         except Exception as e:
             del self.pending_requests[request_id]
             raise
-    
+
     async def handle_response(self, request_id: str, response: Dict[str, Any]):
         if request_id in self.pending_requests:
             future = self.pending_requests.pop(request_id)
@@ -800,7 +817,7 @@ class SystemBroadcaster:
             'config_updates': 'system:config',
             'agent_health': 'system:health'
         }
-    
+
     async def broadcast_status(self, status: Dict[str, Any]):
         """Broadcast system status to all agents"""
         message = {
@@ -808,12 +825,12 @@ class SystemBroadcaster:
             'status': status,
             'broadcast_id': str(uuid.uuid4())
         }
-        
+
         await self.redis.publish(
             self.broadcast_channels['system_status'],
             json.dumps(message)
         )
-    
+
     async def broadcast_config_update(self, config: Dict[str, Any]):
         """Broadcast configuration changes"""
         await self.redis.publish(
@@ -836,25 +853,25 @@ class MessageSubscriber:
         self.agent_id = agent_id
         self.subscriptions: Dict[str, Callable] = {}
         self.filters: Dict[str, List[Callable]] = {}
-        
-    async def subscribe(self, channel: str, 
+
+    async def subscribe(self, channel: str,
                        handler: Callable,
                        filters: Optional[List[Callable]] = None):
         """Subscribe to a channel with optional message filters"""
         self.subscriptions[channel] = handler
         if filters:
             self.filters[channel] = filters
-    
+
     async def handle_message(self, channel: str, message: Dict[str, Any]):
         if channel not in self.subscriptions:
             return
-            
+
         # Apply filters if any
         if channel in self.filters:
             for filter_fn in self.filters[channel]:
                 if not filter_fn(message):
                     return
-        
+
         # Handle message
         await self.subscriptions[channel](message)
 ```
@@ -868,22 +885,22 @@ class OrderedMessageHandler:
     def __init__(self):
         self.message_queues: Dict[str, asyncio.Queue] = {}
         self.sequence_numbers: Dict[str, int] = {}
-    
-    async def handle_ordered_message(self, application_id: str, 
+
+    async def handle_ordered_message(self, application_id: str,
                                    sequence_number: int,
                                    message: Dict[str, Any]):
         """Handle messages in sequence order for a given application"""
         if application_id not in self.message_queues:
             self.message_queues[application_id] = asyncio.Queue()
             self.sequence_numbers[application_id] = 0
-            
+
         current_seq = self.sequence_numbers[application_id]
-        
+
         if sequence_number == current_seq + 1:
             # Process message immediately
             await self._process_message(application_id, message)
             self.sequence_numbers[application_id] += 1
-            
+
             # Process any queued messages
             while not self.message_queues[application_id].empty():
                 queued_seq, queued_msg = \
@@ -914,26 +931,26 @@ class DeadLetterQueue:
         self.redis = redis_client
         self.max_retries = 3
         self.retry_delays = [60, 300, 900]  # Progressive delays in seconds
-    
-    async def handle_failed_message(self, message: Dict[str, Any], 
+
+    async def handle_failed_message(self, message: Dict[str, Any],
                                   error: Exception):
         """Handle failed message processing"""
         retry_count = message.get('retry_count', 0)
-        
+
         if retry_count >= self.max_retries:
             # Move to dead letter queue for manual review
             await self._move_to_dlq(message, error)
             return
-        
+
         # Schedule retry
         delay = self.retry_delays[retry_count]
         await self._schedule_retry(message, delay)
-        
+
     async def _schedule_retry(self, message: Dict[str, Any], delay: int):
         """Schedule message for retry after delay"""
         message['retry_count'] = message.get('retry_count', 0) + 1
         message['last_error_time'] = time.time()
-        
+
         retry_time = time.time() + delay
         await self.redis.zadd(
             'message:retry_queue',
@@ -953,18 +970,21 @@ These communication patterns form the backbone of our multi-agent system, ensuri
 Each pattern addresses specific needs in the credit assessment workflow while maintaining system reliability and traceability.
 
 1. Agent Design Principles
+
    - Start with coarse-grained agents and split as responsibilities become clearer
    - Use feature flags to control agent behavior during testing
    - Build comprehensive logging into each agent from the start
    - Plan for version compatibility between agents
 
 2. Testing Challenges
+
    - Simulating credit bureau responses requires extensive test data
    - Fraud detection testing needs specialized synthetic data generation
    - Integration testing requires careful orchestration of multiple external services
    - Performance testing must account for variable API response times
 
 3. Development Workflow
+
    - Use contract testing between agents
    - Implement feature flags for gradual rollout capability
    - Build comprehensive integration test suites
@@ -981,11 +1001,13 @@ Each pattern addresses specific needs in the credit assessment workflow while ma
 Several enhancements are possible, some of them can be (perhaps, we will cover them in the next post):
 
 1. Machine Learning Integration
+
    - Real-time model retraining
    - A/B testing framework
    - Feature store integration
 
 2. Scalability
+
    - Global deployment support
    - Cross-region failover
    - Enhanced load balancing

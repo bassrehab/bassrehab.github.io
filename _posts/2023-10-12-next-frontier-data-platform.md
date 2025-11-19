@@ -5,6 +5,7 @@ date: 2023-10-12 19:09:00
 description: Advancements in data management, from warehouses to Data Mesh and Lakehouse, signal a shift toward more adaptive platforms like, Quantum Data Management, Genetic algorithm concepts, etc.
 tags: data platform inventive
 categories: platform
+citation: true
 giscus_comments: true
 featured: false
 related_posts: true

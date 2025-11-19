@@ -27,19 +27,19 @@ toc:
 }
 </style>
 
-I've spent the last few months working on a problem that's been bugging me for years: why is it so hard to translate what we *want* a distributed system to do into code that actually *does* it correctly?
+I've spent the last few months working on a problem that's been bugging me for years: why is it so hard to translate what we _want_ a distributed system to do into code that actually _does_ it correctly?
 
 Last week, I published [UPIR](https://www.tdcommons.org/dpubs_series/8852/) (Universal Plan Intermediate Representation) - a framework that tries to answer this question by combining formal verification, program synthesis, and machine learning. The [code is on GitHub](https://github.com/bassrehab/upir) if you want to dive straight in.
 
-But more than the technical details, I want to share *why* I built this and what I learned along the way.
+But more than the technical details, I want to share _why_ I built this and what I learned along the way.
 
 ## The Problem Nobody Talks About
 
-Here's the thing about distributed systems: we're actually pretty good at designing them. Grab a whiteboard, sketch out some boxes and arrows, define your consistency guarantees, and you're golden. The *design* part? Solved.
+Here's the thing about distributed systems: we're actually pretty good at designing them. Grab a whiteboard, sketch out some boxes and arrows, define your consistency guarantees, and you're golden. The _design_ part? Solved.
 
 The problem is what happens next.
 
-You hand that beautiful architecture diagram to an engineering team, and three months later you're debugging why exactly the system loses data when node 3 goes down *but only if node 7 was the coordinator*. The specification said "ensure exactly-once delivery," but somewhere between the whiteboard and the code, reality happened.
+You hand that beautiful architecture diagram to an engineering team, and three months later you're debugging why exactly the system loses data when node 3 goes down _but only if node 7 was the coordinator_. The specification said "ensure exactly-once delivery," but somewhere between the whiteboard and the code, reality happened.
 
 I've been on both sides of this. Delivering enterprise transformations across multiple organizations, I've watched this gap trip up teams repeatedly. The traditional solutions? Not great:
 
@@ -116,7 +116,8 @@ Average time? About 2 milliseconds. Success rate varies (43-75% depending on how
 
 ### Part 3: Make It Fast Without Breaking It
 
-Here's where it gets fun. Having a *correct* implementation is great, but usually it's not optimized. Traditionally, you either:
+Here's where it gets fun. Having a _correct_ implementation is great, but usually it's not optimized. Traditionally, you either:
+
 - Manually tune parameters and probably break correctness in the process
 - Or accept whatever performance the synthesizer gave you and call it a day
 
@@ -140,13 +141,13 @@ Each piece makes the others more useful.
 
 I ran benchmarks on a bunch of representative distributed systems patterns. Here's what I got:
 
-| Metric | Result |
-|--------|--------|
-| Latency reduction | 60.1% |
-| Throughput increase | 194.5% |
+| Metric               | Result                 |
+| -------------------- | ---------------------- |
+| Latency reduction    | 60.1%                  |
+| Throughput increase  | 194.5%                 |
 | Verification speedup | 274x for 64 components |
-| Pattern reuse | 89.9% |
-| Error rate reduction | 80% |
+| Pattern reuse        | 89.9%                  |
+| Error rate reduction | 80%                    |
 
 These aren't toy examples. These are patterns that show up in real production systems - leader election, distributed consensus, replication protocols.
 
@@ -191,6 +192,7 @@ results = verifier.verify_specification(arch, spec)
 **Requirements:** Python >=3.9
 
 **Links:**
+
 - PyPI: [pypi.org/project/upir](https://pypi.org/project/upir/)
 - Documentation: [upir.subhadipmitra.com](https://upir.subhadipmitra.com)
 - GitHub: [github.com/bassrehab/upir](https://github.com/bassrehab/upir)
@@ -260,7 +262,7 @@ The [full technical disclosure](https://www.tdcommons.org/dpubs_series/8852/) is
 
 If you're working on distributed systems and want to try this on real problems, or if you're into formal verification, program synthesis, or ML for systems - let's talk. Seriously. [Email me](mailto:contact@subhadipmitra.com) or find me on [LinkedIn](https://linkedin.com/in/subhadip-mitra).
 
-I'd especially love to hear from people who think this *won't* work. Those are usually the most useful conversations.
+I'd especially love to hear from people who think this _won't_ work. Those are usually the most useful conversations.
 
 ---
 
@@ -274,4 +276,4 @@ Some other stuff I've been working on that connects to this:
 
 ---
 
-*The code is open source, the paper is CC BY 4.0, so go nuts.*
+_The code is open source, the paper is CC BY 4.0, so go nuts._

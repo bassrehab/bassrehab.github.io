@@ -6,6 +6,7 @@ description: Dive into the architecture of a telco-scale real-time data platform
 tags: system-design architecture casestudy ignite kafka
 categories: architecture system-design casetudy
 giscus_comments: true
+citation: true
 featured: false
 related_posts: true
 toc:
@@ -19,6 +20,7 @@ In the telecommunications industry, the ability to process and analyze data in r
 Our telecommunications client faced several critical challenges that pushed the boundaries of traditional data processing:
 
 ### Scale Requirements
+
 - Processing 2.5 million events per second from various sources
 - Handling 350GB of DPI data every 15 minutes (~23.3GB per minute)
 - Supporting millions of active subscribers
@@ -26,6 +28,7 @@ Our telecommunications client faced several critical challenges that pushed the 
 - Maintaining sub-second response times
 
 ### Business Requirements
+
 - Real-time SIM card movement detection between devices
 - Location-based service delivery
 - Instant campaign targeting
@@ -37,24 +40,28 @@ Our telecommunications client faced several critical challenges that pushed the 
 ### Data Sources
 
 1. **Network Events (1.2M/sec)**
+
    - Cell tower connections
    - Handovers
    - Signal strength measurements
    - Network quality indicators
 
 2. **Subscriber Events (800K/sec)**
+
    - SIM card activations/deactivations
    - Device changes
    - Service subscriptions
    - Usage patterns
 
 3. **Location Updates (400K/sec)**
+
    - Cell tower triangulation
    - GPS data
    - Movement patterns
    - Location-based triggers
 
 4. **Customer Interactions (100K/sec)**
+
    - App usage
    - Service requests
    - Customer care interactions
@@ -71,17 +78,17 @@ Our telecommunications client faced several critical challenges that pushed the 
 
 {% include figure.liquid loading="eager" path="assets/img/blog/fast-data-platform-telco.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
-
-
 ### Core Components
 
 1. **Apache Kafka**
+
    - Event streaming backbone
    - Message persistence
    - Stream processing
    - Real-time analytics
 
 2. **Apache Ignite**
+
    - In-memory computing
    - Real-time processing
    - Distributed caching
@@ -96,12 +103,14 @@ Our telecommunications client faced several critical challenges that pushed the 
 ### Infrastructure Scale
 
 1. **Kafka Cluster**
+
    - 24 broker nodes
    - 3 availability zones
    - 1,350+ partitions
    - 25Gbps network
 
 2. **Ignite Cluster**
+
    - 32 processing nodes
    - 512GB RAM per node
    - NVMe storage
@@ -116,24 +125,28 @@ Our telecommunications client faced several critical challenges that pushed the 
 ## Key Design Decisions
 
 ### 1. Data Locality
+
 - Geographic data distribution
 - NUMA-aware processing
 - Cache-aware scheduling
 - Network topology optimization
 
 ### 2. State Management
+
 - Distributed state handling
 - Eventual consistency model
 - State recovery mechanisms
 - Cache coherency protocols
 
 ### 3. Performance Optimization
+
 - Zero-copy operations
 - Custom serialization
 - Batch processing
 - Parallel execution paths
 
 ### 4. Reliability
+
 - No single point of failure
 - Multi-datacenter replication
 - Automatic failover
@@ -144,18 +157,21 @@ Our telecommunications client faced several critical challenges that pushed the 
 {% include figure.liquid loading="eager" path="assets/img/blog/data-flow-overview-fast-data-telco.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 1. **Data Ingestion**
+
    - Multiple collection points
    - Protocol-specific handlers
    - Load balancing
    - Initial validation
 
 2. **Processing Pipeline**
+
    - Stream processing
    - Real-time analytics
    - State management
    - Event correlation
 
 3. **Storage Strategy**
+
    - Hot data in memory
    - Warm data on SSDs
    - Cold data in object storage
@@ -170,12 +186,14 @@ Our telecommunications client faced several critical challenges that pushed the 
 ## Performance Characteristics
 
 ### Latency Targets
+
 - Real-time events: < 50ms
 - DPI processing: < 5 minutes
 - Query response: < 100ms
 - State updates: < 10ms
 
 ### Throughput Achievements
+
 - Event processing: 2.5M/second
 - DPI processing: 350GB/15min
 - Storage writes: 100K/second
@@ -184,6 +202,7 @@ Our telecommunications client faced several critical challenges that pushed the 
 ## Looking Ahead
 
 In the upcoming parts of this series, we'll dive deep into:
+
 - Data partitioning strategies
 - Memory management techniques
 - Stream processing optimization

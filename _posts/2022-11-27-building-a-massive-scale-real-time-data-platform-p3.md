@@ -6,6 +6,7 @@ description: Deep dive into memory management with Apache Ignite for high-perfor
 tags: system-design architecture casestudy ignite kafka
 categories: architecture system-design casetudy
 giscus_comments: true
+citation: true
 featured: false
 related_posts: true
 toc:
@@ -19,12 +20,14 @@ In [Parts 1](https://subhadipmitra.com/blog/2022/building-a-massive-scale-real-t
 ### Scale Requirements
 
 1. **Event Processing**
+
    - 2.5M events/second ingestion
    - Sub-millisecond query latency
    - Real-time aggregations
    - State maintenance
 
 2. **DPI Data**
+
    - 350GB/15min processing
    - Complex analysis
    - Pattern detection
@@ -47,6 +50,7 @@ In [Parts 1](https://subhadipmitra.com/blog/2022/building-a-massive-scale-real-t
 ### Memory Regions
 
 1. **On-Heap Memory (20%)**
+
    - Size: ~100GB per node
    - Usage: Critical metadata
    - Contents: Indexes and query execution
@@ -61,6 +65,7 @@ In [Parts 1](https://subhadipmitra.com/blog/2022/building-a-massive-scale-real-t
 ### Memory Organization
 
 1. **Page Memory**
+
    - Page size: 2KB to 2MB
    - Pre-allocated pools
    - NUMA-aware allocation
@@ -81,23 +86,24 @@ In [Parts 1](https://subhadipmitra.com/blog/2022/building-a-massive-scale-real-t
 <br>
 
 ### Memory Configuration
+
 ```xml
 <bean class="org.apache.ignite.configuration.IgniteConfiguration">
     <property name="dataStorageConfiguration">
         <bean class="org.apache.ignite.configuration.DataStorageConfiguration">
             <!-- System region configuration -->
-            <property name="systemRegionInitialSize" 
+            <property name="systemRegionInitialSize"
                       value="#{10L * 1024 * 1024 * 1024}" /> <!-- 10GB -->
-            
+
             <!-- Default region configuration -->
             <property name="defaultDataRegionConfiguration">
                 <bean class="org.apache.ignite.configuration.DataRegionConfiguration">
                     <property name="name" value="Default_Region"/>
-                    <property name="initialSize" 
+                    <property name="initialSize"
                               value="#{20L * 1024 * 1024 * 1024}" /> <!-- 20GB -->
-                    <property name="maxSize" 
+                    <property name="maxSize"
                               value="#{50L * 1024 * 1024 * 1024}" /> <!-- 50GB -->
-                    <property name="pageEvictionMode" 
+                    <property name="pageEvictionMode"
                               value="RANDOM_2_LRU"/>
                     <property name="metricsEnabled" value="true"/>
                 </bean>
@@ -109,22 +115,22 @@ In [Parts 1](https://subhadipmitra.com/blog/2022/building-a-massive-scale-real-t
                     <!-- Hot data region -->
                     <bean class="org.apache.ignite.configuration.DataRegionConfiguration">
                         <property name="name" value="Hot_Region"/>
-                        <property name="initialSize" 
+                        <property name="initialSize"
                                   value="#{200L * 1024 * 1024 * 1024}" /> <!-- 200GB -->
-                        <property name="maxSize" 
+                        <property name="maxSize"
                                   value="#{400L * 1024 * 1024 * 1024}" /> <!-- 400GB -->
-                        <property name="pageEvictionMode" 
+                        <property name="pageEvictionMode"
                                   value="RANDOM_2_LRU"/>
                         <property name="evictionThreshold" value="0.95"/>
                         <property name="metricsEnabled" value="true"/>
                     </bean>
-                    
+
                     <!-- Index region -->
                     <bean class="org.apache.ignite.configuration.DataRegionConfiguration">
                         <property name="name" value="Index_Region"/>
-                        <property name="initialSize" 
+                        <property name="initialSize"
                                   value="#{50L * 1024 * 1024 * 1024}" /> <!-- 50GB -->
-                        <property name="maxSize" 
+                        <property name="maxSize"
                                   value="#{100L * 1024 * 1024 * 1024}" /> <!-- 100GB -->
                         <property name="persistenceEnabled" value="true"/>
                     </bean>
@@ -136,34 +142,35 @@ In [Parts 1](https://subhadipmitra.com/blog/2022/building-a-massive-scale-real-t
 ```
 
 ### Memory Manager Implementation
+
 ```java
 public class CustomMemoryManager {
     private final IgniteCache<String, BinaryObject> cache;
     private final EvictionPolicy evictionPolicy;
     private final MetricsRegistry metricsRegistry;
-    
+
     // Memory pressure handling
     public void handleMemoryPressure() {
         DataRegionMetrics metrics = getRegionMetrics("Hot_Region");
         double usagePercentage = metrics.getPagesFillFactor();
-        
+
         if (usagePercentage > 0.9) { // 90% threshold
             triggerEviction();
         }
     }
-    
+
     // Custom eviction logic
     private void triggerEviction() {
         // Get events older than 4 hours
-        long cutoffTime = System.currentTimeMillis() - 
+        long cutoffTime = System.currentTimeMillis() -
             TimeUnit.HOURS.toMillis(4);
-            
+
         SqlQuery<String, BinaryObject> query = new SqlQuery<>(
             Event.class, "timestamp < ? ORDER BY timestamp ASC LIMIT 10000");
-            
-        try (QueryCursor<Cache.Entry<String, BinaryObject>> cursor = 
+
+        try (QueryCursor<Cache.Entry<String, BinaryObject>> cursor =
                 cache.query(query.setArgs(cutoffTime))) {
-            
+
             for (Cache.Entry<String, BinaryObject> entry : cursor) {
                 // Move to warm storage
                 moveToWarmStorage(entry.getKey(), entry.getValue());
@@ -172,7 +179,7 @@ public class CustomMemoryManager {
             }
         }
     }
-    
+
     // Warm storage management
     private void moveToWarmStorage(String key, BinaryObject value) {
         // Compress if needed
@@ -185,12 +192,12 @@ public class CustomMemoryManager {
 }
 ```
 
-
 ## Memory Optimization Techniques
 
 ### 1. Data Layout Optimization
 
 #### Object Structure Design
+
 ```java
 // Before Optimization
 public class EventData {
@@ -212,6 +219,7 @@ public class OptimizedEventData {
 ```
 
 #### Memory Alignment
+
 ```java
 public class AlignedEventData {
     // Fields arranged by size (descending) for optimal packing
@@ -226,16 +234,17 @@ public class AlignedEventData {
 ```
 
 #### Object Pooling Implementation
+
 ```java
 public class EventObjectPool {
     private final Queue<EventData> pool;
     private final int maxPoolSize;
-    
+
     public EventObjectPool(int maxSize) {
         this.pool = new ConcurrentLinkedQueue<>();
         this.maxPoolSize = maxSize;
     }
-    
+
     public EventData acquire() {
         EventData event = pool.poll();
         if (event == null) {
@@ -243,7 +252,7 @@ public class EventObjectPool {
         }
         return event;
     }
-    
+
     public void release(EventData event) {
         event.reset(); // Clear sensitive data
         if (pool.size() < maxPoolSize) {
@@ -256,11 +265,12 @@ public class EventObjectPool {
 ### 2. Access Pattern Optimization
 
 #### NUMA-Aware Allocation
+
 ```java
 public class NumaAwareAllocation {
     private final int[] numaNodes;
     private final ThreadLocal<Integer> nodeAffinity;
-    
+
     public void allocateMemory(int size) {
         int node = nodeAffinity.get();
         // Allocate memory on specific NUMA node
@@ -268,40 +278,42 @@ public class NumaAwareAllocation {
         // Bind memory to NUMA node
         numaBindMemory(address, size, node);
     }
-    
+
     private native void numaBindMemory(long address, int size, int node);
 }
 ```
 
 #### Thread Affinity
+
 ```java
 public class ThreadAffinityManager {
     private final ConcurrentMap<Thread, Integer> threadToCore;
     private final int[] availableCores;
-    
+
     public void setThreadAffinity() {
         Thread currentThread = Thread.currentThread();
         int core = threadToCore.get(currentThread);
-        
+
         // Set processor affinity
         setThreadAffinityMask(1L << core);
     }
-    
+
     private native void setThreadAffinityMask(long mask);
 }
 ```
 
 #### Cache Line Optimization
+
 ```java
 public class CacheLineAligned {
     private static final int CACHE_LINE = 64; // bytes
-    
+
     // Prevent false sharing with padding
     @sun.misc.Contended
     private volatile long counter;
-    
+
     // Ensure cache line alignment
-    private long padding1, padding2, padding3, padding4, 
+    private long padding1, padding2, padding3, padding4,
                 padding5, padding6, padding7;
 }
 ```
@@ -309,11 +321,12 @@ public class CacheLineAligned {
 ### 3. Memory Access Patterns
 
 #### Sequential Access
+
 ```java
 public class SequentialAccessBuffer {
     private final ByteBuffer buffer;
     private final int blockSize;
-    
+
     public void processData() {
         // Sequential read is faster than random access
         for (int i = 0; i < buffer.capacity(); i += blockSize) {
@@ -325,10 +338,11 @@ public class SequentialAccessBuffer {
 ```
 
 #### Batch Processing
+
 ```java
 public class BatchProcessor {
     private static final int BATCH_SIZE = 1000;
-    
+
     public void processBatch(List<Event> events) {
         // Process events in batches to improve memory access patterns
         for (int i = 0; i < events.size(); i += BATCH_SIZE) {
@@ -339,35 +353,36 @@ public class BatchProcessor {
     }
 }
 ```
+
 <br>
 
 ## Eviction Strategies
+
 <br>
 
 {% include figure.liquid loading="eager" path="assets/img/blog/memory-eviction-flow.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
-
 <br>
-
 
 ### 1. Time-Based Eviction
 
 #### Rolling Window Implementation
+
 ```java
 public class TimeBasedEviction {
     private final Duration windowSize;
     private final EvictionQueue<TimedEntry> queue;
-    
+
     public void evictExpired() {
         long cutoff = System.currentTimeMillis() - windowSize.toMillis();
-        
-        while (!queue.isEmpty() && 
+
+        while (!queue.isEmpty() &&
                queue.peek().getTimestamp() < cutoff) {
             TimedEntry entry = queue.poll();
             processEviction(entry);
         }
     }
-    
+
     private void processEviction(TimedEntry entry) {
         // Move to appropriate storage tier
         if (entry.isHot()) {
@@ -380,14 +395,15 @@ public class TimeBasedEviction {
 ```
 
 #### Priority-Based Time Eviction
+
 ```java
 public class PriorityTimeEviction {
     private final PriorityQueue<EventData> priorityQueue;
     private final Map<String, Integer> customerTiers;
-    
+
     public void evictWithPriority() {
         long currentTime = System.currentTimeMillis();
-        
+
         while (needsEviction()) {
             EventData event = priorityQueue.peek();
             if (shouldEvict(event, currentTime)) {
@@ -398,11 +414,11 @@ public class PriorityTimeEviction {
             }
         }
     }
-    
+
     private boolean shouldEvict(EventData event, long currentTime) {
         int tier = customerTiers.getOrDefault(event.getCustomerId(), 0);
         long age = currentTime - event.getTimestamp();
-        
+
         // Higher tier customers get longer retention
         return age > getRetentionPeriod(tier);
     }
@@ -412,17 +428,18 @@ public class PriorityTimeEviction {
 ### 2. Size-Based Eviction
 
 #### Memory Threshold Management
+
 ```java
 public class MemoryThresholdEviction {
     private static final double WARNING_THRESHOLD = 0.80;
     private static final double CRITICAL_THRESHOLD = 0.90;
-    
+
     private final MemoryUsageMonitor monitor;
     private final EvictionPolicy policy;
-    
+
     public void checkAndEvict() {
         double usage = monitor.getCurrentUsage();
-        
+
         if (usage >= CRITICAL_THRESHOLD) {
             // Aggressive eviction
             policy.criticalEviction();
@@ -435,20 +452,21 @@ public class MemoryThresholdEviction {
 ```
 
 #### Back-pressure Implementation
+
 ```java
 public class BackPressureManager {
     private final AtomicDouble memoryUsage;
     private final BlockingQueue<Event> inputQueue;
-    
+
     public void applyBackPressure(Event event) {
         double usage = memoryUsage.get();
-        
+
         if (usage > 0.95) {
             // Reject new events
             throw new MemoryPressureException("Memory full");
         } else if (usage > 0.85) {
             // Add with timeout
-            boolean added = inputQueue.offer(event, 
+            boolean added = inputQueue.offer(event,
                 100, TimeUnit.MILLISECONDS);
             if (!added) {
                 handleRejection(event);
@@ -462,21 +480,22 @@ public class BackPressureManager {
 ```
 
 #### Batch Eviction Control
+
 ```java
 public class BatchEvictionController {
     private static final int MAX_BATCH_SIZE = 10000;
     private final EvictionQueue queue;
-    
+
     public void evictBatch() {
         List<QueueEntry> batch = new ArrayList<>();
         int currentSize = 0;
-        
+
         while (currentSize < MAX_BATCH_SIZE && !queue.isEmpty()) {
             QueueEntry entry = queue.poll();
             batch.add(entry);
             currentSize += entry.getSize();
         }
-        
+
         if (!batch.isEmpty()) {
             processBatchEviction(batch);
         }
@@ -484,12 +503,12 @@ public class BatchEvictionController {
 }
 ```
 
-
 ## Monitoring and Alerting
 
 ### Memory Metrics
 
 1. **Usage Metrics**
+
    - Region utilization
    - Page allocation rates
    - Eviction statistics
@@ -504,6 +523,7 @@ public class BatchEvictionController {
 ### Alert Thresholds
 
 1. **Critical Alerts**
+
    - Memory usage > 90%
    - GC pause > 500ms
    - Eviction rate spike
@@ -536,18 +556,20 @@ public class BatchEvictionController {
 ### 1. Memory Architecture Design
 
 #### Initial Planning
+
 - **Start Conservative**: Begin with smaller memory regions and scale up based on actual usage patterns
 - **Measure Everything**: Implement comprehensive memory monitoring before going live
 - **Plan for Growth**: Design memory regions with at least 50% headroom for unexpected spikes
 - **Document Assumptions**: Keep track of all memory sizing assumptions and validate them regularly
 
 #### Real-world Insights
+
 ```java
 // Example of what not to do
 public class PoorMemoryPlanning {
     // Don't hardcode memory sizes
     private static final long MEMORY_SIZE = 100 * 1024 * 1024; // 100MB fixed
-    
+
     // Don't assume fixed event sizes
     private static final int EVENT_SIZE = 1024; // 1KB per event
 }
@@ -555,14 +577,14 @@ public class PoorMemoryPlanning {
 // Better approach
 public class AdaptiveMemoryPlanning {
     private final ConfigurationManager config;
-    
+
     public long calculateMemorySize() {
         // Base size from configuration
         long baseSize = config.getBaseMemorySize();
-        
+
         // Growth factor based on historical data
         double growthFactor = getHistoricalGrowthFactor();
-        
+
         // Add safety margin
         return (long)(baseSize * growthFactor * 1.5);
     }
@@ -572,12 +594,14 @@ public class AdaptiveMemoryPlanning {
 ### 2. Performance Optimization
 
 #### Memory Access Patterns
+
 - **Profile First**: Always profile before optimizing
 - **Batch Operations**: Batch similar operations for better cache utilization
 - **Avoid Premature Optimization**: Start with simple, maintainable code and optimize based on data
 - **Test at Scale**: Performance characteristics change dramatically at scale
 
 #### Implementation Experience
+
 ```java
 // Common performance pitfall
 public class IneffientProcessing {
@@ -594,7 +618,7 @@ public class IneffientProcessing {
 // Optimized approach
 public class BatchProcessing {
     private static final int BATCH_SIZE = 1000;
-    
+
     public void processEvents(List<Event> events) {
         // Process in batches
         for (List<Event> batch : Lists.partition(events, BATCH_SIZE)) {
@@ -609,17 +633,19 @@ public class BatchProcessing {
 ### 3. Operational Management
 
 #### Monitoring and Alerting
+
 - **Define Clear Thresholds**: Establish clear memory thresholds for different alert levels
 - **Implement Trending**: Track memory usage patterns over time
 - **Set Up Early Warnings**: Alert before reaching critical levels
 - **Keep Historical Data**: Maintain historical memory usage data for capacity planning
 
 #### Monitoring Implementation
+
 ```java
 public class MemoryMonitoring {
     private static final double WARNING_THRESHOLD = 0.75;
     private static final double CRITICAL_THRESHOLD = 0.90;
-    
+
     public void monitorMemory() {
         // Track multiple metrics
         recordMemoryMetrics(
@@ -628,21 +654,21 @@ public class MemoryMonitoring {
             getGCMetrics(),
             getEvictionRates()
         );
-        
+
         // Monitor trends
         analyzeTrends();
-        
+
         // Predict capacity needs
         predictCapacityNeeds();
     }
-    
+
     private void analyzeTrends() {
         // Look at last 24 hours
         List<MemoryMetric> recent = getRecentMetrics(Duration.ofHours(24));
-        
+
         // Calculate growth rate
         double growthRate = calculateGrowthRate(recent);
-        
+
         // Predict when we'll hit thresholds
         predictThresholdBreach(growthRate);
     }
@@ -652,12 +678,14 @@ public class MemoryMonitoring {
 ### 4. Team and Process
 
 #### Knowledge Sharing
+
 - **Document Everything**: Maintain detailed documentation of memory-related decisions
 - **Regular Reviews**: Conduct regular reviews of memory usage patterns
 - **Share Insights**: Create knowledge sharing sessions for the team
 - **Update Runbooks**: Keep operational runbooks updated with learned lessons
 
 #### Process Implementation
+
 ```java
 public class OperationalRunbook {
     public void handleMemoryPressure() {
@@ -669,7 +697,7 @@ public class OperationalRunbook {
             new Action("Check eviction rates"),
             new Action("Verify backup systems")
         );
-        
+
         // Execute and document each step
         for (Action action : actions) {
             executeAndDocument(action);
@@ -681,12 +709,14 @@ public class OperationalRunbook {
 ### 5. Capacity Planning
 
 #### Resource Management
+
 - **Regular Review**: Review memory usage patterns monthly
 - **Predictive Planning**: Use trending data for capacity planning
 - **Cost Analysis**: Balance memory usage with cost implications
 - **Growth Planning**: Plan for both expected and unexpected growth
 
 #### Planning Implementation
+
 ```java
 public class CapacityPlanner {
     public CapacityPlan createPlan() {
@@ -698,19 +728,19 @@ public class CapacityPlanner {
             .recommendedActions(generateRecommendations())
             .build();
     }
-    
+
     private List<Recommendation> generateRecommendations() {
         List<Recommendation> recommendations = new ArrayList<>();
-        
+
         // Memory sizing recommendations
         recommendations.add(analyzeMemorySizing());
-        
+
         // Cost optimization recommendations
         recommendations.add(analyzeCostOptimizations());
-        
+
         // Performance improvement recommendations
         recommendations.add(analyzePerformance());
-        
+
         return recommendations;
     }
 }
@@ -719,12 +749,14 @@ public class CapacityPlanner {
 ### 6. Technical Debt Management
 
 #### Code Evolution
+
 - **Maintain Clean Code**: Technical debt compounds quickly in memory management
 - **Regular Refactoring**: Schedule regular refactoring sessions
 - **Performance Tests**: Maintain comprehensive performance test suites
 - **Configuration Management**: Keep configurations well-documented and versioned
 
 #### Technical Debt Tracking
+
 ```java
 public class TechnicalDebtTracker {
     public void trackMemoryIssues() {
@@ -735,7 +767,7 @@ public class TechnicalDebtTracker {
             new TechnicalDebt("Unoptimized object creation"),
             new TechnicalDebt("Missing memory metrics")
         );
-        
+
         // Prioritize and plan resolution
         prioritizeIssues(issues);
         createResolutionPlan(issues);
@@ -746,12 +778,14 @@ public class TechnicalDebtTracker {
 ### 7. Future Considerations
 
 #### Scalability Planning
+
 - **Architecture Reviews**: Regular reviews of memory architecture
 - **Technology Updates**: Keep track of new memory management features
 - **Performance Improvements**: Continuous performance optimization
 - **Cost Optimization**: Regular review of memory costs and benefits
 
 #### Innovation Planning
+
 ```java
 public class FuturePlanning {
     public void planImprovements() {
@@ -762,7 +796,7 @@ public class FuturePlanning {
             new Improvement("Implement machine learning for prediction"),
             new Improvement("Automate capacity planning")
         );
-        
+
         // Evaluate and prioritize
         evaluateImprovements(improvements);
         createImplementationPlan(improvements);

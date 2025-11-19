@@ -6,6 +6,7 @@ description: In this article, I discuss the challenges of synchronization in cel
 tags: system-design telco maths
 categories: telco system-design
 giscus_comments: true
+citation: true
 featured: false
 related_posts: true
 toc:

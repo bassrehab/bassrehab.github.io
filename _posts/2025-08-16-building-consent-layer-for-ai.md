@@ -6,6 +6,7 @@ author: [Subhadip Mitra]
 categories: ai standards ethics architecture
 tags: ai blockchain standards consent ethics protocol llm agents privacy decentralization
 description: "AI companies are getting sued over training data, agents operate with no permission framework, and users can't control their AI profiles. I wrote four open standards (LLMConsent) to create a decentralized consent protocol for AI—like HTTP but for data rights, agent permissions, and user sovereignty. This is an RFC, not a product."
+citation: true
 giscus_comments: true
 featured: true
 related_posts: true
@@ -14,17 +15,15 @@ toc:
   sidebar: left
 ---
 
->### TL;DR
+> ### TL;DR
 >
->**The Problem**: 
+> **The Problem**:
 > AI has no consent layer. Creators can't control how their data is used for training. Users can't take their AI profiles between systems. Agents have unrestricted access with no permission framework. I wrote four open standards (LLMConsent) to fix this - think HTTP for AI consent. They're on <strong> [GitHub](https://github.com/LLMConsent/llmconsent-standards) </strong>, they need work, and I need your help building them. This isn't a product pitch, it's an RFC.
-> 
+>
 > [LLMConsent.org](https://llmconsent.org)
-{: .block-tip }
+> {: .block-tip }
 
 <br />
-
-
 
 Look, every major AI company is getting sued right now. The New York Times is suing OpenAI. Getty Images is suing Stability AI. Thousands of authors, artists, and photographers have lawsuits going. And honestly? They have a point.
 
@@ -45,6 +44,7 @@ This post is basically an RFC. I want your feedback. I want you to poke holes in
 Right now, if you're a writer and you want AI companies to train on your work, but only non-commercially, with attribution, and for fair compensation... you can't actually express that anywhere. There's no standard format. No technical mechanism.
 
 Your only options are:
+
 1. Put it online and hope companies respect robots.txt (they don't)
 2. Keep it completely private (so no one can use it)
 3. Sue after the fact (expensive, slow, everyone loses)
@@ -54,6 +54,7 @@ This is insane. We have MIME types for file formats. We have Creative Commons fo
 **Problem 2: AI Agents Have Root Access**
 
 Your email agent can send emails. That's useful. But right now, most agent frameworks give the LLM direct access to your email API with your credentials. Which means if the LLM gets confused (or exploited through prompt injection), it can:
+
 - Email your entire contact list
 - Delete all your emails
 - Impersonate you to your boss
@@ -72,6 +73,7 @@ But you don't own any of it. You can't export it. You can't take it to Claude or
 Imagine if your browser history, bookmarks, and cookies were locked to Chrome and you couldn't export them to Firefox. That's where we are with AI.
 
 ---
+
 <br />
 
 {% include figure.liquid loading="eager" path="assets/img/blog/llmconsent-arch.png" class="img-fluid rounded z-depth-1" zoomable=true %}
@@ -94,10 +96,9 @@ I spent the last few months trying to figure this out. I kept coming back to a f
 
 So I wrote four standards. They're all documented on GitHub. None of them are perfect. But at least they're something concrete to discuss.
 
-## LCS-001: Consent Tokens (The Foundation) 
+## LCS-001: Consent Tokens (The Foundation)
 
 [Read the full LCS-001 Standards](https://github.com/LLMConsent/llmconsent-standards/blob/main/core/LCS-001.md)
-
 
 This is the basic building block. It's a standard data structure for expressing consent to use your data.
 
@@ -120,6 +121,7 @@ Think of it like a software license file, but machine-readable and cryptographic
 Any AI company can implement this. Any creator can issue these tokens. No middleman required.
 
 The token lives on-chain (I'm using Ethereum L2s to keep costs low), which means:
+
 - You can revoke it at any time
 - Anyone can verify it's authentic
 - There's a permanent record of what was consented to
@@ -133,6 +135,7 @@ Here's the thing I'm struggling with. This standard lets you **express** consent
 If OpenAI trains GPT-6 on your novel without checking for a consent token, what happens? Right now, nothing. You'd still have to sue them.
 
 I think the answer is a combination of:
+
 1. **Regulatory pressure** - The EU AI Act is starting to require consent documentation
 2. **Market pressure** - Users demanding to know what data trained their AI
 3. **Economic incentives** - If creators get paid through the protocol, they'll want AI companies to use it
@@ -154,7 +157,7 @@ The idea: you should own your AI profile. All the context about you that makes A
   version: 3,                         // increments each time it updates
   learningRate: 100,                  // how fast it adapts (basis points)
   confidence: 8500,                   // model confidence score
-  
+
   // What AI systems see about you
   dimensions: {
     preferences: {
@@ -166,11 +169,11 @@ The idea: you should own your AI profile. All the context about you that makes A
       interests: ["AI", "blockchain"]
     }
   },
-  
+
   // Privacy controls
   privateDimensions: ["profession", "location"],
   excludedTopics: ["health", "finances"],
-  
+
   // Which agents can access this
   agentAccess: {
     "chatgpt": "READ_PUBLIC",
@@ -206,7 +209,6 @@ The spec defines how updates should work - blending new data with existing model
 
 [Read the full LCS-003 Standards](https://github.com/LLMConsent/llmconsent-standards/blob/main/core/LCS-003.md)
 
-
 Okay, this one is critical and we need it **now**.
 
 AI agents are already booking flights, sending emails, managing calendars, and handling customer support. And most of them have way too much access.
@@ -217,18 +219,18 @@ This standard defines capability-based security for AI agents. Here's how it wor
 {
   agentId: "email_assistant_v2",
   owner: "0x742d35Cc...",
-  
+
   allowedActions: ["READ_DATA", "WRITE_DATA", "EXTERNAL_API"],
-  
+
   // Hard limits
   maxSpend: "0",                    // can't spend money
   maxGasPerTx: "100000",            // gas limit
   rateLimit: 10,                    // max 10 actions per hour
   allowedDomains: ["*@company.com"], // can only email internal
-  
+
   expiresAt: "2025-12-31",
   requiresConfirmation: true,       // user confirms each action
-  
+
   // Can this agent delegate to others?
   canDelegate: true,
   maxDelegationDepth: 2             // can only delegate 2 levels deep
@@ -242,6 +244,7 @@ This standard defines capability-based security for AI agents. Here's how it wor
 **Why this works:**
 
 Even if the agent gets compromised through prompt injection, it can only use the specific capabilities it was granted. It can't:
+
 - Book a different flight
 - Spend more than approved
 - Use the capability after it expires
@@ -286,7 +289,7 @@ LCS-004 defines shared memory pools that agents can read from and write to, with
 {
   poolId: "my_work_context",
   owner: "0x742d35Cc...",
-  
+
   memories: [
     {
       memoryId: "0xdef...",
@@ -302,11 +305,11 @@ LCS-004 defines shared memory pools that agents can read from and write to, with
       createdBy: "chatgpt_agent"
     }
   ],
-  
+
   // Access control
   readAccess: ["chatgpt", "claude", "my_assistant"],
   writeAccess: ["my_assistant"],
-  
+
   // Memory management
   maxSize: 1000,
   autoMerge: true,               // merge similar memories
@@ -335,6 +338,7 @@ LCS-004 defines shared memory pools that agents can read from and write to, with
 Imagine you're working on a project. You ask one agent to research competitors, another to draft a strategy, another to create a financial model. Right now, each one works in isolation.
 
 With shared memory:
+
 - Research agent writes findings to the pool
 - Strategy agent reads those findings and adds strategic insights
 - Finance agent reads both and builds a model
@@ -349,6 +353,7 @@ Look, I get it. "Blockchain" sets off alarm bells. Most crypto projects are vapo
 But hear me out on why I think it's the right tool here:
 
 **What we need:**
+
 - A global database of consent tokens that any AI company can query
 - No single company controls it
 - Anyone can verify entries are authentic
@@ -357,6 +362,7 @@ But hear me out on why I think it's the right tool here:
 - Works across jurisdictions
 
 **What blockchain does:**
+
 - Provides a global, shared state
 - No central authority
 - Cryptographically verifiable
@@ -429,6 +435,7 @@ Yes, we're cleaning up a mess. But better to start cleaning than to let it get w
 **"What about the computational cost of all this verification?"**
 
 Good question. The specs have performance targets:
+
 - Consent check: <100ms
 - Memory query: <50ms
 - Twin update: <1 second
@@ -441,35 +448,41 @@ These are achievable with proper caching and optimization. Most consent checks w
 I can't build this alone. I need:
 
 **If you're a smart contract developer:**
+
 - Help implement these standards on-chain
 - The Solidity code needs to be written, audited, and battle-tested
 - We need reference implementations on Ethereum, Arbitrum, and Base
 
 **If you're an ML researcher:**
+
 - Work on attribution methods
 - How do we make influence functions practical and scalable?
 - What's the minimum viable attribution that's "good enough"?
 - Help with the digital twin evolution protocols
 
 **If you work at an AI company:**
+
 - Push for adoption internally
 - Even just implementing LCS-003 for agent permissions would be huge
 - Talk to your legal team about consent frameworks
 - Consider how your system could respect consent tokens
 
 **If you're a lawyer or policy person:**
+
 - Tell me what I'm getting wrong
 - Does this align with GDPR? The EU AI Act? California privacy laws?
 - What liability issues am I not seeing?
 - How do we make this regulation-proof?
 
 **If you're building AI applications:**
+
 - Try implementing consent checks in your apps
 - Give feedback on what's missing from the specs
 - Help me understand what developers actually need
 - Build SDKs and tools that make this easier
 
 **If you're just skeptical:**
+
 - That's good. Poke holes in this.
 - Where are the flaws? What am I not thinking about?
 - Better to find problems now than after people depend on this
@@ -517,7 +530,8 @@ Let's build the consent layer together.
 ---
 
 **Links:**
-- Standards: **github.com/LLMConsent/llmconsent-standards**  
+
+- Standards: **github.com/LLMConsent/llmconsent-standards**
 - Website: **llmconsent.org**
 - Discord: **discord.gg/c2tjrZKcbR**
 - My email: **contact@subhadipmitra.com**
@@ -525,4 +539,3 @@ Let's build the consent layer together.
 I'd love to hear from you.
 
 <br />
-

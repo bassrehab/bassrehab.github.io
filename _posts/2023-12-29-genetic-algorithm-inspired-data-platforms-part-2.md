@@ -6,6 +6,7 @@ description: Explore how genetic algorithms revolutionize data platforms, offeri
 tags: data platform genetic algorithms code
 categories: platform algorithms
 giscus_comments: true
+citation: true
 featured: false
 related_posts: true
 toc:

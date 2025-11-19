@@ -6,6 +6,7 @@ description: Advancements in data management, from warehouses to Data Mesh and L
 tags: data platform quantum-computing inventive code
 categories: platform quantum-computing
 giscus_comments: true
+citation: true
 featured: false
 related_posts: true
 toc:

@@ -6,6 +6,7 @@ description: Explore how to architect data partitioning and flow for massive-sca
 tags: system-design architecture casestudy ignite kafka
 categories: architecture system-design casetudy
 giscus_comments: true
+citation: true
 featured: false
 related_posts: true
 toc:
@@ -17,19 +18,23 @@ In [Part 1](https://subhadipmitra.com/blog/2022/building-a-massive-scale-real-ti
 ## Data Characteristics and Challenges
 
 ### Event Types and Volumes
+
 1. **Network Events (1.2M/sec)**
+
    - High-velocity cell tower events
    - Geographically distributed
    - Latency-sensitive handovers
    - Variable payload sizes (200B - 2KB)
 
 2. **Subscriber Events (800K/sec)**
+
    - SIM card movements
    - Device changes
    - Authentication events
    - Typical payload: 1-3KB
 
 3. **Location Updates (400K/sec)**
+
    - Continuous position updates
    - Geographic clustering
    - Time-series nature
@@ -46,12 +51,14 @@ In [Part 1](https://subhadipmitra.com/blog/2022/building-a-massive-scale-real-ti
 ### Key Design Principles
 
 1. **Hierarchical Partitioning**
+
    - Geographic regions (top level)
    - Event types (second level)
    - Time windows (third level)
    - Customer segments (fourth level)
 
 2. **Data Locality**
+
    - Region-aware routing
    - Rack-aware placement
    - NUMA-aware processing
@@ -66,6 +73,7 @@ In [Part 1](https://subhadipmitra.com/blog/2022/building-a-massive-scale-real-ti
 ### Implementation Details
 
 #### Kafka Topic Design
+
 ```properties
 # Network Events
 network.events.${region}.${type} = {
@@ -107,6 +115,7 @@ dpi.data.${region}.${window} = {
 ### Ingestion Layer
 
 1. **Edge Collection**
+
    - Regional collectors
    - Protocol handlers
    - Initial validation
@@ -121,6 +130,7 @@ dpi.data.${region}.${window} = {
 ### Processing Layer
 
 1. **Stream Processing**
+
    - Parallel execution
    - State management
    - Window operations
@@ -135,6 +145,7 @@ dpi.data.${region}.${window} = {
 ### Storage Layer
 
 1. **Hot Storage (Ignite)**
+
    - In-memory data grid
    - Affinity colocation
    - Partition awareness
@@ -148,7 +159,6 @@ dpi.data.${region}.${window} = {
 
 ## Implementation Patterns
 
-
 <br>
 
 {% include figure.liquid loading="eager" path="assets/img/blog/hierarchial-partitioning-strategy.png" class="img-fluid rounded z-depth-1" zoomable=true %}
@@ -156,6 +166,7 @@ dpi.data.${region}.${window} = {
 <br>
 
 ### Partition Key Design
+
 ```java
 public class PartitionKeyGenerator {
     public String generateKey(Event event) {
@@ -165,7 +176,7 @@ public class PartitionKeyGenerator {
             event.getTimeWindow(),
             event.getSegment());
     }
-    
+
     public String generateDPIKey(DPIRecord record) {
         return String.format("%s:%s:%d",
             record.getRegion(),
@@ -176,21 +187,22 @@ public class PartitionKeyGenerator {
 ```
 
 ### Data Flow Control
+
 ```java
 @Component
 public class DataFlowManager {
     private final KafkaTemplate<String, Event> kafkaTemplate;
     private final IgniteCache<String, ProcessedEvent> eventCache;
     private final CassandraTemplate cassandraTemplate;
-    
+
     public void routeEvent(Event event) {
         String partitionKey = keyGenerator.generateKey(event);
         String topic = determineTopicName(event);
-        
+
         kafkaTemplate.send(topic, partitionKey, event)
             .addCallback(this::handleSuccess, this::handleError);
     }
-    
+
     private String determineTopicName(Event event) {
         return String.format("%s.events.%s.%s",
             event.getType().toLowerCase(),
@@ -205,6 +217,7 @@ public class DataFlowManager {
 ### Partition Balancing
 
 1. **Static Balancing**
+
    - Even partition distribution
    - Geographic alignment
    - Resource allocation
@@ -219,6 +232,7 @@ public class DataFlowManager {
 ### Flow Control
 
 1. **Back-pressure Handling**
+
    - Buffer management
    - Rate limiting
    - Drop policies
@@ -235,6 +249,7 @@ public class DataFlowManager {
 ### Key Metrics
 
 1. **Partition Metrics**
+
    - Size distribution
    - Event distribution
    - Processing latency
@@ -249,6 +264,7 @@ public class DataFlowManager {
 ### Maintenance Procedures
 
 1. **Partition Management**
+
    - Regular rebalancing
    - Cleanup operations
    - Performance tuning
@@ -263,12 +279,14 @@ public class DataFlowManager {
 ## Lessons Learned
 
 1. **Partition Design**
+
    - Start with more partitions than needed
    - Consider future growth
    - Monitor partition balance
    - Plan for rebalancing
 
 2. **Flow Management**
+
    - Implement back-pressure early
    - Monitor flow rates closely
    - Plan for failure scenarios

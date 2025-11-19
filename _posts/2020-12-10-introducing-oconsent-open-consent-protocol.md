@@ -5,6 +5,7 @@ date: 2020-12-10 00:20:21
 description: OConsent is a blockchain-based platform that enables transparent processing of personal data, empowering users and data controllers to manage consent and privacy.
 tags: system-design privacy consent-management blockchain cryptography
 categories: system-design platform cryptography blockchain
+citation: true
 giscus_comments: true
 featured: false
 related_posts: true
