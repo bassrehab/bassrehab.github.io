@@ -281,12 +281,12 @@ function copyLinkFeatured(url) {
     const copiedText = btn.querySelector('.copied-text');
     const copyIcon = btn.querySelector('.copy-icon');
     const checkIcon = btn.querySelector('.check-icon');
-    
+
     copyText.style.display = 'none';
     copiedText.style.display = 'inline';
     copyIcon.style.display = 'none';
     checkIcon.style.display = 'inline';
-    
+
     setTimeout(() => {
       copyText.style.display = 'inline';
       copiedText.style.display = 'none';
@@ -298,4 +298,65 @@ function copyLinkFeatured(url) {
     alert('Could not copy link. Please copy manually: ' + url);
   });
 }
+
+// Newsletter form handler
+(function() {
+  const form = document.querySelector('.newsletter-form-featured');
+  if (!form) return;
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const emailInput = form.querySelector('input[name="email"]');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const email = emailInput.value;
+
+    // Disable submit button and show loading state
+    submitBtn.disabled = true;
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Subscribing...';
+
+    // Submit to Loops.so
+    const formBody = 'userGroup=&email=' + encodeURIComponent(email);
+    fetch(form.action, {
+      method: 'POST',
+      body: formBody,
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+    })
+    .then(res => res.json().then(data => ({ ok: res.ok, data })))
+    .then(({ ok, data }) => {
+      if (ok) {
+        // Success - show confirmation message
+        submitBtn.textContent = '✓ Subscribed!';
+        submitBtn.style.background = '#22c55e';
+        emailInput.value = '';
+
+        // Reset after 3 seconds
+        setTimeout(() => {
+          submitBtn.textContent = originalText;
+          submitBtn.style.background = '';
+          submitBtn.disabled = false;
+        }, 3000);
+      } else {
+        // Error from API
+        throw new Error(data.message || 'Subscription failed');
+      }
+    })
+    .catch(error => {
+      // Show error
+      submitBtn.textContent = '✗ Failed';
+      submitBtn.style.background = '#ef4444';
+      console.error('Newsletter subscription error:', error);
+
+      // Reset after 3 seconds
+      setTimeout(() => {
+        submitBtn.textContent = originalText;
+        submitBtn.style.background = '';
+        submitBtn.disabled = false;
+      }, 3000);
+    });
+  });
+})();
 </script>
