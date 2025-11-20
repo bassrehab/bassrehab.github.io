@@ -64,19 +64,14 @@ header.post-header {
       </div>
     </div>
 
-    <!-- GitHub Trophies -->
-    <div id="trophy-section" class="trophy-section">
-      <h3 class="trophy-title">
+    <!-- GitHub Achievements -->
+    <div id="achievements-section" class="achievements-section">
+      <h3 class="achievements-title">
         <i class="fa-solid fa-trophy"></i>
         GitHub Achievements
       </h3>
-      <div class="trophy-container">
-        <img
-          id="github-trophies"
-          src="https://github-profile-trophy.vercel.app/?username={{ site.data.repositories.github_users | first }}&theme=darkhub&no-bg=true&no-frame=false&column=4&margin-w=15&margin-h=15"
-          alt="GitHub Profile Trophies"
-          loading="lazy"
-        />
+      <div id="achievements-grid" class="achievements-grid">
+        <!-- Achievement badges will be generated here -->
       </div>
     </div>
 
@@ -286,8 +281,8 @@ header.post-header {
   letter-spacing: 0.05em;
 }
 
-/* GitHub Trophies */
-.trophy-section {
+/* GitHub Achievements */
+.achievements-section {
   background: var(--global-card-bg-color);
   border: 1px solid var(--global-divider-color);
   border-radius: 16px;
@@ -295,7 +290,7 @@ header.post-header {
   margin-top: 2rem;
 }
 
-.trophy-title {
+.achievements-title {
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -305,23 +300,105 @@ header.post-header {
   margin: 0 0 1.5rem 0;
 }
 
-.trophy-title i {
+.achievements-title i {
   color: var(--global-theme-color);
 }
 
-.trophy-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  overflow-x: auto;
-  padding: 1rem 0;
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
 
-.trophy-container img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+.achievement-badge {
+  background: linear-gradient(135deg, var(--global-code-bg-color) 0%, var(--global-card-bg-color) 100%);
+  border: 2px solid var(--global-divider-color);
+  border-radius: 12px;
+  padding: 1.25rem 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.achievement-badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--achievement-color), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.achievement-badge:hover {
+  transform: translateY(-4px);
+  border-color: var(--achievement-color);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.achievement-badge:hover::before {
+  opacity: 1;
+}
+
+.achievement-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.achievement-name {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--global-text-color);
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.achievement-description {
+  font-size: 0.75rem;
+  color: var(--global-text-color-light);
+  line-height: 1.4;
+}
+
+.achievement-tier {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+.tier-bronze {
+  background: linear-gradient(135deg, #cd7f32 0%, #8b5a2b 100%);
+  color: white;
+}
+
+.tier-silver {
+  background: linear-gradient(135deg, #c0c0c0 0%, #808080 100%);
+  color: white;
+}
+
+.tier-gold {
+  background: linear-gradient(135deg, #ffd700 0%, #daa520 100%);
+  color: #333;
+}
+
+.tier-platinum {
+  background: linear-gradient(135deg, #e5e4e2 0%, #b9b7b5 100%);
+  color: #333;
+}
+
+.tier-diamond {
+  background: linear-gradient(135deg, #b9f2ff 0%, #7dd3fc 100%);
+  color: #0c4a6e;
 }
 
 /* Stat Card Skeletons */
@@ -565,10 +642,6 @@ header.post-header {
   height: 120px;
 }
 
-.trophy-skeleton {
-  height: 100px;
-}
-
 /* Hide skeleton when images load */
 .repo img {
   display: block;
@@ -714,6 +787,19 @@ img[src]:not([src=""]) + .loading-skeleton {
     font-size: 0.85rem;
   }
 
+  .achievements-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .achievement-badge {
+    padding: 1rem 0.75rem;
+  }
+
+  .achievement-icon {
+    font-size: 2rem;
+  }
+
   .language-section {
     padding: 1.5rem;
   }
@@ -757,6 +843,28 @@ img[src]:not([src=""]) + .loading-skeleton {
 @media (max-width: 480px) {
   .custom-stats-grid {
     grid-template-columns: 1fr;
+  }
+
+  .achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .achievement-badge {
+    padding: 0.875rem 0.5rem;
+  }
+
+  .achievement-icon {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .achievement-name {
+    font-size: 0.75rem;
+  }
+
+  .achievement-description {
+    font-size: 0.7rem;
   }
 
   .language-bar-item {
@@ -940,6 +1048,9 @@ async function loadGitHubDataFromStatic() {
     // Render stats
     renderGitHubStats(data.stats);
 
+    // Render achievements
+    renderAchievements(data.stats, data.user);
+
   } catch (error) {
     console.error('Error loading GitHub data:', error);
 
@@ -1057,5 +1168,184 @@ function formatNumber(num) {
     return (num / 1000).toFixed(1) + 'k';
   }
   return num.toString();
+}
+
+// Achievement definitions
+const achievements = [
+  {
+    id: 'repos-10',
+    name: 'Creator',
+    description: '10+ repositories',
+    icon: '📦',
+    tier: 'bronze',
+    color: '#cd7f32',
+    check: (stats) => stats.repos >= 10
+  },
+  {
+    id: 'repos-25',
+    name: 'Builder',
+    description: '25+ repositories',
+    icon: '🏗️',
+    tier: 'silver',
+    color: '#c0c0c0',
+    check: (stats) => stats.repos >= 25
+  },
+  {
+    id: 'repos-50',
+    name: 'Architect',
+    description: '50+ repositories',
+    icon: '🏛️',
+    tier: 'gold',
+    color: '#ffd700',
+    check: (stats) => stats.repos >= 50
+  },
+  {
+    id: 'stars-50',
+    name: 'Rising Star',
+    description: '50+ total stars',
+    icon: '⭐',
+    tier: 'bronze',
+    color: '#cd7f32',
+    check: (stats) => stats.stars >= 50
+  },
+  {
+    id: 'stars-100',
+    name: 'Star Collector',
+    description: '100+ total stars',
+    icon: '🌟',
+    tier: 'silver',
+    color: '#c0c0c0',
+    check: (stats) => stats.stars >= 100
+  },
+  {
+    id: 'stars-250',
+    name: 'Stellar',
+    description: '250+ total stars',
+    icon: '✨',
+    tier: 'gold',
+    color: '#ffd700',
+    check: (stats) => stats.stars >= 250
+  },
+  {
+    id: 'followers-10',
+    name: 'Influencer',
+    description: '10+ followers',
+    icon: '👥',
+    tier: 'bronze',
+    color: '#cd7f32',
+    check: (stats) => stats.followers >= 10
+  },
+  {
+    id: 'followers-25',
+    name: 'Community Leader',
+    description: '25+ followers',
+    icon: '👨‍👩‍👧‍👦',
+    tier: 'silver',
+    color: '#c0c0c0',
+    check: (stats) => stats.followers >= 25
+  },
+  {
+    id: 'followers-50',
+    name: 'Trendsetter',
+    description: '50+ followers',
+    icon: '🎯',
+    tier: 'gold',
+    color: '#ffd700',
+    check: (stats) => stats.followers >= 50
+  },
+  {
+    id: 'forks-10',
+    name: 'Forked',
+    description: '10+ total forks',
+    icon: '🍴',
+    tier: 'bronze',
+    color: '#cd7f32',
+    check: (stats) => stats.forks >= 10
+  },
+  {
+    id: 'forks-25',
+    name: 'Fork Master',
+    description: '25+ total forks',
+    icon: '🔱',
+    tier: 'silver',
+    color: '#c0c0c0',
+    check: (stats) => stats.forks >= 25
+  },
+  {
+    id: 'forks-50',
+    name: 'Fork Legend',
+    description: '50+ total forks',
+    icon: '⚡',
+    tier: 'gold',
+    color: '#ffd700',
+    check: (stats) => stats.forks >= 50
+  },
+  {
+    id: 'veteran-5',
+    name: 'Veteran',
+    description: '5+ years on GitHub',
+    icon: '🎖️',
+    tier: 'bronze',
+    color: '#cd7f32',
+    check: (stats, user) => {
+      const years = (new Date() - new Date(user.created_at)) / (1000 * 60 * 60 * 24 * 365);
+      return years >= 5;
+    }
+  },
+  {
+    id: 'veteran-10',
+    name: 'Decade',
+    description: '10+ years on GitHub',
+    icon: '🏆',
+    tier: 'gold',
+    color: '#ffd700',
+    check: (stats, user) => {
+      const years = (new Date() - new Date(user.created_at)) / (1000 * 60 * 60 * 24 * 365);
+      return years >= 10;
+    }
+  },
+  {
+    id: 'gists-5',
+    name: 'Snippet Sharer',
+    description: '5+ public gists',
+    icon: '📝',
+    tier: 'bronze',
+    color: '#cd7f32',
+    check: (stats, user) => user.public_gists >= 5
+  }
+];
+
+function renderAchievements(stats, user) {
+  const container = document.getElementById('achievements-grid');
+  if (!container) return;
+
+  container.innerHTML = '';
+
+  // Filter earned achievements
+  const earnedAchievements = achievements.filter(achievement =>
+    achievement.check(stats, user)
+  );
+
+  // Sort by tier (diamond > platinum > gold > silver > bronze)
+  const tierOrder = { 'diamond': 5, 'platinum': 4, 'gold': 3, 'silver': 2, 'bronze': 1 };
+  earnedAchievements.sort((a, b) => tierOrder[b.tier] - tierOrder[a.tier]);
+
+  // Render each achievement
+  earnedAchievements.forEach(achievement => {
+    const badge = document.createElement('div');
+    badge.className = 'achievement-badge';
+    badge.style.setProperty('--achievement-color', achievement.color);
+
+    badge.innerHTML = `
+      <div class="achievement-icon">${achievement.icon}</div>
+      <div class="achievement-name">${achievement.name}</div>
+      <div class="achievement-description">${achievement.description}</div>
+      <div class="achievement-tier tier-${achievement.tier}">${achievement.tier}</div>
+    `;
+
+    container.appendChild(badge);
+  });
+
+  console.log(`Rendered ${earnedAchievements.length} achievements`);
 }
 </script>
