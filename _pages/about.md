@@ -45,7 +45,7 @@ social: false
             <div class="bento-label">Google Cloud · 2021-Present</div>
             <h2 class="bento-title">Data & Analytics Manager | Site Lead Southeast Asia</h2>
             <p class="bento-description">
-                Lead Data Analytics delivery and cross-practice operations across 7 countries in Southeast Asia. Member of <a href="https://cloud.google.com/consulting/innovation-and-transformation" target="_blank"><strong>delta</strong></a> - Google Cloud's elite innovation and transformation team architecting enterprise AI solutions at scale. Built 0-to-1 organization establishing the region's premier Data & Analytics practice. Pioneered technical frameworks (FTCS, ETLC, ARTEMIS, UPIR) and production-ready AI agent systems for autonomous data engineering. Led critical interventions safeguarding $XXM+ revenue while scaling enterprise Data and AI transformation across multiple sectors.
+                Lead Data Analytics delivery and cross-practice operations across 7 countries in Southeast Asia. Member of <a href="https://cloud.google.com/consulting/innovation-and-transformation" target="_blank"><strong>delta</strong></a> - Google Cloud's innovation and transformation team architecting enterprise AI solutions at scale. Built 0-to-1 organization establishing the region's premier Data & Analytics practice. Pioneered technical frameworks (<a href="https://www.tdcommons.org/cgi/viewcontent.cgi?article=9891&context=dpubs_series" target="_blank">FTCS</a>, <a href="https://services.google.com/fh/files/blogs/etlc_full_paper.pdf" target="_blank">ETLC</a>, <a href="https://www.tdcommons.org/dpubs_series/7729/" target="_blank">ARTEMIS</a>, <a href="https://www.tdcommons.org/dpubs_series/8852/" target="_blank">UPIR</a>) and production-ready AI agent systems for autonomous data engineering. Led critical interventions safeguarding revenue while scaling enterprise Data and AI transformation across multiple sectors.
             </p>
         </div>
 
@@ -111,21 +111,37 @@ social: false
     <!-- Stats Strip -->
     <div class="stats-strip">
         <div class="stat-block">
-            <div class="stat-value">7</div>
-            <div class="stat-label">Countries Led</div>
+            <a href="/publications/" style="text-decoration: none; color: inherit;">
+                <div class="stat-value">14</div>
+                <div class="stat-label">Published Works</div>
+            </a>
         </div>
         <div class="stat-block">
-            <div class="stat-value">25</div>
-            <div class="stat-label">Enterprise Clients</div>
+            <a href="https://github.com/bassrehab?tab=repositories" target="_blank" style="text-decoration: none; color: inherit;">
+                <div class="stat-value">41</div>
+                <div class="stat-label">Open Source Repos</div>
+            </a>
         </div>
         <div class="stat-block">
-            <div class="stat-value">9+</div>
-            <div class="stat-label">Industry Frameworks</div>
+            <a href="https://www.tdcommons.org/do/search/?q=author_lname%3A%22Mitra%22%20author_fname%3A%22Subhadip%22" target="_blank" style="text-decoration: none; color: inherit;">
+                <div class="stat-value">4</div>
+                <div class="stat-label">Technical Disclosures</div>
+            </a>
         </div>
         <div class="stat-block">
-            <div class="stat-value">15+</div>
-            <div class="stat-label">Years Experience</div>
+            <a href="https://pypi.org/user/bassrehab/" target="_blank" style="text-decoration: none; color: inherit;">
+                <div class="stat-value">2</div>
+                <div class="stat-label">PyPI Packages</div>
+            </a>
         </div>
+    </div>
+
+    <!-- Subtle credibility line -->
+    <div style="text-align: center; margin-top: 2rem; font-size: 0.95rem; color: var(--global-text-color-light, #666);">
+        Recommended by leaders at Databricks, Google, and Fortune 500 clients
+        <a href="https://linkedin.com/in/subhadip-mitra" target="_blank" style="color: var(--global-theme-color, #b509ac); text-decoration: none; margin-left: 0.5rem;">
+            <i class="fab fa-linkedin"></i>
+        </a>
     </div>
 
     <!-- Featured Open Source Project -->

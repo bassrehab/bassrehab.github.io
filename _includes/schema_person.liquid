@@ -1,0 +1,196 @@
+{% comment %}
+Enhanced Schema.org Person markup for homepage
+This provides AI models and search engines with structured, verifiable data
+{% endcomment %}
+
+{% if page.layout == 'about' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Subhadip Mitra",
+  "givenName": "Subhadip",
+  "familyName": "Mitra",
+  "url": "{{ site.url }}",
+  "email": "contact@subhadipmitra.com",
+  "jobTitle": "Data & Analytics Manager, Site Lead Southeast Asia",
+  "description": "Technical leader and researcher specializing in AI, data systems, and cloud transformation. Member of Google Cloud's delta innovation team.",
+
+  "image": "{{ '/assets/img/prof_pic.jpg' | absolute_url }}",
+
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Google Cloud",
+    "url": "https://cloud.google.com",
+    "department": {
+      "@type": "Organization",
+      "name": "delta - Innovation and Transformation",
+      "url": "https://cloud.google.com/consulting/innovation-and-transformation"
+    }
+  },
+
+  "alumniOf": [
+    {
+      "@type": "EducationalOrganization",
+      "name": "BITS Pilani",
+      "url": "https://www.bits-pilani.ac.in/",
+      "sameAs": "https://en.wikipedia.org/wiki/Birla_Institute_of_Technology_and_Science,_Pilani"
+    }
+  ],
+
+  "affiliation": [
+    {
+      "@type": "Organization",
+      "name": "IIT Madras",
+      "url": "https://www.iitm.ac.in/",
+      "sameAs": "https://en.wikipedia.org/wiki/Indian_Institute_of_Technology_Madras"
+    },
+    {
+      "@type": "Organization",
+      "name": "IEEE",
+      "url": "https://www.ieee.org/",
+      "sameAs": "https://en.wikipedia.org/wiki/Institute_of_Electrical_and_Electronics_Engineers"
+    },
+    {
+      "@type": "Organization",
+      "name": "ACM",
+      "url": "https://www.acm.org/",
+      "sameAs": "https://en.wikipedia.org/wiki/Association_for_Computing_Machinery"
+    },
+    {
+      "@type": "Organization",
+      "name": "Singapore Computer Society",
+      "url": "https://www.scs.org.sg/",
+      "alternateName": "SCS"
+    },
+    {
+      "@type": "Organization",
+      "name": "Research and Innovation Network",
+      "url": "https://rin.org.uk/",
+      "alternateName": "RIN"
+    }
+  ],
+
+  "knowsAbout": [
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Data Engineering",
+    "Cloud Computing",
+    "Distributed Systems",
+    "Multi-Agent Systems",
+    "Data Analytics",
+    "Enterprise Architecture",
+    "Digital Transformation",
+    "Quantum Computing"
+  ],
+
+  "sameAs": [
+    "https://linkedin.com/in/subhadip-mitra",
+    "https://github.com/bassrehab",
+    "https://twitter.com/bassrehab",
+    "https://www.researchgate.net/profile/Subhadip-Mitra-3",
+    "https://pypi.org/user/bassrehab/"
+  ],
+
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "MBA in Business Analytics",
+      "credentialCategory": "degree",
+      "educationalLevel": "Master's",
+      "recognizedBy": {
+        "@type": "EducationalOrganization",
+        "name": "BITS Pilani",
+        "url": "https://www.bits-pilani.ac.in/"
+      }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "MTech in Software Systems",
+      "credentialCategory": "degree",
+      "educationalLevel": "Master's",
+      "recognizedBy": {
+        "@type": "EducationalOrganization",
+        "name": "BITS Pilani",
+        "url": "https://www.bits-pilani.ac.in/"
+      }
+    }
+  ],
+
+  "owns": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "AI Metacognition Toolkit",
+      "description": "Production-ready framework for systematic reasoning in AI systems",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Cross-platform",
+      "url": "https://ai-metacognition-toolkit.subhadipmitra.com/",
+      "codeRepository": "https://github.com/bassrehab/ai-metacognition-toolkit",
+      "downloadUrl": "https://pypi.org/project/ai-metacognition-toolkit/",
+      "author": {
+        "@type": "Person",
+        "name": "Subhadip Mitra"
+      }
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "UPIR - Distributed Systems Synthesis",
+      "description": "Automated distributed systems synthesis combining formal verification and program synthesis",
+      "codeRepository": "https://github.com/bassrehab/upir",
+      "programmingLanguage": "Python",
+      "author": {
+        "@type": "Person",
+        "name": "Subhadip Mitra"
+      }
+    }
+  ],
+
+  "creator": [
+    {
+      "@type": "CreativeWork",
+      "name": "UPIR: Synthesis of Verified Distributed System Implementations with Program Analysis and Reinforcement Learning",
+      "url": "https://www.tdcommons.org/dpubs_series/8852/",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Technical Disclosure Commons",
+        "url": "https://www.tdcommons.org/"
+      },
+      "datePublished": "2025"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Field-Theoretic Context System (FTCS)",
+      "url": "https://www.tdcommons.org/dpubs_series/8022/",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Technical Disclosure Commons",
+        "url": "https://www.tdcommons.org/"
+      },
+      "datePublished": "2025"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "ETLC: Context-First Data Processing Framework",
+      "url": "https://services.google.com/fh/files/blogs/etlc_full_paper.pdf",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Google Cloud",
+        "url": "https://cloud.google.com"
+      },
+      "datePublished": "2025"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "ARTEMIS: Adaptive Framework for Multi-Agent Decision Systems",
+      "url": "https://www.tdcommons.org/dpubs_series/7729/",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Technical Disclosure Commons",
+        "url": "https://www.tdcommons.org/"
+      },
+      "datePublished": "2025"
+    }
+  ]
+}
+</script>
+{% endif %}
