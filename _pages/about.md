@@ -112,25 +112,31 @@ social: false
     <div class="stats-strip">
         <div class="stat-block">
             <a href="/publications/" style="text-decoration: none; color: inherit;">
-                <div class="stat-value">14</div>
+                {% assign total_pubs = site.bibliography.size | default: 14 %}
+                <div class="stat-value">{{ total_pubs }}</div>
                 <div class="stat-label">Published Works</div>
             </a>
         </div>
         <div class="stat-block">
             <a href="https://github.com/bassrehab?tab=repositories" target="_blank" style="text-decoration: none; color: inherit;">
-                <div class="stat-value">41</div>
+                {% if site.data.github_stats.stats.repos %}
+                    <div class="stat-value" id="github-repo-count">{{ site.data.github_stats.stats.repos }}</div>
+                {% else %}
+                    {% assign repo_count = site.data.repositories.github_repos.size | default: 8 %}
+                    <div class="stat-value" id="github-repo-count">{{ repo_count }}</div>
+                {% endif %}
                 <div class="stat-label">Open Source Repos</div>
             </a>
         </div>
         <div class="stat-block">
             <a href="https://www.tdcommons.org/do/search/?q=author_lname%3A%22Mitra%22%20author_fname%3A%22Subhadip%22" target="_blank" style="text-decoration: none; color: inherit;">
-                <div class="stat-value">4</div>
-                <div class="stat-label">Technical Disclosures</div>
+                <div class="stat-value">5</div>
+                <div class="stat-label">Inventions / Technical Disclosures</div>
             </a>
         </div>
         <div class="stat-block">
             <a href="https://pypi.org/user/bassrehab/" target="_blank" style="text-decoration: none; color: inherit;">
-                <div class="stat-value">2</div>
+                <div class="stat-value">3</div>
                 <div class="stat-label">PyPI Packages</div>
             </a>
         </div>
@@ -322,3 +328,32 @@ social: false
     </section>
 
 </div>
+
+<script>
+// Load GitHub data from static JSON file (generated at build time with token)
+async function loadGitHubDataFromStatic() {
+    try {
+        const response = await fetch('/assets/data/github-data.json');
+
+        if (response.ok) {
+            const data = await response.json();
+
+            // Update repo count if element exists
+            const repoCountElement = document.getElementById('github-repo-count');
+            if (repoCountElement && data.stats && data.stats.repos) {
+                repoCountElement.textContent = data.stats.repos;
+            }
+        }
+    } catch (error) {
+        console.log('Using fallback repo count from Liquid template');
+        // Fallback to Liquid-rendered count if fetch fails
+    }
+}
+
+// Load data when page loads
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadGitHubDataFromStatic);
+} else {
+    loadGitHubDataFromStatic();
+}
+</script>
