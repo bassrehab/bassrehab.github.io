@@ -18,6 +18,8 @@ toc:
   sidebar: left
 ---
 
+> **Update (May 2025):** Since writing this post, I've expanded the repo to cover [diffusion model efficiency](#beyond-llms-diffusion-models) as well - CFG caching, step distillation, and video latent caching. The core ideas about memory bandwidth translate surprisingly well.
+
 I've been obsessing over LLM inference efficiency lately. Not the flashy stuff like new architectures or training tricks - the unglamorous work of making inference _fast_. After spending a few weeks [implementing speculative decoding from scratch](https://github.com/bassrehab/speculative-decoding), I wanted to share what I learned. Fair warning: this gets into the weeds.
 
 ## The Problem That Kept Bugging Me
