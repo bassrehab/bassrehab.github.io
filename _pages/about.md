@@ -28,12 +28,12 @@ social: false
             </p>
             <div class="hero-pills">
                 <span class="pill">Applied AI</span>
+                <span class="pill">Inference Optimization</span>
                 <span class="pill">Petabyte-Scale Systems</span>
                 <span class="pill">Multi-Agent Frameworks</span>
                 <span class="pill">Research to Production</span>
                 <span class="pill">Open Source</span>
-                <span class="pill">Cloud Data Platforms</span>
-                <span class="pill">Southeast Asia</span>
+                <span class="pill">Cloud</span>
             </div>
         </div>
     </section>
@@ -147,14 +147,13 @@ social: false
     <!-- Featured Open Source Project -->
     <div class="featured-project">
         <div class="showcase-label"><i class="fas fa-star"></i> Featured Open Source</div>
-        <h2>AI Metacognition Toolkit</h2>
+        <h2>Speculative Decoding</h2>
         <p>
-            Production-ready framework for systematic reasoning in AI systems - enabling transparent, metacognitive decision-making at scale
+            LLM inference acceleration from first principles - speculative decoding, tree speculation, KV-cache compression, and diffusion efficiency with memory-bandwidth analysis
         </p>
         <div class="featured-links">
-            <a href="https://ai-metacognition-toolkit.subhadipmitra.com/" class="innovation-link" target="_blank"><i class="fas fa-book"></i> Documentation</a>
-            <a href="https://pypi.org/project/ai-metacognition-toolkit/" class="innovation-link" target="_blank"><i class="fas fa-cube"></i> PyPI Package</a>
-            <a href="https://github.com/bassrehab/ai-metacognition-toolkit" class="innovation-link" target="_blank"><i class="fab fa-github"></i> GitHub Repo</a>
+            <a href="/blog/2025/making-llm-faster/" class="innovation-link" target="_blank"><i class="fas fa-book"></i> Deep Dive</a>
+            <a href="https://github.com/bassrehab/speculative-decoding" class="innovation-link" target="_blank"><i class="fab fa-github"></i> GitHub Repo</a>
         </div>
     </div>
 
@@ -228,6 +227,27 @@ social: false
                 </div>
             </article>
 
+              <article class="innovation-feature">
+                <div class="innovation-visual"><i class="fas fa-bolt"></i></div>
+                <div class="innovation-content">
+                    <div class="innovation-year">2025</div>
+                    <h3>Speculative Decoding & Inference Optimization</h3>
+                    <p>
+                        Reference implementations of LLM inference acceleration techniques including speculative decoding, tree speculation, KV-cache compression, and diffusion model efficiency. Demonstrates
+            memory-bandwidth optimization with roofline analysis.
+                    </p>
+                    <div style="margin-top: 0.5rem;">
+                        <a href="https://github.com/bassrehab/speculative-decoding" class="innovation-link" target="_blank">
+                            GitHub Repo <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <span style="margin: 0 0.5rem;">•</span>
+                        <a href="/blog/2025/making-llm-faster/" class="innovation-link">
+                            Deep Dive Post <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
             <article class="innovation-feature">
                 <div class="innovation-visual"><i class="fas fa-shield-alt"></i></div>
                 <div class="innovation-content">
@@ -273,11 +293,12 @@ social: false
             </article>
 
             <article class="research-card" data-number="03">
-                <h3>Distributed Systems & Infrastructure</h3>
+                <h3>Computational Efficiency for Generative AI</h3>
                 <p>
-                    Researching efficient architectures for AI systems at scale - from LLM serving and inference optimization to graph-based modeling of resource interactions across distributed cloud infrastructure.
+                    Exploring inference acceleration techniques for LLMs and diffusion models - speculative decoding, KV-cache optimization, kernel fusion, and hardware-aware algorithm design.
                 </p>
             </article>
+
 
             <article class="research-card" data-number="04">
                 <h3>Orbital Edge Intelligence Systems</h3>

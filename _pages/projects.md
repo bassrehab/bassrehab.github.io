@@ -463,7 +463,7 @@ header.post-header {
     <!-- Stats -->
     <div class="projects-stats">
       <div class="project-stat">
-        <div class="project-stat-value">5</div>
+        <div class="project-stat-value">6</div>
         <div class="project-stat-label">Active Projects</div>
       </div>
       <div class="project-stat">
@@ -602,6 +602,58 @@ header.post-header {
           <div class="metric">
             <div class="metric-value">95%</div>
             <div class="metric-label">Coverage</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Speculative Decoding -->
+      <article class="project-card" data-category="ai">
+        <span class="project-status">Active</span>
+        <h3 class="project-title">
+          <a href="https://github.com/bassrehab/speculative-decoding" target="_blank">
+            Speculative Decoding
+          </a>
+        </h3>
+        <p class="project-description">
+          Reference implementation of LLM inference acceleration techniques - achieving faster generation through speculative decoding, tree speculation, EAGLE, Medusa, KV-cache compression, and diffusion efficiency optimizations.
+        </p>
+
+        <ul class="project-highlights">
+          <li>1.10x speedup with exact target distribution guarantee</li>
+          <li>Six major techniques: speculative decoding, tree speculation, EAGLE, Medusa</li>
+          <li>KV-cache compression with H2O, sliding window, and INT8/INT4 quantization</li>
+          <li>Production-quality code with comprehensive benchmarks and interactive demos</li>
+        </ul>
+
+        <div class="tech-stack">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">PyTorch</span>
+          <span class="tech-tag">LLM Inference</span>
+          <span class="tech-tag">Optimization</span>
+          <span class="tech-tag">Diffusion Models</span>
+        </div>
+
+        <div class="project-links">
+          <a href="https://github.com/bassrehab/speculative-decoding" class="project-link primary" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a href="/blog/2025/making-llm-faster/" class="project-link" target="_blank">
+            <i class="fas fa-pen"></i> Blog Post
+          </a>
+        </div>
+
+        <div class="impact-metrics">
+          <div class="metric">
+            <div class="metric-value">2025</div>
+            <div class="metric-label">Released</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">1.10x</div>
+            <div class="metric-label">Speedup</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">MIT</div>
+            <div class="metric-label">License</div>
           </div>
         </div>
       </article>

@@ -2,9 +2,10 @@ github_users:
   - bassrehab
 
 github_repos:
+  - bassrehab/speculative-decoding
+  - bassrehab/triton-kernels
   - bassrehab/upir
   - bassrehab/ai-metacognition-toolkit
-  - bassrehab/speculative-decoding
   - bassrehab/llmconsent-standards
   - bassrehab/oconsent
   - bassrehab/ISO8583-Simulator
