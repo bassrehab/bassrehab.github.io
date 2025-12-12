@@ -16,20 +16,11 @@ header.post-header {
 <div class="repositories-page-modern">
   <!-- Hero Section -->
   <div class="repos-hero">
-    <div class="hero-icon">
-      <i class="fa-brands fa-github"></i>
-    </div>
-    <h1 class="hero-title">Open Source Projects</h1>
+    <div class="repos-label">Open Source</div>
+    <h1 class="hero-title">Repositories</h1>
     <p class="hero-description">
-      I'm passionate about building tools and sharing knowledge through open source.
-      Here's a collection of my projects - feel free to explore, fork, and contribute!
+      Building tools and sharing knowledge through open source. Explore my projects, fork them, and contribute.
     </p>
-    <div class="hero-cta">
-      <a href="https://github.com/bassrehab" target="_blank" class="github-profile-btn">
-        <i class="fa-brands fa-github"></i>
-        View GitHub Profile
-      </a>
-    </div>
   </div>
 
   {% if site.data.repositories.github_users %}
@@ -144,279 +135,234 @@ header.post-header {
 
 /* Hero Section */
 .repos-hero {
-  text-align: center;
   margin-bottom: 4rem;
-  padding: 3rem 2rem;
-  background: var(--global-code-bg-color);
-  border-radius: 24px;
-  border: 1px solid var(--global-divider-color);
+  padding: 2rem 0;
 }
 
-.hero-icon {
-  font-size: 4rem;
+.repos-label {
+  font-size: 0.875rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
   color: var(--global-theme-color);
-  margin-bottom: 1.5rem;
-  animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-size: clamp(3rem, 8vw, 5rem);
   font-weight: 900;
+  line-height: 0.95;
   color: var(--global-text-color);
   margin-bottom: 1rem;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
 }
 
 .hero-description {
-  font-size: 1.25rem;
-  line-height: 1.7;
+  font-size: 1.5rem;
+  line-height: 1.5;
   color: var(--global-text-color-light);
   max-width: 700px;
-  margin: 0 auto 2rem auto;
-}
-
-.hero-cta {
-  margin-top: 2rem;
-}
-
-.github-profile-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 2rem;
-  background: var(--global-theme-color);
-  color: white;
-  text-decoration: none;
-  border-radius: 12px;
-  font-weight: 700;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-}
-
-.github-profile-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(181, 9, 172, 0.3);
-  color: white;
+  margin: 0 0 2rem 0;
+  font-weight: 400;
 }
 
 /* Section Headers */
 .section-header {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 2.5rem;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
 }
 
 .section-header i {
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   color: var(--global-theme-color);
 }
 
 .section-header h2 {
-  font-size: 2rem;
-  font-weight: 800;
+  font-size: 1.5rem;
+  font-weight: 700;
   color: var(--global-text-color);
   margin: 0;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 /* Stats Section */
 .stats-section {
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .custom-stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
 .custom-stat-card {
-  background: var(--global-card-bg-color);
+  background: var(--global-bg-color);
   border: 1px solid var(--global-divider-color);
-  border-radius: 16px;
-  padding: 2rem 1.5rem;
+  border-radius: 6px;
+  padding: 1.5rem 1rem;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: border-color 0.2s ease;
 }
 
 .custom-stat-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   border-color: var(--global-theme-color);
 }
 
 .stat-icon {
-  width: 64px;
-  height: 64px;
+  width: 40px;
+  height: 40px;
   margin: 0 auto 1rem auto;
-  background: linear-gradient(135deg, var(--global-theme-color) 0%, #764ba2 100%);
-  border-radius: 16px;
+  background: var(--global-code-bg-color);
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
-  color: white;
+  font-size: 1.25rem;
+  color: var(--global-theme-color);
 }
 
 .stat-value {
-  font-size: 2.5rem;
-  font-weight: 900;
+  font-size: 2rem;
+  font-weight: 700;
   color: var(--global-text-color);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
   line-height: 1;
 }
 
 .stat-label {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: var(--global-text-color-light);
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
 }
 
 /* GitHub Achievements */
 .achievements-section {
-  background: var(--global-card-bg-color);
+  background: var(--global-code-bg-color);
   border: 1px solid var(--global-divider-color);
-  border-radius: 16px;
-  padding: 2rem;
+  border-radius: 6px;
+  padding: 1.5rem;
   margin-top: 2rem;
 }
 
 .achievements-title {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  font-size: 1.5rem;
-  font-weight: 800;
+  gap: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
   color: var(--global-text-color);
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 1rem 0;
 }
 
 .achievements-title i {
   color: var(--global-theme-color);
+  font-size: 1rem;
 }
 
 .achievements-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 1rem;
-  margin-top: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
 }
 
 .achievement-badge {
-  background: linear-gradient(135deg, var(--global-code-bg-color) 0%, var(--global-card-bg-color) 100%);
-  border: 2px solid var(--global-divider-color);
-  border-radius: 12px;
-  padding: 1.25rem 1rem;
+  background: var(--global-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 6px;
+  padding: 1rem 0.75rem;
   text-align: center;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.achievement-badge::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, var(--achievement-color), transparent);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: border-color 0.2s ease;
 }
 
 .achievement-badge:hover {
-  transform: translateY(-4px);
-  border-color: var(--achievement-color);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-}
-
-.achievement-badge:hover::before {
-  opacity: 1;
+  border-color: var(--global-theme-color);
 }
 
 .achievement-icon {
-  font-size: 2.5rem;
-  margin-bottom: 0.75rem;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .achievement-name {
-  font-size: 0.875rem;
-  font-weight: 700;
+  font-size: 0.8rem;
+  font-weight: 600;
   color: var(--global-text-color);
   margin-bottom: 0.25rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
 }
 
 .achievement-description {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: var(--global-text-color-light);
-  line-height: 1.4;
+  line-height: 1.3;
 }
 
 .achievement-tier {
   display: inline-block;
-  padding: 0.25rem 0.5rem;
-  border-radius: 6px;
-  font-size: 0.7rem;
-  font-weight: 700;
+  padding: 0.125rem 0.375rem;
+  border-radius: 3px;
+  font-size: 0.65rem;
+  font-weight: 600;
   text-transform: uppercase;
-  margin-top: 0.5rem;
-  letter-spacing: 0.05em;
+  margin-top: 0.375rem;
+  letter-spacing: 0.03em;
+  background: var(--global-code-bg-color);
+  color: var(--global-text-color-light);
+  border: 1px solid var(--global-divider-color);
 }
 
 .tier-bronze {
-  background: linear-gradient(135deg, #cd7f32 0%, #8b5a2b 100%);
-  color: white;
+  background: var(--global-code-bg-color);
+  color: #8b5a2b;
+  border-color: #cd7f32;
 }
 
 .tier-silver {
-  background: linear-gradient(135deg, #c0c0c0 0%, #808080 100%);
-  color: white;
+  background: var(--global-code-bg-color);
+  color: #666;
+  border-color: #999;
 }
 
 .tier-gold {
-  background: linear-gradient(135deg, #ffd700 0%, #daa520 100%);
-  color: #333;
+  background: var(--global-code-bg-color);
+  color: #b8860b;
+  border-color: #daa520;
 }
 
 .tier-platinum {
-  background: linear-gradient(135deg, #e5e4e2 0%, #b9b7b5 100%);
-  color: #333;
+  background: var(--global-code-bg-color);
+  color: #666;
+  border-color: #999;
 }
 
 .tier-diamond {
-  background: linear-gradient(135deg, #b9f2ff 0%, #7dd3fc 100%);
-  color: #0c4a6e;
+  background: var(--global-code-bg-color);
+  color: #0369a1;
+  border-color: #7dd3fc;
 }
 
 /* Stat Card Skeletons */
 .stat-card-skeleton {
-  background: var(--global-card-bg-color);
+  background: var(--global-bg-color);
   border: 1px solid var(--global-divider-color);
-  border-radius: 16px;
-  padding: 2rem 1.5rem;
+  border-radius: 6px;
+  padding: 1.5rem 1rem;
   text-align: center;
   animation: pulse 1.5s ease-in-out infinite;
 }
 
 .skeleton-stat-icon {
-  width: 64px;
-  height: 64px;
+  width: 40px;
+  height: 40px;
   margin: 0 auto 1rem auto;
   background: var(--global-code-bg-color);
-  border-radius: 16px;
+  border-radius: 6px;
 }
 
 .skeleton-stat-value {
@@ -437,22 +383,22 @@ header.post-header {
 
 /* Repositories Grid */
 .repos-section {
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .repos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 1rem;
 }
 
 /* Custom Repo Cards */
 .custom-repo-card {
-  background: var(--global-card-bg-color);
+  background: var(--global-bg-color);
   border: 1px solid var(--global-divider-color);
-  border-radius: 16px;
-  padding: 1.75rem;
-  transition: all 0.3s ease;
+  border-radius: 6px;
+  padding: 1.5rem;
+  transition: border-color 0.2s ease;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -461,8 +407,6 @@ header.post-header {
 }
 
 .custom-repo-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   border-color: var(--global-theme-color);
   text-decoration: none;
   color: var(--global-text-color);
@@ -471,20 +415,20 @@ header.post-header {
 .repo-header {
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
-  margin-bottom: 1rem;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
 }
 
 .repo-icon {
   flex-shrink: 0;
-  width: 48px;
-  height: 48px;
+  width: 36px;
+  height: 36px;
   background: var(--global-code-bg-color);
-  border-radius: 12px;
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.125rem;
   color: var(--global-theme-color);
 }
 
@@ -494,66 +438,67 @@ header.post-header {
 }
 
 .repo-name {
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: 1.05rem;
+  font-weight: 600;
   color: var(--global-text-color);
-  margin: 0 0 0.25rem 0;
+  margin: 0 0 0.125rem 0;
   word-wrap: break-word;
 }
 
 .repo-owner {
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   color: var(--global-text-color-light);
   margin: 0;
 }
 
 .repo-description {
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 0.9rem;
+  line-height: 1.5;
   color: var(--global-text-color-light);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
   flex-grow: 1;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
 .repo-stats {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   flex-wrap: wrap;
-  padding-top: 1rem;
+  padding-top: 0.75rem;
   border-top: 1px solid var(--global-divider-color);
 }
 
 .repo-stat {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
+  gap: 0.375rem;
+  font-size: 0.85rem;
   color: var(--global-text-color-light);
 }
 
 .repo-stat i {
-  color: var(--global-theme-color);
+  color: var(--global-text-color-light);
+  font-size: 0.75rem;
 }
 
 .repo-language {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
+  gap: 0.375rem;
+  font-size: 0.85rem;
   color: var(--global-text-color);
-  font-weight: 600;
+  font-weight: 500;
 }
 
 /* Loading Skeletons for Custom Cards */
 .repo-card-skeleton {
-  background: var(--global-card-bg-color);
+  background: var(--global-bg-color);
   border: 1px solid var(--global-divider-color);
-  border-radius: 16px;
-  padding: 1.75rem;
+  border-radius: 6px;
+  padding: 1.5rem;
   animation: pulse 1.5s ease-in-out infinite;
 }
 
@@ -568,15 +513,15 @@ header.post-header {
 
 .skeleton-header {
   display: flex;
-  gap: 1rem;
-  margin-bottom: 1rem;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
 }
 
 .skeleton-icon {
-  width: 48px;
-  height: 48px;
+  width: 36px;
+  height: 36px;
   background: var(--global-code-bg-color);
-  border-radius: 12px;
+  border-radius: 6px;
 }
 
 .skeleton-title {
@@ -655,37 +600,37 @@ img[src]:not([src=""]) + .loading-skeleton {
 /* Collaboration CTA */
 .collaboration-cta {
   background: var(--global-code-bg-color);
-  border: 2px solid var(--global-theme-color);
-  border-radius: 24px;
-  padding: 3rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 6px;
+  padding: 2rem;
   text-align: center;
-  margin-top: 4rem;
+  margin-top: 3rem;
 }
 
 .cta-icon {
-  font-size: 3rem;
+  font-size: 2rem;
   color: var(--global-theme-color);
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .collaboration-cta h3 {
-  font-size: 2rem;
-  font-weight: 800;
+  font-size: 1.5rem;
+  font-weight: 700;
   color: var(--global-text-color);
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .collaboration-cta p {
-  font-size: 1.125rem;
-  line-height: 1.7;
+  font-size: 0.95rem;
+  line-height: 1.6;
   color: var(--global-text-color-light);
   max-width: 600px;
-  margin: 0 auto 2rem auto;
+  margin: 0 auto 1.5rem auto;
 }
 
 .cta-actions {
   display: flex;
-  gap: 1rem;
+  gap: 0.75rem;
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -695,37 +640,34 @@ img[src]:not([src=""]) + .loading-skeleton {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.875rem 1.75rem;
-  border-radius: 12px;
-  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
   text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: 1rem;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
 }
 
 .btn-primary {
   background: var(--global-theme-color);
   color: white;
-  border: 2px solid var(--global-theme-color);
+  border: 1px solid var(--global-theme-color);
 }
 
 .btn-primary:hover {
-  background: transparent;
-  color: var(--global-theme-color);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(181, 9, 172, 0.2);
+  background: var(--global-text-color);
+  color: white;
 }
 
 .btn-secondary {
   background: transparent;
   color: var(--global-text-color);
-  border: 2px solid var(--global-divider-color);
+  border: 1px solid var(--global-divider-color);
 }
 
 .btn-secondary:hover {
   border-color: var(--global-theme-color);
   color: var(--global-theme-color);
-  transform: translateY(-2px);
 }
 
 /* Responsive */
@@ -745,15 +687,12 @@ img[src]:not([src=""]) + .loading-skeleton {
   }
 
   .repos-hero {
-    padding: 2rem 1.5rem;
-  }
-
-  .hero-icon {
-    font-size: 3rem;
+    margin-bottom: 3rem;
+    padding: 1rem 0;
   }
 
   .hero-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   .hero-description {
@@ -761,43 +700,43 @@ img[src]:not([src=""]) + .loading-skeleton {
   }
 
   .section-header h2 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 
   .custom-stats-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-
-  .custom-stat-card {
-    padding: 1.5rem 1rem;
-  }
-
-  .stat-icon {
-    width: 56px;
-    height: 56px;
-    font-size: 1.75rem;
-  }
-
-  .stat-value {
-    font-size: 2rem;
-  }
-
-  .stat-label {
-    font-size: 0.85rem;
-  }
-
-  .achievements-grid {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 0.75rem;
   }
 
+  .custom-stat-card {
+    padding: 1.25rem 0.875rem;
+  }
+
+  .stat-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1.125rem;
+  }
+
+  .stat-value {
+    font-size: 1.75rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+  }
+
+  .achievements-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.625rem;
+  }
+
   .achievement-badge {
-    padding: 1rem 0.75rem;
+    padding: 0.875rem 0.625rem;
   }
 
   .achievement-icon {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .language-section {
@@ -818,15 +757,15 @@ img[src]:not([src=""]) + .loading-skeleton {
 
   .repos-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1rem;
   }
 
   .collaboration-cta {
-    padding: 2rem 1.5rem;
+    padding: 1.75rem 1.25rem;
   }
 
   .collaboration-cta h3 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 
   .cta-actions {
@@ -851,12 +790,12 @@ img[src]:not([src=""]) + .loading-skeleton {
   }
 
   .achievement-badge {
-    padding: 0.875rem 0.5rem;
+    padding: 0.75rem 0.5rem;
   }
 
   .achievement-icon {
-    font-size: 1.75rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.375rem;
   }
 
   .achievement-name {
@@ -864,7 +803,7 @@ img[src]:not([src=""]) + .loading-skeleton {
   }
 
   .achievement-description {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
   }
 
   .language-bar-item {

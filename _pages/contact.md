@@ -177,44 +177,31 @@ header.post-header {
 
 /* Hero Section */
 .contact-hero {
-  text-align: center;
   margin-bottom: 4rem;
-  padding: 3rem 1rem;
-  background: var(--global-code-bg-color);
-  border-radius: 24px;
-  border: 1px solid var(--global-divider-color);
+  padding: 2rem 0;
 }
 
 .hero-icon {
-  font-size: 4rem;
+  font-size: 3rem;
   color: var(--global-theme-color);
-  margin-bottom: 1.5rem;
-  animation: bounce 2s ease-in-out infinite;
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+  margin-bottom: 1rem;
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-size: clamp(3rem, 8vw, 5rem);
   font-weight: 900;
+  line-height: 0.95;
   color: var(--global-text-color);
   margin-bottom: 1rem;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
 }
 
 .hero-subtitle {
-  font-size: 1.25rem;
-  line-height: 1.6;
+  font-size: 1.5rem;
+  line-height: 1.5;
   color: var(--global-text-color-light);
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 700px;
+  font-weight: 400;
 }
 
 /* Contact Grid */
@@ -228,34 +215,34 @@ header.post-header {
 .section-header {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 2rem;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .section-header i {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: var(--global-theme-color);
 }
 
 .section-header h2 {
-  font-size: 1.75rem;
-  font-weight: 800;
+  font-size: 1.5rem;
+  font-weight: 700;
   color: var(--global-text-color);
   margin: 0;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 /* Contact Form */
 .contact-form-section {
-  background: var(--global-card-bg-color);
+  background: var(--global-bg-color);
   border: 1px solid var(--global-divider-color);
-  border-radius: 20px;
-  padding: 2.5rem;
-  transition: all 0.3s ease;
+  border-radius: 8px;
+  padding: 2rem;
+  transition: border-color 0.2s ease;
 }
 
 .contact-form-section:hover {
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  border-color: var(--global-theme-color);
 }
 
 .modern-form {
@@ -287,21 +274,20 @@ header.post-header {
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 0.875rem 1rem;
-  background: var(--global-bg-color);
-  border: 2px solid var(--global-divider-color);
-  border-radius: 12px;
-  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--global-code-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 6px;
+  font-size: 0.95rem;
   color: var(--global-text-color);
   font-family: "Inter Tight", sans-serif;
-  transition: all 0.3s ease;
+  transition: border-color 0.2s ease;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
   border-color: var(--global-theme-color);
-  box-shadow: 0 0 0 3px rgba(181, 9, 172, 0.1);
 }
 
 .form-group textarea {
@@ -313,34 +299,30 @@ header.post-header {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
-  padding: 1rem 2rem;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
   background: var(--global-theme-color);
-  color: white;
+  color: white !important;
   border: none;
-  border-radius: 12px;
-  font-size: 1rem;
-  font-weight: 700;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   font-family: "Inter", sans-serif;
 }
 
 .submit-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(181, 9, 172, 0.3);
+  background: var(--global-text-color);
+  color: white !important;
 }
 
 .submit-btn:active {
-  transform: translateY(0);
+  transform: scale(0.98);
 }
 
-.submit-btn i {
-  transition: transform 0.3s ease;
-}
-
-.submit-btn:hover i {
-  transform: translateX(4px);
+.modern-form .submit-btn .btn-text {
+  color: white !important;
 }
 
 .form-status {
@@ -380,44 +362,44 @@ header.post-header {
 
 .contact-method {
   display: flex;
-  gap: 1.5rem;
-  padding: 1.75rem;
-  background: var(--global-card-bg-color);
+  gap: 1.25rem;
+  padding: 1.5rem;
+  background: var(--global-bg-color);
   border: 1px solid var(--global-divider-color);
-  border-radius: 16px;
-  transition: all 0.3s ease;
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
 }
 
 .contact-method:hover {
   border-color: var(--global-theme-color);
-  transform: translateX(8px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .method-icon {
   flex-shrink: 0;
-  width: 56px;
-  height: 56px;
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 12px;
-  font-size: 1.5rem;
+  border-radius: 8px;
+  font-size: 1.25rem;
+  background: var(--global-code-bg-color);
+  color: var(--global-theme-color);
 }
 
 .email-icon {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: var(--global-code-bg-color);
+  color: var(--global-theme-color);
 }
 
 .calendar-icon {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  color: white;
+  background: var(--global-code-bg-color);
+  color: var(--global-theme-color);
 }
 
 .social-icon {
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-  color: white;
+  background: var(--global-code-bg-color);
+  color: var(--global-theme-color);
 }
 
 .method-content {
@@ -440,72 +422,71 @@ header.post-header {
 .method-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.375rem;
   color: var(--global-theme-color);
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.95rem;
-  transition: gap 0.3s ease;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
 }
 
 .method-link:hover {
-  gap: 0.75rem;
+  color: var(--global-text-color);
 }
 
 .method-link i {
-  font-size: 0.875rem;
+  font-size: 0.8rem;
 }
 
 /* Social Links Compact */
 .social-links-compact {
   display: flex;
-  gap: 0.75rem;
+  gap: 0.5rem;
   margin-top: 0.75rem;
 }
 
 .social-links-compact a {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--global-code-bg-color);
   border: 1px solid var(--global-divider-color);
-  border-radius: 10px;
+  border-radius: 6px;
   color: var(--global-text-color);
-  font-size: 1.125rem;
+  font-size: 1rem;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .social-links-compact a:hover {
   background: var(--global-theme-color);
   color: white;
   border-color: var(--global-theme-color);
-  transform: translateY(-4px);
 }
 
 /* Info Card */
 .info-card {
   display: flex;
   gap: 1rem;
-  padding: 1.5rem;
+  padding: 1.25rem;
   background: var(--global-code-bg-color);
-  border-left: 4px solid var(--global-theme-color);
-  border-radius: 12px;
+  border-left: 3px solid var(--global-theme-color);
+  border-radius: 6px;
 }
 
 .info-icon {
   flex-shrink: 0;
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--global-theme-color);
   color: white;
-  border-radius: 10px;
-  font-size: 1.25rem;
+  border-radius: 6px;
+  font-size: 1.125rem;
 }
 
 .info-content h4 {
@@ -530,15 +511,12 @@ header.post-header {
   }
 
   .contact-hero {
-    padding: 2rem 1rem;
-  }
-
-  .hero-icon {
-    font-size: 3rem;
+    margin-bottom: 3rem;
+    padding: 1rem 0;
   }
 
   .hero-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   .hero-subtitle {
@@ -546,7 +524,7 @@ header.post-header {
   }
 
   .contact-form-section {
-    padding: 2rem;
+    padding: 1.75rem;
   }
 }
 
@@ -557,23 +535,19 @@ header.post-header {
 
   .contact-hero {
     margin-bottom: 2rem;
-    padding: 1.5rem;
-    border-radius: 16px;
   }
 
   .section-header h2 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 
   .contact-form-section {
     padding: 1.5rem;
-    border-radius: 16px;
   }
 
   .contact-method {
     flex-direction: column;
-    text-align: center;
-    padding: 1.5rem;
+    padding: 1.25rem;
   }
 
   .method-icon {
@@ -586,7 +560,6 @@ header.post-header {
 
   .info-card {
     flex-direction: column;
-    text-align: center;
   }
 
   .info-icon {

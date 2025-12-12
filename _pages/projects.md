@@ -20,21 +20,18 @@ header.post-header {
 
 /* Hero Section */
 .projects-hero {
-  min-height: 40vh;
   display: flex;
-  align-items: center;
   flex-direction: column;
-  text-align: center;
   margin-bottom: 4rem;
-  padding: 3rem 0;
+  padding: 2rem 0;
 }
 
 .projects-hero h1 {
-  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-size: clamp(3rem, 8vw, 5rem);
   font-weight: 900;
   line-height: 0.95;
   color: var(--global-text-color, #000);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   letter-spacing: -0.03em;
 }
 
@@ -42,7 +39,7 @@ header.post-header {
   font-size: 1.5rem;
   line-height: 1.5;
   color: var(--global-text-color-light, #666);
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
   max-width: 800px;
   font-weight: 400;
 }
@@ -50,61 +47,61 @@ header.post-header {
 /* Stats Bar */
 .projects-stats {
   display: flex;
-  gap: 4rem;
-  justify-content: center;
+  gap: 3rem;
   flex-wrap: wrap;
-  padding: 2rem 0;
+  padding: 1.5rem 0;
 }
 
 .project-stat {
-  text-align: center;
+  text-align: left;
 }
 
 .project-stat-value {
-  font-size: 3rem;
-  font-weight: 900;
+  font-size: 2.5rem;
+  font-weight: 800;
   color: var(--global-theme-color, #b509ac);
   line-height: 1;
   letter-spacing: -0.02em;
 }
 
 .project-stat-label {
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   color: var(--global-text-color-light, #666);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-top: 0.5rem;
+  letter-spacing: 0.05em;
+  margin-top: 0.375rem;
 }
 
 /* Category Filter */
 .category-filter {
   display: flex;
-  gap: 1rem;
-  justify-content: center;
+  gap: 0.625rem;
   flex-wrap: wrap;
   margin-bottom: 4rem;
-  padding-bottom: 3rem;
-  border-bottom: 2px solid var(--global-divider-color, #e5e5e5);
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--global-divider-color, #e5e5e5);
 }
 
 .filter-btn {
-  padding: 0.75rem 1.5rem;
+  padding: 0.65rem 1.25rem !important;
   background: var(--global-code-bg-color, #f8f9fa);
   border: 1px solid var(--global-divider-color, #e5e5e5);
   border-radius: 50px;
-  font-size: 0.875rem;
-  font-weight: 600;
+  font-size: 0.85rem;
+  font-weight: 500;
   color: var(--global-text-color, #000);
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.2s;
 }
 
-.filter-btn:hover,
+.filter-btn:hover {
+  border-color: var(--global-theme-color, #b509ac);
+}
+
 .filter-btn.active {
   background: var(--global-theme-color, #b509ac);
   color: white;
   border-color: var(--global-theme-color, #b509ac);
-  transform: translateY(-2px);
 }
 
 /* Section Headers */
@@ -256,31 +253,30 @@ header.post-header {
 /* Project Links */
 .project-links {
   display: flex;
-  gap: 0.75rem;
+  gap: 0.5rem;
   flex-wrap: wrap;
-  margin-top: 1.5rem;
+  margin-top: 1.25rem;
 }
 
 .project-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.65rem 1.25rem;
+  gap: 0.375rem;
+  padding: 0.5rem 1rem;
   background: var(--global-code-bg-color, #f8f9fa);
   border: 1px solid var(--global-divider-color, #e5e5e5);
-  border-radius: 8px;
+  border-radius: 6px;
   text-decoration: none;
   color: var(--global-text-color, #000);
-  font-size: 0.875rem;
-  font-weight: 600;
-  transition: all 0.3s;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s;
 }
 
 .project-link:hover {
   background: var(--global-theme-color, #b509ac);
   color: white;
   border-color: var(--global-theme-color, #b509ac);
-  transform: translateY(-2px);
 }
 
 .project-link.primary {
@@ -290,8 +286,8 @@ header.post-header {
 }
 
 .project-link.primary:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(181, 9, 172, 0.3);
+  background: var(--global-text-color, #000);
+  border-color: var(--global-text-color, #000);
 }
 
 /* Impact Metrics */
@@ -323,120 +319,134 @@ header.post-header {
 
 /* CTA Section */
 .contribute-cta {
-  margin: 6rem 0 4rem 0;
-  padding: 4rem 3rem;
+  margin: 4rem 0 3rem 0;
+  padding: 2.5rem 2rem;
   background: var(--global-code-bg-color, #f8f9fa);
-  border-radius: 24px;
+  border-radius: 8px;
   text-align: center;
+  border: 1px solid var(--global-divider-color, #e5e5e5);
 }
 
 .contribute-cta h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 900;
-  margin-bottom: 1.5rem;
-  line-height: 1.1;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.2;
   letter-spacing: -0.02em;
   color: var(--global-text-color, #000);
 }
 
 .contribute-cta p {
-  font-size: 1.25rem;
+  font-size: 1.05rem;
   color: var(--global-text-color-light, #666);
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.6;
 }
 
 .cta-buttons {
   display: flex;
-  gap: 1rem;
+  gap: 0.75rem;
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .btn-primary {
-  padding: 1rem 2.5rem;
+  padding: 0.75rem 1.75rem;
   background: var(--global-theme-color, #b509ac);
   color: white;
   text-decoration: none;
-  font-weight: 700;
-  border-radius: 12px;
-  font-size: 1.125rem;
-  transition: all 0.3s;
+  font-weight: 600;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: all 0.2s;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  border: 1px solid var(--global-theme-color, #b509ac);
 }
 
 .btn-primary:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(181, 9, 172, 0.3);
+  background: var(--global-text-color, #000);
+  border-color: var(--global-text-color, #000);
   color: white;
 }
 
 .btn-secondary {
-  padding: 1rem 2.5rem;
+  padding: 0.75rem 1.75rem;
   background: transparent;
   color: var(--global-text-color, #000);
-  border: 2px solid var(--global-theme-color, #b509ac);
+  border: 1px solid var(--global-divider-color, #e5e5e5);
   text-decoration: none;
-  font-weight: 700;
-  border-radius: 12px;
-  font-size: 1.125rem;
-  transition: all 0.3s;
+  font-weight: 600;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: all 0.2s;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
 }
 
 .btn-secondary:hover {
-  background: var(--global-theme-color, #b509ac);
-  color: white;
+  border-color: var(--global-theme-color, #b509ac);
+  color: var(--global-theme-color, #b509ac);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .projects-hero {
-    min-height: auto;
     margin-bottom: 3rem;
+    padding: 1rem 0;
   }
-  
+
   .projects-hero h1 {
     font-size: 2.5rem;
   }
-  
+
   .projects-hero .subtitle {
     font-size: 1.125rem;
   }
-  
+
   .projects-stats {
     gap: 2rem;
   }
-  
+
   .project-stat-value {
     font-size: 2rem;
   }
-  
+
   .projects-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
-  
+
   .project-card {
-    padding: 2rem;
+    padding: 1.5rem;
   }
-  
+
   .section-title {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
-  
+
   .impact-metrics {
     flex-wrap: wrap;
     gap: 1rem;
   }
-  
+
   .contribute-cta {
-    padding: 3rem 2rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
   }
 }
 </style>
@@ -552,14 +562,14 @@ header.post-header {
         <p class="project-description">
           Production-ready Python framework for detecting and analyzing metacognitive capabilities in AI systems - enabling transparent, systematic reasoning at scale.
         </p>
-        
+
         <ul class="project-highlights">
           <li>Bayesian situational awareness detection with KL divergence measures</li>
           <li>Counterfactual chain-of-thought analysis for causal attribution</li>
           <li>Real-time production monitoring with automated alerting</li>
           <li>275 tests, 95% code coverage, production-hardened</li>
         </ul>
-        
+
         <div class="tech-stack">
           <span class="tech-tag">Python</span>
           <span class="tech-tag">NumPy</span>
@@ -567,7 +577,7 @@ header.post-header {
           <span class="tech-tag">Bayesian Inference</span>
           <span class="tech-tag">Statistical Monitoring</span>
         </div>
-        
+
         <div class="project-links">
           <a href="https://ai-metacognition-toolkit.subhadipmitra.com/" class="project-link primary" target="_blank">
             <i class="fas fa-book"></i> Documentation
@@ -579,7 +589,7 @@ header.post-header {
             <i class="fab fa-github"></i> GitHub
           </a>
         </div>
-        
+
         <div class="impact-metrics">
           <div class="metric">
             <div class="metric-value">2025</div>
@@ -605,21 +615,21 @@ header.post-header {
         <p class="project-description">
           Privacy-preserving consent management protocol for LLM training data - enabling transparent opt-in/opt-out mechanisms with cryptographic verification.
         </p>
-        
+
         <ul class="project-highlights">
           <li>Decentralized consent registry on public blockchain</li>
           <li>Cryptographic proof of consent status</li>
           <li>Real-time opt-out enforcement for AI training</li>
           <li>GDPR-compliant privacy controls for GenAI era</li>
         </ul>
-        
+
         <div class="tech-stack">
           <span class="tech-tag">Blockchain</span>
           <span class="tech-tag">Smart Contracts</span>
           <span class="tech-tag">Cryptography</span>
           <span class="tech-tag">Privacy Engineering</span>
         </div>
-        
+
         <div class="project-links">
           <a href="https://llmconsent.org" class="project-link primary" target="_blank">
             <i class="fas fa-globe"></i> Visit Site
@@ -653,21 +663,21 @@ header.post-header {
         <p class="project-description">
           Open-source blockchain-based protocol for transparent personal data consent management - enabling granular control and tamper-proof audit trails.
         </p>
-        
+
         <ul class="project-highlights">
           <li>Published research paper (2021, BITS Pilani)</li>
           <li>Transparent consent lifecycle management</li>
           <li>GDPR-compliant with automated compliance reporting</li>
           <li>Real-time privacy breach alerts</li>
         </ul>
-        
+
         <div class="tech-stack">
           <span class="tech-tag">Blockchain</span>
           <span class="tech-tag">Smart Contracts</span>
           <span class="tech-tag">Privacy by Design</span>
           <span class="tech-tag">GDPR</span>
         </div>
-        
+
         <div class="project-links">
           <a href="https://oconsent.io" class="project-link primary" target="_blank">
             <i class="fas fa-globe"></i> Visit Site
@@ -676,7 +686,7 @@ header.post-header {
             <i class="fas fa-file-pdf"></i> Paper
           </a>
         </div>
-        
+
         <div class="impact-metrics">
           <div class="metric">
             <div class="metric-value">2021</div>
@@ -698,21 +708,21 @@ header.post-header {
         <p class="project-description">
           Privacy-aware open protocol for non-repudiable location verification in physical or virtual spaces - with cryptographic proof and decentralized architecture.
         </p>
-        
+
         <ul class="project-highlights">
           <li>Cryptographically secure location attestation</li>
           <li>Privacy-preserving proof mechanisms</li>
           <li>Fully decentralized, tamper-resistant</li>
           <li>Complete technical specifications published</li>
         </ul>
-        
+
         <div class="tech-stack">
           <span class="tech-tag">Cryptography</span>
           <span class="tech-tag">Distributed Systems</span>
           <span class="tech-tag">GPS</span>
           <span class="tech-tag">Zero-Knowledge Proofs</span>
         </div>
-        
+
         <div class="project-links">
           <a href="https://olpprotocol.com/" class="project-link primary" target="_blank">
             <i class="fas fa-globe"></i> Protocol Site
@@ -721,7 +731,7 @@ header.post-header {
             <i class="fas fa-file-pdf"></i> Paper
           </a>
         </div>
-        
+
         <div class="impact-metrics">
           <div class="metric">
             <div class="metric-value">2022</div>
@@ -735,6 +745,7 @@ header.post-header {
       </article>
 
     </div>
+
   </section>
 
   <!-- CTA Section -->
