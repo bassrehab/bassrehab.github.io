@@ -2,7 +2,7 @@
 layout: post
 title: "UPIR: What If Distributed Systems Could Write (and Verify) Themselves?"
 date: 2025-11-15
-description: Lessons from building a framework that automatically generates verified distributed systems - and why I think formal methods, synthesis, and ML need to work together
+description: "Lessons from building a framework that automatically generates verified distributed systems - and why I think formal methods, synthesis, and ML need to work together"
 tags: [distributed-systems, formal-verification, program-synthesis, research, innovation]
 categories: research
 featured: false
