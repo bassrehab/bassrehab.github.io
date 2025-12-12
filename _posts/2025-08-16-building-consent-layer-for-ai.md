@@ -5,7 +5,7 @@ date: 2025-08-16 01:10:34
 author: [Subhadip Mitra]
 categories: ai standards ethics architecture
 tags: ai blockchain standards consent ethics protocol llm agents privacy decentralization
-description: "AI companies are getting sued over training data, agents operate with no permission framework, and users can't control their AI profiles. I wrote four open standards (LLMConsent) to create a decentralized consent protocol for AI—like HTTP but for data rights, agent permissions, and user sovereignty. This is an RFC, not a product."
+description: "AI companies are getting sued over training data, agents operate with no permission framework, and users can't control their AI profiles. I wrote four open standards (LLMConsent) to create a decentralized consent protocol for AI - like HTTP but for data rights, agent permissions, and user sovereignty. This is an RFC, not a product."
 citation: true
 giscus_comments: true
 featured: true

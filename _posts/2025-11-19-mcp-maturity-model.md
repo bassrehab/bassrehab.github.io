@@ -38,7 +38,7 @@ Meanwhile, the problems everyone thought were solved keep resurfacing:
 - **Contextual prioritization**: Agents drowning in irrelevant context or missing critical information
 - **Cross-modal integration**: Bridging text, structured data, and visual inputs into coherent understanding
 - **Context drift**: Subtle degradation of context quality over long-running sessions
-- **Context rot**: Counterintuitively, model accuracy often decreases as context window size increases—more context doesn't always mean better results
+- **Context rot**: Counterintuitively, model accuracy often decreases as context window size increases - more context doesn't always mean better results
 
 You can't fix what you can't measure. This maturity model gives you a vocabulary and assessment framework for your context architecture - whether you're using MCP, a proprietary system, or (let's be honest) a mess of duct tape and hope.
 
@@ -63,7 +63,7 @@ Understanding what you're actually building shapes how sophisticated your contex
 - Higher complexity, harder to debug
 - Benefit from sophisticated context strategies
 
-Anthropic's guidance: "Many use cases that appear to require agents can be solved with simpler workflow patterns." If you can map out the steps in advance, you probably want a workflow, not an agent. Keep this distinction in mind as we explore the maturity levels—workflows typically need less sophisticated context management than true agents.
+Anthropic's guidance: "Many use cases that appear to require agents can be solved with simpler workflow patterns." If you can map out the steps in advance, you probably want a workflow, not an agent. Keep this distinction in mind as we explore the maturity levels - workflows typically need less sophisticated context management than true agents.
 
 <br />
 
@@ -279,7 +279,7 @@ This is where things get interesting. You can swap MCP servers without rewriting
 
 **Capabilities unlocked in practice:**
 
-Early MCP adopters report significant improvements in integration velocity—adding new data sources to agent systems in hours or days instead of weeks. The standardization pays off when you need to scale integrations.
+Early MCP adopters report significant improvements in integration velocity - adding new data sources to agent systems in hours or days instead of weeks. The standardization pays off when you need to scale integrations.
 
 **Common mistakes:**
 
@@ -380,7 +380,7 @@ Code execution approach:
 - State persists across operations via file storage
 - Agents can save reusable code functions
 
-This pattern becomes essential when scaling to many tools (typically 50+ tools or when working with data-heavy operations). You're essentially giving agents a programming environment rather than a function-calling interface. Note that this optimization technique remains valuable at Level 4 and beyond—it's introduced at Level 3 because that's when token costs become a critical concern that drives architectural decisions.
+This pattern becomes essential when scaling to many tools (typically 50+ tools or when working with data-heavy operations). You're essentially giving agents a programming environment rather than a function-calling interface. Note that this optimization technique remains valuable at Level 4 and beyond - it's introduced at Level 3 because that's when token costs become a critical concern that drives architectural decisions.
 
 **Real challenges at this level:**
 
@@ -516,7 +516,7 @@ Here's my honest take based on what works in practice:
 
 Anthropic's engineering team (December 2024) emphasizes that "the most successful implementations use simple, composable patterns rather than complex frameworks." Many teams over-engineer solutions when optimizing a single LLM call would suffice. Don't jump to Level 4 adaptive systems when Level 2 MCP integration solves your actual problem.
 
-The right level depends on your scale and complexity. Remember the workflows vs agents distinction from earlier—**workflows typically need Levels 0-2**, while **true agents benefit from Levels 3-4**:
+The right level depends on your scale and complexity. Remember the workflows vs agents distinction from earlier - **workflows typically need Levels 0-2**, while **true agents benefit from Levels 3-4**:
 
 | Scale / Context                       | Target Level | Why                                                                                 | Key Considerations                                                                              |
 | ------------------------------------- | ------------ | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
