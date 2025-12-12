@@ -185,7 +185,7 @@ ninja.data = [{
         
           title: "We Need a Consent Layer for AI (And I&#39;m Trying to Build One)...",
         
-        description: "AI companies are getting sued over training data, agents operate with no permission framework, and users can&#39;t control their AI profiles. I wrote four open standards (LLMConsent) to create a decentralized consent protocol for AI—like HTTP but for data rights, agent permissions, and user sovereignty. This is an RFC, not a product.",
+        description: "AI companies are getting sued over training data, agents operate with no permission framework, and users can&#39;t control their AI profiles. I wrote four open standards (LLMConsent) to create a decentralized consent protocol for AI - like HTTP but for data rights, agent permissions, and user sovereignty. This is an RFC, not a product.",
         section: "Posts",
         handler: () => {
           
