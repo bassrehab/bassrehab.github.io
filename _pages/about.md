@@ -18,7 +18,7 @@ social: false
     <!-- Oversized Hero -->
     <section class="hero-editorial">
         <div class="hero-content">
-            <div class="hero-label">Technical Leader • Inventor • Researcher</div>
+            <div class="hero-label">Engineering Leader & AI Systems Architect</div>
             <h1 class="hero-headline">
                 Architecting the
                 <span class="highlight">Future of Data & Applied AI</span>
@@ -158,8 +158,9 @@ social: false
             LLM inference acceleration from first principles - speculative decoding, tree speculation, KV-cache compression, and diffusion efficiency with memory-bandwidth analysis
         </p>
         <div class="featured-links">
-            <a href="/blog/2025/making-llm-faster/" class="innovation-link" target="_blank"><i class="fas fa-book"></i> Deep Dive</a>
-            <a href="https://github.com/bassrehab/speculative-decoding" class="innovation-link" target="_blank"><i class="fab fa-github"></i> GitHub Repo</a>
+            <a href="https://github.com/bassrehab/speculative-decoding" class="innovation-link" target="_blank"><i class="fab fa-github"></i> speculative-decoding</a>
+            <span style="margin: 0 0.5rem;">•</span>
+            <a href="https://github.com/bassrehab/triton-kernels" class="innovation-link" target="_blank"><i class="fab fa-github"></i> triton-kernels</a>
         </div>
     </div>
 
@@ -167,14 +168,14 @@ social: false
     <section class="innovation-showcase">
         <div class="showcase-header">
             <div class="showcase-label">Innovations & Research</div>
-            <h2 class="showcase-title">Frameworks That Move the Industry</h2>
+            <h2 class="showcase-title">Technical Innovations</h2>
         </div>
 
-        <div class="innovation-grid">
-            <article class="innovation-feature">
-                <div class="innovation-visual">UPIR</div>
-                <div class="innovation-content">
+        <div class="innovation-timeline">
+            <article class="timeline-item timeline-left">
+                <div class="timeline-content">
                     <div class="innovation-year">2025</div>
+                    <div class="timeline-badge">UPIR</div>
                     <h3>Automated Distributed Systems Synthesis</h3>
                     <p>
                         Revolutionary approach combining formal verification, program synthesis, and reinforcement learning to automatically generate verified implementations from specifications. Achieves 274x speedup for complex systems with 60% latency reduction.
@@ -191,10 +192,10 @@ social: false
                 </div>
             </article>
 
-            <article class="innovation-feature">
-                <div class="innovation-visual">FTCS</div>
-                <div class="innovation-content">
+            <article class="timeline-item timeline-right">
+                <div class="timeline-content">
                     <div class="innovation-year">2025</div>
+                    <div class="timeline-badge">FTCS</div>
                     <h3>Field-Theoretic Context System</h3>
                     <p>
                         Novel approach modeling context as interacting fields rather than discrete states, enabling natural context flow and dynamic evolution in AI systems.
@@ -205,10 +206,10 @@ social: false
                 </div>
             </article>
 
-            <article class="innovation-feature">
-                <div class="innovation-visual">ETLC</div>
-                <div class="innovation-content">
-                    <div class="innovation-year">2025</div>
+            <article class="timeline-item timeline-left">
+                <div class="timeline-content">
+                    <div class="innovation-year">2024</div>
+                    <div class="timeline-badge">ETLC</div>
                     <h3>Context-First Data Processing</h3>
                     <p>
                         Framework reimagining data integration for the GenAI era by adding semantic, relational, operational, and behavioral context to pipelines.
@@ -219,10 +220,10 @@ social: false
                 </div>
             </article>
 
-            <article class="innovation-feature">
-                <div class="innovation-visual"><i class="fas fa-robot"></i></div>
-                <div class="innovation-content">
-                    <div class="innovation-year">2025</div>
+            <article class="timeline-item timeline-right">
+                <div class="timeline-content">
+                    <div class="innovation-year">2024</div>
+                    <div class="timeline-badge"><i class="fas fa-robot"></i></div>
                     <h3>ARTEMIS Multi-Agent Framework</h3>
                     <p>
                         Adaptive framework for multi-agent decision systems using structured debate protocols to enhance enterprise decision-making.
@@ -233,31 +234,44 @@ social: false
                 </div>
             </article>
 
-              <article class="innovation-feature">
-                <div class="innovation-visual"><i class="fas fa-bolt"></i></div>
-                <div class="innovation-content">
+            <article class="timeline-item timeline-left">
+                <div class="timeline-content">
                     <div class="innovation-year">2025</div>
-                    <h3>Speculative Decoding & Inference Optimization</h3>
+                    <div class="timeline-badge"><i class="fas fa-bolt"></i></div>
+                    <h3>LLM Inference Efficiency Research</h3>
                     <p>
-                        Reference implementations of LLM inference acceleration techniques including speculative decoding, tree speculation, KV-cache compression, and diffusion model efficiency. Demonstrates
-            memory-bandwidth optimization with roofline analysis.
+                        Reference implementations of acceleration techniques including speculative decoding, tree speculation, EAGLE, Medusa, KV-cache compression, and custom Triton kernels. Achieves 8.1x speedup with 88% peak bandwidth utilization on A100 GPUs.
                     </p>
                     <div style="margin-top: 0.5rem;">
                         <a href="https://github.com/bassrehab/speculative-decoding" class="innovation-link" target="_blank">
-                            GitHub Repo <i class="fas fa-arrow-right"></i>
+                            speculative-decoding <i class="fas fa-arrow-right"></i>
                         </a>
                         <span style="margin: 0 0.5rem;">•</span>
-                        <a href="/blog/2025/making-llm-faster/" class="innovation-link">
-                            Deep Dive Post <i class="fas fa-arrow-right"></i>
+                        <a href="https://github.com/bassrehab/triton-kernels" class="innovation-link" target="_blank">
+                            triton-kernels <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
             </article>
 
-            <article class="innovation-feature">
-                <div class="innovation-visual"><i class="fas fa-shield-alt"></i></div>
-                <div class="innovation-content">
+            <article class="timeline-item timeline-right">
+                <div class="timeline-content">
+                    <div class="innovation-year">2025</div>
+                    <div class="timeline-badge"><i class="fas fa-shield-alt"></i></div>
+                    <h3>CatchMe - Intelligent Trust Engine</h3>
+                    <p>
+                        Industry-agnostic agentic AI system for enterprise-scale trust decisions across Finance, Healthcare, Insurance, Cybersecurity, and Supply Chain. Features APLS (self-learning pattern synthesis) and five-level cascade routing, achieving 86% cost reduction with sub-50ms latency. Winner - Google Cloud PSO Hackathon JAPAC Regionals, qualified for World Finals.
+                    </p>
+                    <div style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--global-theme-color);">
+                        <strong>Google Technical Disclosures - Pending: APLS & Cascade Routing</strong>
+                    </div>
+                </div>
+            </article>
+
+            <article class="timeline-item timeline-left">
+                <div class="timeline-content">
                     <div class="innovation-year">2021-2025</div>
+                    <div class="timeline-badge"><i class="fas fa-shield-alt"></i></div>
                     <h3>Privacy & Consent Protocols</h3>
                     <p>
                         Open-source frameworks for secure data sharing and consent management. OLP & OConsent (2021-2022) focused on blockchain-based GDPR compliance. LLMConsent (2025) extends this to AI training data, agent permissions, and user sovereignty.
@@ -328,6 +342,132 @@ social: false
     </section>
 
 </div>
+
+<style>
+/* Innovation Timeline - Magazine Editorial Style */
+.innovation-timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 3rem auto 0;
+    padding: 2rem 0;
+}
+
+/* Central vertical line */
+.innovation-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom,
+        var(--global-theme-color) 0%,
+        var(--global-divider-color) 50%,
+        var(--global-theme-color) 100%);
+    transform: translateX(-50%);
+}
+
+/* Timeline items */
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    width: 100%;
+}
+
+/* Left-aligned items */
+.timeline-left {
+    padding-right: 52%;
+    text-align: right;
+}
+
+.timeline-left .timeline-content {
+    padding-right: 2.5rem;
+}
+
+/* Right-aligned items */
+.timeline-right {
+    padding-left: 52%;
+    text-align: left;
+}
+
+.timeline-right .timeline-content {
+    padding-left: 2.5rem;
+}
+
+/* Timeline badges (dots on the central line) */
+.timeline-badge {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3.5rem;
+    height: 3.5rem;
+    background: var(--global-bg-color);
+    border: 3px solid var(--global-theme-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.75rem;
+    color: var(--global-theme-color);
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Timeline content cards */
+.timeline-content {
+    background: var(--global-card-bg-color, var(--global-bg-color));
+    border: 1px solid var(--global-divider-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    border-color: var(--global-theme-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.timeline-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0.5rem 0 0.75rem;
+    color: var(--global-text-color);
+}
+
+.timeline-content p {
+    margin: 0;
+    color: var(--global-text-color-light);
+    line-height: 1.6;
+}
+
+/* Mobile responsive - stack vertically */
+@media (max-width: 768px) {
+    .innovation-timeline::before {
+        left: 1.75rem;
+    }
+
+    .timeline-left,
+    .timeline-right {
+        padding-left: 4.5rem;
+        padding-right: 0;
+        text-align: left;
+    }
+
+    .timeline-left .timeline-content,
+    .timeline-right .timeline-content {
+        padding: 1.5rem;
+    }
+
+    .timeline-badge {
+        left: 1.75rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 0.65rem;
+    }
+}
+</style>
 
 <script>
 // Load GitHub data from static JSON file (generated at build time with token)

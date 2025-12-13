@@ -208,6 +208,11 @@ nav_order: 5
     display: none !important;
   }
 }
+
+/* Research project cards spacing */
+article.research-project-card {
+  margin-bottom: 3rem;
+}
 </style>
 
 <div class="cv-editorial">
@@ -216,7 +221,10 @@ nav_order: 5
   <div class="cv-hero">
     <div class="cv-hero-content">
       <h1>Curriculum Vitae</h1>
-      <p class="subtitle">Technical Leader • Inventor • Researcher</p>
+      <p class="subtitle">Engineering Leader & AI Systems Architect</p>
+      <p class="subtitle-detail" style="font-size: 1rem; color: var(--global-text-color-light); margin-top: 0.5rem; margin-bottom: 1.5rem;">
+        Member of Google Cloud's innovation and transformation team architecting enterprise Data & AI solutions at scale across JAPAC
+      </p>
       <a href="/assets/pdf/cv.pdf" class="cv-download" download>
         <i class="fas fa-download"></i>
         Download PDF
@@ -265,17 +273,42 @@ nav_order: 5
           <div class="job-period">January 2021 - Present</div>
         </div>
         <p class="job-description">
-          Built and lead Google Cloud's Data Analytics practice across Southeast Asia (7 countries) while serving as Site Lead overseeing regional delivery operations. Member of <a href="https://cloud.google.com/consulting/innovation-and-transformation" target="_blank">delta</a> - Google Cloud's elite innovation and transformation team architecting enterprise AI solutions at scale across JAPAC.
+          Dual-track role combining technical innovation leadership with regional delivery management. Built Google Cloud's Data Analytics practice across Southeast Asia while serving as Site Lead overseeing cross-practice operations. Member of <a href="https://cloud.google.com/consulting/innovation-and-transformation" target="_blank">delta</a> - Google Cloud's innovation and transformation team architecting enterprise AI solutions at scale.
         </p>
-        <div class="job-highlights">
-          <ul>
-            <li>Direct a \$ XXM+ Data Analytics delivery portfolio across JAPAC while simultaneously overseeing a \$ XXM+ cross-practice delivery portfolio as Site Lead for Southeast Asia</li>
-            <li>Spearheaded organization-wide agentic AI transformation across PSO JAPAC, driving operationalization and adoption for both external customer solutions and internal productivity gains</li>
-            <li>Published multiple technical innovations including UPIR (distributed systems synthesis), FTCS (Field-Theoretic Context System), ETLC (Extract, Transform, Load, Contextualize) and ARTEMIS frameworks</li>
-            <li>Led critical interventions for strategic accounts across JAPAC including major financial services and consumer electronics manufacturers</li>
-            <li>Executed high-value projects including 12K+ user analytics migrations, first Data & AI Centers of Excellence, and Data Monetization Platforms</li>
-            <li>As co-Site Lead, scaled regional delivery excellence contributing to 100% annual revenue target attainment with 97% CSAT</li>
-          </ul>
+
+        <!-- Technical Innovation & Research -->
+        <div class="role-section" style="margin-top: 1.5rem;">
+          <h4 style="font-size: 1.125rem; font-weight: 700; color: var(--global-text-color); margin-bottom: 0.75rem; border-left: 3px solid var(--global-theme-color); padding-left: 0.75rem;">
+            Technical Innovation & Research (Official IP)
+          </h4>
+          <div class="job-highlights">
+            <ul>
+              <li><strong>LLM Inference Efficiency:</strong> Research on speculative decoding, custom Triton kernels, and KV-cache compression strategies. Filed Google Technical Disclosure on hybrid compression systems for multi-tenant serving optimization.</li>
+              <li><strong>Distributed Systems Synthesis (UPIR):</strong> Invented neuro-symbolic framework combining formal verification and reinforcement learning to automate distributed system generation - achieved 274x speedup in synthesis with 60% latency reduction.</li>
+              <li><strong>Context Architecture (FTCS):</strong> Designed Field-Theoretic Context System modeling context as continuous fields to address long-horizon memory fragmentation in AI agents. Published as Google Technical Disclosure.</li>
+              <li><strong>Data Processing for GenAI (ETLC):</strong> Authored whitepaper introducing Extract, Transform, Load, Contextualize framework adding semantic, relational, and behavioral context to data pipelines for RAG and agentic systems.</li>
+              <li><strong>Multi-Agent Framework (ARTEMIS):</strong> Created adaptive debate-driven decision framework for enterprise multi-agent systems. Published as Google Technical Disclosure.</li>
+              <li><strong>Intelligent Trust Engine (CatchMe):</strong> Developed industry-agnostic agentic AI system for enterprise-scale trust decisions across Finance, Healthcare, Insurance, Cybersecurity, and Supply Chain. Features APLS (self-learning pattern synthesis) and five-level cascade routing achieving 86% cost reduction with sub-50ms latency. Won Google Cloud PSO Hackathon JAPAC Regionals, qualified for World Finals. Two pending Google Technical Disclosures.</li>
+              <li><strong>Agentic AI Transformation:</strong> Pioneered organization-wide adoption of agentic AI across PSO JAPAC for both customer solutions and internal productivity, including autonomous data engineering agents.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Strategic Leadership & Delivery -->
+        <div class="role-section" style="margin-top: 1.5rem;">
+          <h4 style="font-size: 1.125rem; font-weight: 700; color: var(--global-text-color); margin-bottom: 0.75rem; border-left: 3px solid var(--global-theme-color); padding-left: 0.75rem;">
+            Strategic Leadership & Delivery
+          </h4>
+          <div class="job-highlights">
+            <ul>
+              <li><strong>Practice Leadership:</strong> Built Data Analytics practice for Southeast Asia from 0 to 1, establishing the region's premier capability serving 7 countries with strategic enterprise clients.</li>
+              <li><strong>Regional Operations:</strong> Serve as Site Lead overseeing PSO Southeast Asia delivery operations, directing cross-functional teams while maintaining 97% CSAT and contributing to 100% annual revenue target attainment.</li>
+              <li><strong>Portfolio Management:</strong> Direct \$ XXM+ Data Analytics delivery portfolio across JAPAC while simultaneously overseeing \$ XXM+ cross-practice portfolio as regional Site Lead.</li>
+              <li><strong>Strategic Interventions:</strong> Led critical engagements for JAPAC strategic accounts including major financial services institutions and consumer electronics manufacturers, ensuring delivery excellence and client success.</li>
+              <li><strong>Enterprise Delivery:</strong> Executed high-impact projects including 12K+ user analytics migrations, first Data & AI Centers of Excellence, Data Monetization Platforms, and petabyte-scale data platform modernizations.</li>
+              <li><strong>Executive Advisory:</strong> Partner with C-level stakeholders (CTOs, CDOs) to define data modernization and AI transformation roadmaps, translating technical capabilities into business outcomes.</li>
+            </ul>
+          </div>
         </div>
       </article>
 
@@ -331,6 +364,118 @@ nav_order: 5
         <p class="job-description">
           Progressively advanced through roles in software development, systems integration, and technical consulting within financial services and algorithmic trading domains.
         </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Research & Open Source Engineering Section -->
+  <section class="cv-section">
+    <div class="section-label">Technical Innovation</div>
+    <h2 class="section-title">Research & Open Source Engineering</h2>
+
+    <div class="research-projects">
+      <article class="research-project-card">
+        <div class="project-period">2025 - Present</div>
+        <h3 class="project-title">LLM Inference Efficiency Research</h3>
+        <div class="project-status" style="font-size: 0.875rem; color: var(--global-theme-color); font-weight: 600; margin-bottom: 0.75rem;">
+          Google Technical Disclosure - Pending
+        </div>
+        <p class="project-description">
+          Research implementations addressing the fundamental bottleneck in LLM inference: memory-bandwidth constraints rather than compute limits. Explores acceleration through speculative decoding, custom GPU kernels, and quantization strategies.
+        </p>
+        <div class="project-highlights">
+          <ul>
+            <li><strong>Speculative Decoding Suite:</strong> Six techniques including standard speculation, tree speculation, EAGLE-style drafting, Medusa multi-head, KV-cache compression (8x compression via INT8/INT4 quantization + H2O eviction), and diffusion efficiency optimizations. Production systems report 2-3x inference speedup.</li>
+            <li><strong>Custom Triton Kernels:</strong> High-performance GPU kernels for transformer operations - RMSNorm (8.1x faster, 88% peak bandwidth), fused RMSNorm+Residual (6.0x speedup), SwiGLU (1.6x), INT8 GEMM (2x memory savings). Demonstrates memory-bandwidth optimization from 11% to 88% of A100 peak.</li>
+            <li><strong>Device-Agnostic Implementation:</strong> Supports CUDA, Apple Silicon (MPS), and CPU with full KV-cache integration reducing complexity from O(seq²) to O(seq).</li>
+          </ul>
+        </div>
+        <div class="project-links" style="margin-top: 1rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <a href="https://github.com/bassrehab/speculative-decoding" target="_blank" style="color: var(--global-theme-color); text-decoration: none; font-size: 0.875rem; font-weight: 600;">
+            <i class="fab fa-github"></i> speculative-decoding
+          </a>
+          <span style="color: var(--global-text-color-light);">•</span>
+          <a href="https://github.com/bassrehab/triton-kernels" target="_blank" style="color: var(--global-theme-color); text-decoration: none; font-size: 0.875rem; font-weight: 600;">
+            <i class="fab fa-github"></i> triton-kernels
+          </a>
+        </div>
+      </article>
+
+      <article class="research-project-card">
+        <div class="project-period">2025 - Present</div>
+        <h3 class="project-title">
+          <a href="https://ai-metacognition-toolkit.subhadipmitra.com/" target="_blank">AI Metacognition Toolkit</a>
+        </h3>
+        <p class="project-description">
+          Production-ready framework for systematic reasoning and behavioral monitoring in AI systems. Enables detection of self-awareness patterns and decision-making shifts in large language models through statistical divergence analysis.
+        </p>
+        <div class="project-highlights">
+          <ul>
+            <li><strong>Bayesian Situational Awareness:</strong> KL-divergence based detection of when AI models exhibit behavioral changes or "Observer Effects" during interaction.</li>
+            <li><strong>Counterfactual Analysis:</strong> Chain-of-thought reasoning attribution for causal decision-making transparency.</li>
+            <li><strong>Production Monitoring:</strong> Real-time alerting on behavioral divergence with automated drift detection.</li>
+            <li><strong>Engineering Rigor:</strong> 275 test cases, 95% code coverage, type-safe implementation, published on PyPI.</li>
+          </ul>
+        </div>
+        <div class="project-links" style="margin-top: 1rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <a href="https://pypi.org/project/ai-metacognition-toolkit/" target="_blank" style="color: var(--global-theme-color); text-decoration: none; font-size: 0.875rem; font-weight: 600;">
+            <i class="fas fa-cube"></i> PyPI Package
+          </a>
+          <span style="color: var(--global-text-color-light);">•</span>
+          <a href="https://github.com/bassrehab/ai-metacognition-toolkit" target="_blank" style="color: var(--global-theme-color); text-decoration: none; font-size: 0.875rem; font-weight: 600;">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <span style="color: var(--global-text-color-light);">•</span>
+          <a href="https://ai-metacognition-toolkit.subhadipmitra.com/" target="_blank" style="color: var(--global-theme-color); text-decoration: none; font-size: 0.875rem; font-weight: 600;">
+            <i class="fas fa-book"></i> Documentation
+          </a>
+        </div>
+      </article>
+
+      <article class="research-project-card">
+        <div class="project-period">2025</div>
+        <h3 class="project-title">
+          <a href="https://www.tdcommons.org/dpubs_series/8852/" target="_blank">UPIR - Distributed Systems Synthesis</a>
+        </h3>
+        <p class="project-description">
+          Neuro-symbolic framework combining formal verification, program synthesis, and reinforcement learning to automatically generate verified distributed system implementations from specifications.
+        </p>
+        <div class="project-highlights">
+          <ul>
+            <li><strong>Compositional Verification:</strong> SMT-based verification engine with proof caching achieving 274x speedup for 64-component systems.</li>
+            <li><strong>CEGIS Synthesis:</strong> Counterexample-guided inductive synthesis with constrained PPO optimization preserving formal guarantees.</li>
+            <li><strong>Performance:</strong> 60.1% latency reduction, 194.5% throughput increase, 89.9% pattern reuse potential in benchmark tests.</li>
+          </ul>
+        </div>
+        <div class="project-links" style="margin-top: 1rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <a href="https://www.tdcommons.org/dpubs_series/8852/" target="_blank" style="color: var(--global-theme-color); text-decoration: none; font-size: 0.875rem; font-weight: 600;">
+            <i class="fas fa-file-alt"></i> Technical Disclosure
+          </a>
+          <span style="color: var(--global-text-color-light);">•</span>
+          <a href="https://github.com/bassrehab/upir" target="_blank" style="color: var(--global-theme-color); text-decoration: none; font-size: 0.875rem; font-weight: 600;">
+            <i class="fab fa-github"></i> GitHub Repository
+          </a>
+        </div>
+      </article>
+
+      <article class="research-project-card">
+        <div class="project-period">2025</div>
+        <h3 class="project-title">CatchMe - Intelligent Trust Engine</h3>
+        <div class="project-status" style="font-size: 0.875rem; color: var(--global-theme-color); font-weight: 600; margin-bottom: 0.75rem;">
+          Google Technical Disclosures - Pending: APLS & Cascade Routing
+        </div>
+        <p class="project-description">
+          Industry-agnostic agentic AI system for enterprise-scale trust decisions across Finance, Healthcare, Insurance, Cybersecurity, and Supply Chain. Uses adversarial debate protocols (prosecutor/defense/judge) to filter hallucinations and build audit trails for regulated environments.
+        </p>
+        <div class="project-highlights">
+          <ul>
+            <li><strong>APLS (Automated Pattern Learning System):</strong> Self-learning system that observes expensive AI decisions and automatically synthesizes cheaper deterministic rules over time. Achieves 76% cost reduction after 6 months of pattern learning.</li>
+            <li><strong>Five-Level Cascade Routing:</strong> Intelligent transaction routing based on cost-benefit analysis. Automatically escalates high-value/high-risk decisions to AI reasoning while routing routine cases through deterministic rules (e.g., $50K wire with 75% confidence → AI escalation with ROI 1,250,000x). Sub-50ms latency for most transactions.</li>
+            <li><strong>Multi-Agent Consensus:</strong> Adversarial debate system where agents act as prosecutor, defense, and judge to ensure decision quality and create compliance audit trails for regulated industries.</li>
+            <li><strong>Production Impact:</strong> 86% cost reduction vs AI-only approaches ($20.7K vs $150K for 10M monthly transactions), serving Finance (fraud detection), Healthcare (claims processing), Insurance (policy validation), Cybersecurity (anomaly detection), and Supply Chain (verification).</li>
+            <li><strong>Recognition:</strong> Winner - Google Cloud PSO Hackathon JAPAC Regionals, Qualified for World Finals. Built on Vertex AI, Gemini 2.x, BigQuery ML, Cloud Run.</li>
+          </ul>
+        </div>
       </article>
     </div>
   </section>

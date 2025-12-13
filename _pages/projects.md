@@ -637,9 +637,6 @@ header.post-header {
           <a href="https://github.com/bassrehab/speculative-decoding" class="project-link primary" target="_blank">
             <i class="fab fa-github"></i> GitHub
           </a>
-          <a href="/blog/2025/making-llm-faster/" class="project-link" target="_blank">
-            <i class="fas fa-pen"></i> Blog Post
-          </a>
         </div>
 
         <div class="impact-metrics">
@@ -654,6 +651,55 @@ header.post-header {
           <div class="metric">
             <div class="metric-value">MIT</div>
             <div class="metric-label">License</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Triton Kernels -->
+      <article class="project-card" data-category="ai">
+        <span class="project-status">Active</span>
+        <h3 class="project-title">
+          <a href="https://github.com/bassrehab/triton-kernels" target="_blank">
+            Triton Kernels for LLM Inference
+          </a>
+        </h3>
+        <p class="project-description">
+          High-performance GPU kernels for LLM inference operations using OpenAI Triton. Educational implementations demonstrating memory-bandwidth optimization techniques for transformer operations on A100 GPUs.
+        </p>
+
+        <ul class="project-highlights">
+          <li>RMSNorm kernel: 8.1x faster than PyTorch, achieving 88% of A100 peak bandwidth (1365 GB/s)</li>
+          <li>Fused RMSNorm+Residual: 6.0x speedup through operation fusion</li>
+          <li>SwiGLU activation: 1.6x improvement with custom kernel</li>
+          <li>INT8 GEMM: 2x memory savings through weight quantization</li>
+        </ul>
+
+        <div class="tech-stack">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Triton</span>
+          <span class="tech-tag">CUDA</span>
+          <span class="tech-tag">PyTorch</span>
+          <span class="tech-tag">GPU Optimization</span>
+        </div>
+
+        <div class="project-links">
+          <a href="https://github.com/bassrehab/triton-kernels" class="project-link primary" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+        </div>
+
+        <div class="impact-metrics">
+          <div class="metric">
+            <div class="metric-value">2025</div>
+            <div class="metric-label">Released</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">8.1x</div>
+            <div class="metric-label">RMSNorm Speedup</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">88%</div>
+            <div class="metric-label">Peak Bandwidth</div>
           </div>
         </div>
       </article>
