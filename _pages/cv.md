@@ -222,9 +222,6 @@ article.research-project-card {
     <div class="cv-hero-content">
       <h1>Curriculum Vitae</h1>
       <p class="subtitle">Engineering Leader & AI Systems Architect</p>
-      <p class="subtitle-detail" style="font-size: 1rem; color: var(--global-text-color-light); margin-top: 0.5rem; margin-bottom: 1.5rem;">
-        Member of Google Cloud's innovation and transformation team architecting enterprise Data & AI solutions at scale across JAPAC
-      </p>
       <a href="/assets/pdf/cv.pdf" class="cv-download" download>
         <i class="fas fa-download"></i>
         Download PDF
@@ -256,6 +253,15 @@ article.research-project-card {
       <strong>Note:</strong> This is a public version with certain details removed for privacy. For a comprehensive resume including specific project metrics and contact details, please reach out via <a href="mailto:contact@subhadipmitra.com">email</a> or <a href="https://www.linkedin.com/in/subhadip-mitra/" target="_blank">LinkedIn</a>.
     </p>
   </div>
+
+  <!-- Summary Section -->
+  <section class="cv-section">
+    <div class="section-label">Summary</div>
+ <p>
+ Senior Engineering Leader with 15+ years of experience bridging <b>fundamental AI research</b> and <b>enterprise-scale system delivery</b>. Currently leading Google Cloud’s Data & Analytics practice for Southeast Asia while driving internal innovations on <b>LLM inference efficiency</b> and <b>multi-agent systems</b>. <br /> <br />
+ Proven track record of operating as a "Player-Coach": managing regional engineering portfolios while simultaneously architecting and filing patents for novel frameworks (UPIR, FTCS, Speculative Decoding). Expert in translating theoretical computer science into deployed, petabyte-scale cloud solutions.
+ </p>
+  </section>
 
   <!-- Experience Section -->
   <section class="cv-section">
@@ -366,6 +372,7 @@ article.research-project-card {
         </p>
       </article>
     </div>
+
   </section>
 
   <!-- Research & Open Source Engineering Section -->
@@ -478,6 +485,7 @@ article.research-project-card {
         </div>
       </article>
     </div>
+
   </section>
 
   <!-- Education Section -->
@@ -517,6 +525,7 @@ article.research-project-card {
         </div>
       </div>
     </div>
+
   </section>
 
   <!-- Publications Section -->
@@ -596,6 +605,7 @@ article.research-project-card {
         </p>
       </article>
     </div>
+
   </section>
 
   <!-- Skills Section -->
@@ -690,6 +700,7 @@ article.research-project-card {
         </div>
       </div>
     </div>
+
   </section>
 
   <!-- Projects Section -->
@@ -786,6 +797,7 @@ article.research-project-card {
         </div>
       </article>
     </div>
+
   </section>
 
 </div>
