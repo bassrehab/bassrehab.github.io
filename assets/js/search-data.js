@@ -214,17 +214,6 @@ ninja.data = [{
             window.location.href = "/blog/2025/implementing-model-context-protocol/";
           
         },
-      },{id: "post-making-llms-faster-my-deep-dive-into-speculative-decoding",
-        
-          title: "Making LLMs Faster: My Deep Dive into Speculative Decoding",
-        
-        description: "A practical framework for evaluating your multi-agent context management strategy. From ad-hoc string concatenation to self-evolving context systems - where does your architecture stand?",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2025/making-llm-faster/";
-          
-        },
       },{id: "post-engineering-autonomous-multi-agent-systems-a-technical-deep-dive-into-telecom-customer-service",
         
           title: "Engineering Autonomous Multi-Agent Systems - A Technical Deep Dive into Telecom Customer Service...",
