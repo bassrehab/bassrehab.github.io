@@ -325,8 +325,74 @@
   .cv-page ul li {
     page-break-inside: avoid;
   }
-  
+
   .cv-page h2 {
     page-break-after: avoid;
   }
+}
+
+/* Skills section styling */
+.skills-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.skill-category {
+  margin-bottom: 1rem;
+}
+
+.skill-category-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--global-text-color);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skill-category-title i {
+  color: var(--global-theme-color);
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-tag {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border-radius: 6px;
+  background-color: var(--global-code-bg-color);
+  color: var(--global-text-color);
+  border: 1px solid var(--global-divider-color);
+  transition: all 0.2s ease;
+}
+
+.skill-tag:hover {
+  background-color: var(--global-theme-color);
+  color: var(--global-bg-color);
+  border-color: var(--global-theme-color);
+}
+
+/* Dark mode specific adjustments for skill tags */
+html[data-theme="dark"] .skill-tag,
+html.dark-mode .skill-tag,
+[data-theme="dark"] .skill-tag {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  color: var(--global-text-color) !important;
+}
+
+html[data-theme="dark"] .skill-tag:hover,
+html.dark-mode .skill-tag:hover,
+[data-theme="dark"] .skill-tag:hover {
+  background-color: var(--global-theme-color) !important;
+  color: var(--global-bg-color) !important;
+  border-color: var(--global-theme-color) !important;
 }

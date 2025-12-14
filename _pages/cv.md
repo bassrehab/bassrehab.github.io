@@ -642,6 +642,8 @@ article.research-project-card {
           <span class="skill-tag">Real-Time Processing</span>
           <span class="skill-tag">Data Mesh & Fabric</span>
           <span class="skill-tag">Apache Spark</span>
+          <span class="skill-tag">Apache Hadoop</span>
+          <span class="skill-tag">Apache HBase</span>
           <span class="skill-tag">Apache Flink</span>
           <span class="skill-tag">Apache Kafka</span>
           <span class="skill-tag">Apache Iceberg</span>
@@ -658,10 +660,15 @@ article.research-project-card {
           <span class="skill-tag">Large Language Models</span>
           <span class="skill-tag">RAG Architecture</span>
           <span class="skill-tag">Vector Databases</span>
+          <span class="skill-tag">PyTorch</span>
+          <span class="skill-tag">LangChain</span>
+          <span class="skill-tag">LangGraph</span>
+          <span class="skill-tag">LlamaIndex</span>
+          <span class="skill-tag">Google ADK</span>
+          <span class="skill-tag">MCP</span>
+          <span class="skill-tag">A2A Protocol</span>
+          <span class="skill-tag">MLflow</span>
           <span class="skill-tag">LLMOps</span>
-          <span class="skill-tag">Responsible AI</span>
-          <span class="skill-tag">Model Governance</span>
-          <span class="skill-tag">RLHF</span>
         </div>
       </div>
 
@@ -674,11 +681,11 @@ article.research-project-card {
           <span class="skill-tag">Google Cloud Platform</span>
           <span class="skill-tag">BigQuery</span>
           <span class="skill-tag">Vertex AI</span>
+          <span class="skill-tag">Dataflow</span>
+          <span class="skill-tag">Cloud Composer</span>
           <span class="skill-tag">GKE</span>
           <span class="skill-tag">Terraform</span>
-          <span class="skill-tag">Infrastructure as Code</span>
-          <span class="skill-tag">Serverless</span>
-          <span class="skill-tag">Microservices</span>
+          <span class="skill-tag">Kubernetes</span>
         </div>
       </div>
 
@@ -689,14 +696,14 @@ article.research-project-card {
         </h3>
         <div class="skill-tags">
           <span class="skill-tag">Python</span>
-          <span class="skill-tag">Java</span>
           <span class="skill-tag">SQL</span>
-          <span class="skill-tag">C/C++</span>
-          <span class="skill-tag">JavaScript</span>
           <span class="skill-tag">Scala</span>
+          <span class="skill-tag">Triton</span>
+          <span class="skill-tag">CUDA</span>
           <span class="skill-tag">Algorithm Design</span>
           <span class="skill-tag">Formal Verification</span>
-          <span class="skill-tag">High-Performance Computing</span>
+          <span class="skill-tag">Program Synthesis</span>
+          <span class="skill-tag">Distributed Systems</span>
         </div>
       </div>
     </div>
