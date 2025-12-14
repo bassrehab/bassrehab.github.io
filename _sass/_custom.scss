@@ -63,6 +63,30 @@ abbr.badge {
   color: var(--global-bg-color) !important;
 }
 
+abbr[title] {
+  text-decoration: underline dotted;
+  cursor: help;
+  position: relative;
+}
+
+abbr[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--global-text-color);
+  color: var(--global-bg-color);
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  max-width: 300px;
+  white-space: normal;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
 .newsletter-signup {
   background-color: var(--global-code-bg-color); /* Light background color */
   color: var(--global-text-color);

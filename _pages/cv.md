@@ -259,7 +259,7 @@ article.research-project-card {
     <div class="section-label">Summary</div>
  <p>
  Senior Engineering Leader with 15+ years of experience bridging <b>fundamental AI research</b> and <b>enterprise-scale system delivery</b>. Currently leading Google Cloud’s Data & Analytics practice for Southeast Asia while driving internal innovations on <b>LLM inference efficiency</b> and <b>multi-agent systems</b>. <br /> <br />
- Proven track record of operating as a "Player-Coach": managing regional engineering portfolios while simultaneously architecting and filing patents for novel frameworks (UPIR, FTCS, Speculative Decoding). Expert in translating theoretical computer science into deployed, petabyte-scale cloud solutions.
+ Proven track record of operating as a "Player-Coach": managing regional engineering portfolios while simultaneously architecting and patenting novel frameworks (<abbr title="Unified Plan Intermediate Representation - Automated synthesis and verification of distributed systems">UPIR</abbr>, <abbr title="Adaptive Reasoning and Evaluation Framework for Multi-agent Intelligent Systems">ARTEMIS</abbr>, <abbr title="Field-Theoretic Context System - Mathematical framework for LLM context management">FTCS</abbr>, <abbr title="Inference optimization technique for large language models">Speculative Decoding</abbr>).
  </p>
   </section>
 
