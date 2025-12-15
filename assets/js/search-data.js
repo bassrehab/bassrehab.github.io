@@ -93,7 +93,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "https://ai-metacognition-toolkit.subhadipmitra.com/";
               },
-            },{id: "post-the-mcp-maturity-model-evaluating-your-multi-agent-context-strategy",
+            },{id: "post-why-i-built-a-spark-native-llm-evaluation-framework-and-what-i-learned",
+        
+          title: "Why I Built a Spark-Native LLM Evaluation Framework (And What I Learned)",
+        
+        description: "A deep dive into building distributed LLM evaluation infrastructure that actually scales - architectural decisions, trade-offs, and lessons learned.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/building-spark-llm-eval/";
+          
+        },
+      },{id: "post-the-mcp-maturity-model-evaluating-your-multi-agent-context-strategy",
         
           title: "The MCP Maturity Model: Evaluating Your Multi-Agent Context Strategy",
         
