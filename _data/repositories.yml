@@ -4,6 +4,7 @@ github_users:
 github_repos:
   - bassrehab/speculative-decoding
   - bassrehab/triton-kernels
+  - bassrehab/spark-llm-eval
   - bassrehab/upir
   - bassrehab/ai-metacognition-toolkit
   - bassrehab/llmconsent-standards
