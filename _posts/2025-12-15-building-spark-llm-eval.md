@@ -84,16 +84,18 @@ There's also something to be said for Spark's maturity around exactly-once seman
 
 Before diving into the architecture, here's how spark-llm-eval stacks up against other popular frameworks:
 
-| Feature                  | spark-llm-eval | DeepEval   | Ragas     | LangSmith |
-| ------------------------ | -------------- | ---------- | --------- | --------- |
-| Spark-native             | ✅             | ❌         | ❌        | ❌        |
-| Distributed execution    | ✅ Native      | ⚠️ Manual  | ⚠️ Manual | ❌        |
-| Confidence intervals     | ✅ Built-in    | ❌         | ❌        | ❌        |
-| Delta Lake integration   | ✅             | ❌         | ❌        | ❌        |
-| MLflow tracking          | ✅             | ❌         | ❌        | ❌        |
-| Multi-provider inference | ✅             | ✅         | ✅        | ✅        |
-| LLM-as-judge             | ✅             | ✅         | ✅        | ✅        |
-| Agent evaluation         | ✅             | ⚠️ Limited | ❌        | ✅        |
+| Feature                  | spark-llm-eval | DeepEval | Ragas  | LangSmith |
+| ------------------------ | -------------- | -------- | ------ | --------- |
+| Spark-native             | Yes            | -        | -      | -         |
+| Distributed execution    | Native         | Manual   | Manual | -         |
+| Confidence intervals     | Built-in       | -        | -      | -         |
+| Delta Lake integration   | Yes            | -        | -      | -         |
+| MLflow tracking          | Yes            | -        | -      | -         |
+| Multi-provider inference | Yes            | Yes      | Yes    | Yes       |
+| LLM-as-judge             | Yes            | Yes      | Yes    | Yes       |
+| Agent evaluation         | Yes            | Limited  | -      | Yes       |
+
+<br />
 
 The key differentiator isn't any single feature - it's that spark-llm-eval treats distributed execution and statistical rigor as first-class concerns rather than afterthoughts.
 
