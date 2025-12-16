@@ -97,6 +97,37 @@ Before diving into the architecture, here's how spark-llm-eval stacks up against
 
 The key differentiator isn't any single feature - it's that spark-llm-eval treats distributed execution and statistical rigor as first-class concerns rather than afterthoughts.
 
+### vs. Databricks MLflow GenAI Eval
+
+A question that comes up frequently: how does this compare to [Databricks' built-in MLflow GenAI evaluation](https://docs.databricks.com/aws/en/mlflow3/genai/eval-monitor/)? They solve different problems:
+
+|                          | MLflow GenAI Eval                                    | spark-llm-eval                                         |
+| ------------------------ | ---------------------------------------------------- | ------------------------------------------------------ |
+| **Primary use case**     | Development evaluation + production trace monitoring | Large-scale batch evaluation                           |
+| **Scale**                | Individual traces / small datasets                   | Millions of examples (Spark-distributed)               |
+| **Statistical analysis** | Point estimates                                      | Bootstrap CIs, paired t-tests, McNemar's, effect sizes |
+| **Model providers**      | Databricks model serving focused                     | Multi-provider (OpenAI, Anthropic, Gemini, vLLM)       |
+| **Cost controls**        | Standard                                             | Token bucket rate limiting, batching optimization      |
+| **Workflow**             | Continuous monitoring, human feedback loops          | Systematic benchmark sweeps, model comparison          |
+
+<br />
+
+**When to use MLflow GenAI Eval:**
+
+- You're building an agent or RAG application and want to monitor quality in production
+- You need human feedback collection via the Review App
+- You want to reuse the same judges/scorers across dev and production
+- Your evaluation datasets are small to medium sized
+
+**When to use spark-llm-eval:**
+
+- You need to evaluate against your entire corpus (e.g., 500K customer support tickets)
+- You're comparing models and need statistical significance with confidence intervals
+- You want to run systematic benchmark sweeps across model versions
+- You need detailed statistical analysis (effect sizes, power analysis, stratified metrics)
+
+They're complementary - spark-llm-eval uses MLflow for experiment tracking internally. The gap spark-llm-eval fills is: "I have 2M labeled examples in Delta Lake and need to know if Model A is statistically significantly better than Model B."
+
 ## The Architecture (And The Trade-offs I Made)
 
 The core insight behind spark-llm-eval is that LLM evaluation is embarrassingly parallel at the example level, but the aggregation phase requires care. Each example can be scored independently, but computing confidence intervals, running significance tests, and handling stratified metrics requires coordination.
