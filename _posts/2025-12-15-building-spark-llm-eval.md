@@ -74,7 +74,7 @@ That's it. The framework handles batching, rate limiting, retries, and statistic
 
 ## Why Spark? (And Why Not Just Use Ray or Dask?)
 
-[Ray](https://www.ray.io/) and other newer frameworks get a lot of attention for ML workloads, and they solve real problems. But here's the practical reality: most enterprises already have significant Spark infrastructure. Their data pipelines run on Spark. Their data engineers know Spark. Their governance and security are built around Spark. If you're on Databricks, your data is in Delta Lake, your governance is through Unity Catalog, and your experiments are tracked in MLflow.
+[Ray](https://www.ray.io/) and other newer frameworks get a lot of attention for ML workloads, and they solve real problems. But here's the practical reality: most enterprises already have significant Spark infrastructure. Their data pipelines run on Spark. Their data engineers know Spark. Their governance and security are built around Spark. If you're on Databricks, your data is in Delta Lake, your governance is through [Unity Catalog](https://www.databricks.com/product/unity-catalog), and your experiments are tracked in MLflow.
 
 Building another evaluation framework that requires spinning up a separate Ray cluster, moving data around, and maintaining yet another piece of infrastructure just didn't make sense to me. The goal was to meet teams where they are, not where I think they should be.
 
@@ -84,16 +84,16 @@ There's also something to be said for Spark's maturity around exactly-once seman
 
 Before diving into the architecture, here's how spark-llm-eval stacks up against other popular frameworks:
 
-| Feature                  | spark-llm-eval | DeepEval | Ragas  | LangSmith |
-| ------------------------ | -------------- | -------- | ------ | --------- |
-| Spark-native             | Yes            | -        | -      | -         |
-| Distributed execution    | Native         | Manual   | Manual | -         |
-| Confidence intervals     | Built-in       | -        | -      | -         |
-| Delta Lake integration   | Yes            | -        | -      | -         |
-| MLflow tracking          | Yes            | -        | -      | -         |
-| Multi-provider inference | Yes            | Yes      | Yes    | Yes       |
-| LLM-as-judge             | Yes            | Yes      | Yes    | Yes       |
-| Agent evaluation         | Yes            | Limited  | -      | Yes       |
+| Feature                  | [spark-llm-eval](https://github.com/bassrehab/spark-llm-eval) | [DeepEval](https://deepeval.com/) | [Ragas](https://docs.ragas.io/en/stable/) | [LangSmith](https://www.langchain.com/langsmith/evaluation) |
+| ------------------------ | ------------------------------------------------------------- | --------------------------------- | ----------------------------------------- | ----------------------------------------------------------- |
+| Spark-native             | Yes                                                           | -                                 | -                                         | -                                                           |
+| Distributed execution    | Native                                                        | Manual                            | Manual                                    | -                                                           |
+| Confidence intervals     | Built-in                                                      | -                                 | -                                         | -                                                           |
+| Delta Lake integration   | Yes                                                           | -                                 | -                                         | -                                                           |
+| MLflow tracking          | Yes                                                           | -                                 | -                                         | -                                                           |
+| Multi-provider inference | Yes                                                           | Yes                               | Yes                                       | Yes                                                         |
+| LLM-as-judge             | Yes                                                           | Yes                               | Yes                                       | Yes                                                         |
+| Agent evaluation         | Yes                                                           | Limited                           | -                                         | Yes                                                         |
 
 <br />
 
