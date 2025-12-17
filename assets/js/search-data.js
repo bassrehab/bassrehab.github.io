@@ -229,7 +229,7 @@ ninja.data = [{
         
           title: "Making LLMs Faster: My Deep Dive into Speculative Decoding",
         
-        description: "A practical framework for evaluating your multi-agent context management strategy. From ad-hoc string concatenation to self-evolving context systems - where does your architecture stand?",
+        description: "A deep dive into implementing speculative decoding from scratch, with benchmarks on GPT-2 and extensions to diffusion models.",
         section: "Posts",
         handler: () => {
           
