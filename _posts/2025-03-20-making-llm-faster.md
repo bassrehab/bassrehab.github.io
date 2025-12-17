@@ -20,7 +20,7 @@ toc:
 
 > **Update (June 2025):** Since writing this post, I've expanded the repo to cover [diffusion model efficiency](#beyond-llms-diffusion-models) as well - CFG caching, step distillation, and video latent caching. The core ideas about memory bandwidth translate surprisingly well.
 
-I've been obsessing over LLM inference efficiency lately. Not the flashy stuff like new architectures or training tricks - the unglamorous work of making inference _fast_. After spending a few weeks [implementing speculative decoding from scratch](https://github.com/bassrehab/speculative-decoding), I wanted to share what I learned. Fair warning: this gets into the weeds.
+I've been obsessing over LLM inference efficiency lately. Not the flashy stuff like new architectures or training tricks - the unglamorous work of making inference _fast_. After spending a few weeks [implementing speculative decoding from scratch](https://github.com/bassrehab/speculative-decoding), I wanted to share what I learned. This covers both intuition and implementation details.
 
 ## The Problem That Kept Bugging Me
 
@@ -29,6 +29,21 @@ Here's what bothered me about LLM inference: we're loading billions of parameter
 The arithmetic doesn't make sense when you think about it. A 7B parameter model in float16 is about 14GB. On an A100 with 2TB/s memory bandwidth, just _loading_ those weights takes ~7ms. But the actual computation? Maybe 0.1ms worth of FLOPs. We're spending 98% of our time waiting for memory.
 
 This is what people mean when they say LLM inference is "memory-bound." The GPU is mostly sitting idle, waiting for data.
+
+### Visualizing the Bottleneck: Roofline Analysis
+
+A roofline plot makes this concrete. The x-axis shows **arithmetic intensity** (FLOPs per byte of data moved), and the y-axis shows achievable performance. The diagonal line represents memory-bound workloads; the horizontal line represents compute-bound workloads.
+
+{% include figure.liquid loading="eager" path="assets/img/blog/roofline.png" class="img-fluid rounded z-depth-1" zoomable=true caption="Roofline analysis showing LLM inference deep in the memory-bound region. All models cluster at AI ≈ 1, far below the ridge point." %}
+
+The key numbers:
+
+- **Ridge point**: ~30-150 FLOP/byte (depends on hardware)
+- **LLM inference**: ~1 FLOP/byte (for FP16 autoregressive decoding)
+
+We're **two orders of magnitude** below the ridge point. The GPU's compute units are sitting idle 98% of the time, waiting for weights to load from memory. This is why speculative decoding works - if we're paying the memory tax anyway, we might as well verify multiple tokens per load.
+
+> For the full roofline analysis code and interactive benchmarks, see [`roofline.py`](https://github.com/bassrehab/speculative-decoding/blob/main/roofline.py) in the repo.
 
 ## The Insight Behind Speculative Decoding
 
@@ -108,11 +123,11 @@ I expected sampling mode to work fine. It doesn't - at least not for speed. With
 
 Greedy decoding gave me 1.10x speedup. Sampling gave me 0.85x (actually slower than baseline). That was counterintuitive at first, but makes sense: with greedy, if both models agree on the argmax, we accept. With sampling, we need the random draws to align too.
 
-| Mode       | Speedup | Acceptance Rate |
-| ---------- | ------- | --------------- |
-| Greedy     | 1.10x   | 62.5%           |
-| Sampling   | 0.85x   | 64.3%           |
-| Adaptive K | 0.99x   | 82.0%           |
+| Mode       | Speedup | Acceptance Rate | Notes                                                |
+| ---------- | ------- | --------------- | ---------------------------------------------------- |
+| Greedy     | 1.10x   | 62.5%           | Both models pick same argmax → high acceptance       |
+| Sampling   | 0.85x   | 64.3%           | Random draws must align → rejection overhead         |
+| Adaptive K | 0.99x   | 82.0%           | Higher acceptance, but more draft overhead per batch |
 
 ### The acceptance rate formula is elegant
 
@@ -121,6 +136,20 @@ The probability of accepting a draft token works out to:
 $$\alpha = \sum_x \min(p(x), q(x)) = 1 - D_{TV}(p, q)$$
 
 It's literally 1 minus the total variation distance between the two distributions. The closer your draft model is to the target, the higher your acceptance rate. Simple, but I had to work through the proof to believe it.
+
+<details>
+<summary><strong>Proof sketch (click to expand)</strong></summary>
+
+The rejection sampling step accepts token $x$ with probability $\min(1, p(x)/q(x))$ where $p$ is target, $q$ is draft.
+
+The overall acceptance probability is:
+$$\alpha = \sum_x q(x) \cdot \min\left(1, \frac{p(x)}{q(x)}\right) = \sum_x \min(q(x), p(x))$$
+
+This equals $1 - D_{TV}(p,q)$ by definition of total variation distance. The beautiful part: when we reject and resample from $\text{norm}(\max(0, p-q))$, the combined distribution is exactly $p$. No approximation.
+
+For the full derivation with the expected tokens formula, see [THEORY.md](https://github.com/bassrehab/speculative-decoding/blob/main/docs/THEORY.md#the-math-why-it-works).
+
+</details>
 
 ### KV-cache management is annoying
 
@@ -208,13 +237,15 @@ My benchmarks show modest speedups (1.1x) on GPT-2. That's... fine. Not amazing.
 
 3. **Memory bandwidth differences.** The whole premise assumes memory-bound inference. On smaller models, you might be compute-bound instead.
 
+4. **Batch size > 1.** Speculative decoding helps most at batch size 1. With larger batches, you're already utilizing compute better (more arithmetic intensity), and the draft/verify overhead becomes less attractive. For high-throughput serving with batching, other optimizations (continuous batching, paged attention) often matter more.
+
 If you're running LLaMA-70B on A100s, you'll see much better speedups. If you're running GPT-2 on a laptop, maybe don't bother.
 
 ## Beyond LLMs: Diffusion Models
 
-The same memory-bound intuition applies to diffusion models. Instead of one forward pass per token, you have 20-1000 denoising steps per image. Each step loads the full UNet weights.
+The memory-bound insight from the [roofline analysis](#visualizing-the-bottleneck-roofline-analysis) above isn't unique to LLMs - it applies anywhere you're loading massive model weights for each forward pass. Diffusion models are a prime example: instead of one forward pass per token, you have 20-1000 denoising steps per image, each loading the full UNet weights.
 
-I implemented a few techniques in `diffusion_efficiency.py`:
+I implemented a few techniques in [`diffusion_efficiency.py`](https://github.com/bassrehab/speculative-decoding/blob/main/diffusion_efficiency.py):
 
 **CFG Caching.** Classifier-free guidance requires two forward passes per step: conditional and unconditional. But the unconditional prediction changes slowly. Cache it, reuse it every other step, and you skip ~50% of those forward passes. I measured 3.3x speedup on a toy UNet.
 
@@ -229,8 +260,7 @@ These aren't as elegant as speculative decoding's rejection sampling guarantee, 
 A few things I'd change if starting over:
 
 - **Start with bigger models.** Testing on GPT-2 was convenient but didn't show the real benefits.
-- **Profile memory bandwidth.** I assumed memory-bound without measuring it.
-- **Try tree speculation earlier.** Generating a tree of candidates instead of a single sequence is more complex but potentially faster.
+- **Try tree speculation earlier.** Generating a tree of candidates instead of a single sequence is more complex but potentially faster. I implemented this in [`tree_speculation.py`](https://github.com/bassrehab/speculative-decoding/blob/main/tree_speculation.py) and it does help with acceptance rates.
 
 ## Code
 
@@ -244,8 +274,9 @@ The main files:
 - `medusa.py` - Multi-head parallel drafting
 - `kv_cache_compression.py` - Cache eviction and quantization
 - `diffusion_efficiency.py` - CFG caching, step distillation, video latent caching
+- `roofline.py` - Memory bandwidth profiling and roofline analysis
 
-There's also proper documentation in `docs/THEORY.md` if you want the full mathematical treatment.
+There's also proper documentation in [`docs/THEORY.md`](https://github.com/bassrehab/speculative-decoding/blob/main/docs/THEORY.md) if you want the full mathematical treatment, and an interactive [`demo.ipynb`](https://github.com/bassrehab/speculative-decoding/blob/main/demo.ipynb) notebook.
 
 ## Takeaways
 

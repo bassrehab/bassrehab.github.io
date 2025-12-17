@@ -37,7 +37,7 @@
   "stats": {
     "repos": 44,
     "followers": 20,
-    "stars": 83,
+    "stars": 84,
     "forks": 30
   },
   "repositories": [
@@ -109,7 +109,7 @@
       "releases_url": "https://api.github.com/repos/bassrehab/spark-llm-eval/releases{/id}",
       "deployments_url": "https://api.github.com/repos/bassrehab/spark-llm-eval/deployments",
       "created_at": "2025-12-14T14:36:43Z",
-      "updated_at": "2025-12-16T16:43:20Z",
+      "updated_at": "2025-12-17T02:20:25Z",
       "pushed_at": "2025-12-15T22:30:01Z",
       "git_url": "git://github.com/bassrehab/spark-llm-eval.git",
       "ssh_url": "git@github.com:bassrehab/spark-llm-eval.git",
@@ -117,8 +117,8 @@
       "svn_url": "https://github.com/bassrehab/spark-llm-eval",
       "homepage": "",
       "size": 1434,
-      "stargazers_count": 1,
-      "watchers_count": 1,
+      "stargazers_count": 2,
+      "watchers_count": 2,
       "language": "Python",
       "has_issues": true,
       "has_projects": true,
@@ -155,7 +155,7 @@
       "visibility": "public",
       "forks": 0,
       "open_issues": 0,
-      "watchers": 1,
+      "watchers": 2,
       "default_branch": "main"
     },
     {
@@ -1433,13 +1433,13 @@
       "deployments_url": "https://api.github.com/repos/bassrehab/bassrehab.github.io/deployments",
       "created_at": "2024-04-17T11:28:08Z",
       "updated_at": "2025-01-16T14:55:09Z",
-      "pushed_at": "2025-12-16T14:00:16Z",
+      "pushed_at": "2025-12-17T02:33:58Z",
       "git_url": "git://github.com/bassrehab/bassrehab.github.io.git",
       "ssh_url": "git@github.com:bassrehab/bassrehab.github.io.git",
       "clone_url": "https://github.com/bassrehab/bassrehab.github.io.git",
       "svn_url": "https://github.com/bassrehab/bassrehab.github.io",
       "homepage": "https://subhadipmitra.com",
-      "size": 258005,
+      "size": 259077,
       "stargazers_count": 0,
       "watchers_count": 0,
       "language": "HTML",
@@ -4752,5 +4752,5 @@
     "JavaScript": 1081003,
     "CSS": 172684
   },
-  "updated_at": 1765936575
+  "updated_at": 1765943996
 }
