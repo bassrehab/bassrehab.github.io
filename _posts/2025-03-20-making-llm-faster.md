@@ -5,7 +5,7 @@ date: 2025-03-20 01:02:56
 author: [Subhadip Mitra]
 categories: [AI Infrastructure, Research]
 tags: [machine-learning, llm, inference, optimization]
-description: "A practical framework for evaluating your multi-agent context management strategy. From ad-hoc string concatenation to self-evolving context systems - where does your architecture stand?"
+description: "A deep dive into implementing speculative decoding from scratch, with benchmarks on GPT-2 and extensions to diffusion models."
 citation: true
 giscus_comments: true
 featured: true
@@ -80,7 +80,7 @@ sequenceDiagram
 
 The beautiful part is the math guarantees we get _exactly_ the same distribution as running the target model alone. No approximation. No quality loss. Just faster.
 
-Here's the core loop from [my implementation](https://github.com/bassrehab/speculative-decoding/blob/482c82d5880aa48cb27731a45f6a3a6e527de288/speculative_decoding.py#L363):
+Here's the core loop from [my implementation](https://github.com/bassrehab/speculative-decoding/blob/main/speculative_decoding.py#L363):
 
 ```python
 for i in range(k):
