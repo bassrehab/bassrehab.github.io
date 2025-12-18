@@ -93,7 +93,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "https://ai-metacognition-toolkit.subhadipmitra.com/";
               },
-            },{id: "post-why-i-built-a-spark-native-llm-evaluation-framework-and-what-i-learned",
+            },{id: "post-why-steering-vectors-beat-prompting-and-when-they-don-39-t",
+        
+          title: "Why Steering Vectors Beat Prompting (And When They Don&#39;t)",
+        
+        description: "I tested activation steering on 4 agent behaviors across 3 models. The results surprised me.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/steering-vectors-agents/";
+          
+        },
+      },{id: "post-why-i-built-a-spark-native-llm-evaluation-framework-and-what-i-learned",
         
           title: "Why I Built a Spark-Native LLM Evaluation Framework (And What I Learned)",
         
