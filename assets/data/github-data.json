@@ -29,14 +29,14 @@
     "twitter_username": "bassrehab",
     "public_repos": 44,
     "public_gists": 8,
-    "followers": 20,
+    "followers": 21,
     "following": 43,
     "created_at": "2012-12-15T09:40:41Z",
     "updated_at": "2025-11-16T05:37:25Z"
   },
   "stats": {
     "repos": 44,
-    "followers": 20,
+    "followers": 21,
     "stars": 84,
     "forks": 30
   },
@@ -109,7 +109,7 @@
       "releases_url": "https://api.github.com/repos/bassrehab/spark-llm-eval/releases{/id}",
       "deployments_url": "https://api.github.com/repos/bassrehab/spark-llm-eval/deployments",
       "created_at": "2025-12-14T14:36:43Z",
-      "updated_at": "2025-12-17T02:20:25Z",
+      "updated_at": "2025-12-18T16:14:15Z",
       "pushed_at": "2025-12-15T22:30:01Z",
       "git_url": "git://github.com/bassrehab/spark-llm-eval.git",
       "ssh_url": "git@github.com:bassrehab/spark-llm-eval.git",
@@ -226,14 +226,14 @@
       "releases_url": "https://api.github.com/repos/bassrehab/speculative-decoding/releases{/id}",
       "deployments_url": "https://api.github.com/repos/bassrehab/speculative-decoding/deployments",
       "created_at": "2025-12-08T20:01:17Z",
-      "updated_at": "2025-12-16T11:53:32Z",
-      "pushed_at": "2025-12-12T10:17:40Z",
+      "updated_at": "2025-12-17T04:17:29Z",
+      "pushed_at": "2025-12-17T04:17:25Z",
       "git_url": "git://github.com/bassrehab/speculative-decoding.git",
       "ssh_url": "git@github.com:bassrehab/speculative-decoding.git",
       "clone_url": "https://github.com/bassrehab/speculative-decoding.git",
       "svn_url": "https://github.com/bassrehab/speculative-decoding",
       "homepage": "",
-      "size": 110,
+      "size": 351,
       "stargazers_count": 0,
       "watchers_count": 0,
       "language": "Python",
@@ -1433,13 +1433,13 @@
       "deployments_url": "https://api.github.com/repos/bassrehab/bassrehab.github.io/deployments",
       "created_at": "2024-04-17T11:28:08Z",
       "updated_at": "2025-01-16T14:55:09Z",
-      "pushed_at": "2025-12-17T02:33:58Z",
+      "pushed_at": "2025-12-17T04:10:35Z",
       "git_url": "git://github.com/bassrehab/bassrehab.github.io.git",
       "ssh_url": "git@github.com:bassrehab/bassrehab.github.io.git",
       "clone_url": "https://github.com/bassrehab/bassrehab.github.io.git",
       "svn_url": "https://github.com/bassrehab/bassrehab.github.io",
       "homepage": "https://subhadipmitra.com",
-      "size": 259077,
+      "size": 259451,
       "stargazers_count": 0,
       "watchers_count": 0,
       "language": "HTML",
@@ -4747,10 +4747,10 @@
   ],
   "languages": {
     "HTML": 5497193,
-    "Python": 3046831,
+    "Python": 3066025,
     "SCSS": 1248309,
     "JavaScript": 1081003,
-    "CSS": 172684
+    "Jupyter Notebook": 189838
   },
-  "updated_at": 1765943996
+  "updated_at": 1766097982
 }
