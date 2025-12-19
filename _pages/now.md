@@ -22,7 +22,7 @@ nav_order: 1
             </span>
             <span class="status-pill"><i class="fas fa-map-marker-alt"></i> Singapore</span>
         </div>
-        <p class="last-updated">Last updated: December 13, 2025</p>
+        <p class="last-updated">Last updated: December 19, 2025</p>
     </header>
 
     <!-- Current Projects -->
@@ -74,6 +74,26 @@ nav_order: 1
 
         <div class="project-card">
             <div class="project-header">
+                <h3 class="project-title">Steering Vectors for Agent Behavior Control</h3>
+                <span class="project-status research">Research</span>
+            </div>
+            <p class="project-description">
+                Runtime control of LLM agent behaviors through activation steering - modifying model outputs at inference time without retraining. Achieves 65% uncertainty detection while maintaining 100% factual confidence. Features LangChain integration for production deployment. Open-source: <a href="https://github.com/bassrehab/steering-vectors-agents" target="_blank">steering-vectors-agents</a>.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <div class="project-header">
+                <h3 class="project-title">Spark LLM Eval Framework</h3>
+                <span class="project-status active">Active</span>
+            </div>
+            <p class="project-description">
+                Distributed LLM evaluation framework for Apache Spark enabling enterprise-scale model assessment with statistical rigor. Features bootstrap confidence intervals, multi-provider support (OpenAI, Anthropic, Google), and seamless Databricks integration. Open-source: <a href="https://github.com/bassrehab/spark-llm-eval" target="_blank">spark-llm-eval</a>.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <div class="project-header">
                 <h3 class="project-title">FTCS v2.0 - Field-Theoretic Context System</h3>
                 <span class="project-status research">Research</span>
             </div>
@@ -110,7 +130,7 @@ nav_order: 1
     <!-- Quick Stats -->
     <div class="quick-stats">
         <div class="stat-item">
-            <div class="stat-number">6</div>
+            <div class="stat-number">8</div>
             <div class="stat-label">Active Projects</div>
         </div>
         <div class="stat-item">
