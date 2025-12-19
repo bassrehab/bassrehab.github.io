@@ -42,11 +42,16 @@
   <!-- Bottom Bar -->
   <div class="footer-bottom">
     <div class="footer-copyright">
-      &copy; {{ site.time | date: '%Y' }} {{ site.first_name }} {{ site.last_name }}. 
+      &copy; {{ site.time | date: '%Y' }} {{ site.first_name }} {{ site.last_name }}.
       {{ site.footer_text }}
       {% if site.last_updated %}
         Last updated: {{ 'now' | date: '%B %d, %Y' }}.
       {% endif %}
+      <span class="footer-utility-links">
+        <a href="/sitemap.xml" title="Sitemap">Sitemap</a> ·
+        <a href="/feed.xml" title="RSS Feed">RSS</a> ·
+        <a href="/llms.txt" title="AI Agent Information">LLMs</a>
+      </span>
     </div>
     
     <div class="footer-social">

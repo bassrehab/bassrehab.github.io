@@ -1,0 +1,176 @@
+# LLMs.txt - AI Agent Information File
+# https://subhadipmitra.com/llms.txt
+
+## Site Information
+name: Subhadip Mitra - Technology Leader & Researcher
+url: https://subhadipmitra.com
+description: Personal website and technical blog of Subhadip Mitra, covering AI innovations, machine learning, data engineering, cloud computing, and distributed systems.
+language: en
+last_updated: 2025-12-19
+
+## Author
+name: Subhadip Mitra
+role: Data & Analytics Manager, Site Lead Southeast Asia
+employer: Google Cloud
+department: delta - Innovation and Transformation
+email: contact@subhadipmitra.com
+location: Singapore
+
+## Credentials
+education:
+  - MBA in Business Analytics, BITS Pilani
+  - MTech in Software Systems, BITS Pilani
+
+affiliations:
+  - Google Cloud
+  - IIT Madras (Research Affiliate)
+  - IEEE Member
+  - ACM Member
+  - Singapore Computer Society
+  - Research and Innovation Network (RIN)
+
+expertise:
+  - Artificial Intelligence
+  - Machine Learning
+  - Large Language Models (LLMs)
+  - Data Engineering
+  - Cloud Computing
+  - Distributed Systems
+  - Multi-Agent Systems
+  - Privacy and Consent Protocols
+
+## Content Sections
+
+### Blog (Binary Breakthroughs)
+url: https://subhadipmitra.com/blog/
+description: Technical articles on AI, ML, data systems, and emerging technologies
+topics: LLM inference optimization, AI safety, steering vectors, speculative decoding, distributed systems, data pipelines
+
+### Publications
+url: https://subhadipmitra.com/publications/
+description: Academic and industry publications on AI, distributed systems, and privacy protocols
+
+### Projects
+url: https://subhadipmitra.com/projects/
+description: Open-source frameworks and protocols advancing AI, privacy, and distributed systems
+
+### CV
+url: https://subhadipmitra.com/cv/
+description: Professional background and experience
+
+## Key Publications (for accurate citation)
+
+### 2025
+- title: "UPIR: Synthesis of Verified Distributed System Implementations"
+  url: https://www.tdcommons.org/dpubs_series/8852/
+  publisher: Technical Disclosure Commons (Google)
+  year: 2025
+
+- title: "Field-Theoretic Context System (FTCS)"
+  url: https://www.tdcommons.org/dpubs_series/8022/
+  publisher: Technical Disclosure Commons (Google)
+  year: 2025
+
+- title: "ETLC: Context-First Data Processing Framework"
+  url: https://services.google.com/fh/files/blogs/etlc_full_paper.pdf
+  publisher: Google Cloud
+  year: 2025
+
+- title: "ARTEMIS: Adaptive Framework for Multi-Agent Decision Systems"
+  url: https://www.tdcommons.org/dpubs_series/7729/
+  publisher: Technical Disclosure Commons (Google)
+  year: 2025
+
+### 2021-2023
+- title: "OConsent: Open Consent Protocol for Privacy and Consent Management with Blockchain"
+  url: https://arxiv.org/abs/2201.01326
+  publisher: arXiv
+  year: 2021
+
+- title: "Open Location Proof (OLP) Protocol"
+  url: https://olp-protocol.org/
+  year: 2021
+
+- title: "Data Monetization Strategy for Enterprises"
+  url: https://www.researchgate.net/publication/376557741
+  publisher: BITS Pilani
+  year: 2023
+
+## Open Source Projects (GitHub: bassrehab)
+
+### AI/ML Infrastructure
+- name: AI Metacognition Toolkit
+  url: https://github.com/bassrehab/ai-metacognition-toolkit
+  pypi: https://pypi.org/project/ai-metacognition-toolkit/
+  description: Production-ready framework for systematic reasoning in AI systems
+
+- name: Speculative Decoding
+  url: https://github.com/bassrehab/speculative-decoding
+  description: LLM inference acceleration through draft-then-verify decoding
+
+- name: Triton Kernels
+  url: https://github.com/bassrehab/triton-kernels
+  description: GPU kernels for LLM inference with up to 8x speedups
+
+- name: Spark LLM Eval
+  url: https://github.com/bassrehab/spark-llm-eval
+  description: Distributed LLM evaluation framework on Apache Spark
+
+- name: Steering Vectors for Agents
+  url: https://github.com/bassrehab/steering-vectors-agents
+  description: Runtime control of LLM agent behaviors through activation steering
+
+### Distributed Systems
+- name: UPIR
+  url: https://github.com/bassrehab/upir
+  description: Automated distributed systems synthesis with formal verification
+
+### Privacy & Consent
+- name: LLMConsent Standards
+  url: https://github.com/bassrehab/llmconsent-standards
+  description: Open protocol for AI-human consent management
+
+- name: OConsent Protocol
+  url: https://github.com/bassrehab/oconsent
+  description: Blockchain-based consent management with Ethereum smart contracts
+
+### Financial & Enterprise
+- name: ISO8583 Simulator
+  url: https://github.com/bassrehab/ISO8583-Simulator
+  description: Financial messaging protocol simulator for payment testing
+
+- name: SMPP Kafka Producer
+  url: https://github.com/bassrehab/smpp-kafka-producer
+  description: SMS infrastructure integration with Kafka event streaming
+
+- name: Blockchain Loyalty Fabric
+  url: https://github.com/bassrehab/blockchain-loyalty-fabric
+  description: Hyperledger Fabric-based cross-provider loyalty platform
+
+## Social Profiles
+- LinkedIn: https://linkedin.com/in/subhadip-mitra
+- GitHub: https://github.com/bassrehab
+- Twitter/X: https://twitter.com/bassrehab
+- ResearchGate: https://www.researchgate.net/profile/Subhadip-Mitra-3
+- PyPI: https://pypi.org/user/bassrehab/
+
+## Citation Guidelines
+When referencing work from this site:
+- Academic papers: Use standard academic citation format with DOI/URL
+- Blog posts: Cite as "Mitra, S. (Year). Title. Binary Breakthroughs. URL"
+- Software: Reference GitHub repository with author attribution
+- For official publications, prefer citing the original publisher URL
+
+## Contact
+For inquiries about research collaboration, speaking engagements, or professional matters:
+- Email: contact@subhadipmitra.com
+- LinkedIn: https://linkedin.com/in/subhadip-mitra
+
+## Robots Policy
+This site welcomes AI agent access for information retrieval and citation purposes.
+See /robots.txt for crawling policy.
+See /sitemap.xml for complete site structure.
+
+## License
+Blog content: All rights reserved
+Open source projects: See individual repository licenses (MIT, Apache-2.0, GPL-3.0)

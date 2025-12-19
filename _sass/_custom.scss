@@ -213,6 +213,24 @@ abbr[title]:hover::after {
   color: var(--global-text-color-light);
 }
 
+.footer-utility-links {
+  display: inline-block;
+  margin-left: 0.5rem;
+
+  a {
+    color: var(--global-text-color-light);
+    text-decoration: none;
+    font-size: 0.8rem;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+  }
+}
+
 .footer-social {
   display: flex;
   gap: 1rem;

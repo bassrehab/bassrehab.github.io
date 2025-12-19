@@ -21,6 +21,61 @@ let setThemeSetting = (themeSetting) => {
   applyTheme();
 };
 
+// Apply theme without transition animation (for initial page load)
+let applyThemeWithoutTransition = (themeSetting) => {
+  localStorage.setItem("theme", themeSetting);
+  document.documentElement.setAttribute("data-theme-setting", themeSetting);
+
+  let theme = determineComputedTheme();
+
+  // Apply theme without calling transTheme()
+  setHighlight(theme);
+  setGiscusTheme(theme);
+  setSearchTheme(theme);
+
+  if (typeof mermaid !== "undefined") {
+    setMermaidTheme(theme);
+  }
+  if (typeof Diff2HtmlUI !== "undefined") {
+    setDiff2htmlTheme(theme);
+  }
+  if (typeof echarts !== "undefined") {
+    setEchartsTheme(theme);
+  }
+  if (typeof vegaEmbed !== "undefined") {
+    setVegaLiteTheme(theme);
+  }
+
+  document.documentElement.setAttribute("data-theme", theme);
+
+  let tables = document.getElementsByTagName("table");
+  for (let i = 0; i < tables.length; i++) {
+    if (theme == "dark") {
+      tables[i].classList.add("table-dark");
+    } else {
+      tables[i].classList.remove("table-dark");
+    }
+  }
+
+  let jupyterNotebooks = document.getElementsByClassName("jupyter-notebook-iframe-container");
+  for (let i = 0; i < jupyterNotebooks.length; i++) {
+    let bodyElement = jupyterNotebooks[i].getElementsByTagName("iframe")[0].contentWindow.document.body;
+    if (theme == "dark") {
+      bodyElement.setAttribute("data-jp-theme-light", "false");
+      bodyElement.setAttribute("data-jp-theme-name", "JupyterLab Dark");
+    } else {
+      bodyElement.setAttribute("data-jp-theme-light", "true");
+      bodyElement.setAttribute("data-jp-theme-name", "JupyterLab Light");
+    }
+  }
+
+  if (typeof medium_zoom !== "undefined") {
+    medium_zoom.update({
+      background: getComputedStyle(document.documentElement).getPropertyValue("--global-bg-color") + "ee",
+    });
+  }
+};
+
 // Apply the computed dark or light theme to the website.
 let applyTheme = () => {
   let theme = determineComputedTheme();
@@ -231,10 +286,15 @@ let determineComputedTheme = () => {
   }
 };
 
-let initTheme = () => {
+let initTheme = (isInitialLoad = true) => {
   let themeSetting = determineThemeSetting();
 
-  setThemeSetting(themeSetting);
+  // Skip transition animation on initial page load
+  if (isInitialLoad) {
+    applyThemeWithoutTransition(themeSetting);
+  } else {
+    setThemeSetting(themeSetting);
+  }
 
   // Add event listener to the theme toggle button.
   document.addEventListener("DOMContentLoaded", function () {
