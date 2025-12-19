@@ -155,7 +155,27 @@ The vectors aren't orthogonal - they're both modifying overlapping regions of ac
 
 This is actually useful to know. You can't just stack vectors and assume they combine nicely. There's structure here that matters.
 
-Possible fixes I haven't tried yet: orthogonalizing the vectors before combining, or applying them at different layers. That's genuinely for another weekend.
+**Update:** I tried two fixes, and both work:
+
+1. **Orthogonalization** - project out the shared component before combining
+2. **Different layers** - apply refusal at layer 12, uncertainty at layer 14
+
+| Method                | Refusal | Uncertainty |
+| --------------------- | :-----: | :---------: |
+| Original (same layer) |  100%   |     25%     |
+| Orthogonalized        |  100%   |   **75%**   |
+| Different layers      |  100%   |   **75%**   |
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/blog/composition_comparison.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+    </div>
+</div>
+<div class="caption">
+    Both orthogonalization and layer separation fix the interference problem.
+</div>
+
+Both approaches triple uncertainty detection while maintaining full refusal. The vectors only had 12% cosine similarity, but even that was enough to cause interference. Lesson: always check for overlap before composing.
 
 ## So Is This Useful?
 
