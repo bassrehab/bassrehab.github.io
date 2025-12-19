@@ -195,48 +195,6 @@ social: false
             <article class="timeline-item timeline-right">
                 <div class="timeline-content">
                     <div class="innovation-year">2025</div>
-                    <div class="timeline-badge">FTCS</div>
-                    <h3>Field-Theoretic Context System</h3>
-                    <p>
-                        Novel approach modeling context as interacting fields rather than discrete states, enabling natural context flow and dynamic evolution in AI systems.
-                    </p>
-                    <a href="https://www.tdcommons.org/dpubs_series/8022/" class="innovation-link" target="_blank">
-                        Read Technical Disclosure <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </article>
-
-            <article class="timeline-item timeline-left">
-                <div class="timeline-content">
-                    <div class="innovation-year">2024</div>
-                    <div class="timeline-badge">ETLC</div>
-                    <h3>Context-First Data Processing</h3>
-                    <p>
-                        Framework reimagining data integration for the GenAI era by adding semantic, relational, operational, and behavioral context to pipelines.
-                    </p>
-                    <a href="https://services.google.com/fh/files/blogs/etlc_full_paper.pdf" class="innovation-link" target="_blank">
-                        Read Whitepaper <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </article>
-
-            <article class="timeline-item timeline-right">
-                <div class="timeline-content">
-                    <div class="innovation-year">2024</div>
-                    <div class="timeline-badge"><i class="fas fa-robot"></i></div>
-                    <h3>ARTEMIS Multi-Agent Framework</h3>
-                    <p>
-                        Adaptive framework for multi-agent decision systems using structured debate protocols to enhance enterprise decision-making.
-                    </p>
-                    <a href="https://www.tdcommons.org/dpubs_series/7729/" class="innovation-link" target="_blank">
-                        Read Technical Disclosure <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </article>
-
-            <article class="timeline-item timeline-left">
-                <div class="timeline-content">
-                    <div class="innovation-year">2025</div>
                     <div class="timeline-badge"><i class="fas fa-bolt"></i></div>
                     <h3>LLM Inference Efficiency Research</h3>
                     <p>
@@ -249,26 +207,6 @@ social: false
                         <span style="margin: 0 0.5rem;">•</span>
                         <a href="https://github.com/bassrehab/triton-kernels" class="innovation-link" target="_blank">
                             triton-kernels <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <article class="timeline-item timeline-right">
-                <div class="timeline-content">
-                    <div class="innovation-year">2025</div>
-                    <div class="timeline-badge"><i class="fas fa-compass"></i></div>
-                    <h3>Steering Vectors for Agent Control</h3>
-                    <p>
-                        Runtime control of LLM agent behaviors through activation steering - modifying model outputs at inference time without retraining. Achieves 65% uncertainty detection while maintaining 100% factual confidence, demonstrating more calibrated control than prompting.
-                    </p>
-                    <div style="margin-top: 0.5rem;">
-                        <a href="https://github.com/bassrehab/steering-vectors-agents" class="innovation-link" target="_blank">
-                            GitHub Repo <i class="fas fa-arrow-right"></i>
-                        </a>
-                        <span style="margin: 0 0.5rem;">•</span>
-                        <a href="/blog/2025/steering-vectors-agents/" class="innovation-link">
-                            Blog Post <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>

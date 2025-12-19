@@ -20,6 +20,8 @@ toc:
 
 > **Update (June 2025):** Since writing this post, I've expanded the repo to cover [diffusion model efficiency](#beyond-llms-diffusion-models) as well - CFG caching, step distillation, and video latent caching. The core ideas about memory bandwidth translate surprisingly well.
 
+> **Part 2:** If you want to go deeper on the memory-bound problem, I wrote a follow-up on [writing custom Triton kernels](/blog/2025/triton-kernels-llm-inference/) - going from 11% to 88% peak bandwidth on operations like RMSNorm.
+
 I've been obsessing over LLM inference efficiency lately. Not the flashy stuff like new architectures or training tricks - the unglamorous work of making inference _fast_. After spending a few weeks [implementing speculative decoding from scratch](https://github.com/bassrehab/speculative-decoding), I wanted to share what I learned. This covers both intuition and implementation details.
 
 ## The Problem That Kept Bugging Me

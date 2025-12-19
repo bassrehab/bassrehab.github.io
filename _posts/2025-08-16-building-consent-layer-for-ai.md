@@ -8,7 +8,7 @@ tags: ai blockchain standards consent ethics protocol llm agents privacy decentr
 description: "AI companies are getting sued over training data, agents operate with no permission framework, and users can't control their AI profiles. I wrote four open standards (LLMConsent) to create a decentralized consent protocol for AI - like HTTP but for data rights, agent permissions, and user sovereignty. This is an RFC, not a product."
 citation: true
 giscus_comments: true
-featured: true
+featured: false
 related_posts: true
 pretty_table: true
 toc:

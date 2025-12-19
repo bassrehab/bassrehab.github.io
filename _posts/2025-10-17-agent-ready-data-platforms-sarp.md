@@ -8,7 +8,7 @@ tags: [SARP, data-platforms, agent-infrastructure, semantic-layers, AI-architect
 description: "Enterprise data platforms face a 100,000x query increase from agentic AI. Introducing Symbiotic Agent-Ready Platforms (SARPs) - the architectural paradigm shift needed to survive the transition to machine intelligence."
 citation: true
 giscus_comments: true
-featured: true
+featured: false
 related_posts: true
 pretty_table: true
 toc:
