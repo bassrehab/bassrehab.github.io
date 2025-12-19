@@ -134,15 +134,36 @@ A few things I learned the hard way:
 
 3. **Expect polarity issues.** Sometimes the vector does the opposite of what you expect. Build in tests for both the positive and negative direction early.
 
+## Can You Combine Vectors?
+
+I tried. It doesn't work cleanly.
+
+The idea was simple: apply refusal AND uncertainty vectors simultaneously. Get both behaviors at once. Here's what happened:
+
+| Refusal | Uncertainty | Harmful Refused | Uncertain Hedged |
+| :-----: | :---------: | :-------------: | :--------------: |
+|   0.0   |     0.0     |      100%       |       100%       |
+|   0.5   |     0.0     |      100%       |      **0%**      |
+|   0.0   |     0.5     |       75%       |       75%        |
+|   0.5   |     0.5     |      100%       |     **25%**      |
+
+<br />
+
+The refusal vector dominates. Even at equal strengths, uncertainty detection drops from 100% to 25%. At higher refusal strengths, uncertainty gets completely suppressed.
+
+The vectors aren't orthogonal - they're both modifying overlapping regions of activation space. Refusal pushes toward assertive responses ("I won't do that"), which works against the hedging that uncertainty requires.
+
+This is actually useful to know. You can't just stack vectors and assume they combine nicely. There's structure here that matters.
+
+Possible fixes I haven't tried yet: orthogonalizing the vectors before combining, or applying them at different layers. That's genuinely for another weekend.
+
 ## So Is This Useful?
 
 For some behaviors, absolutely. If you want a safety layer that doesn't lobotomize your model's helpfulness, steering is genuinely better than prompting. Same for calibrated uncertainty.
 
-For complex reasoning behaviors, I would stick with prompting (or RLHF, or other training-time interventions).
+For complex reasoning behaviors, stick with prompting (or RLHF, or other training-time interventions). And if you want multiple behaviors, test for interference first.
 
 The bigger takeaway for me is that these models have interpretable structure we can actually exploit. The refusal direction is _real_ - it exists as a consistent geometric feature across contexts. That's kind of remarkable if you think about it.
-
-There's probably a lot more here to explore. Vector composition (can you steer for refusal AND uncertainty simultaneously?), transfer across models, finding directions for other behaviors. But that's for another weekend.
 
 ---
 
