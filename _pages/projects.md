@@ -463,7 +463,7 @@ header.post-header {
     <!-- Stats -->
     <div class="projects-stats">
       <div class="project-stat">
-        <div class="project-stat-value">6</div>
+        <div class="project-stat-value">9</div>
         <div class="project-stat-label">Active Projects</div>
       </div>
       <div class="project-stat">
@@ -700,6 +700,110 @@ header.post-header {
           <div class="metric">
             <div class="metric-value">88%</div>
             <div class="metric-label">Peak Bandwidth</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Steering Vectors Agents -->
+      <article class="project-card" data-category="ai">
+        <span class="project-status">Active</span>
+        <h3 class="project-title">
+          <a href="https://github.com/bassrehab/steering-vectors-agents" target="_blank">
+            Steering Vectors for Agent Behavior Control
+          </a>
+        </h3>
+        <p class="project-description">
+          Runtime control of LLM agent behaviors through activation steering vectors - modifying model outputs at inference time without retraining. Demonstrates more calibrated control than traditional prompting approaches.
+        </p>
+
+        <ul class="project-highlights">
+          <li>Contrastive Activation Addition (CAA) for steering vector extraction</li>
+          <li>Dynamic strength adjustment per-request for behavior intensity control</li>
+          <li>Multi-vector composition with interference mitigation</li>
+          <li>LangChain integration for production deployment</li>
+        </ul>
+
+        <div class="tech-stack">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">PyTorch</span>
+          <span class="tech-tag">LangChain</span>
+          <span class="tech-tag">Transformers</span>
+          <span class="tech-tag">AI Safety</span>
+        </div>
+
+        <div class="project-links">
+          <a href="https://github.com/bassrehab/steering-vectors-agents" class="project-link primary" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a href="https://subhadipmitra.com/blog/2025/steering-vectors-agents/" class="project-link" target="_blank">
+            <i class="fas fa-pen"></i> Blog Post
+          </a>
+        </div>
+
+        <div class="impact-metrics">
+          <div class="metric">
+            <div class="metric-value">2025</div>
+            <div class="metric-label">Released</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">65%</div>
+            <div class="metric-label">Uncertainty Detection</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">MIT</div>
+            <div class="metric-label">License</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Spark LLM Eval -->
+      <article class="project-card" data-category="ai distributed-systems">
+        <span class="project-status">Active</span>
+        <h3 class="project-title">
+          <a href="https://github.com/bassrehab/spark-llm-eval" target="_blank">
+            Spark LLM Eval
+          </a>
+        </h3>
+        <p class="project-description">
+          Distributed LLM evaluation framework built on Apache Spark for enterprise-scale model assessment. Handles millions of examples with statistical rigor, integrating seamlessly with Databricks infrastructure.
+        </p>
+
+        <ul class="project-highlights">
+          <li>Pandas UDFs with Arrow for efficient distributed batching</li>
+          <li>Bootstrap confidence intervals and statistical significance testing</li>
+          <li>Multi-provider support: OpenAI, Anthropic Claude, Google Gemini</li>
+          <li>LLM-as-judge evaluation patterns with agent trajectory support</li>
+        </ul>
+
+        <div class="tech-stack">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Apache Spark</span>
+          <span class="tech-tag">Databricks</span>
+          <span class="tech-tag">MLflow</span>
+          <span class="tech-tag">Delta Lake</span>
+        </div>
+
+        <div class="project-links">
+          <a href="https://github.com/bassrehab/spark-llm-eval" class="project-link primary" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a href="https://subhadipmitra.com/blog/2025/building-spark-llm-eval/" class="project-link" target="_blank">
+            <i class="fas fa-pen"></i> Blog Post
+          </a>
+        </div>
+
+        <div class="impact-metrics">
+          <div class="metric">
+            <div class="metric-value">2025</div>
+            <div class="metric-label">Released</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">Spark 3.5+</div>
+            <div class="metric-label">Compatible</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">Apache 2.0</div>
+            <div class="metric-label">License</div>
           </div>
         </div>
       </article>

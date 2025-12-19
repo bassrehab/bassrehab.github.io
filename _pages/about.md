@@ -257,6 +257,46 @@ social: false
             <article class="timeline-item timeline-right">
                 <div class="timeline-content">
                     <div class="innovation-year">2025</div>
+                    <div class="timeline-badge"><i class="fas fa-compass"></i></div>
+                    <h3>Steering Vectors for Agent Control</h3>
+                    <p>
+                        Runtime control of LLM agent behaviors through activation steering - modifying model outputs at inference time without retraining. Achieves 65% uncertainty detection while maintaining 100% factual confidence, demonstrating more calibrated control than prompting.
+                    </p>
+                    <div style="margin-top: 0.5rem;">
+                        <a href="https://github.com/bassrehab/steering-vectors-agents" class="innovation-link" target="_blank">
+                            GitHub Repo <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <span style="margin: 0 0.5rem;">•</span>
+                        <a href="/blog/2025/steering-vectors-agents/" class="innovation-link">
+                            Blog Post <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="timeline-item timeline-left">
+                <div class="timeline-content">
+                    <div class="innovation-year">2025</div>
+                    <div class="timeline-badge"><i class="fas fa-chart-bar"></i></div>
+                    <h3>Spark LLM Eval Framework</h3>
+                    <p>
+                        Distributed LLM evaluation framework for Apache Spark enabling enterprise-scale model assessment with statistical rigor. Features bootstrap confidence intervals, multi-provider support, and seamless Databricks integration.
+                    </p>
+                    <div style="margin-top: 0.5rem;">
+                        <a href="https://github.com/bassrehab/spark-llm-eval" class="innovation-link" target="_blank">
+                            GitHub Repo <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <span style="margin: 0 0.5rem;">•</span>
+                        <a href="/blog/2025/building-spark-llm-eval/" class="innovation-link">
+                            Blog Post <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="timeline-item timeline-right">
+                <div class="timeline-content">
+                    <div class="innovation-year">2025</div>
                     <div class="timeline-badge"><i class="fas fa-shield-alt"></i></div>
                     <h3>CatchMe - Intelligent Trust Engine</h3>
                     <p>

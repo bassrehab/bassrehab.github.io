@@ -282,24 +282,6 @@ article.research-project-card {
           Dual-track role combining technical innovation leadership with regional delivery management. Built Google Cloud's Data Analytics practice across Southeast Asia while serving as Site Lead overseeing cross-practice operations. Member of <a href="https://cloud.google.com/consulting/innovation-and-transformation" target="_blank">delta</a> - Google Cloud's innovation and transformation team architecting enterprise AI solutions at scale.
         </p>
 
-        <!-- Technical Innovation & Research -->
-        <div class="role-section" style="margin-top: 1.5rem;">
-          <h4 style="font-size: 1.125rem; font-weight: 700; color: var(--global-text-color); margin-bottom: 0.75rem; border-left: 3px solid var(--global-theme-color); padding-left: 0.75rem;">
-            Technical Innovation & Research (Official IP)
-          </h4>
-          <div class="job-highlights">
-            <ul>
-              <li><strong>LLM Inference Efficiency:</strong> Research on speculative decoding, custom Triton kernels, and KV-cache compression strategies. Filed Google Technical Disclosure on hybrid compression systems for multi-tenant serving optimization.</li>
-              <li><strong>Distributed Systems Synthesis (UPIR):</strong> Invented neuro-symbolic framework combining formal verification and reinforcement learning to automate distributed system generation - achieved 274x speedup in synthesis with 60% latency reduction.</li>
-              <li><strong>Context Architecture (FTCS):</strong> Designed Field-Theoretic Context System modeling context as continuous fields to address long-horizon memory fragmentation in AI agents. Published as Google Technical Disclosure.</li>
-              <li><strong>Data Processing for GenAI (ETLC):</strong> Authored whitepaper introducing Extract, Transform, Load, Contextualize framework adding semantic, relational, and behavioral context to data pipelines for RAG and agentic systems.</li>
-              <li><strong>Multi-Agent Framework (ARTEMIS):</strong> Created adaptive debate-driven decision framework for enterprise multi-agent systems. Published as Google Technical Disclosure.</li>
-              <li><strong>Intelligent Trust Engine (CatchMe):</strong> Developed industry-agnostic agentic AI system for enterprise-scale trust decisions across Finance, Healthcare, Insurance, Cybersecurity, and Supply Chain. Features APLS (self-learning pattern synthesis) and five-level cascade routing achieving 86% cost reduction with sub-50ms latency. Won Google Cloud PSO Hackathon JAPAC Regionals, qualified for World Finals. Two pending Google Technical Disclosures.</li>
-              <li><strong>Agentic AI Transformation:</strong> Pioneered organization-wide adoption of agentic AI across PSO JAPAC for both customer solutions and internal productivity, including autonomous data engineering agents.</li>
-            </ul>
-          </div>
-        </div>
-
         <!-- Strategic Leadership & Delivery -->
         <div class="role-section" style="margin-top: 1.5rem;">
           <h4 style="font-size: 1.125rem; font-weight: 700; color: var(--global-text-color); margin-bottom: 0.75rem; border-left: 3px solid var(--global-theme-color); padding-left: 0.75rem;">
@@ -313,6 +295,24 @@ article.research-project-card {
               <li><strong>Strategic Interventions:</strong> Led critical engagements for JAPAC strategic accounts including major financial services institutions and consumer electronics manufacturers, ensuring delivery excellence and client success.</li>
               <li><strong>Enterprise Delivery:</strong> Executed high-impact projects including 12K+ user analytics migrations, first Data & AI Centers of Excellence, Data Monetization Platforms, and petabyte-scale data platform modernizations.</li>
               <li><strong>Executive Advisory:</strong> Partner with C-level stakeholders (CTOs, CDOs) to define data modernization and AI transformation roadmaps, translating technical capabilities into business outcomes.</li>
+              <li><strong>Agentic AI Transformation:</strong> Pioneered organization-wide adoption of agentic AI across PSO JAPAC for both customer solutions and internal productivity, including autonomous data engineering agents.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Technical Innovation & Research -->
+        <div class="role-section" style="margin-top: 1.5rem;">
+          <h4 style="font-size: 1.125rem; font-weight: 700; color: var(--global-text-color); margin-bottom: 0.75rem; border-left: 3px solid var(--global-theme-color); padding-left: 0.75rem;">
+            Technical Innovation & Research (Official IP)
+          </h4>
+          <div class="job-highlights">
+            <ul>
+              <li><strong>LLM Inference Efficiency:</strong> Research on speculative decoding, custom Triton kernels, and KV-cache compression strategies. Filed Google Technical Disclosure on hybrid compression systems for multi-tenant serving optimization.</li>
+              <li><strong>Distributed Systems Synthesis (UPIR):</strong> Invented neuro-symbolic framework combining formal verification and reinforcement learning to automate distributed system generation - achieved 274x speedup in synthesis with 60% latency reduction.</li>
+              <li><strong>Context Architecture (FTCS):</strong> Designed Field-Theoretic Context System modeling context as continuous fields to address long-horizon memory fragmentation in AI agents. Published as Google Technical Disclosure.</li>
+              <li><strong>Data Processing for GenAI (ETLC):</strong> Authored whitepaper introducing Extract, Transform, Load, Contextualize framework adding semantic, relational, and behavioral context to data pipelines for RAG and agentic systems.</li>
+              <li><strong>Multi-Agent Framework (ARTEMIS):</strong> Created adaptive debate-driven decision framework for enterprise multi-agent systems. Published as Google Technical Disclosure.</li>
+              <li><strong>Intelligent Trust Engine (CatchMe):</strong> Developed industry-agnostic agentic AI system for enterprise-scale trust decisions across Finance, Healthcare, Insurance, Cybersecurity, and Supply Chain. Features APLS (self-learning pattern synthesis) and five-level cascade routing achieving 86% cost reduction with sub-50ms latency. Won Google Cloud PSO Hackathon JAPAC Regionals, qualified for World Finals. Two pending Google Technical Disclosures.</li>
             </ul>
           </div>
         </div>
@@ -461,6 +461,60 @@ article.research-project-card {
           <span style="color: var(--global-text-color-light);">•</span>
           <a href="https://github.com/bassrehab/upir" target="_blank" style="color: var(--global-theme-color); text-decoration: none; font-size: 0.875rem; font-weight: 600;">
             <i class="fab fa-github"></i> GitHub Repository
+          </a>
+        </div>
+      </article>
+
+      <article class="research-project-card">
+        <div class="project-period">2025</div>
+        <h3 class="project-title">
+          <a href="https://github.com/bassrehab/steering-vectors-agents" target="_blank">Steering Vectors for Agent Behavior Control</a>
+        </h3>
+        <p class="project-description">
+          Runtime control of LLM agent behaviors through activation steering vectors - modifying model outputs at inference time without retraining. Demonstrates more calibrated control than traditional prompting approaches with LangChain integration.
+        </p>
+        <div class="project-highlights">
+          <ul>
+            <li><strong>Contrastive Activation Addition:</strong> Extract steering vectors from contrast pairs and inject into model activations for behavior modification.</li>
+            <li><strong>Uncertainty Calibration:</strong> Achieves 65% uncertainty detection on ambiguous questions while maintaining 100% confidence on factual ones - superior to prompting which causes indiscriminate hedging.</li>
+            <li><strong>Multi-Vector Composition:</strong> Dynamic strength adjustment per-request with interference mitigation for combining multiple behavioral controls.</li>
+            <li><strong>Production Ready:</strong> LangChain integration, tested on Mistral-7B, Gemma-2-9B, and Qwen3-8B models.</li>
+          </ul>
+        </div>
+        <div class="project-links" style="margin-top: 1rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <a href="https://github.com/bassrehab/steering-vectors-agents" target="_blank" style="color: var(--global-theme-color); text-decoration: none; font-size: 0.875rem; font-weight: 600;">
+            <i class="fab fa-github"></i> GitHub Repository
+          </a>
+          <span style="color: var(--global-text-color-light);">•</span>
+          <a href="/blog/2025/steering-vectors-agents/" style="color: var(--global-theme-color); text-decoration: none; font-size: 0.875rem; font-weight: 600;">
+            <i class="fas fa-pen"></i> Blog Post
+          </a>
+        </div>
+      </article>
+
+      <article class="research-project-card">
+        <div class="project-period">2025</div>
+        <h3 class="project-title">
+          <a href="https://github.com/bassrehab/spark-llm-eval" target="_blank">Spark LLM Eval - Distributed Evaluation Framework</a>
+        </h3>
+        <p class="project-description">
+          Distributed LLM evaluation framework built on Apache Spark for enterprise-scale model assessment. Addresses the gap in evaluating LLMs at scale with statistical rigor, integrating seamlessly with Databricks infrastructure.
+        </p>
+        <div class="project-highlights">
+          <ul>
+            <li><strong>Distributed Processing:</strong> Pandas UDFs with Arrow for efficient batching, scales linearly across Spark executors for millions of examples.</li>
+            <li><strong>Statistical Rigor:</strong> Bootstrap confidence intervals, paired significance tests (t-tests, McNemar's, Wilcoxon signed-rank), and effect size calculations.</li>
+            <li><strong>Multi-Provider Support:</strong> Works with OpenAI, Anthropic Claude, Google Gemini, and vLLM with smart rate limiting (token bucket algorithms).</li>
+            <li><strong>Enterprise Integration:</strong> MLflow experiment tracking, Delta Lake versioning, and comprehensive metrics (lexical, semantic, LLM-as-judge).</li>
+          </ul>
+        </div>
+        <div class="project-links" style="margin-top: 1rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <a href="https://github.com/bassrehab/spark-llm-eval" target="_blank" style="color: var(--global-theme-color); text-decoration: none; font-size: 0.875rem; font-weight: 600;">
+            <i class="fab fa-github"></i> GitHub Repository
+          </a>
+          <span style="color: var(--global-text-color-light);">•</span>
+          <a href="/blog/2025/building-spark-llm-eval/" style="color: var(--global-theme-color); text-decoration: none; font-size: 0.875rem; font-weight: 600;">
+            <i class="fas fa-pen"></i> Blog Post
           </a>
         </div>
       </article>
