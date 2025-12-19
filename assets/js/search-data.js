@@ -225,6 +225,17 @@ ninja.data = [{
             window.location.href = "/blog/2025/why-kimi-k2-stands-out/";
           
         },
+      },{id: "post-from-11-to-88-peak-bandwidth-writing-custom-triton-kernels-for-llm-inference",
+        
+          title: "From 11% to 88% Peak Bandwidth: Writing Custom Triton Kernels for LLM Inference...",
+        
+        description: "A hands-on exploration of writing custom GPU kernels with OpenAI Triton, going from PyTorch&#39;s 11% bandwidth utilization to 88% on RMSNorm.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/triton-kernels-llm-inference/";
+          
+        },
       },{id: "post-implementing-model-context-protocol-in-autonomous-multi-agent-systems-technical-architecture-and-performance-optimization",
         
           title: "Implementing Model Context Protocol in Autonomous Multi-Agent Systems - Technical Architecture and Performance...",
