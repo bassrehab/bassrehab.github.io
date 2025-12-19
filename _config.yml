@@ -42,6 +42,10 @@ repo_trophies:
 
 rss_icon: true
 
+feed:
+  posts_limit: 20
+  excerpt_only: false  # Include full content for AI agents and aggregators
+
 # -----------------------------------------------------------------------------
 # Layout
 # -----------------------------------------------------------------------------
