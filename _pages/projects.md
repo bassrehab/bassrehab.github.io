@@ -4,7 +4,7 @@ permalink: /projects/
 title: projects
 description: Open-source frameworks and protocols advancing AI, privacy, and distributed systems
 nav: true
-nav_order: 3
+nav_order: 4
 ---
 
 <style>
@@ -560,22 +560,22 @@ header.post-header {
           </a>
         </h3>
         <p class="project-description">
-          Production-ready Python framework for detecting and analyzing metacognitive capabilities in AI systems - enabling transparent, systematic reasoning at scale.
+          Activation-level detection of sandbagging, deception, and situational awareness in LLMs. Linear probes achieve 90-96% accuracy across Mistral, Gemma, and Qwen models. Includes steering vectors for runtime behavior control.
         </p>
 
         <ul class="project-highlights">
-          <li>Bayesian situational awareness detection with KL divergence measures</li>
-          <li>Counterfactual chain-of-thought analysis for causal attribution</li>
-          <li>Real-time production monitoring with automated alerting</li>
+          <li>Sandbagging detection via linear probes with 90-96% accuracy</li>
+          <li>Steering vectors reduce sandbagging behavior by 20%</li>
+          <li>Bayesian situational awareness detection with KL divergence</li>
           <li>275 tests, 95% code coverage, production-hardened</li>
         </ul>
 
         <div class="tech-stack">
           <span class="tech-tag">Python</span>
-          <span class="tech-tag">NumPy</span>
-          <span class="tech-tag">SciPy</span>
-          <span class="tech-tag">Bayesian Inference</span>
-          <span class="tech-tag">Statistical Monitoring</span>
+          <span class="tech-tag">PyTorch</span>
+          <span class="tech-tag">Transformers</span>
+          <span class="tech-tag">Activation Probing</span>
+          <span class="tech-tag">AI Safety</span>
         </div>
 
         <div class="project-links">
@@ -588,12 +588,15 @@ header.post-header {
           <a href="https://github.com/bassrehab/ai-metacognition-toolkit" class="project-link" target="_blank">
             <i class="fab fa-github"></i> GitHub
           </a>
+          <a href="/blog/2025/detecting-ai-sandbagging/" class="project-link" target="_blank">
+            <i class="fas fa-pen"></i> Blog
+          </a>
         </div>
 
         <div class="impact-metrics">
           <div class="metric">
-            <div class="metric-value">2025</div>
-            <div class="metric-label">Released</div>
+            <div class="metric-value">90-96%</div>
+            <div class="metric-label">Probe Accuracy</div>
           </div>
           <div class="metric">
             <div class="metric-value">PyPI</div>

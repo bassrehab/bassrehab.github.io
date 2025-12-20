@@ -2,13 +2,12 @@
 layout: page
 permalink: /license/
 title: "Licenses"
-description: "Please Read: Applicable licenses for subhadipmitra.com"
+description: "Applicable licenses for subhadipmitra.com"
 ---
 
-### Articles
+### Articles & Blog Posts
 
-All the files inside `source/posts` and `img/posts` directory are licensed under
-[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The attribution requirement is only met when:
+All content inside the `_posts/` directory and `assets/img/blog/` directory is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The attribution requirement is met when:
 
 1. The canonical link is directed towards the original article, e.g.
    `<link rel="canonical" href="https://subhadipmitra.com/blog/2021/designing-a-real-time-data-processing-system/" />`
@@ -17,25 +16,29 @@ All the files inside `source/posts` and `img/posts` directory are licensed under
 
 <br />
 
+### Code Snippets
+
+All code snippets and examples appearing in blog posts on this site are licensed under the [MIT License](https://opensource.org/licenses/MIT). You are free to use, copy, modify, and distribute them with attribution.
+
+Note: My open source projects (ai-metacognition-toolkit, speculative-decoding, triton-kernels, etc.) have their own licenses specified in their respective repositories.
+
+<br />
+
 ### Assets
 
-All the files inside `assets/img/blog`, `assets/img/screenshots`, `assets/pdf`, `assets/img/json` directory are copyrighted to Subhadip Mitra. All rights reserved.
+All files inside `assets/img/`, `assets/pdf/`, and `assets/json/` directories are copyrighted to Subhadip Mitra unless otherwise noted. All rights reserved.
 
 <br />
 
-### Code
+### Logos & Trademarks
 
-All the codes, code snippets, libraries at `subhadipmitra.com` are licensed under [GNU Lesser General Public License v3.0](https://www.gnu.org/licenses/lgpl-3.0.en.html)
-
-<br />
-
-### Logos
-
-All the files inside `source/img/logos` directory are copyrighted to their respective companies.
+Company logos and trademarks appearing on this site are copyrighted to their respective owners.
 
 <br />
 
 ### Theme
+
+This site uses the [al-folio](https://github.com/alshedivat/al-folio) theme.
 
 The MIT License (MIT)
 

@@ -4,7 +4,7 @@ title: now
 permalink: /now/
 description: What I'm working on, learning, and thinking about right now
 nav: true
-nav_order: 1
+nav_order: 2
 ---
 
 <div class="now-page">

@@ -4,7 +4,7 @@ permalink: /publications/
 title: "publications"
 description: "Exploring innovations in AI, distributed systems, blockchain, and beyond"
 nav: true
-nav_order: 2
+nav_order: 3
 ---
 
 <style>

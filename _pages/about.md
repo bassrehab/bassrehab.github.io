@@ -150,17 +150,35 @@ social: false
         </a>
     </div>
 
-    <!-- Featured Open Source Project -->
-    <div class="featured-project">
-        <div class="showcase-label"><i class="fas fa-star"></i> Featured Open Source</div>
-        <h2>Speculative Decoding</h2>
-        <p>
-            LLM inference acceleration from first principles - speculative decoding, tree speculation, KV-cache compression, and diffusion efficiency with memory-bandwidth analysis
-        </p>
-        <div class="featured-links">
-            <a href="https://github.com/bassrehab/speculative-decoding" class="innovation-link" target="_blank"><i class="fab fa-github"></i> speculative-decoding</a>
-            <span style="margin: 0 0.5rem;">•</span>
-            <a href="https://github.com/bassrehab/triton-kernels" class="innovation-link" target="_blank"><i class="fab fa-github"></i> triton-kernels</a>
+    <!-- Featured Open Source Projects -->
+    <div class="featured-projects-grid">
+        <div class="featured-project">
+            <div class="showcase-label"><i class="fas fa-shield-alt"></i> AI Safety & Interpretability</div>
+            <h2>AI Metacognition Toolkit</h2>
+            <p>
+                Activation-level detection of sandbagging, deception, and situational awareness in LLMs. Linear probes achieve 90-96% accuracy. Includes steering vectors for runtime behavior control.
+            </p>
+            <div class="featured-links">
+                <a href="https://github.com/bassrehab/ai-metacognition-toolkit" class="innovation-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                <span style="margin: 0 0.5rem;">•</span>
+                <a href="https://pypi.org/project/ai-metacognition-toolkit/" class="innovation-link" target="_blank"><i class="fas fa-cube"></i> PyPI</a>
+                <span style="margin: 0 0.5rem;">•</span>
+                <a href="https://ai-metacognition-toolkit.subhadipmitra.com/" class="innovation-link" target="_blank"><i class="fas fa-book"></i> Docs</a>
+                <span style="margin: 0 0.5rem;">•</span>
+                <a href="/blog/2025/detecting-ai-sandbagging/" class="innovation-link"><i class="fas fa-pen"></i> Blog</a>
+            </div>
+        </div>
+        <div class="featured-project">
+            <div class="showcase-label"><i class="fas fa-bolt"></i> Inference Optimization</div>
+            <h2>LLM Acceleration</h2>
+            <p>
+                Inference acceleration from first principles - speculative decoding, tree speculation, custom Triton kernels achieving 88% peak bandwidth, and distributed evaluation at scale.
+            </p>
+            <div class="featured-links">
+                <a href="https://github.com/bassrehab/speculative-decoding" class="innovation-link" target="_blank"><i class="fab fa-github"></i> speculative-decoding</a>
+                <span style="margin: 0 0.5rem;">•</span>
+                <a href="https://github.com/bassrehab/triton-kernels" class="innovation-link" target="_blank"><i class="fab fa-github"></i> triton-kernels</a>
+            </div>
         </div>
     </div>
 
@@ -173,6 +191,26 @@ social: false
 
         <div class="innovation-timeline">
             <article class="timeline-item timeline-left">
+                <div class="timeline-content">
+                    <div class="innovation-year">2025</div>
+                    <div class="timeline-badge"><i class="fas fa-chart-bar"></i></div>
+                    <h3>Spark LLM Eval Framework</h3>
+                    <p>
+                        Distributed LLM evaluation framework for Apache Spark enabling enterprise-scale model assessment with statistical rigor. Features bootstrap confidence intervals, multi-provider support, and seamless Databricks integration.
+                    </p>
+                    <div style="margin-top: 0.5rem;">
+                        <a href="https://github.com/bassrehab/spark-llm-eval" class="innovation-link" target="_blank">
+                            GitHub Repo <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <span style="margin: 0 0.5rem;">•</span>
+                        <a href="/blog/2025/building-spark-llm-eval/" class="innovation-link">
+                            Blog Post <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="timeline-item timeline-right">
                 <div class="timeline-content">
                     <div class="innovation-year">2025</div>
                     <div class="timeline-badge">UPIR</div>
@@ -192,7 +230,7 @@ social: false
                 </div>
             </article>
 
-            <article class="timeline-item timeline-right">
+            <article class="timeline-item timeline-left">
                 <div class="timeline-content">
                     <div class="innovation-year">2025</div>
                     <div class="timeline-badge"><i class="fas fa-bolt"></i></div>
@@ -207,26 +245,6 @@ social: false
                         <span style="margin: 0 0.5rem;">•</span>
                         <a href="https://github.com/bassrehab/triton-kernels" class="innovation-link" target="_blank">
                             triton-kernels <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <article class="timeline-item timeline-left">
-                <div class="timeline-content">
-                    <div class="innovation-year">2025</div>
-                    <div class="timeline-badge"><i class="fas fa-chart-bar"></i></div>
-                    <h3>Spark LLM Eval Framework</h3>
-                    <p>
-                        Distributed LLM evaluation framework for Apache Spark enabling enterprise-scale model assessment with statistical rigor. Features bootstrap confidence intervals, multi-provider support, and seamless Databricks integration.
-                    </p>
-                    <div style="margin-top: 0.5rem;">
-                        <a href="https://github.com/bassrehab/spark-llm-eval" class="innovation-link" target="_blank">
-                            GitHub Repo <i class="fas fa-arrow-right"></i>
-                        </a>
-                        <span style="margin: 0 0.5rem;">•</span>
-                        <a href="/blog/2025/building-spark-llm-eval/" class="innovation-link">
-                            Blog Post <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
@@ -322,6 +340,24 @@ social: false
 </div>
 
 <style>
+/* Featured Projects Grid */
+.featured-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.featured-projects-grid .featured-project {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .featured-projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Innovation Timeline - Magazine Editorial Style */
 .innovation-timeline {
     position: relative;

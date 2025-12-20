@@ -414,13 +414,13 @@ article.research-project-card {
           <a href="https://ai-metacognition-toolkit.subhadipmitra.com/" target="_blank">AI Metacognition Toolkit</a>
         </h3>
         <p class="project-description">
-          Production-ready framework for systematic reasoning and behavioral monitoring in AI systems. Enables detection of self-awareness patterns and decision-making shifts in large language models through statistical divergence analysis.
+          Activation-level detection of sandbagging, deception, and situational awareness in LLMs. Linear probes achieve 90-96% accuracy across Mistral, Gemma, and Qwen models. Includes steering vectors for runtime behavior control.
         </p>
         <div class="project-highlights">
           <ul>
-            <li><strong>Bayesian Situational Awareness:</strong> KL-divergence based detection of when AI models exhibit behavioral changes or "Observer Effects" during interaction.</li>
-            <li><strong>Counterfactual Analysis:</strong> Chain-of-thought reasoning attribution for causal decision-making transparency.</li>
-            <li><strong>Production Monitoring:</strong> Real-time alerting on behavioral divergence with automated drift detection.</li>
+            <li><strong>Sandbagging Detection:</strong> Linear probes trained on activation differences detect sandbagging intent with 90-96% accuracy. Model-specific representations - no cross-model transfer.</li>
+            <li><strong>Steering Vectors:</strong> Activation steering reduces sandbagging behavior by 20% in Gemma models without retraining.</li>
+            <li><strong>Bayesian Situational Awareness:</strong> KL-divergence based detection of behavioral changes and "Observer Effects" during interaction.</li>
             <li><strong>Engineering Rigor:</strong> 275 test cases, 95% code coverage, type-safe implementation, published on PyPI.</li>
           </ul>
         </div>
@@ -435,6 +435,10 @@ article.research-project-card {
           <span style="color: var(--global-text-color-light);">•</span>
           <a href="https://ai-metacognition-toolkit.subhadipmitra.com/" target="_blank" style="color: var(--global-theme-color); text-decoration: none; font-size: 0.875rem; font-weight: 600;">
             <i class="fas fa-book"></i> Documentation
+          </a>
+          <span style="color: var(--global-text-color-light);">•</span>
+          <a href="/blog/2025/detecting-ai-sandbagging/" style="color: var(--global-theme-color); text-decoration: none; font-size: 0.875rem; font-weight: 600;">
+            <i class="fas fa-pen"></i> Blog
           </a>
         </div>
       </article>
@@ -776,34 +780,39 @@ article.research-project-card {
             <a href="https://ai-metacognition-toolkit.subhadipmitra.com/" target="_blank">AI Metacognition Toolkit</a>
         </h3>
         <p class="project-description">
-            Production-ready framework for systematic reasoning in AI systems - enabling transparent, metacognitive decision-making at scale. A Python toolkit for detecting and analyzing when AI models exhibit self-awareness and behavioral shifts.
+            Activation-level detection of sandbagging, deception, and situational awareness in LLMs. Linear probes achieve 90-96% accuracy across Mistral, Gemma, and Qwen models. Includes steering vectors for runtime behavior control.
         </p>
         <div class="project-highlights">
             <ul>
-            <li>Bayesian situational awareness detection with KL divergence measures</li>
-            <li>Counterfactual chain-of-thought analysis for causal reasoning attribution</li>
-            <li>Real-time production monitoring with automated alerting on behavioral divergence</li>
+            <li>Sandbagging detection via linear probes with 90-96% accuracy</li>
+            <li>Steering vectors reduce sandbagging behavior by 20%</li>
+            <li>Bayesian situational awareness detection with KL divergence</li>
             <li>Available on PyPI • 275 tests • 95% code coverage</li>
             </ul>
         </div>
         <div class="project-links" style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-            <a href="https://ai-metacognition-toolkit.subhadipmitra.com/" 
-            class="project-link-btn" 
+            <a href="https://ai-metacognition-toolkit.subhadipmitra.com/"
+            class="project-link-btn"
             target="_blank"
             style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: var(--global-code-bg-color, #f8f9fa); border: 1px solid var(--global-divider-color, #e5e5e5); border-radius: 8px; text-decoration: none; color: var(--global-text-color, #000); font-size: 0.875rem; font-weight: 600; transition: all 0.3s;">
             <i class="fas fa-book"></i> Documentation
             </a>
-            <a href="https://pypi.org/project/ai-metacognition-toolkit/" 
-            class="project-link-btn" 
+            <a href="https://pypi.org/project/ai-metacognition-toolkit/"
+            class="project-link-btn"
             target="_blank"
             style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: var(--global-code-bg-color, #f8f9fa); border: 1px solid var(--global-divider-color, #e5e5e5); border-radius: 8px; text-decoration: none; color: var(--global-text-color, #000); font-size: 0.875rem; font-weight: 600; transition: all 0.3s;">
             <i class="fas fa-cube"></i> PyPI Package
             </a>
-            <a href="https://github.com/bassrehab/ai-metacognition-toolkit" 
-            class="project-link-btn" 
+            <a href="https://github.com/bassrehab/ai-metacognition-toolkit"
+            class="project-link-btn"
             target="_blank"
             style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: var(--global-code-bg-color, #f8f9fa); border: 1px solid var(--global-divider-color, #e5e5e5); border-radius: 8px; text-decoration: none; color: var(--global-text-color, #000); font-size: 0.875rem; font-weight: 600; transition: all 0.3s;">
             <i class="fab fa-github"></i> GitHub Repo
+            </a>
+            <a href="/blog/2025/detecting-ai-sandbagging/"
+            class="project-link-btn"
+            style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: var(--global-code-bg-color, #f8f9fa); border: 1px solid var(--global-divider-color, #e5e5e5); border-radius: 8px; text-decoration: none; color: var(--global-text-color, #000); font-size: 0.875rem; font-weight: 600; transition: all 0.3s;">
+            <i class="fas fa-pen"></i> Blog
             </a>
         </div>
         </article>

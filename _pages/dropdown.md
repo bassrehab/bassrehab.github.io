@@ -5,6 +5,8 @@ nav: true
 nav_order: 8
 dropdown: true
 children:
+  - title: repositories
+    permalink: /repositories/
   - title: archive
     permalink: /archive/
   - title: divider
@@ -13,7 +15,6 @@ children:
   - title: divider
   - title: licenses
     permalink: /license/
-  - title: divider
   - title: privacy
     permalink: /privacy/
   - title: divider
