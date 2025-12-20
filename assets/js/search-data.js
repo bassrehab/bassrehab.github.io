@@ -9,19 +9,19 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-now",
-          title: "now",
-          description: "What I&#39;m working on, learning, and thinking about right now",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/now/";
-          },
-        },{id: "nav-blog",
+  },{id: "nav-blog",
           title: "blog",
           description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/blog/";
+          },
+        },{id: "nav-now",
+          title: "now",
+          description: "What I&#39;m working on, learning, and thinking about right now",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/now/";
           },
         },{id: "nav-publications",
           title: "publications",
@@ -37,13 +37,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "nav-repositories",
-          title: "repositories",
-          description: "Explore my open source contributions and projects on GitHub",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/repositories/";
-          },
         },{id: "nav-cv",
           title: "cv",
           description: "",
@@ -51,7 +44,14 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "dropdown-archive",
+        },{id: "dropdown-repositories",
+              title: "repositories",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/repositories/";
+              },
+            },{id: "dropdown-archive",
               title: "archive",
               description: "",
               section: "Dropdown",
