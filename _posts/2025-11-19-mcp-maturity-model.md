@@ -8,7 +8,7 @@ tags: [MCP, multi-agent-systems, context-management, AI-architecture, enterprise
 description: "A practical framework for evaluating your multi-agent context management strategy. From ad-hoc string concatenation to self-evolving context systems - where does your architecture stand?"
 citation: true
 giscus_comments: true
-featured: false
+featured: true
 related_posts: true
 pretty_table: true
 tabs: true
