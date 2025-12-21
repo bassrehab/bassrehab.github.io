@@ -6,7 +6,7 @@ subtitle:
 
 profile:
   align: right
-  image: subhadip-mitra-portrait-home-cl.png
+  image: subhadipmitra-black_white.png
   image_circular: false
 
 news: false
