@@ -116,7 +116,7 @@
       "clone_url": "https://github.com/bassrehab/spark-llm-eval.git",
       "svn_url": "https://github.com/bassrehab/spark-llm-eval",
       "homepage": "https://subhadipmitra.com/blog/2025/building-spark-llm-eval/",
-      "size": 1473,
+      "size": 1497,
       "stargazers_count": 2,
       "watchers_count": 2,
       "language": "Python",
@@ -1546,13 +1546,13 @@
       "deployments_url": "https://api.github.com/repos/bassrehab/bassrehab.github.io/deployments",
       "created_at": "2024-04-17T11:28:08Z",
       "updated_at": "2025-01-16T14:55:09Z",
-      "pushed_at": "2025-12-20T14:50:20Z",
+      "pushed_at": "2025-12-21T19:37:26Z",
       "git_url": "git://github.com/bassrehab/bassrehab.github.io.git",
       "ssh_url": "git@github.com:bassrehab/bassrehab.github.io.git",
       "clone_url": "https://github.com/bassrehab/bassrehab.github.io.git",
       "svn_url": "https://github.com/bassrehab/bassrehab.github.io",
       "homepage": "https://subhadipmitra.com",
-      "size": 273348,
+      "size": 272968,
       "stargazers_count": 0,
       "watchers_count": 0,
       "language": "HTML",
@@ -4860,10 +4860,10 @@
   ],
   "languages": {
     "HTML": 5497193,
-    "Python": 3689195,
+    "Python": 3685790,
     "SCSS": 1248309,
-    "JavaScript": 1081003,
-    "Jupyter Notebook": 480908
+    "JavaScript": 1059518,
+    "Jupyter Notebook": 189838
   },
-  "updated_at": 1766345409
+  "updated_at": 1766394080
 }

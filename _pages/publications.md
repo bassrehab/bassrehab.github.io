@@ -94,8 +94,8 @@ header.post-header {
         <button class="year-filter-btn" data-year="2025">2025</button>
         <button class="year-filter-btn" data-year="2023">2023</button>
         <button class="year-filter-btn" data-year="2021">2021</button>
-        <button class="year-filter-btn" data-year="2020-2015">2015-2020</button>
-        <button class="year-filter-btn" data-year="2014-2007">2007-2014</button>
+        <button class="year-filter-btn" data-year="2015-2020">2015-2020</button>
+        <button class="year-filter-btn" data-year="2007-2014">2007-2014</button>
       </div>
     </div>
 
