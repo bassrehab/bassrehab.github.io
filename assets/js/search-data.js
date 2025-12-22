@@ -524,7 +524,7 @@ ninja.data = [{
         },
       },{id: "post-introducing-oconsent-open-consent-protocol",
         
-          title: "Introducing OConsent — Open Consent Protocol",
+          title: "Introducing OConsent - Open Consent Protocol",
         
         description: "OConsent is a blockchain-based platform that enables transparent processing of personal data, empowering users and data controllers to manage consent and privacy.",
         section: "Posts",
