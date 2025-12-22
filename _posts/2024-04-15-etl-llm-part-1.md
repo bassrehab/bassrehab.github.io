@@ -14,13 +14,11 @@ toc:
 
 **Part 1: Searching for an Optimal Algorithm for ETL planning**
 
-Welcome to the first installment of our three-part series exploring the transformative impact of Large Language Models (LLMs) on ETL (Extract, Transform, Load) processes. In this opening segment, we focus on the search for an optimal algorithm for ETL planning.
+This is the first post in a three-part series on using LLMs to improve ETL processes. Before we get to the LLM part (that's Part 2 and 3), we need to lay some groundwork: how do you even think about ETL planning algorithmically?
 
-As businesses increasingly rely on vast amounts of data to make critical decisions, the efficiency and effectiveness of ETL processes become paramount. Traditional methods often fall short in handling the complexity and scale of modern data environments, necessitating a shift towards more sophisticated tools.
+Most ETL pipelines are built ad-hoc. Someone writes a script, it works, nobody touches it. But when you have dozens of possible transformations and need to find the most efficient sequence, that's actually a graph search problem. And graph search is something we know how to optimize.
 
-In this part, we delve into how traditional algorithms can be used to design the planning stage of ETL workflows — we identify algorithms that are not only more efficient but also capable of handling complex, dynamic data scenarios. We will explore the foundational concepts behind these algorithms and discuss how they can be tailored to improve the entire data transformation and integration cycle.
-
-Join us as we begin our journey into rethinking ETLs with the power of advanced language models, setting the stage for a deeper dive into practical applications and optimization strategies in the subsequent parts of the series.
+This post covers the traditional algorithmic approach to ETL planning. We'll model pipelines as graphs, assign costs to operations, and use search algorithms to find optimal paths. Part 2 will show how LLMs can make this smarter.
 
 <br />
 
@@ -316,9 +314,7 @@ workflow main_etl {
 
 # Search Algorithm Selection
 
-Let's dive deeper into how to choose the best search algorithm for planning our ETL process. Recall that our core task involves finding the optimal (likely the lowest cost) path through the graph of datasets and ETL operations. While we defined a modified, Djiktra's algorithm for variable and probabilistic costs, for discussion below we will use single aggregated weights.
-
-Absolutely, let's dive deeper into how to choose the best search algorithm for planning your ETL process. Recall that our core task involves finding the optimal (likely the lowest cost) path through the graph of datasets and ETL operations.
+Now that we have a graph representation, we need to find the optimal path through it. Earlier we defined a modified Dijkstra's algorithm for probabilistic costs, but for the comparison below we'll use single aggregated weights to keep things clear.
 
 <br />
 <iframe width="100%" height="400"

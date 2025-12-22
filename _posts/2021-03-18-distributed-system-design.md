@@ -12,9 +12,11 @@ toc:
   sidebar: left
 ---
 
-In the ever-evolving landscape of technology, the principles that once defined robust system design are now being revisited and revised to address new challenges and harness emerging opportunities. From Amazon's pioneering strategies that effectively shaped the cloud services realm to the latest frameworks emphasizing sustainability and ethics, the journey of system design principles reflects a broader narrative of adaptation and foresight. This blog delves into the timeless wisdom of Amazon’s early system design principles, juxtaposed with newly proposed concepts tailored for today’s digital and societal demands. We’ll explore how these frameworks not only coexist but also complement each other in driving innovation and ensuring technology serves broader human and environmental needs.
+Amazon's early system design principles shaped how we think about distributed systems. Decentralization, asynchrony, autonomy, simplicity - these ideas powered AWS and influenced a generation of architects. But they were formulated in a different era, before we had to worry as much about GDPR compliance, carbon footprints, or AI ethics.
 
-The table below outlines the initial design intent of each principle, their advantages in contemporary applications, and the challenges they present in modern system architectures. While these principles form a robust foundation for distributed systems, they also require continual re-evaluation and adaptation to remain effective in the face of evolving technology landscapes and business aspirations.
+I've been thinking about what a modern set of principles might look like. Not to replace the originals - they still hold up remarkably well - but to complement them with concerns that matter now.
+
+The table below breaks down each classic principle with its tradeoffs. These remain solid foundations, but they don't cover everything we need to think about today.
 
 {:class="table table-bordered"}
 | Principle | Description | Pros | Cons |
@@ -30,7 +32,7 @@ The table below outlines the initial design intent of each principle, their adva
 
 ## Proposed new principles for modern system design
 
-These principles aim to address the challenges and opportunities presented by modern technological and societal shifts, ensuring that system designs are robust, ethical, and sustainable.
+Here are six principles I think deserve a seat at the table alongside the classics. None of these are radical - most practitioners already think about them - but formalizing them helps ensure they don't get deprioritized when deadlines loom.
 
 {:class="table table-bordered"}
 | Principle | Description | Pros | Cons |
@@ -59,6 +61,11 @@ These principles aim to address the challenges and opportunities presented by mo
 6. **Human-Centric Design**: This principle emphasizes the importance of creating technology that is accessible and beneficial to all, ensuring that innovations are inclusive and equitable.
 
 <br />
-## Concluding remarks
 
-As we navigate the complexities of modern technology landscapes, the fusion of enduring and emerging system design principles offers a compelling guide for building resilient, ethical, and efficient systems. By integrating foundational strategies with proactive, forward-thinking approaches, we can create infrastructures that are not only technically sound but also socially responsible and adaptable to future changes. Whether you are a developer, an entrepreneur, or simply a tech enthusiast, embracing this holistic view of system design can illuminate pathways to innovation and sustainability. In the spirit of continuous improvement and adaptability, let us commit to evolving our design philosophies to meet the challenges and opportunities of the digital age. Together, we can shape a future where technology aligns seamlessly with the ever-changing human and environmental landscapes.
+## Final thoughts
+
+The original Amazon principles are battle-tested. They work. But they came from a time when "scale" was the primary concern and regulatory/ethical considerations were afterthoughts.
+
+Today's systems need to handle both. A service that scales beautifully but violates GDPR in twelve countries isn't actually well-designed. Neither is one that's technically elegant but burns through carbon credits.
+
+The best architectures I've seen lately don't treat these new principles as constraints - they treat them as first-class design requirements, right alongside availability and latency. That mental shift makes all the difference.

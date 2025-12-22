@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Introducing OConsent — Open Consent Protocol
+title: Introducing OConsent - Open Consent Protocol
 date: 2020-12-10 00:20:21
 description: OConsent is a blockchain-based platform that enables transparent processing of personal data, empowering users and data controllers to manage consent and privacy.
 tags: system-design privacy consent-management blockchain cryptography
@@ -13,11 +13,11 @@ toc:
   sidebar: left
 ---
 
-In the current connected world — Websites, Mobile Apps, IoT Devices collect a large volume of users’ personally identifiable activity data. These collected data is used for varied purposes of analytics, marketing, personalisation of services, etc. Data is assimilated through site cookies, tracking device IDs, embedded JavaScripts, Pixels, etc. to name a few. Many of these tracking and usage of collected data happens behind the scene and is not apparent to an average user. Consequently, many Countries and Regions have formulated legislations (e.g. GDPR, EU) — that allow users to be able to control their personal data, be informed and consent to its processing in an comprehensible and user-friendly manner.
+Websites, mobile apps, and IoT devices collect massive amounts of personal data. Cookies, tracking pixels, device IDs - the list goes on. Most users have no idea what's being collected or how it's used. GDPR and similar regulations tried to fix this by requiring informed consent, but the implementation is often a joke: walls of legalese that nobody reads, buried opt-out buttons, dark patterns everywhere.
 
-Over the last few months I have been working on designing — OConsent — that proposes a protocol and a platform based on Blockchain Technology that enables the transparent processing of personal data throughout its lifecycle from capture, lineage to redaction. The solution intends to help service multiple stakeholders from individual end-users to Data Controllers and Privacy Officers. It intends to offer a holistic and unambiguous view of how and when the data points are captured, accessed and processed. The framework also envisages how different access control policies might be created and enforced through a public blockchain including real time alerts for privacy data breach.
+I spent the last few months designing OConsent, a protocol that takes a different approach. Instead of trusting companies to honor consent preferences, OConsent uses blockchain to make consent agreements cryptographically verifiable and tamper-proof. The idea is simple: if you can't trust the data controller to be honest about consent, remove the need for trust entirely.
 
-In the rest of the blog post, I will take you through the core concepts of OConsent, its working and sample snippets.
+This post walks through how it works, with code examples you can actually run.
 
 <br />
 
@@ -482,11 +482,18 @@ contract DataLease {
 }
 ```
 
-## Looking forward ..
+## What's next
 
-In conclusion, OConsent represents a significant step towards a more transparent and user-centric approach to data sharing. By leveraging blockchain technology and focusing on user empowerment, it addresses key challenges in consent management and privacy protection. While still evolving, OConsent demonstrates the potential of decentralized solutions to reshape the data landscape. The protocol's future development and adoption will be crucial in determining its broader impact on promoting a more equitable and transparent data economy.
+OConsent is still a work in progress. The core protocol is defined, but there's a lot of work ahead: better tooling, more blockchain integrations, real-world pilots with companies willing to experiment.
 
-OConsent now has a dedicated home at https://oconsent.io.
-The Original Paper is available at https://arxiv.org/abs/2201.01326
+The big open question is adoption. A consent protocol only works if both sides use it. Getting users on board is relatively easy - who doesn't want more control over their data? Getting companies to adopt it is harder, especially when current approaches let them operate with minimal accountability.
 
-> If the idea of OConsent excites you — please join us to spread the word on twitter/theoconsent or contribute towards its development on github/oconsent by initiating a pull request or write to us at hi@oconsent.io
+But regulations are tightening, and the companies that figure out transparent consent early will have an advantage when stricter enforcement arrives.
+
+**Resources:**
+- OConsent website: https://oconsent.io
+- Original paper: https://arxiv.org/abs/2201.01326
+- Twitter: [@theoconsent](https://twitter.com/theoconsent)
+- GitHub: [github.com/oconsent](https://github.com/oconsent)
+
+If you're interested in contributing or piloting this with real data, reach out at hi@oconsent.io.
