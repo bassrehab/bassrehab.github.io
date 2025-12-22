@@ -93,6 +93,13 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "https://ai-metacognition-toolkit.subhadipmitra.com/";
               },
+            },{id: "dropdown-symmetry",
+              title: "symmetry",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "https://symmetry.subhadipmitra.com/";
+              },
             },{id: "post-i-trained-probes-to-catch-ai-models-sandbagging",
         
           title: "I Trained Probes to Catch AI Models Sandbagging",
