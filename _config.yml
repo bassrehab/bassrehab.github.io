@@ -91,7 +91,7 @@ bing_site_verification: 04fec5e0d64b1c9bc788e98f81ee2a78 # out your bing-site-ve
 # -----------------------------------------------------------------------------
 
 blog_name: binary breakthroughs # blog_name will be displayed in your blog page
-blog_description: from silicon chips to neural networks. <a href="/blog/1970/welcome/">welcome.</a>
+blog_description: Notes on building data platforms, AI systems, and the infrastructure between them
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
@@ -151,13 +151,9 @@ newsletter:
 # -----------------------------------------------------------------------------
 
 collections:
-  books:
-    output: true
   news:
     defaults:
       layout: post
-    output: true
-  projects:
     output: true
 
 # -----------------------------------------------------------------------------
@@ -265,8 +261,6 @@ jekyll-archives:
       year: "/blog/:year/"
       tags: "/blog/:type/:name/"
       categories: "/blog/:type/:name/"
-  books:
-    enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
 
 display_tags: ["casestudy", "llm", "genai", "machine-learning", "research", "code"] # these tags will be displayed on the front page of your blog
 display_categories: ["platform", "algorithms"] # these categories will be displayed on the front page of your blog
