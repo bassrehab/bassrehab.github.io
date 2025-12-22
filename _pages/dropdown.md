@@ -22,4 +22,6 @@ children:
     permalink: https://upir.subhadipmitra.com
   - title: 'docs: AI Metacognition'
     permalink: https://ai-metacognition-toolkit.subhadipmitra.com/
+  - title: 'symmetry'
+    permalink: https://symmetry.subhadipmitra.com/
 ---
