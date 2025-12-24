@@ -3,7 +3,8 @@ layout: page
 permalink: /repositories/
 title: "repositories"
 description: "Explore my open source contributions and projects on GitHub"
-nav: false
+nav: true
+nav_order: 6
 ---
 
 <style>
