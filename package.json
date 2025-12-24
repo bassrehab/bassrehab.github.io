@@ -1,7 +1,8 @@
 {
   "scripts": {
     "generate-cv": "./generate-cv.sh",
-    "generate-og": "node _scripts/generate-og-images.mjs"
+    "generate-og": "node _scripts/generate-og-images.mjs",
+    "generate-webp": "./generate-webp.sh"
   },
   "devDependencies": {
     "@fontsource/inter": "^5.2.8",
