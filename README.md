@@ -26,10 +26,10 @@ bundle exec jekyll serve --watch --port=8080 --host=0.0.0.0 --livereload
 
 All build scripts are available via npm. Run with `npm run <script>`.
 
-| Script | Description |
-|--------|-------------|
-| `generate-cv` | Compiles LaTeX CV templates to PDF (public and private versions) |
-| `generate-og` | Generates Open Graph social preview images for all blog posts |
+| Script          | Description                                                             |
+| --------------- | ----------------------------------------------------------------------- |
+| `generate-cv`   | Compiles LaTeX CV templates to PDF (public and private versions)        |
+| `generate-og`   | Generates Open Graph social preview images for all blog posts           |
 | `generate-webp` | Builds site and copies generated WebP images to source for git tracking |
 
 ### CV Generation
@@ -41,6 +41,7 @@ npm run generate-cv
 ```
 
 **Output:**
+
 - `assets/pdf/cv.pdf` - Public version (no phone number)
 - `assets/pdf/cv-phone.pdf` - Private version (with phone number)
 
@@ -70,39 +71,26 @@ This builds the site and copies all WebP files from `_site/assets/img/` back to 
 
 ## Deployment
 
-### Cloudflare Pages (Primary)
+### GitHub Pages (Primary)
 
-The site deploys automatically to Cloudflare Pages on push to `main` branch.
+The site deploys automatically via GitHub Actions on push to `main` branch.
 
-**Repository:** `git@github.com:bassrehab/subhadipmitra-site.git`
+**Workflow:** `.github/workflows/deploy.yml`
 
-**Build configuration:**
-```bash
-bundle exec jekyll build --config _config.yml,_config.cloudflare.yml
-```
-
-The `_config.cloudflare.yml` disables ImageMagick (not supported on Cloudflare):
-
-```yaml
-imagemagick:
-  enabled: false
-```
-
-**Pre-deployment checklist:**
-1. Generate OG images: `npm run generate-og`
-2. Generate and commit WebP images: `npm run generate-webp`
-3. Generate CV PDFs if changed: `npm run generate-cv`
-4. Commit all generated assets before pushing
-
-### GitHub Pages (Alternative)
-
-A GitHub Actions workflow is also available for GitHub Pages deployment. The workflow:
+The deployment workflow:
 
 1. Sets up Ruby 3.3.5, Python 3.13, Node.js 20
 2. Generates OG images (`npm run generate-og`)
-3. Builds Jekyll with `JEKYLL_ENV=production`
-4. Purges unused CSS with PurgeCSS
-5. Deploys `_site/` to GitHub Pages
+3. Installs ImageMagick for responsive WebP generation
+4. Builds Jekyll with `JEKYLL_ENV=production`
+5. Purges unused CSS with PurgeCSS
+6. Deploys `_site/` to GitHub Pages
+
+**Pre-deployment checklist:**
+
+1. Generate CV PDFs if changed: `npm run generate-cv`
+2. Commit changes and push to `main` branch
+3. OG images and WebP images are generated automatically during CI build
 
 ## Project Structure
 
@@ -123,7 +111,6 @@ A GitHub Actions workflow is also available for GitHub Pages deployment. The wor
 │   ├── js/               # JavaScript files
 │   └── pdf/              # Generated PDFs (CV)
 ├── _config.yml           # Main Jekyll configuration
-├── _config.cloudflare.yml # Cloudflare-specific overrides
 ├── generate-cv.sh        # CV generation script
 ├── generate-webp.sh      # WebP persistence script
 └── package.json          # npm scripts and dependencies
@@ -155,7 +142,6 @@ featured: true
 toc:
   sidebar: left
 ---
-
 Your content here...
 ```
 

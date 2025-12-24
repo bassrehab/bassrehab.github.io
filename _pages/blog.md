@@ -396,8 +396,10 @@ pagination:
   </div>
 
   <!-- Featured Posts -->
-  {% assign featured_posts = site.posts | where: "featured", "true" %}
-  {% if featured_posts.size > 0 %}
+
+{% assign featured_posts = site.posts | where: "featured", "true" %}
+{% if featured_posts.size > 0 %}
+
   <div class="featured-posts">
     <div class="featured-section-label">
       <i class="fa-solid fa-star"></i>
@@ -476,9 +478,9 @@ pagination:
                   <a href="{{ post.redirect | relative_url }}">{{ post.title }}</a>
                 {% endif %}
               </h3>
-              
+
               <p class="post-description">{{ post.description }}</p>
-              
+
               <p class="post-meta">
                 {{ read_time }} min read &nbsp; · &nbsp;
                 {{ post.date | date: '%B %d, %Y' }}
@@ -486,12 +488,12 @@ pagination:
                   &nbsp; · &nbsp; {{ post.external_source }}
                 {% endif %}
               </p>
-              
+
               <div class="post-tags">
                 <a href="{{ year | prepend: '/blog/' | relative_url }}">
                   <i class="fa-solid fa-calendar fa-sm"></i> {{ year }}
                 </a>
-                
+
                 {% if tags != "" %}
                   {% for tag in post.tags %}
                     <a href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}">
@@ -499,7 +501,7 @@ pagination:
                     </a>
                   {% endfor %}
                 {% endif %}
-                
+
                 {% if categories != "" %}
                   {% for category in post.categories %}
                     <a href="{{ category | slugify | prepend: '/blog/category/' | relative_url }}">
@@ -509,7 +511,7 @@ pagination:
                 {% endif %}
               </div>
             </div>
-            
+
             {% if post.thumbnail %}
             <div class="post-thumbnail">
               <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}">
@@ -523,6 +525,7 @@ pagination:
     {% if page.pagination.enabled %}
       {% include pagination.liquid %}
     {% endif %}
+
   </div>
 
 </div>

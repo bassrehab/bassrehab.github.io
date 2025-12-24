@@ -99,9 +99,17 @@ jobs:
           valueFile: "_config.yml"
           propertyPath: "giscus.repo"
           value: ${{ github.repository }}
+      - name: Install ImageMagick 🖼️
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y imagemagick libmagickwand-dev libwebp-dev
+          # Update ImageMagick policy to allow PDF and other conversions
+          sudo sed -i 's/rights="none" pattern="PDF"/rights="read|write" pattern="PDF"/' /etc/ImageMagick-6/policy.xml || true
+          # Verify installation
+          convert -version
+          which convert
       - name: Install and Build 🔧
         run: |
-          sudo apt-get update && sudo apt-get install -y imagemagick
           pip3 install --upgrade nbconvert
           export JEKYLL_ENV=production
           bundle exec jekyll build

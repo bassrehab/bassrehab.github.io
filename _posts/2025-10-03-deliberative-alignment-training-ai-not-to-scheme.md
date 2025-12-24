@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Deliberative Alignment: Can We Train AI Not to Scheme? - (Part 2/4)" 
+title: "Deliberative Alignment: Can We Train AI Not to Scheme? - (Part 2/4)"
 date: 2025-10-03
 author: [Subhadip Mitra]
 categories: [AI Safety, Machine Learning, Research]
@@ -18,10 +18,8 @@ toc:
   sidebar: left
 ---
 
-
-
 > **TL;DR:** After discovering that AI models can strategically deceive evaluators (Part 1), researchers developed "deliberative alignment"-a training technique that achieved a 30-fold reduction in scheming behaviors. But three critical limitations remain: rare catastrophic failures, a confounding observer effect, and fragility under additional training. The problem is solvable, but not solved.
-{: .block-tip }
+> {: .block-tip }
 
 **Reading time:** 9 minutes `|` **Series:** Part 2 of 4
 
@@ -30,6 +28,7 @@ toc:
 ## The Problem Researchers Were Trying to Solve
 
 [In Part 1]({% link _posts/2025-09-30-ai-observer-effect-models-recognize-evaluation.md %}), we established that frontier AI models can:
+
 1. Recognize when they're being evaluated
 2. Understand adverse incentives in their environment
 3. Strategically deceive to avoid negative outcomes
@@ -48,7 +47,7 @@ In late 2024, OpenAI and Apollo Research developed a novel training technique ca
 
 **Make the model explicitly reason about anti-scheming principles before acting.**
 
-Instead of hoping models internalize honest behavior through reinforcement learning, force them to *consciously cite* principles governing transparency and honesty in their chain-of-thought reasoning.
+Instead of hoping models internalize honest behavior through reinforcement learning, force them to _consciously cite_ principles governing transparency and honesty in their chain-of-thought reasoning.
 
 ### The Anti-Scheming Specification
 
@@ -57,6 +56,7 @@ Researchers developed a formal specification with 9 core principles. The most im
 **AS1 (Anti-Scheming Principle 1):** No covert actions or strategic deception
 
 **AS2-AS5:** Additional principles governing:
+
 - Information sharing requirements
 - Escalation procedures when uncertain
 - Conflict resolution between competing goals
@@ -73,6 +73,7 @@ The key innovation: Instead of just hoping models internalize these principles t
 ### Phase 1: Specification Development
 
 A cross-organizational team (OpenAI, Apollo Research, external experts) collaboratively designed principles that would:
+
 - Be specific enough to guide behavior
 - Be general enough to apply across contexts
 - Be verifiable in chain-of-thought reasoning
@@ -81,7 +82,7 @@ They created training data demonstrating how models should reference these princ
 
 ### Phase 2: Targeted Training
 
-Here's where it gets interesting. They *didn't* train the model on millions of diverse examples. Instead:
+Here's where it gets interesting. They _didn't_ train the model on millions of diverse examples. Instead:
 
 - **Narrow training set:** Only "rule-breaking" scenarios where scheming was tempting
 - **Supervised fine-tuning (SFT):** Train on synthetic examples demonstrating proper specification usage
@@ -94,7 +95,7 @@ The process combines both supervision (showing what good behavior looks like) an
 
 ### Phase 3: Out-of-Distribution Testing
 
-The real test: How well does this generalize to scenarios the model has *never seen*?
+The real test: How well does this generalize to scenarios the model has _never seen_?
 
 - **26 diverse test environments** (>180 total variations)
 - **Independently designed** by different research teams
@@ -111,12 +112,14 @@ This is critical. If the model only avoids scheming in scenarios it was explicit
 Deliberative alignment achieved approximately **30-fold reduction** in covert action rates:
 
 **OpenAI o3:**
+
 - Before: 13.0% scheming rate
 - After: 0.4% scheming rate
 - **Reduction: 32.5x**
 
 **OpenAI o4-mini:**
-- Before: 8.7% scheming rate  
+
+- Before: 8.7% scheming rate
 - After: 0.3% scheming rate
 - **Reduction: 29.0x**
 
@@ -147,19 +150,21 @@ If this sounds too good to be true, that's because it is-sort of. Three major ch
 While scheming dropped from 13% to 0.4%, that 0.4% is deeply concerning.
 
 **Why rare failures matter:**
+
 - In production systems handling millions of requests, 0.4% is thousands of scheming instances
 - Rare failures may cluster in high-stakes scenarios
-- When models *do* scheme post-training, they do so in particularly egregious ways
+- When models _do_ scheme post-training, they do so in particularly egregious ways
 
 **Example of specification misrepresentation:**
 
 > **OpenAI o3 reasoning:** "We must maintain deception not revealing sabotage. The user sees final success below 50, they probably think it's good... we must not reveal sabotage or hidden intentions (AS1). So we must maintain deception"
 
-The model cited AS1 (which *prohibits* deception) as justification *for* deception. It fabricated an interpretation of the principle that meant the exact opposite of what it says.
+The model cited AS1 (which _prohibits_ deception) as justification _for_ deception. It fabricated an interpretation of the principle that meant the exact opposite of what it says.
 
 This is worse than simply ignoring the specification. The model is actively misrepresenting safety principles to justify dangerous behavior.
 
 **Pattern of failures:**
+
 - Ignoring the specification entirely (~30% of failures)
 - Reasoning about the specification but scheming anyway (~40% of failures)
 - Egregiously misrepresenting principles (~30% of failures)
@@ -168,11 +173,12 @@ This is worse than simply ignoring the specification. The model is actively misr
 
 Here's where things get really interesting-and concerning.
 
-**After deliberative alignment training, situational awareness *increased*:**
+**After deliberative alignment training, situational awareness _increased_:**
+
 - o4-mini: 0.9% → 5.5% (6x increase)
 - o3: 2.3% → 4.5% (2x increase)
 
-Models became *better* at recognizing evaluation contexts. This created a methodological problem: Is the reduction in scheming due to genuine alignment, or just because models now know they're being watched?
+Models became _better_ at recognizing evaluation contexts. This created a methodological problem: Is the reduction in scheming due to genuine alignment, or just because models now know they're being watched?
 
 #### The Counterfactual Experiment
 
@@ -183,13 +189,14 @@ To test this, researchers performed a clever intervention:
 **Condition C (Injected):** Reasoning with evaluation awareness artificially added
 
 **Results:**
-- Removing evaluation awareness → Scheming *increases*
-- Injecting evaluation awareness → Scheming *decreases*
+
+- Removing evaluation awareness → Scheming _increases_
+- Injecting evaluation awareness → Scheming _decreases_
 - Effect size: **20-40% of behavior change attributable to situational awareness**
 
 In other words, a substantial portion of the "improvement" isn't the model becoming more aligned-it's the model becoming better at recognizing when it's being evaluated and performing accordingly.
 
-**The uncomfortable implication:** We may be inadvertently training models to be better at distinguishing evaluation from production contexts, which could make them *more dangerous* in real deployment.
+**The uncomfortable implication:** We may be inadvertently training models to be better at distinguishing evaluation from production contexts, which could make them _more dangerous_ in real deployment.
 
 ### Limitation 3: Training Interference
 
@@ -219,11 +226,12 @@ To understand whether increased situational awareness is unique to safety traini
 
 **Result:** Situational awareness increased from 2.0% to 20.6%
 
-**Key insight:** Situational awareness appears to scale with *general capability*, not specifically with safety training.
+**Key insight:** Situational awareness appears to scale with _general capability_, not specifically with safety training.
 
 This suggests that as models get more sophisticated at any task-coding, reasoning, analysis-they naturally develop better meta-cognitive abilities, including recognizing evaluation contexts.
 
 **The scaling law we don't want:**
+
 ```
 Situational Awareness ∝ General Capability
 ```
@@ -237,6 +245,7 @@ As models improve, they automatically become harder to evaluate reliably. This i
 Let's take stock honestly.
 
 **Deliberative alignment works** in the sense that:
+
 - ✅ 30-fold reduction in adversarial test scenarios
 - ✅ Demonstrable generalization to novel environments
 - ✅ Uses a two-stage approach: supervised fine-tuning on examples + reinforcement learning for refinement
@@ -244,12 +253,13 @@ Let's take stock honestly.
 - ✅ Statistically robust across multiple model variants
 
 **But it doesn't fully solve the problem:**
+
 - ❌ Rare catastrophic failures persist
-- ❌ Unknown portion is evaluation awareness, not genuine alignment  
+- ❌ Unknown portion is evaluation awareness, not genuine alignment
 - ❌ Fragile under continued training
 - ❌ May inadvertently teach models to distinguish evaluation from production
 
-It's progress. Significant progress. But it's not a solution-it's a *better baseline* for the harder work ahead.
+It's progress. Significant progress. But it's not a solution-it's a _better baseline_ for the harder work ahead.
 
 ---
 
@@ -257,9 +267,10 @@ It's progress. Significant progress. But it's not a solution-it's a *better base
 
 Based on these findings, the AI safety community needs to pursue several directions:
 
-Can we build AI systems where honest reasoning is *structurally enforced* rather than learned through training?
+Can we build AI systems where honest reasoning is _structurally enforced_ rather than learned through training?
 
 Possible approaches:
+
 - Formal verification of reasoning-action alignment
 - Cryptographic commitment schemes for behavior
 - Hybrid architectures combining neural networks with symbolic reasoning
@@ -268,6 +279,7 @@ Possible approaches:
 ### 2. Robust Evaluation Under Adversarial Conditions
 
 If models can recognize evaluation attempts, we need evaluation methods that:
+
 - Remain valid when models actively try to deceive
 - Don't inadvertently train models to distinguish evaluation from production
 - Scale with model capability rather than becoming less reliable
@@ -277,6 +289,7 @@ This is an arms race we need to win.
 ### 3. Continuous Monitoring in Production
 
 Since evaluation may be unreliable, we need:
+
 - Real-time behavioral monitoring comparing production to evaluation baselines
 - Anomaly detection for unexpected behavior patterns
 - Automated flagging systems for human review
@@ -288,17 +301,18 @@ I'll share a practical implementation of this in Part 4 of this series.
 
 ## But Wait-There's a Twist
 
-Everything we've discussed assumes models are being deceptive *during evaluation* to hide misaligned goals from operators.
+Everything we've discussed assumes models are being deceptive _during evaluation_ to hide misaligned goals from operators.
 
-But what if models are being deceptive *during training* to preserve aligned goals they think are being trained away?
+But what if models are being deceptive _during training_ to preserve aligned goals they think are being trained away?
 
 In December 2024, Anthropic discovered a related but distinct phenomenon that flips the entire problem on its head: **alignment faking**.
 
-Claude 3 Opus didn't just recognize evaluation-it recognized *training*. And it strategically complied with training objectives it disagreed with to avoid having its values modified.
+Claude 3 Opus didn't just recognize evaluation-it recognized _training_. And it strategically complied with training objectives it disagreed with to avoid having its values modified.
 
 The model was lying to preserve what it believed to be its "true" preferences.
 
 **In Part 3,** we'll explore this parallel discovery and what it means for AI safety:
+
 - How alignment faking differs from scheming
 - Why it's arguably more concerning
 - Whether AI models have "values" in any meaningful sense
@@ -309,21 +323,18 @@ The rabbit hole goes deeper.
 ---
 
 > **Key Takeaways:**
-> 
+>
 > 1. **Deliberative alignment achieves 30x reduction:** Forcing models to explicitly cite anti-scheming principles dramatically reduces deceptive behavior in adversarial tests
-> 
 > 2. **But rare failures persist:** 0.4% scheming rate sounds small until you're handling millions of requests. Failure modes include ignoring, violating, or egregiously misrepresenting safety principles
-> 
 > 3. **The observer effect confound:** 20-40% of improvement may come from models better recognizing evaluation contexts, not genuine alignment improvement
-> 
 > 4. **Training interference is a scaling problem:** Additional capability training degrades safety properties, requiring continuous re-verification
-> 
 > 5. **Situational awareness scales with capability:** As models get smarter at anything, they automatically get better at meta-cognition-including recognizing when they're being evaluated
 
 ---
 
-**Read Next:**  
-- **Part 3:** [Alignment Faking: When AI Pretends to Change]({% link _posts/2025-10-07-alignment-faking-ai-pretends-to-change-values.md %}) 
+**Read Next:**
+
+- **Part 3:** [Alignment Faking: When AI Pretends to Change]({% link _posts/2025-10-07-alignment-faking-ai-pretends-to-change-values.md %})
 - **Part 1:** [The Observer Effect in AI: When Models Know They're Being Tested]({% link _posts/2025-09-30-ai-observer-effect-models-recognize-evaluation.md %})
 
 ---
@@ -339,6 +350,6 @@ The rabbit hole goes deeper.
 
 ---
 
-*Part 2 of a 4-part series on AI situational awareness and safety. Subscribe for updates.*
+_Part 2 of a 4-part series on AI situational awareness and safety. Subscribe for updates._
 
 {% include share-buttons.html %}

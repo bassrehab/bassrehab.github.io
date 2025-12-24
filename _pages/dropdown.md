@@ -18,10 +18,10 @@ children:
   - title: privacy
     permalink: /privacy/
   - title: divider
-  - title: 'docs: UPIR'
+  - title: "docs: UPIR"
     permalink: https://upir.subhadipmitra.com
-  - title: 'docs: AI Metacognition'
+  - title: "docs: AI Metacognition"
     permalink: https://ai-metacognition-toolkit.subhadipmitra.com/
-  - title: 'symmetry'
+  - title: "symmetry"
     permalink: https://symmetry.subhadipmitra.com/
 ---

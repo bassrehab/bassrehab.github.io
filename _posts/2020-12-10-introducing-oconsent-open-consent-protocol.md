@@ -491,6 +491,7 @@ The big open question is adoption. A consent protocol only works if both sides u
 But regulations are tightening, and the companies that figure out transparent consent early will have an advantage when stricter enforcement arrives.
 
 **Resources:**
+
 - OConsent website: https://oconsent.io
 - Original paper: https://arxiv.org/abs/2201.01326
 - Twitter: [@theoconsent](https://twitter.com/theoconsent)

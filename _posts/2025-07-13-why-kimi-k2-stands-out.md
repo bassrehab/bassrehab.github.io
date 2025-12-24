@@ -14,7 +14,7 @@ toc:
 
 Moonshot AI’s Kimi K2, a 1-trillion-parameter [Mixture-of-Experts (MoE)](https://arxiv.org/abs/2401.06066) model, is shaking up the AI landscape. By activating just 32 billion parameters per token, it delivers state-of-the-art (SOTA) performance, surpassing DeepSeek-V3, Llama-3.1-405B, and even proprietary models like GPT-4.1 on benchmarks like SWE-bench Verified (65.8% pass@1) and MATH-500 (97.4%). As an open-source gem, Kimi K2 is a dream for developers and researchers. This post dives into its architecture and training, with a close look at how it tackles the “not all experts firing” problem, to show why it leaves competitors in the dust.
 
-<br> 
+<br>
 
 ## Kimi K2 at a Glance
 
@@ -34,16 +34,18 @@ Let’s unpack the tech that makes Kimi K2 a standout.
 Kimi K2’s [MoE architecture](https://huggingface.co/blog/moe) is a transformer with a sparse twist, packing a trillion-parameter punch while keeping compute costs low. Here’s how it pulls ahead.
 
 ### 1. Aggressive Sparsity with Smart Routing
+
 - **How It Works**: Kimi K2 splits its 1 trillion parameters across 384 experts—specialized mini-models for tasks like Python debugging or API queries. For each token, it activates 8 experts plus a shared one (32 billion parameters), a 32:1000 sparsity ratio.
 - **Why It’s Better**:
   - **Resource Efficiency**: This sparsity lets Kimi K2 run on 8xH100 GPUs with 192 GB VRAM (int4 quantization), while dense models like Llama-3.1-405B need 16xH100s and 800+ GB VRAM—a win for resource-constrained teams.
   - **Compared to Others**: Mixtral’s 8:45B sparsity uses more compute, and DeepSeek-V3’s three dense layers slow it down for tasks like real-time code patching.
 
 ### 2. Tackling Expert Underutilization
-- **How It Works**: MoE models often suffer from “expert collapse,” where the [gating network](https://arxiv.org/abs/2001.08361) favors a few experts, leaving others idle. Kimi K2 counters this with a [top-k gating mechanism](https://arxiv.org/abs/2001.08361) (k=8) enhanced by a load-balancing loss, likely 
+
+- **How It Works**: MoE models often suffer from “expert collapse,” where the [gating network](https://arxiv.org/abs/2001.08361) favors a few experts, leaving others idle. Kimi K2 counters this with a [top-k gating mechanism](https://arxiv.org/abs/2001.08361) (k=8) enhanced by a load-balancing loss, likely
 
 $$
-L_{\text{balance}} = \sum_{i=1}^{384} (f_i - \frac{1}{384})^2 \, 
+L_{\text{balance}} = \sum_{i=1}^{384} (f_i - \frac{1}{384})^2 \,
 $$
 
 where $f_i$ is the fraction of tokens routed to expert $i$. This penalizes overuse of popular experts, ensuring 80-90% of the 384 experts are active in a typical run (vs. 50-60% in models like Mixtral).
@@ -54,6 +56,7 @@ where $f_i$ is the fraction of tokens routed to expert $i$. This penalizes overu
   - **Compared to Others**: Mixtral’s simpler routing leads to collapse, underusing its 8 experts. DeepSeek-V3’s 256 experts (vs. Kimi K2’s 384) limit its range, reducing active specialist diversity.
 
 ### 3. Single Dense Layer for Speed and Stability
+
 - **How It Works**: Kimi K2 uses one dense layer across 61 transformer layers (7168 attention hidden dimension, fewer attention heads than standard transformers).
 - **Why It’s Better**:
   - **Stable Training**: A single dense layer reduces parameter interactions, minimizing overfitting and aiding stability across 15.5 trillion tokens.
@@ -61,6 +64,7 @@ where $f_i$ is the fraction of tokens routed to expert $i$. This penalizes overu
   - **Compared to Others**: DeepSeek-V3’s three dense layers add overhead, slowing multi-step tasks.
 
 ### 4. Long-Context Powerhouse
+
 - **How It Works**: Kimi K2 handles a 128K-token context window, likely using [Rotary Position Embeddings (RoPE)](https://arxiv.org/abs/2104.09864) or [ALiBi](https://arxiv.org/abs/2108.12409), with fewer attention heads for stability and [key-value caching](https://arxiv.org/abs/2107.07170) for efficiency.
 - **Why It’s Better**:
   - **Big-Picture Processing**: Reduced heads avoid memory bottlenecks, letting Kimi K2 process entire codebases without losing track, powering its SWE-bench success.
@@ -73,8 +77,9 @@ where $f_i$ is the fraction of tokens routed to expert $i$. This penalizes overu
 Kimi K2’s training is a masterclass in turning raw data into a problem-solving beast.
 
 ### 1. MuonClip: Taming a Trillion Parameters
+
 - **What’s Cool**: Moonshot AI’s [MuonClip optimizer](https://arxiv.org/abs/2407.12345) uses **qk-clip**, rescaling query $W_q$ and key $W_k$ weight matrices to a fixed norm <br>
-(e.g., $||W_q||_2 \leq C$) after each update, keeping attention scores ($QK^T / \sqrt{d_k}$) stable.
+  (e.g., $||W_q||_2 \leq C$) after each update, keeping attention scores ($QK^T / \sqrt{d_k}$) stable.
 
 <br>
   
@@ -91,6 +96,7 @@ Kimi K2’s training is a masterclass in turning raw data into a problem-solving
   - **Compared to Others**: [AdamW](https://arxiv.org/abs/1711.05101) in Mixtral needs gradient clipping, which can degrade performance. DeepSeek-V3 lacks qk-clip’s precision.
 
 ### 2. Agentic Training: Built to Act
+
 - **What’s Cool**: Kimi K2 trained on simulated scenarios across hundreds of domains, using thousands of tools (APIs, shell commands, SQL). An LLM judge filters high-quality interactions via a rubric.
 - **Why It’s Better**:
   - **Real-World Skills**: This teaches Kimi K2 to break tasks (e.g., “build a website”) into steps, pick tools, and fix errors, excelling on [AceBench](https://arxiv.org/abs/2407.09876) over Claude 4 Sonnet.
@@ -98,6 +104,7 @@ Kimi K2’s training is a masterclass in turning raw data into a problem-solving
   - **Compared to Others**: DeepSeek-V3’s broader dataset lacks this agentic focus, limiting tool-use performance.
 
 ### 3. Reinforcement Learning: Sharpening the Edge
+
 - **What’s Cool**: Kimi K2 uses [reinforcement learning (RL)](https://arxiv.org/abs/1909.08593) with a self-judging system to fine-tune for verifiable tasks (math, coding) and subjective ones (writing, reasoning).
 - **Why It’s Better**:
   - **Complex Workflows**: RL optimizes routing and task execution, hitting 71.6% on SWE-bench with parallel compute (vs. GPT-4.1’s 61.3%).
@@ -123,7 +130,6 @@ Kimi K2’s training is a masterclass in turning raw data into a problem-solving
 
 Checkout [Moonshot AI’s GitHub](https://github.com/MoonshotAI) to explore Kimi K2's specifics. For deeper dives into the concepts and tools mentioned, check out the table below.
 
-
 {:class="table table-bordered"}
 | Concept/Tool | Description | Link |
 |-------------|-------------|------|
@@ -147,4 +153,3 @@ Checkout [Moonshot AI’s GitHub](https://github.com/MoonshotAI) to explore Kimi
 | OpenRouter | Alternative API platform for Kimi K2 | [OpenRouter](https://openrouter.ai) |
 | Kimi K2 Docs | Official deployment guide for Kimi K2 | [GitHub](https://github.com/MoonshotAI/kimi-k2-docs) |
 | Kimi-VL | Moonshot AI’s vision-capable model, related to Kimi K2 | [Hugging Face](https://huggingface.co/MoonshotAI/Kimi-VL) |
-

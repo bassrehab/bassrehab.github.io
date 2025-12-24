@@ -23,7 +23,8 @@ header.post-header {
     </p>
   </div>
 
-  {% if site.data.repositories.github_users %}
+{% if site.data.repositories.github_users %}
+
   <!-- GitHub Stats Section -->
   <div class="stats-section">
     <div class="section-header">
@@ -68,10 +69,12 @@ header.post-header {
 
     <!-- Store username as data attribute -->
     <div id="github-username" data-username="{{ site.data.repositories.github_users | first }}" style="display: none;"></div>
+
   </div>
   {% endif %}
 
-  {% if site.data.repositories.github_repos %}
+{% if site.data.repositories.github_repos %}
+
   <!-- Repositories Grid -->
   <div class="repos-section">
     <div class="section-header">
@@ -100,6 +103,7 @@ header.post-header {
 
     <!-- Store repo list as data attribute -->
     <div id="repo-data" data-repos='{{ site.data.repositories.github_repos | jsonify }}' style="display: none;"></div>
+
   </div>
 
   <!-- Collaboration CTA -->

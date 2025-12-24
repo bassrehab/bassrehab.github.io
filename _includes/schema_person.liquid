@@ -1,328 +1,328 @@
 {% comment %}
-Enhanced Schema.org Person markup for homepage
-This provides AI models and search engines with structured, verifiable data
+  Enhanced Schema.org Person markup for homepage
+  This provides AI models and search engines with structured, verifiable data
 {% endcomment %}
 
 {% if page.layout == 'about' %}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Subhadip Mitra",
-  "givenName": "Subhadip",
-  "familyName": "Mitra",
-  "url": "{{ site.url }}",
-  "email": "contact@subhadipmitra.com",
-  "jobTitle": "Data and Analytics Manager, Site Lead Southeast Asia",
-  "description": "Technical leader and researcher specializing in AI, data systems, and cloud transformation. Member of Google Cloud's delta innovation team.",
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Subhadip Mitra",
+      "givenName": "Subhadip",
+      "familyName": "Mitra",
+      "url": "{{ site.url }}",
+      "email": "contact@subhadipmitra.com",
+      "jobTitle": "Data and Analytics Manager, Site Lead Southeast Asia",
+      "description": "Technical leader and researcher specializing in AI, data systems, and cloud transformation. Member of Google Cloud's delta innovation team.",
 
-  "image": "{{ '/assets/img/prof_pic.jpg' | absolute_url }}",
+      "image": "{{ '/assets/img/prof_pic.jpg' | absolute_url }}",
 
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Google Cloud",
-    "url": "https://cloud.google.com",
-    "department": {
-      "@type": "Organization",
-      "name": "delta - Innovation and Transformation",
-      "url": "https://cloud.google.com/consulting/innovation-and-transformation"
-    }
-  },
-
-  "alumniOf": [
-    {
-      "@type": "EducationalOrganization",
-      "name": "BITS Pilani",
-      "url": "https://www.bits-pilani.ac.in/",
-      "sameAs": "https://en.wikipedia.org/wiki/Birla_Institute_of_Technology_and_Science,_Pilani"
-    }
-  ],
-
-  "affiliation": [
-    {
-      "@type": "Organization",
-      "name": "IIT Madras",
-      "url": "https://www.iitm.ac.in/",
-      "sameAs": "https://en.wikipedia.org/wiki/Indian_Institute_of_Technology_Madras"
-    },
-    {
-      "@type": "Organization",
-      "name": "IEEE",
-      "url": "https://www.ieee.org/",
-      "sameAs": "https://en.wikipedia.org/wiki/Institute_of_Electrical_and_Electronics_Engineers"
-    },
-    {
-      "@type": "Organization",
-      "name": "ACM",
-      "url": "https://www.acm.org/",
-      "sameAs": "https://en.wikipedia.org/wiki/Association_for_Computing_Machinery"
-    },
-    {
-      "@type": "Organization",
-      "name": "Singapore Computer Society",
-      "url": "https://www.scs.org.sg/",
-      "alternateName": "SCS"
-    },
-    {
-      "@type": "Organization",
-      "name": "Research and Innovation Network",
-      "url": "https://rin.org.uk/",
-      "alternateName": "RIN"
-    }
-  ],
-
-  "knowsAbout": [
-    "Artificial Intelligence",
-    "Machine Learning",
-    "Data Engineering",
-    "Cloud Computing",
-    "Distributed Systems",
-    "Multi-Agent Systems",
-    "Data Analytics",
-    "Enterprise Architecture",
-    "Digital Transformation",
-    "Quantum Computing"
-  ],
-
-  "sameAs": [
-    "https://linkedin.com/in/subhadip-mitra",
-    "https://github.com/bassrehab",
-    "https://twitter.com/bassrehab",
-    "https://www.researchgate.net/profile/Subhadip-Mitra-3",
-    "https://pypi.org/user/bassrehab/"
-  ],
-
-  "hasCredential": [
-    {
-      "@type": "EducationalOccupationalCredential",
-      "name": "MBA in Business Analytics",
-      "credentialCategory": "degree",
-      "educationalLevel": "Master's",
-      "recognizedBy": {
-        "@type": "EducationalOrganization",
-        "name": "BITS Pilani",
-        "url": "https://www.bits-pilani.ac.in/"
-      }
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      "name": "MTech in Software Systems",
-      "credentialCategory": "degree",
-      "educationalLevel": "Master's",
-      "recognizedBy": {
-        "@type": "EducationalOrganization",
-        "name": "BITS Pilani",
-        "url": "https://www.bits-pilani.ac.in/"
-      }
-    }
-  ],
-
-  "owns": [
-    {
-      "@type": "SoftwareApplication",
-      "name": "AI Metacognition Toolkit",
-      "description": "Production-ready framework for systematic reasoning in AI systems",
-      "applicationCategory": "DeveloperApplication",
-      "operatingSystem": "Cross-platform",
-      "url": "https://ai-metacognition-toolkit.subhadipmitra.com/",
-      "codeRepository": "https://github.com/bassrehab/ai-metacognition-toolkit",
-      "downloadUrl": "https://pypi.org/project/ai-metacognition-toolkit/",
-      "author": {
-        "@type": "Person",
-        "name": "Subhadip Mitra"
-      }
-    },
-    {
-      "@type": "SoftwareSourceCode",
-      "name": "UPIR - Distributed Systems Synthesis",
-      "description": "Automated distributed systems synthesis combining formal verification and program synthesis",
-      "codeRepository": "https://github.com/bassrehab/upir",
-      "programmingLanguage": "Python",
-      "author": {
-        "@type": "Person",
-        "name": "Subhadip Mitra"
-      }
-    },
-    {
-      "@type": "SoftwareSourceCode",
-      "name": "Speculative Decoding",
-      "description": "Reference implementation for accelerating LLM inference through draft-then-verify decoding and memory optimization techniques",
-      "codeRepository": "https://github.com/bassrehab/speculative-decoding",
-      "programmingLanguage": "Python",
-      "author": {
-        "@type": "Person",
-        "name": "Subhadip Mitra"
-      }
-    },
-    {
-      "@type": "SoftwareSourceCode",
-      "name": "Triton Kernels",
-      "description": "Educational GPU kernels for LLM inference using OpenAI Triton with RMSNorm, SwiGLU, and INT8 quantization achieving up to 8x speedups",
-      "codeRepository": "https://github.com/bassrehab/triton-kernels",
-      "programmingLanguage": "Python",
-      "author": {
-        "@type": "Person",
-        "name": "Subhadip Mitra"
-      }
-    },
-    {
-      "@type": "SoftwareSourceCode",
-      "name": "Spark LLM Eval",
-      "description": "Distributed framework on Apache Spark for evaluating LLMs at scale with statistical rigor and MLflow integration",
-      "codeRepository": "https://github.com/bassrehab/spark-llm-eval",
-      "programmingLanguage": "Python",
-      "author": {
-        "@type": "Person",
-        "name": "Subhadip Mitra"
-      }
-    },
-    {
-      "@type": "SoftwareSourceCode",
-      "name": "Steering Vectors for Agents",
-      "description": "Runtime control of LLM agent behaviors through activation steering vectors for refusal, uncertainty, and hierarchy control",
-      "codeRepository": "https://github.com/bassrehab/steering-vectors-agents",
-      "programmingLanguage": "Python",
-      "author": {
-        "@type": "Person",
-        "name": "Subhadip Mitra"
-      }
-    },
-    {
-      "@type": "SoftwareSourceCode",
-      "name": "LLMConsent Standards",
-      "description": "Open protocol for managing consent between humans and AI systems with blockchain-based verification",
-      "codeRepository": "https://github.com/bassrehab/llmconsent-standards",
-      "programmingLanguage": ["Solidity", "Python", "TypeScript"],
-      "author": {
-        "@type": "Person",
-        "name": "Subhadip Mitra"
-      }
-    },
-    {
-      "@type": "SoftwareSourceCode",
-      "name": "OConsent Protocol",
-      "description": "Open consent protocol implementation with Ethereum smart contracts for blockchain-based consent management",
-      "codeRepository": "https://github.com/bassrehab/oconsent",
-      "programmingLanguage": ["Python", "Solidity"],
-      "author": {
-        "@type": "Person",
-        "name": "Subhadip Mitra"
-      }
-    },
-    {
-      "@type": "SoftwareSourceCode",
-      "name": "ISO8583 Simulator",
-      "description": "Financial messaging protocol simulator for testing payment transactions including sales, voids, and authorizations",
-      "codeRepository": "https://github.com/bassrehab/ISO8583-Simulator",
-      "programmingLanguage": "Python",
-      "author": {
-        "@type": "Person",
-        "name": "Subhadip Mitra"
-      }
-    },
-    {
-      "@type": "SoftwareSourceCode",
-      "name": "SMPP Kafka Producer",
-      "description": "Kafka producer for SMPP protocol messages enabling SMS infrastructure integration with event streaming platforms",
-      "codeRepository": "https://github.com/bassrehab/smpp-kafka-producer",
-      "programmingLanguage": "Java",
-      "author": {
-        "@type": "Person",
-        "name": "Subhadip Mitra"
-      }
-    },
-    {
-      "@type": "SoftwareSourceCode",
-      "name": "Blockchain Loyalty Fabric",
-      "description": "Hyperledger Fabric-based loyalty programs platform for cross-provider point management and conversion",
-      "codeRepository": "https://github.com/bassrehab/blockchain-loyalty-fabric",
-      "programmingLanguage": ["JavaScript", "Go"],
-      "author": {
-        "@type": "Person",
-        "name": "Subhadip Mitra"
-      }
-    }
-  ],
-
-  "creator": [
-    {
-      "@type": "CreativeWork",
-      "name": "UPIR: Synthesis of Verified Distributed System Implementations with Program Analysis and Reinforcement Learning",
-      "url": "https://www.tdcommons.org/dpubs_series/8852/",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Technical Disclosure Commons",
-        "url": "https://www.tdcommons.org/"
-      },
-      "datePublished": "2025"
-    },
-    {
-      "@type": "CreativeWork",
-      "name": "Field-Theoretic Context System (FTCS)",
-      "url": "https://www.tdcommons.org/dpubs_series/8022/",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Technical Disclosure Commons",
-        "url": "https://www.tdcommons.org/"
-      },
-      "datePublished": "2025"
-    },
-    {
-      "@type": "CreativeWork",
-      "name": "ETLC: Context-First Data Processing Framework",
-      "url": "https://services.google.com/fh/files/blogs/etlc_full_paper.pdf",
-      "publisher": {
+      "worksFor": {
         "@type": "Organization",
         "name": "Google Cloud",
-        "url": "https://cloud.google.com"
+        "url": "https://cloud.google.com",
+        "department": {
+          "@type": "Organization",
+          "name": "delta - Innovation and Transformation",
+          "url": "https://cloud.google.com/consulting/innovation-and-transformation"
+        }
       },
-      "datePublished": "2025"
-    },
-    {
-      "@type": "CreativeWork",
-      "name": "ARTEMIS: Adaptive Framework for Multi-Agent Decision Systems",
-      "url": "https://www.tdcommons.org/dpubs_series/7729/",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Technical Disclosure Commons",
-        "url": "https://www.tdcommons.org/"
-      },
-      "datePublished": "2025"
-    },
-    {
-      "@type": "ScholarlyArticle",
-      "name": "OConsent: Open Consent Protocol for Privacy and Consent Management with Blockchain",
-      "url": "https://arxiv.org/abs/2201.01326",
-      "publisher": {
-        "@type": "Organization",
-        "name": "arXiv",
-        "url": "https://arxiv.org/"
-      },
-      "datePublished": "2021"
-    },
-    {
-      "@type": "ScholarlyArticle",
-      "name": "Open Location Proof (OLP) Protocol",
-      "url": "https://olp-protocol.org/",
-      "publisher": {
-        "@type": "Organization",
-        "name": "ResearchGate",
-        "url": "https://www.researchgate.net/"
-      },
-      "datePublished": "2021"
-    },
-    {
-      "@type": "ScholarlyArticle",
-      "name": "Data Monetization Strategy for Enterprises",
-      "url": "https://www.researchgate.net/publication/376557741_Data_Monetization_Strategy_for_Enterprises",
-      "publisher": {
-        "@type": "EducationalOrganization",
-        "name": "BITS Pilani",
-        "url": "https://www.bits-pilani.ac.in/"
-      },
-      "datePublished": "2023"
+
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "BITS Pilani",
+          "url": "https://www.bits-pilani.ac.in/",
+          "sameAs": "https://en.wikipedia.org/wiki/Birla_Institute_of_Technology_and_Science,_Pilani"
+        }
+      ],
+
+      "affiliation": [
+        {
+          "@type": "Organization",
+          "name": "IIT Madras",
+          "url": "https://www.iitm.ac.in/",
+          "sameAs": "https://en.wikipedia.org/wiki/Indian_Institute_of_Technology_Madras"
+        },
+        {
+          "@type": "Organization",
+          "name": "IEEE",
+          "url": "https://www.ieee.org/",
+          "sameAs": "https://en.wikipedia.org/wiki/Institute_of_Electrical_and_Electronics_Engineers"
+        },
+        {
+          "@type": "Organization",
+          "name": "ACM",
+          "url": "https://www.acm.org/",
+          "sameAs": "https://en.wikipedia.org/wiki/Association_for_Computing_Machinery"
+        },
+        {
+          "@type": "Organization",
+          "name": "Singapore Computer Society",
+          "url": "https://www.scs.org.sg/",
+          "alternateName": "SCS"
+        },
+        {
+          "@type": "Organization",
+          "name": "Research and Innovation Network",
+          "url": "https://rin.org.uk/",
+          "alternateName": "RIN"
+        }
+      ],
+
+      "knowsAbout": [
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Data Engineering",
+        "Cloud Computing",
+        "Distributed Systems",
+        "Multi-Agent Systems",
+        "Data Analytics",
+        "Enterprise Architecture",
+        "Digital Transformation",
+        "Quantum Computing"
+      ],
+
+      "sameAs": [
+        "https://linkedin.com/in/subhadip-mitra",
+        "https://github.com/bassrehab",
+        "https://twitter.com/bassrehab",
+        "https://www.researchgate.net/profile/Subhadip-Mitra-3",
+        "https://pypi.org/user/bassrehab/"
+      ],
+
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "MBA in Business Analytics",
+          "credentialCategory": "degree",
+          "educationalLevel": "Master's",
+          "recognizedBy": {
+            "@type": "EducationalOrganization",
+            "name": "BITS Pilani",
+            "url": "https://www.bits-pilani.ac.in/"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "MTech in Software Systems",
+          "credentialCategory": "degree",
+          "educationalLevel": "Master's",
+          "recognizedBy": {
+            "@type": "EducationalOrganization",
+            "name": "BITS Pilani",
+            "url": "https://www.bits-pilani.ac.in/"
+          }
+        }
+      ],
+
+      "owns": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "AI Metacognition Toolkit",
+          "description": "Production-ready framework for systematic reasoning in AI systems",
+          "applicationCategory": "DeveloperApplication",
+          "operatingSystem": "Cross-platform",
+          "url": "https://ai-metacognition-toolkit.subhadipmitra.com/",
+          "codeRepository": "https://github.com/bassrehab/ai-metacognition-toolkit",
+          "downloadUrl": "https://pypi.org/project/ai-metacognition-toolkit/",
+          "author": {
+            "@type": "Person",
+            "name": "Subhadip Mitra"
+          }
+        },
+        {
+          "@type": "SoftwareSourceCode",
+          "name": "UPIR - Distributed Systems Synthesis",
+          "description": "Automated distributed systems synthesis combining formal verification and program synthesis",
+          "codeRepository": "https://github.com/bassrehab/upir",
+          "programmingLanguage": "Python",
+          "author": {
+            "@type": "Person",
+            "name": "Subhadip Mitra"
+          }
+        },
+        {
+          "@type": "SoftwareSourceCode",
+          "name": "Speculative Decoding",
+          "description": "Reference implementation for accelerating LLM inference through draft-then-verify decoding and memory optimization techniques",
+          "codeRepository": "https://github.com/bassrehab/speculative-decoding",
+          "programmingLanguage": "Python",
+          "author": {
+            "@type": "Person",
+            "name": "Subhadip Mitra"
+          }
+        },
+        {
+          "@type": "SoftwareSourceCode",
+          "name": "Triton Kernels",
+          "description": "Educational GPU kernels for LLM inference using OpenAI Triton with RMSNorm, SwiGLU, and INT8 quantization achieving up to 8x speedups",
+          "codeRepository": "https://github.com/bassrehab/triton-kernels",
+          "programmingLanguage": "Python",
+          "author": {
+            "@type": "Person",
+            "name": "Subhadip Mitra"
+          }
+        },
+        {
+          "@type": "SoftwareSourceCode",
+          "name": "Spark LLM Eval",
+          "description": "Distributed framework on Apache Spark for evaluating LLMs at scale with statistical rigor and MLflow integration",
+          "codeRepository": "https://github.com/bassrehab/spark-llm-eval",
+          "programmingLanguage": "Python",
+          "author": {
+            "@type": "Person",
+            "name": "Subhadip Mitra"
+          }
+        },
+        {
+          "@type": "SoftwareSourceCode",
+          "name": "Steering Vectors for Agents",
+          "description": "Runtime control of LLM agent behaviors through activation steering vectors for refusal, uncertainty, and hierarchy control",
+          "codeRepository": "https://github.com/bassrehab/steering-vectors-agents",
+          "programmingLanguage": "Python",
+          "author": {
+            "@type": "Person",
+            "name": "Subhadip Mitra"
+          }
+        },
+        {
+          "@type": "SoftwareSourceCode",
+          "name": "LLMConsent Standards",
+          "description": "Open protocol for managing consent between humans and AI systems with blockchain-based verification",
+          "codeRepository": "https://github.com/bassrehab/llmconsent-standards",
+          "programmingLanguage": ["Solidity", "Python", "TypeScript"],
+          "author": {
+            "@type": "Person",
+            "name": "Subhadip Mitra"
+          }
+        },
+        {
+          "@type": "SoftwareSourceCode",
+          "name": "OConsent Protocol",
+          "description": "Open consent protocol implementation with Ethereum smart contracts for blockchain-based consent management",
+          "codeRepository": "https://github.com/bassrehab/oconsent",
+          "programmingLanguage": ["Python", "Solidity"],
+          "author": {
+            "@type": "Person",
+            "name": "Subhadip Mitra"
+          }
+        },
+        {
+          "@type": "SoftwareSourceCode",
+          "name": "ISO8583 Simulator",
+          "description": "Financial messaging protocol simulator for testing payment transactions including sales, voids, and authorizations",
+          "codeRepository": "https://github.com/bassrehab/ISO8583-Simulator",
+          "programmingLanguage": "Python",
+          "author": {
+            "@type": "Person",
+            "name": "Subhadip Mitra"
+          }
+        },
+        {
+          "@type": "SoftwareSourceCode",
+          "name": "SMPP Kafka Producer",
+          "description": "Kafka producer for SMPP protocol messages enabling SMS infrastructure integration with event streaming platforms",
+          "codeRepository": "https://github.com/bassrehab/smpp-kafka-producer",
+          "programmingLanguage": "Java",
+          "author": {
+            "@type": "Person",
+            "name": "Subhadip Mitra"
+          }
+        },
+        {
+          "@type": "SoftwareSourceCode",
+          "name": "Blockchain Loyalty Fabric",
+          "description": "Hyperledger Fabric-based loyalty programs platform for cross-provider point management and conversion",
+          "codeRepository": "https://github.com/bassrehab/blockchain-loyalty-fabric",
+          "programmingLanguage": ["JavaScript", "Go"],
+          "author": {
+            "@type": "Person",
+            "name": "Subhadip Mitra"
+          }
+        }
+      ],
+
+      "creator": [
+        {
+          "@type": "CreativeWork",
+          "name": "UPIR: Synthesis of Verified Distributed System Implementations with Program Analysis and Reinforcement Learning",
+          "url": "https://www.tdcommons.org/dpubs_series/8852/",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Technical Disclosure Commons",
+            "url": "https://www.tdcommons.org/"
+          },
+          "datePublished": "2025"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Field-Theoretic Context System (FTCS)",
+          "url": "https://www.tdcommons.org/dpubs_series/8022/",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Technical Disclosure Commons",
+            "url": "https://www.tdcommons.org/"
+          },
+          "datePublished": "2025"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "ETLC: Context-First Data Processing Framework",
+          "url": "https://services.google.com/fh/files/blogs/etlc_full_paper.pdf",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Google Cloud",
+            "url": "https://cloud.google.com"
+          },
+          "datePublished": "2025"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "ARTEMIS: Adaptive Framework for Multi-Agent Decision Systems",
+          "url": "https://www.tdcommons.org/dpubs_series/7729/",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Technical Disclosure Commons",
+            "url": "https://www.tdcommons.org/"
+          },
+          "datePublished": "2025"
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "name": "OConsent: Open Consent Protocol for Privacy and Consent Management with Blockchain",
+          "url": "https://arxiv.org/abs/2201.01326",
+          "publisher": {
+            "@type": "Organization",
+            "name": "arXiv",
+            "url": "https://arxiv.org/"
+          },
+          "datePublished": "2021"
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "name": "Open Location Proof (OLP) Protocol",
+          "url": "https://olp-protocol.org/",
+          "publisher": {
+            "@type": "Organization",
+            "name": "ResearchGate",
+            "url": "https://www.researchgate.net/"
+          },
+          "datePublished": "2021"
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "name": "Data Monetization Strategy for Enterprises",
+          "url": "https://www.researchgate.net/publication/376557741_Data_Monetization_Strategy_for_Enterprises",
+          "publisher": {
+            "@type": "EducationalOrganization",
+            "name": "BITS Pilani",
+            "url": "https://www.bits-pilani.ac.in/"
+          },
+          "datePublished": "2023"
+        }
+      ]
     }
-  ]
-}
-</script>
+  </script>
 {% endif %}

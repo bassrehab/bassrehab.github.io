@@ -78,7 +78,10 @@
     {% assign generated_og_image = '/assets/img/og/' | append: page.slug | append: '.png' | absolute_url %}
     <meta name="twitter:image" content="{{ generated_og_image }}">
   {% elsif page.og_image or site.og_image %}
-    <meta name="twitter:image" content="{% if page.og_image %}{{ page.og_image | absolute_url }}{% else %}{{ site.og_image | absolute_url }}{% endif %}">
+    <meta
+      name="twitter:image"
+      content="{% if page.og_image %}{{ page.og_image | absolute_url }}{% else %}{{ site.og_image | absolute_url }}{% endif %}"
+    >
   {% endif %}
   {% if site.x_username %}
     <meta name="twitter:site" content="@{{ site.x_username }}">
@@ -246,136 +249,136 @@
   {% endif %}
 
   {% if is_blog_post %}
-  {% if page.content %}
-    {% assign word_count = page.content | number_of_words %}
-  {% else %}
-    {% assign word_count = 0 %}
-  {% endif %}
-  {% assign reading_time = word_count | divided_by: 200 | plus: 1 %}
-  <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "{{ page.url | prepend: site.baseurl | prepend: site.url }}"
-        },
-        "headline": "{{ page.title | escape }}",
-        "description": "{% if page.description %}{{ page.description | escape }}{% else %}{{ site.description | escape }}{% endif %}",
-        "url": "{{ page.url | prepend: site.baseurl | prepend: site.url }}",
-        "datePublished": "{{ page.date | date_to_xmlschema }}",
-        {% if page.last_modified_at %}
-        "dateModified": "{{ page.last_modified_at | date_to_xmlschema }}",
-        {% else %}
-        "dateModified": "{{ page.date | date_to_xmlschema }}",
-        {% endif %}
-        "wordCount": {{ word_count }},
-        "timeRequired": "PT{{ reading_time }}M",
-        {% if page.og_image or page.thumbnail %}
-        "image": "{{ page.og_image | default: page.thumbnail | absolute_url }}",
-        {% elsif site.og_image %}
-        "image": "{{ site.og_image | absolute_url }}",
-        {% endif %}
-        {% if page.tags.size > 0 %}
-        "keywords": "{{ page.tags | join: ', ' }}",
-        {% endif %}
-        {% if page.categories.size > 0 %}
-        "articleSection": "{{ page.categories | first }}",
-        {% endif %}
-        "author": {
-            "@type": "Person",
-            "name": "{{ author_name }}",
-            "url": "{{ site.url }}",
-            "jobTitle": "Data and Analytics Manager, Site Lead Southeast Asia",
-            "worksFor": {
-                "@type": "Organization",
-                "name": "Google Cloud"
-            },
-            "sameAs": [
-                "https://linkedin.com/in/subhadip-mitra",
-                "https://github.com/bassrehab",
-                "https://twitter.com/bassrehab"
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "{{ author_name }}",
-            "url": "{{ site.url }}",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "{{ '/assets/img/prof_pic.jpg' | absolute_url }}"
-            }
-        },
-        "isPartOf": {
-            "@type": "Blog",
-            "name": "{{ site.blog_name | default: 'Binary Breakthroughs' }}",
-            "url": "{{ '/blog/' | absolute_url }}"
-        }
-        {% if sameaslinks != blank %}
-        ,"sameAs": {{ sameaslinks }}
-        {% endif %}
-    }
-  </script>
+    {% if page.content %}
+      {% assign word_count = page.content | number_of_words %}
+    {% else %}
+      {% assign word_count = 0 %}
+    {% endif %}
+    {% assign reading_time = word_count | divided_by: 200 | plus: 1 %}
+    <script type="application/ld+json">
+      {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "{{ page.url | prepend: site.baseurl | prepend: site.url }}"
+          },
+          "headline": "{{ page.title | escape }}",
+          "description": "{% if page.description %}{{ page.description | escape }}{% else %}{{ site.description | escape }}{% endif %}",
+          "url": "{{ page.url | prepend: site.baseurl | prepend: site.url }}",
+          "datePublished": "{{ page.date | date_to_xmlschema }}",
+          {% if page.last_modified_at %}
+          "dateModified": "{{ page.last_modified_at | date_to_xmlschema }}",
+          {% else %}
+          "dateModified": "{{ page.date | date_to_xmlschema }}",
+          {% endif %}
+          "wordCount": {{ word_count }},
+          "timeRequired": "PT{{ reading_time }}M",
+          {% if page.og_image or page.thumbnail %}
+          "image": "{{ page.og_image | default: page.thumbnail | absolute_url }}",
+          {% elsif site.og_image %}
+          "image": "{{ site.og_image | absolute_url }}",
+          {% endif %}
+          {% if page.tags.size > 0 %}
+          "keywords": "{{ page.tags | join: ', ' }}",
+          {% endif %}
+          {% if page.categories.size > 0 %}
+          "articleSection": "{{ page.categories | first }}",
+          {% endif %}
+          "author": {
+              "@type": "Person",
+              "name": "{{ author_name }}",
+              "url": "{{ site.url }}",
+              "jobTitle": "Data and Analytics Manager, Site Lead Southeast Asia",
+              "worksFor": {
+                  "@type": "Organization",
+                  "name": "Google Cloud"
+              },
+              "sameAs": [
+                  "https://linkedin.com/in/subhadip-mitra",
+                  "https://github.com/bassrehab",
+                  "https://twitter.com/bassrehab"
+              ]
+          },
+          "publisher": {
+              "@type": "Organization",
+              "name": "{{ author_name }}",
+              "url": "{{ site.url }}",
+              "logo": {
+                  "@type": "ImageObject",
+                  "url": "{{ '/assets/img/prof_pic.jpg' | absolute_url }}"
+              }
+          },
+          "isPartOf": {
+              "@type": "Blog",
+              "name": "{{ site.blog_name | default: 'Binary Breakthroughs' }}",
+              "url": "{{ '/blog/' | absolute_url }}"
+          }
+          {% if sameaslinks != blank %}
+          ,"sameAs": {{ sameaslinks }}
+          {% endif %}
+      }
+    </script>
 
-  <!-- Breadcrumb Schema -->
-  <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "{{ site.url }}"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Blog",
-                "item": "{{ '/blog/' | absolute_url }}"
-            },
-            {% if page.categories.size > 0 %}
-            {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "{{ page.categories | first | capitalize }}",
-                "item": "{{ page.categories | first | slugify | prepend: '/blog/category/' | absolute_url }}"
-            },
-            {
-                "@type": "ListItem",
-                "position": 4,
-                "name": "{{ page.title | escape }}",
-                "item": "{{ page.url | prepend: site.baseurl | prepend: site.url }}"
-            }
-            {% else %}
-            {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "{{ page.title | escape }}",
-                "item": "{{ page.url | prepend: site.baseurl | prepend: site.url }}"
-            }
-            {% endif %}
-        ]
-    }
-  </script>
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+      {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+              {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "{{ site.url }}"
+              },
+              {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Blog",
+                  "item": "{{ '/blog/' | absolute_url }}"
+              },
+              {% if page.categories.size > 0 %}
+              {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "{{ page.categories | first | capitalize }}",
+                  "item": "{{ page.categories | first | slugify | prepend: '/blog/category/' | absolute_url }}"
+              },
+              {
+                  "@type": "ListItem",
+                  "position": 4,
+                  "name": "{{ page.title | escape }}",
+                  "item": "{{ page.url | prepend: site.baseurl | prepend: site.url }}"
+              }
+              {% else %}
+              {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "{{ page.title | escape }}",
+                  "item": "{{ page.url | prepend: site.baseurl | prepend: site.url }}"
+              }
+              {% endif %}
+          ]
+      }
+    </script>
   {% else %}
-  <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "{{ author_name }}",
-        "url": "{{ page.url | prepend: site.baseurl | prepend: site.url }}",
-        "description": "{% if page.description %}{{ page.description | escape }}{% else %}{{ site.description | escape }}{% endif %}",
-        "author": {
-            "@type": "Person",
-            "name": "{{ author_name }}"
-        }
-        {% if sameaslinks != blank %}
-        ,"sameAs": {{ sameaslinks }}
-        {% endif %}
-    }
-  </script>
+    <script type="application/ld+json">
+      {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "{{ author_name }}",
+          "url": "{{ page.url | prepend: site.baseurl | prepend: site.url }}",
+          "description": "{% if page.description %}{{ page.description | escape }}{% else %}{{ site.description | escape }}{% endif %}",
+          "author": {
+              "@type": "Person",
+              "name": "{{ author_name }}"
+          }
+          {% if sameaslinks != blank %}
+          ,"sameAs": {{ sameaslinks }}
+          {% endif %}
+      }
+    </script>
   {% endif %}
 
   <!-- Enhanced Person Schema for Homepage (includes reviews) -->

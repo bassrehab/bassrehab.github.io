@@ -43,7 +43,7 @@
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     text-decoration: none;
-    color: white!important;
+    color: white !important;
   }
 
   .icon {
@@ -54,23 +54,23 @@
 
 .twitter-btn {
   background: #000000;
-  
+
   &:hover {
     background: #1a1a1a;
   }
 }
 
 .linkedin-btn {
-  background: #0077B5;
-  
+  background: #0077b5;
+
   &:hover {
     background: #006399;
   }
 }
 
 .email-btn {
-  background: #EA4335;
-  
+  background: #ea4335;
+
   &:hover {
     background: #d33426;
   }
@@ -78,7 +78,7 @@
 
 .copy-btn {
   background: #28a745;
-  
+
   &:hover {
     background: #218838;
   }
@@ -92,12 +92,16 @@
 }
 
 a.share-btn {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 // Responsive
@@ -105,10 +109,9 @@ a.share-btn {
   .share-buttons {
     flex-direction: column;
   }
-  
+
   .share-btn {
     width: 100%;
     justify-content: center;
   }
 }
-
