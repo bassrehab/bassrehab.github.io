@@ -1,3 +1,0 @@
-# Disable imagemagick plugin on Cloudflare
-imagemagick:
-  enabled: false
