@@ -51,19 +51,26 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "dropdown-archive",
-              title: "archive",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/archive/";
-              },
-            },{id: "dropdown-contact",
+        },{id: "dropdown-contact",
               title: "contact",
               description: "",
               section: "Dropdown",
               handler: () => {
                 window.location.href = "/contact/";
+              },
+            },{id: "dropdown-reading-list",
+              title: "reading list",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/reading-list/";
+              },
+            },{id: "dropdown-archive",
+              title: "archive",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/archive/";
               },
             },{id: "dropdown-licenses",
               title: "licenses",
@@ -538,17 +545,6 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/blog/2020/introducing-oconsent-open-consent-protocol/";
-          
-        },
-      },{id: "post-reading-list",
-        
-          title: "Reading List",
-        
-        description: "A collected list of research papers, tech blogs, videos that I follow",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/1970/reading-list/";
           
         },
       },{id: "post-welcome-to-my-blog",
