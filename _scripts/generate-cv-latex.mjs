@@ -1,0 +1,319 @@
+#!/usr/bin/env node
+/**
+ * Generate LaTeX CV from cv_data.yml
+ * Outputs both public (cv-clean.tex) and private (cv-clean-phone.tex) versions
+ *
+ * Usage: node _scripts/generate-cv-latex.mjs
+ */
+
+import fs from "fs";
+import path from "path";
+import yaml from "js-yaml";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const ROOT_DIR = path.resolve(__dirname, "..");
+
+// Phone number for private version (not stored in YAML for privacy)
+const PHONE_NUMBER = "+65 82501776";
+
+// Check for --concise flag
+const isConcise = process.argv.includes("--concise");
+
+/**
+ * Escape special LaTeX characters
+ */
+function escapeLatex(text) {
+  if (!text) return "";
+  return text
+    .replace(/\\/g, "\\textbackslash{}")
+    .replace(/&/g, "\\&")
+    .replace(/%/g, "\\%")
+    .replace(/\$/g, "\\$")
+    .replace(/#/g, "\\#")
+    .replace(/_/g, "\\_")
+    .replace(/\{/g, "\\{")
+    .replace(/\}/g, "\\}")
+    .replace(/~/g, "\\textasciitilde{}")
+    .replace(/\^/g, "\\textasciicircum{}")
+    // Handle smart quotes
+    .replace(/"/g, "''")
+    .replace(/"/g, "``")
+    // Keep regular apostrophes as-is (LaTeX handles them fine)
+    .replace(/'/g, "'")
+    .replace(/'/g, "'")
+    // Handle dashes
+    .replace(/–/g, "--")
+    .replace(/—/g, "---")
+    .replace(/\.\.\./g, "\\ldots{}")
+    // Handle arrow notation
+    .replace(/->/g, "$\\rightarrow$")
+    // Fix double escaping of already escaped items
+    .replace(/\\\$XXM/g, "\\$XXM")
+    .replace(/\\\$XM/g, "\\$XM")
+    .replace(/\\\$50K/g, "\\$50K");
+}
+
+/**
+ * Convert URL to LaTeX hyperref
+ */
+function formatUrl(url, label = null) {
+  if (!url) return "";
+  if (label) {
+    return `\\href{${url}}{${escapeLatex(label)}}`;
+  }
+  return `\\url{${url}}`;
+}
+
+/**
+ * Format date from YYYY-MM or YYYY to Month YYYY
+ */
+function formatDate(dateStr) {
+  if (!dateStr) return "";
+  if (dateStr === "present") return "Present";
+
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  const parts = dateStr.split("-");
+  if (parts.length === 2) {
+    const monthIndex = parseInt(parts[1], 10) - 1;
+    return `${months[monthIndex]} ${parts[0]}`;
+  }
+  return parts[0]; // Just year
+}
+
+/**
+ * Generate the LaTeX document
+ */
+function generateLatex(cv, includePhone = false) {
+  const lines = [];
+
+  // Preamble
+  lines.push(`\\documentclass[11pt,a4paper]{article}`);
+  lines.push(`\\usepackage[margin=0.75in]{geometry}`);
+  lines.push(`\\usepackage{titlesec}`);
+  lines.push(`\\usepackage{enumitem}`);
+  lines.push(`\\usepackage{hyperref}`);
+  lines.push(`\\usepackage{parskip}`);
+  lines.push(``);
+  lines.push(`% Formatting`);
+  lines.push(`\\pagestyle{empty}`);
+  lines.push(`\\setlist{nosep, leftmargin=*}`);
+  lines.push(`\\hypersetup{`);
+  lines.push(`    colorlinks=true,`);
+  lines.push(`    linkcolor=blue,`);
+  lines.push(`    urlcolor=blue,`);
+  lines.push(`}`);
+  lines.push(``);
+  lines.push(`% Section formatting`);
+  lines.push(
+    `\\titleformat{\\section}{\\Large\\bfseries}{}{0em}{}[\\titlerule]`
+  );
+  lines.push(`\\titleformat{\\subsection}[runin]{\\bfseries}{}{0em}{}[:]`);
+  lines.push(`\\titlespacing{\\section}{0pt}{12pt}{6pt}`);
+  lines.push(``);
+  lines.push(`\\begin{document}`);
+  lines.push(``);
+
+  // Header
+  lines.push(`% Header`);
+  lines.push(`\\begin{center}`);
+  lines.push(`{\\huge \\textbf{${escapeLatex(cv.basics.name)}}}\\\\[4pt]`);
+  lines.push(`\\textit{${escapeLatex(cv.basics.title)}}\\\\[8pt]`);
+
+  // Contact line - with or without phone
+  const contactParts = [cv.basics.location];
+  if (includePhone) {
+    contactParts.push(PHONE_NUMBER);
+  }
+  contactParts.push(cv.basics.email);
+  lines.push(`${contactParts.join(" $|$ ")} \\\\`);
+
+  // Social links
+  lines.push(
+    `LinkedIn: linkedin.com/in/subhadip-mitra $|$ GitHub: github.com/bassrehab`
+  );
+  lines.push(`\\end{center}`);
+  lines.push(``);
+  lines.push(`\\begin{flushright}`);
+  lines.push(`\\small\\textit{Last updated: \\today}`);
+  lines.push(`\\end{flushright}`);
+  lines.push(``);
+
+  // Professional Summary
+  lines.push(`\\section{Professional Summary}`);
+  const summary = cv.basics.summary
+    .replace(/\n\n/g, " ")
+    .replace(/\n/g, " ")
+    .trim();
+  lines.push(escapeLatex(summary));
+  lines.push(``);
+
+  // Professional Experience
+  lines.push(`\\section{Professional Experience}`);
+  lines.push(``);
+
+  for (const job of cv.experience) {
+    lines.push(`\\subsection{${escapeLatex(job.company)}}`);
+    lines.push(
+      `\\textbf{${escapeLatex(job.role)}} \\hfill \\textit{${formatDate(job.start_date)} -- ${formatDate(job.end_date)}}`
+    );
+    lines.push(``);
+
+    // Job description
+    const desc = job.description.replace(/\n/g, " ").trim();
+    lines.push(escapeLatex(desc));
+    lines.push(``);
+
+    // Handle sections (for Google role) or simple highlights
+    if (job.sections) {
+      for (const section of job.sections) {
+        lines.push(`\\textbf{${escapeLatex(section.title)}:}`);
+        lines.push(`\\begin{itemize}`);
+        for (const item of section.highlights) {
+          // For PDF, we don't include the title prefix - just combine them
+          const highlight = item.description || item;
+          lines.push(`\\item ${escapeLatex(highlight)}`);
+        }
+        lines.push(`\\end{itemize}`);
+        lines.push(``);
+      }
+    } else if (job.highlights && job.highlights.length > 0) {
+      lines.push(`\\begin{itemize}`);
+      for (const highlight of job.highlights) {
+        lines.push(`\\item ${escapeLatex(highlight)}`);
+      }
+      lines.push(`\\end{itemize}`);
+      lines.push(``);
+    }
+  }
+
+  // Research & Open Source Engineering
+  lines.push(`\\section{Research \\& Open Source Engineering}`);
+  lines.push(``);
+
+  for (const project of cv.research) {
+    lines.push(`\\textbf{${escapeLatex(project.title)}} \\\\`);
+
+    // Description
+    const desc = project.description.replace(/\n/g, " ").trim();
+    lines.push(escapeLatex(desc) + " \\\\");
+
+    // Links
+    if (project.links && project.links.length > 0) {
+      const linkStrs = project.links.map((link) => {
+        if (link.type === "github") {
+          return `GitHub: ${formatUrl(link.url)}`;
+        } else if (link.type === "pypi") {
+          return `PyPI: ${formatUrl(link.url)}`;
+        } else if (link.type === "docs") {
+          return `Docs: ${formatUrl(link.url)}`;
+        } else {
+          return formatUrl(link.url);
+        }
+      });
+      lines.push(linkStrs.join(" $|$ "));
+    }
+
+    // Status
+    if (project.status) {
+      lines.push(`\\\\`);
+      lines.push(`\\textit{${escapeLatex(project.status)}}`);
+    }
+
+    lines.push(``);
+  }
+
+  // Publications & Technical Disclosures
+  lines.push(`\\section{Publications \\& Technical Disclosures}`);
+  lines.push(``);
+
+  for (const pub of cv.publications) {
+    lines.push(`\\textbf{${escapeLatex(pub.title)}} \\\\`);
+    lines.push(`\\textit{${escapeLatex(pub.venue)}, ${formatDate(pub.date)}} \\\\`);
+    lines.push(formatUrl(pub.url));
+    lines.push(``);
+  }
+
+  // Education
+  lines.push(`\\section{Education}`);
+  lines.push(``);
+
+  for (const edu of cv.education) {
+    lines.push(`\\textbf{${escapeLatex(edu.degree)}} \\hfill ${escapeLatex(edu.institution)}`);
+  }
+  lines.push(``);
+
+  // Technical Skills
+  lines.push(`\\section{Technical Skills}`);
+  lines.push(``);
+
+  for (const skill of cv.skills) {
+    const category = escapeLatex(skill.category);
+    const items = skill.items.map((item) => escapeLatex(item)).join(", ");
+    lines.push(`\\subsection{${category}} ${items}`);
+    lines.push(``);
+  }
+
+  // Professional Affiliations
+  if (cv.affiliations && cv.affiliations.length > 0) {
+    lines.push(`\\section{Professional Affiliations}`);
+    lines.push(``);
+    lines.push(cv.affiliations.join(" • "));
+    lines.push(``);
+  }
+
+  lines.push(`\\end{document}`);
+
+  return lines.join("\n");
+}
+
+/**
+ * Main function
+ */
+async function main() {
+  const variant = isConcise ? "concise" : "full";
+  const yamlFile = isConcise ? "cv_data_concise.yml" : "cv_data.yml";
+
+  console.log(`Generating ${variant} LaTeX CV from ${yamlFile}...\n`);
+
+  // Read YAML file
+  const yamlPath = path.join(ROOT_DIR, "_data", yamlFile);
+  const yamlContent = fs.readFileSync(yamlPath, "utf8");
+  const cv = yaml.load(yamlContent);
+
+  // Generate public version (no phone)
+  const publicLatex = generateLatex(cv, false);
+  const publicFilename = isConcise ? "cv-concise.tex" : "cv-clean.tex";
+  const publicPath = path.join(ROOT_DIR, publicFilename);
+  fs.writeFileSync(publicPath, publicLatex);
+  console.log(`✓ Generated ${publicPath}`);
+
+  // Generate private version (with phone)
+  const privateLatex = generateLatex(cv, true);
+  const privateFilename = isConcise ? "cv-concise-phone.tex" : "cv-clean-phone.tex";
+  const privatePath = path.join(ROOT_DIR, privateFilename);
+  fs.writeFileSync(privatePath, privateLatex);
+  console.log(`✓ Generated ${privatePath}`);
+
+  console.log("\nLaTeX files generated successfully!");
+}
+
+main().catch((err) => {
+  console.error("Error:", err);
+  process.exit(1);
+});
