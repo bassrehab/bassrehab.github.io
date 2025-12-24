@@ -1,76 +1,78 @@
 {% if page.layout == 'post' %}
-<br />
-<div
-  class="newsletter-form-container newsletter-signup"
-  {% if include.center %}
-    style="margin: 20px"
-  {% endif %}
->
-<h2 class="newsletter-title">Strategic Insights for Technology Leaders</h>
-<p>Join my newsletter for exclusive content on leveraging Data, AI, and Cloud to drive digital transformation and achieve breakthrough business results. Stay informed on the latest trends, strategies, and best practices for leading in the age of intelligent systems.</p>
-<p><a href="/archive/" target="_blank">Read the Blog Archive in the meantime</a></p>
-
-  <form
-    class="newsletter-form"
-    action="https://app.loops.so/api/newsletter-form/{{ site.newsletter.endpoint }}"
-    method="POST"
-    style="justify-content: {% if include.left %}flex-start{% elsif include.right %}flex-end{% else %}center{% endif %}"
+  <br>
+  <div
+    class="newsletter-form-container newsletter-signup"
+    {% if include.center %}
+      style="margin: 20px"
+    {% endif %}
   >
-    <input
-      class="newsletter-form-input"
-      name="newsletter-form-input"
-      type="email"
-      placeholder="user@example.com"
-      required=""
-    >
+    <h2 class="newsletter-title">Strategic Insights for Technology Leaders</h2>
+    <p>
+      Join my newsletter for exclusive content on leveraging Data, AI, and Cloud to drive digital transformation and achieve breakthrough business
+      results. Stay informed on the latest trends, strategies, and best practices for leading in the age of intelligent systems.
+    </p>
+    <p><a href="/archive/" target="_blank">Read the Blog Archive in the meantime</a></p>
 
-    <button
-      type="submit"
-      class="newsletter-form-button"
+    <form
+      class="newsletter-form"
+      action="https://app.loops.so/api/newsletter-form/{{ site.newsletter.endpoint }}"
+      method="POST"
       style="justify-content: {% if include.left %}flex-start{% elsif include.right %}flex-end{% else %}center{% endif %}"
     >
-      subscribe
-    </button>
+      <input
+        class="newsletter-form-input"
+        name="newsletter-form-input"
+        type="email"
+        placeholder="user@example.com"
+        required=""
+      >
+
+      <button
+        type="submit"
+        class="newsletter-form-button"
+        style="justify-content: {% if include.left %}flex-start{% elsif include.right %}flex-end{% else %}center{% endif %}"
+      >
+        subscribe
+      </button>
+
+      <button
+        type="button"
+        class="newsletter-loading-button"
+        style="justify-content: {% if include.left %}flex-start{% elsif include.right %}flex-end{% else %}center{% endif %}"
+      >
+        Please wait...
+      </button>
+    </form>
+
+    <div
+      class="newsletter-success"
+      style="justify-content: {% if include.left %}flex-start{% elsif include.right %}flex-end{% else %}center{% endif %}"
+    >
+      <p class="newsletter-success-message">You're going to love this! Thanks for subscribing.</p>
+    </div>
+
+    <div
+      class="newsletter-error"
+      style="justify-content: {% if include.left %}flex-start{% elsif include.right %}flex-end{% else %}center{% endif %}"
+    >
+      <p class="newsletter-error-message">Oops! Something went wrong, please try again</p>
+    </div>
 
     <button
+      class="newsletter-back-button"
       type="button"
-      class="newsletter-loading-button"
-      style="justify-content: {% if include.left %}flex-start{% elsif include.right %}flex-end{% else %}center{% endif %}"
+      onmouseout='this.style.textDecoration="none"'
+      onmouseover='this.style.textDecoration="underline"'
     >
-      Please wait...
+      &larr; Back
     </button>
-  </form>
-
-  <div
-    class="newsletter-success"
-    style="justify-content: {% if include.left %}flex-start{% elsif include.right %}flex-end{% else %}center{% endif %}"
-  >
-    <p class="newsletter-success-message">You're going to love this! Thanks for subscribing.</p>
   </div>
 
-  <div
-    class="newsletter-error"
-    style="justify-content: {% if include.left %}flex-start{% elsif include.right %}flex-end{% else %}center{% endif %}"
-  >
-    <p class="newsletter-error-message">Oops! Something went wrong, please try again</p>
-  </div>
-
-  <button
-    class="newsletter-back-button"
-    type="button"
-    onmouseout='this.style.textDecoration="none"'
-    onmouseover='this.style.textDecoration="underline"'
-  >
-    &larr; Back
-  </button>
-</div>
-
-<noscript>
-  <style>
-    .newsletter-form-container {
-      display: none;
-    }
-  </style>
-</noscript>
-
+  <noscript>
+    <style>
+      .newsletter-form-container {
+        display: none;
+      }
+    </style>
+  </noscript>
 {% endif %}

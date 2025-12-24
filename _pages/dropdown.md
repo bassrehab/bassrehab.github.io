@@ -5,11 +5,13 @@ nav: true
 nav_order: 8
 dropdown: true
 children:
-  - title: archive
-    permalink: /archive/
-  - title: divider
   - title: contact
     permalink: /contact/
+  - title: divider
+  - title: reading list
+    permalink: /reading-list/
+  - title: archive
+    permalink: /archive/
   - title: divider
   - title: licenses
     permalink: /license/

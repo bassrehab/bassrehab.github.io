@@ -1,0 +1,919 @@
+# Reading List Data
+# Types: paper, blog, video, resource
+# Add new items at the top
+
+# ============================================
+# PAPERS - LLM Foundations
+# ============================================
+
+- title: "Attention Is All You Need"
+  url: "https://arxiv.org/abs/1706.03762"
+  description: "The original Transformer paper that revolutionized NLP and enabled modern LLMs"
+  type: paper
+  tags: [llm, transformers, attention, foundational]
+
+- title: "BERT: Pre-training of Deep Bidirectional Transformers"
+  url: "https://arxiv.org/abs/1810.04805"
+  description: "Bidirectional pre-training that achieved SOTA on 11 NLP tasks"
+  type: paper
+  tags: [llm, bert, nlp, foundational]
+
+- title: "GPT-3: Language Models are Few-Shot Learners"
+  url: "https://arxiv.org/abs/2005.14165"
+  description: "175B parameter model demonstrating emergent few-shot learning capabilities"
+  type: paper
+  tags: [llm, gpt, few-shot, foundational]
+
+- title: "LLaMA: Open and Efficient Foundation Language Models"
+  url: "https://arxiv.org/abs/2302.13971"
+  description: "Meta's open foundation models - LLaMA-13B outperforms GPT-3 on most benchmarks"
+  type: paper
+  tags: [llm, llama, meta, open-source]
+
+- title: "Llama 2: Open Foundation and Fine-Tuned Chat Models"
+  url: "https://arxiv.org/abs/2307.09288"
+  description: "7B to 70B parameter models with safety fine-tuning and RLHF"
+  type: paper
+  tags: [llm, llama, meta, rlhf]
+
+# ============================================
+# PAPERS - LLM Reasoning & Agents
+# ============================================
+
+- title: "Chain-of-Thought Prompting Elicits Reasoning in LLMs"
+  url: "https://arxiv.org/abs/2201.11903"
+  description: "Shows how intermediate reasoning steps dramatically improve complex task performance"
+  type: paper
+  tags: [llm, reasoning, prompting, chain-of-thought]
+
+- title: "ReAct: Synergizing Reasoning and Acting in Language Models"
+  url: "https://arxiv.org/abs/2210.03629"
+  description: "Foundation of modern agentic systems - interleaving reasoning traces with actions"
+  type: paper
+  tags: [llm, agents, reasoning, react]
+
+# ============================================
+# PAPERS - LLM Training & Alignment
+# ============================================
+
+- title: "InstructGPT: Training LLMs to Follow Instructions with Human Feedback"
+  url: "https://arxiv.org/abs/2203.02155"
+  description: "The RLHF paper that paved the way for ChatGPT - SFT, reward modeling, and PPO"
+  type: paper
+  tags: [llm, rlhf, alignment, openai]
+
+- title: "Direct Preference Optimization (DPO)"
+  url: "https://arxiv.org/abs/2305.18290"
+  description: "Simpler alternative to RLHF - directly optimize preferences without reward model"
+  type: paper
+  tags: [llm, dpo, alignment, fine-tuning]
+
+- title: "ZeRO: Memory Optimizations Toward Training Trillion Parameter Models"
+  url: "https://arxiv.org/abs/1910.02054"
+  description: "DeepSpeed's memory optimization enabling 100B+ parameter training"
+  type: paper
+  tags: [llm, training, deepspeed, distributed]
+
+- title: "Megatron-LM: Training Multi-Billion Parameter Language Models"
+  url: "https://arxiv.org/abs/1909.08053"
+  description: "NVIDIA's model parallelism techniques for training at scale"
+  type: paper
+  tags: [llm, training, nvidia, parallelism]
+
+- title: "Efficient Large-Scale Language Model Training on GPU Clusters"
+  url: "https://arxiv.org/abs/2104.04473"
+  description: "Combining pipeline, tensor, and data parallelism (PTD-P) for trillion parameter models"
+  type: paper
+  tags: [llm, training, nvidia, scaling]
+
+# ============================================
+# PAPERS - LLM Inference Optimization
+# ============================================
+
+- title: "FlashAttention: Fast and Memory-Efficient Exact Attention"
+  url: "https://arxiv.org/abs/2205.14135"
+  description: "IO-aware attention algorithm - 3x speedup on GPT-2, 20x more memory efficient"
+  type: paper
+  tags: [llm, attention, optimization, inference]
+
+- title: "FlashAttention-2: Faster Attention with Better Parallelism"
+  url: "https://arxiv.org/abs/2307.08691"
+  description: "Improved parallelism and work partitioning over FlashAttention"
+  type: paper
+  tags: [llm, attention, optimization, inference]
+
+- title: "vLLM: Efficient Memory Management with PagedAttention"
+  url: "https://arxiv.org/abs/2309.06180"
+  description: "OS-inspired paged attention for KV cache - 2-4x throughput improvement"
+  type: paper
+  tags: [llm, inference, vllm, optimization]
+
+- title: "Speculative Decoding Survey"
+  url: "https://arxiv.org/abs/2401.07851"
+  description: "Comprehensive survey on speculative decoding for 2-4x inference speedup"
+  type: paper
+  tags: [llm, inference, speculative-decoding, optimization]
+
+# ============================================
+# PAPERS - Memory & Architecture
+# ============================================
+
+- title: "Titans: Learning to Memorize at Test Time"
+  url: "https://arxiv.org/abs/2501.00663"
+  description: "Neural architecture combining long-term memory with attention, scalable to 2M+ context windows"
+  type: paper
+  tags: [llm, memory, attention, transformers]
+
+- title: "Miras: It's All Connected - Test-Time Memorization and Online Optimization"
+  url: "https://arxiv.org/abs/2504.13173"
+  description: "Reconceptualizes Transformers and RNNs as associative memory modules, introduces Moneta, Yaad, and Memora architectures"
+  type: paper
+  tags: [llm, memory, attention, architecture]
+
+- title: "Scaling Test-time Compute for LLM Agents"
+  url: "https://arxiv.org/abs/2506.12928"
+  description: "Systematic exploration of test-time scaling methods for language agents"
+  type: paper
+  tags: [llm, agents, reasoning, scaling]
+
+- title: "Mixtral of Experts"
+  url: "https://arxiv.org/abs/2401.04088"
+  description: "Mistral's Mixture of Experts architecture paper"
+  type: paper
+  tags: [llm, moe, architecture]
+
+- title: "AutoDev: Automated AI-Driven Development"
+  url: "https://arxiv.org/pdf/2403.08299.pdf"
+  description: "Autonomous Developer paper from Microsoft"
+  type: paper
+  tags: [ai, agents, software-engineering]
+
+- title: "Zanzibar: Google's Consistent, Global Authorization System"
+  url: "https://research.google/pubs/zanzibar-googles-consistent-global-authorization-system/"
+  description: "Design, implementation, and deployment of Zanzibar for Calendar, Cloud, Drive, Maps, Photos, and YouTube"
+  type: paper
+  tags: [distributed-systems, google, authorization, security]
+
+- title: "Towards Modern Development of Cloud Applications"
+  url: "https://sigops.org/s/conferences/hotos/2023/papers/ghemawat.pdf"
+  description: "Introduces modular monoliths as an alternative to microservices"
+  type: paper
+  tags: [architecture, cloud, microservices]
+
+- title: "Delta Lake: High-Performance ACID Table Storage"
+  url: "https://www.databricks.com/wp-content/uploads/2020/08/p975-armbrust.pdf"
+  description: "The delta table format for big data lakehouse"
+  type: paper
+  tags: [data-engineering, lakehouse, databricks]
+
+- title: "Bigtable: A Distributed Storage System for Structured Data"
+  url: "https://static.googleusercontent.com/media/research.google.com/en//archive/bigtable-osdi06.pdf"
+  description: "Google's foundational paper on the Bigtable format"
+  type: paper
+  tags: [distributed-systems, google, databases]
+
+- title: "Presto: SQL on Everything"
+  url: "https://trino.io/Presto_SQL_on_Everything.pdf"
+  description: "SQL Query engine for interactive analytics in big data"
+  type: paper
+  tags: [data-engineering, sql, query-engine]
+
+- title: "Napa: Powering Scalable Data Warehousing at Google"
+  url: "https://research.google/pubs/napa-powering-scalable-data-warehousing-with-robust-query-performance-at-google/"
+  description: "A customizable data warehouse technology for Google"
+  type: paper
+  tags: [data-engineering, google, data-warehouse]
+
+- title: "Dynamo: Amazon's Highly Available Key-value Store"
+  url: "https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf"
+  description: "Foundational paper on AWS DynamoDB"
+  type: paper
+  tags: [distributed-systems, aws, databases]
+
+- title: "Gorilla: A Fast, Scalable, In-Memory Time Series Database"
+  url: "https://drive.google.com/file/d/13jFQkD2OmydymjPFLnsvsQUwMwhmynIh/view"
+  description: "Core ideas behind time-series databases from Facebook"
+  type: paper
+  tags: [databases, time-series, meta]
+
+- title: "Akkio: Managing Datastore Locality at Scale"
+  url: "https://www.usenix.org/system/files/osdi18-annamalai.pdf"
+  description: "Meta's data placement service for sharding the shards"
+  type: paper
+  tags: [distributed-systems, meta, data-placement]
+
+- title: "Google File System"
+  url: "https://static.googleusercontent.com/media/research.google.com/en//archive/gfs-sosp2003.pdf"
+  description: "The foundational paper that HDFS is based on"
+  type: paper
+  tags: [distributed-systems, google, storage]
+
+- title: "Meta's Microservice Architecture"
+  url: "https://www.usenix.org/system/files/atc23-huye.pdf"
+  description: "How Meta structures its microservices"
+  type: paper
+  tags: [architecture, meta, microservices]
+
+# ============================================
+# PAPERS - Distributed Consensus & Algorithms
+# ============================================
+
+- title: "Raft: In Search of an Understandable Consensus Algorithm"
+  url: "https://raft.github.io/raft.pdf"
+  description: "Designed for understandability - leader election, log replication, safety guarantees"
+  type: paper
+  tags: [distributed-systems, consensus, raft, algorithms]
+
+- title: "Paxos Made Simple"
+  url: "https://lamport.azurewebsites.net/pubs/paxos-simple.pdf"
+  description: "Lamport's simplified explanation of the Paxos consensus algorithm"
+  type: paper
+  tags: [distributed-systems, consensus, paxos, algorithms]
+
+# ============================================
+# PAPERS - Database Internals
+# ============================================
+
+- title: "The Log-Structured Merge-Tree (LSM-Tree)"
+  url: "https://www.cs.umb.edu/~poneil/lsmtree.pdf"
+  description: "Foundational paper behind DynamoDB, Cassandra, RocksDB - deferred index updates via merge sort"
+  type: paper
+  tags: [databases, lsm-tree, storage, foundational]
+
+- title: "F1: A Distributed SQL Database That Scales"
+  url: "https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/41344.pdf"
+  description: "Google's globally distributed SQL database built on Spanner"
+  type: paper
+  tags: [databases, google, distributed-systems, sql]
+
+- title: "Spanner: Google's Globally-Distributed Database"
+  url: "https://static.googleusercontent.com/media/research.google.com/en//archive/spanner-osdi2012.pdf"
+  description: "First globally distributed database with external consistency using TrueTime"
+  type: paper
+  tags: [databases, google, distributed-systems, transactions]
+
+# ============================================
+# BLOGS - Systems & Databases
+# ============================================
+
+- title: "Kafka Design Overview"
+  url: "https://docs.confluent.io/kafka/design/index.html"
+  description: "Official Kafka design docs - file system, consumers, producers, delivery guarantees"
+  type: blog
+  tags: [kafka, streaming, architecture, confluent]
+
+- title: "Apache Kafka Architecture Course"
+  url: "https://developer.confluent.io/courses/architecture/get-started/"
+  description: "Jun Rao's deep dive into Kafka internals - brokers, data plane, control plane, KRaft"
+  type: resource
+  tags: [kafka, streaming, course, confluent]
+
+- title: "How Kafka Works"
+  url: "https://newsletter.systemdesign.one/p/how-kafka-works"
+  description: "Visual explanation of Kafka architecture and internals"
+  type: blog
+  tags: [kafka, streaming, system-design]
+
+# ============================================
+# COURSES
+# ============================================
+
+- title: "Stanford CME 295: Large Language Models"
+  url: "https://cme295.stanford.edu/syllabus/"
+  description: "Comprehensive LLM course covering transformers, attention, MoE, fine-tuning, RAG, agents, and evaluation"
+  type: resource
+  tags: [llm, course, stanford, deep-learning]
+
+# ============================================
+# BLOGS - LLM Concepts & Tutorials
+# ============================================
+
+- title: "LLM Reasoning, AI Agents, and Test Time Scaling"
+  url: "https://developer.nvidia.com/blog/an-easy-introduction-to-llm-reasoning-ai-agents-and-test-time-scaling/"
+  description: "NVIDIA's introduction to chain of thought, ReAct, self-reflection, and test-time scaling techniques"
+  type: blog
+  tags: [llm, reasoning, agents, nvidia]
+
+- title: "Efficient ML - LLM Optimization Techniques"
+  url: "https://gaurigupta19.github.io/llms/distributed%20ml/optimization/2025/10/02/efficient-ml.html"
+  description: "Comprehensive guide to LLM optimization and distributed ML"
+  type: blog
+  tags: [llm, optimization, distributed-systems]
+
+- title: "Tokenization Explained"
+  url: "https://lnkd.in/gcRG4K_c"
+  description: "Breaking text into tokens for model input - affects context length, multilingual support, and efficiency"
+  type: blog
+  tags: [llm, tokenization, nlp]
+
+- title: "Embeddings Deep Dive"
+  url: "https://lnkd.in/g4gqjKNH"
+  description: "Transforming raw data into dense vectors for search, clustering, and semantic understanding"
+  type: blog
+  tags: [llm, embeddings, nlp]
+
+- title: "Multimodal LLMs Explained"
+  url: "https://lnkd.in/gX4EKtgN"
+  description: "Mapping different data types into a shared representation space for cross-modal reasoning"
+  type: blog
+  tags: [llm, multimodal, vision]
+
+- title: "Retrieval-Augmented Generation (RAG)"
+  url: "https://lnkd.in/g5tWVhwz"
+  description: "Hybrid approach combining external search with LLM reasoning for improved factual accuracy"
+  type: blog
+  tags: [llm, rag, retrieval]
+
+- title: "Efficient Fine-Tuning: LoRA, QLoRA, PEFT"
+  url: "https://lnkd.in/gyug2CPF"
+  description: "Parameter-efficient adaptation methods for large models - reduce compute costs and speed up deployment"
+  type: blog
+  tags: [llm, lora, fine-tuning, peft]
+
+- title: "Model Context Protocol (MCP)"
+  url: "https://lnkd.in/gXbMNuz2"
+  description: "Connecting models to external tools, data sources, and environments through a standardized protocol"
+  type: blog
+  tags: [llm, mcp, agents, tools]
+
+- title: "Model Distillation"
+  url: "https://lnkd.in/gWCgqBYK"
+  description: "Compressing large models into smaller ones with similar performance for edge deployment"
+  type: blog
+  tags: [llm, distillation, optimization]
+
+- title: "Model Merging"
+  url: "https://lnkd.in/grxybkpm"
+  description: "Combining weights from multiple fine-tuned models for better performance or generalization"
+  type: blog
+  tags: [llm, merging, fine-tuning]
+
+- title: "Hallucination Mitigation"
+  url: "https://lnkd.in/gbVKknSY"
+  description: "Reducing fabricated answers through retrieval, constraints, or validation"
+  type: blog
+  tags: [llm, hallucination, safety]
+
+- title: "Latent Space Explained"
+  url: "https://lnkd.in/gsU72Y87"
+  description: "Compressed, abstract representation of data enabling generation, interpolation and creativity"
+  type: blog
+  tags: [ml, latent-space, deep-learning]
+
+# ============================================
+# BLOGS - Tech Companies
+# ============================================
+
+- title: "Netflix TechBlog"
+  url: "https://medium.com/netflix-techblog"
+  description: "Engineering insights from Netflix"
+  type: blog
+  tags: [netflix, engineering-blog, streaming]
+
+- title: "Uber Engineering Blog"
+  url: "http://eng.uber.com"
+  description: "Technical articles from Uber's engineering team"
+  type: blog
+  tags: [uber, engineering-blog, infrastructure]
+
+- title: "The Cloudflare Blog"
+  url: "https://blog.cloudflare.com/"
+  description: "Deep dives into networking, security, and performance"
+  type: blog
+  tags: [cloudflare, engineering-blog, networking]
+
+- title: "Engineering at Meta"
+  url: "https://engineering.fb.com/"
+  description: "Technical insights from Meta's engineering teams"
+  type: blog
+  tags: [meta, engineering-blog, infrastructure]
+
+- title: "LinkedIn Engineering"
+  url: "https://engineering.linkedin.com/blog"
+  description: "Engineering blog from LinkedIn"
+  type: blog
+  tags: [linkedin, engineering-blog]
+
+- title: "AWS Architecture Blog"
+  url: "https://aws.amazon.com/blogs/architecture/"
+  description: "Architecture patterns and best practices from AWS"
+  type: blog
+  tags: [aws, engineering-blog, architecture]
+
+- title: "Stripe Engineering"
+  url: "https://stripe.com/blog/engineering"
+  description: "Technical articles from Stripe"
+  type: blog
+  tags: [stripe, engineering-blog, payments]
+
+- title: "Discord Engineering"
+  url: "https://discord.com/category/engineering"
+  description: "How Discord builds and scales their platform"
+  type: blog
+  tags: [discord, engineering-blog, real-time]
+
+- title: "Slack Engineering"
+  url: "https://slack.engineering/"
+  description: "Engineering insights from Slack"
+  type: blog
+  tags: [slack, engineering-blog, messaging]
+
+- title: "Spotify Engineering"
+  url: "https://engineering.atspotify.com/"
+  description: "Technical blog from Spotify"
+  type: blog
+  tags: [spotify, engineering-blog, streaming]
+
+- title: "Databricks Blog"
+  url: "https://www.databricks.com/blog"
+  description: "Data and AI insights from Databricks"
+  type: blog
+  tags: [databricks, engineering-blog, data-engineering]
+
+- title: "Canva Engineering Blog"
+  url: "https://canvatechblog.com/"
+  description: "Engineering articles from Canva"
+  type: blog
+  tags: [canva, engineering-blog]
+
+- title: "Airbnb Tech Blog"
+  url: "https://medium.com/airbnb-engineering"
+  description: "Technical insights from Airbnb"
+  type: blog
+  tags: [airbnb, engineering-blog]
+
+# ============================================
+# BLOGS - Individual Articles
+# ============================================
+
+- title: "How Meta built the infrastructure for Threads"
+  url: "https://engineering.fb.com/2023/12/19/core-infra/how-meta-built-the-infrastructure-for-threads/"
+  description: "The infrastructure powering Threads"
+  type: blog
+  tags: [meta, infrastructure, scaling]
+
+- title: "Scaling to millions with Google Sheets as a backend"
+  url: "https://www.levels.fyi/blog/scaling-to-millions-with-google-sheets.html"
+  description: "How Levels.fyi used Google Sheets for frugal data storage"
+  type: blog
+  tags: [architecture, scaling, unconventional]
+
+- title: "Intelligent DNS based load balancing at Dropbox"
+  url: "https://dropbox.tech/infrastructure/intelligent-dns-based-load-balancing-at-dropbox"
+  description: "How Dropbox makes its DNS faster"
+  type: blog
+  tags: [dropbox, dns, load-balancing]
+
+- title: "Working with PostgreSQL at Zerodha"
+  url: "https://zerodha.tech/blog/working-with-postgresql/"
+  description: "How India's largest stock broker used PostgreSQL"
+  type: blog
+  tags: [postgresql, databases, fintech]
+
+- title: "The technology behind GitHub's new code search"
+  url: "https://github.blog/2023-02-06-the-technology-behind-githubs-new-code-search/"
+  description: "How GitHub's code search works under the hood"
+  type: blog
+  tags: [github, search, infrastructure]
+
+- title: "Server Sent Events for Real-time Streaming at Scale"
+  url: "https://shopify.engineering/server-sent-events-data-streaming"
+  description: "Managing BFCM events using Server Sent Events at Shopify"
+  type: blog
+  tags: [shopify, real-time, streaming]
+
+- title: "Indexing Gone Wrong - Swiggy"
+  url: "https://bytes.swiggy.com/behindthebug-indexing-gone-wrong-6b4d682fd805"
+  description: "How wrong indexing crashed Swiggy Instamart"
+  type: blog
+  tags: [debugging, databases, postmortem]
+
+- title: "Actually Portable Executable"
+  url: "https://justine.lol/ape.html"
+  description: "Cross platform C/C++ binaries that run anywhere"
+  type: blog
+  tags: [systems, c, portability]
+
+- title: "ZippyDB: General Purpose Key Value Store at Facebook"
+  url: "https://engineering.fb.com/2021/08/06/core-infra/zippydb/"
+  description: "Meta's distributed key/value store"
+  type: blog
+  tags: [meta, databases, key-value]
+
+- title: "Asynchronous Computing at Facebook Scale"
+  url: "https://engineering.fb.com/2020/08/17/production-engineering/async/"
+  description: "Meta's asynchronous compute platform"
+  type: blog
+  tags: [meta, async, infrastructure]
+
+- title: "Managing data store locality with Akkio"
+  url: "https://engineering.fb.com/2018/10/08/core-infra/akkio/"
+  description: "Meta's data placement service in practice"
+  type: blog
+  tags: [meta, distributed-systems, data-placement]
+
+- title: "How we built Pingora"
+  url: "https://blog.cloudflare.com/how-we-built-pingora-the-proxy-that-connects-cloudflare-to-the-internet"
+  description: "Cloudflare's nginx replacement built in Rust"
+  type: blog
+  tags: [cloudflare, rust, proxy]
+
+- title: "Fixing duplicate stories in Medium's For You feed"
+  url: "https://medium.engineering/fixing-duplicate-stories-in-mediums-for-you-feed-48e6d4e2b80d"
+  description: "How Medium fixed duplicate stories in recommendations"
+  type: blog
+  tags: [medium, algorithms, recommendations]
+
+- title: "Building Pinterest's Wide-Column Database on RocksDB"
+  url: "https://medium.com/pinterest-engineering/building-pinterests-new-wide-column-database-using-rocksdb-f5277ee4e3d2"
+  description: "How Pinterest built a wide-column database on RocksDB"
+  type: blog
+  tags: [pinterest, databases, rocksdb]
+
+- title: "Smashing the state machine: Web race conditions"
+  url: "https://portswigger.net/research/smashing-the-state-machine"
+  description: "Deep dive into web race condition attacks"
+  type: blog
+  tags: [security, web, race-conditions]
+
+# ============================================
+# VIDEOS - LLM & Deep Learning Tutorials
+# ============================================
+
+- title: "Scaling Test Time Compute"
+  url: "https://youtu.be/QWoslkjR9W4"
+  description: "How scaling compute at inference time improves LLM reasoning"
+  type: video
+  tags: [llm, reasoning, scaling]
+
+- title: "DeepSeek Series Introduction"
+  url: "https://lnkd.in/gRcNE-sg"
+  description: "Introduction to DeepSeek architecture and capabilities"
+  type: video
+  tags: [llm, deepseek, architecture]
+
+- title: "DeepSeek Basics"
+  url: "https://lnkd.in/gEUzFtrC"
+  description: "Fundamentals of DeepSeek models"
+  type: video
+  tags: [llm, deepseek]
+
+- title: "Journey of a Token into the LLM Architecture"
+  url: "https://lnkd.in/gUnabApX"
+  description: "Tracing how a token flows through an LLM"
+  type: video
+  tags: [llm, architecture, transformers]
+
+- title: "Attention Mechanism Explained (1 hour)"
+  url: "https://lnkd.in/gSVXDn2e"
+  description: "Comprehensive explanation of attention mechanisms in transformers"
+  type: video
+  tags: [llm, attention, transformers]
+
+- title: "Self Attention Mechanism - Handwritten from Scratch"
+  url: "https://lnkd.in/gN85qVSK"
+  description: "Building self-attention from the ground up"
+  type: video
+  tags: [llm, attention, tutorial]
+
+- title: "Causal Attention Explained: Don't Peek into the Future"
+  url: "https://lnkd.in/gNPwCJWT"
+  description: "Understanding causal masking in attention"
+  type: video
+  tags: [llm, attention, causal]
+
+- title: "Multi-Head Attention Visually Explained"
+  url: "https://lnkd.in/gPr-XrwE"
+  description: "Visual walkthrough of multi-head attention"
+  type: video
+  tags: [llm, attention, visualization]
+
+- title: "Multi-Head Attention Handwritten from Scratch"
+  url: "https://lnkd.in/gzb6Xvy6"
+  description: "Implementing multi-head attention step by step"
+  type: video
+  tags: [llm, attention, tutorial]
+
+- title: "Key Value Cache from Scratch"
+  url: "https://lnkd.in/gn8zgdc7"
+  description: "Understanding and implementing KV cache for efficient inference"
+  type: video
+  tags: [llm, kv-cache, optimization]
+
+- title: "Multi-Query Attention Explained"
+  url: "https://lnkd.in/gvt3AyRh"
+  description: "How multi-query attention reduces memory and speeds up inference"
+  type: video
+  tags: [llm, attention, optimization]
+
+- title: "Grouped Query Attention (GQA)"
+  url: "https://lnkd.in/geFFq_95"
+  description: "Understanding GQA - the middle ground between MHA and MQA"
+  type: video
+  tags: [llm, attention, gqa]
+
+- title: "Multi-Head Latent Attention From Scratch"
+  url: "https://lnkd.in/g3z8PkCZ"
+  description: "DeepSeek's latent attention mechanism explained"
+  type: video
+  tags: [llm, attention, deepseek]
+
+- title: "Multi-Head Latent Attention Coded in Python"
+  url: "https://lnkd.in/g9drDgGZ"
+  description: "Python implementation of multi-head latent attention"
+  type: video
+  tags: [llm, attention, python]
+
+- title: "Integer and Binary Positional Encodings"
+  url: "https://lnkd.in/eC3USqBF"
+  description: "Fundamental positional encoding schemes"
+  type: video
+  tags: [llm, positional-encoding, transformers]
+
+- title: "All about Sinusoidal Positional Encodings"
+  url: "https://lnkd.in/e_6CAdnk"
+  description: "Deep dive into the original transformer positional encodings"
+  type: video
+  tags: [llm, positional-encoding, transformers]
+
+- title: "Rotary Positional Encodings (RoPE)"
+  url: "https://lnkd.in/emHARqyP"
+  description: "Understanding RoPE - the modern approach to positional encoding"
+  type: video
+  tags: [llm, rope, positional-encoding]
+
+- title: "How DeepSeek implemented Latent Attention (MLA + RoPE)"
+  url: "https://lnkd.in/esbk5SGR"
+  description: "Technical details of DeepSeek's attention implementation"
+  type: video
+  tags: [llm, deepseek, attention, rope]
+
+- title: "Mixture of Experts (MoE) Introduction"
+  url: "https://lnkd.in/emYCfZuc"
+  description: "Introduction to sparse expert models"
+  type: video
+  tags: [llm, moe, architecture]
+
+- title: "Mixture of Experts Hands-on Demonstration"
+  url: "https://lnkd.in/eRnRcYxF"
+  description: "Practical walkthrough of MoE implementation"
+  type: video
+  tags: [llm, moe, tutorial]
+
+- title: "Mixture of Experts Balancing Techniques"
+  url: "https://lnkd.in/ef4qeqPy"
+  description: "Load balancing and routing in MoE models"
+  type: video
+  tags: [llm, moe, routing]
+
+- title: "MoE Top-K Routing: Why Top-1 Fails"
+  url: "https://www.linkedin.com/posts/hoang-van-hao_machinelearning-deeplearning-moe-activity-7407039990104436736-SLZI"
+  description: "Why Top-2 routing is necessary for training MoE models - the argmax deadlock problem"
+  type: video
+  tags: [llm, moe, routing, training]
+
+# ============================================
+# VIDEOS - ML Fundamentals
+# ============================================
+
+- title: "Training a Transformer"
+  url: "https://lnkd.in/gvbT-gTQ"
+  description: "End-to-end transformer training walkthrough"
+  type: video
+  tags: [transformers, training, deep-learning]
+
+- title: "1B Parameter Transformer"
+  url: "https://lnkd.in/gj7HSVVs"
+  description: "Building a billion parameter transformer model"
+  type: video
+  tags: [transformers, scaling, deep-learning]
+
+- title: "Machine Learning Fundamentals"
+  url: "https://lnkd.in/grEU9m7V"
+  description: "Core ML concepts and techniques"
+  type: video
+  tags: [ml, fundamentals]
+
+- title: "Two-Sample Kolmogorov-Smirnov (KS) Test"
+  url: "https://lnkd.in/g-A8zPXS"
+  description: "Statistical test for comparing distributions"
+  type: video
+  tags: [statistics, ml, testing]
+
+- title: "Quantization Explained"
+  url: "https://lnkd.in/gGs2E8d9"
+  description: "Model quantization for efficient deployment"
+  type: video
+  tags: [llm, quantization, optimization]
+
+- title: "Segmentation Models"
+  url: "https://lnkd.in/gnhwV_mZ"
+  description: "Image and data segmentation techniques"
+  type: video
+  tags: [ml, segmentation, computer-vision]
+
+- title: "Cross-Entropy Loss"
+  url: "https://lnkd.in/gnBzsGcF"
+  description: "Understanding the most common classification loss function"
+  type: video
+  tags: [ml, loss-functions, fundamentals]
+
+- title: "Transformer-based Regression Model"
+  url: "https://lnkd.in/gUjUZVbd"
+  description: "Using transformers for regression tasks"
+  type: video
+  tags: [transformers, regression, deep-learning]
+
+# ============================================
+# VIDEOS - Linux & Systems
+# ============================================
+
+- title: "Linux Device Driver Videos"
+  url: "https://www.youtube.com/playlist?list=PLEDdkj8kDlEDC5MzEwDY7xz03b_q77hPX"
+  description: "Networking, Kernel, IPv6, Device Drivers playlist"
+  type: video
+  tags: [linux, kernel, drivers]
+
+- title: "Linux packet journey, napi, hardware queue, skb"
+  url: "https://www.youtube.com/watch?v=6Fl1rsxk4JQ"
+  description: "Deep dive into Linux networking internals"
+  type: video
+  tags: [linux, networking, kernel]
+
+# ============================================
+# RESOURCES - Awesome Lists
+# ============================================
+
+- title: "awesome-scalability"
+  url: "https://github.com/binhnguyennus/awesome-scalability"
+  description: "Patterns of Scalable, Reliable, and Performant Large-Scale Systems"
+  type: resource
+  tags: [system-design, scalability, architecture]
+
+- title: "awesome-distributed-systems"
+  url: "https://github.com/theanalyst/awesome-distributed-systems"
+  description: "Curated list to learn about distributed systems"
+  type: resource
+  tags: [distributed-systems, learning]
+
+- title: "awesome-grpc"
+  url: "https://github.com/grpc-ecosystem/awesome-grpc"
+  description: "Curated list of useful resources for gRPC"
+  type: resource
+  tags: [grpc, rpc, networking]
+
+- title: "awesome-graph"
+  url: "https://github.com/jbmusso/awesome-graph"
+  description: "Resources for graph databases and graph computing tools"
+  type: resource
+  tags: [graphs, databases]
+
+- title: "awesome-explainable-graph-reasoning"
+  url: "https://github.com/AstraZeneca/awesome-explainable-graph-reasoning"
+  description: "Research papers and software for explainability in graph ML"
+  type: resource
+  tags: [graphs, ml, explainability]
+
+- title: "Awesome-GFlowNets"
+  url: "https://github.com/zdhNarsil/Awesome-GFlowNets"
+  description: "Curated list about generative flow networks"
+  type: resource
+  tags: [ml, gflownets, generative]
+
+- title: "Awesome Graph Neural Networks"
+  url: "https://github.com/GRAND-Lab/Awesome-Graph-Neural-Networks"
+  description: "Comprehensive GNN resources"
+  type: resource
+  tags: [graphs, gnn, deep-learning]
+
+- title: "GNN Papers"
+  url: "https://github.com/thunlp/GNNPapers"
+  description: "Must-read papers on Graph Neural Networks"
+  type: resource
+  tags: [graphs, gnn, papers]
+
+- title: "awesome-deep-gnn"
+  url: "https://github.com/mengliu1998/awesome-deep-gnn"
+  description: "Papers on deep graph neural networks"
+  type: resource
+  tags: [graphs, gnn, deep-learning]
+
+- title: "awesome-expressive-gnn"
+  url: "https://github.com/mengliu1998/awesome-expressive-gnn"
+  description: "Expressive Graph Neural Networks"
+  type: resource
+  tags: [graphs, gnn]
+
+- title: "awesome-data-engineering"
+  url: "https://github.com/igorbarinov/awesome-data-engineering"
+  description: "Data engineering tools for software developers"
+  type: resource
+  tags: [data-engineering, tools]
+
+- title: "awesome-opensource-data-engineering"
+  url: "https://github.com/gunnarmorling/awesome-opensource-data-engineering"
+  description: "Open-Source Data Engineering Projects"
+  type: resource
+  tags: [data-engineering, open-source]
+
+- title: "awesome-flink"
+  url: "https://github.com/wuchong/awesome-flink"
+  description: "Flink and Flink ecosystem resources"
+  type: resource
+  tags: [flink, streaming, data-engineering]
+
+- title: "awesome-zero-knowledge-proofs"
+  url: "https://github.com/matter-labs/awesome-zero-knowledge-proofs"
+  description: "Resources for learning Zero-Knowledge Proofs"
+  type: resource
+  tags: [cryptography, zkp, blockchain]
+
+- title: "awesome-chatgpt-prompts"
+  url: "https://github.com/f/awesome-chatgpt-prompts"
+  description: "Curated ChatGPT prompts"
+  type: resource
+  tags: [ai, llm, prompts]
+
+- title: "awesome-machine-learning"
+  url: "https://github.com/josephmisiti/awesome-machine-learning"
+  description: "ML frameworks, libraries and software"
+  type: resource
+  tags: [ml, frameworks, learning]
+
+- title: "awesome-production-machine-learning"
+  url: "https://github.com/EthicalML/awesome-production-machine-learning"
+  description: "Tools to deploy, monitor, version and scale ML"
+  type: resource
+  tags: [mlops, production, ml]
+
+- title: "awesome-deep-vision"
+  url: "https://github.com/kjw0612/awesome-deep-vision"
+  description: "Deep learning resources for computer vision"
+  type: resource
+  tags: [deep-learning, computer-vision]
+
+- title: "awesome-self-supervised-learning"
+  url: "https://github.com/jason718/awesome-self-supervised-learning"
+  description: "Curated list of self-supervised methods"
+  type: resource
+  tags: [ml, self-supervised]
+
+- title: "Awesome-LLMOps"
+  url: "https://github.com/tensorchord/Awesome-LLMOps"
+  description: "Best LLMOps tools for developers"
+  type: resource
+  tags: [llm, mlops, tools]
+
+- title: "awesome-causality-algorithms"
+  url: "https://github.com/rguo12/awesome-causality-algorithms"
+  description: "Causal inference and ML algorithms"
+  type: resource
+  tags: [causal-inference, ml]
+
+- title: "awesome-causal-inference"
+  url: "https://github.com/imirzadeh/awesome-causal-inference"
+  description: "Causal inference resources"
+  type: resource
+  tags: [causal-inference, statistics]
+
+- title: "Causal Inference Visual Guides"
+  url: "https://github.com/kathoffman/causal-inference-visual-guides"
+  description: "Visual guides for causal inference"
+  type: resource
+  tags: [causal-inference, visualization]
+
+- title: "Awesome-Uplift-Model"
+  url: "https://github.com/JackHCC/Awesome-Uplift-Model"
+  description: "How to apply Causal ML to real scene modeling"
+  type: resource
+  tags: [causal-inference, ml, uplift]
+
+- title: "awesome-meta-learning"
+  url: "https://github.com/dragen1860/awesome-meta-learning"
+  description: "Meta learning papers and resources"
+  type: resource
+  tags: [meta-learning, ml]
+
+- title: "awesome-semi-supervised-learning"
+  url: "https://github.com/yassouali/awesome-semi-supervised-learning"
+  description: "Semi-supervised learning resources"
+  type: resource
+  tags: [ml, semi-supervised]
+
+- title: "awesome-transformer"
+  url: "https://github.com/ictnlp/awesome-transformer"
+  description: "Transformer architecture resources"
+  type: resource
+  tags: [transformers, nlp, deep-learning]
+
+- title: "Treasure-of-Transformers"
+  url: "https://github.com/ashishpatel26/Treasure-of-Transformers"
+  description: "Comprehensive transformer resources"
+  type: resource
+  tags: [transformers, nlp]
+
+- title: "awesome-quantum-machine-learning"
+  url: "https://github.com/krishnakumarsekar/awesome-quantum-machine-learning"
+  description: "Quantum Machine Learning basics, algorithms, and projects"
+  type: resource
+  tags: [quantum, ml]
