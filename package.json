@@ -1,7 +1,15 @@
 {
   "scripts": {
     "generate-cv": "./generate-cv.sh",
+    "generate-cv:latex": "node _scripts/generate-cv-latex.mjs",
+    "generate-cv:latex-concise": "node _scripts/generate-cv-latex.mjs --concise",
+    "generate-cv:docx": "node _scripts/generate-cv-docx.mjs",
+    "generate-cv:docx-concise": "node _scripts/generate-cv-docx.mjs --concise",
     "generate-og": "node _scripts/generate-og-images.mjs"
+  },
+  "dependencies": {
+    "docx": "^9.5.1",
+    "js-yaml": "^4.1.0"
   },
   "devDependencies": {
     "@fontsource/inter": "^5.2.8",

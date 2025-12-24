@@ -1,0 +1,534 @@
+# CV Data - Single Source of Truth
+# Used to generate: Web CV, PDF CV (LaTeX), Interactive Timeline
+
+basics:
+  name: Subhadip Mitra
+  title: Engineering Leader & AI Systems Architect
+  location: Singapore
+  email: contact@subhadipmitra.com
+  linkedin: https://www.linkedin.com/in/subhadip-mitra/
+  github: https://github.com/bassrehab
+  calendly: https://calendly.com/contact-x9nm/30min
+  summary: |
+    Senior Engineering Leader with 15+ years of experience bridging fundamental AI research and enterprise-scale system delivery. Currently leading Google Cloud's Data & Analytics practice for Southeast Asia while driving internal innovations on LLM inference efficiency and multi-agent systems.
+
+    Proven track record of operating as a "Player-Coach": managing regional engineering portfolios while simultaneously architecting and patenting novel frameworks (UPIR, ARTEMIS, FTCS, Speculative Decoding).
+  # Abbreviations used in summary for web tooltips
+  abbreviations:
+    UPIR: Unified Plan Intermediate Representation - Automated synthesis and verification of distributed systems
+    ARTEMIS: Adaptive Reasoning and Evaluation Framework for Multi-agent Intelligent Systems
+    FTCS: Field-Theoretic Context System - Mathematical framework for LLM context management
+
+experience:
+  - company: Google Cloud - Professional Services Organization
+    role: Data & Analytics Manager | Site Lead, PSO Southeast Asia
+    url: https://cloud.google.com
+    start_date: 2021-01
+    end_date: present
+    current: true
+    description: |
+      Dual-track role combining technical innovation leadership with regional delivery management. Built Google Cloud's Data Analytics practice across Southeast Asia while serving as Site Lead overseeing cross-practice operations. Member of delta - Google Cloud's innovation and transformation team architecting enterprise AI solutions at scale.
+    sections:
+      - title: Strategic Leadership & Delivery
+        highlights:
+          - title: Practice Leadership
+            description: Built Data Analytics practice for Southeast Asia from 0 to 1, establishing the region's premier capability serving 7 countries with strategic enterprise clients.
+          - title: Regional Operations
+            description: Serve as Site Lead overseeing PSO Southeast Asia delivery operations, directing cross-functional teams while maintaining 97% CSAT and contributing to 100% annual revenue target attainment.
+          - title: Portfolio Management
+            description: Direct $XXM+ Data Analytics delivery portfolio across JAPAC while simultaneously overseeing $XXM+ cross-practice portfolio as regional Site Lead.
+          - title: Strategic Interventions
+            description: Led critical engagements for JAPAC strategic accounts including major financial services institutions and consumer electronics manufacturers, ensuring delivery excellence and client success.
+          - title: Enterprise Delivery
+            description: Executed high-impact projects including 12K+ user analytics migrations, first Data & AI Centers of Excellence, Data Monetization Platforms, and petabyte-scale data platform modernizations.
+          - title: Executive Advisory
+            description: Partner with C-level stakeholders (CTOs, CDOs) to define data modernization and AI transformation roadmaps, translating technical capabilities into business outcomes.
+          - title: Agentic AI Transformation
+            description: Pioneered organization-wide adoption of agentic AI across PSO JAPAC for both customer solutions and internal productivity, including autonomous data engineering agents.
+      - title: Technical Innovation & Research (Official IP)
+        highlights:
+          - title: LLM Inference Efficiency
+            description: Research on speculative decoding, custom Triton kernels, and KV-cache compression strategies. Filed Google Technical Disclosure on hybrid compression systems for multi-tenant serving optimization.
+          - title: Distributed Systems Synthesis (UPIR)
+            description: Invented neuro-symbolic framework combining formal verification and reinforcement learning to automate distributed system generation - achieved 274x speedup in synthesis with 60% latency reduction.
+          - title: Context Architecture (FTCS)
+            description: Designed Field-Theoretic Context System modeling context as continuous fields to address long-horizon memory fragmentation in AI agents. Published as Google Technical Disclosure.
+          - title: Data Processing for GenAI (ETLC)
+            description: Authored whitepaper introducing Extract, Transform, Load, Contextualize framework adding semantic, relational, and behavioral context to data pipelines for RAG and agentic systems.
+          - title: Multi-Agent Framework (ARTEMIS)
+            description: Created adaptive debate-driven decision framework for enterprise multi-agent systems. Published as Google Technical Disclosure.
+          - title: Intelligent Trust Engine (CatchMe)
+            description: Developed industry-agnostic agentic AI system for enterprise-scale trust decisions across Finance, Healthcare, Insurance, Cybersecurity, and Supply Chain. Features APLS (self-learning pattern synthesis) and five-level cascade routing achieving 86% cost reduction with sub-50ms latency. Won Google Cloud PSO Hackathon JAPAC Regionals, qualified for World Finals. Two pending Google Technical Disclosures.
+
+  - company: Standard Chartered Bank
+    role: Principal Engineer - Data & Analytics Transformation
+    url: https://www.sc.com
+    start_date: 2019-01
+    end_date: 2021-01
+    description: |
+      Led enterprise-wide AI and data platform development serving 11 markets and 1200+ global users, delivering technical excellence while influencing C-suite data strategy.
+    highlights:
+      - Delivered a Self-Service ML Platform that reduced model development time from 6 months to 1 week
+      - Designed credit risk AI models integrating alternative data sources, improving accuracy by 15%
+      - Modernized MarTech infrastructure, driving 30% increase in customer acquisition
+
+  - company: Think Big Analytics (a Teradata company)
+    role: Principal Data Engineer / Solution Architect
+    url: https://www.teradata.com
+    start_date: 2017-01
+    end_date: 2019-01
+    description: |
+      Architected enterprise-scale data solutions for Fortune 500 clients across APAC, designing scalable platforms with measurable business impact.
+    highlights:
+      - Engineered 5 high-performance data lakes processing 1.2 PB/hour, achieving 20% optimization
+      - Built real-time fraud detection systems, reducing false positives by 60% and saving $XM annually
+      - Designed enterprise architectures supporting global Fortune 500 clients across APAC
+
+  - company: UTU
+    role: Technical Lead
+    url: https://utu.io
+    start_date: 2016-01
+    end_date: 2017-01
+    location: Singapore
+    description: |
+      Led market entry strategy and technology roadmap for Thailand expansion. Built and mentored engineering teams while developing high-performance integration solutions.
+    highlights:
+      - Established architectural patterns and governance frameworks for mission-critical payment/rewards and merchant systems
+      - Built high-performance integration solutions for payment and rewards platforms
+
+  - company: Truckaurbus Marketplace
+    role: Founder
+    start_date: 2014-01
+    end_date: 2016-01
+    location: India
+    description: |
+      Founded and scaled digital marketplace across 15 cities with 25+ OEM/Bank partnerships. Led all aspects of technical strategy, product development, and business growth.
+    highlights:
+      - Scaled marketplace to 15 cities with 25+ OEM and banking partnerships
+      - Architected core platform including real-time auctions and programmatic advertising
+
+  - company: Microsoft
+    role: Senior Software Development Engineer
+    url: https://www.microsoft.com
+    start_date: 2010-01
+    end_date: 2014-01
+    location: India
+    description: |
+      Contributed to core Windows Kernel development for Windows 7/8 and Server 2012 R2. Pioneered early machine learning implementations on Azure platform.
+    highlights:
+      - Core Windows Kernel development for Windows 7, Windows 8, and Server 2012 R2
+      - Enhanced Azure Content Delivery Network architecture and performance optimization
+      - Pioneered early machine learning implementations on Azure platform
+
+research:
+  - title: LLM Inference Efficiency Research
+    period: 2025 - Present
+    status: Google Technical Disclosure - Pending
+    description: |
+      Research implementations addressing the fundamental bottleneck in LLM inference: memory-bandwidth constraints rather than compute limits. Explores acceleration through speculative decoding, custom GPU kernels, and quantization strategies.
+    highlights:
+      - title: Speculative Decoding Suite
+        description: Six techniques including standard speculation, tree speculation, EAGLE-style drafting, Medusa multi-head, KV-cache compression (8x compression via INT8/INT4 quantization + H2O eviction), and diffusion efficiency optimizations. Production systems report 2-3x inference speedup.
+      - title: Custom Triton Kernels
+        description: High-performance GPU kernels for transformer operations - RMSNorm (8.1x faster, 88% peak bandwidth), fused RMSNorm+Residual (6.0x speedup), SwiGLU (1.6x), INT8 GEMM (2x memory savings). Demonstrates memory-bandwidth optimization from 11% to 88% of A100 peak.
+      - title: Device-Agnostic Implementation
+        description: Supports CUDA, Apple Silicon (MPS), and CPU with full KV-cache integration reducing complexity from O(seq^2) to O(seq).
+    links:
+      - type: github
+        label: speculative-decoding
+        url: https://github.com/bassrehab/speculative-decoding
+      - type: github
+        label: triton-kernels
+        url: https://github.com/bassrehab/triton-kernels
+
+  - title: AI Metacognition Toolkit
+    period: 2025 - Present
+    url: https://ai-metacognition-toolkit.subhadipmitra.com/
+    description: |
+      Activation-level detection of sandbagging, deception, and situational awareness in LLMs. Linear probes achieve 90-96% accuracy across Mistral, Gemma, and Qwen models. Includes steering vectors for runtime behavior control.
+    highlights:
+      - title: Sandbagging Detection
+        description: Linear probes trained on activation differences detect sandbagging intent with 90-96% accuracy. Model-specific representations - no cross-model transfer.
+      - title: Steering Vectors
+        description: Activation steering reduces sandbagging behavior by 20% in Gemma models without retraining.
+      - title: Bayesian Situational Awareness
+        description: KL-divergence based detection of behavioral changes and "Observer Effects" during interaction.
+      - title: Engineering Rigor
+        description: 275 test cases, 95% code coverage, type-safe implementation, published on PyPI.
+    links:
+      - type: pypi
+        label: PyPI Package
+        url: https://pypi.org/project/ai-metacognition-toolkit/
+      - type: github
+        label: GitHub
+        url: https://github.com/bassrehab/ai-metacognition-toolkit
+      - type: docs
+        label: Documentation
+        url: https://ai-metacognition-toolkit.subhadipmitra.com/
+      - type: blog
+        label: Blog
+        url: /blog/2025/detecting-ai-sandbagging/
+
+  - title: UPIR - Distributed Systems Synthesis
+    period: 2025
+    url: https://www.tdcommons.org/dpubs_series/8852/
+    description: |
+      Neuro-symbolic framework combining formal verification, program synthesis, and reinforcement learning to automatically generate verified distributed system implementations from specifications.
+    highlights:
+      - title: Compositional Verification
+        description: SMT-based verification engine with proof caching achieving 274x speedup for 64-component systems.
+      - title: CEGIS Synthesis
+        description: Counterexample-guided inductive synthesis with constrained PPO optimization preserving formal guarantees.
+      - title: Performance
+        description: 60.1% latency reduction, 194.5% throughput increase, 89.9% pattern reuse potential in benchmark tests.
+    links:
+      - type: paper
+        label: Technical Disclosure
+        url: https://www.tdcommons.org/dpubs_series/8852/
+      - type: github
+        label: GitHub Repository
+        url: https://github.com/bassrehab/upir
+
+  - title: Steering Vectors for Agent Behavior Control
+    period: 2025
+    url: https://github.com/bassrehab/steering-vectors-agents
+    description: |
+      Runtime control of LLM agent behaviors through activation steering vectors - modifying model outputs at inference time without retraining. Demonstrates more calibrated control than traditional prompting approaches with LangChain integration.
+    highlights:
+      - title: Contrastive Activation Addition
+        description: Extract steering vectors from contrast pairs and inject into model activations for behavior modification.
+      - title: Uncertainty Calibration
+        description: Achieves 65% uncertainty detection on ambiguous questions while maintaining 100% confidence on factual ones - superior to prompting which causes indiscriminate hedging.
+      - title: Multi-Vector Composition
+        description: Dynamic strength adjustment per-request with interference mitigation for combining multiple behavioral controls.
+      - title: Production Ready
+        description: LangChain integration, tested on Mistral-7B, Gemma-2-9B, and Qwen3-8B models.
+    links:
+      - type: github
+        label: GitHub Repository
+        url: https://github.com/bassrehab/steering-vectors-agents
+      - type: blog
+        label: Blog Post
+        url: /blog/2025/steering-vectors-agents/
+
+  - title: Spark LLM Eval - Distributed Evaluation Framework
+    period: 2025
+    url: https://github.com/bassrehab/spark-llm-eval
+    description: |
+      Distributed LLM evaluation framework built on Apache Spark for enterprise-scale model assessment. Addresses the gap in evaluating LLMs at scale with statistical rigor, integrating seamlessly with Databricks infrastructure.
+    highlights:
+      - title: Distributed Processing
+        description: Pandas UDFs with Arrow for efficient batching, scales linearly across Spark executors for millions of examples.
+      - title: Statistical Rigor
+        description: Bootstrap confidence intervals, paired significance tests (t-tests, McNemar's, Wilcoxon signed-rank), and effect size calculations.
+      - title: Multi-Provider Support
+        description: Works with OpenAI, Anthropic Claude, Google Gemini, and vLLM with smart rate limiting (token bucket algorithms).
+      - title: Enterprise Integration
+        description: MLflow experiment tracking, Delta Lake versioning, and comprehensive metrics (lexical, semantic, LLM-as-judge).
+    links:
+      - type: github
+        label: GitHub Repository
+        url: https://github.com/bassrehab/spark-llm-eval
+      - type: blog
+        label: Blog Post
+        url: /blog/2025/building-spark-llm-eval/
+
+  - title: CatchMe - Intelligent Trust Engine
+    period: 2025
+    status: Google Technical Disclosures - Pending (APLS & Cascade Routing)
+    description: |
+      Industry-agnostic agentic AI system for enterprise-scale trust decisions across Finance, Healthcare, Insurance, Cybersecurity, and Supply Chain. Uses adversarial debate protocols (prosecutor/defense/judge) to filter hallucinations and build audit trails for regulated environments.
+    highlights:
+      - title: APLS (Automated Pattern Learning System)
+        description: Self-learning system that observes expensive AI decisions and automatically synthesizes cheaper deterministic rules over time. Achieves 76% cost reduction after 6 months of pattern learning.
+      - title: Five-Level Cascade Routing
+        description: Intelligent transaction routing based on cost-benefit analysis. Automatically escalates high-value/high-risk decisions to AI reasoning while routing routine cases through deterministic rules (e.g., $50K wire with 75% confidence -> AI escalation with ROI 1,250,000x). Sub-50ms latency for most transactions.
+      - title: Multi-Agent Consensus
+        description: Adversarial debate system where agents act as prosecutor, defense, and judge to ensure decision quality and create compliance audit trails for regulated industries.
+      - title: Production Impact
+        description: 86% cost reduction vs AI-only approaches ($20.7K vs $150K for 10M monthly transactions), serving Finance (fraud detection), Healthcare (claims processing), Insurance (policy validation), Cybersecurity (anomaly detection), and Supply Chain (verification).
+      - title: Recognition
+        description: Winner - Google Cloud PSO Hackathon JAPAC Regionals, Qualified for World Finals. Built on Vertex AI, Gemini 2.x, BigQuery ML, Cloud Run.
+
+education:
+  - degree: MBA, Business Analytics
+    institution: Birla Institute of Technology and Science, Pilani
+    url: https://bits-pilani.ac.in
+    location: Pilani, India
+    start_date: 2021
+    end_date: 2023
+    courses:
+      - Financial Risk Analytics
+      - Marketing Models
+      - Strategic Management
+      - Predictive Analytics
+      - Operations Management
+
+  - degree: MTech, Software Systems
+    institution: Birla Institute of Technology and Science, Pilani
+    url: https://bits-pilani.ac.in
+    location: Pilani, India
+    start_date: 2017
+    end_date: 2020
+    courses:
+      - Algorithms
+      - Distributed Systems
+      - Deep Learning
+      - NLP
+      - Machine Learning
+      - Artificial Intelligence
+
+publications:
+  - title: "UPIR: Automated Synthesis and Verification of Distributed Systems"
+    date: 2025-11
+    venue: Google, Technical Disclosure Commons
+    url: https://www.tdcommons.org/dpubs_series/8852/
+    description: |
+      Framework combining formal verification, program synthesis, and machine learning to automatically generate verified distributed system implementations. Achieves 274x speedup with 60% latency reduction through compositional verification and proof caching.
+    github: https://github.com/bassrehab/upir
+
+  - title: "ETLC: A Context-First Approach to Data Processing in the Generative AI Era"
+    date: 2025-05
+    venue: Google Cloud
+    url: https://services.google.com/fh/files/blogs/etlc_full_paper.pdf
+    description: |
+      A comprehensive whitepaper introducing ETLC (Extract, Transform, Load, Contextualize), adding semantic, relational, operational, environmental, and behavioral context to data pipelines.
+
+  - title: Field-Theoretic Context System (FTCS)
+    date: 2025-05
+    venue: Google, Technical Disclosure Commons
+    url: https://www.tdcommons.org/dpubs_series/8022/
+    description: |
+      An innovative approach modeling context as interacting fields rather than discrete states, enabling natural context flow and dynamic evolution through partial differential equations.
+
+  - title: ARTEMIS - Adaptive Multi-agent Debate Framework
+    date: 2025-01
+    venue: Google, Technical Disclosure Commons
+    url: https://www.tdcommons.org/dpubs_series/7729/
+    description: |
+      Technical disclosure on an adaptive framework for multi-agent decision systems using structured debate protocols to enhance enterprise decision-making.
+
+  - title: Data Monetization Strategy for Enterprises
+    date: 2023-12
+    venue: BITS Pilani
+    url: https://www.researchgate.net/publication/376557741_Data_Monetization_Strategy_for_Enterprises
+    description: |
+      A comprehensive framework for enterprises to transform data into economic value, establishing methodologies now implemented across multiple JAPAC organizations.
+
+  - title: "OConsent: Open Consent Protocol for Privacy and Consent Management with Blockchain"
+    date: 2021-12
+    venue: BITS Pilani
+    url: https://arxiv.org/abs/2201.01326
+    description: |
+      A blockchain-based protocol for transparent personal data processing, enhancing user control and compliance with data privacy regulations.
+
+  - title: "Open Location Proof (OLP) Protocol"
+    date: 2021-01
+    venue: ResearchGate
+    url: https://www.researchgate.net/profile/Subhadip-Mitra-3/publication/387802463
+    description: |
+      A privacy-aware open protocol to prove without repudiation an entity's point-in-time presence, participation and location in physical or virtual space.
+
+  - title: "Cascading Algorithm: Bayesian Price Convergence for Arbitrage-Free Option Pricing"
+    date: 2016-01
+    venue: Zenodo
+    url: https://zenodo.org/records/18018278
+    description: |
+      A novel algorithm leveraging Bayesian inference to facilitate arbitrage-free pricing of financial options with superior convergence and accuracy.
+
+  - title: "CTDBN-Based Financial Markets Analysis and Differential Predictions"
+    date: 2015-01
+    venue: Zenodo
+    url: https://zenodo.org/records/18017466
+    description: |
+      Coupled Temporal Deep Belief Networks with Conditional RBMs to encode intra-market movements and temporal coupling with global indices and FX trades.
+
+  - title: "Dynamic Compression: Multicuts for Planar Graphs with Outer Terminals"
+    date: 2014-01
+    venue: Zenodo
+    url: https://zenodo.org/records/18017304
+    description: |
+      On-the-fly creation and calculation of max-flow min-cut gap and approximation of multicuts with deep emulations of fault-free mesh systems.
+
+  - title: "XPath Ranking and Graph Compression"
+    date: 2012-01
+    venue: Zenodo
+    url: https://zenodo.org/records/18017005
+    description: |
+      Algorithms for automatic wrapper creation for HTML/XML extractions and compressing adjacency list representation of web graphs and social networks.
+
+  - title: "Real Time Multiple Target Tracking Using Arrayed Sensors"
+    date: 2009-01
+    venue: Amity University
+    url: https://zenodo.org/records/18016470
+    description: |
+      A discrete time-step optimization algorithm for sensor-target systems with OpenCV implementation outperforming notable approaches.
+
+  - title: "Swarm Intelligence: Micro-mechanical Flying Insect for Low Cost Outdoor Surveillance"
+    date: 2008-01
+    venue: DRDO, Ministry of Defense, India
+    url: https://www.drdo.gov.in/drdo/
+    description: |
+      Micromechanical flying insect based on swarm intelligence with piezo electric actuators. Selected from 271 proposals in DRDO Golden Jubilee Competition.
+
+  - title: "Low Energy Wireless Electricity Transmission Using Resonant Magnetic Coupling"
+    date: 2007-11
+    venue: SC07, International Conference for High Performance Computing
+    url: https://zenodo.org/records/18018081
+    description: |
+      Novel framework for transmitting electrical power wirelessly with minimal energy loss using electromagnetic and resonance technologies.
+
+  - title: "The Laws of Symmetry: Conservation, Projection, and Origin of Symmetry in Physical Systems"
+    date: 2006-01
+    venue: Kshitij 2006, IIT Kharagpur
+    url: https://symmetry.subhadipmitra.com/
+    description: |
+      Axiomatic framework establishing symmetry as a fundamental conserved quantity, reinterpreting symmetry breaking as dimensional projection.
+
+skills:
+  - category: Technology Leadership & Strategy
+    icon: fas fa-brain
+    items:
+      - Enterprise Architecture
+      - Technical Vision & Roadmaps
+      - Digital Transformation
+      - AI & Data Strategy
+      - Cloud Architecture
+      - C-Suite Advisory
+      - Innovation Leadership
+      - Strategic Planning
+
+  - category: Data Engineering & Architecture
+    icon: fas fa-database
+    items:
+      - Petabyte-Scale Data Platforms
+      - Data Pipelines
+      - Real-Time Processing
+      - Data Mesh & Fabric
+      - Apache Spark
+      - Apache Hadoop
+      - Apache HBase
+      - Apache Flink
+      - Apache Kafka
+      - Apache Iceberg
+
+  - category: Generative AI & Machine Learning
+    icon: fas fa-robot
+    items:
+      - Multi-Agent Systems
+      - Large Language Models
+      - RAG Architecture
+      - Vector Databases
+      - PyTorch
+      - LangChain
+      - LangGraph
+      - LlamaIndex
+      - Google ADK
+      - MCP
+      - A2A Protocol
+      - MLflow
+      - LLMOps
+
+  - category: Cloud Platforms & Infrastructure
+    icon: fas fa-cloud
+    items:
+      - Google Cloud Platform
+      - BigQuery
+      - Vertex AI
+      - Dataflow
+      - Cloud Composer
+      - GKE
+      - Terraform
+      - Kubernetes
+
+  - category: Programming & Development
+    icon: fas fa-code
+    items:
+      - Python
+      - SQL
+      - Scala
+      - Triton
+      - CUDA
+      - Algorithm Design
+      - Formal Verification
+      - Program Synthesis
+      - Distributed Systems
+
+projects:
+  - title: AI Metacognition Toolkit
+    period: 2025 - Present
+    url: https://ai-metacognition-toolkit.subhadipmitra.com/
+    description: |
+      Activation-level detection of sandbagging, deception, and situational awareness in LLMs. Linear probes achieve 90-96% accuracy across Mistral, Gemma, and Qwen models. Includes steering vectors for runtime behavior control.
+    highlights:
+      - Sandbagging detection via linear probes with 90-96% accuracy
+      - Steering vectors reduce sandbagging behavior by 20%
+      - Bayesian situational awareness detection with KL divergence
+      - Available on PyPI with 275 tests and 95% code coverage
+    links:
+      - type: docs
+        label: Documentation
+        url: https://ai-metacognition-toolkit.subhadipmitra.com/
+      - type: pypi
+        label: PyPI Package
+        url: https://pypi.org/project/ai-metacognition-toolkit/
+      - type: github
+        label: GitHub Repo
+        url: https://github.com/bassrehab/ai-metacognition-toolkit
+      - type: blog
+        label: Blog
+        url: /blog/2025/detecting-ai-sandbagging/
+
+  - title: Open Location Proof Protocol
+    period: 2022 - 2023
+    url: https://olp-protocol.org
+    description: |
+      A privacy-aware open protocol for non-repudiable location verification in physical or virtual spaces.
+    highlights:
+      - Cryptographically secure yet privacy-preserving protocol
+      - Fully decentralized architecture resistant to tampering
+      - Published comprehensive specifications for industry adoption
+
+  - title: OConsent - Open Consent Protocol
+    period: 2021 - 2022
+    url: https://oconsent.io
+    description: |
+      An open-sourced transparent, fast, and scalable protocol for managing user consent and privacy on public blockchains.
+    highlights:
+      - Blockchain-based solution for transparent consent management
+      - GDPR-compliant with automated audit capabilities
+      - Granular control over personal data usage
+
+  - title: ISO8583 Simulator
+    period: 2016 - 2017
+    url: https://github.com/bassrehab/ISO8583-Simulator
+    description: |
+      A high-performance Java-based simulator for ISO 8583 financial messaging, used by banks and payment processors.
+    highlights:
+      - Supports multiple ISO 8583 versions and custom formats
+      - Advanced performance testing with configurable load profiles
+      - Modular architecture supporting multiple protocols
+
+affiliations:
+  - IEEE
+  - ACM
+  - Singapore Computer Society
+  - Royal Institute of Navigation
+  - IIT Madras
+
+# Certifications (for resume.json compatibility)
+certifications:
+  - name: Google Cloud Certified Professional Cloud Architect
+    date: 2024-01
+    issuer: Google Cloud
+    url: https://www.credly.com/badges/d6baf5ca-ab06-41fa-aca5-723316294ef7
+
+  - name: Google Cloud Certified Professional Cloud Data Engineer
+    date: 2022-01
+    issuer: Google Cloud
+    url: https://www.credential.net/ae4b2086-f607-4057-98f4-ad2e7c0106e6
+
+  - name: Google Cloud Certified Professional Machine Learning Engineer
+    date: 2024-01
+    issuer: Google Cloud
+    url: https://www.credly.com/badges/3f6df2e7-7394-43ae-8c02-ddfe3b300850/public_url

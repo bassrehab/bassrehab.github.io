@@ -1,0 +1,184 @@
+# CV Data (Concise Version) - Single Source of Truth
+# Condensed version for 1-2 page CV
+# Used to generate: Concise Web CV, Concise PDF CV, Concise DOCX
+
+basics:
+  name: Subhadip Mitra
+  title: Engineering Leader & AI Systems Architect
+  location: Singapore
+  email: contact@subhadipmitra.com
+  linkedin: https://www.linkedin.com/in/subhadip-mitra/
+  github: https://github.com/bassrehab
+  calendly: https://calendly.com/contact-x9nm/30min
+  summary: |
+    Senior Engineering Leader with 15+ years bridging AI research and enterprise delivery. Leading Google Cloud's Data & Analytics practice for Southeast Asia while driving innovations in LLM inference and multi-agent systems. Track record as "Player-Coach" - managing regional portfolios while architecting patented frameworks (UPIR, ARTEMIS, FTCS).
+
+experience:
+  - company: Google Cloud - Professional Services Organization
+    role: Data & Analytics Manager | Site Lead, PSO Southeast Asia
+    url: https://cloud.google.com
+    start_date: 2021-01
+    end_date: present
+    current: true
+    description: |
+      Built Google Cloud's Data Analytics practice across Southeast Asia. Dual role as Site Lead overseeing regional delivery and technical innovation lead on delta team.
+    highlights:
+      - Built D&A practice from 0 to 1 serving 7 countries; direct $XXM+ portfolio with 97% CSAT
+      - Led strategic interventions for JAPAC accounts including major FSI and electronics manufacturers
+      - Delivered 12K+ user migrations, Data & AI CoEs, and petabyte-scale platform modernizations
+      - Published 5 technical disclosures (UPIR, FTCS, ARTEMIS, ETLC, CatchMe) on AI/distributed systems
+      - Won Google Cloud PSO Hackathon JAPAC for CatchMe intelligent trust engine
+
+  - company: Standard Chartered Bank
+    role: Principal Engineer - Data & Analytics Transformation
+    url: https://www.sc.com
+    start_date: 2019-01
+    end_date: 2021-01
+    description: |
+      Led enterprise AI and data platform development serving 11 markets and 1200+ users.
+    highlights:
+      - Delivered Self-Service ML Platform reducing model development from 6 months to 1 week
+      - Designed credit risk AI models improving accuracy by 15% with alternative data sources
+      - Modernized MarTech infrastructure driving 30% increase in customer acquisition
+
+  - company: Think Big Analytics (Teradata)
+    role: Principal Data Engineer / Solution Architect
+    url: https://www.teradata.com
+    start_date: 2017-01
+    end_date: 2019-01
+    description: |
+      Architected enterprise data solutions for Fortune 500 clients across APAC.
+    highlights:
+      - Engineered 5 data lakes processing 1.2 PB/hour with 20% optimization
+      - Built real-time fraud detection reducing false positives by 60%
+
+  - company: Various Companies
+    role: Software Engineering & Technical Consulting
+    start_date: 2010-01
+    end_date: 2017-01
+    description: |
+      Progressive roles in software development, systems integration, and consulting in financial services and algorithmic trading.
+
+research:
+  - title: LLM Inference Efficiency
+    period: 2025
+    status: Google Technical Disclosure - Pending
+    description: |
+      Speculative decoding, custom Triton kernels, KV-cache compression. 8.1x speedup, 88% peak bandwidth on A100.
+    links:
+      - type: github
+        label: speculative-decoding
+        url: https://github.com/bassrehab/speculative-decoding
+
+  - title: AI Metacognition Toolkit
+    period: 2025
+    url: https://ai-metacognition-toolkit.subhadipmitra.com/
+    description: |
+      Activation-level detection of sandbagging and deception in LLMs. 90-96% accuracy with steering vectors.
+    links:
+      - type: pypi
+        label: PyPI
+        url: https://pypi.org/project/ai-metacognition-toolkit/
+
+  - title: UPIR - Distributed Systems Synthesis
+    period: 2025
+    url: https://www.tdcommons.org/dpubs_series/8852/
+    description: |
+      Neuro-symbolic framework for automated distributed system generation. 274x speedup, 60% latency reduction.
+    links:
+      - type: paper
+        label: Technical Disclosure
+        url: https://www.tdcommons.org/dpubs_series/8852/
+
+  - title: CatchMe - Intelligent Trust Engine
+    period: 2025
+    status: Google Technical Disclosures - Pending
+    description: |
+      Agentic AI for enterprise trust decisions. APLS pattern learning + cascade routing. 86% cost reduction, sub-50ms latency. JAPAC Hackathon Winner.
+
+education:
+  - degree: MBA, Business Analytics
+    institution: BITS Pilani
+    url: https://bits-pilani.ac.in
+    location: India
+    start_date: 2021
+    end_date: 2023
+
+  - degree: MTech, Software Systems
+    institution: BITS Pilani
+    url: https://bits-pilani.ac.in
+    location: India
+    start_date: 2017
+    end_date: 2020
+
+publications:
+  - title: "UPIR: Automated Synthesis and Verification of Distributed Systems"
+    date: 2025-11
+    venue: Google, Technical Disclosure Commons
+    url: https://www.tdcommons.org/dpubs_series/8852/
+
+  - title: "ETLC: Context-First Data Processing for GenAI"
+    date: 2025-05
+    venue: Google Cloud
+    url: https://services.google.com/fh/files/blogs/etlc_full_paper.pdf
+
+  - title: Field-Theoretic Context System (FTCS)
+    date: 2025-05
+    venue: Google, Technical Disclosure Commons
+    url: https://www.tdcommons.org/dpubs_series/8022/
+
+  - title: ARTEMIS - Adaptive Multi-agent Debate Framework
+    date: 2025-01
+    venue: Google, Technical Disclosure Commons
+    url: https://www.tdcommons.org/dpubs_series/7729/
+
+  - title: "OConsent: Blockchain Privacy & Consent Protocol"
+    date: 2021-12
+    venue: BITS Pilani / arXiv
+    url: https://arxiv.org/abs/2201.01326
+
+skills:
+  - category: Leadership
+    icon: fas fa-brain
+    items:
+      - Enterprise Architecture
+      - Digital Transformation
+      - AI & Data Strategy
+      - C-Suite Advisory
+
+  - category: Data & AI
+    icon: fas fa-database
+    items:
+      - Petabyte-Scale Platforms
+      - Apache Spark/Kafka/Flink
+      - LLMs & Multi-Agent Systems
+      - RAG & Vector Databases
+      - PyTorch
+      - Vertex AI
+
+  - category: Cloud & Engineering
+    icon: fas fa-cloud
+    items:
+      - Google Cloud Platform
+      - BigQuery
+      - Python/SQL/Scala
+      - Kubernetes
+      - Distributed Systems
+
+affiliations:
+  - IEEE
+  - ACM
+  - Singapore Computer Society
+
+certifications:
+  - name: GCP Professional Cloud Architect
+    date: 2024-01
+    issuer: Google Cloud
+
+  - name: GCP Professional Data Engineer
+    date: 2022-01
+    issuer: Google Cloud
+
+  - name: GCP Professional ML Engineer
+    date: 2024-01
+    issuer: Google Cloud
