@@ -186,9 +186,9 @@ function generateLatex(cv, includePhone = false) {
   contactParts.push(cv.basics.email);
   lines.push(`${contactParts.join(" $|$ ")} \\\\`);
 
-  // Social links
+  // Social links (embedded hyperlinks)
   lines.push(
-    `LinkedIn: linkedin.com/in/subhadip-mitra $|$ GitHub: github.com/bassrehab`
+    `\\href{https://linkedin.com/in/subhadip-mitra}{LinkedIn} $|$ \\href{https://github.com/bassrehab}{GitHub} $|$ \\href{https://subhadipmitra.com}{Website}`
   );
   lines.push(`\\end{center}`);
   lines.push(``);
@@ -256,20 +256,26 @@ function generateLatex(cv, includePhone = false) {
     const desc = project.description.replace(/\n/g, " ").trim();
     lines.push(escapeLatex(desc) + " \\\\");
 
-    // Links
+    // Links (embedded hyperlinks)
     if (project.links && project.links.length > 0) {
       const linkStrs = project.links.map((link) => {
         if (link.type === "github") {
-          return `GitHub: ${formatUrl(link.url)}`;
+          return `\\href{${link.url}}{GitHub}`;
         } else if (link.type === "pypi") {
-          return `PyPI: ${formatUrl(link.url)}`;
+          return `\\href{${link.url}}{PyPI}`;
         } else if (link.type === "docs") {
-          return `Docs: ${formatUrl(link.url)}`;
+          return `\\href{${link.url}}{Docs}`;
+        } else if (link.type === "blog") {
+          return `\\href{${link.url}}{Blog}`;
+        } else if (link.type === "paper") {
+          return `\\href{${link.url}}{Paper}`;
         } else {
-          return formatUrl(link.url);
+          // Use label if available, otherwise generic "Link"
+          const label = link.label || "Link";
+          return `\\href{${link.url}}{${escapeLatex(label)}}`;
         }
       });
-      lines.push(linkStrs.join(" $|$ "));
+      lines.push(linkStrs.join(" $\\cdot$ "));
     }
 
     // Status
@@ -286,9 +292,9 @@ function generateLatex(cv, includePhone = false) {
   lines.push(``);
 
   for (const pub of cv.publications) {
-    lines.push(`\\textbf{${escapeLatex(pub.title)}} \\\\`);
-    lines.push(`\\textit{${escapeLatex(pub.venue)}, ${formatDate(pub.date)}} \\\\`);
-    lines.push(formatUrl(pub.url));
+    // Title as clickable link
+    lines.push(`\\href{${pub.url}}{\\textbf{${escapeLatex(pub.title)}}} \\\\`);
+    lines.push(`\\textit{${escapeLatex(pub.venue)}, ${formatDate(pub.date)}}`);
     lines.push(``);
   }
 
