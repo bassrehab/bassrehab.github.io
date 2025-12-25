@@ -171,7 +171,7 @@ math: false
 
   .skill-category-title {
     font-size: 11pt;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
     color: black !important;
   }
 
@@ -376,6 +376,7 @@ document.querySelectorAll('.cv-download-menu a').forEach(function(link) {
       </article>
       {% endfor %}
     </div>
+
   </section>
 
   <!-- Research & Open Source Engineering Section -->
@@ -432,6 +433,7 @@ document.querySelectorAll('.cv-download-menu a').forEach(function(link) {
       </article>
       {% endfor %}
     </div>
+
   </section>
 
   <!-- Education Section -->
@@ -455,6 +457,7 @@ document.querySelectorAll('.cv-download-menu a').forEach(function(link) {
       </div>
       {% endfor %}
     </div>
+
   </section>
 
   <!-- Publications Section -->
@@ -465,27 +468,30 @@ document.querySelectorAll('.cv-download-menu a').forEach(function(link) {
     <div class="publications-grid">
       {% for pub in cv.publications %}
       <article class="publication-card">
-        <div class="publication-date">
-          {% assign date_parts = pub.date | split: "-" %}
-          {% assign pub_months = "January,February,March,April,May,June,July,August,September,October,November,December" | split: "," %}
-          {% assign pub_month_index = date_parts[1] | plus: 0 | minus: 1 %}
-          {{ pub_months[pub_month_index] }} {{ date_parts[0] }}
+        <div class="publication-content">
+          <div class="publication-date">
+            {% assign date_parts = pub.date | split: "-" %}
+            {% assign pub_months = "January,February,March,April,May,June,July,August,September,October,November,December" | split: "," %}
+            {% assign pub_month_index = date_parts[1] | plus: 0 | minus: 1 %}
+            {{ pub_months[pub_month_index] }} {{ date_parts[0] }}
+          </div>
+          <h3 class="publication-title">
+            <a href="{{ pub.url }}" target="_blank">{{ pub.title }}</a>
+          </h3>
+          <div class="publication-venue">{{ pub.venue }}</div>
+          <p class="publication-description">{{ pub.description | strip_newlines | strip }}</p>
+          {% if pub.github %}
+          <div class="project-links" style="margin-top: 0.5rem;">
+            <a href="{{ pub.github }}" target="_blank" style="color: var(--global-theme-color); text-decoration: none; font-size: 0.875rem;">
+              <i class="fab fa-github"></i> GitHub Repository
+            </a>
+          </div>
+          {% endif %}
         </div>
-        <h3 class="publication-title">
-          <a href="{{ pub.url }}" target="_blank">{{ pub.title }}</a>
-        </h3>
-        <div class="publication-venue">{{ pub.venue }}</div>
-        <p class="publication-description">{{ pub.description | strip_newlines | strip }}</p>
-        {% if pub.github %}
-        <div class="project-links" style="margin-top: 0.5rem;">
-          <a href="{{ pub.github }}" target="_blank" style="color: var(--global-theme-color); text-decoration: none; font-size: 0.875rem;">
-            <i class="fab fa-github"></i> GitHub Repository
-          </a>
-        </div>
-        {% endif %}
       </article>
       {% endfor %}
     </div>
+
   </section>
 
   <!-- Skills Section -->
@@ -508,6 +514,7 @@ document.querySelectorAll('.cv-download-menu a').forEach(function(link) {
       </div>
       {% endfor %}
     </div>
+
   </section>
 
   <!-- Projects Section -->
@@ -558,6 +565,7 @@ document.querySelectorAll('.cv-download-menu a').forEach(function(link) {
       </article>
       {% endfor %}
     </div>
+
   </section>
 
 </div>

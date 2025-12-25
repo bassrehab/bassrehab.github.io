@@ -353,7 +353,7 @@
   font-weight: 600;
   color: var(--global-text-color);
   margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
   padding-top: 0;
   display: flex;
   align-items: center;
@@ -543,10 +543,6 @@ html.dark-mode .skill-tag:hover,
   font-size: 0.7rem;
 }
 
-/* Close dropdown when clicking outside */
-.cv-download-group:not(:focus-within) .cv-download-menu {
-  /* This provides a fallback, but JS handles the main closing */
-}
 
 /* ============================================
    Privacy Notice - Less Intrusive Style
@@ -587,20 +583,111 @@ html.dark-mode .skill-tag:hover,
    ============================================ */
 
 .timeline-item {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .timeline-item:hover {
   transform: translateX(4px);
 }
 
-.publication-card,
-.project-card,
-.research-project-card {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+/* ============================================
+   Publications Grid - Clean Numbered Design
+   ============================================ */
+
+.publications-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  counter-reset: publication-counter;
 }
 
-.publication-card:hover,
+.publication-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.25rem;
+  padding: 1.25rem;
+  background: var(--global-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 8px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+  counter-increment: publication-counter;
+}
+
+.publication-card::before {
+  content: counter(publication-counter);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  background: var(--global-code-bg-color);
+  color: var(--global-theme-color);
+  font-weight: 700;
+  font-size: 0.875rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.publication-card:hover {
+  border-color: var(--global-theme-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.publication-date {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--global-text-color-light);
+  margin-bottom: 0.25rem;
+}
+
+.publication-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0 0 0.375rem 0;
+}
+
+.publication-title a {
+  color: var(--global-text-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.publication-title a:hover {
+  color: var(--global-theme-color);
+}
+
+.publication-venue {
+  font-size: 0.875rem;
+  color: var(--global-text-color-light);
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.publication-description {
+  font-size: 0.875rem;
+  color: var(--global-text-color-light);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ============================================
+   Project & Research Cards
+   ============================================ */
+
+.project-card,
+.research-project-card {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
 .project-card:hover,
 .research-project-card:hover {
   transform: translateY(-2px);
