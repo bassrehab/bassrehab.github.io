@@ -339,22 +339,23 @@
 
 /* Skills section styling */
 .skills-section {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
 }
 
 .skill-category {
-  margin-bottom: 0.5rem;
+  background: var(--global-card-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 12px;
+  padding: 1.5rem;
 }
 
 .skill-category-title {
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--global-text-color);
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-  padding-top: 0;
+  margin: 0 0 1rem 0;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -372,7 +373,7 @@
 
 .skill-tag {
   display: inline-block;
-  padding: 0.35rem 0.75rem;
+  padding: 0.4rem 0.75rem;
   font-size: 0.8rem;
   font-weight: 500;
   border-radius: 6px;
@@ -386,6 +387,75 @@
   background-color: var(--global-theme-color);
   color: var(--global-bg-color);
   border-color: var(--global-theme-color);
+}
+
+/* Research & Open Source Projects */
+.research-projects {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.research-project-card {
+  background: var(--global-card-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.research-project-card:hover {
+  border-color: var(--global-theme-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.project-period {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--global-theme-color);
+  margin-bottom: 0.5rem;
+}
+
+.project-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 0 0 0.5rem 0;
+}
+
+.project-title a {
+  color: var(--global-text-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.project-title a:hover {
+  color: var(--global-theme-color);
+}
+
+.project-description {
+  font-size: 0.9rem;
+  color: var(--global-text-color-light);
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
+}
+
+.project-highlights ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.project-highlights li {
+  font-size: 0.875rem;
+  color: var(--global-text-color-light);
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.project-highlights li strong {
+  color: var(--global-text-color);
 }
 
 /* Dark mode specific adjustments for skill tags */
@@ -678,20 +748,20 @@ html.dark-mode .skill-tag:hover,
 }
 
 /* ============================================
-   Project & Research Cards
+   Project Cards (Notable Projects section)
    ============================================ */
 
-.project-card,
-.research-project-card {
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+.project-card {
+  background: var(--global-card-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.project-card:hover,
-.research-project-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+.project-card:hover {
+  border-color: var(--global-theme-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 /* Section label styling enhancement */
