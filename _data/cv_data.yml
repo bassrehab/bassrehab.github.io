@@ -10,7 +10,7 @@ basics:
   github: https://github.com/bassrehab
   calendly: https://calendly.com/contact-x9nm/30min
   summary: |
-    Senior Engineering Leader with 15+ years of experience bridging fundamental AI research and enterprise-scale system delivery. Currently leading Google Cloud's Data & Analytics practice for Southeast Asia while driving internal innovations on LLM inference efficiency and multi-agent systems.
+    Senior Engineering Leader with 15+ years of experience bridging fundamental AI research and enterprise-scale system delivery. Currently leading Google Cloud's Data & Analytics practice for Southeast Asia while driving internal innovations on LLM inference efficiency, multi-agent systems, and AI safety research (activation probing, sandbagging detection).
 
     Proven track record of operating as a "Player-Coach": managing regional engineering portfolios while simultaneously architecting and patenting novel frameworks (UPIR, ARTEMIS, FTCS, Speculative Decoding).
   # Abbreviations used in summary for web tooltips
@@ -32,7 +32,7 @@ experience:
       - title: Strategic Leadership & Delivery
         highlights:
           - title: Practice Leadership
-            description: Built Data Analytics practice for Southeast Asia from 0 to 1, recruiting and developing engineering talent while establishing the region's premier capability serving strategic enterprise clients across 6 countries.
+            description: Built Data Analytics practice for Southeast Asia from 0 to 1, recruiting and developing engineering talent while establishing the region's premier capability serving strategic enterprise clients across 7 countries.
           - title: Regional Operations
             description: Serve as Site Lead overseeing delivery governance across all 7 PSO practices (Data Analytics, AI/ML, Infrastructure, Security, Enterprise Architecture, Application Development, Delivery Management) in Southeast Asia, owning utilization and CSAT metrics (97%) while driving strategic pursuits and contributing to 100% annual revenue target attainment.
           - title: Portfolio Management
@@ -66,11 +66,10 @@ experience:
     start_date: 2019-01
     end_date: 2021-01
     description: |
-      Led enterprise-wide AI and data platform development serving 11 markets and 1200+ global users, delivering technical excellence while influencing C-suite data strategy.
+      Led enterprise-wide AI and data platform development serving 11 markets, delivering technical excellence while influencing C-suite data strategy.
     highlights:
-      - Delivered a Self-Service ML Platform that reduced model development time from 6 months to 1 week
-      - Designed credit risk AI models integrating alternative data sources, improving accuracy by 15%
-      - Modernized MarTech infrastructure, driving 30% increase in customer acquisition
+      - Delivered a Self-Service ML Platform that reduced model development time from months to weeks
+      - MarTech modernization - +30% customer acquisition
 
   - company: Think Big Analytics (a Teradata company)
     role: Principal Data Engineer / Solution Architect
@@ -78,19 +77,22 @@ experience:
     start_date: 2017-01
     end_date: 2019-01
     description: |
-      Architected enterprise-scale data solutions for Fortune 500 clients across APAC, designing scalable platforms with measurable business impact.
+      Architected enterprise-scale data solutions for Fortune 500 clients across APAC.
     highlights:
-      - Engineered 5 high-performance data lakes processing 1.2 PB/hour, achieving 20% optimization
-      - Built real-time fraud detection systems, reducing false positives by 60% and saving $XM annually
-      - Designed enterprise architectures supporting global Fortune 500 clients across APAC
+      - Data lakes processing 1.2 PB/hour for Fortune 500 clients across APAC
+      - Real-time fraud detection systems - 60% reduction in false positives
 
-  - company: Various Companies
-    role: Software Engineering, Architecture and Technical Consulting Roles
+  - company: Microsoft, Truckaurbus (Founder), UTU
+    role: Software Engineering & Technical Leadership
     url:
     start_date: 2010-01
     end_date: 2017-01
     description: |
-      Progressively advanced through roles in software development, systems integration, and technical consulting within financial services and algorithmic trading domains.
+      Progressive advancement through software engineering, entrepreneurship, and technical leadership across systems development, marketplace platforms, and payments infrastructure.
+    highlights:
+      - "Microsoft (2010-2014): Windows Kernel development (Windows 7/8, Server 2012 R2), Azure ML implementations, CDN architecture optimization"
+      - "Truckaurbus (2014-2016): Founded B2B commercial vehicle marketplace - 15 cities, 25+ OEM/bank partnerships"
+      - "UTU Singapore (2016-2017): Led maiden Thailand technical development; bank integration; payment/rewards systems for merchants"
 
 research:
   - title: Spark LLM Eval - Distributed Evaluation Framework
@@ -114,23 +116,6 @@ research:
       - type: blog
         label: Blog Post
         url: /blog/2025/building-spark-llm-eval
-
-  - title: CatchMe - Intelligent Trust Engine
-    period: 2025
-    status: Google Technical Disclosures - Pending (APLS & Cascade Routing)
-    description: |
-      First of a kind, industry agnostic hybrid agentic AI decisioning system across Finance, Healthcare, Insurance, Cybersecurity, and Supply Chain. Uses adversarial debate protocols (prosecutor/defense/judge) to qualify events/anomalies and build audit trails for regulated environments.
-    highlights:
-      - title: APLS (Automated Pattern Learning System)
-        description: Self-learning system that observes expensive AI decisions and automatically synthesizes cheaper deterministic rules over time. Achieves 76% cost reduction after 6 months of pattern learning.
-      - title: Five-Level Cascade Routing
-        description: Intelligent transaction routing based on cost-benefit analysis. Automatically escalates high-value/high-risk decisions to AI reasoning while routing routine cases through deterministic rules (e.g., $50K wire with 75% confidence -> AI escalation with ROI 1,250,000x). Sub-50ms latency for most transactions.
-      - title: Multi-Agent Consensus
-        description: Adversarial debate system where agents act as prosecutor, defense, and judge to ensure decision quality and create compliance audit trails for regulated industries.
-      - title: Production Impact
-        description: 86% cost reduction vs AI-only approaches ($20.7K vs $150K for 10M monthly transactions), serving Finance (fraud detection), Healthcare (claims processing), Insurance (policy validation), Cybersecurity (anomaly detection), and Supply Chain (verification).
-      - title: Recognition
-        description: Winner - Google Cloud PSO Hackathon JAPAC Regionals. Built on Vertex AI, Gemini 2.x, BigQuery ML, Cloud Run.
 
   - title: LLM Inference Efficiency Research
     period: 2025 - Present
@@ -201,6 +186,7 @@ research:
       - type: blog
         label: Blog Post
         url: /blog/2025/steering-vectors-agents/
+
 education:
   - degree: MBA, Business Analytics
     institution: Birla Institute of Technology and Science, Pilani
@@ -339,29 +325,23 @@ skills:
       - Distributed Systems
 
 projects:
-  - title: AI Metacognition Toolkit
-    period: 2025 - Present
-    url: https://ai-metacognition-toolkit.subhadipmitra.com/
+  - title: LLMConsent
+    period: 2024 - Present
+    url: https://llmconsent.org/
     description: |
-      Activation-level detection of sandbagging, deception, and situational awareness in LLMs. Linear probes achieve 90-96% accuracy across Mistral, Gemma, and Qwen models. Includes steering vectors for runtime behavior control.
+      Privacy-preserving consent management protocol for LLM training data - enabling transparent opt-in/opt-out mechanisms with cryptographic verification.
     highlights:
-      - Sandbagging detection via linear probes with 90-96% accuracy
-      - Steering vectors reduce sandbagging behavior by 20%
-      - Bayesian situational awareness detection with KL divergence
-      - Available on PyPI with 275 tests and 95% code coverage
+      - Decentralized consent registry on public blockchain
+      - Cryptographic proof of consent status
+      - Real-time opt-out enforcement for AI training
+      - GDPR-compliant privacy controls for GenAI era
     links:
-      - type: docs
-        label: Documentation
-        url: https://ai-metacognition-toolkit.subhadipmitra.com/
-      - type: pypi
-        label: PyPI Package
-        url: https://pypi.org/project/ai-metacognition-toolkit/
       - type: github
         label: GitHub Repo
-        url: https://github.com/bassrehab/ai-metacognition-toolkit
+        url: https://github.com/LLMConsent
       - type: blog
         label: Blog
-        url: /blog/2025/detecting-ai-sandbagging/
+        url: /blog/2025/building-consent-layer-for-ai/
 
   - title: Open Location Proof Protocol
     period: 2022 - 2023
@@ -372,6 +352,13 @@ projects:
       - Cryptographically secure yet privacy-preserving protocol
       - Fully decentralized architecture resistant to tampering
       - Published comprehensive specifications for industry adoption
+    links:
+      - type: github
+        label: GitHub Repo
+        url: https://github.com/OLP-Protocol
+      - type: blog
+        label: Paper
+        url: https://olpprotocol.com/paper.pdf
 
   - title: OConsent - Open Consent Protocol
     period: 2021 - 2022
@@ -382,6 +369,13 @@ projects:
       - Blockchain-based solution for transparent consent management
       - GDPR-compliant with automated audit capabilities
       - Granular control over personal data usage
+    links:
+      - type: github
+        label: GitHub Repo
+        url: https://github.com/bassrehab/oconsent
+      - type: blog
+        label: Paper
+        url: https://arxiv.org/abs/2201.01326
 
   - title: ISO8583 Simulator
     period: 2016 - 2017
@@ -392,4 +386,7 @@ projects:
       - Supports multiple ISO 8583 versions and custom formats
       - Advanced performance testing with configurable load profiles
       - Modular architecture supporting multiple protocols
-
+    links:
+      - type: github
+        label: GitHub Repo
+        url: https://github.com/bassrehab/ISO8583-Simulator
