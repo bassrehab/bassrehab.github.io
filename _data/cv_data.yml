@@ -84,41 +84,13 @@ experience:
       - Built real-time fraud detection systems, reducing false positives by 60% and saving $XM annually
       - Designed enterprise architectures supporting global Fortune 500 clients across APAC
 
-  - company: UTU
-    role: Technical Lead
-    url: https://utu.io
-    start_date: 2016-01
-    end_date: 2017-01
-    location: Singapore
-    description: |
-      Led market entry strategy and technology roadmap for Thailand expansion. Built and mentored engineering teams while developing high-performance integration solutions.
-    highlights:
-      - Established architectural patterns and governance frameworks for mission-critical payment/rewards and merchant systems
-      - Built high-performance integration solutions for payment and rewards platforms
-
-  - company: Truckaurbus Marketplace
-    role: Founder
-    start_date: 2014-01
-    end_date: 2016-01
-    location: India
-    description: |
-      Founded and scaled digital marketplace across 15 cities with 25+ OEM/Bank partnerships. Led all aspects of technical strategy, product development, and business growth.
-    highlights:
-      - Scaled marketplace to 15 cities with 25+ OEM and banking partnerships
-      - Architected core platform including real-time auctions and programmatic advertising
-
-  - company: Microsoft
-    role: Senior Software Development Engineer
-    url: https://www.microsoft.com
+  - company: Various Companies
+    role: Software Engineering, Architecture and Technical Consulting Roles
+    url:
     start_date: 2010-01
-    end_date: 2014-01
-    location: India
+    end_date: 2017-01
     description: |
-      Contributed to core Windows Kernel development for Windows 7/8 and Server 2012 R2. Pioneered early machine learning implementations on Azure platform.
-    highlights:
-      - Core Windows Kernel development for Windows 7, Windows 8, and Server 2012 R2
-      - Enhanced Azure Content Delivery Network architecture and performance optimization
-      - Pioneered early machine learning implementations on Azure platform
+      Progressively advanced through roles in software development, systems integration, and technical consulting within financial services and algorithmic trading domains.
 
 research:
   - title: LLM Inference Efficiency Research
