@@ -23,7 +23,7 @@ experience:
     description: |
       Built Google Cloud's Data Analytics practice across Southeast Asia. Dual role as Site Lead overseeing regional delivery and technical innovation lead on <a href="https://cloud.google.com/consulting/innovation-and-transformation">delta</a> team.
     highlights:
-      - Built D&A practice from 0 to 1 across 6 countries; direct $XXM+ portfolio with 97% CSAT
+      - Built D&A practice from 0 to 1 across 6 countries; 97% CSAT
       - Site Lead overseeing delivery governance across 7 PSO practices (Data Analytics, AI/ML, Infrastructure, Security, Enterprise Architecture, AppDev, Delivery Management)
       - Pioneered agentic AI adoption across 7 practices and 6 JAPAC sub-regions with SDKs, agent catalog, and governance frameworks
       - Spearheaded rescue operations for at-risk enterprise accounts, recovering strategic customers
@@ -39,7 +39,6 @@ experience:
       Led enterprise AI and data platform development serving 11 markets and 1200+ users.
     highlights:
       - Delivered Self-Service ML Platform reducing model development from 6 months to 1 week
-      - Designed credit risk AI models improving accuracy by 15% with alternative data sources
       - Modernized MarTech infrastructure driving 30% increase in customer acquisition
 
   - company: Think Big Analytics (Teradata)
@@ -53,12 +52,12 @@ experience:
       - Engineered 5 data lakes processing 1.2 PB/hour with 20% optimization
       - Built real-time fraud detection reducing false positives by 60%
 
-  - company: Various Companies
-    role: Software Engineering & Technical Consulting
+  - company: Microsoft, UTU & Others
+    role: Software Engineering & Technical Leadership
     start_date: 2010-01
     end_date: 2017-01
     description: |
-      Progressive roles in software development, systems integration, and consulting in financial services and algorithmic trading.
+      Windows Kernel development (Microsoft), payment systems (UTU Singapore), founded Truckaurbus B2B marketplace.
 
 research:
   - title: LLM Inference Efficiency
@@ -93,7 +92,7 @@ research:
   - title: CatchMe - Intelligent Trust Engine
     period: 2025
     description: |
-      Agentic AI for enterprise trust decisions. APLS pattern learning + cascade routing. 86% cost reduction, sub-50ms latency. JAPAC Hackathon Winner.
+      Agentic AI for enterprise trust decisions. APLS pattern learning + cascade routing. 86% cost reduction, sub-50ms latency.
 
   - title: Spark LLM Eval - Distributed Evaluation Framework
     period: 2025
@@ -184,4 +183,3 @@ skills:
       - Python/SQL/Scala
       - Kubernetes
       - Distributed Systems
-
