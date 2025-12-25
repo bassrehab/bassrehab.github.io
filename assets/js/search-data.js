@@ -72,20 +72,6 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/archive/";
               },
-            },{id: "dropdown-licenses",
-              title: "licenses",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/license/";
-              },
-            },{id: "dropdown-privacy",
-              title: "privacy",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/privacy/";
-              },
             },{id: "dropdown-docs-upir",
               title: "docs: UPIR",
               description: "",
