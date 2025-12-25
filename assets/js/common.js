@@ -19,13 +19,19 @@ $(document).ready(function () {
 
   // bootstrap-toc
   if ($("#toc-sidebar").length) {
-    // remove related publications years from the TOC
-    $(".publications h2").each(function () {
+    // Skip headings outside article content (footer, sidebar, etc.)
+    $(".publications h2, .modern-footer h3, .modern-footer h4, .citation-section h3").each(function () {
       $(this).attr("data-toc-skip", "");
     });
     var navSelector = "#toc-sidebar";
     var $myNav = $(navSelector);
-    Toc.init($myNav);
+    // Scope TOC to only article content
+    var $scope = $(".post-content");
+    if ($scope.length) {
+      Toc.init($myNav, { $scope: $scope });
+    } else {
+      Toc.init($myNav);
+    }
     $("body").scrollspy({
       target: navSelector,
     });

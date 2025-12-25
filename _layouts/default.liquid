@@ -29,14 +29,30 @@
             <div class="col-sm-9">{{ content }}</div>
             <!-- sidebar, which will move to the top on a small screen -->
             <div class="col-sm-3">
-              <nav id="toc-sidebar" class="sticky-top"></nav>
+              <div id="toc-wrapper" class="toc-wrapper sticky-top">
+                <div class="toc-header">
+                  <span class="toc-title">Contents</span>
+                  <button class="toc-toggle" aria-label="Toggle table of contents" title="Hide contents">
+                    <i class="fas fa-chevron-up"></i>
+                  </button>
+                </div>
+                <nav id="toc-sidebar" class="toc-nav"></nav>
+              </div>
             </div>
           </div>
         {% else %}
           <div class="row">
             <!-- sidebar, which will move to the top on a small screen -->
             <div class="col-sm-3">
-              <nav id="toc-sidebar" class="sticky-top"></nav>
+              <div id="toc-wrapper" class="toc-wrapper sticky-top">
+                <div class="toc-header">
+                  <span class="toc-title">Contents</span>
+                  <button class="toc-toggle" aria-label="Toggle table of contents" title="Hide contents">
+                    <i class="fas fa-chevron-up"></i>
+                  </button>
+                </div>
+                <nav id="toc-sidebar" class="toc-nav"></nav>
+              </div>
             </div>
             <!-- main content area -->
             <div class="col-sm-9">{{ content }}</div>
