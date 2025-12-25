@@ -84,12 +84,12 @@ function generateOnePage(cv, includePhone = false) {
   lines.push(`\\usepackage{xcolor}`);
   lines.push(`\\usepackage{parskip}`);
   lines.push(``);
-  lines.push(`% Colors`);
-  lines.push(`\\definecolor{headercolor}{RGB}{37, 99, 235}`);
-  lines.push(`\\definecolor{linkcolor}{RGB}{37, 99, 235}`);
+  lines.push(`% Colors - dark blue for print compatibility`);
+  lines.push(`\\definecolor{headercolor}{RGB}{30, 64, 175}`);
+  lines.push(`\\definecolor{linkcolor}{RGB}{30, 64, 175}`);
   lines.push(``);
   lines.push(`% Hyperref setup`);
-  lines.push(`\\hypersetup{colorlinks=true,linkcolor=linkcolor,urlcolor=linkcolor}`);
+  lines.push(`\\hypersetup{colorlinks=true,linkcolor=linkcolor,urlcolor=linkcolor,citecolor=linkcolor,filecolor=linkcolor}`);
   lines.push(``);
   lines.push(`% Section formatting`);
   lines.push(`\\titleformat{\\section}{\\large\\bfseries\\color{headercolor}}{}{0em}{}[\\titlerule]`);
