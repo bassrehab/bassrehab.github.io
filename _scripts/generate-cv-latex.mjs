@@ -144,9 +144,9 @@ function generateLatex(cv, includePhone = false) {
   lines.push(`\\usepackage{fancyhdr}`);
   lines.push(`\\usepackage{lastpage}`);
   lines.push(``);
-  lines.push(`% Colors`);
-  lines.push(`\\definecolor{headercolor}{RGB}{37, 99, 235}`);
-  lines.push(`\\definecolor{linkcolor}{RGB}{37, 99, 235}`);
+  lines.push(`% Colors - dark blue for print compatibility`);
+  lines.push(`\\definecolor{headercolor}{RGB}{30, 64, 175}`);
+  lines.push(`\\definecolor{linkcolor}{RGB}{30, 64, 175}`);
   lines.push(``);
   lines.push(`% Formatting`);
   lines.push(`\\setlist{nosep, leftmargin=*}`);
@@ -154,6 +154,8 @@ function generateLatex(cv, includePhone = false) {
   lines.push(`    colorlinks=true,`);
   lines.push(`    linkcolor=linkcolor,`);
   lines.push(`    urlcolor=linkcolor,`);
+  lines.push(`    citecolor=linkcolor,`);
+  lines.push(`    filecolor=linkcolor,`);
   lines.push(`}`);
   lines.push(``);
   lines.push(`% Section formatting with color`);
