@@ -13,11 +13,6 @@ children:
   - title: archive
     permalink: /archive/
   - title: divider
-  - title: licenses
-    permalink: /license/
-  - title: privacy
-    permalink: /privacy/
-  - title: divider
   - title: "docs: UPIR"
     permalink: https://upir.subhadipmitra.com
   - title: "docs: AI Metacognition"
