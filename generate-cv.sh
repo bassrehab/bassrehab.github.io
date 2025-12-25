@@ -78,6 +78,11 @@ rm -f cv-onepage-phone.aux cv-onepage-phone.log cv-onepage-phone.out
 echo "   ✓ $OUTPUT_DIR/cv-onepage-phone.pdf"
 cd - > /dev/null
 
+# Step 3: Generate DOCX
+echo ""
+echo "3. Generating DOCX..."
+node _scripts/generate-cv-docx.mjs --onepage
+
 # ==========================================
 # SUMMARY
 # ==========================================

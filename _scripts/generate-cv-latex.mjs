@@ -259,20 +259,26 @@ function generateLatex(cv, includePhone = false) {
     // Links (embedded hyperlinks)
     if (project.links && project.links.length > 0) {
       const linkStrs = project.links.map((link) => {
+        // Ensure absolute URLs for all links
+        let url = link.url;
+        if (url.startsWith("/")) {
+          url = `https://subhadipmitra.com${url}`;
+        }
+
         if (link.type === "github") {
-          return `\\href{${link.url}}{GitHub}`;
+          return `\\href{${url}}{GitHub}`;
         } else if (link.type === "pypi") {
-          return `\\href{${link.url}}{PyPI}`;
+          return `\\href{${url}}{PyPI}`;
         } else if (link.type === "docs") {
-          return `\\href{${link.url}}{Docs}`;
+          return `\\href{${url}}{Docs}`;
         } else if (link.type === "blog") {
-          return `\\href{${link.url}}{Blog}`;
+          return `\\href{${url}}{Blog}`;
         } else if (link.type === "paper") {
-          return `\\href{${link.url}}{Paper}`;
+          return `\\href{${url}}{Paper}`;
         } else {
           // Use label if available, otherwise generic "Link"
           const label = link.label || "Link";
-          return `\\href{${link.url}}{${escapeLatex(label)}}`;
+          return `\\href{${url}}{${escapeLatex(label)}}`;
         }
       });
       lines.push(linkStrs.join(" $\\cdot$ "));

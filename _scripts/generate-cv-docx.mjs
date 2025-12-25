@@ -29,8 +29,9 @@ const ROOT_DIR = path.resolve(__dirname, "..");
 // Phone number for private version
 const PHONE_NUMBER = "+65 82501776";
 
-// Check for --concise flag
+// Check for variant flags
 const isConcise = process.argv.includes("--concise");
+const isOnepage = process.argv.includes("--onepage");
 
 /**
  * Format date from YYYY-MM to Month YYYY
@@ -410,11 +411,28 @@ function generateDocx(cv, includePhone = false) {
  * Main function
  */
 async function main() {
-  const variant = isConcise ? "concise" : "full";
+  let variant, yamlFile, publicFilename, privateFilename;
+
+  if (isOnepage) {
+    variant = "onepage";
+    yamlFile = "cv_data_onepage.yml";
+    publicFilename = "cv-onepage.docx";
+    privateFilename = "cv-onepage-phone.docx";
+  } else if (isConcise) {
+    variant = "concise";
+    yamlFile = "cv_data_concise.yml";
+    publicFilename = "cv-concise.docx";
+    privateFilename = "cv-concise-phone.docx";
+  } else {
+    variant = "full";
+    yamlFile = "cv_data.yml";
+    publicFilename = "cv.docx";
+    privateFilename = "cv-phone.docx";
+  }
+
   console.log(`Generating ${variant} DOCX CV...`);
 
   // Read YAML file
-  const yamlFile = isConcise ? "cv_data_concise.yml" : "cv_data.yml";
   const yamlPath = path.join(ROOT_DIR, "_data", yamlFile);
   const yamlContent = fs.readFileSync(yamlPath, "utf8");
   const cv = yaml.load(yamlContent);
@@ -427,7 +445,6 @@ async function main() {
 
   // Generate public version
   const publicDoc = generateDocx(cv, false);
-  const publicFilename = isConcise ? "cv-concise.docx" : "cv.docx";
   const publicPath = path.join(outputDir, publicFilename);
   const publicBuffer = await Packer.toBuffer(publicDoc);
   fs.writeFileSync(publicPath, publicBuffer);
@@ -435,7 +452,6 @@ async function main() {
 
   // Generate private version (with phone)
   const privateDoc = generateDocx(cv, true);
-  const privateFilename = isConcise ? "cv-concise-phone.docx" : "cv-phone.docx";
   const privatePath = path.join(outputDir, privateFilename);
   const privateBuffer = await Packer.toBuffer(privateDoc);
   fs.writeFileSync(privatePath, privateBuffer);
