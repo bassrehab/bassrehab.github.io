@@ -15,6 +15,8 @@ math: false
   nav,
   .header,
   .cv-download,
+  .cv-download-group,
+  .cv-last-updated,
   .privacy-notice,
   footer,
   .social,
@@ -216,6 +218,23 @@ article.research-project-card {
 }
 </style>
 
+<script>
+// Close dropdown when clicking outside
+document.addEventListener('click', function(e) {
+  const group = document.querySelector('.cv-download-group');
+  if (group && !group.contains(e.target)) {
+    group.classList.remove('open');
+  }
+});
+
+// Close dropdown after selecting an option
+document.querySelectorAll('.cv-download-menu a').forEach(function(link) {
+  link.addEventListener('click', function() {
+    this.closest('.cv-download-group').classList.remove('open');
+  });
+});
+</script>
+
 {% assign cv = site.data.cv_data %}
 
 <div class="cv-editorial">
@@ -225,10 +244,32 @@ article.research-project-card {
     <div class="cv-hero-content">
       <h1>Curriculum Vitae</h1>
       <p class="subtitle">{{ cv.basics.title }}</p>
-      <a href="/assets/cv/cv.pdf" class="cv-download" download>
-        <i class="fas fa-download"></i>
-        Download PDF
-      </a>
+      <!-- Split Download Button with Dropdown -->
+      <div class="cv-download-group">
+        <a href="/assets/cv/cv.pdf" class="cv-download-main" download>
+          <i class="fas fa-download"></i>
+          Download CV
+        </a>
+        <button class="cv-download-toggle" aria-label="More download options" onclick="this.parentElement.classList.toggle('open')">
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="cv-download-menu">
+          <div class="cv-download-menu-section">
+            <div class="cv-download-menu-label">Full CV</div>
+            <a href="/assets/cv/cv.pdf" download><i class="fas fa-file-pdf"></i> PDF (3 pages)</a>
+            <a href="/assets/cv/cv.docx" download><i class="fas fa-file-word"></i> Word Document</a>
+          </div>
+          <div class="cv-download-menu-divider"></div>
+          <div class="cv-download-menu-section">
+            <div class="cv-download-menu-label">1-Page Summary</div>
+            <a href="/assets/cv/cv-onepage.pdf" download><i class="fas fa-file-pdf"></i> PDF (1 page)</a>
+          </div>
+        </div>
+      </div>
+      <div class="cv-last-updated">
+        <i class="fas fa-clock"></i>
+        Last updated: {{ site.time | date: "%B %Y" }}
+      </div>
       <div class="cv-meta">
         <div class="cv-meta-item">
           <i class="fas fa-map-marker-alt"></i>

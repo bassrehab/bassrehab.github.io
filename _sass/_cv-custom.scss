@@ -341,18 +341,20 @@
 .skills-section {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 0.25rem;
 }
 
 .skill-category {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .skill-category-title {
   font-size: 1rem;
   font-weight: 600;
   color: var(--global-text-color);
-  margin-bottom: 0.75rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  padding-top: 0;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -401,4 +403,238 @@ html.dark-mode .skill-tag:hover,
   background-color: var(--global-theme-color) !important;
   color: var(--global-bg-color) !important;
   border-color: var(--global-theme-color) !important;
+}
+
+/* ============================================
+   CV Download Split Button with Dropdown
+   ============================================ */
+
+.cv-download-group {
+  position: relative;
+  display: inline-flex;
+  margin-top: 1.25rem;
+}
+
+.cv-download-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--global-theme-color);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 8px 0 0 8px;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.cv-download-main:hover {
+  background: var(--global-hover-color, #1a4fd8);
+  color: white;
+  text-decoration: none;
+}
+
+.cv-download-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 0.75rem;
+  background: var(--global-theme-color);
+  color: white;
+  border: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cv-download-toggle:hover {
+  background: var(--global-hover-color, #1a4fd8);
+}
+
+.cv-download-toggle i {
+  font-size: 0.75rem;
+  transition: transform 0.2s ease;
+}
+
+.cv-download-group.open .cv-download-toggle i {
+  transform: rotate(180deg);
+}
+
+.cv-download-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 200px;
+  background: var(--global-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.2s ease;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.cv-download-group.open .cv-download-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.cv-download-menu-section {
+  padding: 0.5rem;
+}
+
+.cv-download-menu-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--global-text-color-light);
+  padding: 0.5rem 0.75rem 0.25rem;
+}
+
+.cv-download-menu a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 0.75rem;
+  color: var(--global-text-color);
+  text-decoration: none;
+  font-size: 0.875rem;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.cv-download-menu a:hover {
+  background: var(--global-code-bg-color);
+  color: var(--global-theme-color);
+  text-decoration: none;
+}
+
+.cv-download-menu a i {
+  width: 16px;
+  text-align: center;
+  color: var(--global-theme-color);
+}
+
+.cv-download-menu-divider {
+  height: 1px;
+  background: var(--global-divider-color);
+  margin: 0.25rem 0.75rem;
+}
+
+/* Last updated timestamp */
+.cv-last-updated {
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  color: var(--global-text-color-light);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.cv-last-updated i {
+  font-size: 0.7rem;
+}
+
+/* Close dropdown when clicking outside */
+.cv-download-group:not(:focus-within) .cv-download-menu {
+  /* This provides a fallback, but JS handles the main closing */
+}
+
+/* ============================================
+   Privacy Notice - Less Intrusive Style
+   ============================================ */
+
+.privacy-notice {
+  background: var(--global-code-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-left: 3px solid var(--global-theme-color);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 2rem;
+  font-size: 0.875rem;
+  color: var(--global-text-color);
+}
+
+.privacy-notice p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.privacy-notice strong {
+  color: var(--global-theme-color);
+}
+
+.privacy-notice a {
+  color: var(--global-theme-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.privacy-notice a:hover {
+  text-decoration: underline;
+}
+
+/* ============================================
+   Section Cards & Hover Effects
+   ============================================ */
+
+.timeline-item {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.timeline-item:hover {
+  transform: translateX(4px);
+}
+
+.publication-card,
+.project-card,
+.research-project-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.publication-card:hover,
+.project-card:hover,
+.research-project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Section label styling enhancement */
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--global-theme-color);
+  margin-bottom: 0.25rem;
+  opacity: 0.8;
+}
+
+/* ============================================
+   Responsive Adjustments
+   ============================================ */
+
+@media (max-width: 576px) {
+  .cv-download-group {
+    width: 100%;
+  }
+
+  .cv-download-main {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .cv-download-menu {
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
 }
