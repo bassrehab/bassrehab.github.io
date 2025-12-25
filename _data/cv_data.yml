@@ -34,7 +34,7 @@ experience:
           - title: Practice Leadership
             description: Built Data Analytics practice for Southeast Asia from 0 to 1, recruiting and developing engineering talent while establishing the region's premier capability serving strategic enterprise clients across 6 countries.
           - title: Regional Operations
-            description: Serve as Site Lead overseeing delivery governance across all 7 PSO practices in Southeast Asia, owning utilization and CSAT metrics (97%) while driving strategic pursuits and contributing to 100% annual revenue target attainment.
+            description: Serve as Site Lead overseeing delivery governance across all 7 PSO practices (Data Analytics, AI/ML, Infrastructure, Security, Enterprise Architecture, Application Development, Delivery Management) in Southeast Asia, owning utilization and CSAT metrics (97%) while driving strategic pursuits and contributing to 100% annual revenue target attainment.
           - title: Portfolio Management
             description: Direct $XXM+ Data Analytics delivery portfolio across JAPAC while simultaneously overseeing $XXM+ cross-practice portfolio as regional Site Lead.
           - title: Strategic Interventions
@@ -48,25 +48,17 @@ experience:
           - title: Executive Advisory
             description: Partner with C-level stakeholders (CTOs, CDOs) to define data modernization and AI transformation roadmaps, translating technical capabilities into business outcomes.
           - title: Agentic AI Transformation
-            description: Pioneered agentic AI adoption across 7 PSO practices and 6 JAPAC sub-regions, building SDKs, agent catalog, and standardized templates while designing reusable governance frameworks that accelerated innovation and reduced delivery costs.
+            description: Pioneered agentic AI adoption across all 7 PSO practices (Data Analytics, AI/ML, Infrastructure, Security, Enterprise Architecture, Application Development, Delivery Management) and 6 JAPAC sub-regions, building SDKs, agent catalog, and standardized templates while designing reusable governance frameworks that accelerated innovation and reduced delivery costs.
           - title: Delivery Accelerators
             description: Built agentic tool suites including architecture discovery (100M+ node graph modeling), automated data pipeline generation, and platform cleanup agents that recovered multi-million dollar at-risk engagements and secured significant long-term cloud commitments.
           - title: Data Strategy Practice
             description: Built Data Strategy competency from 0, delivering 8-figure pursuit value across 14 strategic pitches in Asia Pacific while establishing critical data assets and new GTM offerings.
-      - title: Technical Innovation & Research (Official IP)
+      - title: Technical Innovation & Research
         highlights:
-          - title: LLM Inference Efficiency
-            description: Research on speculative decoding, custom Triton kernels, and KV-cache compression strategies. Filed Google Technical Disclosure on hybrid compression systems for multi-tenant serving optimization.
-          - title: Distributed Systems Synthesis (UPIR)
-            description: Invented neuro-symbolic framework combining formal verification and reinforcement learning to automate distributed system generation - achieved 274x speedup in synthesis with 60% latency reduction.
-          - title: Context Architecture (FTCS)
-            description: Designed Field-Theoretic Context System modeling context as continuous fields to address long-horizon memory fragmentation in AI agents. Published as Google Technical Disclosure.
-          - title: Data Processing for GenAI (ETLC)
-            description: Authored whitepaper introducing Extract, Transform, Load, Contextualize framework adding semantic, relational, and behavioral context to data pipelines for RAG and agentic systems.
-          - title: Multi-Agent Framework (ARTEMIS)
-            description: Created adaptive debate-driven decision framework for enterprise multi-agent systems. Published as Google Technical Disclosure.
-          - title: Intelligent Trust Engine (CatchMe)
-            description: Developed industry-agnostic agentic AI system for enterprise-scale trust decisions across Finance, Healthcare, Insurance, Cybersecurity, and Supply Chain. Features APLS (self-learning pattern synthesis) and five-level cascade routing achieving 86% cost reduction with sub-50ms latency. Won Google Cloud PSO Hackathon JAPAC Regionals, qualified for World Finals. Two pending Google Technical Disclosures.
+          - title: Published Research
+            description: 5 Google Technical Disclosures on AI and distributed systems - UPIR (automated system synthesis, 274x speedup), FTCS (context architecture for AI agents), ARTEMIS (multi-agent debate framework), ETLC (data processing for GenAI), and LLM inference optimization (speculative decoding, custom Triton kernels).
+          - title: CatchMe - Intelligent Trust Engine
+            description: Industry-agnostic agentic AI for enterprise trust decisions. APLS self-learning + cascade routing achieving 86% cost reduction, sub-50ms latency. Won Google Cloud PSO Hackathon JAPAC, qualified for World Finals.
 
   - company: Standard Chartered Bank
     role: Principal Engineer - Data & Analytics Transformation

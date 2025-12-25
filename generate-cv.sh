@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Generate all CV versions from cv_data.yml and cv_data_concise.yml
-# Outputs: PDF and DOCX in both full and concise versions
+# Generate CV versions from cv_data.yml and cv_data_onepage.yml
+# Outputs: Full CV (PDF/DOCX) and 1-page CV (PDF only)
 #
 # Usage: ./generate-cv.sh or npm run generate-cv
 
@@ -51,35 +51,30 @@ echo "3. Generating DOCX..."
 node _scripts/generate-cv-docx.mjs
 
 # ==========================================
-# CONCISE VERSION
+# 1-PAGE VERSION (2-column poster style)
 # ==========================================
 echo ""
-echo "=== Concise Version ==="
+echo "=== 1-Page Version (2-column) ==="
 echo ""
 
-# Step 1: Generate LaTeX from YAML (concise)
+# Step 1: Generate LaTeX
 echo "1. Generating LaTeX..."
-node _scripts/generate-cv-latex.mjs --concise
+node _scripts/generate-cv-onepage.mjs
 
-# Step 2: Compile to PDF (concise)
+# Step 2: Compile to PDF
 echo ""
 echo "2. Compiling PDFs..."
 cd "$BUILD_DIR"
-pdflatex -interaction=nonstopmode cv-concise.tex > /dev/null 2>&1
-mv cv-concise.pdf "../../$OUTPUT_DIR/cv-concise.pdf"
-rm -f cv-concise.aux cv-concise.log cv-concise.out
-echo "   ✓ $OUTPUT_DIR/cv-concise.pdf"
+pdflatex -interaction=nonstopmode cv-onepage.tex > /dev/null 2>&1
+mv cv-onepage.pdf "../../$OUTPUT_DIR/cv-onepage.pdf"
+rm -f cv-onepage.aux cv-onepage.log cv-onepage.out
+echo "   ✓ $OUTPUT_DIR/cv-onepage.pdf"
 
-pdflatex -interaction=nonstopmode cv-concise-phone.tex > /dev/null 2>&1
-mv cv-concise-phone.pdf "../../$OUTPUT_DIR/cv-concise-phone.pdf"
-rm -f cv-concise-phone.aux cv-concise-phone.log cv-concise-phone.out
-echo "   ✓ $OUTPUT_DIR/cv-concise-phone.pdf"
+pdflatex -interaction=nonstopmode cv-onepage-phone.tex > /dev/null 2>&1
+mv cv-onepage-phone.pdf "../../$OUTPUT_DIR/cv-onepage-phone.pdf"
+rm -f cv-onepage-phone.aux cv-onepage-phone.log cv-onepage-phone.out
+echo "   ✓ $OUTPUT_DIR/cv-onepage-phone.pdf"
 cd - > /dev/null
-
-# Step 3: Generate DOCX (concise)
-echo ""
-echo "3. Generating DOCX..."
-node _scripts/generate-cv-docx.mjs --concise
 
 # ==========================================
 # SUMMARY

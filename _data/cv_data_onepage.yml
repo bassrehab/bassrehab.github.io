@@ -1,6 +1,6 @@
-# CV Data (Concise Version) - Single Source of Truth
-# Condensed version for 1-2 page CV
-# Used to generate: Concise Web CV, Concise PDF CV, Concise DOCX
+# CV Data (1-Page Version) - Single Source of Truth
+# Curated content optimized for 1-page 2-column CV
+# Used to generate: cv-onepage.pdf
 
 basics:
   name: Subhadip Mitra
@@ -24,7 +24,7 @@ experience:
       Built Google Cloud's Data Analytics practice across Southeast Asia. Dual role as Site Lead overseeing regional delivery and technical innovation lead on <a href="https://cloud.google.com/consulting/innovation-and-transformation">delta</a> team.
     highlights:
       - Built D&A practice from 0 to 1 across 6 countries; direct $XXM+ portfolio with 97% CSAT
-      - Site Lead overseeing delivery governance across all 7 PSO practices in Southeast Asia
+      - Site Lead overseeing delivery governance across 7 PSO practices (Data Analytics, AI/ML, Infrastructure, Security, Enterprise Architecture, AppDev, Delivery Management)
       - Pioneered agentic AI adoption across 7 practices and 6 JAPAC sub-regions with SDKs, agent catalog, and governance frameworks
       - Spearheaded rescue operations for at-risk enterprise accounts, recovering strategic customers
       - Partner with Sales leadership on strategic pursuits; collaborate with Product Engineering on platform roadmap
@@ -94,6 +94,26 @@ research:
     period: 2025
     description: |
       Agentic AI for enterprise trust decisions. APLS pattern learning + cascade routing. 86% cost reduction, sub-50ms latency. JAPAC Hackathon Winner.
+
+  - title: Spark LLM Eval - Distributed Evaluation Framework
+    period: 2025
+    url: https://github.com/bassrehab/spark-llm-eval
+    description: |
+      Enterprise-scale LLM evaluation on Apache Spark. Statistical rigor with bootstrap intervals, multi-provider support (OpenAI, Anthropic, Gemini), Delta Lake integration.
+    links:
+      - type: github
+        label: GitHub
+        url: https://github.com/bassrehab/spark-llm-eval
+
+  - title: Steering Vectors for Agent Behavior
+    period: 2025
+    url: https://github.com/bassrehab/steering-vectors-agents
+    description: |
+      Runtime control of LLM agent behaviors through activation steering. 65% uncertainty detection while maintaining 100% confidence on factual queries.
+    links:
+      - type: github
+        label: GitHub
+        url: https://github.com/bassrehab/steering-vectors-agents
 
 education:
   - degree: MBA, Business Analytics

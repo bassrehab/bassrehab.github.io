@@ -140,22 +140,34 @@ function generateLatex(cv, includePhone = false) {
   lines.push(`\\usepackage{enumitem}`);
   lines.push(`\\usepackage{hyperref}`);
   lines.push(`\\usepackage{parskip}`);
+  lines.push(`\\usepackage{xcolor}`);
+  lines.push(`\\usepackage{fancyhdr}`);
+  lines.push(`\\usepackage{lastpage}`);
+  lines.push(``);
+  lines.push(`% Colors`);
+  lines.push(`\\definecolor{headercolor}{RGB}{37, 99, 235}`);
+  lines.push(`\\definecolor{linkcolor}{RGB}{37, 99, 235}`);
   lines.push(``);
   lines.push(`% Formatting`);
-  lines.push(`\\pagestyle{empty}`);
   lines.push(`\\setlist{nosep, leftmargin=*}`);
   lines.push(`\\hypersetup{`);
   lines.push(`    colorlinks=true,`);
-  lines.push(`    linkcolor=blue,`);
-  lines.push(`    urlcolor=blue,`);
+  lines.push(`    linkcolor=linkcolor,`);
+  lines.push(`    urlcolor=linkcolor,`);
   lines.push(`}`);
   lines.push(``);
-  lines.push(`% Section formatting`);
+  lines.push(`% Section formatting with color`);
   lines.push(
-    `\\titleformat{\\section}{\\Large\\bfseries}{}{0em}{}[\\titlerule]`
+    `\\titleformat{\\section}{\\Large\\bfseries\\color{headercolor}}{}{0em}{}[\\titlerule]`
   );
   lines.push(`\\titleformat{\\subsection}[runin]{\\bfseries}{}{0em}{}[:]`);
-  lines.push(`\\titlespacing{\\section}{0pt}{12pt}{6pt}`);
+  lines.push(`\\titlespacing{\\section}{0pt}{14pt}{8pt}`);
+  lines.push(``);
+  lines.push(`% Footer with website and page numbers`);
+  lines.push(`\\pagestyle{fancy}`);
+  lines.push(`\\fancyhf{}`);
+  lines.push(`\\renewcommand{\\headrulewidth}{0pt}`);
+  lines.push(`\\fancyfoot[C]{\\small\\color{gray} \\href{https://subhadipmitra.com}{subhadipmitra.com} \\quad | \\quad Page \\thepage\\ of \\pageref{LastPage}}`);
   lines.push(``);
   lines.push(`\\begin{document}`);
   lines.push(``);
