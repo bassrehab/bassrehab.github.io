@@ -30,15 +30,17 @@ echo ""
 echo "1. Generating LaTeX..."
 node _scripts/generate-cv-latex.mjs
 
-# Step 2: Compile to PDF
+# Step 2: Compile to PDF (run twice to resolve page references)
 echo ""
 echo "2. Compiling PDFs..."
 cd "$BUILD_DIR"
+pdflatex -interaction=nonstopmode cv-clean.tex > /dev/null 2>&1
 pdflatex -interaction=nonstopmode cv-clean.tex > /dev/null 2>&1
 mv cv-clean.pdf "../../$OUTPUT_DIR/cv.pdf"
 rm -f cv-clean.aux cv-clean.log cv-clean.out
 echo "   ✓ $OUTPUT_DIR/cv.pdf"
 
+pdflatex -interaction=nonstopmode cv-clean-phone.tex > /dev/null 2>&1
 pdflatex -interaction=nonstopmode cv-clean-phone.tex > /dev/null 2>&1
 mv cv-clean-phone.pdf "../../$OUTPUT_DIR/cv-phone.pdf"
 rm -f cv-clean-phone.aux cv-clean-phone.log cv-clean-phone.out
