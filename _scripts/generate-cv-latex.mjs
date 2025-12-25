@@ -14,6 +14,7 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const ROOT_DIR = path.resolve(__dirname, "..");
+const BUILD_DIR = path.join(ROOT_DIR, "_build", "cv");
 
 // Phone number for private version (not stored in YAML for privacy)
 const PHONE_NUMBER = "+65 82501776";
@@ -67,6 +68,36 @@ function formatUrl(url, label = null) {
 }
 
 /**
+ * Process text for LaTeX: converts HTML links and escapes special characters
+ * Handles HTML anchor tags by converting to LaTeX href, then escapes the rest
+ */
+function processTextForLatex(text) {
+  if (!text) return "";
+
+  // Regex to match HTML anchor tags
+  const linkRegex = /<a\s+href=["']([^"']+)["'][^>]*>([^<]+)<\/a>/gi;
+
+  let result = "";
+  let lastIndex = 0;
+  let match;
+
+  while ((match = linkRegex.exec(text)) !== null) {
+    // Escape text before this link
+    result += escapeLatex(text.slice(lastIndex, match.index));
+    // Convert the link to LaTeX href
+    const url = match[1];
+    const label = match[2];
+    result += `\\href{${url}}{${escapeLatex(label)}}`;
+    lastIndex = match.index + match[0].length;
+  }
+
+  // Escape remaining text after last link
+  result += escapeLatex(text.slice(lastIndex));
+
+  return result;
+}
+
+/**
  * Format date from YYYY-MM or YYYY to Month YYYY
  */
 function formatDate(dateStr) {
@@ -109,22 +140,34 @@ function generateLatex(cv, includePhone = false) {
   lines.push(`\\usepackage{enumitem}`);
   lines.push(`\\usepackage{hyperref}`);
   lines.push(`\\usepackage{parskip}`);
+  lines.push(`\\usepackage{xcolor}`);
+  lines.push(`\\usepackage{fancyhdr}`);
+  lines.push(`\\usepackage{lastpage}`);
+  lines.push(``);
+  lines.push(`% Colors`);
+  lines.push(`\\definecolor{headercolor}{RGB}{37, 99, 235}`);
+  lines.push(`\\definecolor{linkcolor}{RGB}{37, 99, 235}`);
   lines.push(``);
   lines.push(`% Formatting`);
-  lines.push(`\\pagestyle{empty}`);
   lines.push(`\\setlist{nosep, leftmargin=*}`);
   lines.push(`\\hypersetup{`);
   lines.push(`    colorlinks=true,`);
-  lines.push(`    linkcolor=blue,`);
-  lines.push(`    urlcolor=blue,`);
+  lines.push(`    linkcolor=linkcolor,`);
+  lines.push(`    urlcolor=linkcolor,`);
   lines.push(`}`);
   lines.push(``);
-  lines.push(`% Section formatting`);
+  lines.push(`% Section formatting with color`);
   lines.push(
-    `\\titleformat{\\section}{\\Large\\bfseries}{}{0em}{}[\\titlerule]`
+    `\\titleformat{\\section}{\\Large\\bfseries\\color{headercolor}}{}{0em}{}[\\titlerule]`
   );
   lines.push(`\\titleformat{\\subsection}[runin]{\\bfseries}{}{0em}{}[:]`);
-  lines.push(`\\titlespacing{\\section}{0pt}{12pt}{6pt}`);
+  lines.push(`\\titlespacing{\\section}{0pt}{14pt}{8pt}`);
+  lines.push(``);
+  lines.push(`% Footer with website and page numbers`);
+  lines.push(`\\pagestyle{fancy}`);
+  lines.push(`\\fancyhf{}`);
+  lines.push(`\\renewcommand{\\headrulewidth}{0pt}`);
+  lines.push(`\\fancyfoot[C]{\\small\\color{gray} \\href{https://subhadipmitra.com}{subhadipmitra.com} \\quad | \\quad Page \\thepage\\ of \\pageref{LastPage}}`);
   lines.push(``);
   lines.push(`\\begin{document}`);
   lines.push(``);
@@ -174,9 +217,9 @@ function generateLatex(cv, includePhone = false) {
     );
     lines.push(``);
 
-    // Job description
+    // Job description (may contain HTML links)
     const desc = job.description.replace(/\n/g, " ").trim();
-    lines.push(escapeLatex(desc));
+    lines.push(processTextForLatex(desc));
     lines.push(``);
 
     // Handle sections (for Google role) or simple highlights
@@ -253,8 +296,10 @@ function generateLatex(cv, includePhone = false) {
   lines.push(`\\section{Education}`);
   lines.push(``);
 
-  for (const edu of cv.education) {
-    lines.push(`\\textbf{${escapeLatex(edu.degree)}} \\hfill ${escapeLatex(edu.institution)}`);
+  for (let i = 0; i < cv.education.length; i++) {
+    const edu = cv.education[i];
+    const lineBreak = i < cv.education.length - 1 ? " \\\\" : "";
+    lines.push(`\\textbf{${escapeLatex(edu.degree)}} \\hfill ${escapeLatex(edu.institution)}${lineBreak}`);
   }
   lines.push(``);
 
@@ -291,6 +336,11 @@ async function main() {
 
   console.log(`Generating ${variant} LaTeX CV from ${yamlFile}...\n`);
 
+  // Ensure build directory exists
+  if (!fs.existsSync(BUILD_DIR)) {
+    fs.mkdirSync(BUILD_DIR, { recursive: true });
+  }
+
   // Read YAML file
   const yamlPath = path.join(ROOT_DIR, "_data", yamlFile);
   const yamlContent = fs.readFileSync(yamlPath, "utf8");
@@ -299,14 +349,14 @@ async function main() {
   // Generate public version (no phone)
   const publicLatex = generateLatex(cv, false);
   const publicFilename = isConcise ? "cv-concise.tex" : "cv-clean.tex";
-  const publicPath = path.join(ROOT_DIR, publicFilename);
+  const publicPath = path.join(BUILD_DIR, publicFilename);
   fs.writeFileSync(publicPath, publicLatex);
   console.log(`✓ Generated ${publicPath}`);
 
   // Generate private version (with phone)
   const privateLatex = generateLatex(cv, true);
   const privateFilename = isConcise ? "cv-concise-phone.tex" : "cv-clean-phone.tex";
-  const privatePath = path.join(ROOT_DIR, privateFilename);
+  const privatePath = path.join(BUILD_DIR, privateFilename);
   fs.writeFileSync(privatePath, privateLatex);
   console.log(`✓ Generated ${privatePath}`);
 

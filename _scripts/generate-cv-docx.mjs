@@ -420,7 +420,7 @@ async function main() {
   const cv = yaml.load(yamlContent);
 
   // Ensure output directory exists
-  const outputDir = path.join(ROOT_DIR, "assets", "pdf");
+  const outputDir = path.join(ROOT_DIR, "assets", "cv");
   if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir, { recursive: true });
   }
