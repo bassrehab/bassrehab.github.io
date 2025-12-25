@@ -15,4 +15,6 @@ vendor
 # Claude Code documentation and drafts
 CLAUDE.md
 dev/
-CREDIBILITY_TODO.md
+
+# Build artifacts
+_build/

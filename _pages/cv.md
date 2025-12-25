@@ -5,6 +5,7 @@ title: cv
 description:
 nav: true
 nav_order: 5
+math: false
 ---
 
 <style>
@@ -224,7 +225,7 @@ article.research-project-card {
     <div class="cv-hero-content">
       <h1>Curriculum Vitae</h1>
       <p class="subtitle">{{ cv.basics.title }}</p>
-      <a href="/assets/pdf/cv.pdf" class="cv-download" download>
+      <a href="/assets/cv/cv.pdf" class="cv-download" download>
         <i class="fas fa-download"></i>
         Download PDF
       </a>

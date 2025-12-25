@@ -21,30 +21,38 @@ basics:
 
 experience:
   - company: Google Cloud - Professional Services Organization
-    role: Data & Analytics Manager | Site Lead, PSO Southeast Asia
+    role: Head of Data & Analytics, Southeast Asia | Site Lead, PSO Southeast Asia
     url: https://cloud.google.com
     start_date: 2021-01
     end_date: present
     current: true
     description: |
-      Dual-track role combining technical innovation leadership with regional delivery management. Built Google Cloud's Data Analytics practice across Southeast Asia while serving as Site Lead overseeing cross-practice operations. Member of delta - Google Cloud's innovation and transformation team architecting enterprise AI solutions at scale.
+      Dual-track role combining technical innovation leadership with regional delivery management. Built Google Cloud's Data Analytics practice across Southeast Asia while serving as Site Lead overseeing cross-practice operations. Member of <a href="https://cloud.google.com/consulting/innovation-and-transformation">delta</a> - Google Cloud's innovation and transformation team architecting enterprise AI solutions at scale.
     sections:
       - title: Strategic Leadership & Delivery
         highlights:
           - title: Practice Leadership
-            description: Built Data Analytics practice for Southeast Asia from 0 to 1, establishing the region's premier capability serving 7 countries with strategic enterprise clients.
+            description: Built Data Analytics practice for Southeast Asia from 0 to 1, recruiting and developing engineering talent while establishing the region's premier capability serving strategic enterprise clients across 6 countries.
           - title: Regional Operations
-            description: Serve as Site Lead overseeing PSO Southeast Asia delivery operations, directing cross-functional teams while maintaining 97% CSAT and contributing to 100% annual revenue target attainment.
+            description: Serve as Site Lead overseeing delivery governance across all 7 PSO practices in Southeast Asia, owning utilization and CSAT metrics (97%) while driving strategic pursuits and contributing to 100% annual revenue target attainment.
           - title: Portfolio Management
             description: Direct $XXM+ Data Analytics delivery portfolio across JAPAC while simultaneously overseeing $XXM+ cross-practice portfolio as regional Site Lead.
           - title: Strategic Interventions
-            description: Led critical engagements for JAPAC strategic accounts including major financial services institutions and consumer electronics manufacturers, ensuring delivery excellence and client success.
+            description: Led critical engagements for JAPAC strategic accounts including major financial services institutions, telcos and consumer electronics manufacturers, ensuring delivery excellence and client success.
+          - title: Sales & Product Alignment
+            description: Partner with Sales leadership on strategic pursuits and collaborate with Product Engineering to shape platform roadmap based on field insights and customer requirements.
+          - title: Escalation Management
+            description: Spearheaded cross-practice rescue operations for at-risk enterprise accounts with multi-million dollar project values, recovering strategic customers and converting potential platform exits into long-term partnerships.
           - title: Enterprise Delivery
-            description: Executed high-impact projects including 12K+ user analytics migrations, first Data & AI Centers of Excellence, Data Monetization Platforms, and petabyte-scale data platform modernizations.
+            description: Delivered first-of-kind solutions including GenAI-powered reconciliation framework for a major airline (now replicated across JAPAC), large-scale ML platform migrations (30K+ notebooks), and petabyte-scale data platform modernizations.
           - title: Executive Advisory
             description: Partner with C-level stakeholders (CTOs, CDOs) to define data modernization and AI transformation roadmaps, translating technical capabilities into business outcomes.
           - title: Agentic AI Transformation
-            description: Pioneered organization-wide adoption of agentic AI across PSO JAPAC for both customer solutions and internal productivity, including autonomous data engineering agents.
+            description: Pioneered agentic AI adoption across 7 PSO practices and 6 JAPAC sub-regions, building SDKs, agent catalog, and standardized templates while designing reusable governance frameworks that accelerated innovation and reduced delivery costs.
+          - title: Delivery Accelerators
+            description: Built agentic tool suites including architecture discovery (100M+ node graph modeling), automated data pipeline generation, and platform cleanup agents that recovered multi-million dollar at-risk engagements and secured significant long-term cloud commitments.
+          - title: Data Strategy Practice
+            description: Built Data Strategy competency from 0, delivering 8-figure pursuit value across 14 strategic pitches in Asia Pacific while establishing critical data assets and new GTM offerings.
       - title: Technical Innovation & Research (Official IP)
         highlights:
           - title: LLM Inference Efficiency
@@ -93,6 +101,45 @@ experience:
       Progressively advanced through roles in software development, systems integration, and technical consulting within financial services and algorithmic trading domains.
 
 research:
+  - title: Spark LLM Eval - Distributed Evaluation Framework
+    period: 2025
+    url: https://github.com/bassrehab/spark-llm-eval
+    description: |
+      Distributed LLM evaluation framework built on Apache Spark for enterprise-scale model assessment. Addresses the gap in evaluating LLMs at scale with statistical rigor, integrating seamlessly with Databricks infrastructure.
+    highlights:
+      - title: Distributed Processing
+        description: Pandas UDFs with Arrow for efficient batching, scales linearly across Spark executors for millions of examples.
+      - title: Statistical Rigor
+        description: Bootstrap confidence intervals, paired significance tests (t-tests, McNemar's, Wilcoxon signed-rank), and effect size calculations.
+      - title: Multi-Provider Support
+        description: Works with OpenAI, Anthropic Claude, Google Gemini, and vLLM with smart rate limiting (token bucket algorithms).
+      - title: Enterprise Integration
+        description: MLflow experiment tracking, Delta Lake versioning, and comprehensive metrics (lexical, semantic, LLM-as-judge).
+    links:
+      - type: github
+        label: GitHub Repository
+        url: https://github.com/bassrehab/spark-llm-eval
+      - type: blog
+        label: Blog Post
+        url: /blog/2025/building-spark-llm-eval
+
+  - title: CatchMe - Intelligent Trust Engine
+    period: 2025
+    status: Google Technical Disclosures - Pending (APLS & Cascade Routing)
+    description: |
+      First of a kind, industry agnostic hybrid agentic AI decisioning system across Finance, Healthcare, Insurance, Cybersecurity, and Supply Chain. Uses adversarial debate protocols (prosecutor/defense/judge) to qualify events/anomalies and build audit trails for regulated environments.
+    highlights:
+      - title: APLS (Automated Pattern Learning System)
+        description: Self-learning system that observes expensive AI decisions and automatically synthesizes cheaper deterministic rules over time. Achieves 76% cost reduction after 6 months of pattern learning.
+      - title: Five-Level Cascade Routing
+        description: Intelligent transaction routing based on cost-benefit analysis. Automatically escalates high-value/high-risk decisions to AI reasoning while routing routine cases through deterministic rules (e.g., $50K wire with 75% confidence -> AI escalation with ROI 1,250,000x). Sub-50ms latency for most transactions.
+      - title: Multi-Agent Consensus
+        description: Adversarial debate system where agents act as prosecutor, defense, and judge to ensure decision quality and create compliance audit trails for regulated industries.
+      - title: Production Impact
+        description: 86% cost reduction vs AI-only approaches ($20.7K vs $150K for 10M monthly transactions), serving Finance (fraud detection), Healthcare (claims processing), Insurance (policy validation), Cybersecurity (anomaly detection), and Supply Chain (verification).
+      - title: Recognition
+        description: Winner - Google Cloud PSO Hackathon JAPAC Regionals. Built on Vertex AI, Gemini 2.x, BigQuery ML, Cloud Run.
+
   - title: LLM Inference Efficiency Research
     period: 2025 - Present
     status: Google Technical Disclosure - Pending
@@ -141,26 +188,6 @@ research:
         label: Blog
         url: /blog/2025/detecting-ai-sandbagging/
 
-  - title: UPIR - Distributed Systems Synthesis
-    period: 2025
-    url: https://www.tdcommons.org/dpubs_series/8852/
-    description: |
-      Neuro-symbolic framework combining formal verification, program synthesis, and reinforcement learning to automatically generate verified distributed system implementations from specifications.
-    highlights:
-      - title: Compositional Verification
-        description: SMT-based verification engine with proof caching achieving 274x speedup for 64-component systems.
-      - title: CEGIS Synthesis
-        description: Counterexample-guided inductive synthesis with constrained PPO optimization preserving formal guarantees.
-      - title: Performance
-        description: 60.1% latency reduction, 194.5% throughput increase, 89.9% pattern reuse potential in benchmark tests.
-    links:
-      - type: paper
-        label: Technical Disclosure
-        url: https://www.tdcommons.org/dpubs_series/8852/
-      - type: github
-        label: GitHub Repository
-        url: https://github.com/bassrehab/upir
-
   - title: Steering Vectors for Agent Behavior Control
     period: 2025
     url: https://github.com/bassrehab/steering-vectors-agents
@@ -182,46 +209,6 @@ research:
       - type: blog
         label: Blog Post
         url: /blog/2025/steering-vectors-agents/
-
-  - title: Spark LLM Eval - Distributed Evaluation Framework
-    period: 2025
-    url: https://github.com/bassrehab/spark-llm-eval
-    description: |
-      Distributed LLM evaluation framework built on Apache Spark for enterprise-scale model assessment. Addresses the gap in evaluating LLMs at scale with statistical rigor, integrating seamlessly with Databricks infrastructure.
-    highlights:
-      - title: Distributed Processing
-        description: Pandas UDFs with Arrow for efficient batching, scales linearly across Spark executors for millions of examples.
-      - title: Statistical Rigor
-        description: Bootstrap confidence intervals, paired significance tests (t-tests, McNemar's, Wilcoxon signed-rank), and effect size calculations.
-      - title: Multi-Provider Support
-        description: Works with OpenAI, Anthropic Claude, Google Gemini, and vLLM with smart rate limiting (token bucket algorithms).
-      - title: Enterprise Integration
-        description: MLflow experiment tracking, Delta Lake versioning, and comprehensive metrics (lexical, semantic, LLM-as-judge).
-    links:
-      - type: github
-        label: GitHub Repository
-        url: https://github.com/bassrehab/spark-llm-eval
-      - type: blog
-        label: Blog Post
-        url: /blog/2025/building-spark-llm-eval/
-
-  - title: CatchMe - Intelligent Trust Engine
-    period: 2025
-    status: Google Technical Disclosures - Pending (APLS & Cascade Routing)
-    description: |
-      Industry-agnostic agentic AI system for enterprise-scale trust decisions across Finance, Healthcare, Insurance, Cybersecurity, and Supply Chain. Uses adversarial debate protocols (prosecutor/defense/judge) to filter hallucinations and build audit trails for regulated environments.
-    highlights:
-      - title: APLS (Automated Pattern Learning System)
-        description: Self-learning system that observes expensive AI decisions and automatically synthesizes cheaper deterministic rules over time. Achieves 76% cost reduction after 6 months of pattern learning.
-      - title: Five-Level Cascade Routing
-        description: Intelligent transaction routing based on cost-benefit analysis. Automatically escalates high-value/high-risk decisions to AI reasoning while routing routine cases through deterministic rules (e.g., $50K wire with 75% confidence -> AI escalation with ROI 1,250,000x). Sub-50ms latency for most transactions.
-      - title: Multi-Agent Consensus
-        description: Adversarial debate system where agents act as prosecutor, defense, and judge to ensure decision quality and create compliance audit trails for regulated industries.
-      - title: Production Impact
-        description: 86% cost reduction vs AI-only approaches ($20.7K vs $150K for 10M monthly transactions), serving Finance (fraud detection), Healthcare (claims processing), Insurance (policy validation), Cybersecurity (anomaly detection), and Supply Chain (verification).
-      - title: Recognition
-        description: Winner - Google Cloud PSO Hackathon JAPAC Regionals, Qualified for World Finals. Built on Vertex AI, Gemini 2.x, BigQuery ML, Cloud Run.
-
 education:
   - degree: MBA, Business Analytics
     institution: Birla Institute of Technology and Science, Pilani
@@ -294,78 +281,13 @@ publications:
     description: |
       A blockchain-based protocol for transparent personal data processing, enhancing user control and compliance with data privacy regulations.
 
-  - title: "Open Location Proof (OLP) Protocol"
-    date: 2021-01
-    venue: ResearchGate
-    url: https://www.researchgate.net/profile/Subhadip-Mitra-3/publication/387802463
-    description: |
-      A privacy-aware open protocol to prove without repudiation an entity's point-in-time presence, participation and location in physical or virtual space.
-
-  - title: "Cascading Algorithm: Bayesian Price Convergence for Arbitrage-Free Option Pricing"
-    date: 2016-01
-    venue: Zenodo
-    url: https://zenodo.org/records/18018278
-    description: |
-      A novel algorithm leveraging Bayesian inference to facilitate arbitrage-free pricing of financial options with superior convergence and accuracy.
-
-  - title: "CTDBN-Based Financial Markets Analysis and Differential Predictions"
-    date: 2015-01
-    venue: Zenodo
-    url: https://zenodo.org/records/18017466
-    description: |
-      Coupled Temporal Deep Belief Networks with Conditional RBMs to encode intra-market movements and temporal coupling with global indices and FX trades.
-
-  - title: "Dynamic Compression: Multicuts for Planar Graphs with Outer Terminals"
-    date: 2014-01
-    venue: Zenodo
-    url: https://zenodo.org/records/18017304
-    description: |
-      On-the-fly creation and calculation of max-flow min-cut gap and approximation of multicuts with deep emulations of fault-free mesh systems.
-
-  - title: "XPath Ranking and Graph Compression"
-    date: 2012-01
-    venue: Zenodo
-    url: https://zenodo.org/records/18017005
-    description: |
-      Algorithms for automatic wrapper creation for HTML/XML extractions and compressing adjacency list representation of web graphs and social networks.
-
-  - title: "Real Time Multiple Target Tracking Using Arrayed Sensors"
-    date: 2009-01
-    venue: Amity University
-    url: https://zenodo.org/records/18016470
-    description: |
-      A discrete time-step optimization algorithm for sensor-target systems with OpenCV implementation outperforming notable approaches.
-
-  - title: "Swarm Intelligence: Micro-mechanical Flying Insect for Low Cost Outdoor Surveillance"
-    date: 2008-01
-    venue: DRDO, Ministry of Defense, India
-    url: https://www.drdo.gov.in/drdo/
-    description: |
-      Micromechanical flying insect based on swarm intelligence with piezo electric actuators. Selected from 271 proposals in DRDO Golden Jubilee Competition.
-
-  - title: "Low Energy Wireless Electricity Transmission Using Resonant Magnetic Coupling"
-    date: 2007-11
-    venue: SC07, International Conference for High Performance Computing
-    url: https://zenodo.org/records/18018081
-    description: |
-      Novel framework for transmitting electrical power wirelessly with minimal energy loss using electromagnetic and resonance technologies.
-
-  - title: "The Laws of Symmetry: Conservation, Projection, and Origin of Symmetry in Physical Systems"
-    date: 2006-01
-    venue: Kshitij 2006, IIT Kharagpur
-    url: https://symmetry.subhadipmitra.com/
-    description: |
-      Axiomatic framework establishing symmetry as a fundamental conserved quantity, reinterpreting symmetry breaking as dimensional projection.
-
 skills:
   - category: Technology Leadership & Strategy
     icon: fas fa-brain
     items:
       - Enterprise Architecture
-      - Technical Vision & Roadmaps
       - Digital Transformation
       - AI & Data Strategy
-      - Cloud Architecture
       - C-Suite Advisory
       - Innovation Leadership
       - Strategic Planning
@@ -373,14 +295,12 @@ skills:
   - category: Data Engineering & Architecture
     icon: fas fa-database
     items:
-      - Petabyte-Scale Data Platforms
       - Data Pipelines
       - Real-Time Processing
       - Data Mesh & Fabric
+      - Data Governance
       - Apache Spark
-      - Apache Hadoop
-      - Apache HBase
-      - Apache Flink
+      - Delta Lake
       - Apache Kafka
       - Apache Iceberg
 
@@ -407,7 +327,7 @@ skills:
       - Google Cloud Platform
       - BigQuery
       - Vertex AI
-      - Dataflow
+      - Dataproc
       - Cloud Composer
       - GKE
       - Terraform
@@ -481,26 +401,3 @@ projects:
       - Advanced performance testing with configurable load profiles
       - Modular architecture supporting multiple protocols
 
-affiliations:
-  - IEEE
-  - ACM
-  - Singapore Computer Society
-  - Royal Institute of Navigation
-  - IIT Madras
-
-# Certifications (for resume.json compatibility)
-certifications:
-  - name: Google Cloud Certified Professional Cloud Architect
-    date: 2024-01
-    issuer: Google Cloud
-    url: https://www.credly.com/badges/d6baf5ca-ab06-41fa-aca5-723316294ef7
-
-  - name: Google Cloud Certified Professional Cloud Data Engineer
-    date: 2022-01
-    issuer: Google Cloud
-    url: https://www.credential.net/ae4b2086-f607-4057-98f4-ad2e7c0106e6
-
-  - name: Google Cloud Certified Professional Machine Learning Engineer
-    date: 2024-01
-    issuer: Google Cloud
-    url: https://www.credly.com/badges/3f6df2e7-7394-43ae-8c02-ddfe3b300850/public_url

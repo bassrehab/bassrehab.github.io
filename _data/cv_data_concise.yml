@@ -15,19 +15,20 @@ basics:
 
 experience:
   - company: Google Cloud - Professional Services Organization
-    role: Data & Analytics Manager | Site Lead, PSO Southeast Asia
+    role: Head of Data & Analytics, Southeast Asia | Site Lead, PSO Southeast Asia
     url: https://cloud.google.com
     start_date: 2021-01
     end_date: present
     current: true
     description: |
-      Built Google Cloud's Data Analytics practice across Southeast Asia. Dual role as Site Lead overseeing regional delivery and technical innovation lead on delta team.
+      Built Google Cloud's Data Analytics practice across Southeast Asia. Dual role as Site Lead overseeing regional delivery and technical innovation lead on <a href="https://cloud.google.com/consulting/innovation-and-transformation">delta</a> team.
     highlights:
-      - Built D&A practice from 0 to 1 serving 7 countries; direct $XXM+ portfolio with 97% CSAT
-      - Led strategic interventions for JAPAC accounts including major FSI and electronics manufacturers
-      - Delivered 12K+ user migrations, Data & AI CoEs, and petabyte-scale platform modernizations
+      - Built D&A practice from 0 to 1 across 6 countries; direct $XXM+ portfolio with 97% CSAT
+      - Site Lead overseeing delivery governance across all 7 PSO practices in Southeast Asia
+      - Pioneered agentic AI adoption across 7 practices and 6 JAPAC sub-regions with SDKs, agent catalog, and governance frameworks
+      - Spearheaded rescue operations for at-risk enterprise accounts, recovering strategic customers
+      - Partner with Sales leadership on strategic pursuits; collaborate with Product Engineering on platform roadmap
       - Published 5 technical disclosures (UPIR, FTCS, ARTEMIS, ETLC, CatchMe) on AI/distributed systems
-      - Won Google Cloud PSO Hackathon JAPAC for CatchMe intelligent trust engine
 
   - company: Standard Chartered Bank
     role: Principal Engineer - Data & Analytics Transformation
@@ -62,7 +63,6 @@ experience:
 research:
   - title: LLM Inference Efficiency
     period: 2025
-    status: Google Technical Disclosure - Pending
     description: |
       Speculative decoding, custom Triton kernels, KV-cache compression. 8.1x speedup, 88% peak bandwidth on A100.
     links:
@@ -92,7 +92,6 @@ research:
 
   - title: CatchMe - Intelligent Trust Engine
     period: 2025
-    status: Google Technical Disclosures - Pending
     description: |
       Agentic AI for enterprise trust decisions. APLS pattern learning + cascade routing. 86% cost reduction, sub-50ms latency. JAPAC Hackathon Winner.
 
@@ -151,6 +150,7 @@ skills:
     items:
       - Petabyte-Scale Platforms
       - Apache Spark/Kafka/Flink
+      - Delta Lake
       - LLMs & Multi-Agent Systems
       - RAG & Vector Databases
       - PyTorch
@@ -165,20 +165,3 @@ skills:
       - Kubernetes
       - Distributed Systems
 
-affiliations:
-  - IEEE
-  - ACM
-  - Singapore Computer Society
-
-certifications:
-  - name: GCP Professional Cloud Architect
-    date: 2024-01
-    issuer: Google Cloud
-
-  - name: GCP Professional Data Engineer
-    date: 2022-01
-    issuer: Google Cloud
-
-  - name: GCP Professional ML Engineer
-    date: 2024-01
-    issuer: Google Cloud

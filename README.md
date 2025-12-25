@@ -28,24 +28,62 @@ All build scripts are available via npm. Run with `npm run <script>`.
 
 | Script          | Description                                                             |
 | --------------- | ----------------------------------------------------------------------- |
-| `generate-cv`   | Compiles LaTeX CV templates to PDF (public and private versions)        |
+| `generate-cv`   | Generates CV in PDF and DOCX formats from YAML data                     |
 | `generate-og`   | Generates Open Graph social preview images for all blog posts           |
 | `generate-webp` | Builds site and copies generated WebP images to source for git tracking |
 
 ### CV Generation
 
-Generates PDF CVs from LaTeX templates:
+The CV uses a unified YAML-based system. All CV content is maintained in YAML files, which serve as the single source of truth for:
+
+- The HTML CV page (`/cv/`)
+- PDF exports (via LaTeX)
+- DOCX exports
+
+**Source files:**
+
+- `_data/cv_data.yml` - Full CV content
+- `_data/cv_data_concise.yml` - Condensed version for targeted applications
+
+**Generate all formats:**
 
 ```bash
 npm run generate-cv
 ```
 
-**Output:**
+**Individual scripts** (for granular control):
 
-- `assets/pdf/cv.pdf` - Public version (no phone number)
-- `assets/pdf/cv-phone.pdf` - Private version (with phone number)
+| Script                    | Description                              |
+| ------------------------- | ---------------------------------------- |
+| `npm run generate-cv`     | Full pipeline: LaTeX + PDF + DOCX        |
+| `npm run generate-cv:latex` | Generate full LaTeX files only         |
+| `npm run generate-cv:latex-concise` | Generate concise LaTeX files only |
+| `npm run generate-cv:docx` | Generate full DOCX only                 |
+| `npm run generate-cv:docx-concise` | Generate concise DOCX only       |
 
-**Requirements:** `pdflatex` must be installed.
+**Output files:**
+
+| File                          | Description                            |
+| ----------------------------- | -------------------------------------- |
+| `assets/cv/cv.pdf`            | Full CV (public, no phone)             |
+| `assets/cv/cv-phone.pdf`      | Full CV (private, with phone)          |
+| `assets/cv/cv-concise.pdf`    | Concise CV (public, no phone)          |
+| `assets/cv/cv-concise-phone.pdf` | Concise CV (private, with phone)    |
+| `assets/cv/cv.docx`           | Full CV in Word format                 |
+| `assets/cv/cv-phone.docx`     | Full CV in Word format (with phone)    |
+| `assets/cv/cv-concise.docx`   | Concise CV in Word format              |
+| `assets/cv/cv-concise-phone.docx` | Concise CV in Word format (with phone) |
+
+**Build process:**
+
+```
+cv_data.yml → generate-cv-latex.mjs → _build/cv/*.tex → pdflatex → assets/cv/*.pdf
+            → generate-cv-docx.mjs  →                              → assets/cv/*.docx
+```
+
+Intermediate LaTeX files are generated in `_build/cv/` (gitignored).
+
+**Requirements:** `pdflatex` must be installed for PDF generation.
 
 ### OG Image Generation
 
@@ -97,21 +135,27 @@ The deployment workflow:
 ```
 .
 ├── _bibliography/        # BibTeX publications (papers.bib)
-├── _data/                # Structured data (cv.yml, repositories.yml)
+├── _build/               # Generated build artifacts (gitignored)
+│   └── cv/               # Intermediate LaTeX files
+├── _data/                # Structured data
+│   ├── cv_data.yml       # Full CV content (source of truth)
+│   ├── cv_data_concise.yml # Concise CV content
+│   └── repositories.yml  # GitHub repositories config
 ├── _includes/            # Liquid template partials
 ├── _layouts/             # Page templates
 ├── _pages/               # Static pages (about, cv, publications, etc.)
 ├── _plugins/             # Custom Jekyll plugins
 ├── _posts/               # Blog posts (YYYY-MM-DD-title.md)
 ├── _sass/                # SCSS stylesheets
-├── _scripts/             # Build scripts (OG image generator)
+├── _scripts/             # Build scripts (CV generators, OG images)
 ├── assets/
 │   ├── css/              # Compiled CSS
+│   ├── cv/               # Generated CV files (PDF and DOCX)
 │   ├── img/              # Images (including generated WebP)
 │   ├── js/               # JavaScript files
-│   └── pdf/              # Generated PDFs (CV)
+│   └── pdf/              # Other PDFs (papers, etc.)
 ├── _config.yml           # Main Jekyll configuration
-├── generate-cv.sh        # CV generation script
+├── generate-cv.sh        # CV generation pipeline script
 ├── generate-webp.sh      # WebP persistence script
 └── package.json          # npm scripts and dependencies
 ```
