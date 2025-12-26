@@ -401,7 +401,9 @@
   border: 1px solid var(--global-divider-color);
   border-radius: 12px;
   padding: 1.5rem;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .research-project-card:hover {
@@ -514,7 +516,7 @@ html.dark-mode .skill-tag:hover,
   background: var(--global-theme-color);
   color: white;
   border: none;
-  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-left: 1px solid #dadada;
   border-radius: 0 8px 8px 0;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -612,7 +614,6 @@ html.dark-mode .skill-tag:hover,
 .cv-last-updated i {
   font-size: 0.7rem;
 }
-
 
 /* ============================================
    Privacy Notice - Less Intrusive Style
@@ -756,7 +757,9 @@ html.dark-mode .skill-tag:hover,
   border: 1px solid var(--global-divider-color);
   border-radius: 12px;
   padding: 1.5rem;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .project-card:hover {
