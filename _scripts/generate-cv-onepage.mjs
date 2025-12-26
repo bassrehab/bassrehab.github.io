@@ -142,7 +142,7 @@ function generateOnePage(cv, includePhone = false) {
 
   for (const job of cv.experience.slice(0, 4)) {
     // Top 4 jobs
-    lines.push(`\\textbf{${escapeLatex(job.role.split("|")[0].trim())}}\\\\`);
+    lines.push(`\\textbf{${escapeLatex(job.role)}}\\\\`);
     lines.push(`{\\small\\textit{${escapeLatex(job.company)}} \\hfill ${job.start_date.split("-")[0]}--${job.end_date === "present" ? "Present" : job.end_date.split("-")[0]}}`);
 
     if (job.highlights && job.highlights.length > 0) {

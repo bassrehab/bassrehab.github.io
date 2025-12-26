@@ -58,7 +58,7 @@ experience:
           - title: Published Research
             description: 5 Google Technical Disclosures on AI and distributed systems - UPIR (automated system synthesis, 274x speedup), FTCS (context architecture for AI agents), ARTEMIS (multi-agent debate framework), ETLC (data processing for GenAI), and LLM inference optimization (speculative decoding, custom Triton kernels).
           - title: CatchMe - Intelligent Trust Engine
-            description: Industry-agnostic agentic AI for enterprise trust decisions. APLS self-learning + cascade routing achieving 86% cost reduction, sub-50ms latency. Won Google Cloud PSO Hackathon JAPAC, qualified for World Finals.
+            description: Industry-agnostic agentic AI for enterprise trust decisions. APLS self-learning + cascade routing achieving 86% cost reduction, sub-50ms latency.
 
   - company: Standard Chartered Bank
     role: Principal Engineer - Data & Analytics Transformation
