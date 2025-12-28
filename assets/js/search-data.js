@@ -500,17 +500,6 @@ ninja.data = [{
             window.location.href = "/blog/2022/network-synchronization-challenges-in-cellular-networks-positioning/";
           
         },
-      },{id: "post-reimagining-system-design-balancing-time-tested-principles-with-modern-innovations",
-        
-          title: "Reimagining System Design: Balancing Time-Tested Principles with Modern Innovations",
-        
-        description: "Amazon&#39;s early system design principles, emphasizing decentralization, asynchrony, autonomy, and simplicity, offer timeless wisdom for building scalable and resilient tech systems today.",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2021/distributed-system-design/";
-          
-        },
       },{id: "post-designing-a-real-time-data-processing-system",
         
           title: "Designing a Real Time Data Processing System",
