@@ -65,12 +65,12 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/reading-list/";
               },
-            },{id: "dropdown-archive",
-              title: "archive",
+            },{id: "dropdown-docs-artemis",
+              title: "docs: ARTEMIS",
               description: "",
               section: "Dropdown",
               handler: () => {
-                window.location.href = "/archive/";
+                window.location.href = "https://artemis.subhadipmitra.com";
               },
             },{id: "dropdown-docs-upir",
               title: "docs: UPIR",
