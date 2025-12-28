@@ -463,7 +463,7 @@ header.post-header {
     <!-- Stats -->
     <div class="projects-stats">
       <div class="project-stat">
-        <div class="project-stat-value">9</div>
+        <div class="project-stat-value">10</div>
         <div class="project-stat-label">Active Projects</div>
       </div>
       <div class="project-stat">
@@ -471,7 +471,7 @@ header.post-header {
         <div class="project-stat-label">Technical Disclosures</div>
       </div>
       <div class="project-stat">
-        <div class="project-stat-value">3</div>
+        <div class="project-stat-value">4</div>
         <div class="project-stat-label">PyPI Package</div>
       </div>
     </div>
@@ -605,6 +605,62 @@ header.post-header {
           <div class="metric">
             <div class="metric-value">95%</div>
             <div class="metric-label">Coverage</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ARTEMIS Agents -->
+      <article class="project-card" data-category="ai">
+        <span class="project-status">Active</span>
+        <h3 class="project-title">
+          <a href="https://artemis.subhadipmitra.com" target="_blank">
+            ARTEMIS: Multi-Agent Debate Framework
+          </a>
+        </h3>
+        <p class="project-description">
+          Production-ready multi-agent debate framework implementing Adaptive Reasoning Through Evaluation of Multi-agent Intelligent Systems. Orchestrates structured debates between AI agents with hierarchical argument generation and adaptive evaluation for complex decision-making.
+        </p>
+
+        <ul class="project-highlights">
+          <li>H-L-DAG: Hierarchical argument synthesis at strategic, tactical, and operational levels</li>
+          <li>L-AE-CR: Adaptive evaluation with causal reasoning and dynamic scoring</li>
+          <li>Built-in safety: sandbagging detection, deception monitoring, behavioral drift tracking</li>
+          <li>Integrates with LangChain, LangGraph, CrewAI, and MCP server mode</li>
+        </ul>
+
+        <div class="tech-stack">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">LangChain</span>
+          <span class="tech-tag">LangGraph</span>
+          <span class="tech-tag">CrewAI</span>
+          <span class="tech-tag">MCP</span>
+          <span class="tech-tag">AI Safety</span>
+        </div>
+
+        <div class="project-links">
+          <a href="https://artemis.subhadipmitra.com" class="project-link primary" target="_blank">
+            <i class="fas fa-book"></i> Documentation
+          </a>
+          <a href="https://pypi.org/project/artemis-agents/" class="project-link" target="_blank">
+            <i class="fas fa-cube"></i> PyPI
+          </a>
+          <a href="https://github.com/bassrehab/artemis-agents" class="project-link" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+        </div>
+
+        <div class="impact-metrics">
+          <div class="metric">
+            <div class="metric-value">2025</div>
+            <div class="metric-label">Released</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">PyPI</div>
+            <div class="metric-label">Published</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">Apache 2.0</div>
+            <div class="metric-label">License</div>
           </div>
         </div>
       </article>

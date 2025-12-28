@@ -6,6 +6,7 @@ github_repos:
   - bassrehab/triton-kernels
   - bassrehab/spark-llm-eval
   - bassrehab/steering-vectors-agents
+  - bassrehab/artemis-agents
   - bassrehab/upir
   - bassrehab/ai-metacognition-toolkit
   - bassrehab/llmconsent-standards

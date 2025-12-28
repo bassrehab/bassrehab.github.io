@@ -10,9 +10,9 @@ children:
   - title: divider
   - title: reading list
     permalink: /reading-list/
-  - title: archive
-    permalink: /archive/
   - title: divider
+  - title: "docs: ARTEMIS"
+    permalink: https://artemis.subhadipmitra.com
   - title: "docs: UPIR"
     permalink: https://upir.subhadipmitra.com
   - title: "docs: AI Metacognition"
