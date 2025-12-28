@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Principles Got It Backwards: Designing for Safe Change, Not Just Failure"
-date: 2025-12-29 03:36:25
+date: 2021-03-18 03:36:25
 description: "The foundational distributed systems principles optimized for surviving hardware failure and scaling horizontally. But the data tells a different story: 80% of outages stem from changes we make to running systems. The hard problem has shifted from 'can it survive failure' to 'can it survive us.'"
 tags: system-design distributed-systems NALSD platform-engineering SRE
 categories: system-design platform architecture
