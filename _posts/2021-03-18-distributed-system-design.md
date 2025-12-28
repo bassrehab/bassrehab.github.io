@@ -24,7 +24,7 @@ The 2024 data is worse. [Parametrix reports](https://www.parametrixinsurance.com
 
 And then there's the anecdotal evidence that dominates the headlines:
 
-- **[CrowdStrike (July 2024)](https://zenduty.com/blog/it-outages/)**: A single configuration file update crashed 8.5 million Windows systems. Estimated global losses exceeded $10 billion. Delta alone lost $500 million.
+- **[CrowdStrike (July 2024)](https://zenduty.com/blog/it-outages/)**: A single configuration file update crashed 8.5 million Windows systems. Estimated global losses exceeded USD 10 billion. Delta alone lost USD 500 million.
 - **[AT&T (February 2024)](https://zenduty.com/blog/it-outages/)**: A network configuration error during expansion blocked 92 million calls, including 25,000 emergency 911 calls.
 - **[Snowflake (December 2024)](https://www.infoworld.com/article/4109586/snowflake-software-update-caused-13-hour-outage-across-10-regions.html)**: A backwards-incompatible software update caused a 13-hour outage across 10 regions.
 
@@ -34,7 +34,7 @@ These weren't design failures. The systems were architecturally sound. They fail
 
 ## The Mismatch Between Principles and Reality
 
-The distributed systems principles we inherited—from Amazon's Dynamo paper, Google's SRE practice, the CAP theorem discourse—were formulated to solve a specific problem: **how do you build reliable systems at scale when hardware fails unpredictably?**
+The distributed systems principles we inherited - from Amazon's Dynamo paper, Google's SRE practice, the CAP theorem discourse - were formulated to solve a specific problem: **how do you build reliable systems at scale when hardware fails unpredictably?**
 
 The answers were elegant:
 
@@ -71,7 +71,7 @@ Google's DORA research has tracked software delivery performance for over a deca
 - Have **8x lower** change failure rates
 - Recover from failed deployments **2,293x faster**
 
-Read that again. The teams that change the most break the least. This isn't a paradox—it's a design insight.
+Read that again. The teams that change the most break the least. This isn't a paradox - it's a design insight.
 
 **High deployment frequency forces you to build systems that are safe to change.** When you deploy once a quarter, you can tolerate a manual, high-ceremony process. When you deploy multiple times per day, every deployment must be safe by default. You're forced to invest in:
 
@@ -92,7 +92,7 @@ I've been thinking about this for the past year, and I want to propose a framewo
 
 ### Principle 1: Blast Radius as a First-Class Constraint
 
-Every change has a blast radius—the scope of impact if that change goes wrong. Traditional architecture focuses on fault isolation for _failures_. Change-safe architecture focuses on blast isolation for _deployments_.
+Every change has a blast radius - the scope of impact if that change goes wrong. Traditional architecture focuses on fault isolation for _failures_. Change-safe architecture focuses on blast isolation for _deployments_.
 
 The questions to ask during design:
 
@@ -107,7 +107,7 @@ Concrete patterns:
 - **Feature flags with kill switches**: Every new behavior can be disabled without a deployment
 - **Configuration as code with review**: Config changes go through the same rigor as code changes
 
-This isn't about preventing bad changes—that's impossible. It's about ensuring bad changes don't become catastrophic changes.
+This isn't about preventing bad changes - that's impossible. It's about ensuring bad changes don't become catastrophic changes.
 
 ### Principle 2: Verified Invariants Over Tested Behavior
 
@@ -121,7 +121,7 @@ Consider this example from the paper: AWS modeled a key commit protocol for Auro
 
 The principle: for core algorithms that cannot be exhaustively tested, formal specification creates a verified foundation that makes changes safe.
 
-This doesn't apply to everything—formal verification is expensive. But for:
+This doesn't apply to everything - formal verification is expensive. But for:
 
 - Consensus and coordination protocols
 - Replication and consistency algorithms
@@ -144,7 +144,7 @@ This sounds obvious. In practice, it's rare.
 
 Configuration changes often happen through paths that bypass logging. Automated systems make decisions that aren't recorded. Rollback procedures exist in runbooks but haven't been tested.
 
-The [2025 Uptime Institute data](https://www.mcmorrowreports.com/uptimes-7th-annual-data-center-outage-analysis-shows-improvement-but-new-risks/) shows that **85% of human error-related outages stem from staff failing to follow procedures or from flawed procedures themselves.** This suggests our rollback procedures are largely theater—they exist, but they don't work under pressure.
+The [2025 Uptime Institute data](https://www.mcmorrowreports.com/uptimes-7th-annual-data-center-outage-analysis-shows-improvement-but-new-risks/) shows that **85% of human error-related outages stem from staff failing to follow procedures or from flawed procedures themselves.** This suggests our rollback procedures are largely theater - they exist, but they don't work under pressure.
 
 Concrete requirements:
 
@@ -180,11 +180,11 @@ The [2024 DORA report](https://dora.dev/research/) found an interesting anomaly:
 
 One hypothesis: change failure rate depends heavily on _detection capability_. Teams with better observability detect more failures. Teams with poor observability have low change failure rates not because they fail less, but because they don't notice the failures.
 
-This implies: improving observability will likely _increase_ your reported change failure rate before it decreases it. That's healthy—you're seeing reality more clearly.
+This implies: improving observability will likely _increase_ your reported change failure rate before it decreases it. That's healthy - you're seeing reality more clearly.
 
 ### Principle 6: Optimize for Time to Safe Change, Not Just Time to Recovery
 
-Mean Time to Recovery (MTTR) measures how fast you recover from failures. It's a lagging indicator—by the time you're measuring it, damage has already occurred.
+Mean Time to Recovery (MTTR) measures how fast you recover from failures. It's a lagging indicator - by the time you're measuring it, damage has already occurred.
 
 A leading indicator: **Time to Safe Change**. How quickly can you make a change to your system with confidence that it won't cause an outage?
 
@@ -225,6 +225,8 @@ Different change types need different delivery paths:
 | ML models       | Hours-Days | Minutes                   | Validation suite + shadow traffic |
 | Core algorithms | Weeks      | N/A (formal verification) | Formal specification              |
 
+<br />
+
 A single deployment pipeline doesn't fit all of these. Design for multiple paths optimized for different risk/velocity tradeoffs.
 
 ### Chaos Engineering for Changes, Not Just Failures
@@ -255,7 +257,7 @@ This is rarely documented. It's usually tribal knowledge held by the team that b
 
 The shift from "design for failure" to "design for safe change" has an organizational consequence: **the deployment path is now critical infrastructure**.
 
-In the traditional model, deployment was a necessary evil—the process of getting code from development to production. The real engineering happened in building the system.
+In the traditional model, deployment was a necessary evil - the process of getting code from development to production. The real engineering happened in building the system.
 
 In the safe-change model, the deployment infrastructure is where the hard problems live:
 
@@ -298,10 +300,10 @@ But the outages that have woken me up at 3am weren't partition scenarios. They w
 
 The most valuable systems work I've done hasn't been clever algorithm design. It's been building boring infrastructure: deployment pipelines, configuration management, progressive rollout, automated rollback. The infrastructure that makes change safe.
 
-The hard problem in distributed systems today isn't handling machine failure—we've largely solved that. The hard problem is handling human action. And our principles haven't caught up.
+The hard problem in distributed systems today isn't handling machine failure - we've largely solved that. The hard problem is handling human action. And our principles haven't caught up.
 
 ---
 
 _This post draws on data from [Uptime Institute's Annual Outage Analysis](https://intelligence.uptimeinstitute.com/resource/annual-outage-analysis-2024) (2023-2025), [Google's DORA research program](https://dora.dev/research/) (2024 State of DevOps Report), [AWS's published work on formal methods](https://queue.acm.org/detail.cfm?id=3712057) (2015, 2024), and [Parametrix's Cloud Outage Risk Report](https://www.parametrixinsurance.com/in-the-news/2024-cloud-outage-risk-report) (2024). I've tried to cite only statistics I can source; please reach out if you find errors._
 
-_If you're working on similar problems—deployment infrastructure, progressive delivery, change management—I'd welcome the conversation. [LinkedIn](https://linkedin.com/in/subhadip-mitra) / [Calendly](https://calendly.com/contact-x9nm/30min)._
+_If you're working on similar problems - deployment infrastructure, progressive delivery, change management - I'd welcome the conversation. [LinkedIn](https://linkedin.com/in/subhadip-mitra) / [Calendly](https://calendly.com/contact-x9nm/30min)._
