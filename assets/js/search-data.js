@@ -500,6 +500,17 @@ ninja.data = [{
             window.location.href = "/blog/2022/network-synchronization-challenges-in-cellular-networks-positioning/";
           
         },
+      },{id: "post-the-principles-got-it-backwards-designing-for-safe-change-not-just-failure",
+        
+          title: "The Principles Got It Backwards: Designing for Safe Change, Not Just Failure",
+        
+        description: "The foundational distributed systems principles optimized for surviving hardware failure and scaling horizontally. But the data tells a different story: 80% of outages stem from changes we make to running systems. The hard problem has shifted from &#39;can it survive failure&#39; to &#39;can it survive us.&#39;",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2021/distributed-system-design/";
+          
+        },
       },{id: "post-designing-a-real-time-data-processing-system",
         
           title: "Designing a Real Time Data Processing System",
