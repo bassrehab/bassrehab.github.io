@@ -280,6 +280,17 @@ ninja.data = [{
             window.location.href = "/blog/2025/telecom-autonomous-multi-agent-genai-system/";
           
         },
+      },{id: "post-why-i-built-a-modern-java-smpp-library-in-2025",
+        
+          title: "Why I Built a Modern Java SMPP Library in 2025",
+        
+        description: "The story behind smpp-core - a clean-room Java 21 implementation of the SMPP protocol. Why I replaced Cloudhopper, what went into it, and actual benchmark numbers.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/why-i-built-modern-java-smpp-library/";
+          
+        },
       },{id: "post-engineering-multi-agent-systems-a-retail-banking-case-study",
         
           title: "Engineering Multi-Agent Systems - A Retail Banking Case Study",
