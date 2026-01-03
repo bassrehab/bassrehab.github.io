@@ -283,6 +283,12 @@ social: false
                     </div>
                 </div>
             </article>
+
+            <div class="timeline-more">
+                <a href="/projects/" class="timeline-more-link">
+                    View All Projects <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -480,6 +486,45 @@ social: false
         height: 2.5rem;
         font-size: 0.65rem;
     }
+
+    .timeline-more {
+        padding-left: 4.5rem;
+    }
+}
+
+/* Timeline "more" link */
+.timeline-more {
+    text-align: center;
+    margin-top: 2rem;
+    position: relative;
+}
+
+.timeline-more-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--global-bg-color);
+    border: 2px solid var(--global-theme-color);
+    border-radius: 50px;
+    color: var(--global-theme-color);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.timeline-more-link:hover {
+    background: var(--global-theme-color);
+    color: white;
+}
+
+.timeline-more-link i {
+    transition: transform 0.3s ease;
+}
+
+.timeline-more-link:hover i {
+    transform: translateX(4px);
 }
 </style>
 
