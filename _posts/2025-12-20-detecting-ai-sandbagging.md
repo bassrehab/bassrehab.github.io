@@ -10,6 +10,7 @@ giscus_comments: true
 featured: true
 related_posts: true
 pretty_table: true
+citation: true
 toc:
   sidebar: left
 ---
