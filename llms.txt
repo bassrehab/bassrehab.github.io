@@ -6,7 +6,7 @@ name: Subhadip Mitra - Technology Leader & Researcher
 url: https://subhadipmitra.com
 description: Personal website and technical blog of Subhadip Mitra, covering AI innovations, machine learning, data engineering, cloud computing, and distributed systems.
 language: en
-last_updated: 2025-12-19
+last_updated: 2026-01-03
 
 ## Author
 name: Subhadip Mitra
@@ -120,6 +120,12 @@ description: Professional background and experience
   url: https://github.com/bassrehab/steering-vectors-agents
   description: Runtime control of LLM agent behaviors through activation steering
 
+- name: ARTEMIS Agents
+  url: https://github.com/bassrehab/artemis-agents
+  pypi: https://pypi.org/project/artemis-agents/
+  docs: https://artemis.subhadipmitra.com
+  description: Multi-agent debate framework with hierarchical argument generation, jury-based evaluation, and safety monitoring. 86% decision accuracy.
+
 ### Distributed Systems
 - name: UPIR
   url: https://github.com/bassrehab/upir
@@ -134,14 +140,24 @@ description: Professional background and experience
   url: https://github.com/bassrehab/oconsent
   description: Blockchain-based consent management with Ethereum smart contracts
 
-### Financial & Enterprise
+### Protocols & Telecom
+- name: SMPP Core
+  url: https://github.com/bassrehab/smpp-core
+  maven: https://central.sonatype.com/artifact/io.smppgateway/smpp-core
+  website: https://smppgateway.io
+  docs: https://docs.smppgateway.io
+  description: Modern Java 21 SMPP protocol implementation - replacement for Cloudhopper. 1.8M PDU decodes/sec, virtual threads, Netty transport.
+
+- name: SMPP Gateway (Kafka Producer)
+  url: https://github.com/bassrehab/smpp-kafka-producer
+  description: Production-ready SMPP-to-Kafka bridge with HTTP/2 REST API. 5G compatible (3GPP TS 29.540), cloud-native deployment.
+
 - name: ISO8583 Simulator
   url: https://github.com/bassrehab/ISO8583-Simulator
-  description: Financial messaging protocol simulator for payment testing
+  docs: https://iso8583.subhadipmitra.com
+  description: High-performance financial message processing (180k+ TPS). Python SDK with AI-powered message explanation. Supports VISA, Mastercard, AMEX, Discover, JCB, UnionPay.
 
-- name: SMPP Kafka Producer
-  url: https://github.com/bassrehab/smpp-kafka-producer
-  description: SMS infrastructure integration with Kafka event streaming
+### Enterprise
 
 - name: Blockchain Loyalty Fabric
   url: https://github.com/bassrehab/blockchain-loyalty-fabric
