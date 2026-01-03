@@ -86,6 +86,20 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "https://ai-metacognition-toolkit.subhadipmitra.com/";
               },
+            },{id: "dropdown-docs-smpp-core",
+              title: "docs: SMPP Core",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "https://docs.smppgateway.io";
+              },
+            },{id: "dropdown-docs-iso8583",
+              title: "docs: ISO8583",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "https://iso8583.subhadipmitra.com";
+              },
             },{id: "dropdown-symmetry",
               title: "symmetry",
               description: "",
@@ -93,7 +107,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "https://symmetry.subhadipmitra.com/";
               },
-            },{id: "post-i-trained-probes-to-catch-ai-models-sandbagging",
+            },{id: "post-the-manifold-dial-visualizing-why-deepseek-39-s-mhc-stabilizes-deep-networks",
+        
+          title: "The Manifold Dial: Visualizing Why DeepSeek&#39;s mHC Stabilizes Deep Networks",
+        
+        description: "Interactive exploration of Manifold-Constrained Hyper-Connections - how DeepSeek fixed the signal explosion problem in deep residual networks using 1967 mathematics",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/deepseek-mhc-manifold-constrained-hyper-connections/";
+          
+        },
+      },{id: "post-i-trained-probes-to-catch-ai-models-sandbagging",
         
           title: "I Trained Probes to Catch AI Models Sandbagging",
         
