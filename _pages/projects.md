@@ -471,8 +471,8 @@ header.post-header {
         <div class="project-stat-label">Technical Disclosures</div>
       </div>
       <div class="project-stat">
-        <div class="project-stat-value">4</div>
-        <div class="project-stat-label">PyPI Package</div>
+        <div class="project-stat-value">5</div>
+        <div class="project-stat-label">PyPI Packages</div>
       </div>
     </div>
   </div>
@@ -846,6 +846,9 @@ header.post-header {
           <a href="https://github.com/bassrehab/spark-llm-eval" class="project-link primary" target="_blank">
             <i class="fab fa-github"></i> GitHub
           </a>
+          <a href="https://pypi.org/project/spark-llm-eval/" class="project-link" target="_blank">
+            <i class="fas fa-cube"></i> PyPI
+          </a>
           <a href="https://subhadipmitra.com/blog/2025/building-spark-llm-eval/" class="project-link" target="_blank">
             <i class="fas fa-pen"></i> Blog Post
           </a>
@@ -1139,6 +1142,9 @@ header.post-header {
         <div class="project-links">
           <a href="https://iso8583.subhadipmitra.com" class="project-link primary" target="_blank">
             <i class="fas fa-book"></i> Documentation
+          </a>
+          <a href="https://pypi.org/project/iso8583sim/" class="project-link" target="_blank">
+            <i class="fas fa-cube"></i> PyPI
           </a>
           <a href="https://github.com/bassrehab/ISO8583-Simulator" class="project-link" target="_blank">
             <i class="fab fa-github"></i> GitHub

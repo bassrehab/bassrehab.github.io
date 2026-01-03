@@ -114,6 +114,7 @@ description: Professional background and experience
 
 - name: Spark LLM Eval
   url: https://github.com/bassrehab/spark-llm-eval
+  pypi: https://pypi.org/project/spark-llm-eval/
   description: Distributed LLM evaluation framework on Apache Spark
 
 - name: Steering Vectors for Agents
@@ -154,6 +155,7 @@ description: Professional background and experience
 
 - name: ISO8583 Simulator
   url: https://github.com/bassrehab/ISO8583-Simulator
+  pypi: https://pypi.org/project/iso8583sim/
   docs: https://iso8583.subhadipmitra.com
   description: High-performance financial message processing (180k+ TPS). Python SDK with AI-powered message explanation. Supports VISA, Mastercard, AMEX, Discover, JCB, UnionPay.
 
