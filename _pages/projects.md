@@ -1034,6 +1034,9 @@ header.post-header {
           <a href="https://smppgateway.io" class="project-link primary" target="_blank">
             <i class="fas fa-globe"></i> Website
           </a>
+          <a href="https://central.sonatype.com/artifact/io.smppgateway/smpp-core" class="project-link" target="_blank">
+            <i class="fas fa-cube"></i> Maven
+          </a>
           <a href="https://docs.smppgateway.io" class="project-link" target="_blank">
             <i class="fas fa-book"></i> Documentation
           </a>

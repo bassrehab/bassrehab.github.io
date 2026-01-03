@@ -143,6 +143,7 @@ description: Professional background and experience
 ### Protocols & Telecom
 - name: SMPP Core
   url: https://github.com/bassrehab/smpp-core
+  maven: https://central.sonatype.com/artifact/io.smppgateway/smpp-core
   website: https://smppgateway.io
   docs: https://docs.smppgateway.io
   description: Modern Java 21 SMPP protocol implementation - replacement for Cloudhopper. 1.8M PDU decodes/sec, virtual threads, Netty transport.
