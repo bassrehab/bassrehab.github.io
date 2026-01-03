@@ -463,7 +463,7 @@ header.post-header {
     <!-- Stats -->
     <div class="projects-stats">
       <div class="project-stat">
-        <div class="project-stat-value">10</div>
+        <div class="project-stat-value">13</div>
         <div class="project-stat-label">Active Projects</div>
       </div>
       <div class="project-stat">
@@ -618,14 +618,14 @@ header.post-header {
           </a>
         </h3>
         <p class="project-description">
-          Production-ready multi-agent debate framework implementing Adaptive Reasoning Through Evaluation of Multi-agent Intelligent Systems. Orchestrates structured debates between AI agents with hierarchical argument generation and adaptive evaluation for complex decision-making.
+          Production-ready multi-agent debate framework implementing Adaptive Reasoning Through Evaluation of Multi-agent Intelligent Systems. Orchestrates structured debates between AI agents with hierarchical argument generation, jury-based evaluation, and integrated safety monitoring.
         </p>
 
         <ul class="project-highlights">
           <li>H-L-DAG: Hierarchical argument synthesis at strategic, tactical, and operational levels</li>
-          <li>L-AE-CR: Adaptive evaluation with causal reasoning and dynamic scoring</li>
+          <li>L-AE-CR: Adaptive evaluation with causal reasoning and jury scoring mechanism</li>
           <li>Built-in safety: sandbagging detection, deception monitoring, behavioral drift tracking</li>
-          <li>Integrates with LangChain, LangGraph, CrewAI, and MCP server mode</li>
+          <li>Native support for reasoning models (o1, R1, Gemini 2.5) and multimodal evidence</li>
         </ul>
 
         <div class="tech-stack">
@@ -651,12 +651,12 @@ header.post-header {
 
         <div class="impact-metrics">
           <div class="metric">
-            <div class="metric-value">2025</div>
-            <div class="metric-label">Released</div>
+            <div class="metric-value">86%</div>
+            <div class="metric-label">Decision Accuracy</div>
           </div>
           <div class="metric">
-            <div class="metric-value">PyPI</div>
-            <div class="metric-label">Published</div>
+            <div class="metric-value">102s</div>
+            <div class="metric-label">Avg Debate Time</div>
           </div>
           <div class="metric">
             <div class="metric-value">Apache 2.0</div>
@@ -1001,6 +1001,159 @@ header.post-header {
           <div class="metric">
             <div class="metric-value">Protocol</div>
             <div class="metric-label">Specification</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- SMPP Core -->
+      <article class="project-card" data-category="protocols distributed-systems">
+        <span class="project-status">Active</span>
+        <h3 class="project-title">
+          <a href="https://smppgateway.io" target="_blank">SMPP Core</a>
+        </h3>
+        <p class="project-description">
+          Modern Java 21 implementation of the SMPP protocol - the actively maintained replacement for Cloudhopper. Built on Netty with virtual threads for high-performance SMS messaging at scale.
+        </p>
+
+        <ul class="project-highlights">
+          <li>Java 21 virtual threads, records, and sealed interfaces for clean APIs</li>
+          <li>1.8M PDU decodes/sec, 1.5M encodes/sec, 25K network round-trips/sec</li>
+          <li>Complete SMPP 3.3, 3.4, and 5.0 protocol support</li>
+          <li>Modular architecture: core, netty transport, server, client, metrics</li>
+        </ul>
+
+        <div class="tech-stack">
+          <span class="tech-tag">Java 21</span>
+          <span class="tech-tag">Netty</span>
+          <span class="tech-tag">Virtual Threads</span>
+          <span class="tech-tag">Micrometer</span>
+          <span class="tech-tag">SMPP Protocol</span>
+        </div>
+
+        <div class="project-links">
+          <a href="https://smppgateway.io" class="project-link primary" target="_blank">
+            <i class="fas fa-globe"></i> Website
+          </a>
+          <a href="https://docs.smppgateway.io" class="project-link" target="_blank">
+            <i class="fas fa-book"></i> Documentation
+          </a>
+          <a href="https://github.com/bassrehab/smpp-core" class="project-link" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a href="/blog/2025/why-i-built-modern-java-smpp-library/" class="project-link" target="_blank">
+            <i class="fas fa-pen"></i> Blog
+          </a>
+        </div>
+
+        <div class="impact-metrics">
+          <div class="metric">
+            <div class="metric-value">2025</div>
+            <div class="metric-label">Released</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">1.8M/s</div>
+            <div class="metric-label">PDU Decoding</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">Apache 2.0</div>
+            <div class="metric-label">License</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- SMPP Kafka Producer -->
+      <article class="project-card" data-category="protocols distributed-systems">
+        <span class="project-status">Active</span>
+        <h3 class="project-title">
+          <a href="https://github.com/bassrehab/smpp-kafka-producer" target="_blank">SMPP Gateway</a>
+        </h3>
+        <p class="project-description">
+          Production-ready bridge between SMPP protocol and Apache Kafka - receives SMS messages via SMPP and publishes to Kafka topics. Features HTTP/2 REST API aligned with 3GPP TS 29.540 SMSF standards for 5G compatibility.
+        </p>
+
+        <ul class="project-highlights">
+          <li>Dual protocol support: SMPP 3.x/5.x and HTTP/2 REST API</li>
+          <li>Java 21 virtual threads for high-throughput async processing</li>
+          <li>Prometheus metrics and health check endpoints</li>
+          <li>Cloud-native: Docker, Kubernetes manifests, and Helm charts</li>
+        </ul>
+
+        <div class="tech-stack">
+          <span class="tech-tag">Java 21</span>
+          <span class="tech-tag">Apache Kafka</span>
+          <span class="tech-tag">SMPP</span>
+          <span class="tech-tag">HTTP/2</span>
+          <span class="tech-tag">Kubernetes</span>
+        </div>
+
+        <div class="project-links">
+          <a href="https://github.com/bassrehab/smpp-kafka-producer" class="project-link primary" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+        </div>
+
+        <div class="impact-metrics">
+          <div class="metric">
+            <div class="metric-value">2024</div>
+            <div class="metric-label">Released</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">5G Ready</div>
+            <div class="metric-label">3GPP Aligned</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">Apache 2.0</div>
+            <div class="metric-label">License</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ISO8583 Simulator -->
+      <article class="project-card" data-category="protocols distributed-systems">
+        <span class="project-status">Active</span>
+        <h3 class="project-title">
+          <a href="https://iso8583.subhadipmitra.com" target="_blank">ISO8583 Simulator</a>
+        </h3>
+        <p class="project-description">
+          High-performance financial message processing tool for ISO 8583 payment protocol. Features CLI, Python SDK, and AI-powered message explanation. Supports VISA, Mastercard, AMEX, Discover, JCB, and UnionPay networks.
+        </p>
+
+        <ul class="project-highlights">
+          <li>180k+ TPS message parsing with Cython optimization</li>
+          <li>LLM integration: explain messages in plain English, generate from natural language</li>
+          <li>Multi-provider AI: OpenAI, Anthropic, Google, local Ollama</li>
+          <li>Native EMV/chip card data support (Field 55)</li>
+        </ul>
+
+        <div class="tech-stack">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Cython</span>
+          <span class="tech-tag">ISO 8583</span>
+          <span class="tech-tag">LLM Integration</span>
+          <span class="tech-tag">Financial Protocols</span>
+        </div>
+
+        <div class="project-links">
+          <a href="https://iso8583.subhadipmitra.com" class="project-link primary" target="_blank">
+            <i class="fas fa-book"></i> Documentation
+          </a>
+          <a href="https://github.com/bassrehab/ISO8583-Simulator" class="project-link" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+        </div>
+
+        <div class="impact-metrics">
+          <div class="metric">
+            <div class="metric-value">180k+</div>
+            <div class="metric-label">TPS Parsing</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">6</div>
+            <div class="metric-label">Card Networks</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">MIT</div>
+            <div class="metric-label">License</div>
           </div>
         </div>
       </article>

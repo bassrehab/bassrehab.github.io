@@ -13,4 +13,5 @@ github_repos:
   - bassrehab/oconsent
   - bassrehab/ISO8583-Simulator
   - bassrehab/smpp-kafka-producer
+  - bassrehab/smpp-core
   - bassrehab/blockchain-loyalty-fabric

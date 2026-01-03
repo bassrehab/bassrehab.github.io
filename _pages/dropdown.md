@@ -17,6 +17,10 @@ children:
     permalink: https://upir.subhadipmitra.com
   - title: "docs: AI Metacognition"
     permalink: https://ai-metacognition-toolkit.subhadipmitra.com/
+  - title: "docs: SMPP Core"
+    permalink: https://docs.smppgateway.io
+  - title: "docs: ISO8583"
+    permalink: https://iso8583.subhadipmitra.com
   - title: "symmetry"
     permalink: https://symmetry.subhadipmitra.com/
 ---
