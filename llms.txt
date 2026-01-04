@@ -142,14 +142,14 @@ description: Professional background and experience
   description: Blockchain-based consent management with Ethereum smart contracts
 
 ### Protocols & Telecom
-- name: SMPP Core
+- name: SMPP Gateway
   url: https://github.com/bassrehab/smpp-core
   maven: https://central.sonatype.com/artifact/io.smppgateway/smpp-core
   website: https://smppgateway.io
   docs: https://docs.smppgateway.io
   description: Modern Java 21 SMPP protocol implementation - replacement for Cloudhopper. 1.8M PDU decodes/sec, virtual threads, Netty transport.
 
-- name: SMPP Gateway (Kafka Producer)
+- name: SMPP Kafka Producer
   url: https://github.com/bassrehab/smpp-kafka-producer
   description: Production-ready SMPP-to-Kafka bridge with HTTP/2 REST API. 5G compatible (3GPP TS 29.540), cloud-native deployment.
 

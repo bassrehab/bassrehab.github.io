@@ -135,9 +135,9 @@ social: false
             </a>
         </div>
         <div class="stat-block">
-            <a href="https://pypi.org/user/bassrehab/" target="_blank" style="text-decoration: none; color: inherit;">
-                <div class="stat-value">3</div>
-                <div class="stat-label">PyPI Packages</div>
+            <a href="/projects/#published-packages" style="text-decoration: none; color: inherit;">
+                <div class="stat-value">6</div>
+                <div class="stat-label">Published Packages</div>
             </a>
         </div>
     </div>

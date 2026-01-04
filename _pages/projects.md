@@ -73,13 +73,53 @@ header.post-header {
 }
 
 /* Category Filter */
+.filter-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 4rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--global-divider-color, #e5e5e5);
+  flex-wrap: wrap;
+}
+
 .category-filter {
   display: flex;
   gap: 0.625rem;
   flex-wrap: wrap;
-  margin-bottom: 4rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid var(--global-divider-color, #e5e5e5);
+}
+
+.view-toggle {
+  display: flex;
+  gap: 0.25rem;
+  background: var(--global-code-bg-color, #f8f9fa);
+  border-radius: 8px;
+  padding: 0.25rem;
+  border: 1px solid var(--global-divider-color, #e5e5e5);
+}
+
+.view-toggle-btn {
+  padding: 0.5rem 0.75rem;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--global-text-color-light, #666);
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.85rem;
+}
+
+.view-toggle-btn:hover {
+  color: var(--global-theme-color, #b509ac);
+}
+
+.view-toggle-btn.active {
+  background: var(--global-theme-color, #b509ac);
+  color: white;
 }
 
 .filter-btn {
@@ -394,6 +434,83 @@ header.post-header {
   color: var(--global-theme-color, #b509ac);
 }
 
+/* List View Styles */
+.projects-grid.list-view {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.projects-grid.list-view .project-card {
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto auto;
+  gap: 0.5rem 2rem;
+  align-items: start;
+}
+
+.projects-grid.list-view .project-card:hover {
+  transform: translateY(-2px);
+}
+
+.projects-grid.list-view .project-card::before {
+  display: none;
+}
+
+.projects-grid.list-view .project-status {
+  grid-column: 1;
+  grid-row: 1;
+  margin-bottom: 0;
+  width: fit-content;
+}
+
+.projects-grid.list-view .project-title {
+  grid-column: 1;
+  grid-row: 2;
+  font-size: 1.25rem;
+  margin-bottom: 0;
+}
+
+.projects-grid.list-view .project-description {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  margin-bottom: 0.5rem;
+}
+
+.projects-grid.list-view .project-highlights {
+  display: none;
+}
+
+.projects-grid.list-view .tech-stack {
+  grid-column: 1;
+  grid-row: 4;
+  margin: 0.5rem 0;
+}
+
+.projects-grid.list-view .tech-tag {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+}
+
+.projects-grid.list-view .project-links {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  margin-top: 0;
+  justify-self: end;
+  align-self: center;
+}
+
+.projects-grid.list-view .project-link {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.8rem;
+}
+
+.projects-grid.list-view .impact-metrics {
+  display: none;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .projects-hero {
@@ -448,6 +565,28 @@ header.post-header {
     width: 100%;
     justify-content: center;
   }
+
+  .filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .view-toggle {
+    align-self: flex-end;
+  }
+
+  /* List view on mobile */
+  .projects-grid.list-view .project-card {
+    grid-template-columns: 1fr;
+    padding: 1.25rem;
+  }
+
+  .projects-grid.list-view .project-links {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: start;
+    margin-top: 0.75rem;
+  }
 }
 </style>
 
@@ -467,23 +606,33 @@ header.post-header {
         <div class="project-stat-label">Active Projects</div>
       </div>
       <div class="project-stat">
-        <div class="project-stat-value">4</div>
+        <div class="project-stat-value">5</div>
         <div class="project-stat-label">Technical Disclosures</div>
       </div>
       <div class="project-stat">
-        <div class="project-stat-value">5</div>
-        <div class="project-stat-label">PyPI Packages</div>
+        <div class="project-stat-value">6</div>
+        <div class="project-stat-label">Published Packages</div>
       </div>
     </div>
   </div>
 
-  <!-- Category Filter -->
-  <div class="category-filter">
-    <button class="filter-btn active" data-filter="all">All Projects</button>
-    <button class="filter-btn" data-filter="ai">AI & Safety</button>
-    <button class="filter-btn" data-filter="privacy">Privacy & Consent</button>
-    <button class="filter-btn" data-filter="protocols">Protocols</button>
-    <button class="filter-btn" data-filter="distributed-systems">Distributed Systems</button>
+  <!-- Category Filter & View Toggle -->
+  <div class="filter-bar">
+    <div class="category-filter">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="ai">AI & Safety</button>
+      <button class="filter-btn" data-filter="privacy">Privacy & Consent</button>
+      <button class="filter-btn" data-filter="protocols">Protocols</button>
+      <button class="filter-btn" data-filter="distributed-systems">Distributed Systems</button>
+    </div>
+    <div class="view-toggle">
+      <button class="view-toggle-btn active" data-view="grid" title="Grid view">
+        <i class="fas fa-th-large"></i>
+      </button>
+      <button class="view-toggle-btn" data-view="list" title="List view">
+        <i class="fas fa-list"></i>
+      </button>
+    </div>
   </div>
 
   <!-- Featured Projects -->
@@ -1008,11 +1157,11 @@ header.post-header {
         </div>
       </article>
 
-      <!-- SMPP Core -->
+      <!-- SMPP Gateway -->
       <article class="project-card" data-category="protocols distributed-systems">
         <span class="project-status">Active</span>
         <h3 class="project-title">
-          <a href="https://smppgateway.io" target="_blank">SMPP Core</a>
+          <a href="https://smppgateway.io" target="_blank">SMPP Gateway</a>
         </h3>
         <p class="project-description">
           Modern Java 21 implementation of the SMPP protocol - the actively maintained replacement for Cloudhopper. Built on Netty with virtual threads for high-performance SMS messaging at scale.
@@ -1071,7 +1220,7 @@ header.post-header {
       <article class="project-card" data-category="protocols distributed-systems">
         <span class="project-status">Active</span>
         <h3 class="project-title">
-          <a href="https://github.com/bassrehab/smpp-kafka-producer" target="_blank">SMPP Gateway</a>
+          <a href="https://github.com/bassrehab/smpp-kafka-producer" target="_blank">SMPP Kafka Producer</a>
         </h3>
         <p class="project-description">
           Production-ready bridge between SMPP protocol and Apache Kafka - receives SMS messages via SMPP and publishes to Kafka topics. Features HTTP/2 REST API aligned with 3GPP TS 29.540 SMSF standards for 5G compatibility.
@@ -1190,32 +1339,62 @@ header.post-header {
 </div>
 
 <script>
-// Category filter functionality
 document.addEventListener('DOMContentLoaded', function() {
   const filterButtons = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card');
-  
+  const viewToggleButtons = document.querySelectorAll('.view-toggle-btn');
+  const projectsGrids = document.querySelectorAll('.projects-grid');
+
+  // Restore saved view preference
+  const savedView = localStorage.getItem('projects-view') || 'grid';
+  if (savedView === 'list') {
+    projectsGrids.forEach(grid => grid.classList.add('list-view'));
+    viewToggleButtons.forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.view === 'list');
+    });
+  }
+
+  // Category filter functionality
   filterButtons.forEach(button => {
     button.addEventListener('click', function() {
       const filter = this.getAttribute('data-filter');
-      
+
       // Update active button
       filterButtons.forEach(btn => btn.classList.remove('active'));
       this.classList.add('active');
-      
+
       // Filter projects
       projectCards.forEach(card => {
         if (filter === 'all') {
-          card.style.display = 'block';
+          card.style.display = '';
         } else {
           const categories = card.getAttribute('data-category');
           if (categories && categories.includes(filter)) {
-            card.style.display = 'block';
+            card.style.display = '';
           } else {
             card.style.display = 'none';
           }
         }
       });
+    });
+  });
+
+  // View toggle functionality
+  viewToggleButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const view = this.dataset.view;
+
+      // Update active button
+      viewToggleButtons.forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+
+      // Toggle view class on grids
+      projectsGrids.forEach(grid => {
+        grid.classList.toggle('list-view', view === 'list');
+      });
+
+      // Save preference
+      localStorage.setItem('projects-view', view);
     });
   });
 });
