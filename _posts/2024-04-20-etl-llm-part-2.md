@@ -8,6 +8,9 @@ categories: algorithms genai
 giscus_comments: true
 featured: false
 related_posts: true
+thumbnail: assets/img/blog/etl-llm-graph-search.png
+mermaid:
+  enabled: true
 toc:
   sidebar: left
 ---

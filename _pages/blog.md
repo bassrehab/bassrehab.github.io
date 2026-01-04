@@ -285,12 +285,14 @@ pagination:
   overflow: hidden;
   height: 100%;
   min-height: 200px;
+  max-height: 280px;
 }
 
 .post-thumbnail img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top center;
   transition: transform 0.4s;
 }
 

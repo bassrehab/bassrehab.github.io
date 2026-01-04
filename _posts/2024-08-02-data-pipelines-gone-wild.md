@@ -8,6 +8,7 @@ categories: platform data
 giscus_comments: true
 featured: false
 related_posts: true
+thumbnail: assets/img/blog/memory-eviction-flow.png
 toc:
   sidebar: left
 ---

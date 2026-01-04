@@ -10,6 +10,7 @@ citation: true
 giscus_comments: true
 featured: false
 related_posts: true
+thumbnail: assets/img/blog/llmconsent-arch.png
 pretty_table: true
 toc:
   sidebar: left

@@ -8,9 +8,38 @@ categories: platform quantum-computing algorithms
 giscus_comments: true
 featured: false
 related_posts: true
+thumbnail: assets/img/blog/quantum-vs-classical.png
+mermaid:
+  enabled: true
 toc:
   sidebar: left
 ---
+
+```mermaid
+flowchart TB
+    subgraph Classical["Classical Computing"]
+        C1["Binary Bits<br/>0 or 1"]
+        C2["Sequential<br/>Processing"]
+        C3["O(n) Search"]
+        C4["Standard<br/>Encryption"]
+    end
+
+    subgraph Quantum["Quantum Computing"]
+        Q1["Qubits<br/>Superposition"]
+        Q2["Parallel<br/>Processing"]
+        Q3["O(√n) Search<br/>Grover's Algorithm"]
+        Q4["Quantum<br/>Cryptography"]
+    end
+
+    subgraph Comparison["Key Differences"]
+        COMP1["Speed: Quantum up to exponentially faster"]
+        COMP2["Search: √n vs n complexity"]
+        COMP3["Security: QKD unbreakable"]
+    end
+
+    Classical --> Comparison
+    Quantum --> Comparison
+```
 
 Classical database search is O(n) for unsorted data. Grover's algorithm does it in O(√n). That's not a marginal improvement - it's a quadratic speedup that fundamentally changes what's computationally feasible.
 

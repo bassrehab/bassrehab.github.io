@@ -8,6 +8,7 @@ categories: llm genai
 giscus_comments: true
 featured: false
 related_posts: true
+thumbnail: assets/img/blog/dependencies.png
 toc:
   sidebar: left
 ---

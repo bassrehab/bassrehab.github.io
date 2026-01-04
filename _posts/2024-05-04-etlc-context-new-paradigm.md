@@ -8,6 +8,7 @@ categories: platform genai
 giscus_comments: true
 featured: false
 related_posts: true
+thumbnail: assets/img/blog/contexts.png
 toc:
   sidebar: left
 ---

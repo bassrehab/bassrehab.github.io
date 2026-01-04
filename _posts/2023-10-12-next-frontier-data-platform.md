@@ -9,9 +9,42 @@ citation: true
 giscus_comments: true
 featured: false
 related_posts: true
+thumbnail: assets/img/blog/data-platform-evolution.png
+mermaid:
+  enabled: true
 toc:
   sidebar: left
 ---
+
+```mermaid
+flowchart LR
+    subgraph Past["Past"]
+        P1["Data<br/>Warehouse"]
+        P2["Data<br/>Lake"]
+    end
+
+    subgraph Present["Present"]
+        PR1["Data<br/>Lakehouse"]
+        PR2["Data<br/>Mesh"]
+        PR3["Data<br/>Fabric"]
+    end
+
+    subgraph Future["Future"]
+        F1["Autonomous<br/>Platforms"]
+        F2["Quantum Data<br/>Management"]
+        F3["Federated<br/>Learning"]
+        F4["Genetic<br/>Optimization"]
+    end
+
+    P1 --> PR1
+    P2 --> PR1
+    PR1 --> PR2
+    PR2 --> PR3
+    PR3 --> F1
+    PR3 --> F2
+    PR3 --> F3
+    PR3 --> F4
+```
 
 We've come a long way from data warehouses. Data Mesh gave us domain ownership. Lakehouses merged the flexibility of lakes with warehouse structure. Data Hubs centralized access patterns. Each solved real problems.
 

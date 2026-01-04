@@ -10,6 +10,7 @@ citation: true
 giscus_comments: true
 featured: false
 related_posts: true
+thumbnail: assets/img/blog/query-pattern-inversion.png
 pretty_table: true
 toc:
   sidebar: left

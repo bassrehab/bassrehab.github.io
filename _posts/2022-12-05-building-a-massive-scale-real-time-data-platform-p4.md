@@ -7,12 +7,59 @@ tags: system-design architecture casestudy ignite kafka
 categories: architecture system-design casetudy
 giscus_comments: true
 citation: true
-citation: true
 featured: false
 related_posts: true
+thumbnail: assets/img/blog/kafka-cluster.png
+mermaid:
+  enabled: true
 toc:
   sidebar: left
 ---
+
+```mermaid
+flowchart TB
+    subgraph Producers["Event Producers (2.5M/sec)"]
+        P1["Network Events<br/>1.2M/sec"]
+        P2["Subscriber Events<br/>800K/sec"]
+        P3["Location Events<br/>400K/sec"]
+        P4["DPI Data<br/>350GB/15min"]
+    end
+
+    subgraph Kafka["Kafka Cluster (24 Brokers × 3 AZs)"]
+        subgraph AZ1["Availability Zone 1"]
+            B1["Broker 1-8"]
+        end
+        subgraph AZ2["Availability Zone 2"]
+            B2["Broker 9-16"]
+        end
+        subgraph AZ3["Availability Zone 3"]
+            B3["Broker 17-24"]
+        end
+        ZK[("ZooKeeper<br/>Ensemble")]
+    end
+
+    subgraph Consumers["Stream Processors"]
+        C1["Kafka Streams<br/>(32 threads)"]
+        C2["Event Enrichment"]
+        C3["Real-time Analytics"]
+    end
+
+    subgraph Storage["Downstream Storage"]
+        S1[("Ignite<br/>Hot Data")]
+        S2[("Cassandra<br/>Warm Data")]
+        S3[("HDFS<br/>Cold Data")]
+    end
+
+    Producers --> Kafka
+    Kafka --> Consumers
+    Consumers --> Storage
+    B1 <--> B2
+    B2 <--> B3
+    B1 <--> B3
+    ZK -.-> AZ1
+    ZK -.-> AZ2
+    ZK -.-> AZ3
+```
 
 In Parts 1-3, we explored our system architecture, data partitioning, and memory management. Today, we'll dive deep into how we optimized Apache Kafka to handle 2.5 million events per second while ensuring reliable message delivery and processing.
 

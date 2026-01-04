@@ -7,6 +7,7 @@ tags: java smpp telecom open-source performance
 categories: java open-source telecom
 citation: true
 related_posts: true
+thumbnail: assets/img/blog/smppgateway.png
 pretty_table: true
 tabs: true
 mermaid:

@@ -8,9 +8,50 @@ categories: system-design platform architecture
 giscus_comments: true
 featured: false
 related_posts: true
+thumbnail: assets/img/blog/safe-change-architecture.png
+mermaid:
+  enabled: true
 toc:
   sidebar: left
 ---
+
+```mermaid
+flowchart TB
+    subgraph Traditional["Traditional: Design for Failure"]
+        F1["Replication"]
+        F2["Redundancy"]
+        F3["Auto-recovery"]
+        F4["Graceful Degradation"]
+    end
+
+    subgraph Modern["Modern: Design for Safe Change"]
+        subgraph BlastRadius["Blast Radius Control"]
+            B1["Cell-based Architecture"]
+            B2["Progressive Rollout"]
+            B3["Feature Flags"]
+        end
+
+        subgraph Observability["Change Observability"]
+            O1["Audit Trail"]
+            O2["Change Correlation"]
+            O3["Impact Metrics"]
+        end
+
+        subgraph Recovery["Fast Recovery"]
+            R1["Instant Rollback"]
+            R2["Config Versioning"]
+            R3["Deployment Versioning"]
+        end
+    end
+
+    Deploy["Deployment"] --> BlastRadius
+    BlastRadius --> |"Canary 1%"| Gate1{"Metrics OK?"}
+    Gate1 --> |"Yes"| Limited["Limited 10%"]
+    Gate1 --> |"No"| Rollback["Auto Rollback"]
+    Limited --> Gate2{"Metrics OK?"}
+    Gate2 --> |"Yes"| Full["Full Rollout"]
+    Gate2 --> |"No"| Rollback
+```
 
 > **Note**: This is a complete rewrite of an [article I originally published in March 2021](/blog/2021/distributed-system-design/). The original piece surveyed Amazon's design principles and proposed extensions for modern concerns like data sovereignty and sustainability. Four years later, I've come to believe I was asking the wrong question entirely. This version reflects that rethinking.
 

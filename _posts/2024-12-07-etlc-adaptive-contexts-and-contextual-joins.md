@@ -9,9 +9,48 @@ citation: true
 giscus_comments: true
 featured: false
 related_posts: true
+thumbnail: assets/img/blog/etlc-adaptive-context.png
+mermaid:
+  enabled: true
 toc:
   sidebar: left
 ---
+
+```mermaid
+flowchart TB
+    subgraph ContextStore["Context Store"]
+        CS1[("Temporal<br/>Context")]
+        CS2[("Domain<br/>Metadata")]
+        CS3[("Operational<br/>Metrics")]
+    end
+
+    subgraph AdaptiveEngine["Adaptive Context Engine"]
+        AE1["Context<br/>Generator"]
+        AE2{"Priority<br/>Check"}
+        AE3["High Priority<br/>Path"]
+        AE4["Standard<br/>Path"]
+    end
+
+    subgraph Pipeline["ETLC Pipeline"]
+        P1["Extract"]
+        P2["Transform"]
+        P3["Load"]
+        P4["Contextualize"]
+    end
+
+    subgraph Output["Context-Enriched Output"]
+        O1[("Enriched<br/>Data")]
+    end
+
+    ContextStore --> AE1
+    AE1 --> AE2
+    AE2 -->|"priority > τ"| AE3
+    AE2 -->|"priority ≤ τ"| AE4
+    AE3 --> Pipeline
+    AE4 --> Pipeline
+    Pipeline --> P4
+    P4 --> Output
+```
 
 > This blog post proposes a novel concept - ETL-C, a context-first approach for building Data / AI platforms in the Generative AI dominant era. Read prior [post here](https://subhadipmitra.com/blog/2024/etlc-context-new-paradigm/).
 

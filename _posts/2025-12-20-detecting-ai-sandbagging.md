@@ -9,6 +9,7 @@ description: First empirical demonstration of activation-level sandbagging detec
 giscus_comments: true
 featured: true
 related_posts: true
+thumbnail: assets/img/blog/sandbagging/layer_analysis.png
 pretty_table: true
 citation: true
 toc:

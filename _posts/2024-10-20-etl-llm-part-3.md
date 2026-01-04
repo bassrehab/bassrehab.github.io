@@ -8,9 +8,46 @@ categories: algorithms genai
 giscus_comments: true
 featured: false
 related_posts: true
+thumbnail: assets/img/blog/etl-llm-architecture.png
+mermaid:
+  enabled: true
 toc:
   sidebar: left
 ---
+
+```mermaid
+flowchart TB
+    subgraph Input["Data Input Layer"]
+        I1["Structured<br/>DB, CSV"]
+        I2["Semi-structured<br/>JSON, XML"]
+        I3["Unstructured<br/>PDFs, Emails"]
+    end
+
+    subgraph LLM["LLM Transformation Layer"]
+        L1["Entity Extraction"]
+        L2["Semantic Normalization"]
+        L3["Context Enrichment"]
+        L4["Text Summarization"]
+    end
+
+    subgraph Orchestration["Orchestration Layer"]
+        O1["Context Signals"]
+        O2["Resource Constraints"]
+        O3["Dynamic Routing"]
+    end
+
+    subgraph Output["Data Output Layer"]
+        OUT1["Analytics<br/>BigQuery, Snowflake"]
+        OUT2["ML Pipelines"]
+        OUT3["Dashboards"]
+    end
+
+    Input --> LLM
+    LLM --> Orchestration
+    Orchestration --> Output
+    O1 -.->|"Metadata"| LLM
+    O2 -.->|"Limits"| LLM
+```
 
 ### **Introduction: A New Era of ETL**
 

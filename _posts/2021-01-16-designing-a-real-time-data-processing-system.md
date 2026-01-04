@@ -8,9 +8,52 @@ categories: system-design platform
 giscus_comments: true
 featured: false
 related_posts: true
+thumbnail: assets/img/blog/rt-data-processing.png
+mermaid:
+  enabled: true
 toc:
   sidebar: left
 ---
+
+```mermaid
+flowchart LR
+    subgraph Sources["Data Sources"]
+        S1[("IoT/Sensors")]
+        S2[("Applications")]
+        S3[("Databases")]
+        S4[("External APIs")]
+    end
+
+    subgraph Ingestion["Ingestion Layer"]
+        I1["Kafka / Pub-Sub"]
+        I2["Schema Registry"]
+    end
+
+    subgraph Processing["Processing Layer"]
+        P1["Stream Processing<br/>(Flink/Spark)"]
+        P2["State Store<br/>(RocksDB/Redis)"]
+        P3["IMDG<br/>(Ignite/Hazelcast)"]
+    end
+
+    subgraph Serving["Serving Layer"]
+        SV1["Real-time APIs"]
+        SV2["Feature Store"]
+        SV3["Data Warehouse"]
+    end
+
+    subgraph Consumers["Consumers"]
+        C1["Dashboards"]
+        C2["ML Models"]
+        C3["Applications"]
+    end
+
+    Sources --> Ingestion
+    Ingestion --> Processing
+    Processing --> Serving
+    Serving --> Consumers
+    P1 <--> P2
+    P1 <--> P3
+```
 
 Designing and developing large-scale distributed real-time data processing systems is a complex undertaking. These systems must handle massive volumes of data, often with strict latency requirements, while maintaining reliability and scalability. Over the years, I've encountered various challenges and developed a set of principles to guide the design process. These principles have evolved alongside changing usage patterns and the increasing demands placed on these systems. This guide aims to share these insights, covering key considerations in various stages of the design and implementation process.
 

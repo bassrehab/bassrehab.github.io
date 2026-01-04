@@ -7,6 +7,7 @@ tags: [distributed-systems, formal-verification, program-synthesis, research, in
 categories: research
 featured: false
 related_posts: true
+thumbnail: assets/img/blog/process.png
 mermaid:
   enabled: true
 toc:

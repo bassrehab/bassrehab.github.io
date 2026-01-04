@@ -8,9 +8,49 @@ categories: platform quantum-computing
 giscus_comments: true
 featured: false
 related_posts: true
+thumbnail: assets/img/blog/quantum-data-platform.png
+mermaid:
+  enabled: true
 toc:
   sidebar: left
 ---
+
+```mermaid
+flowchart TB
+    subgraph QDP["Quantum Data Platform"]
+        subgraph Storage["Quantum Storage"]
+            S1["Qubit Arrays"]
+            S2["Error Correction"]
+        end
+
+        subgraph Processing["Quantum Processing"]
+            P1["Shor's Algorithm<br/>Factorization"]
+            P2["Grover's Algorithm<br/>Search O(√n)"]
+            P3["Amplitude<br/>Amplification"]
+        end
+
+        subgraph Integration["Hybrid Integration"]
+            I1["Classical<br/>Interface"]
+            I2["Quantum-Classical<br/>Bridge"]
+        end
+
+        subgraph Security["Quantum Security"]
+            SEC1["QKD<br/>Key Distribution"]
+            SEC2["Quantum-Safe<br/>Encryption"]
+        end
+    end
+
+    subgraph Libraries["Quantum Libraries"]
+        L1["Qiskit"]
+        L2["Cirq"]
+        L3["Q#"]
+    end
+
+    Storage --> Processing
+    Processing --> Integration
+    Integration --> Security
+    Libraries -.-> QDP
+```
 
 > For a comprehensive understanding of Quantum Data Platforms, it is recommended to read this blog in conjunction with related posts on [Quantum vs. Classical Data Management Complexity](https://subhadipmitra.com/blog/2023/quantum-vs-classical-data-management-complexity/) and [Quantum Data Exchange](https://subhadipmitra.com/blog/2023/quantum-data-exchange/), which delve deeper into related complexities and interactions.
 

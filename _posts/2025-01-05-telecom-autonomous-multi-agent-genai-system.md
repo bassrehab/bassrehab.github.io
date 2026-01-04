@@ -9,6 +9,7 @@ citation: true
 giscus_comments: true
 featured: false
 related_posts: true
+thumbnail: assets/img/blog/telco-genai-agents-system-architecture-gemini.png
 toc:
   sidebar: left
 ---

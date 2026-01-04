@@ -10,6 +10,7 @@ citation: true
 giscus_comments: true
 featured: true
 related_posts: true
+thumbnail: assets/img/blog/fused-kernel.png
 pretty_table: true
 tabs: true
 mermaid:

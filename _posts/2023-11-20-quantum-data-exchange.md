@@ -9,6 +9,7 @@ giscus_comments: true
 citation: true
 featured: false
 related_posts: true
+thumbnail: assets/img/blog/quantum-error-correction.png
 toc:
   sidebar: left
 ---

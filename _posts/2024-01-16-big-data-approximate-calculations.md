@@ -8,6 +8,7 @@ categories: algorithms
 giscus_comments: true
 featured: false
 related_posts: true
+thumbnail: assets/img/blog/approximate-charts.png
 toc:
   sidebar: left
 ---

@@ -8,9 +8,47 @@ categories: algorithms genai
 giscus_comments: true
 featured: false
 related_posts: true
+thumbnail: assets/img/blog/etl-llm-graph-search.png
+mermaid:
+  enabled: true
 toc:
   sidebar: left
 ---
+
+```mermaid
+flowchart LR
+    subgraph Input["Input Layer"]
+        I1[("Raw Data<br/>CSV, JSON, DB")]
+    end
+
+    subgraph Graph["ETL Graph"]
+        direction TB
+        N1["Filter"]
+        N2["Clean"]
+        N3["Join"]
+        N4["Aggregate"]
+        N5["Transform"]
+        N1 -->|"cost: 2"| N2
+        N1 -->|"cost: 5"| N3
+        N2 -->|"cost: 3"| N4
+        N3 -->|"cost: 4"| N4
+        N2 -->|"cost: 2"| N5
+        N5 -->|"cost: 3"| N4
+    end
+
+    subgraph Search["Search Algorithm"]
+        S1["Dijkstra / A*"]
+        S2["Cost Function<br/>g(n) + h(n)"]
+    end
+
+    subgraph Output["Output Layer"]
+        O1[("Target<br/>Schema")]
+    end
+
+    Input --> Graph
+    Graph --> Search
+    Search -->|"Optimal Path"| Output
+```
 
 **Part 1: Searching for an Optimal Algorithm for ETL planning**
 

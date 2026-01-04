@@ -13,6 +13,7 @@ reading_time: 9
 giscus_comments: true
 featured: false
 related_posts: true
+thumbnail: assets/img/blog/deceptive-ai.png
 pretty_table: true
 toc:
   sidebar: left
