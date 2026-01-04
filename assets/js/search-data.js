@@ -86,8 +86,8 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "https://ai-metacognition-toolkit.subhadipmitra.com/";
               },
-            },{id: "dropdown-docs-smpp-core",
-              title: "docs: SMPP Core",
+            },{id: "dropdown-docs-smpp-gateway",
+              title: "docs: SMPP Gateway",
               description: "",
               section: "Dropdown",
               handler: () => {
