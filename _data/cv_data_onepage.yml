@@ -11,7 +11,7 @@ basics:
   github: https://github.com/bassrehab
   calendly: https://calendly.com/contact-x9nm/30min
   summary: |
-    Senior Engineering Leader with 15+ years bridging AI research and enterprise delivery. Leading Google Cloud's Data & Analytics practice for Southeast Asia while driving innovations in LLM inference and multi-agent systems. Track record as "Player-Coach" - managing regional portfolios while architecting patented frameworks (UPIR, ARTEMIS, FTCS).
+    Senior Engineering Leader with 15+ years building teams, frameworks, and systems that turn Data and AI from research to production. Head of Data & Analytics for Google Cloud in Southeast Asia - a practice built from zero, delivering enterprise transformation across 7 countries. "Player-Coach" leading petabyte-scale platforms while driving published research (5 technical disclosures, 6 packages on PyPI/Maven, open-source AI safety tools).
 
 experience:
   - company: Google Cloud - Professional Services Organization
@@ -36,10 +36,11 @@ experience:
     start_date: 2019-01
     end_date: 2021-01
     description: |
-      Led enterprise AI and data platform development serving 11 markets and 1200+ users.
+      Led enterprise AI and data platform transformation for retail banking.
     highlights:
-      - Delivered Self-Service ML Platform reducing model development from 6 months to 1 week
-      - Modernized MarTech infrastructure driving 30% increase in customer acquisition
+      - Built data & analytics platform serving 11 markets, 100+ systems, and 1200+ users
+      - Delivered Self-Service ML Workbench reducing model deployment from months to weeks
+      - Built credit risk models over 15K+ entities using news/social signals, reducing losses by $5M
 
   - company: Think Big Analytics (Teradata)
     role: Principal Data Engineer / Solution Architect
@@ -49,8 +50,9 @@ experience:
     description: |
       Architected enterprise data solutions for Fortune 500 clients across APAC.
     highlights:
-      - Engineered 5 data lakes processing 1.2 PB/hour with 20% optimization
-      - Built real-time fraud detection reducing false positives by 60%
+      - Designed 5 data lakes processing 1.2 PB/hour and 40K daily files
+      - Built ML fraud detection: 60% fewer false positives, $3M savings
+      - Managed Hadoop clusters (300+ nodes) for banks and telcos across JAPAC
 
   - company: Microsoft, UTU & Others
     role: Software Engineering & Technical Leadership

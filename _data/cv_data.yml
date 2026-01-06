@@ -10,9 +10,9 @@ basics:
   github: https://github.com/bassrehab
   calendly: https://calendly.com/contact-x9nm/30min
   summary: |
-    Senior Engineering Leader with 15+ years of experience bridging fundamental AI research and enterprise-scale system delivery. Currently leading Google Cloud's Data & Analytics practice for Southeast Asia while driving internal innovations on LLM inference efficiency, multi-agent systems, and AI safety research (activation probing, sandbagging detection).
+    Senior Engineering Leader with 15+ years building the teams, frameworks, and systems that turn Data and AI from research to production. Currently Head of Data & Analytics for Google Cloud in Southeast Asia - a practice built from zero, delivering enterprise Data and AI transformation across 7 countries.
 
-    Proven track record of operating as a "Player-Coach": managing regional engineering portfolios while simultaneously architecting and patenting novel frameworks (UPIR, ARTEMIS, FTCS, Speculative Decoding).
+    Dual track as "Player-Coach": leading petabyte-scale data platforms and multi-agent systems for Fortune 500 clients, while driving innovation through published research (5 technical disclosures, 6 published packages on PyPI and Maven Central, plus open-source AI safety tools including sandbagging detection and activation steering). Member of Google Cloud delta, architecting solutions at the intersection of applied AI and enterprise scale.
   # Abbreviations used in summary for web tooltips
   abbreviations:
     UPIR: Unified Plan Intermediate Representation - Automated synthesis and verification of distributed systems
@@ -27,7 +27,7 @@ experience:
     end_date: present
     current: true
     description: |
-      Dual-track role combining technical innovation leadership with regional delivery management. Built Google Cloud's Data Analytics practice across Southeast Asia while serving as Site Lead overseeing cross-practice operations. Member of <a href="https://cloud.google.com/consulting/innovation-and-transformation">delta</a> - Google Cloud's innovation and transformation team architecting enterprise AI solutions at scale.
+      Dual-track role combining technical innovation leadership with regional delivery management. Built Google Cloud's Data Analytics practice for Southeast Asia with delivery scope across JAPAC, while serving as Site Lead overseeing cross-practice operations in SEA. Member of <a href="https://cloud.google.com/consulting/innovation-and-transformation">delta</a> - Google Cloud's innovation and transformation team architecting enterprise AI solutions at scale.
     sections:
       - title: Strategic Leadership & Delivery
         highlights:
@@ -36,7 +36,7 @@ experience:
           - title: Regional Operations
             description: Serve as Site Lead overseeing delivery governance across all 7 PSO practices (Data Analytics, AI/ML, Infrastructure, Security, Enterprise Architecture, Application Development, Delivery Management) in Southeast Asia, owning utilization and CSAT metrics (97%) while driving strategic pursuits and contributing to 100% annual revenue target attainment.
           - title: Portfolio Management
-            description: Direct $XXM+ Data Analytics delivery portfolio across JAPAC while simultaneously overseeing $XXM+ cross-practice portfolio as regional Site Lead.
+            description: Direct regional Data Analytics delivery portfolio across JAPAC while simultaneously overseeing cross-practice portfolio as Site Lead.
           - title: Strategic Interventions
             description: Led critical engagements for JAPAC strategic accounts including major financial services institutions, telcos and consumer electronics manufacturers, ensuring delivery excellence and client success.
           - title: Sales & Product Alignment
@@ -48,9 +48,9 @@ experience:
           - title: Executive Advisory
             description: Partner with C-level stakeholders (CTOs, CDOs) to define data modernization and AI transformation roadmaps, translating technical capabilities into business outcomes.
           - title: Agentic AI Transformation
-            description: Pioneered agentic AI adoption across all 7 PSO practices (Data Analytics, AI/ML, Infrastructure, Security, Enterprise Architecture, Application Development, Delivery Management) and 6 JAPAC sub-regions, building SDKs, agent catalog, and standardized templates while designing reusable governance frameworks that accelerated innovation and reduced delivery costs.
+            description: Pioneered agentic AI adoption across all 7 PSO practices and 6 JAPAC sub-regions, building SDKs, agent catalog, and standardized templates while designing reusable governance frameworks that accelerated innovation and reduced delivery costs.
           - title: Delivery Accelerators
-            description: Built agentic tool suites including architecture discovery (100M+ node graph modeling), automated data pipeline generation, and platform cleanup agents that recovered multi-million dollar at-risk engagements and secured significant long-term cloud commitments.
+            description: Built agentic tool suites including architecture discovery (100M+ node graph modeling), automated data pipeline generation, and platform cleanup agents that recovered at-risk engagements and secured significant long-term cloud commitments.
           - title: Data Strategy Practice
             description: Built Data Strategy competency from 0, delivering 8-figure pursuit value across 14 strategic pitches in Asia Pacific while establishing critical data assets and new GTM offerings.
       - title: Technical Innovation & Research
@@ -66,10 +66,12 @@ experience:
     start_date: 2019-01
     end_date: 2021-01
     description: |
-      Led enterprise-wide AI and data platform development serving 11 markets, delivering technical excellence while influencing C-suite data strategy.
+      Led design and development of retail bank's data & analytics platform serving 11 markets, 100+ systems, and 1200+ users.
     highlights:
-      - Delivered a Self-Service ML Platform that reduced model development time from months to weeks
-      - MarTech modernization - +30% customer acquisition
+      - Developed self-service ML Workbench reducing model deployment time from months to weeks
+      - Architected MarTech strategy driving 30% increase in customer acquisition through data-driven personalization
+      - Created credit risk models over 15,000+ named entities leveraging news trends and social signals, reducing potential losses by $5M
+      - Defined enterprise data strategy including third-party data governance, privacy frameworks, and cloud adoption roadmap
 
   - company: Think Big Analytics (a Teradata company)
     role: Principal Data Engineer / Solution Architect
@@ -79,8 +81,10 @@ experience:
     description: |
       Architected enterprise-scale data solutions for Fortune 500 clients across APAC.
     highlights:
-      - Data lakes processing 1.2 PB/hour for Fortune 500 clients across APAC
-      - Real-time fraud detection systems - 60% reduction in false positives
+      - Designed 5 global data lakes with ETL pipelines handling 1.2 PB/hour and 40K daily files
+      - Engineered real-time platform processing 2.5M events/second, improving Ad campaign responsiveness by 80%
+      - Built ML fraud detection system achieving 60% fewer false positives and 25% higher detection rates, resulting in $3M savings
+      - Built and managed large-scale Hadoop clusters (300+ nodes) for banks and telcos across JAPAC
 
   - company: Microsoft, Truckaurbus (Founder), UTU
     role: Software Engineering & Technical Leadership
@@ -141,7 +145,7 @@ research:
     period: 2025 - Present
     url: https://ai-metacognition-toolkit.subhadipmitra.com/
     description: |
-      Activation-level detection of sandbagging, deception, and situational awareness in LLMs. Linear probes achieve 90-96% accuracy across Mistral, Gemma, and Qwen models. Includes steering vectors for runtime behavior control.
+      Activation-level detection of sandbagging, deception, and situational awareness in LLMs. Linear probes achieve 90-96% accuracy across Mistral, Gemma, and Qwen models. Published on PyPI.
     highlights:
       - title: Sandbagging Detection
         description: Linear probes trained on activation differences detect sandbagging intent with 90-96% accuracy. Model-specific representations - no cross-model transfer.
@@ -149,8 +153,6 @@ research:
         description: Activation steering reduces sandbagging behavior by 20% in Gemma models without retraining.
       - title: Bayesian Situational Awareness
         description: KL-divergence based detection of behavioral changes and "Observer Effects" during interaction.
-      - title: Engineering Rigor
-        description: 275 test cases, 95% code coverage, type-safe implementation, published on PyPI.
     links:
       - type: pypi
         label: PyPI Package
@@ -364,29 +366,49 @@ projects:
     period: 2021 - 2022
     url: https://oconsent.io
     description: |
-      An open-sourced transparent, fast, and scalable protocol for managing user consent and privacy on public blockchains.
+      Production implementation of the OConsent research protocol - a working system for managing user consent and privacy on public blockchains.
     highlights:
-      - Blockchain-based solution for transparent consent management
+      - Full-stack implementation with live deployment at oconsent.io
+      - Smart contract suite for on-chain consent management
       - GDPR-compliant with automated audit capabilities
-      - Granular control over personal data usage
     links:
       - type: github
         label: GitHub Repo
         url: https://github.com/bassrehab/oconsent
-      - type: blog
-        label: Paper
-        url: https://arxiv.org/abs/2201.01326
+      - type: website
+        label: Live Demo
+        url: https://oconsent.io
+
+  - title: SMPP Core
+    period: 2024 - 2025
+    url: https://github.com/bassrehab/smpp-core
+    description: |
+      Modern Java 21 SMPP protocol implementation with virtual threads for high-performance SMS messaging.
+    highlights:
+      - 1.8M PDU decodes/sec, 1.5M encodes/sec, 25K network round-trips/sec
+      - Complete SMPP 3.3, 3.4, 5.0 support with modular architecture
+      - Published on Maven Central
+    links:
+      - type: github
+        label: GitHub Repo
+        url: https://github.com/bassrehab/smpp-core
+      - type: maven
+        label: Maven Central
+        url: https://central.sonatype.com/artifact/io.github.bassrehab/smpp-core
 
   - title: ISO8583 Simulator
-    period: 2016 - 2017
+    period: 2016 - 2025
     url: https://github.com/bassrehab/ISO8583-Simulator
     description: |
-      A high-performance Java-based simulator for ISO 8583 financial messaging, used by banks and payment processors.
+      High-performance financial message processing tool for ISO 8583, used by banks and payment processors.
     highlights:
-      - Supports multiple ISO 8583 versions and custom formats
-      - Advanced performance testing with configurable load profiles
-      - Modular architecture supporting multiple protocols
+      - 180k+ TPS message parsing with Cython optimization
+      - Multi-network support (VISA, Mastercard, AMEX, Discover, JCB, UnionPay)
+      - Published on PyPI with AI-powered test generation
     links:
       - type: github
         label: GitHub Repo
         url: https://github.com/bassrehab/ISO8583-Simulator
+      - type: pypi
+        label: PyPI
+        url: https://pypi.org/project/iso8583sim/
