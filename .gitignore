@@ -12,10 +12,5 @@ node_modules/
 vendor
 .idea
 
-# Claude Code documentation and drafts
-CLAUDE.md
-_dev/
-_dev/*
-
 # Build artifacts
 _build/
