@@ -5,22 +5,24 @@ nav: true
 nav_order: 8
 dropdown: true
 children:
+  - title: repositories
+    permalink: /repositories/
+  - title: reading list
+    permalink: /reading-list/
   - title: contact
     permalink: /contact/
   - title: divider
-  - title: reading list
-    permalink: /reading-list/
-  - title: divider
-  - title: "docs: ARTEMIS"
+  - title: ARTEMIS
     permalink: https://artemis.subhadipmitra.com
-  - title: "docs: UPIR"
+  - title: UPIR
     permalink: https://upir.subhadipmitra.com
-  - title: "docs: AI Metacognition"
+  - title: AI Metacognition
     permalink: https://ai-metacognition-toolkit.subhadipmitra.com/
-  - title: "docs: SMPP Gateway"
+  - title: SMPP Gateway
     permalink: https://docs.smppgateway.io
-  - title: "docs: ISO8583"
+  - title: ISO8583
     permalink: https://iso8583.subhadipmitra.com
-  - title: "symmetry"
+  - title: divider
+  - title: symmetry
     permalink: https://symmetry.subhadipmitra.com/
 ---

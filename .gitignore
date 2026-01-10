@@ -14,7 +14,8 @@ vendor
 
 # Claude Code documentation and drafts
 CLAUDE.md
-dev/
+_dev/
+_dev/*
 
 # Build artifacts
 _build/
