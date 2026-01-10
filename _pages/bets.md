@@ -127,6 +127,49 @@ header.post-header {
   color: var(--global-text-color-light);
 }
 
+.bets-related {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--global-divider-color);
+}
+
+.bets-related h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--global-text-color-light);
+  margin-bottom: 1rem;
+}
+
+.bets-related ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bets-related li {
+  margin-bottom: 0.6rem;
+}
+
+.bets-related a {
+  color: var(--global-text-color);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.15s ease;
+}
+
+.bets-related a:hover {
+  color: var(--global-theme-color);
+  border-bottom-color: var(--global-theme-color);
+}
+
+.bets-related .related-meta {
+  font-size: 0.85rem;
+  color: var(--global-text-color-light);
+  margin-left: 0.5rem;
+}
+
 /* Mobile adjustments */
 @media (max-width: 480px) {
   .bet-item {
@@ -251,6 +294,16 @@ header.post-header {
   </div>
 </div>
 
+</div>
+
+<div class="bets-related">
+  <h2>Related Writing</h2>
+  <ul>
+    <li><a href="/blog/2025/detecting-ai-sandbagging/">I Trained Probes to Catch AI Models Sandbagging</a> <span class="related-meta">— on bet #1, #3</span></li>
+    <li><a href="/blog/2025/making-llm-faster/">Making LLMs Faster: My Deep Dive into Speculative Decoding</a> <span class="related-meta">— on bet #2</span></li>
+    <li><a href="/blog/2025/building-consent-layer-for-ai/">Building the Consent Layer for AI</a> <span class="related-meta">— on bet #5</span></li>
+    <li><a href="/blog/2025/building-spark-llm-eval/">Why I Built a Spark-Native LLM Evaluation Framework</a> <span class="related-meta">— on bet #6</span></li>
+  </ul>
 </div>
 
 <div class="bets-footer">
