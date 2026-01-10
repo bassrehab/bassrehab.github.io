@@ -44,19 +44,19 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "nav-repositories",
-          title: "repositories",
-          description: "Explore my open source contributions and projects on GitHub",
+        },{id: "nav-bets",
+          title: "bets",
+          description: "Falsifiable beliefs about AI, systems, and leadership - things I believe that I could be wrong about.",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/repositories/";
+            window.location.href = "/bets/";
           },
-        },{id: "dropdown-contact",
-              title: "contact",
+        },{id: "dropdown-repositories",
+              title: "repositories",
               description: "",
               section: "Dropdown",
               handler: () => {
-                window.location.href = "/contact/";
+                window.location.href = "/repositories/";
               },
             },{id: "dropdown-reading-list",
               title: "reading list",
@@ -65,36 +65,43 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/reading-list/";
               },
-            },{id: "dropdown-docs-artemis",
-              title: "docs: ARTEMIS",
+            },{id: "dropdown-contact",
+              title: "contact",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/contact/";
+              },
+            },{id: "dropdown-artemis",
+              title: "ARTEMIS",
               description: "",
               section: "Dropdown",
               handler: () => {
                 window.location.href = "https://artemis.subhadipmitra.com";
               },
-            },{id: "dropdown-docs-upir",
-              title: "docs: UPIR",
+            },{id: "dropdown-upir",
+              title: "UPIR",
               description: "",
               section: "Dropdown",
               handler: () => {
                 window.location.href = "https://upir.subhadipmitra.com";
               },
-            },{id: "dropdown-docs-ai-metacognition",
-              title: "docs: AI Metacognition",
+            },{id: "dropdown-ai-metacognition",
+              title: "AI Metacognition",
               description: "",
               section: "Dropdown",
               handler: () => {
                 window.location.href = "https://ai-metacognition-toolkit.subhadipmitra.com/";
               },
-            },{id: "dropdown-docs-smpp-gateway",
-              title: "docs: SMPP Gateway",
+            },{id: "dropdown-smpp-gateway",
+              title: "SMPP Gateway",
               description: "",
               section: "Dropdown",
               handler: () => {
                 window.location.href = "https://docs.smppgateway.io";
               },
-            },{id: "dropdown-docs-iso8583",
-              title: "docs: ISO8583",
+            },{id: "dropdown-iso8583",
+              title: "ISO8583",
               description: "",
               section: "Dropdown",
               handler: () => {
