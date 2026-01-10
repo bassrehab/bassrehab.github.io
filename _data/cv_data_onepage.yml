@@ -93,6 +93,7 @@ research:
 
   - title: CatchMe - Intelligent Trust Engine
     period: 2025
+    url: https://catchme.dev
     description: |
       Agentic AI for enterprise trust decisions. APLS pattern learning + cascade routing. 86% cost reduction, sub-50ms latency.
 

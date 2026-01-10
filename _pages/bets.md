@@ -289,7 +289,7 @@ header.post-header {
   <div class="bet-content">
     <div class="bet-statement">Multi-agent architectures will become the default for enterprise AI.</div>
     <div class="bet-reasoning">
-      Single-model approaches hit limits when problems require different types of reasoning, access to different tools, or coordination across domains. The agent frameworks emerging now are clunky, but the underlying pattern - specialized agents collaborating with clear handoffs and fallbacks - will become standard. I've seen this in enterprise deployments: the systems that actually work aren't single brilliant models, they're orchestrated collections of specialized capabilities. <a href="https://www.tdcommons.org/dpubs_series/7729/">ARTEMIS</a> and CatchMe are bets on this architecture.
+      Single-model approaches hit limits when problems require different types of reasoning, access to different tools, or coordination across domains. The agent frameworks emerging now are clunky, but the underlying pattern - specialized agents collaborating with clear handoffs and fallbacks - will become standard. I've seen this in enterprise deployments: the systems that actually work aren't single brilliant models, they're orchestrated collections of specialized capabilities. <a href="https://www.tdcommons.org/dpubs_series/7729/">ARTEMIS</a> and <a href="https://catchme.dev">CatchMe</a> are bets on this architecture.
     </div>
   </div>
 </div>

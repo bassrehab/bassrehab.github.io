@@ -254,12 +254,12 @@ social: false
                 <div class="timeline-content">
                     <div class="innovation-year">2025</div>
                     <div class="timeline-badge"><i class="fas fa-shield-alt"></i></div>
-                    <h3>CatchMe - Intelligent Trust Engine</h3>
+                    <h3><a href="https://catchme.dev" target="_blank">CatchMe</a> - Intelligent Trust Engine</h3>
                     <p>
                         Industry-agnostic agentic AI system for enterprise-scale trust decisions across Finance, Healthcare, Insurance, Cybersecurity, and Supply Chain. Features APLS (self-learning pattern synthesis) and five-level cascade routing, achieving 86% cost reduction with sub-50ms latency. Winner - Google Cloud PSO Hackathon JAPAC Regionals, qualified for World Finals.
                     </p>
-                    <div style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--global-theme-color);">
-                        <strong>Google Technical Disclosures - Pending: APLS & Cascade Routing</strong>
+                    <div style="margin-top: 0.5rem;">
+                        <a href="https://catchme.dev" class="innovation-link" target="_blank">Learn More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </article>

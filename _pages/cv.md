@@ -216,6 +216,90 @@ math: false
 article.research-project-card {
   margin-bottom: 3rem;
 }
+
+/* Job highlights - improved readability */
+.job-highlights ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.job-highlights li {
+  position: relative;
+  padding: 0.875rem 0 0.875rem 1.25rem;
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--global-text-color-light);
+  border-bottom: 1px solid var(--global-divider-color);
+}
+
+.job-highlights li:last-child {
+  border-bottom: none;
+}
+
+.job-highlights li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.1rem;
+  width: 6px;
+  height: 6px;
+  background: var(--global-theme-color);
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.job-highlights li strong {
+  color: var(--global-text-color);
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+/* Project highlights - same treatment */
+.project-highlights ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-highlights li {
+  position: relative;
+  padding: 0.75rem 0 0.75rem 1.25rem;
+  margin-bottom: 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--global-text-color-light);
+  border-bottom: 1px solid var(--global-divider-color);
+}
+
+.project-highlights li:last-child {
+  border-bottom: none;
+}
+
+.project-highlights li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  width: 5px;
+  height: 5px;
+  background: var(--global-theme-color);
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.project-highlights li strong {
+  color: var(--global-text-color);
+  font-weight: 600;
+}
+
+/* Role section header refinement */
+.role-section h4 {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.5rem !important;
+}
 </style>
 
 <script>
