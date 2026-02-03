@@ -1,0 +1,629 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta name="google-site-verification" content="R3nPzqP9nO2aTgysGUiU3t-pw3wi1xuUuKVaMrimuck"> <meta name="msvalidate.01" content="04fec5e0d64b1c9bc788e98f81ee2a78"> <meta http-equiv="Permissions-Policy" content="interest-cohort=()"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> RLVR Beyond Math and Code: The Verifier Problem Nobody Has Solved | Subhadip Mitra </title> <meta name="author" content="Subhadip Mitra"> <meta name="description" content="Reinforcement Learning with Verifiable Rewards powers every reasoning model worth talking about. But it only works where you can check the answer automatically. Extending it to messy, real-world domains is the hardest open problem in LLM training right now."> <meta name="keywords" content="subhadip-mitra,subhadip,google,google-cloud,data-&amp;-analytics,ai-innovations,enterprise-technology-leadership,digital-transformation,machine-learning-models,cloud-technologies,quantum-computing,technology-consulting,singapore,researcher,llm,genai"> <meta property="og:site_name" content="Subhadip Mitra"> <meta property="og:type" content="article"> <meta property="og:title" content="Subhadip Mitra | RLVR Beyond Math and Code: The Verifier Problem Nobody Has Solved"> <meta property="og:url" content="https://subhadipmitra.com/blog/2026/rlvr-beyond-math-code/"> <meta property="og:description" content="Reinforcement Learning with Verifiable Rewards powers every reasoning model worth talking about. But it only works where you can check the answer automatically. Extending it to messy, real-world domains is the hardest open problem in LLM training right now."> <meta property="og:image" content="https://subhadipmitra.com/assets/img/og/rlvr-beyond-math-code.png"> <meta property="og:image:width" content="1200"> <meta property="og:image:height" content="630"> <meta property="og:locale" content="en"> <meta property="og:logo" content="https://subhadipmitra.com/assets/img/prof_pic.jpg"> <meta name="twitter:card" content="summary_large_image"> <meta name="twitter:title" content="RLVR Beyond Math and Code: The Verifier Problem Nobody Has Solved"> <meta name="twitter:description" content="Reinforcement Learning with Verifiable Rewards powers every reasoning model worth talking about. But it only works where you can check the answer automatically. Extending it to messy, real-world domains is the hardest open problem in LLM training right now."> <meta name="twitter:image" content="https://subhadipmitra.com/assets/img/og/rlvr-beyond-math-code.png"> <meta property="article:published_time" content="2026-01-18T00:00:00+00:00"> <meta property="article:author" content="Subhadip Mitra"> <meta property="article:tag" content="RLVR"> <meta property="article:tag" content="reinforcement-learning"> <meta property="article:tag" content="reasoning-models"> <meta property="article:tag" content="LLM-training"> <meta property="article:tag" content="DeepSeek-R1"> <meta property="article:tag" content="GRPO"> <meta property="article:section" content="AI Research"> <meta property="article:section" content="LLM Training"> <script type="application/ld+json">
+      {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://subhadipmitra.com/blog/2026/rlvr-beyond-math-code/"
+          },
+          "headline": "RLVR Beyond Math and Code: The Verifier Problem Nobody Has Solved",
+          "description": "Reinforcement Learning with Verifiable Rewards powers every reasoning model worth talking about. But it only works where you can check the answer automatically. Extending it to messy, real-world domains is the hardest open problem in LLM training right now.",
+          "url": "https://subhadipmitra.com/blog/2026/rlvr-beyond-math-code/",
+          "datePublished": "2026-01-18T00:00:00+00:00",
+          
+          "dateModified": "2026-01-18T00:00:00+00:00",
+          
+          "wordCount": 3448,
+          "timeRequired": "PT18M",
+          
+          "image": "https://subhadipmitra.com/assets/img/social_preview.png",
+          
+          
+          "keywords": "RLVR, reinforcement-learning, reasoning-models, LLM-training, DeepSeek-R1, GRPO",
+          
+          
+          "articleSection": "AI Research",
+          
+          "author": {
+              "@type": "Person",
+              "name": "Subhadip Mitra",
+              "url": "https://subhadipmitra.com",
+              "jobTitle": "Data and Analytics Manager, Site Lead Southeast Asia",
+              "worksFor": {
+                  "@type": "Organization",
+                  "name": "Google Cloud"
+              },
+              "sameAs": [
+                  "https://linkedin.com/in/subhadip-mitra",
+                  "https://github.com/bassrehab",
+                  "https://twitter.com/bassrehab"
+              ]
+          },
+          "publisher": {
+              "@type": "Organization",
+              "name": "Subhadip Mitra",
+              "url": "https://subhadipmitra.com",
+              "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://subhadipmitra.com/assets/img/prof_pic.jpg"
+              }
+          },
+          "isPartOf": {
+              "@type": "Blog",
+              "name": "binary breakthroughs",
+              "url": "https://subhadipmitra.com/blog/"
+          }
+          
+      }
+    </script> <script type="application/ld+json">
+      {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+              {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://subhadipmitra.com"
+              },
+              {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Blog",
+                  "item": "https://subhadipmitra.com/blog/"
+              },
+              
+              {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Ai research",
+                  "item": "https://subhadipmitra.com/blog/category/ai-research"
+              },
+              {
+                  "@type": "ListItem",
+                  "position": 4,
+                  "name": "RLVR Beyond Math and Code: The Verifier Problem Nobody Has Solved",
+                  "item": "https://subhadipmitra.com/blog/2026/rlvr-beyond-math-code/"
+              }
+              
+          ]
+      }
+    </script> <link rel="stylesheet" href="/assets/css/bootstrap.min.css?a4b3f509e79c54a512b890d73235ef04"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="/assets/css/academicons.min.css?f0b7046b84e425c55f3463ac249818f5"> <link defer rel="stylesheet" href="/assets/css/scholar-icons.css?62b2ac103a88034e6882a5be5f3e2772"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&amp;family=Inter+Tight:ital,wght@0,100..900;1,100..900&amp;family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="/assets/img/favicon.png?058310854f7b3c920f894a1d42c3c47b"> <link rel="stylesheet" href="/assets/css/main.css?d41d8cd98f00b204e9800998ecf8427e"> <link rel="canonical" href="https://subhadipmitra.com/blog/2026/rlvr-beyond-math-code/"> <script src="/assets/js/theme.js?33a804e644f2507dbddc853404eccc7a"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav sticky-bottom-footer"> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-md fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Subhadip</span> Mitra </a> <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse text-right" id="navbarNav"> <ul class="navbar-nav ml-auto flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/now/">now </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">cv </a> </li> <li class="nav-item "> <a class="nav-link" href="/bets/">bets </a> </li> <li class="nav-item dropdown "> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">more </a> <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"> <a class="dropdown-item " href="/repositories/">repositories</a> <a class="dropdown-item " href="/reading-list/">reading list</a> <a class="dropdown-item " href="/contact/">contact</a> <div class="dropdown-divider"></div> <a class="dropdown-item " href="https://artemis.subhadipmitra.com" rel="external nofollow noopener" target="_blank">ARTEMIS</a> <a class="dropdown-item " href="https://upir.subhadipmitra.com" rel="external nofollow noopener" target="_blank">UPIR</a> <a class="dropdown-item " href="https://ai-metacognition-toolkit.subhadipmitra.com/" rel="external nofollow noopener" target="_blank">AI Metacognition</a> <a class="dropdown-item " href="https://docs.smppgateway.io" rel="external nofollow noopener" target="_blank">SMPP Gateway</a> <a class="dropdown-item " href="https://iso8583.subhadipmitra.com" rel="external nofollow noopener" target="_blank">ISO8583</a> <div class="dropdown-divider"></div> <a class="dropdown-item " href="https://symmetry.subhadipmitra.com/" rel="external nofollow noopener" target="_blank">symmetry</a> </div> </li> <li class="nav-item"> <button id="search-toggle" title="Search" onclick="openSearchModal()"> <span class="nav-link">ctrl k <i class="ti ti-search"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" title="Change theme"> <i class="ti ti-sun-moon" id="light-toggle-system"></i> <i class="ti ti-moon-filled" id="light-toggle-dark"></i> <i class="ti ti-sun-filled" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">RLVR Beyond Math and Code: The Verifier Problem Nobody Has Solved</h1> <p class="post-meta"> Created on January 18, 2026 </p> <p class="post-tags"> <a href="/blog/2026"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </a>   ·   <a href="/blog/tag/rlvr"> <i class="fa-solid fa-hashtag fa-sm"></i> RLVR</a>   <a href="/blog/tag/reinforcement-learning"> <i class="fa-solid fa-hashtag fa-sm"></i> reinforcement-learning</a>   <a href="/blog/tag/reasoning-models"> <i class="fa-solid fa-hashtag fa-sm"></i> reasoning-models</a>   <a href="/blog/tag/llm-training"> <i class="fa-solid fa-hashtag fa-sm"></i> LLM-training</a>   <a href="/blog/tag/deepseek-r1"> <i class="fa-solid fa-hashtag fa-sm"></i> DeepSeek-R1</a>   <a href="/blog/tag/grpo"> <i class="fa-solid fa-hashtag fa-sm"></i> GRPO</a>   ·   <a href="/blog/category/ai-research"> <i class="fa-solid fa-tag fa-sm"></i> AI Research</a>   <a href="/blog/category/llm-training"> <i class="fa-solid fa-tag fa-sm"></i> LLM Training</a> </p> </header> <div class="audio-reader-container"> <div class="audio-reader-compact"> <button class="audio-trigger" id="audio-trigger" aria-label="Open audio player"> <i class="fas fa-headphones"></i> <span>Listen to article</span> <i class="fas fa-chevron-down audio-trigger-icon"></i> </button> <div class="audio-player-expanded" id="audio-player-expanded"> <div class="audio-player-body"> <div class="audio-info-bar"> <i class="fas fa-info-circle"></i> <span>Browser text-to-speech • Quality varies by device</span> </div> <div class="audio-controls-row"> <button class="audio-btn audio-btn-play" id="tts-play" aria-label="Play"> <i class="fas fa-play"></i> <span id="play-text">Play</span> </button> <button class="audio-btn audio-btn-pause" id="tts-pause" style="display: none" aria-label="Pause"> <i class="fas fa-pause"></i> <span>Pause</span> </button> <button class="audio-btn audio-btn-stop" id="tts-stop" aria-label="Stop"> <i class="fas fa-stop"></i> </button> <div class="audio-speed-control"> <label for="tts-rate" class="audio-speed-label"> <i class="fas fa-gauge-high"></i> <span id="tts-rate-value">1.0x</span> </label> <input id="tts-rate" type="range" min="0.5" max="2" step="0.1" value="1" class="audio-speed-slider"> </div> </div> <div class="audio-voice-row"> <label for="tts-voice" class="audio-voice-label"> <i class="fas fa-microphone"></i> <span>Voice:</span> </label> <select id="tts-voice" class="audio-voice-select"> <option value="">Loading voices...</option> </select> </div> <div class="audio-progress-section"> <div class="audio-progress-info"> <span><i class="fas fa-circle-notch"></i> Progress</span> <span id="tts-progress">0%</span> </div> <div class="progress" style="height: 4px"> <div class="progress-bar" id="tts-progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div> </div> </div> </div> </div> </div> </div> <style>.audio-reader-container{margin:1.5rem 0;font-family:var(--global-font-family,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif)}.audio-reader-compact{position:relative}.audio-trigger{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1rem;background:var(--global-code-bg-color,#f8f9fa);border:1px solid var(--global-divider-color,#dee2e6);border-radius:.375rem;color:var(--global-text-color,#212529);font-size:.875rem;font-weight:500;cursor:pointer;transition:all .2s ease;font-family:inherit}.audio-trigger:hover{background:var(--global-bg-color,#fff);border-color:var(--global-theme-color,#0d6efd);color:var(--global-theme-color,#0d6efd);box-shadow:0 .125rem .25rem rgba(0,0,0,0.075)}.audio-trigger i:first-child{font-size:1rem;color:var(--global-theme-color,#0d6efd)}.audio-trigger-icon{font-size:.75rem;margin-left:.25rem;transition:transform .3s ease;color:var(--global-text-color-light,#6c757d)}.audio-trigger.active .audio-trigger-icon{transform:rotate(180deg)}.audio-trigger:focus{outline:2px solid var(--global-theme-color,#0d6efd);outline-offset:2px}.audio-player-expanded{display:none;margin-top:.75rem;background:var(--global-bg-color,#fff);border:1px solid var(--global-divider-color,#dee2e6);border-radius:.5rem;box-shadow:0 .25rem .75rem rgba(0,0,0,0.05);animation:slideDown .3s ease}.audio-player-expanded.show{display:block}@keyframes slideDown{from{opacity:0;transform:translateY(-0.5rem)}to{opacity:1;transform:translateY(0)}}.audio-player-body{padding:1rem}.audio-info-bar{display:flex;align-items:center;gap:.5rem;padding:.625rem .75rem;background:var(--global-code-bg-color,#f8f9fa);border-left:2px solid var(--global-theme-color,#0d6efd);border-radius:.25rem;font-size:.8125rem;color:var(--global-text-color-light,#6c757d);margin-bottom:1rem}.audio-info-bar i{color:var(--global-theme-color,#0d6efd);font-size:.875rem}.audio-controls-row{display:flex;align-items:center;gap:.5rem;margin-bottom:.875rem;flex-wrap:wrap}.audio-btn{display:inline-flex;align-items:center;gap:.375rem;padding:.375rem .875rem;border:1px solid transparent;border-radius:.375rem;font-size:.875rem;font-weight:500;cursor:pointer;transition:all .15s ease;font-family:inherit;color:#fff}.audio-btn i{font-size:.8125rem}.audio-btn span{color:#fff}.audio-btn:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 .125rem .375rem rgba(0,0,0,0.15)}.audio-btn:active:not(:disabled){transform:translateY(0)}.audio-btn:disabled{opacity:.6;cursor:not-allowed}.audio-btn-play{background:var(--global-theme-color,#0d6efd);border-color:var(--global-theme-color,#0d6efd)}.audio-btn-play:hover:not(:disabled){background:color-mix(in srgb,var(--global-theme-color,#0d6efd) 85%,black);border-color:color-mix(in srgb,var(--global-theme-color,#0d6efd) 80%,black)}.audio-btn-play.playing{background:#198754;border-color:#198754}.audio-btn-pause{background:#6c757d;border-color:#6c757d}.audio-btn-pause:hover:not(:disabled){background:#5c636a;border-color:#565e64}.audio-btn-stop{background:transparent;color:#dc3545;border-color:#dc3545;padding:.375rem .625rem}.audio-btn-stop:hover:not(:disabled){background:#dc3545;color:#fff;border-color:#dc3545}.audio-speed-control{display:flex;align-items:center;gap:.5rem;margin-left:auto}.audio-speed-label{display:flex;align-items:center;gap:.375rem;font-size:.8125rem;font-weight:500;color:var(--global-text-color,#212529);margin:0;white-space:nowrap}.audio-speed-label i{color:var(--global-theme-color,#0d6efd);font-size:.875rem}.audio-speed-slider{width:80px;height:4px;-webkit-appearance:none;appearance:none;background:var(--global-divider-color,#dee2e6);border-radius:2px;outline:0}.audio-speed-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:14px;height:14px;border-radius:50%;background:var(--global-theme-color,#0d6efd);cursor:pointer;transition:transform .15s ease}.audio-speed-slider::-webkit-slider-thumb:hover{transform:scale(1.2)}.audio-speed-slider::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--global-theme-color,#0d6efd);border:0;cursor:pointer;transition:transform .15s ease}.audio-speed-slider::-moz-range-thumb:hover{transform:scale(1.2)}.audio-voice-row{display:flex;align-items:center;gap:.75rem;margin-bottom:.875rem}.audio-voice-label{display:flex;align-items:center;gap:.375rem;font-size:.8125rem;font-weight:500;color:var(--global-text-color,#212529);margin:0;white-space:nowrap}.audio-voice-label i{color:var(--global-theme-color,#0d6efd);font-size:.875rem}.audio-voice-select{flex:1;padding:.375rem .75rem;border:1px solid var(--global-divider-color,#dee2e6);border-radius:.375rem;font-size:.8125rem;background:var(--global-bg-color,#fff);color:var(--global-text-color,#212529);cursor:pointer;transition:border-color .15s ease}.audio-voice-select:hover{border-color:var(--global-theme-color,#0d6efd)}.audio-voice-select:focus{outline:0;border-color:var(--global-theme-color,#0d6efd);box-shadow:0 0 0 .2rem rgba(13,110,253,0.25)}.audio-progress-section{margin-top:.75rem;padding-top:.75rem;border-top:1px solid var(--global-divider-color,#e9ecef)}
+.audio-progress-info{display:flex;justify-content:space-between;align-items:center;font-size:.8125rem;color:var(--global-text-color-light,#6c757d);margin-bottom:.5rem}.audio-progress-info i{margin-right:.25rem;color:var(--global-theme-color,#0d6efd);font-size:.75rem}.progress{border-radius:2px;overflow:hidden;background:var(--global-divider-color,#e9ecef)}.progress-bar{background:var(--global-theme-color,#0d6efd);transition:width .6s ease}[data-theme="dark"] .audio-trigger,body.dark-mode .audio-trigger{background:rgba(255,255,255,0.05);border-color:var(--global-divider-color,#454545);color:var(--global-text-color,#e9ecef)}[data-theme="dark"] .audio-trigger:hover,body.dark-mode .audio-trigger:hover{background:rgba(255,255,255,0.08)}[data-theme="dark"] .audio-player-expanded,body.dark-mode .audio-player-expanded{background:var(--global-bg-color,#1e1e1e);border-color:var(--global-divider-color,#454545)}[data-theme="dark"] .audio-info-bar,body.dark-mode .audio-info-bar{background:rgba(255,255,255,0.03)}[data-theme="dark"] .audio-voice-select,body.dark-mode .audio-voice-select{background:var(--global-bg-color,#1e1e1e);border-color:var(--global-divider-color,#454545);color:var(--global-text-color,#e9ecef)}[data-theme="dark"] .progress,body.dark-mode .progress{background:rgba(255,255,255,0.1)}@media(max-width:576px){.audio-trigger span{display:none}.audio-controls-row{flex-wrap:wrap}.audio-btn span{display:none}.audio-btn{padding:.5rem .75rem}.audio-btn i{font-size:1rem}.audio-speed-control{width:100%;margin-left:0;margin-top:.5rem}.audio-speed-slider{flex:1}.audio-voice-row{flex-direction:column;align-items:stretch}}@media print{.audio-reader-container{display:none!important}}@media(prefers-reduced-motion:reduce){.audio-trigger,.audio-btn,.progress-bar,.audio-player-expanded{transition:none;animation:none}}</style> <script>
+  (function () {
+    "use strict";
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", init);
+    } else {
+      init();
+    }
+
+    function init() {
+      if (!("speechSynthesis" in window)) {
+        document.querySelector(".audio-reader-container").innerHTML = `
+        <div class="audio-reader-compact">
+          <div class="alert alert-warning d-flex align-items-center" role="alert" style="font-size: 0.875rem;">
+            <i class="fas fa-exclamation-triangle me-2"></i>
+            <div>Text-to-speech not supported in this browser.</div>
+          </div>
+        </div>
+      `;
+        return;
+      }
+
+      const synth = window.speechSynthesis;
+      let utterance = null;
+      let isPaused = false;
+
+      const triggerBtn = document.getElementById("audio-trigger");
+      const expandedPlayer = document.getElementById("audio-player-expanded");
+      const playBtn = document.getElementById("tts-play");
+      const pauseBtn = document.getElementById("tts-pause");
+      const stopBtn = document.getElementById("tts-stop");
+      const voiceSelect = document.getElementById("tts-voice");
+      const rateSlider = document.getElementById("tts-rate");
+      const rateValue = document.getElementById("tts-rate-value");
+      const progressText = document.getElementById("tts-progress");
+      const progressBar = document.getElementById("tts-progress-bar");
+      const playText = document.getElementById("play-text");
+
+      const possibleSelectors = [
+        ".post-content",
+        "article .post-content",
+        ".post .post-content",
+        "article.post",
+        ".post",
+        "article",
+        "main article",
+        "main .container",
+        "main",
+        ".l-main",
+        ".content",
+      ];
+
+      let articleElement = null;
+      for (const selector of possibleSelectors) {
+        articleElement = document.querySelector(selector);
+        if (articleElement) break;
+      }
+
+      if (!articleElement) {
+        console.warn("Audio Reader: Could not find article content");
+        return;
+      }
+
+      const clonedContent = articleElement.cloneNode(true);
+      const elementsToRemove = [
+        "pre",
+        "code",
+        "script",
+        "style",
+        "nav",
+        ".audio-reader-container",
+        ".citation",
+        ".giscus",
+        ".utterances",
+        ".navigation",
+        ".pagination",
+        ".social",
+        ".share",
+        "header",
+        "footer",
+        ".header",
+        ".footer",
+        ".sidebar",
+      ];
+
+      elementsToRemove.forEach((selector) => {
+        clonedContent.querySelectorAll(selector).forEach((el) => el.remove());
+      });
+
+      const articleText = clonedContent.innerText
+        .replace(/\s+/g, " ")
+        .replace(/\n{3,}/g, "\n\n")
+        .trim();
+
+      if (!articleText || articleText.length < 100) {
+        console.warn("Audio Reader: Article too short");
+        return;
+      }
+
+      // Toggle player
+      triggerBtn.addEventListener("click", function () {
+        expandedPlayer.classList.toggle("show");
+        this.classList.toggle("active");
+        localStorage.setItem("audioPlayerExpanded", expandedPlayer.classList.contains("show"));
+      });
+
+      // Load voices
+      function loadVoices() {
+        const voices = synth.getVoices();
+        if (voices.length === 0) {
+          setTimeout(loadVoices, 100);
+          return;
+        }
+
+        voiceSelect.innerHTML = '<option value="">Default Voice</option>';
+
+        const englishVoices = voices.filter((v) => v.lang.startsWith("en"));
+        const preferredVoices = englishVoices.filter(
+          (v) =>
+            v.name.includes("Google") ||
+            v.name.includes("Microsoft") ||
+            v.name.includes("Premium") ||
+            v.name.includes("Enhanced") ||
+            v.name.includes("Natural")
+        );
+        const standardEnglishVoices = englishVoices.filter((v) => !preferredVoices.includes(v));
+        const otherVoices = voices.filter((v) => !v.lang.startsWith("en"));
+
+        preferredVoices.forEach((voice) => {
+          const option = document.createElement("option");
+          option.value = voices.indexOf(voice);
+          option.textContent = `${voice.name} (${voice.lang})`;
+          voiceSelect.appendChild(option);
+        });
+
+        if (standardEnglishVoices.length > 0) {
+          const optgroup = document.createElement("optgroup");
+          optgroup.label = "Other English";
+          standardEnglishVoices.forEach((voice) => {
+            const option = document.createElement("option");
+            option.value = voices.indexOf(voice);
+            option.textContent = `${voice.name} (${voice.lang})`;
+            optgroup.appendChild(option);
+          });
+          voiceSelect.appendChild(optgroup);
+        }
+
+        if (otherVoices.length > 0) {
+          const optgroup = document.createElement("optgroup");
+          optgroup.label = "Other Languages";
+          otherVoices.forEach((voice) => {
+            const option = document.createElement("option");
+            option.value = voices.indexOf(voice);
+            option.textContent = `${voice.name} (${voice.lang})`;
+            optgroup.appendChild(option);
+          });
+          voiceSelect.appendChild(optgroup);
+        }
+      }
+
+      loadVoices();
+      if (synth.addEventListener) {
+        synth.addEventListener("voiceschanged", loadVoices);
+      }
+
+      function updateProgress(current, total) {
+        const percent = Math.min(100, Math.round((current / total) * 100));
+        progressText.textContent = `${percent}%`;
+        progressBar.style.width = `${percent}%`;
+        progressBar.setAttribute("aria-valuenow", percent);
+      }
+
+      function updatePlayButton(isPlaying) {
+        const icon = playBtn.querySelector("i");
+        if (isPlaying) {
+          icon.className = "fas fa-circle-dot";
+          playText.textContent = "Playing";
+          playBtn.classList.add("playing");
+        } else {
+          icon.className = "fas fa-play";
+          playText.textContent = "Play";
+          playBtn.classList.remove("playing");
+        }
+      }
+
+      function speak() {
+        if (isPaused) {
+          synth.resume();
+          isPaused = false;
+          updatePlayButton(true);
+          pauseBtn.style.display = "inline-flex";
+          return;
+        }
+
+        synth.cancel();
+        utterance = new SpeechSynthesisUtterance(articleText);
+
+        if (voiceSelect.value) {
+          const voices = synth.getVoices();
+          utterance.voice = voices[parseInt(voiceSelect.value)];
+        }
+
+        utterance.rate = parseFloat(rateSlider.value);
+        utterance.pitch = 1;
+        utterance.volume = 1;
+
+        utterance.onstart = function () {
+          updatePlayButton(true);
+          pauseBtn.style.display = "inline-flex";
+          playBtn.disabled = false;
+        };
+
+        utterance.onend = function () {
+          updatePlayButton(false);
+          pauseBtn.style.display = "none";
+          updateProgress(100, 100);
+          setTimeout(() => updateProgress(0, 100), 1000);
+        };
+
+        utterance.onboundary = function (event) {
+          updateProgress(event.charIndex, articleText.length);
+        };
+
+        utterance.onerror = function (event) {
+          if (event.error !== "interrupted" && event.error !== "canceled") {
+            alert("Playback error. Try a different voice.");
+          }
+          updatePlayButton(false);
+          pauseBtn.style.display = "none";
+        };
+
+        playBtn.disabled = true;
+        synth.speak(utterance);
+      }
+
+      function pause() {
+        if (synth.speaking && !isPaused) {
+          synth.pause();
+          isPaused = true;
+          const icon = playBtn.querySelector("i");
+          icon.className = "fas fa-play";
+          playText.textContent = "Resume";
+          playBtn.classList.remove("playing");
+          pauseBtn.style.display = "none";
+        }
+      }
+
+      function stop() {
+        synth.cancel();
+        isPaused = false;
+        updatePlayButton(false);
+        pauseBtn.style.display = "none";
+        updateProgress(0, 100);
+      }
+
+      playBtn.addEventListener("click", speak);
+      pauseBtn.addEventListener("click", pause);
+      stopBtn.addEventListener("click", stop);
+
+      rateSlider.addEventListener("input", function (e) {
+        rateValue.textContent = `${parseFloat(e.target.value).toFixed(1)}x`;
+      });
+
+      window.addEventListener("beforeunload", function () {
+        synth.cancel();
+      });
+
+      if (localStorage.getItem("audioPlayerExpanded") === "true") {
+        setTimeout(() => {
+          expandedPlayer.classList.add("show");
+          triggerBtn.classList.add("active");
+        }, 100);
+      }
+    }
+  })();
+</script> <article class="post-content"> <div id="markdown-content"> <p>If 2024 was about scaling parameters, 2025 was about scaling reasoning.</p> <p>That sentence gets thrown around so often it’s become a cliche, but the underlying shift it describes is real and consequential. The most important training technique to emerge in the past two years isn’t a new architecture or a bigger dataset - it’s a change in how we give feedback to models during post-training. Instead of asking humans “which answer is better?” (RLHF), we started asking programs “is this answer correct?” (RLVR).</p> <p>Reinforcement Learning with Verifiable Rewards changed the game for math and code. DeepSeek R1 demonstrated that you could get remarkable reasoning capabilities through pure RLVR without any supervised fine-tuning datasets. OpenAI’s o-series models, Google’s Gemini Deep Think, and essentially every reasoning model shipping today uses some variant of this approach.</p> <p>But here’s the thing nobody wants to admit publicly: RLVR only works well in domains where you can automatically verify correctness. Math has definitive answers. Code has test suites. What about everything else?</p> <p>Extending RLVR to open-ended, subjective, or partially-verifiable domains is the hardest open problem in LLM training right now. And the research community is making real progress - in ways that will reshape how we think about training AI systems for enterprise use.</p> <h2 id="how-rlvr-actually-works-without-the-hand-waving">How RLVR Actually Works (Without the Hand-Waving)</h2> <p>Let me be precise about what’s happening, because most explanations skip the parts that matter.</p> <p>Traditional post-training has two phases. First, supervised fine-tuning (SFT): you show the model examples of good responses and train it to imitate them. Second, RLHF: humans compare pairs of outputs and the model learns to produce responses humans prefer. Both phases are bottlenecked by expensive human labor - either writing good examples or judging which outputs are better.</p> <p>RLVR replaces the human judgment with programmatic verification:</p> <pre><code class="language-mermaid">graph LR
+    subgraph "Traditional RLHF"
+        direction LR
+        P1["Prompt"] --&gt; M1["Model generates&lt;br/&gt;response A and B"]
+        M1 --&gt; H["Human annotator:&lt;br/&gt;'A is better than B'"]
+        H --&gt; R1["Reward signal&lt;br/&gt;(preference)"]
+        R1 --&gt; U1["Update model&lt;br/&gt;weights"]
+    end
+</code></pre> <pre><code class="language-mermaid">graph LR
+    subgraph "RLVR"
+        direction LR
+        P2["Prompt&lt;br/&gt;(math problem)"] --&gt; M2["Model generates&lt;br/&gt;chain-of-thought +&lt;br/&gt;final answer"]
+        M2 --&gt; V["Programmatic verifier:&lt;br/&gt;'Answer = 42? ✓'"]
+        V --&gt; R2["Reward signal&lt;br/&gt;(binary: correct/incorrect)"]
+        R2 --&gt; U2["Update model&lt;br/&gt;weights"]
+    end
+</code></pre> <p>The key insight from DeepSeek R1: the model is only rewarded on the <strong>final answer</strong>. The intermediate chain-of-thought - all that “reasoning” the model appears to do - is never directly supervised. The model figures out, through trial and error, that producing structured reasoning steps helps it arrive at correct final answers. The reasoning emerges as a side effect of optimizing for answer correctness.</p> <p>This is genuinely surprising. Nobody told the model to “think step by step.” It discovered that strategy because it leads to more reward. DeepSeek R1 used the GRPO (Group Relative Policy Optimization) algorithm, which is computationally efficient because it doesn’t require a separate critic model - it compares outputs within each group and assigns relative rewards.</p> <p>The practical implementation looks roughly like this:</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Simplified RLVR training loop (conceptual, not production code)
+</span>
+<span class="k">def</span> <span class="nf">rlvr_training_step</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">prompt_batch</span><span class="p">,</span> <span class="n">verifier</span><span class="p">):</span>
+    <span class="sh">"""</span><span class="s">
+    For each prompt:
+    1. Model generates N candidate responses (rollouts)
+    2. Verifier checks each response</span><span class="sh">'</span><span class="s">s final answer
+    3. GRPO computes relative rewards within the group
+    4. Model weights updated toward higher-reward responses
+    </span><span class="sh">"""</span>
+    <span class="k">for</span> <span class="n">prompt</span> <span class="ow">in</span> <span class="n">prompt_batch</span><span class="p">:</span>
+        <span class="c1"># Generate multiple candidate responses
+</span>        <span class="n">rollouts</span> <span class="o">=</span> <span class="p">[</span><span class="n">model</span><span class="p">.</span><span class="nf">generate</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">N_SAMPLES</span><span class="p">)]</span>
+
+        <span class="c1"># Extract final answers and verify
+</span>        <span class="n">rewards</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">rollout</span> <span class="ow">in</span> <span class="n">rollouts</span><span class="p">:</span>
+            <span class="n">answer</span> <span class="o">=</span> <span class="nf">extract_final_answer</span><span class="p">(</span><span class="n">rollout</span><span class="p">)</span>
+            <span class="n">is_correct</span> <span class="o">=</span> <span class="nf">verifier</span><span class="p">(</span><span class="n">answer</span><span class="p">,</span> <span class="n">prompt</span><span class="p">.</span><span class="n">ground_truth</span><span class="p">)</span>
+            <span class="n">rewards</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="mf">1.0</span> <span class="k">if</span> <span class="n">is_correct</span> <span class="k">else</span> <span class="mf">0.0</span><span class="p">)</span>
+
+        <span class="c1"># GRPO: compute advantage relative to group mean
+</span>        <span class="n">mean_reward</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="n">rewards</span><span class="p">)</span> <span class="o">/</span> <span class="nf">len</span><span class="p">(</span><span class="n">rewards</span><span class="p">)</span>
+        <span class="n">advantages</span> <span class="o">=</span> <span class="p">[(</span><span class="n">r</span> <span class="o">-</span> <span class="n">mean_reward</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">rewards</span><span class="p">]</span>
+
+        <span class="c1"># Update model toward higher-advantage responses
+</span>        <span class="n">model</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="n">rollouts</span><span class="p">,</span> <span class="n">advantages</span><span class="p">)</span>
+</code></pre></div></div> <p>There’s elegance in this. No human annotators needed. No reward model to train and maintain. No preference pairs to collect. Just a verifier that says “right” or “wrong.”</p> <h2 id="the-faster-not-smarter-debate">The “Faster, Not Smarter” Debate</h2> <p>Before we talk about extending RLVR to new domains, we need to address the elephant in the room. There’s an active academic debate about whether RLVR actually makes models smarter or just makes them faster at finding answers they could already generate.</p> <p>The argument goes like this: if you let a base model (before RLVR) generate, say, 1,000 attempts at a math problem, it often produces the correct answer somewhere in those 1,000 samples. RLVR training concentrates probability mass on those correct paths, making the model produce the right answer on the first try instead of the 847th try.</p> <p>That’s not nothing - going from “correct answer exists somewhere in 1,000 samples” to “correct answer on attempt one” is practically very valuable. But it’s a different claim than “the model learned new reasoning capabilities.”</p> <p>The evidence is mixed:</p> <p><strong>Evidence for “just faster”:</strong></p> <ul> <li>Initial studies showed that RLVR-trained models don’t improve Pass@K (accuracy when you get K attempts) over base models for large K values. The base model could already find the answers; RLVR just improved Pass@1.</li> <li>Some researchers found that even training with random rewards (not correlated with correctness) improved certain metrics on certain models. If random feedback helps, maybe the real work is happening during the exploration phase, not from the reward signal.</li> </ul> <p><strong>Evidence for “genuinely smarter”:</strong></p> <ul> <li>A major paper (accepted at ICLR 2026) introduced CoT-Pass@K - a metric that evaluates not just whether the final answer is correct but whether the reasoning chain is valid. Under this metric, RLVR-trained models show improvements that base models don’t match even at very high K. The reasoning quality improves, not just the sampling efficiency.</li> <li>Cross-domain experiments show that RLVR training on math problems can improve performance on coding tasks, suggesting the model is learning transferable reasoning strategies.</li> <li>The “random rewards help” finding didn’t replicate consistently across models. Later analysis suggests it was an artifact of training data contamination in specific model families (particularly Qwen2.5-Math).</li> </ul> <p>My read on the current evidence: <strong>RLVR does both.</strong> The majority of measurable improvement is search compression - making models faster at finding correct paths. But there’s a genuine, smaller component of expanded reasoning capability, especially when training is conducted across domains and with sufficient gradient steps. The CoT-Pass@K metric is the key advance here: it lets us distinguish between the two effects.</p> <p>For practitioners, the distinction matters less than you might think. Whether your model is “smarter” or “faster at being smart” is philosophically interesting but operationally the same - it gives you correct answers more reliably. Where it matters is when you’re deciding <em>how much</em> to invest in RLVR training: the returns are primarily in sampling efficiency, with diminishing returns on capability expansion.</p> <h2 id="why-rlvr-breaks-outside-math-and-code">Why RLVR Breaks Outside Math and Code</h2> <p>Now we get to the hard part. RLVR works beautifully when three conditions are met:</p> <ol> <li> <strong>Ground truth exists</strong> - There’s a definitive correct answer</li> <li> <strong>Verification is cheap</strong> - A program can check correctness automatically</li> <li> <strong>Rewards are dense enough</strong> - The model finds correct answers frequently enough during training to learn from the signal</li> </ol> <p>Math problems have all three. Code has all three (run the test suite). Most real-world tasks have none of them.</p> <pre><code class="language-mermaid">graph TD
+    subgraph "Easy: Verifiable Domains"
+        Math["Mathematics&lt;br/&gt;Ground truth: exact answer&lt;br/&gt;Verifier: math-verify"]
+        Code["Code Generation&lt;br/&gt;Ground truth: test suite&lt;br/&gt;Verifier: sandbox execution"]
+        Logic["Formal Logic&lt;br/&gt;Ground truth: proof checker&lt;br/&gt;Verifier: SAT solver"]
+    end
+
+    subgraph "Hard: Partially Verifiable"
+        Science["Scientific Reasoning&lt;br/&gt;Some claims verifiable&lt;br/&gt;Many require judgment"]
+        Medical["Medical Diagnosis&lt;br/&gt;Outcome data exists&lt;br/&gt;But causation is complex"]
+        Legal["Legal Analysis&lt;br/&gt;Precedent is checkable&lt;br/&gt;But interpretation varies"]
+    end
+
+    subgraph "Very Hard: Open-Ended"
+        Writing["Creative Writing&lt;br/&gt;No ground truth&lt;br/&gt;Quality is subjective"]
+        Strategy["Business Strategy&lt;br/&gt;Outcomes take months&lt;br/&gt;Counterfactuals unknown"]
+        Ethics["Ethical Reasoning&lt;br/&gt;Contested by design&lt;br/&gt;No verifier possible"]
+    end
+
+    Math --&gt; Science
+    Code --&gt; Science
+    Science --&gt; Writing
+    Science --&gt; Strategy
+
+    style Math fill:#c8e6c9
+    style Code fill:#c8e6c9
+    style Logic fill:#c8e6c9
+    style Science fill:#fff9c4
+    style Medical fill:#fff9c4
+    style Legal fill:#fff9c4
+    style Writing fill:#ffcdd2
+    style Strategy fill:#ffcdd2
+    style Ethics fill:#ffcdd2
+</code></pre> <p>The problems compound when you move to open-ended domains:</p> <p><strong>Sparse rewards</strong> - In math, a model might find the correct answer 10-30% of the time during training, providing enough signal to learn. For complex open-ended tasks, the model might never produce a “correct” response because there’s no single correct response. The reward signal is too sparse for learning.</p> <p><strong>Reward hacking</strong> - When the verifier is imperfect (and all real-world verifiers are), the model learns to exploit its weaknesses instead of actually improving. If your verifier checks for keyword presence, the model learns to stuff keywords. If your verifier is another LLM, the model learns to produce outputs that fool that specific LLM.</p> <p><strong>Evaluation subjectivity</strong> - Ask five people whether a business strategy memo is “good” and you’ll get five different answers. RLVR needs unambiguous verification. Subjectivity breaks the paradigm.</p> <h2 id="three-approaches-that-are-actually-working">Three Approaches That Are Actually Working</h2> <p>The research community isn’t standing still. Three approaches to extending RLVR beyond math and code are showing real promise.</p> <h3 id="approach-1-rlvrr---reward-chains-from-reference-outputs">Approach 1: RLVRR - Reward Chains from Reference Outputs</h3> <p>The most exciting recent work is RLVRR (Reinforcement Learning with Verifiable Reference-based Rewards), published in January 2026 and accepted at ICLR 2026.</p> <p>The core idea: instead of checking a single final answer (the “verifiable dot”), extract an ordered sequence of verifiable signals from high-quality reference outputs. The single dot becomes a reward chain.</p> <pre><code class="language-mermaid">graph TD
+    subgraph "Traditional RLVR"
+        P1["Prompt"] --&gt; R1["Model Response"]
+        R1 --&gt; V1["Check final answer&lt;br/&gt;(single verifiable dot)"]
+        V1 --&gt; S1["Reward: 0 or 1"]
+    end
+
+    subgraph "RLVRR"
+        P2["Prompt"] --&gt; Ref["Reference Response&lt;br/&gt;(high-quality example)"]
+        Ref --&gt; Extract["Extract verifiable signals"]
+        Extract --&gt; CC["Content Chain&lt;br/&gt;Keywords, concepts,&lt;br/&gt;factual claims"]
+        Extract --&gt; SC["Style Chain&lt;br/&gt;Structure, tone,&lt;br/&gt;format compliance"]
+
+        P2 --&gt; R2["Model Response"]
+        R2 --&gt; VC["Verify against&lt;br/&gt;content chain"]
+        R2 --&gt; VS["Verify against&lt;br/&gt;style chain"]
+        VC --&gt; S2["Partial reward:&lt;br/&gt;content score"]
+        VS --&gt; S3["Partial reward:&lt;br/&gt;style score"]
+        S2 --&gt; Final["Combined reward&lt;br/&gt;(granular, not binary)"]
+        S3 --&gt; Final
+    end
+
+    style V1 fill:#ffcdd2
+    style S1 fill:#ffcdd2
+    style CC fill:#c8e6c9
+    style SC fill:#c8e6c9
+    style Final fill:#c8e6c9
+</code></pre> <p>The decomposition into content and style dimensions is clever. Content rewards check for deterministic elements - does the response include the key facts, concepts, or arguments from the reference? Style rewards evaluate structural properties - does it follow the required format, maintain appropriate tone, cite sources when needed?</p> <p>Both dimensions use rule-based verification rather than learned reward models. This preserves RLVR’s key advantage (no reward model training) while extending it to open-ended generation.</p> <p>The results are striking: RLVRR substantially outperforms supervised fine-tuning trained on ten times more data. It also outperforms approaches using learned reward models. And it generalizes better - training on one domain improves performance on others.</p> <p>The practical implication: you can now apply RLVR-style training to tasks like report writing, email drafting, customer support responses, and policy compliance - anywhere you have high-quality reference outputs to extract verifiable signals from.</p> <h3 id="approach-2-judge-code---auto-generated-programmatic-rubrics">Approach 2: Judge Code - Auto-Generated Programmatic Rubrics</h3> <p>A separate line of research (presented as an ICLR 2026 submission) asks: what if you could automatically generate verifiers for open-ended tasks?</p> <p>The approach: use an LLM to generate “Judge Code” - programmatic rubrics that evaluate responses against specific criteria. Instead of training a reward model, you generate code that checks for concrete, measurable properties.</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Example: auto-generated Judge Code for a product description task
+</span>
+<span class="k">def</span> <span class="nf">judge_product_description</span><span class="p">(</span><span class="n">response</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">product_info</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+    <span class="sh">"""</span><span class="s">Programmatic rubric for product description quality.</span><span class="sh">"""</span>
+    <span class="n">score</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">max_score</span> <span class="o">=</span> <span class="mf">5.0</span>
+
+    <span class="c1"># Content checks (verifiable)
+</span>    <span class="k">if</span> <span class="n">product_info</span><span class="p">[</span><span class="sh">'</span><span class="s">name</span><span class="sh">'</span><span class="p">].</span><span class="nf">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">response</span><span class="p">.</span><span class="nf">lower</span><span class="p">():</span>
+        <span class="n">score</span> <span class="o">+=</span> <span class="mf">1.0</span>  <span class="c1"># Mentions product name
+</span>
+    <span class="k">if</span> <span class="nf">any</span><span class="p">(</span><span class="n">feat</span> <span class="ow">in</span> <span class="n">response</span><span class="p">.</span><span class="nf">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">feat</span> <span class="ow">in</span> <span class="n">product_info</span><span class="p">[</span><span class="sh">'</span><span class="s">key_features</span><span class="sh">'</span><span class="p">]):</span>
+        <span class="n">score</span> <span class="o">+=</span> <span class="mf">1.0</span>  <span class="c1"># Includes key features
+</span>
+    <span class="k">if</span> <span class="n">product_info</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">'</span><span class="s">price</span><span class="sh">'</span><span class="p">)</span> <span class="ow">and</span> <span class="nf">str</span><span class="p">(</span><span class="n">product_info</span><span class="p">[</span><span class="sh">'</span><span class="s">price</span><span class="sh">'</span><span class="p">])</span> <span class="ow">in</span> <span class="n">response</span><span class="p">:</span>
+        <span class="n">score</span> <span class="o">+=</span> <span class="mf">1.0</span>  <span class="c1"># Includes accurate pricing
+</span>
+    <span class="c1"># Structure checks (verifiable)
+</span>    <span class="n">sentences</span> <span class="o">=</span> <span class="n">response</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="sh">'</span><span class="s">.</span><span class="sh">'</span><span class="p">)</span>
+    <span class="k">if</span> <span class="mi">3</span> <span class="o">&lt;=</span> <span class="nf">len</span><span class="p">(</span><span class="n">sentences</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">8</span><span class="p">:</span>
+        <span class="n">score</span> <span class="o">+=</span> <span class="mf">1.0</span>  <span class="c1"># Appropriate length
+</span>
+    <span class="c1"># Tone check (partially verifiable)
+</span>    <span class="n">positive_words</span> <span class="o">=</span> <span class="p">[</span><span class="sh">'</span><span class="s">innovative</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">reliable</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">efficient</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">premium</span><span class="sh">'</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nf">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">positive_words</span> <span class="k">if</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">response</span><span class="p">.</span><span class="nf">lower</span><span class="p">())</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">score</span> <span class="o">+=</span> <span class="mf">1.0</span>  <span class="c1"># Uses positive product language
+</span>
+    <span class="k">return</span> <span class="n">score</span> <span class="o">/</span> <span class="n">max_score</span>
+</code></pre></div></div> <p>The insight: you don’t need perfect verification to get useful training signal. A partial, imperfect rubric is enough if the reward is sufficiently correlated with actual quality. The researchers show that under certain conditions (the rubric has to be right more often than it’s wrong, basically), RL training converges to improved performance.</p> <p>The practical advantage is efficiency: generating Judge Code is cheap compared to training reward models. The offline variant (pre-generate rubrics for your training data, then run RL) achieves competitive performance at more than 2x the wall-time speedup compared to generative reward model approaches.</p> <h3 id="approach-3-domain-specific-verifiers-for-enterprise-tasks">Approach 3: Domain-Specific Verifiers for Enterprise Tasks</h3> <p>Sebastian Raschka predicted in his State of LLMs 2025 review that RLVR would expand into chemistry, biology, and other domains where the answer isn’t a single number but can still be mechanically verified. This is starting to happen.</p> <p>The pattern:</p> <table> <thead> <tr> <th>Domain</th> <th>Verifier Strategy</th> <th>What Gets Verified</th> </tr> </thead> <tbody> <tr> <td><strong>Chemistry</strong></td> <td>Molecular property calculators</td> <td>Predicted molecular structures, reaction yields, safety classifications</td> </tr> <tr> <td><strong>Biology</strong></td> <td>Sequence alignment tools</td> <td>Protein structure predictions, gene annotations, pathway analysis</td> </tr> <tr> <td><strong>Finance</strong></td> <td>Regulatory rule engines</td> <td>Compliance checks, calculation accuracy, disclosure completeness</td> </tr> <tr> <td><strong>Legal</strong></td> <td>Precedent databases + citation checkers</td> <td>Case citation accuracy, statutory references, procedural compliance</td> </tr> <tr> <td><strong>Medical</strong></td> <td>Clinical guideline databases</td> <td>Treatment plan adherence to guidelines, drug interaction checks, diagnostic criteria</td> </tr> <tr> <td><strong>SQL/Data</strong></td> <td>Execution-based verification</td> <td>Query correctness against known databases (Databricks reported 75.68% on BIRD test)</td> </tr> </tbody> </table> <p>The common thread: none of these domains have fully verifiable answers. But they all have <em>aspects</em> that can be mechanically checked. RLVR doesn’t need perfect verification - it needs verification that’s correlated with quality and cheap enough to run at scale.</p> <p>This is where enterprise teams should be paying attention. If you have domain-specific rules, checklists, or validators - things that currently sit in your quality assurance process - they can potentially be converted into RLVR reward signals.</p> <h2 id="the-process-reward-question">The Process Reward Question</h2> <p>There’s a parallel research thread worth understanding: process reward models (PRMs) vs. outcome reward models (ORMs).</p> <p>Standard RLVR uses outcome rewards - only the final answer matters. PRMs evaluate intermediate reasoning steps, providing reward signal along the way. In theory, PRMs should help with the sparse reward problem: instead of waiting until the end to say “wrong,” you can catch errors mid-reasoning.</p> <p>In practice, PRMs have been disappointing. DeepSeek’s research concluded that PRMs don’t provide advantages over ORMs during large-scale RL training - the computational overhead doesn’t justify the marginal improvement. The model seems to develop its own internal process supervision through outcome-only training.</p> <p>But I think this conclusion is premature for non-math domains. The reason PRMs don’t help much in math is that the model already has strong mathematical reasoning from pre-training. The outcome signal is dense enough. In domains where the model has weaker prior knowledge and outcomes are more complex, intermediate supervision might matter more.</p> <p>This is an active research frontier. The “explanation-scoring” approach - where a second LLM evaluates the quality of reasoning explanations, not just the final answer - sits somewhere between ORM and PRM. DeepSeek’s recent work on explanation scoring suggests this direction has legs, even if pure PRMs haven’t panned out.</p> <h2 id="what-this-means-for-enterprise-teams">What This Means for Enterprise Teams</h2> <p>If you’re building production AI systems (not just training models), here’s the practical takeaway:</p> <p><strong>The RLVR expansion is coming to your domain.</strong> Whether it’s through RLVRR-style reference-based rewards, auto-generated Judge Code, or domain-specific verifiers, the same training paradigm that made reasoning models possible is about to be applied to your specific use case. The organizations that benefit first will be the ones that:</p> <ol> <li> <p><strong>Have clean reference data.</strong> RLVRR needs high-quality reference outputs. If you’ve been collecting examples of excellent work (customer support transcripts, compliance reports, medical notes), you have raw material for reward chain extraction.</p> </li> <li> <p><strong>Have rule-based quality checks.</strong> If your domain has checklists, regulatory requirements, or quality rubrics that can be expressed as code, those are potential RLVR verifiers. The conversion from “QA checklist” to “training reward signal” is more straightforward than most teams realize.</p> </li> <li> <p><strong>Understand what “partially correct” means.</strong> The shift from binary rewards (right/wrong) to granular rewards (content score + style score + compliance score) unlocks RLVR for domains that aren’t black-and-white. If you can decompose “good output” into measurable dimensions, you can build a reward function.</p> </li> </ol> <p><strong>The fine-tuning calculus is changing.</strong> AT&amp;T’s CDO predicted that fine-tuned small models will be the big trend for mature enterprises in 2026. When you combine SLM fine-tuning with RLVR-style training on domain-specific verifiers, you can build models that match frontier performance on your specific tasks at a fraction of the cost. Mistral has been making this argument loudly: their small models outperform large models after domain fine-tuning.</p> <p><strong>Invest in your verifier infrastructure.</strong> The bottleneck for RLVR adoption isn’t compute or training frameworks - it’s verifiers. Building reliable, fast, domain-specific verifiers is the unglamorous work that unlocks the whole paradigm. If I were allocating engineering resources for 2026, verifier development would be near the top of the list.</p> <h2 id="open-questions-that-matter">Open Questions That Matter</h2> <p>A few things I’m watching closely:</p> <p><strong>Scaling laws for RLVR are unknown.</strong> We have Chinchilla laws for pre-training. We have rough intuitions for RLHF. For RLVR, we don’t know how gains scale with compute, when returns diminish, or what the optimal ratio of training compute to inference compute should be. This uncertainty makes capacity planning difficult.</p> <p><strong>Multi-verifier composition is unexplored.</strong> What happens when you chain multiple partial verifiers? If your content verifier says 0.8 and your style verifier says 0.3 and your compliance verifier says 1.0, how do you combine them? Weighted averaging? Minimum? Multiplicative? The answer probably depends on domain, but there’s no principled framework yet.</p> <p><strong>Self-play for harder problems.</strong> If models exhaust their training data (find correct answers too easily), RLVR training stalls. Self-play - where models generate harder problems for themselves - could sustain exploration. This connects to AlphaEvolve-style approaches where LLMs + evolutionary algorithms discover novel solutions.</p> <p><strong>Regulatory implications.</strong> If RLVR-trained models are making decisions in healthcare, finance, or legal domains, regulators will want to understand the training process. “We trained the model to maximize a score from an automated verifier” is going to invite questions about verifier quality, bias, and coverage that the field hasn’t fully addressed yet.</p> <hr> <p><em>This is Part 2 of a three-part series on the cutting edge of LLM and agent research in January 2026. Part 1 covered <a href="/blog/2026/agent-protocol-stack/">the agent protocol stack</a> - MCP, A2A, and A2UI as a layered architecture with significant security gaps. Part 3 explores <a href="/blog/2026/circuit-tracing-production/">mechanistic interpretability and circuit tracing</a> - what it means to watch an LLM think, and why it matters for production safety.</em></p> <p><em>Find me on <a href="https://www.linkedin.com/in/subhadip-mitra/" rel="external nofollow noopener" target="_blank">LinkedIn</a> or drop a comment below.</em></p> <h3 id="citation">Citation</h3> <p>If you found this article useful, please cite it using one of the formats below:</p> <h4 id="apa-format">APA Format</h4> <p>Mitra, Subhadip. (2026, January). <em>RLVR Beyond Math and Code: The Verifier Problem Nobody Has Solved</em>. Retrieved from https://subhadipmitra.com/blog/2026/rlvr-beyond-math-code/</p> <h4 id="bibtex-entry">BibTeX Entry</h4> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@article{mitra2026rlvr-beyond-math-code,
+  title   = {RLVR Beyond Math and Code: The Verifier Problem Nobody Has Solved},
+  author  = {Mitra, Subhadip},
+  year    = {2026},
+  month   = {Jan},
+  url     = {https://subhadipmitra.com/blog/2026/rlvr-beyond-math-code/}
+}
+</code></pre></div></div> </div> </article> <style>.post-footer-featured{margin-top:6rem;padding-top:0}.newsletter-featured{background:var(--global-card-bg-color,#fff);border:2px solid var(--global-theme-color,#b509ac);border-radius:24px;padding:3rem;margin-bottom:3rem}.showcase-label-newsletter{display:inline-flex;align-items:center;gap:.5rem;font-size:.875rem;letter-spacing:.15em;text-transform:uppercase;color:var(--global-theme-color,#b509ac);font-weight:700;margin-bottom:1rem}.newsletter-featured h2{font-size:2rem;font-weight:900;margin:0 0 1rem 0;letter-spacing:-0.02em;line-height:1.1;color:var(--global-text-color,#000)}.newsletter-featured p{font-size:1.125rem;color:var(--global-text-color-light,#666);margin-bottom:1.5rem;line-height:1.6}.newsletter-form-featured{display:flex;gap:.75rem;margin-bottom:1rem}.newsletter-form-featured input{flex:1;padding:.875rem 1.25rem;background:var(--global-bg-color,#fff);color:var(--global-text-color,#000);border:1px solid var(--global-divider-color,#e5e5e5);border-radius:12px;font-size:1rem;transition:all .3s}.newsletter-form-featured input:focus{outline:0;border-color:var(--global-theme-color,#b509ac);box-shadow:0 0 0 3px rgba(181,9,172,0.1)}.newsletter-form-featured button{padding:.875rem 2rem;background:var(--global-theme-color,#b509ac);color:white;border:0;border-radius:12px;font-weight:700;font-size:1rem;cursor:pointer;transition:all .3s;white-space:nowrap}.newsletter-form-featured button:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(181,9,172,0.3)}.newsletter-links{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;font-size:.875rem;color:var(--global-text-color-light,#666)}.newsletter-links a{color:var(--global-theme-color,#b509ac);text-decoration:none;font-weight:600;transition:opacity .3s}.newsletter-links a:hover{opacity:.7}.share-section-featured{text-align:center;padding:2rem 0 3rem 0;border-bottom:1px solid var(--global-divider-color,#e5e5e5)}.share-section-featured .share-label{font-size:.875rem;text-transform:uppercase;letter-spacing:.1em;color:var(--global-text-color-light,#666);font-weight:600;margin-bottom:1.25rem}.share-buttons-featured{display:flex;gap:1rem;justify-content:center;align-items:center}.share-link-featured{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;color:var(--global-text-color,#000);text-decoration:none;font-size:.875rem;padding:.5rem 1rem;background:var(--global-code-bg-color,#f8f9fa);border:1px solid var(--global-divider-color,#e5e5e5);border-radius:8px;transition:all .2s ease;white-space:nowrap;cursor:pointer}.share-link-featured:hover{background:var(--global-theme-color,#b509ac);border-color:var(--global-theme-color,#b509ac);color:white;transform:translateY(-2px)}.share-link-featured:hover svg{fill:white}.share-link-featured svg{width:16px;height:16px;flex-shrink:0;transition:fill .2s ease}.related-posts-section{margin-top:3rem;padding-top:0}.related-posts-section h3{font-size:1.75rem;font-weight:800;margin-bottom:2rem;color:var(--global-text-color,#000);text-align:center}@media(max-width:768px){.newsletter-featured{padding:2rem}.newsletter-featured h2{font-size:1.5rem}.newsletter-form-featured{flex-direction:column}.share-buttons-featured{flex-wrap:wrap;gap:.5rem}}</style> <div class="post-footer-featured"> <div class="newsletter-featured"> <div class="showcase-label-newsletter"> <svg width="16" height="16" viewbox="0 0 24 24" fill="currentColor"> <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path> </svg> Strategic Insights </div> <h2>Get More Like This</h2> <p> Join technical leaders from Google, Amazon, and Fortune 500s. Get strategic insights on Data, AI, and Cloud transformation delivered to your inbox. </p> <form class="newsletter-form-featured" action="https://app.loops.so/api/newsletter-form/cm614n2d604nlfy1lfo7vgmo5" method="POST"> <input type="email" name="email" placeholder="your@email.com" required> <button type="submit">Subscribe</button> </form> <div class="newsletter-links"> <span>Free insights • No spam • Unsubscribe anytime</span> <span>•</span> <a href="/archive/">Browse the archive →</a> </div> </div> <div class="share-section-featured"> <div class="share-label">Share This Article</div> <div class="share-buttons-featured"> <a href="https://twitter.com/intent/tweet?text=RLVR%20Beyond%20Math%20and%20Code:%20The%20Verifier%20Problem%20Nobody%20Has%20Solved&amp;url=https://subhadipmitra.com/blog/2026/rlvr-beyond-math-code/&amp;via=bassrehab" class="share-link-featured" target="_blank" rel="noopener noreferrer" title="Share on X"> <svg viewbox="0 0 24 24" fill="currentColor"> <path d="M13.6823 10.6218L20.2391 3H18.6854L12.9921 9.61788L8.44486 3H3.2002L10.0765 13.0074L3.2002 21H4.75404L10.7663 14.0113L15.5685 21H20.8131L13.6819 10.6218H13.6823ZM11.5541 13.0956L10.8574 12.0991L5.31391 4.16971H7.70053L12.1742 10.5689L12.8709 11.5655L18.6861 19.8835H16.2995L11.5541 13.096V13.0956Z"></path> </svg> <span>X</span> </a> <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://subhadipmitra.com/blog/2026/rlvr-beyond-math-code/" class="share-link-featured" target="_blank" rel="noopener noreferrer" title="Share on LinkedIn"> <svg viewbox="0 0 24 24" fill="currentColor"> <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path> </svg> <span>LinkedIn</span> </a> <a href="https://www.reddit.com/submit?url=https://subhadipmitra.com/blog/2026/rlvr-beyond-math-code/&amp;title=RLVR%20Beyond%20Math%20and%20Code:%20The%20Verifier%20Problem%20Nobody%20Has%20Solved" class="share-link-featured" target="_blank" rel="noopener noreferrer" title="Share on Reddit"> <svg viewbox="0 0 24 24" fill="currentColor"> <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"></path> </svg> <span>Reddit</span> </a> <a href="https://news.ycombinator.com/submitlink?u=https://subhadipmitra.com/blog/2026/rlvr-beyond-math-code/&amp;t=RLVR%20Beyond%20Math%20and%20Code:%20The%20Verifier%20Problem%20Nobody%20Has%20Solved" class="share-link-featured" target="_blank" rel="noopener noreferrer" title="Share on Hacker News"> <svg viewbox="0 0 24 24" fill="currentColor"> <path d="M0 0v24h24V0H0zm12.3 12.6l-3.6-7.2H10l2.4 5.1 2.4-5.1h1.3l-3.6 7.2v4.8h-1.2v-4.8z"></path> </svg> <span>HN</span> </a> <a href="mailto:?subject=RLVR%20Beyond%20Math%20and%20Code:%20The%20Verifier%20Problem%20Nobody%20Has%20Solved&amp;body=Check%20out%20this%20article:%20https://subhadipmitra.com/blog/2026/rlvr-beyond-math-code/" class="share-link-featured" title="Share via Email"> <svg viewbox="0 0 24 24" fill="currentColor"> <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path> </svg> <span>Email</span> </a> <button onclick="copyLinkFeatured('https://subhadipmitra.com/blog/2026/rlvr-beyond-math-code/')" class="share-link-featured" title="Copy link to clipboard"> <svg class="copy-icon" viewbox="0 0 24 24" fill="currentColor"> <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path> </svg> <svg class="check-icon" style="display: none" viewbox="0 0 24 24" fill="currentColor"> <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path> </svg> <span class="copy-text">Copy</span> <span class="copied-text" style="display: none">Copied!</span> </button> </div> </div> <div class="related-posts-section"> <h3>Continue Reading</h3> </div> </div> <script>
+  function copyLinkFeatured(url) {
+    navigator.clipboard
+      .writeText(url)
+      .then(() => {
+        const btn = event.target.closest("button");
+        const copyText = btn.querySelector(".copy-text");
+        const copiedText = btn.querySelector(".copied-text");
+        const copyIcon = btn.querySelector(".copy-icon");
+        const checkIcon = btn.querySelector(".check-icon");
+
+        copyText.style.display = "none";
+        copiedText.style.display = "inline";
+        copyIcon.style.display = "none";
+        checkIcon.style.display = "inline";
+
+        setTimeout(() => {
+          copyText.style.display = "inline";
+          copiedText.style.display = "none";
+          copyIcon.style.display = "inline";
+          checkIcon.style.display = "none";
+        }, 2000);
+      })
+      .catch((err) => {
+        console.error("Failed to copy:", err);
+        alert("Could not copy link. Please copy manually: " + url);
+      });
+  }
+
+  // Newsletter form handler
+  (function () {
+    const form = document.querySelector(".newsletter-form-featured");
+    if (!form) return;
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const emailInput = form.querySelector('input[name="email"]');
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const email = emailInput.value;
+
+      // Disable submit button and show loading state
+      submitBtn.disabled = true;
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = "Subscribing...";
+
+      // Submit to Loops.so
+      const formBody = "userGroup=&email=" + encodeURIComponent(email);
+      fetch(form.action, {
+        method: "POST",
+        body: formBody,
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+      })
+        .then((res) => res.json().then((data) => ({ ok: res.ok, data })))
+        .then(({ ok, data }) => {
+          if (ok) {
+            // Success - show confirmation message
+            submitBtn.textContent = "✓ Subscribed!";
+            submitBtn.style.background = "#22c55e";
+            emailInput.value = "";
+
+            // Reset after 3 seconds
+            setTimeout(() => {
+              submitBtn.textContent = originalText;
+              submitBtn.style.background = "";
+              submitBtn.disabled = false;
+            }, 3000);
+          } else {
+            // Error from API
+            throw new Error(data.message || "Subscription failed");
+          }
+        })
+        .catch((error) => {
+          // Show error
+          submitBtn.textContent = "✗ Failed";
+          submitBtn.style.background = "#ef4444";
+          console.error("Newsletter subscription error:", error);
+
+          // Reset after 3 seconds
+          setTimeout(() => {
+            submitBtn.textContent = originalText;
+            submitBtn.style.background = "";
+            submitBtn.disabled = false;
+          }, 3000);
+        });
+    });
+  })();
+</script> <style>.related-posts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}.related-post-card{background:var(--global-card-bg-color,#fff);border:1px solid var(--global-divider-color,#e5e5e5);border-radius:16px;padding:2rem;transition:all .3s cubic-bezier(0.4,0,0.2,1);position:relative;display:flex;flex-direction:column}.related-post-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,0.1);border-color:var(--global-theme-color,#b509ac)}.related-post-title{font-size:1.25rem;font-weight:700;line-height:1.3;margin:0 0 .75rem 0;color:var(--global-text-color,#000)}.related-post-title a{color:inherit;text-decoration:none;transition:color .3s}.related-post-title a:hover{color:var(--global-theme-color,#b509ac)}.related-post-meta{font-size:.875rem;color:var(--global-text-color-light,#666);margin-bottom:.75rem}.related-post-excerpt{font-size:.95rem;line-height:1.6;color:var(--global-text-color-light,#666);margin-bottom:1rem;flex-grow:1}.related-post-link{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;color:var(--global-theme-color,#b509ac);text-decoration:none;font-size:.95rem;transition:gap .3s;margin-top:auto}.related-post-link:hover{gap:1rem}.related-post-link svg{width:16px;height:16px;transition:transform .3s}.related-post-link:hover svg{transform:translateX(4px)}.external-link-icon{width:14px;height:14px;opacity:.6;margin-left:.25rem}.no-related-posts{text-align:center;padding:3rem;color:var(--global-text-color-light,#666);font-style:italic}@media(max-width:768px){.related-posts-grid{grid-template-columns:1fr;gap:1rem}.related-post-card{padding:1.5rem}.related-post-title{font-size:1.125rem}}</style> <div class="related-posts-container"> <div class="related-posts-grid"> <article class="related-post-card"> <h4 class="related-post-title"> <a href="/blog/2026/moltbook-mcp-stress-test/">Moltbook as MCP Stress Test: What 770K Agents Reveal About Protocol Design</a> </h4> <div class="related-post-meta"> February 02, 2026 • moltbook </div> <p class="related-post-excerpt">A follow-up to my MCP Maturity Model post. Moltbook shows what happens when you run 770K agents at Level 0 maturity with zero governance. The...</p> <a href="/blog/2026/moltbook-mcp-stress-test/" class="related-post-link"> Read More <svg viewbox="0 0 24 24" fill="currentColor"> <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"></path> </svg> </a> </article> <article class="related-post-card"> <h4 class="related-post-title"> <a href="/blog/2026/circuit-tracing-production/">Circuit Tracing for the Rest of Us: From Probes to Attribution Graphs and What It Means for Production Safety</a> </h4> <div class="related-post-meta"> January 31, 2026 • mechanistic-interpretability </div> <p class="related-post-excerpt">MIT Tech Review named mechanistic interpretability a 2026 Breakthrough Technology. Anthropic open-sourced circuit tracing. Here's what actually changed, how it connects to the activation probes...</p> <a href="/blog/2026/circuit-tracing-production/" class="related-post-link"> Read More <svg viewbox="0 0 24 24" fill="currentColor"> <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"></path> </svg> </a> </article> <article class="related-post-card"> <h4 class="related-post-title"> <a href="/blog/2026/agent-protocol-stack/">The Agent Protocol Stack: Why MCP + A2A + A2UI Is the TCP/IP Moment for Agentic AI</a> </h4> <div class="related-post-meta"> January 06, 2026 • MCP </div> <p class="related-post-excerpt">MCP handles agent-to-tool. A2A handles agent-to-agent. A2UI handles agent-to-interface. Together they form a protocol stack that nobody has mapped properly - including the security gaps...</p> <a href="/blog/2026/agent-protocol-stack/" class="related-post-link"> Read More <svg viewbox="0 0 24 24" fill="currentColor"> <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"></path> </svg> </a> </article> <article class="related-post-card"> <h4 class="related-post-title"> <a href="/blog/2026/deepseek-mhc-manifold-constrained-hyper-connections/">The Manifold Dial: Visualizing Why DeepSeek's mHC Stabilizes Deep Networks</a> </h4> <div class="related-post-meta"> January 03, 2026 • deep-learning </div> <p class="related-post-excerpt">Interactive exploration of Manifold-Constrained Hyper-Connections - how DeepSeek fixed the signal explosion problem in deep residual networks using 1967 mathematics</p> <a href="/blog/2026/deepseek-mhc-manifold-constrained-hyper-connections/" class="related-post-link"> Read More <svg viewbox="0 0 24 24" fill="currentColor"> <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"></path> </svg> </a> </article> </div> </div> <br> <br> <div class="hyvor-talk-container"> <style>.hyvor-talk-container{margin-top:4rem;padding-top:3rem;border-top:2px solid var(--global-divider-color,#e5e5e5)}.hyvor-talk-header{margin-bottom:2rem;text-align:center}.hyvor-talk-header h3{font-size:1.75rem;font-weight:800;margin-bottom:.5rem;color:var(--global-text-color,#000)}.hyvor-talk-header p{font-size:1rem;color:var(--global-text-color-light,#666);margin:0}</style> <div class="hyvor-talk-header"> <h3>Join the Discussion</h3> <p>Share your thoughts, ask questions, or provide feedback on this article</p> </div> <div id="hyvor-talk-view"></div> <script type="application/javascript">
+    var HYVOR_TALK_WEBSITE = 14339;
+    var HYVOR_TALK_CONFIG = {
+      url: 'https://subhadipmitra.com/blog/2026/rlvr-beyond-math-code/',
+      id: '/blog/2026/rlvr-beyond-math-code/',
+      
+      title: 'RLVR Beyond Math and Code: The Verifier Problem Nobody Has Solved',
+      
+      
+      palette: {
+        accent: '#b509ac',
+        accentText: '#ffffff',
+        footerHeader: 'var(--global-text-color)',
+        footerHeaderText: 'var(--global-text-color-light)',
+        box: 'var(--global-card-bg-color)',
+        boxText: 'var(--global-text-color)',
+        boxLightText: 'var(--global-text-color-light)',
+        backgroundText: 'var(--global-text-color)'
+      }
+      
+    };
+  </script> <script async type="application/javascript" src="//talk.hyvor.com/web-api/embed.js"></script> </div> </div> </div> <footer class="modern-footer" role="contentinfo"> <div class="footer-container"> <div class="footer-grid"> <div class="footer-brand"> <h3>Subhadip Mitra</h3> <p> Technical Leader, Inventor, and Researcher building the future of Data &amp; Applied AI. <br>Leading Google Cloud's D&amp;A practice across Southeast Asia. </p> <br> <p><a href="mailto:contact@subhadipmitra.com">contact@subhadipmitra.com</a></p> </div> <div class="footer-section"> <h4>Explore</h4> <ul class="footer-links"> <li><a href="/">About</a></li> <li><a href="/now/">What I'm Doing Now</a></li> <li><a href="/blog/">Blog</a></li> <li><a href="/publications/">Publications</a></li> <li><a href="/repositories/">Repositories</a></li> </ul> </div> <div class="footer-section"> <h4>Connect</h4> <ul class="footer-links"> <li><a href="/contact/">Contact</a></li> <li><a href="mailto:contact@subhadipmitra.com">Email</a></li> <li><a href="https://calendly.com/contact-x9nm/30min" target="_blank" rel="external nofollow noopener">Schedule a Call</a></li> <li><a href="https://linkedin.com/in/subhadip-mitra" target="_blank" rel="external nofollow noopener">LinkedIn</a></li> <li><a href="https://github.com/bassrehab" target="_blank" rel="external nofollow noopener">GitHub</a></li> </ul> </div> </div> <div class="footer-bottom"> <div class="footer-copyright"> © 2026 Subhadip Mitra. Some Rights Reserved. Last updated: February 03, 2026. <span class="footer-utility-links"> <a href="/privacy/" title="Privacy Policy">Privacy</a> · <a href="/license/" title="Licenses">Licenses</a> · <a href="/sitemap.xml" title="Sitemap">Sitemap</a> · <a href="/feed.xml" title="RSS Feed">RSS</a> · <a href="/llms.txt" title="AI Agent Information">LLMs</a> </span> </div> <div class="footer-social"> <a href="https://linkedin.com/in/subhadip-mitra" target="_blank" aria-label="LinkedIn" rel="external nofollow noopener"> <i class="fab fa-linkedin-in"></i> </a> <a href="https://github.com/bassrehab" target="_blank" aria-label="GitHub" rel="external nofollow noopener"> <i class="fab fa-github"></i> </a> <a href="https://twitter.com/bassrehab" target="_blank" aria-label="Twitter" rel="external nofollow noopener"> <i class="fab fa-twitter"></i> </a> <a href="mailto:contact@subhadipmitra.com" aria-label="Email"> <i class="fas fa-envelope"></i> </a> </div> </div> </div> </footer> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> <script src="/assets/js/bootstrap.bundle.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?a0db7e5d5c70cc3252b3138b0c91dcaf" type="text/javascript"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/js/zoom.js?85ddb88934d28b74e78031fd54cf8308"></script> <script src="/assets/js/no_defer.js?2781658a0a2b13ed609542042a859126"></script> <script defer src="/assets/js/common.js?8e03581f97e30ec91fff7c9869d3c6cb"></script> <script defer src="/assets/js/copy_code.js?12775fdf7f95e901d7119054556e495f" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?d9f17b6adc2311cbabd747f4538bb15f"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/js/mathjax-setup.js?a5bb4e6a542c546dd929b24b8b236dfd"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script async src="https://www.googletagmanager.com/gtag/js?id=G-TW7YQ5XPC6"></script> <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-TW7YQ5XPC6');
+  </script> <script defer src="/assets/js/google-analytics-setup.js?12374742c4b1801ba82226e617af7e2d"></script> <script defer src="/assets/js/progress-bar.js?2f30e0e6801ea8f5036fa66e1ab0a71a" type="text/javascript"></script> <script src="/assets/js/vanilla-back-to-top.min.js?f40d453793ff4f64e238e420181a1d17"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/js/search/ninja-keys.min.js?a3446f084dcaecc5f75aa1757d087dcf"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/js/search-setup.js?6c304f7b1992d4b60f7a07956e52f04a"></script> <script src="/assets/js/search-data.js"></script> <script src="/assets/js/shortcut-key.js?6f508d74becd347268a7f822bca7309d"></script> <script defer src="/assets/js/newsletter.js?c3d0931971ee96e9df74ba70526c3130"></script> </body> </html>

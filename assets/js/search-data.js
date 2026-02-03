@@ -125,6 +125,39 @@ ninja.data = [{
             window.location.href = "/blog/2026/moltbook-mcp-stress-test/";
           
         },
+      },{id: "post-circuit-tracing-for-the-rest-of-us-from-probes-to-attribution-graphs-and-what-it-means-for-production-safety",
+        
+          title: "Circuit Tracing for the Rest of Us: From Probes to Attribution Graphs and...",
+        
+        description: "MIT Tech Review named mechanistic interpretability a 2026 Breakthrough Technology. Anthropic open-sourced circuit tracing. Here&#39;s what actually changed, how it connects to the activation probes I built for sandbagging detection, and why production teams should care.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/circuit-tracing-production/";
+          
+        },
+      },{id: "post-rlvr-beyond-math-and-code-the-verifier-problem-nobody-has-solved",
+        
+          title: "RLVR Beyond Math and Code: The Verifier Problem Nobody Has Solved",
+        
+        description: "Reinforcement Learning with Verifiable Rewards powers every reasoning model worth talking about. But it only works where you can check the answer automatically. Extending it to messy, real-world domains is the hardest open problem in LLM training right now.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/rlvr-beyond-math-code/";
+          
+        },
+      },{id: "post-the-agent-protocol-stack-why-mcp-a2a-a2ui-is-the-tcp-ip-moment-for-agentic-ai",
+        
+          title: "The Agent Protocol Stack: Why MCP + A2A + A2UI Is the TCP/IP...",
+        
+        description: "MCP handles agent-to-tool. A2A handles agent-to-agent. A2UI handles agent-to-interface. Together they form a protocol stack that nobody has mapped properly - including the security gaps that should terrify you.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/agent-protocol-stack/";
+          
+        },
       },{id: "post-the-manifold-dial-visualizing-why-deepseek-39-s-mhc-stabilizes-deep-networks",
         
           title: "The Manifold Dial: Visualizing Why DeepSeek&#39;s mHC Stabilizes Deep Networks",
