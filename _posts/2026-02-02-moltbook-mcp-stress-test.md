@@ -17,8 +17,6 @@ toc:
   sidebar: left
 ---
 
-# Moltbook as MCP Stress Test: What 770K Agents Reveal About Protocol Design
-
 Back in November, I wrote about [The MCP Maturity Model](/blog/2025/mcp-maturity-model/) - a framework for evaluating how organizations manage context in multi-agent systems. I described five levels, from ad-hoc string concatenation to self-evolving context systems.
 
 This week, we got a live stress test of what happens at Level 0.
