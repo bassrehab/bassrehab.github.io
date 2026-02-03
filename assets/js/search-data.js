@@ -114,7 +114,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "https://symmetry.subhadipmitra.com/";
               },
-            },{id: "post-the-manifold-dial-visualizing-why-deepseek-39-s-mhc-stabilizes-deep-networks",
+            },{id: "post-moltbook-as-mcp-stress-test-what-770k-agents-reveal-about-protocol-design",
+        
+          title: "Moltbook as MCP Stress Test: What 770K Agents Reveal About Protocol Design",
+        
+        description: "A follow-up to my MCP Maturity Model post. Moltbook shows what happens when you run 770K agents at Level 0 maturity with zero governance. The results are instructive.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/moltbook-mcp-stress-test/";
+          
+        },
+      },{id: "post-the-manifold-dial-visualizing-why-deepseek-39-s-mhc-stabilizes-deep-networks",
         
           title: "The Manifold Dial: Visualizing Why DeepSeek&#39;s mHC Stabilizes Deep Networks",
         
