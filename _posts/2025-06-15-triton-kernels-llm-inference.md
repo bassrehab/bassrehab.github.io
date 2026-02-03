@@ -8,7 +8,6 @@ tags: [machine-learning, llm, inference, optimization, triton, gpu]
 description: "A hands-on exploration of writing custom GPU kernels with OpenAI Triton, going from PyTorch's 11% bandwidth utilization to 88% on RMSNorm."
 citation: true
 giscus_comments: true
-featured: true
 related_posts: true
 thumbnail: assets/img/blog/fused-kernel.png
 pretty_table: true

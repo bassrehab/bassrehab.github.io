@@ -8,7 +8,6 @@ tags: [llm-evaluation, apache-spark, databricks, mlops, distributed-systems, sta
 description: "A deep dive into building distributed LLM evaluation infrastructure that actually scales - architectural decisions, trade-offs, and lessons learned."
 citation: true
 giscus_comments: true
-featured: true
 related_posts: true
 thumbnail: assets/img/blog/spark-eval-arch.png
 pretty_table: true

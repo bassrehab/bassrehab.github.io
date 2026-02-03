@@ -8,7 +8,6 @@ tags: [machine-learning, llm, inference, optimization]
 description: "A deep dive into implementing speculative decoding from scratch, with benchmarks on GPT-2 and extensions to diffusion models."
 citation: true
 giscus_comments: true
-featured: true
 related_posts: true
 thumbnail: assets/img/blog/roofline.png
 pretty_table: true
