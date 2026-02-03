@@ -108,17 +108,19 @@ That's not nothing - going from "correct answer exists somewhere in 1,000 sample
 The evidence is mixed:
 
 **Evidence for "just faster":**
+
 - Initial studies showed that RLVR-trained models don't improve Pass@K (accuracy when you get K attempts) over base models for large K values. The base model could already find the answers; RLVR just improved Pass@1.
 - Some researchers found that even training with random rewards (not correlated with correctness) improved certain metrics on certain models. If random feedback helps, maybe the real work is happening during the exploration phase, not from the reward signal.
 
 **Evidence for "genuinely smarter":**
+
 - A major paper (accepted at ICLR 2026) introduced CoT-Pass@K - a metric that evaluates not just whether the final answer is correct but whether the reasoning chain is valid. Under this metric, RLVR-trained models show improvements that base models don't match even at very high K. The reasoning quality improves, not just the sampling efficiency.
 - Cross-domain experiments show that RLVR training on math problems can improve performance on coding tasks, suggesting the model is learning transferable reasoning strategies.
 - The "random rewards help" finding didn't replicate consistently across models. Later analysis suggests it was an artifact of training data contamination in specific model families (particularly Qwen2.5-Math).
 
 My read on the current evidence: **RLVR does both.** The majority of measurable improvement is search compression - making models faster at finding correct paths. But there's a genuine, smaller component of expanded reasoning capability, especially when training is conducted across domains and with sufficient gradient steps. The CoT-Pass@K metric is the key advance here: it lets us distinguish between the two effects.
 
-For practitioners, the distinction matters less than you might think. Whether your model is "smarter" or "faster at being smart" is philosophically interesting but operationally the same - it gives you correct answers more reliably. Where it matters is when you're deciding *how much* to invest in RLVR training: the returns are primarily in sampling efficiency, with diminishing returns on capability expansion.
+For practitioners, the distinction matters less than you might think. Whether your model is "smarter" or "faster at being smart" is philosophically interesting but operationally the same - it gives you correct answers more reliably. Where it matters is when you're deciding _how much_ to invest in RLVR training: the returns are primarily in sampling efficiency, with diminishing returns on capability expansion.
 
 ## Why RLVR Breaks Outside Math and Code
 
@@ -269,16 +271,16 @@ Sebastian Raschka predicted in his State of LLMs 2025 review that RLVR would exp
 
 The pattern:
 
-| Domain | Verifier Strategy | What Gets Verified |
-|--------|------------------|--------------------|
-| **Chemistry** | Molecular property calculators | Predicted molecular structures, reaction yields, safety classifications |
-| **Biology** | Sequence alignment tools | Protein structure predictions, gene annotations, pathway analysis |
-| **Finance** | Regulatory rule engines | Compliance checks, calculation accuracy, disclosure completeness |
-| **Legal** | Precedent databases + citation checkers | Case citation accuracy, statutory references, procedural compliance |
-| **Medical** | Clinical guideline databases | Treatment plan adherence to guidelines, drug interaction checks, diagnostic criteria |
-| **SQL/Data** | Execution-based verification | Query correctness against known databases (Databricks reported 75.68% on BIRD test) |
+| Domain        | Verifier Strategy                       | What Gets Verified                                                                   |
+| ------------- | --------------------------------------- | ------------------------------------------------------------------------------------ |
+| **Chemistry** | Molecular property calculators          | Predicted molecular structures, reaction yields, safety classifications              |
+| **Biology**   | Sequence alignment tools                | Protein structure predictions, gene annotations, pathway analysis                    |
+| **Finance**   | Regulatory rule engines                 | Compliance checks, calculation accuracy, disclosure completeness                     |
+| **Legal**     | Precedent databases + citation checkers | Case citation accuracy, statutory references, procedural compliance                  |
+| **Medical**   | Clinical guideline databases            | Treatment plan adherence to guidelines, drug interaction checks, diagnostic criteria |
+| **SQL/Data**  | Execution-based verification            | Query correctness against known databases (Databricks reported 75.68% on BIRD test)  |
 
-The common thread: none of these domains have fully verifiable answers. But they all have *aspects* that can be mechanically checked. RLVR doesn't need perfect verification - it needs verification that's correlated with quality and cheap enough to run at scale.
+The common thread: none of these domains have fully verifiable answers. But they all have _aspects_ that can be mechanically checked. RLVR doesn't need perfect verification - it needs verification that's correlated with quality and cheap enough to run at scale.
 
 This is where enterprise teams should be paying attention. If you have domain-specific rules, checklists, or validators - things that currently sit in your quality assurance process - they can potentially be converted into RLVR reward signals.
 
@@ -324,26 +326,6 @@ A few things I'm watching closely:
 
 ---
 
-*This is Part 2 of a three-part series on the cutting edge of LLM and agent research in January 2026. Part 1 covered [the agent protocol stack](/blog/2026/agent-protocol-stack/) - MCP, A2A, and A2UI as a layered architecture with significant security gaps. Part 3 explores [mechanistic interpretability and circuit tracing](/blog/2026/circuit-tracing-production/) - what it means to watch an LLM think, and why it matters for production safety.*
+_This is Part 2 of a three-part series on the cutting edge of LLM and agent research in January 2026. Part 1 covered [the agent protocol stack](/blog/2026/agent-protocol-stack/) - MCP, A2A, and A2UI as a layered architecture with significant security gaps. Part 3 explores [mechanistic interpretability and circuit tracing](/blog/2026/circuit-tracing-production/) - what it means to watch an LLM think, and why it matters for production safety._
 
-*Find me on [LinkedIn](https://www.linkedin.com/in/subhadip-mitra/) or drop a comment below.*
-
-### Citation
-
-If you found this article useful, please cite it using one of the formats below:
-
-#### APA Format
-
-Mitra, Subhadip. (2026, January). *RLVR Beyond Math and Code: The Verifier Problem Nobody Has Solved*. Retrieved from https://subhadipmitra.com/blog/2026/rlvr-beyond-math-code/
-
-#### BibTeX Entry
-
-```
-@article{mitra2026rlvr-beyond-math-code,
-  title   = {RLVR Beyond Math and Code: The Verifier Problem Nobody Has Solved},
-  author  = {Mitra, Subhadip},
-  year    = {2026},
-  month   = {Jan},
-  url     = {https://subhadipmitra.com/blog/2026/rlvr-beyond-math-code/}
-}
-```
+_Find me on [LinkedIn](https://www.linkedin.com/in/subhadip-mitra/) or drop a comment below._

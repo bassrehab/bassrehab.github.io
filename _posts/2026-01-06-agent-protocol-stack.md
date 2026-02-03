@@ -107,11 +107,11 @@ The IBM explainer on A2A puts it well: a retail inventory agent uses MCP to chec
 
 The composition works elegantly when responsibilities are clear:
 
-| Layer | Responsibility | Trust Boundary | Failure Mode |
-|-------|---------------|----------------|--------------|
-| **A2UI** | Rendering, user interaction | Client-side sandboxing | Bad UI, not data loss |
-| **A2A** | Task delegation, capability discovery | Cross-organization auth | Task failure, retry needed |
-| **MCP** | Data access, tool execution | Server-side permissions | Data corruption, privilege escalation |
+| Layer    | Responsibility                        | Trust Boundary          | Failure Mode                          |
+| -------- | ------------------------------------- | ----------------------- | ------------------------------------- |
+| **A2UI** | Rendering, user interaction           | Client-side sandboxing  | Bad UI, not data loss                 |
+| **A2A**  | Task delegation, capability discovery | Cross-organization auth | Task failure, retry needed            |
+| **MCP**  | Data access, tool execution           | Server-side permissions | Data corruption, privilege escalation |
 
 AgentMaster (July 2025) was the first framework to use A2A and MCP together in production. Google's ADK (Agent Development Kit) now has first-class support for both. LangGraph v0.2 (shipped January 15, 2026) added A2A and MCP as first-class protocol targets.
 
@@ -234,15 +234,15 @@ After talking with teams running multi-agent systems in production and observing
 
 Don't rely on any single layer for security. Assume each layer will be compromised independently.
 
-| Layer | Control | Implementation |
-|-------|---------|---------------|
-| **MCP** | Tool vetting + sandboxing | Internal registry of audited MCP servers. No direct npm installs. OWASP MCP Top 10 as checklist. |
-| **MCP** | Input validation | Sanitize all inputs before they reach LLM agents. Block injection patterns, encoded payloads. |
-| **MCP** | Least privilege | Each MCP server gets minimal permissions. No shared credentials across servers. |
-| **A2A** | AgentCard verification | Don't trust self-reported capabilities. Verify through challenge-response or reputation systems. |
-| **A2A** | Task boundaries | Constrain what delegated tasks can do. No open-ended "do anything" delegations. |
-| **A2UI** | Component catalog control | Locked registry of approved UI components. Code-review process for additions. |
-| **Cross-layer** | Distributed tracing | Correlation IDs that flow through A2UI → A2A → MCP. Log everything. |
+| Layer           | Control                   | Implementation                                                                                   |
+| --------------- | ------------------------- | ------------------------------------------------------------------------------------------------ |
+| **MCP**         | Tool vetting + sandboxing | Internal registry of audited MCP servers. No direct npm installs. OWASP MCP Top 10 as checklist. |
+| **MCP**         | Input validation          | Sanitize all inputs before they reach LLM agents. Block injection patterns, encoded payloads.    |
+| **MCP**         | Least privilege           | Each MCP server gets minimal permissions. No shared credentials across servers.                  |
+| **A2A**         | AgentCard verification    | Don't trust self-reported capabilities. Verify through challenge-response or reputation systems. |
+| **A2A**         | Task boundaries           | Constrain what delegated tasks can do. No open-ended "do anything" delegations.                  |
+| **A2UI**        | Component catalog control | Locked registry of approved UI components. Code-review process for additions.                    |
+| **Cross-layer** | Distributed tracing       | Correlation IDs that flow through A2UI → A2A → MCP. Log everything.                              |
 
 ### 2. Treat MCP Servers Like Dependencies, Not Plugins
 
@@ -271,6 +271,7 @@ This is my most controversial take: most teams adopting A2A in January 2026 don'
 If your agents are all within the same organization, running in the same infrastructure, and you control the entire pipeline - you don't need a cross-organization agent communication protocol. Use simpler orchestration (LangGraph, CrewAI, direct function calls). The overhead and attack surface of A2A aren't justified.
 
 A2A becomes essential when:
+
 - Agents from different organizations need to collaborate
 - You're building a marketplace of agent capabilities
 - You need formal task lifecycle management across trust boundaries
@@ -283,6 +284,7 @@ If none of those apply, you're adding complexity for complexity's sake.
 I've been using the TCP/IP analogy deliberately, so let me be explicit about where it holds and where it breaks.
 
 **Where it holds:**
+
 - Layered architecture with clear responsibilities per layer
 - Each layer can evolve independently
 - Interoperability is the primary design goal
@@ -290,8 +292,9 @@ I've been using the TCP/IP analogy deliberately, so let me be explicit about whe
 - Security was bolted on after initial adoption
 
 **Where it breaks:**
+
 - TCP/IP moved bits. These protocols move intent. The semantic gap is enormous.
-- TCP/IP had decades to mature before the internet became critical infrastructure. The agent protocol stack is being deployed into production systems *now*, with enterprise data, while the specs are still at v0.3.
+- TCP/IP had decades to mature before the internet became critical infrastructure. The agent protocol stack is being deployed into production systems _now_, with enterprise data, while the specs are still at v0.3.
 - TCP/IP's layering was clean from early on. The agent stack's layering is still messy - is context delivery (MCP) really the same layer as tool execution (also MCP)? Should AgentCard discovery be a separate protocol?
 
 The parallel is useful for framing but dangerous for prediction. We shouldn't assume this stack will converge the way internet protocols did. It might fragment. It might get replaced by something we haven't seen yet.
@@ -310,13 +313,13 @@ Three things I expect to emerge in the next 12 months:
 
 If you've read my [MCP Maturity Model](/blog/2025/mcp-maturity-model/), here's where the protocol stack maps to maturity levels:
 
-| Maturity Level | Protocol Stack Usage |
-|---------------|---------------------|
-| **Level 0-1** | None needed. String assembly and structured objects. |
-| **Level 2** | MCP for standardized tool/data access. |
-| **Level 3** | MCP with optimization. A2A becomes relevant if you have cross-boundary agent coordination. |
-| **Level 4** | Full MCP + A2A. Adaptive systems benefit from A2A's capability discovery. A2UI if you're building user-facing agent experiences. |
-| **Level 5** | All three protocols with custom extensions. This is where the missing protocols (identity, provenance, governance) become critical. |
+| Maturity Level | Protocol Stack Usage                                                                                                                |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| **Level 0-1**  | None needed. String assembly and structured objects.                                                                                |
+| **Level 2**    | MCP for standardized tool/data access.                                                                                              |
+| **Level 3**    | MCP with optimization. A2A becomes relevant if you have cross-boundary agent coordination.                                          |
+| **Level 4**    | Full MCP + A2A. Adaptive systems benefit from A2A's capability discovery. A2UI if you're building user-facing agent experiences.    |
+| **Level 5**    | All three protocols with custom extensions. This is where the missing protocols (identity, provenance, governance) become critical. |
 
 Most teams should be at Level 2-3, using MCP competently, with A2A on the roadmap for when they genuinely need cross-agent collaboration across trust boundaries. If you're jumping to full-stack deployment without solid MCP foundations, you're building on sand.
 
@@ -330,26 +333,6 @@ The organizations that will thrive in the agentic era aren't the ones deploying 
 
 ---
 
-*This is Part 1 of a three-part series on the cutting edge of LLM and agent research in January 2026. Part 2 covers [RLVR beyond math and code](/blog/2026/rlvr-beyond-math-code/) - the training technique powering reasoning models and the open question of whether it actually makes models smarter. Part 3 explores [mechanistic interpretability and circuit tracing](/blog/2026/circuit-tracing-production/) - what it means to watch an LLM think, and why it matters for production safety.*
+_This is Part 1 of a three-part series on the cutting edge of LLM and agent research in January 2026. Part 2 covers [RLVR beyond math and code](/blog/2026/rlvr-beyond-math-code/) - the training technique powering reasoning models and the open question of whether it actually makes models smarter. Part 3 explores [mechanistic interpretability and circuit tracing](/blog/2026/circuit-tracing-production/) - what it means to watch an LLM think, and why it matters for production safety._
 
-*Find me on [LinkedIn](https://www.linkedin.com/in/subhadip-mitra/) or drop a comment below.*
-
-### Citation
-
-If you found this article useful, please cite it using one of the formats below:
-
-#### APA Format
-
-Mitra, Subhadip. (2026, January). *The Agent Protocol Stack: Why MCP + A2A + A2UI Is the TCP/IP Moment for Agentic AI*. Retrieved from https://subhadipmitra.com/blog/2026/agent-protocol-stack/
-
-#### BibTeX Entry
-
-```
-@article{mitra2026agent-protocol-stack,
-  title   = {The Agent Protocol Stack: Why MCP + A2A + A2UI Is the TCP/IP Moment for Agentic AI},
-  author  = {Mitra, Subhadip},
-  year    = {2026},
-  month   = {Jan},
-  url     = {https://subhadipmitra.com/blog/2026/agent-protocol-stack/}
-}
-```
+_Find me on [LinkedIn](https://www.linkedin.com/in/subhadip-mitra/) or drop a comment below._

@@ -20,7 +20,7 @@ toc:
 
 Last month, I published work on [detecting AI sandbagging through activation probes](/blog/2025/detecting-ai-sandbagging/) - training simple logistic regression classifiers on hidden states to catch models deliberately underperforming. The probes achieved 90-96% accuracy across Mistral, Gemma, and Qwen models. The key finding: sandbagging intent is linearly separable in the model's internal representations. You can detect it before any output is generated.
 
-That work operated at a specific level of resolution. We could tell *that* the model was sandbagging, and we could point to the layer where the signal was strongest. But we couldn't trace the computational path - the sequence of internal steps the model takes from "I've been asked to underperform" to "I'll give a deliberately wrong answer."
+That work operated at a specific level of resolution. We could tell _that_ the model was sandbagging, and we could point to the layer where the signal was strongest. But we couldn't trace the computational path - the sequence of internal steps the model takes from "I've been asked to underperform" to "I'll give a deliberately wrong answer."
 
 Anthropic's circuit tracing work changes this. And MIT Technology Review just named mechanistic interpretability one of its 2026 Breakthrough Technologies.
 
@@ -55,7 +55,7 @@ graph TD
 
 **Level 1: Output Analysis** is what most teams do. Test the model's behavior with various inputs, measure accuracy on benchmarks, run red team attacks. You see what goes in and what comes out. The model is a black box, and you're characterizing it empirically.
 
-**Level 2: Attention Analysis** gives you a peek inside. Attention maps show which input tokens influenced the output. Gradient-based attribution tells you which parts of the input were most important. It's useful but misleading - attention patterns don't reliably tell you *why* the model made a decision, just what it was looking at.
+**Level 2: Attention Analysis** gives you a peek inside. Attention maps show which input tokens influenced the output. Gradient-based attribution tells you which parts of the input were most important. It's useful but misleading - attention patterns don't reliably tell you _why_ the model made a decision, just what it was looking at.
 
 **Level 3: Probe-Based Analysis** is where my sandbagging work sits. You train simple classifiers on the model's internal representations (hidden states at various layers) to detect specific properties. If a linear probe can classify sandbagging with 90%+ accuracy, that tells you the information is explicitly represented in the model's activations. It's a powerful technique because it's cheap and interpretable - logistic regression is about as transparent as a classifier gets.
 
@@ -109,7 +109,7 @@ This is more than an academic curiosity. It means the model has separate mechani
 
 ### A Shared Conceptual Space
 
-One of the most provocative findings: circuit tracing revealed that Claude appears to have a shared conceptual space where reasoning happens *before* being translated into language. The model can learn something in one language and apply it in another, because the intermediate representations aren't language-specific - they're conceptual.
+One of the most provocative findings: circuit tracing revealed that Claude appears to have a shared conceptual space where reasoning happens _before_ being translated into language. The model can learn something in one language and apply it in another, because the intermediate representations aren't language-specific - they're conceptual.
 
 This suggests that the model's "thinking" isn't just next-token prediction in a specific language. There's a layer of abstraction between the input language and the output language where something more like concept manipulation is happening. Whether you want to call that "reasoning" or "very sophisticated pattern matching" is a philosophical question that circuit tracing can't settle. But it does show that the internal structure is more organized than "giant statistical lookup table."
 
@@ -129,7 +129,7 @@ In the [sandbagging detection work](/blog/2025/detecting-ai-sandbagging/), I:
 6. Identified that the signal is strongest at specific layers (varies by model)
 7. Demonstrated that activation steering (adding/subtracting directions in activation space) can reduce sandbagging behavior
 
-This gives us a binary signal: sandbagging or not. And a location: which layers carry the most signal. But it doesn't tell us *how* the model implements sandbagging. What computational pathway leads from "I should underperform" to "I'll output a wrong answer"?
+This gives us a binary signal: sandbagging or not. And a location: which layers carry the most signal. But it doesn't tell us _how_ the model implements sandbagging. What computational pathway leads from "I should underperform" to "I'll output a wrong answer"?
 
 ### What Circuit Tracing Could Add
 
@@ -149,16 +149,16 @@ Here's the honest part: circuit tracing at this resolution isn't available for t
 
 The community is working on it. Chris Olah's team at Anthropic has been publishing the foundational methods. Academic groups have been replicating results on smaller models. But if you're an enterprise team wanting to do circuit-level analysis on your production models today, you're going to hit tooling gaps.
 
-What you *can* do today, with open-weight models:
+What you _can_ do today, with open-weight models:
 
-| Technique | What You Get | Tools Available | Effort |
-|-----------|-------------|-----------------|--------|
-| **Linear probes** (my approach) | Binary classification of internal states | scikit-learn, PyTorch hooks | Days |
-| **Sparse autoencoders** | Feature decomposition | SAELens, Neuronpedia (limited models) | Weeks |
-| **Activation patching** | Causal identification of important components | TransformerLens, baukit | Weeks |
-| **Circuit tracing** | Full attribution graphs | Neuronpedia (Claude only), custom tooling needed for others | Months |
+| Technique                       | What You Get                                  | Tools Available                                             | Effort |
+| ------------------------------- | --------------------------------------------- | ----------------------------------------------------------- | ------ |
+| **Linear probes** (my approach) | Binary classification of internal states      | scikit-learn, PyTorch hooks                                 | Days   |
+| **Sparse autoencoders**         | Feature decomposition                         | SAELens, Neuronpedia (limited models)                       | Weeks  |
+| **Activation patching**         | Causal identification of important components | TransformerLens, baukit                                     | Weeks  |
+| **Circuit tracing**             | Full attribution graphs                       | Neuronpedia (Claude only), custom tooling needed for others | Months |
 
-For most production teams, the pragmatic path is: start with probes (cheap, fast, actionable), graduate to SAE-based analysis when you need to understand *why* (not just *whether*), and watch the tooling ecosystem for circuit tracing to become more accessible.
+For most production teams, the pragmatic path is: start with probes (cheap, fast, actionable), graduate to SAE-based analysis when you need to understand _why_ (not just _whether_), and watch the tooling ecosystem for circuit tracing to become more accessible.
 
 ## Why Production Teams Should Care
 
@@ -186,7 +186,7 @@ Imagine being able to trace the internal computation of each agent at decision p
 
 Anthropic published work on Constitutional Classifiers in January 2026 - a system that catches jailbreaks while maintaining practical deployment. The classifiers withstood over 3,000 hours of red teaming with no universal jailbreak discovered.
 
-These classifiers work at the behavior level: they analyze inputs and outputs for harmful patterns. But the next generation of safety tools will need to work at the representation level: detecting harmful *intent* in the model's internal state before it produces output.
+These classifiers work at the behavior level: they analyze inputs and outputs for harmful patterns. But the next generation of safety tools will need to work at the representation level: detecting harmful _intent_ in the model's internal state before it produces output.
 
 This is exactly what my sandbagging probes do - detect the intent to underperform from internal representations. Circuit tracing extends this from detection to understanding: not just "the model intends to deceive" but "here is the computational pathway the deception follows, and here is where you can intervene."
 
@@ -200,7 +200,7 @@ Let me be careful about what this means and what it doesn't.
 
 What was shown: when asked about its internal processes, Claude's responses sometimes correlate with actual internal states as measured by interpretability tools. The model's reports about what it's "attending to" or "considering" aren't always confabulation - sometimes they reflect genuine internal computation.
 
-What was *not* shown: that the model has self-awareness, consciousness, or reliable self-knowledge. The introspection is partial, inconsistent, and often wrong. It's closer to "the model has some access to its own representations" than "the model understands itself."
+What was _not_ shown: that the model has self-awareness, consciousness, or reliable self-knowledge. The introspection is partial, inconsistent, and often wrong. It's closer to "the model has some access to its own representations" than "the model understands itself."
 
 Why it matters for production: if models have even limited introspective ability, it opens the door to self-monitoring. An agent that can partially detect when its own reasoning is going off track could flag uncertainty or request human review. This is speculative but directionally important - it suggests a path toward models that participate in their own safety monitoring.
 
@@ -223,6 +223,7 @@ The highest-leverage contribution you can make right now is **bringing SAE-based
 ### If You're Leading an AI Team
 
 Budget for interpretability in 2026, even if it's a small allocation. The teams that build interpretability infrastructure now will have a significant advantage when:
+
 - Regulators require explanations (and they will)
 - A production incident requires root-cause analysis below the prompt level (and it will)
 - Safety interventions need to be targeted rather than blunt (and they will)
@@ -241,26 +242,6 @@ We just have to build it.
 
 ---
 
-*This is Part 3 of a three-part series on the cutting edge of LLM and agent research in January 2026. Part 1 covered [the agent protocol stack](/blog/2026/agent-protocol-stack/) - MCP, A2A, and A2UI as a layered architecture. Part 2 explored [RLVR beyond math and code](/blog/2026/rlvr-beyond-math-code/) - extending reinforcement learning with verifiable rewards to open-ended domains.*
+_This is Part 3 of a three-part series on the cutting edge of LLM and agent research in January 2026. Part 1 covered [the agent protocol stack](/blog/2026/agent-protocol-stack/) - MCP, A2A, and A2UI as a layered architecture. Part 2 explored [RLVR beyond math and code](/blog/2026/rlvr-beyond-math-code/) - extending reinforcement learning with verifiable rewards to open-ended domains._
 
-*The code for the sandbagging detection probes is at [github.com/bassrehab/ai-metacognition-toolkit](https://github.com/bassrehab/ai-metacognition-toolkit). Find me on [LinkedIn](https://www.linkedin.com/in/subhadip-mitra/) or drop a comment below.*
-
-### Citation
-
-If you found this article useful, please cite it using one of the formats below:
-
-#### APA Format
-
-Mitra, Subhadip. (2026, January). *Circuit Tracing for the Rest of Us: From Probes to Attribution Graphs and What It Means for Production Safety*. Retrieved from https://subhadipmitra.com/blog/2026/circuit-tracing-production/
-
-#### BibTeX Entry
-
-```
-@article{mitra2026circuit-tracing-production,
-  title   = {Circuit Tracing for the Rest of Us: From Probes to Attribution Graphs and What It Means for Production Safety},
-  author  = {Mitra, Subhadip},
-  year    = {2026},
-  month   = {Jan},
-  url     = {https://subhadipmitra.com/blog/2026/circuit-tracing-production/}
-}
-```
+_The code for the sandbagging detection probes is at [github.com/bassrehab/ai-metacognition-toolkit](https://github.com/bassrehab/ai-metacognition-toolkit). Find me on [LinkedIn](https://www.linkedin.com/in/subhadip-mitra/) or drop a comment below._
