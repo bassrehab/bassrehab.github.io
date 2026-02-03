@@ -1,11 +1,21 @@
 ---
 layout: post
 title: "Circuit Tracing for the Rest of Us: From Probes to Attribution Graphs and What It Means for Production Safety"
-date: 2026-01-31
-description: "MIT Tech Review named mechanistic interpretability a 2026 Breakthrough Technology. Anthropic open-sourced circuit tracing. Here's what actually changed, how it connects to the activation probes I built for sandbagging detection, and why production teams should care."
-tags: [mechanistic-interpretability, circuit-tracing, AI-safety, interpretability, sparse-autoencoders, sandbagging]
+date: 2026-01-31 10:00:00
+author: [Subhadip Mitra]
 categories: [AI Safety, Interpretability]
+tags: [mechanistic-interpretability, circuit-tracing, AI-safety, interpretability, sparse-autoencoders, sandbagging]
+description: "MIT Tech Review named mechanistic interpretability a 2026 Breakthrough Technology. Anthropic open-sourced circuit tracing. Here's what actually changed, how it connects to the activation probes I built for sandbagging detection, and why production teams should care."
+citation: true
+giscus_comments: true
 featured: true
+related_posts: true
+pretty_table: true
+tabs: true
+mermaid:
+  enabled: true
+toc:
+  sidebar: left
 ---
 
 Last month, I published work on [detecting AI sandbagging through activation probes](/blog/2025/detecting-ai-sandbagging/) - training simple logistic regression classifiers on hidden states to catch models deliberately underperforming. The probes achieved 90-96% accuracy across Mistral, Gemma, and Qwen models. The key finding: sandbagging intent is linearly separable in the model's internal representations. You can detect it before any output is generated.

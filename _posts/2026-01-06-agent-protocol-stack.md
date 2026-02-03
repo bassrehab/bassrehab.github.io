@@ -1,11 +1,21 @@
 ---
 layout: post
 title: "The Agent Protocol Stack: Why MCP + A2A + A2UI Is the TCP/IP Moment for Agentic AI"
-date: 2026-01-06
-description: "MCP handles agent-to-tool. A2A handles agent-to-agent. A2UI handles agent-to-interface. Together they form a protocol stack that nobody has mapped properly - including the security gaps that should terrify you."
-tags: [MCP, A2A, A2UI, agent-protocols, multi-agent-systems, security]
+date: 2026-01-06 10:00:00
+author: [Subhadip Mitra]
 categories: [AI Infrastructure, Multi-Agent Systems]
+tags: [MCP, A2A, A2UI, agent-protocols, multi-agent-systems, security]
+description: "MCP handles agent-to-tool. A2A handles agent-to-agent. A2UI handles agent-to-interface. Together they form a protocol stack that nobody has mapped properly - including the security gaps that should terrify you."
+citation: true
+giscus_comments: true
 featured: true
+related_posts: true
+pretty_table: true
+tabs: true
+mermaid:
+  enabled: true
+toc:
+  sidebar: left
 ---
 
 When I wrote the [MCP Maturity Model](/blog/2025/mcp-maturity-model/) two months ago, I treated MCP as the primary protocol layer for agent architectures. That was already incomplete by the time I published it. Google had shipped A2A v0.2. Anthropic's A2UI had just been announced. And the Linux Foundation was suddenly hosting both MCP and A2A under the same governance roof.

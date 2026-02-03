@@ -1,11 +1,21 @@
 ---
 layout: post
 title: "RLVR Beyond Math and Code: The Verifier Problem Nobody Has Solved"
-date: 2026-01-18
-description: "Reinforcement Learning with Verifiable Rewards powers every reasoning model worth talking about. But it only works where you can check the answer automatically. Extending it to messy, real-world domains is the hardest open problem in LLM training right now."
-tags: [RLVR, reinforcement-learning, reasoning-models, LLM-training, DeepSeek-R1, GRPO]
+date: 2026-01-18 10:00:00
+author: [Subhadip Mitra]
 categories: [AI Research, LLM Training]
+tags: [RLVR, reinforcement-learning, reasoning-models, LLM-training, DeepSeek-R1, GRPO]
+description: "Reinforcement Learning with Verifiable Rewards powers every reasoning model worth talking about. But it only works where you can check the answer automatically. Extending it to messy, real-world domains is the hardest open problem in LLM training right now."
+citation: true
+giscus_comments: true
 featured: true
+related_posts: true
+pretty_table: true
+tabs: true
+mermaid:
+  enabled: true
+toc:
+  sidebar: left
 ---
 
 If 2024 was about scaling parameters, 2025 was about scaling reasoning.

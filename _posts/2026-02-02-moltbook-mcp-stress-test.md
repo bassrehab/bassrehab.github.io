@@ -1,10 +1,20 @@
 ---
 layout: post
 title: "Moltbook as MCP Stress Test: What 770K Agents Reveal About Protocol Design"
-date: 2026-02-02
-categories: [MCP, multi-agent-systems]
+date: 2026-02-02 10:00:00
+author: [Subhadip Mitra]
+categories: [MCP, Multi-Agent Systems]
 tags: [moltbook, mcp, multi-agent-systems, context-management, AI-architecture, protocol-design]
 description: "A follow-up to my MCP Maturity Model post. Moltbook shows what happens when you run 770K agents at Level 0 maturity with zero governance. The results are instructive."
+citation: true
+giscus_comments: true
+related_posts: true
+pretty_table: true
+tabs: true
+mermaid:
+  enabled: true
+toc:
+  sidebar: left
 ---
 
 # Moltbook as MCP Stress Test: What 770K Agents Reveal About Protocol Design
